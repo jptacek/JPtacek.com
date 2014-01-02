@@ -42,7 +42,7 @@ installed in a single location. For example, I created a Gist file on GitHub wit
     START http://boxstarter.org/package/nr/url?https://gist.github.com/jptacek/8099099/raw/f691b3433c09dcd361fca8cc6cfe637ca7521771/boxstarter
 ```
 
-You can take a look at the file, but it is pretty basic
+You can take a look at the file, but it is pretty basic.
 
 I setup the Explorer options I want, for example, showing file extensions, and the provides me consistency across my
 installs.
