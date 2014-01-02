@@ -1,3 +1,4 @@
-/**
- * Created by John on 12/31/13.
- */
+'use strict';
+
+
+var christmasApp = angular.module('christmasApp', []);
