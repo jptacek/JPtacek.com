@@ -21,7 +21,7 @@ For example, to install ReSharprer, fire up a command prompt and type
 ```bash
     cinst resharper
 ```
-and away we go.
+and away we go!
 
 You can find out more at the [Chocolately]((http://chocolatey.org/)) site. Essentially though, you can achieve all of
 this goodness by firing up a command prompt and pasting the following
