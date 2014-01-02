@@ -1,0 +1,20 @@
+---
+layout: post
+title: A Modest Proposal – Apple Should Buy the US Post Office
+date: 2012-10-19
+tags: ["Apple","Business","Google"]
+---
+
+The recent iMaps fiasco has taught the world that Apple has some serious catch up to do in the world of maps. There is a bit of a chicken and the egg issue, the more people using the iMaps app, the more data Apple can collect and make iMaps a better app. Instead of waiting for this to happen, Apple should speed up the process and buy the US Post office.
+
+The USPS operates over 210,000 vehicles and is the largest vehicle fleet in the world. The vast majority of these vehicles are out driving the world every day. If Apple buys the US post office, they could transform these vehicles into data gathering machines. Throw in a GPS and bring the data to Apple and their mapping team to quickly scale and improve iMaps. Next step, throw a camera in the car, ala the Google Car, and get a constantly refreshing street view mode. Google's Street View cars have driven 5 million miles since hitting the road. The US Post office drives 1.25 BILLION miles a year. Apple for the win! Next up, throw some more sensors onto the cars. For example, weather sensors could capture very local and real time weather data and create the next great Apple app, iWeather.
+
+Putting sensors onto the USPS fleet is not a new idea, the USPS has [even](http://www.nytimes.com/2010/12/18/opinion/18ravnitzky.html) proposed doing this. However, it is a slow moving process, with privacy concerns often being cited. Apple buying the USPS and transforming it to the iPost Office helps alleviate these concerns. By moving the USPS from an old stodgy business to a tech company, privacy concerns quickly disappear. As consumers, we are used to letting the Goggles, Facebooks and Apples of the world collect information about us to make their services more awesome for us.
+
+Next up, it becomes an advertising niche for Apple. The USPS handled over 170 billion items in 2010\. Each one of these becomes an advertising opportunity! Just like Google can put a little advertising onto most of the web pages we visit, iPost Office can put a little ad onto each of the 170 billion mail deliveries they do a year and have a brand new revenue stream.
+
+Next along the road, Apple can start competing with Amazon. It quickly acquires 30,000 retail locations that it can use to distribute physical goods. Instead of consumers having to wait a few days for the delivery of something from Amazon, or even two days for those customers paying for an Amazon Prime Membership, the iPost Office could deliver things purchased that day! The iPost Office even delivers on Saturdays, putting Amazon at a competitive disadvantage for those customers whom always battle cheap price vs. instant gratification.
+
+The best part about iPost Office is that everything Apple does is cool. Hipsters would start flocking back to their mailboxes. Apple could create stamps of Apple luminaries like Steve Jobs, Steve Wozniak and Jonathan Ive (post [redesign](http://gizmodo.com/5516976/apples-chief-designer-re+designed) of course!). You can quickly imagine people buying these stamps and sending physical letters in the mail again. This could lead to a renaissance of letter writing! Imagine a world where instead of [The Letters of John Cheever](http://www.amazon.com/The-Letters-John-Cheever/dp/1439164649) we could have the Collected Letters of [John Grueber](http://daringfireball.net/).
+
+Okay, so the above is all a little bit [Jonathan Swiftian](http://en.wikipedia.org/wiki/A_Modest_Proposal), but a partnership between the US Post Office and Apple could go a long way to solving the financial issues at the US Post Offices and Apple's iMaps issue. Of course, in the US iMaps tends to be in much better shape, so throw in a similar partnership with DHL for good measure. Apple could quickly gather data and help resolve their mapping issues. Win-win.

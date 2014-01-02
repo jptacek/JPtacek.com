@@ -1,0 +1,23 @@
+---
+layout: page
+title: Oops! Page Not Found
+skipCleanUrls: true
+sitemap: false
+---
+<div class="row">
+    <div class="col-sm-12 col-md-10">
+        <h1>Oops! Page not found...</h1>
+        <p>Sorry about that!</p>
+        <p>
+           To be, or not to be--that is the question. Especially for this page.
+            </p>
+            <p>
+            It might have
+            been removed, lost or never existed. You could try and find it using the
+            <a href="http://google.com/search?q=site%3A<%= @site.url %>">search</a>
+            box (top right corner), browse the
+            <a href="/archives/">archives</a> or go to the
+            <a href="/">home page</a>.
+        </p>
+    </div>
+</div>
