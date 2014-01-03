@@ -2,7 +2,7 @@
 layout: post
 title: Creating Sitemaps.xml file for Wordpress blogs on Azure Websites
 date: 2013-02-13
-tags: ["Azure","Azure","SEO","Wordpress","Wordpress"]
+tags: ["Azure","Azure","SEO","WordPress"]
 ---
 
 When running Wordpress on Azure websites, you have the ability to create sitemaps. This enables search engines such as Google and Bing to make you content more discoverable. You can find out more about Sitemaps from [Google](http://support.google.com/webmasters/bin/answer.py?hl=en&answer=156184).

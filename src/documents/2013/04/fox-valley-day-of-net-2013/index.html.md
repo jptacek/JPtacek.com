@@ -2,7 +2,7 @@
 layout: post
 title: Fox Valley Day of .NET 2013
 date: 2013-04-28
-tags: ["Azure","Azure Websites","Fox Valley Day of .NET","Speaking","Wordpress"]
+tags: ["Azure","Azure Websites","Fox Valley Day of .NET","Speaking","WordPress"]
 ---
 
 I am honored to be speaking at the Fox Valley .NET User Groups Day of .NET this year. The Fox Valley Day of .NET is a GREAT event. Every year, they have speakers from all around come and present on topics that will challenge you and make you that much of a better developer when you leave.

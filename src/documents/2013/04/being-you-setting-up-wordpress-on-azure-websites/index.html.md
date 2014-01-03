@@ -2,7 +2,7 @@
 layout: post
 title: Being You – Setting Up WordPress on Azure Websites
 date: 2013-04-29
-tags: ["Azure","Azure","Azure Websites","Web","Wordpress"]
+tags: ["Azure","Azure Websites","Web","WordPress"]
 ---
 
 Azure websites are a great way to get a blog up quick and easily, and for relatively low costs.
