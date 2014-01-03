@@ -57,5 +57,5 @@ Why DocPad
 
 [Jason Young GitHub repository for Ytechie.com](https://github.com/ytechie/ytechie-docpad)
 
-[My GitHub repository for JPtacek.com](https://github.com/jptacek/JPtacek.com-docpad)
+[My GitHub repository for JPtacek.com](https://github.com/jptacek/JPtacek.com)
 
