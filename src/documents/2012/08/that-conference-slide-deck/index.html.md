@@ -1,6 +1,6 @@
 ---
 layout: post
-title: That Conference Slide Deck
+title: 2012 That Conference Slide Deck
 date: 2012-08-20
 tags: ["That Conference","That Conference","Web"]
 ---

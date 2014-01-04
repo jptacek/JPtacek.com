@@ -17,7 +17,7 @@ Go to [http://www.windowsazure.com](http://www.windowsazure.com) and click Free 
 
 ![](042913_1148_BeingYouSet1.png)
 
-You free trial contains up to 10 Web Sites and Mobile servies, a SQL database, 35 GB of strogae and 750 hours of small compute hours. This will essentially allow you to create a blog a Azure shared instance for free. Click the next arrow (right by two).
+You free trial contains up to 10 Web Sites and Mobile services, a SQL database, 35 GB of strogae and 750 hours of small compute hours. This will essentially allow you to create a blog a Azure shared instance for free. Click the next arrow (right by two).
 
 You will be asked to verify your account via a SMS message to your phone. Step three will ask you to setup a credit card information, after which, your Azure subscription is being setup
 

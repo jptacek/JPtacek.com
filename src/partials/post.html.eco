@@ -11,6 +11,9 @@ cacheable: false
     <div class="post-content">
         <%- @fixLinks(@content, @url) %>
     </div>
+    <!-- Place this tag where you want the +1 button to render. -->
+    <div class="g-plusone" data-size="medium"></div>
+
     <% if @tags?: %>
     <div class="post-tags">
         Posted In: <%- ("<a href='#{@getTagUrl(tag)}'>#{tag}</a>" for tag in @tags).join(', ') %>
@@ -19,3 +22,12 @@ cacheable: false
     <br/>
     By <a href="https://plus.google.com/+JohnPtacek?rel=auhthor">John Ptacek</a>
 </article>
+<!-- G+ reference-->
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>

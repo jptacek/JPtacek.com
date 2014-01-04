@@ -2,7 +2,7 @@
 layout: post
 title: Being You – Looking Around WordPress
 date: 2013-04-30
-tags: ["Azure Websites","Web","web",WordPress"]
+tags: ["Azure Websites","Web",WordPress"]
 ---
 
 WordPress, is obviously, a VERY popular blogging platform. You are going to have a lot better luck finding information out on the Internets than you will here. So we will take a quick look around, and focus a bit on the differences on the Azure platform.
