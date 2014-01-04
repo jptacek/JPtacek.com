@@ -12,6 +12,7 @@ cacheable: false
         <%- @fixLinks(@content, @url) %>
     </div>
     <!-- Place this tag where you want the +1 button to render. -->
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.jptacek.com<%= @url %>" data-text="<%= @title %>" data-via="jptacek" data-lang="en" >Tweet</a>
     <div class="g-plusone" data-size="medium"></div>
 
     <% if @tags?: %>
@@ -31,3 +32,6 @@ cacheable: false
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
 </script>
+
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
