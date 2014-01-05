@@ -69,7 +69,7 @@ h5 {
       }
     }
 
-    .rss, .github, .twitter, .xxx, .googleplus {
+    .rss, .github, .twitter, .googleplus, .linkedin {
       font-size: 18px;
       display: inline-block;
       padding-left: 6px;
@@ -81,9 +81,17 @@ h5 {
       }
     }
 
+       .googleplus:hover {
+      color: red;
+    }
+    .linkedin:hover {
+      color: green;
+    }
+
     .twitter:hover {
       color: #00bef6;
     }
+
 
     .rss {
       padding-left: 15px;
@@ -95,6 +103,7 @@ h5 {
       }
     }
 
+
     .github {
       padding-right: 15px;
       @media (min-width: 768px) {
@@ -102,26 +111,6 @@ h5 {
       }
       &:hover {
         color: #000;
-      }
-    }
-
-    .googleplus {
-      padding-right: 15px;
-      @media (min-width: 768px) {
-        padding-right: @horizontal-padding;
-      }
-      &:hover {
-        color: red;
-      }
-    }
-
-    .xxx {
-      padding-right: 15px;
-      @media (min-width: 768px) {
-        padding-right: @horizontal-padding;
-      }
-      &:hover {
-        color: blue;
       }
     }
   }

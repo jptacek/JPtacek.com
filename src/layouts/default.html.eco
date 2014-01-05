@@ -61,8 +61,8 @@
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
-                    <a href="https://github.com/jptacek" class="github"><span class="icon icon-github"></span></a>
                     <a href="https://plus.google.com/+johnptacek" class="googleplus"><span class="icon icon-google-plus"></span></a>
+                    <a href="https://github.com/jptacek" class="github"><span class="icon icon-github"></span></a>
                 </li>
             </ul>
             <form class="navbar-form navbar-right hidden-xs" role="search" action="http://google.com/search"

@@ -74,7 +74,7 @@ docpadConfig = {
     disqusShortName: 'jptacek'
 
   # Google+ settings
-    googlePlusId: '117170075977212738060'
+    googlePlusId: '+JohnPtacek'
 
   collections:
     posts: ->
