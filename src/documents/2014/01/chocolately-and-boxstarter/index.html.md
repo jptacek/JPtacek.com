@@ -7,7 +7,7 @@ tags: ["Web"]
 ---
 
 I recently received a new work computer (an [Asus i7](http://www.asus.com/Notebooks_Ultrabooks/ASUS_ZENBOOK_UX301LA/) that
-weights 2.6 pounds, my old laptop, a Dell M6500 weight over 8.5 lbs, it is like I am from the future now, but I digress).
+weighs 2.6 pounds, my old laptop, a Dell M6500 weighed over 8.5 lbs, it is like I am from the future now, but I digress).
 One of the things that I don't like about getting a new PC is setting up the computer. I am very good about making sure
 all of my files are stored in the cloud (via Skydrive and DropBox) and/or is under source control. I don't fear losing stuff, it
 is the loss time in restoring my applications and environments that makes me crazy. I always forget to install a utility
