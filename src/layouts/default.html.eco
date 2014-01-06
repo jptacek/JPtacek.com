@@ -70,6 +70,8 @@
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
                     <a href="https://plus.google.com/+johnptacek" class="googleplus"><span class="icon icon-google-plus"></span></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><span class="icon icon-linkedin"></span></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><span class="icon icon-stackoverflow"></span></a>
                     <a href="https://github.com/jptacek" class="github"><span class="icon icon-github"></span></a>
                 </li>
             </ul>
