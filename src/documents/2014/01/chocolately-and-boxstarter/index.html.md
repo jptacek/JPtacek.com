@@ -23,7 +23,7 @@ For example, to install ReSharprer, fire up a command prompt and type
 ```
 and away we go.
 
-You can find out more at the [Chocolately]((http://chocolatey.org/)) site. Essentially though, you can achieve all of
+You can find out more at the [Chocolately]((http://chocolatey.org/) site. Essentially though, you can achieve all of
 this goodness by firing up a command prompt and pasting the following
 
 ```bash
