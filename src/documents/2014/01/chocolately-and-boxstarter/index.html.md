@@ -23,14 +23,14 @@ For example, to install ReSharprer, fire up a command prompt and type
 ```
 and away we go.
 
-You can find out more at the [Chocolately]((http://chocolatey.org/) site. Essentially though, you can achieve all of
-this goodness by firing up a command prompt and pasting the following
+You can find out more at the [Chocolately](http://chocolatey.org/) site. Essentially though, you can achieve all of
+this goodness by staring a command prompt and pasting the following
 
 ```bash
     @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%systemdrive%\chocolatey\bin
 ```
 
-So, [Chocolately]((http://chocolatey.org/)) solves problem the first, allowing for command line install of applications.
+So, [Chocolately](http://chocolatey.org/) solves problem the first, allowing for command line install of applications.
 When paired with [Boxstarter](http://boxstarter.org/) however, it figures out problem the second of installing many different
 applications that require reboots, etc, when you are setting up a new PC. BoxStarter handles reboots and logins
 automatically for the user. You can type one command and be on your way!
