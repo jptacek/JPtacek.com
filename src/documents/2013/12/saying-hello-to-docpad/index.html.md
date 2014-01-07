@@ -36,7 +36,7 @@ Ultimately, I ended up picking [DocPad](http://docpad.org/). I REALLY liked the 
 
 It is really very slick how easy the site setup was. I will detail my instructions down the road. I do LOVE the Node Package Manager and the magic of package.json which allows you to quickly get a site up and running on your machine.
 
-I give a lot of credit to the site redo to my old [Skyline](http://www.SkylineTechnologies) colleague and now Microsoft guy, [Jason Young] (http://www.yTechie.com). As I was investigating my next blog platform, he published a [post]( http://www.ytechie.com/2013/11/blogging-awesomeness-with-a-static-generator-and-markdown/) about migrating his site to DocPad. The gold star for Jason was taking the DocPad site and configuring Azure to compile the markdown to static HTML and then set for hosting. This is what moved me from going to Jekyll to Docpad. VERY COOL!
+I give a lot of credit to the site redo to my old [Skyline](http://www.SkylineTechnologies) colleague and now Microsoft guy, [Jason Young](http://www.yTechie.com). As I was investigating my next blog platform, he published a [post]( http://www.ytechie.com/2013/11/blogging-awesomeness-with-a-static-generator-and-markdown/) about migrating his site to DocPad. The gold star for Jason was taking the DocPad site and configuring Azure to compile the markdown to static HTML and then set for hosting. This is what moved me from going to Jekyll to Docpad. VERY COOL!
 
 Also, hat tip to [Erv Walter](http://www.ewal.net/) for great stuff he did in setting up the platform and UI that Jason and I have both, VERY liberally borrowed from.
 
