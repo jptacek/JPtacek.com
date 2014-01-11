@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Deleting Windows 8.1 Wireless Profiles
+title: What is Yammer... and why should your company use it?
 date: 2014-01-11
 tags: ["Yammer","Web"]
 
