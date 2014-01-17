@@ -82,9 +82,9 @@ We could also go an easily update our markup to display the atomic weight along 
 &nbsp;
 See it work in [JSiddle](http://jsfiddle.net)
 
-<iframe style="width: 100%; height: 300px;" src="result,js,html" height="240" width="320">
-Your browser does not allow iFrames.
-</iframe>
+<iframe style="width: 100%; height: 300px;" src="http://jsfiddle.net/jhptacek/yj27f/embedded/result,js,html" height="240" width="320"><br />
+ Your browser does not allow iFrames.<br />
+ </iframe>
 &nbsp;
 Looking at our page though, we have a lot of data that we are displaying. Angular has the concept of filters, which can be applied to our expressions. An example of this is the [limitTo](http://docs.angularjs.org/api/ng.filter:limitTo) filter. We can limit the number of items we display, in our scenario to 10\. This is as simple as
 
@@ -97,9 +97,9 @@ We now our displaying ten results on our page
 
 See it work in [JSiddle](http://jsfiddle.net)
 
-<iframe style="width: 100%; height: 300px;" src="result,js,html" height="240" width="320">
-Your browser does not allow iFrames.
-</iframe>
+<iframe style="width: 100%; height: 300px;" src="http://jsfiddle.net/jhptacek/bubL6/embedded/result,js,html" height="240" width="320"><br />
+  Your browser does not allow iFrames.<br />
+  </iframe>
 
 Angular can also quickly allow the data to be searched. An input box can be created, we can use the ng-model syntax to define a variable, and then use that as our filter. First, we can create an input box
 
@@ -123,9 +123,9 @@ We can then type in an element name and the list will narrow down.,
 
 See it work in [JSiddle](http://jsfiddle.net)
 
-<iframe style="width: 100%; height: 300px;" src="result,js,html" height="240" width="320">
-Your browser does not allow iFrames.
-</iframe>
+<iframe style="width: 100%; height: 300px;" src="http://jsfiddle.net/jhptacek/UxcSa/embedded/result,js,html" height="240" width="320"><br />
+ Your browser does not allow iFrames.<br />
+ </iframe>
 
 You will notice that this does not REALLY work. What we want to be able to do is filter the name. For example, if you type 1, you will see results appear, for example Hydrogen. The reason for this is we are filtering on the WHOLE json object, so when we type 1 we are getting Hydrogen's Atomic number of 1 as a result and Lithium's atomic weight of 6.941, etc.
 
