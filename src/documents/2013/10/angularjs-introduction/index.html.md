@@ -39,9 +39,9 @@ The cool thing is we are automatically displaying data from a HTML input control
 
 See it work in [JSiddle](http://jsfiddle.net)
 
-<iframe style="width: 100%; height: 300px;" src="result,html" height="240" width="320">
-Your browser does not allow iFrames.
-</iframe>
+<iframe style="width: 100%; height: 300px;" src="http://jsfiddle.net/jhptacek/bkrXH/embedded/result,html" height="240" width="320"><br />
+ Your browser does not allow iFrames.<br />
+ </iframe>
 The databinidng in Angular goes a little deeper than just displaying text. We would update our binding syntax to tie into Javascript functions. For example, changing {{displayText}} to {{displayText.toUpperCase()}} and our input will then be uppercased.
 
 <span style="font-family: Courier New;"> <h3>{{displayText.toUpperCase()}}</h3>
@@ -50,9 +50,9 @@ The databinidng in Angular goes a little deeper than just displaying text. We wo
 ![](100113_2348_AngularJSIn3.png)
 See it work in [JSiddle](http://jsfiddle.net)
 
-<iframe style="width: 100%; height: 300px;" src="result,html" height="240" width="320">
-Your browser does not allow iFrames.
-</iframe>
+<iframe style="width: 100%; height: 300px;" src="http://jsfiddle.net/jhptacek/sHQaL/embedded/result,html" height="240" width="320"><br />
+ Your browser does not allow iFrames.<br />
+ </iframe>
 
 You can also have expressions, such as {{'You typed: '+ displayText.toUpperCase()}}. This will then prepend the string 'You typed: ' to what is displayed in our browser.
 
@@ -65,9 +65,10 @@ You can also have expressions, such as {{'You typed: '+ displayText.toUpperCase(
 
 See it work in [JSiddle](http://jsfiddle.net)
 
-<iframe style="width: 100%; height: 300px;" src="result,html" height="240" width="320">
-Your browser does not allow iFrames.
-</iframe>
+<iframe style="width: 100%; height: 300px;" src="http://jsfiddle.net/jhptacek/6nQJZ/embedded/result,html" height="240" width="320"><br />
+ Your browser does not allow iFrames.<br />
+ </iframe></p>
+
 
 The magic of curly braces continues though. Angular also has the concept of filters for our binding element that we can then apply to the code. We can have Angular upper case our code instead of doing it ourselves by having our binding be {{ displayText ' uppercase}}. You can also filter to things such as numbers, limit the inputs being displayed etc.
 
@@ -98,9 +99,10 @@ Our HTML
 
 See it work in [JSiddle](http://jsfiddle.net)
 
-<iframe style="width: 100%; height: 300px;" src="result,html" height="240" width="320">
-Your browser does not allow iFrames.
-</iframe>
+<iframe style="width: 100%; height: 300px;" src="http://jsfiddle.net/jhptacek/y2URH/embedded/result,html" height="240" width="320"><br />
+ Your browser does not allow iFrames.<br />
+ </iframe></p>
+
 
 And just since we are having so much fun, we can use angular to calculate the volume and surface area of a cube
 
@@ -127,9 +129,10 @@ And just since we are having so much fun, we can use angular to calculate the vo
 
 See it work in [JSiddle](http://jsfiddle.net)
 
-<iframe style="width: 100%; height: 300px;" src="result,html" height="240" width="320">
-Your browser does not allow iFrames.
-</iframe>
+<iframe style="width: 100%; height: 300px;" src="http://jsfiddle.net/jhptacek/KaLkr/embedded/result,html" height="240" width="320"><br />
+  Your browser does not allow iFrames.<br />
+  </iframe>
+
 
 It is pretty cool that we are able to write these quick little applications without any Javascript. Just by using Angular and it's built in databinding functionality!
 
