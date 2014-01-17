@@ -2,7 +2,7 @@
 layout: post
 title: Setting up email for a Custom Domain on a Windows Azure hosted website
 date: 2013-02-15
-tags: ["Azure","Azure","dns","DNSimple","email","Web"]
+tags: ["Azure","DNS","DNSimple","email","Web"]
 ---
 
 The blog site you are currently on, jptacek.com, is using [Windows Azure websites](http://www.windowsazure.com/en-us/home/scenarios/web-sites/), which is a great way to quickly get a web presence up and running. The site also provides very low barrier to entry for setting up blogging engines or CMS applications. The one thing it does not do though is offer email services out of the box.

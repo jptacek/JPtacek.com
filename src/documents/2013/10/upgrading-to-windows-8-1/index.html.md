@@ -2,7 +2,7 @@
 layout: post
 title: Upgrading to Windows 8.1 from the Windows 8.1 Preview
 date: 2013-10-21
-tags: ["windows 8","Windows 8"]
+tags: ["Windows 8"]
 ---
 
 I recently upgraded a Windows RT device from the Win 8.1 preview to the final version of Win 8.1\. Inexplicably, I found the install a bit confusing. There really did not seem to be a lot of information being displayed during the process, which made the install look like it was hung. I thought I would document the steps I took to make things a bit more apparent what is happening during the install.

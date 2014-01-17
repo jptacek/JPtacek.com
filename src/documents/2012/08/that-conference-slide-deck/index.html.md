@@ -2,7 +2,7 @@
 layout: post
 title: 2012 That Conference Slide Deck
 date: 2012-08-20
-tags: ["That Conference","That Conference","Web"]
+tags: ["That Conference","Web"]
 ---
 
 Several people have asked for copies of my presentation at [That Conference](http://www.thatconference.com/ "That Conference"). Here, in all it's glory, some slides on SharePoint Security, Windows Identity Foundation and Azure Access Control Services!

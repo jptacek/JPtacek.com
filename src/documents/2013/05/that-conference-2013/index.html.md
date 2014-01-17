@@ -2,7 +2,7 @@
 layout: post
 title: That Conference 2013
 date: 2013-05-14
-tags: ["Community","That Conference","That Conference","web"]
+tags: ["Community","That Conference","Web"]
 ---
 
 That Conference 2013 tickets go on sale tomorrow (5/15). If you are invested in your career and love making the web a more awesome place, you should be buying a ticket. Allow me to ramble a bit and elaborate...

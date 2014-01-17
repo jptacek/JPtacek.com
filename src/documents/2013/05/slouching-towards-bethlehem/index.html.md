@@ -2,7 +2,7 @@
 layout: post
 title: Slouching Towards Bethlehem: Jump Starting Microsoft’s Devices and Services Transition
 date: 2013-05-21
-tags: ["Business","Microsoft","Nokia","windows 8","Xbox"]
+tags: ["Business","Microsoft","Nokia","Windows 8","Xbox"]
 ---
 
 [Microsoft](http://www.Microsoft.com/), over the last year, has stated they are a devices and services company. In a lot of ways, this is not just not true <span style="font-family: Wingdings;">J</span>. Microsoft WANTS to be a services and devices company. Right now they are an enterprise Software company that sells the world's most popular PC operating system in a world where PC sales are quickly falling.

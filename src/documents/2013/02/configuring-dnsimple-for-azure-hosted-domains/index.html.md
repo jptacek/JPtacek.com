@@ -2,7 +2,7 @@
 layout: post
 title: Configuring DNSimple for Azure Hosted Domains
 date: 2013-02-11
-tags: ["Azure","Azure","DNSimple","Web","web"]
+tags: ["Azure","DNSimple","Web"]
 ---
 
 [DNSimple](https://dnsimple.com/) is a great service for hosting and configuring DNS for domains you control. It also benefits by not being Go Daddy. I hate Go Daddy. They supported both SOPA and PIPA, run sexist television commercials and I have no love for their elephant killing CEO. Then there is their utterly confusing website, upselling tricks and poor customer service. Don't use Go Daddy.

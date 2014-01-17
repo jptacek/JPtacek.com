@@ -2,7 +2,7 @@
 layout: post
 title: Mobile Apps Provide the "Finishing Touches" to the Appleton Compassion Project
 date: 2011-05-11
-tags: ["Appleton Compassion","Giveology","Mobile","Mobile","Web"]
+tags: ["Appleton Compassion","Giveology","Mobile","Web"]
 ---
 
 The [Appleton Compassion Project](http://www.appletoncompassion.org/)is a community art project in which all Appleton Area School District students created a 6" x 6" tile depicting their idea of compassion. Each student then wrote a statement about their tile and what compassion means to them. The art and statements can be viewed in the Trout Museum of Art or online at www.appletoncompassion.org. Adding the writing element to the art project has produced some very well rounded, heartfelt depictions of the word "Compassion".
