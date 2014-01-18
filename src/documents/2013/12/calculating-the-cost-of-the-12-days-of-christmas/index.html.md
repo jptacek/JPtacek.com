@@ -244,5 +244,3 @@ christmasApp.controller('christmasController',
 </html>
 ```
 This blog post originally appeared at [Skyline Technologies](http://skylinetechnologies.com/Blog/Article/2403/Day-Two-How-Much-Do-The-Twelve-Days-of-Christmas-Cost.aspx)
-<script src="scripts/12DaysApp.js"></script>
-<script src="scripts/christmasController.js"></script>
