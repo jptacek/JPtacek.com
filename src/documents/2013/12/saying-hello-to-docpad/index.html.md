@@ -6,7 +6,7 @@ tags: ["WordPress","Blog","DocPad"]
 
 ---
 
-I recently [blogged](/2013/12/saying-goodbye-to-wordpress/) about moving off of WordPress to a new blogging platform.
+I recently [blogged](http://www.jptacek.com/2013/12/saying-goodbye-to-wordpress/) about moving off of WordPress to a new blogging platform.
 I have been looking at several different options during this time and have finally picked one. There were three that really piqued my interest; [Ghost](http://www.tryghost.org), [Jekyll](http://jekyllrb.com/) with hosting on Github, and [DocPad](http://docpad.org/).
 
 Each of the platforms had different things that made it interesting to me, and some things I did not like. Let's review each of them
