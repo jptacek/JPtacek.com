@@ -2,13 +2,14 @@
 layout: post
 title: Calculating the Cost of the 12 Days of Christmas
 date: 2013-12-12
-scripts: ["scripts/12DaysApp.js", "scripts/christmasController.js"]
 tags: ["AngularJS", "JavaScript", "Skyline Technologies", "Web"]
 ---
+<script src='/2013/12/calculating-the-cost-of-the-12-days-of-christmas/scripts/12DaysApp.js'></script>
+<script src='/2013/12/calculating-the-cost-of-the-12-days-of-christmas/scripts/christmasController.js'></script>
 
 Every year in December, families gather around the table to celebrate Christmas. If your house is anything like my house, the good times, food and conversation can quickly escalate into a battle over what is the true cost of the classic Christmas Song, the 12 Days of Christmas! This year, I took matters into my own hand and wrote a calculator, that will calculate the cost of the 12 days of Christmas using Google's Javascript Framework, AngularJS. No more bickering at the family table over the holidays!
 
-AngularJS is a Javascript framework from Google that focuses on building complex data applications. It has a very strong data first philosophy, which is a little different than jQuery which focuses more on DOM manipulation. You can find out more about AngularJS at the [official site](http://angularjs.org/), or read some recent blog posts I have written up at [http://www.jptacek.com/tag/angularjs/](http://www.jptacek.com/tag/angularjs/).
+AngularJS is a Javascript framework from Google that focuses on building complex data applications. It has a very strong data first philosophy, which is a little different than jQuery which focuses more on DOM manipulation. You can find out more about AngularJS at the [official site](http://angularjs.org/), or read some recent blog posts I have written up at [http://www.jptacek.com/tags/angularjs/](http://www.jptacek.com/tags/angularjs/).
 
 AngularJS is a Model View Controller (MVC) framework. The model represents our data, or an object. In our case, the model will be the cost of the items in the twelve days of Christmas; e.g., a partridge, a pear tree, a turtle dove, etc. The view is our HTML page which is responsible for displaying data. The controller is responsible for marshalling the data to the view, and helping control its state. To enable our 12 Days calculator, we will take advantage of these AngularJS features.
 
@@ -27,6 +28,63 @@ It is worth nothing that use of data-* attributes is more "semantically" correct
 Of course, this being Javascript and all, we need references to JavaScript files that contain this logic for implementation. Usually in structuring a project there will be an app.js file that sets up your Angular application, controllers for interacting between your model and the view as well as services.
 
 Our app.js file, which we call 12DaysApp.js, is just two lines and creates the scope we reference in our body markup, christmasApp.
+<div id='appContainer' data-ng-app="christmasApp">
+<div class="container" id="12Days" data-ng-controller="christmasController">
+    <h2>12 Days of Christmas</h2>
+    <div class="row-fluid">
+        <div class="span8">Partridge: <input id="partridgeEle" data-ng-model="partridge" type="text"> Pear Tree: <input id="pearTreeEle" data-ng-model="pearTree" type="text"> </div>
+        <div class="span4">Day 1: {{day1()| currency:"$"}}</div>
+    </div>
+    <div class="row-fluid">
+        <div class="span8">Two Turtle Doves: <input id="turtleEle" data-ng-model="turtleDove" type="text"> </div>
+        <div class="span4">Day 2: {{day2()| currency:"$"}}</div>
+    </div>
+    <div class="row-fluid">
+        <div class="span8">Three French Hens: <input id="frenchHenEle" data-ng-model="frenchHen" type="text"> </div>
+        <div class="span4">Day 3: {{day3()| currency:"$"}}</div>
+    </div>
+    <div class="row-fluid">
+        <div class="span8">Four Colly Birds: <input id="callingBirdElee" data-ng-model="callingBird" type="text"> </div>
+        <div class="span4">Day 4: {{day4()| currency:"$"}}</div>
+    </div>
+    <div class="row-fluid">
+        <div class="span8">Five Gold Rings: <input id="goldRingEle" data-ng-model="goldRing" type="text"> </div>
+        <div class="span4">Day 5: {{day5()| currency:"$"}}</div>
+    </div>
+    <div class="row-fluid">
+        <div class="span8">Six Geese a-laying: <input id="geeseEle" data-ng-model="geese" type="text"> </div>
+        <div class="span4">Day 6: {{day6()| currency:"$"}}</div>
+    </div>
+    <div class="row-fluid">
+        <div class="span8">Seven Swans a swimming: <input id="swansEle" data-ng-model="swan" type="text"> </div>
+        <div class="span4">Day 7: {{day7()| currency:"$"}}</div>
+    </div>
+    <div class="row-fluid">
+        <div class="span8">Eight Maids a Milking: <input id="milkingMaidElee" data-ng-model="milkingMaid" type="text"> </div>
+        <div class="span4">Day 8: {{day8()| currency:"$"}}</div>
+    </div>
+    <div class="row-fluid">
+        <div class="span8">Nine Ladies Dancing: <input id="ladiesEle" data-ng-model="dancingLady" type="text"> </div>
+        <div class="span4">Day 9: {{day9()| currency:"$"}}</div>
+    </div>
+    <div class="row-fluid">
+        <div class="span8">10 Lords-a-Leaping: <input id="lordsEle" data-ng-model="lord" type="text"> </div>
+        <div class="span4">Day 10: {{day10()| currency:"$"}}</div>
+    </div>
+    <div class="row-fluid">
+        <div class="span8">Eleven Pipers piping: <input id="pipersEle" data-ng-model="piper" type="text"> </div>
+        <div class="span4">Day 11: {{day11()| currency:"$"}}</div>
+    </div>
+    <div class="row-fluid">
+        <div class="span8">Twelve Drummers Drumming: <input id="drummersEle" data-ng-model="drummer" type="text"> </div>
+        <div class="span4">Day 12: {{day12()| currency:"$"}}</div>
+    </div>
+    <div class="row-fluid">
+        <div class="span8">Total Cost of the twelve days:</div>
+        <div class="span4">{{totalCostChristmas()| currency:"$"}}</div>
+    </div>
+    </div>
+</div>
 
 _12DaysApp.js
 _
@@ -244,5 +302,3 @@ christmasApp.controller('christmasController',
 </html>
 ```
 This blog post originally appeared at [Skyline Technologies](http://skylinetechnologies.com/Blog/Article/2403/Day-Two-How-Much-Do-The-Twelve-Days-of-Christmas-Cost.aspx)
-<script src='scripts/12DaysApp.js'><script>
-<script src='scripts/christmasController.js'><script>

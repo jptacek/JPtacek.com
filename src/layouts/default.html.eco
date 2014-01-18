@@ -36,6 +36,7 @@
 
     <%- @getBlock('meta').toHTML() %>
     <%- @getBlock('styles').toHTML() %>
+<script src="/scripts/vendor/angular.min.js"></script>
 
     <!-- MS Live tile tag -->
     <meta name="application-name" content="JPtacek.Com"/>
