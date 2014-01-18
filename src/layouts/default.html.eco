@@ -99,6 +99,8 @@
 <script src="/scripts/vendor/highlight.pack.js"></script>
 <!--<script src="//cdnjs.cloudflare.com/ajax/libs/coffee-script/1.6.3/coffee-script.min.js"></script>-->
 <script src="/scripts/site.js"></script>
+
+
 <!-- social scripts-->
 <!-- G+ reference-->
 <!-- Place this tag after the last +1 button tag. -->
