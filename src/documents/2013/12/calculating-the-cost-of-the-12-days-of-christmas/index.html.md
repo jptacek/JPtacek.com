@@ -13,17 +13,17 @@ AngularJS is a Javascript framework from Google that focuses on building complex
 
 AngularJS is a Model View Controller (MVC) framework. The model represents our data, or an object. In our case, the model will be the cost of the items in the twelve days of Christmas; e.g., a partridge, a pear tree, a turtle dove, etc. The view is our HTML page which is responsible for displaying data. The controller is responsible for marshalling the data to the view, and helping control its state. To enable our 12 Days calculator, we will take advantage of these AngularJS features.
 
-First, we essentially wire up our page to indicate we are going to have an Angular app by putting a <span style="font-family:Courier New">data-ng-app</span> attribute in the HTML body tag. Next, we set an area of our HTML markup that our controller is responsible for with a <span style="font-family:Courier New">data-ng-controller</span> attribute in a DIV tag.
+First, we essentially wire up our page to indicate we are going to have an Angular app by putting a <span style="font-family:Courier New">ng-app</span> attribute in the HTML body tag. Next, we set an area of our HTML markup that our controller is responsible for with a <span style="font-family:Courier New">ng-controller</span> attribute in a DIV tag.
 
 ``` xml
-<body data-ng-app="christmasApp">
+<body ng-app="christmasApp">
 <b>12 Days of Christmas Calculator</b>
-<div class="container" id="12Days" data-ng-controller="christmasController">
+<div class="container" id="12Days" ng-controller="christmasController">
 ...
 </div>
 ```
 
-It is worth nothing that use of data-* attributes is more "semantically" correct. If you want to save yourself keystrokes, you can just use <span style="font-family:Courier New">ng-app</span> or <span style="font-family:Courier New">ng-controller</span>, but if you get bothered by having warnings in your code, like me, you will want to use <span style="font-family:Courier New">data-ng-app</span>, etc.
+It is worth nothing that use of data-* attributes is more "semantically" correct. If you want to save yourself keystrokes, you can just use <span style="font-family:Courier New">ng-app</span> or <span style="font-family:Courier New">ng-controller</span>, but if you get bothered by having warnings in your code, like me, you will want to use <span style="font-family:Courier New">ng-app</span>, etc.
 
 Of course, this being Javascript and all, we need references to JavaScript files that contain this logic for implementation. Usually in structuring a project there will be an app.js file that sets up your Angular application, controllers for interacting between your model and the view as well as services.
 
@@ -32,51 +32,51 @@ Our app.js file, which we call 12DaysApp.js, is just two lines and creates the s
 <div class="container" id="12Days" ng-controller="christmasController">
     <h2>12 Days of Christmas</h2>
     <div class="row-fluid">
-        <div class="span8">Partridge: <input id="partridgeEle" data-ng-model="partridge" type="text"> Pear Tree: <input id="pearTreeEle" data-ng-model="pearTree" type="text"> </div>
+        <div class="span8">Partridge: <input id="partridgeEle" ng-model="partridge" type="text"> Pear Tree: <input id="pearTreeEle" ng-model="pearTree" type="text"> </div>
         <div class="span4">Day 1: {{day1()| currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Two Turtle Doves: <input id="turtleEle" data-ng-model="turtleDove" type="text"> </div>
+        <div class="span8">Two Turtle Doves: <input id="turtleEle" ng-model="turtleDove" type="text"> </div>
         <div class="span4">Day 2: {{day2()| currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Three French Hens: <input id="frenchHenEle" data-ng-model="frenchHen" type="text"> </div>
+        <div class="span8">Three French Hens: <input id="frenchHenEle" ng-model="frenchHen" type="text"> </div>
         <div class="span4">Day 3: {{day3()| currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Four Colly Birds: <input id="callingBirdElee" data-ng-model="callingBird" type="text"> </div>
+        <div class="span8">Four Colly Birds: <input id="callingBirdElee" ng-model="callingBird" type="text"> </div>
         <div class="span4">Day 4: {{day4()| currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Five Gold Rings: <input id="goldRingEle" data-ng-model="goldRing" type="text"> </div>
+        <div class="span8">Five Gold Rings: <input id="goldRingEle" ng-model="goldRing" type="text"> </div>
         <div class="span4">Day 5: {{day5()| currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Six Geese a-laying: <input id="geeseEle" data-ng-model="geese" type="text"> </div>
+        <div class="span8">Six Geese a-laying: <input id="geeseEle" ng-model="geese" type="text"> </div>
         <div class="span4">Day 6: {{day6()| currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Seven Swans a swimming: <input id="swansEle" data-ng-model="swan" type="text"> </div>
+        <div class="span8">Seven Swans a swimming: <input id="swansEle" ng-model="swan" type="text"> </div>
         <div class="span4">Day 7: {{day7()| currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Eight Maids a Milking: <input id="milkingMaidElee" data-ng-model="milkingMaid" type="text"> </div>
+        <div class="span8">Eight Maids a Milking: <input id="milkingMaidElee" ng-model="milkingMaid" type="text"> </div>
         <div class="span4">Day 8: {{day8()| currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Nine Ladies Dancing: <input id="ladiesEle" data-ng-model="dancingLady" type="text"> </div>
+        <div class="span8">Nine Ladies Dancing: <input id="ladiesEle" ng-model="dancingLady" type="text"> </div>
         <div class="span4">Day 9: {{day9()| currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">10 Lords-a-Leaping: <input id="lordsEle" data-ng-model="lord" type="text"> </div>
+        <div class="span8">10 Lords-a-Leaping: <input id="lordsEle" ng-model="lord" type="text"> </div>
         <div class="span4">Day 10: {{day10()| currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Eleven Pipers piping: <input id="pipersEle" data-ng-model="piper" type="text"> </div>
+        <div class="span8">Eleven Pipers piping: <input id="pipersEle" ng-model="piper" type="text"> </div>
         <div class="span4">Day 11: {{day11()| currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Twelve Drummers Drumming: <input id="drummersEle" data-ng-model="drummer" type="text"> </div>
+        <div class="span8">Twelve Drummers Drumming: <input id="drummersEle" ng-model="drummer" type="text"> </div>
         <div class="span4">Day 12: {{day12()| currency:"$"}}</div>
     </div>
     <div class="row-fluid">
@@ -125,7 +125,7 @@ We then create a JavaScript function to calculate the cost of the first day.
 
 Now, the magic of two way data binding can start, by including the AngularJS library, our application JavaScript file and our Controller JavaScript file, get two way databinding. In our HTML markup, curly braces ( <span style="font-family:Courier New">{{ }}</span> ) indicate our AngularJS model.
 
-So for the following markup, the <span style="font-family:Courier New">data-ng-model="partridge"</span> on our Input element says that we are two way binding the <span style="font-family:Courier New">$scope.partidge</span> value in our UI. And since this binding is part of a HTML Input box, whenever we make changes, it will update our UI. For example, we are displaying the Day 1 whatever value we initially set will be displayed. We then automatically update the value of function day1 via the function. This function is automatically updated and our UI as well whenever we type in a new value. This is pretty magical for developers who used to capture JavaScript key up and down events!
+So for the following markup, the <span style="font-family:Courier New">ng-model="partridge"</span> on our Input element says that we are two way binding the <span style="font-family:Courier New">$scope.partidge</span> value in our UI. And since this binding is part of a HTML Input box, whenever we make changes, it will update our UI. For example, we are displaying the Day 1 whatever value we initially set will be displayed. We then automatically update the value of function day1 via the function. This function is automatically updated and our UI as well whenever we type in a new value. This is pretty magical for developers who used to capture JavaScript key up and down events!
 
 **christmasController.js Code**
 ``` javascript
@@ -240,56 +240,56 @@ christmasApp.controller('christmasController',
     <script src="12DaysApp.js"></script>
     <script src="christmasController.js"></script>
 </head>
-<body data-ng-app="xchristmasApp">
+<body ng-app="xchristmasApp">
 <b>12 Days of Christmas Calculator</b>
-<div class="container" id="12Days" data-ng-controller="xchristmasController">
+<div class="container" id="12Days" ng-controller="xchristmasController">
     <h2>12 Days of Christmas</h2>
     <div class="row-fluid">
-        <div class="span8">Partridge: <input id="partridgeEle" data-ng-model="partridge" type="text"> Pear Tree: <input id="pearTreeEle" data-ng-model="pearTree" type="text"> </div>
+        <div class="span8">Partridge: <input id="partridgeEle" ng-model="partridge" type="text"> Pear Tree: <input id="pearTreeEle" ng-model="pearTree" type="text"> </div>
         <div class="span4">Day 1: {{day1()' currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Two Turtle Doves: <input id="turtleEle" data-ng-model="turtleDove" type="text"> </div>
+        <div class="span8">Two Turtle Doves: <input id="turtleEle" ng-model="turtleDove" type="text"> </div>
         <div class="span4">Day 2: {{day2()' currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Three French Hens: <input id="frenchHenEle" data-ng-model="frenchHen" type="text"> </div>
+        <div class="span8">Three French Hens: <input id="frenchHenEle" ng-model="frenchHen" type="text"> </div>
         <div class="span4">Day 3: {{day3()' currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Four Colly Birds: <input id="callingBirdElee" data-ng-model="callingBird" type="text"> </div>
+        <div class="span8">Four Colly Birds: <input id="callingBirdElee" ng-model="callingBird" type="text"> </div>
         <div class="span4">Day 4: {{day4()' currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Five Gold Rings: <input id="goldRingEle" data-ng-model="goldRing" type="text"> </div>
+        <div class="span8">Five Gold Rings: <input id="goldRingEle" ng-model="goldRing" type="text"> </div>
         <div class="span4">Day 5: {{day5()' currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Six Geese a-laying: <input id="geeseEle" data-ng-model="geese" type="text"> </div>
+        <div class="span8">Six Geese a-laying: <input id="geeseEle" ng-model="geese" type="text"> </div>
         <div class="span4">Day 6: {{day6()' currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Seven Swans a swimming: <input id="swansEle" data-ng-model="swan" type="text"> </div>
+        <div class="span8">Seven Swans a swimming: <input id="swansEle" ng-model="swan" type="text"> </div>
         <div class="span4">Day 7: {{day7()' currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Eight Maids a Milking: <input id="milkingMaidElee" data-ng-model="milkingMaid" type="text"> </div>
+        <div class="span8">Eight Maids a Milking: <input id="milkingMaidElee" ng-model="milkingMaid" type="text"> </div>
         <div class="span4">Day 8: {{day8()' currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Nine Ladies Dancing: <input id="ladiesEle" data-ng-model="dancingLady" type="text"> </div>
+        <div class="span8">Nine Ladies Dancing: <input id="ladiesEle" ng-model="dancingLady" type="text"> </div>
         <div class="span4">Day 9: {{day9()' currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">10 Lords-a-Leaping: <input id="lordsEle" data-ng-model="lord" type="text"> </div>
+        <div class="span8">10 Lords-a-Leaping: <input id="lordsEle" ng-model="lord" type="text"> </div>
         <div class="span4">Day 10: {{day10()' currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Eleven Pipers piping: <input id="pipersEle" data-ng-model="piper" type="text"> </div>
+        <div class="span8">Eleven Pipers piping: <input id="pipersEle" ng-model="piper" type="text"> </div>
         <div class="span4">Day 11: {{day11()' currency:"$"}}</div>
     </div>
     <div class="row-fluid">
-        <div class="span8">Twelve Drummers Drumming: <input id="drummersEle" data-ng-model="drummer" type="text"> </div>
+        <div class="span8">Twelve Drummers Drumming: <input id="drummersEle" ng-model="drummer" type="text"> </div>
         <div class="span4">Day 12: {{day12()' currency:"$"}}</div>
     </div>
     <div class="row-fluid">

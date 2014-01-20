@@ -14,7 +14,7 @@
     "coffee-script": "~1.6.3",
     "cheerio": "~0.12.3",
     "moment": "~2.4.0",
-    "docpad": "~6.60.2",
+    "docpad": "~6.60.3",
     "docpad-plugin-marked": "~2.2.0",
     "docpad-plugin-eco": "~2.0.3",
     "docpad-plugin-less": "~2.4.0",
