@@ -28,8 +28,8 @@ It is worth nothing that use of data-* attributes is more "semantically" correct
 Of course, this being Javascript and all, we need references to JavaScript files that contain this logic for implementation. Usually in structuring a project there will be an app.js file that sets up your Angular application, controllers for interacting between your model and the view as well as services.
 
 Our app.js file, which we call 12DaysApp.js, is just two lines and creates the scope we reference in our body markup, christmasApp.
-<div id='appContainer' data-ng-app="christmasApp">
-<div class="container" id="12Days" data-ng-controller="christmasController">
+<div id='appContainer' ng-app="christmasApp">
+<div class="container" id="12Days" ng-controller="christmasController">
     <h2>12 Days of Christmas</h2>
     <div class="row-fluid">
         <div class="span8">Partridge: <input id="partridgeEle" data-ng-model="partridge" type="text"> Pear Tree: <input id="pearTreeEle" data-ng-model="pearTree" type="text"> </div>
@@ -240,9 +240,9 @@ christmasApp.controller('christmasController',
     <script src="12DaysApp.js"></script>
     <script src="christmasController.js"></script>
 </head>
-<body data-ng-app="christmasApp">
+<body data-ng-app="xchristmasApp">
 <b>12 Days of Christmas Calculator</b>
-<div class="container" id="12Days" data-ng-controller="christmasController">
+<div class="container" id="12Days" data-ng-controller="xchristmasController">
     <h2>12 Days of Christmas</h2>
     <div class="row-fluid">
         <div class="span8">Partridge: <input id="partridgeEle" data-ng-model="partridge" type="text"> Pear Tree: <input id="pearTreeEle" data-ng-model="pearTree" type="text"> </div>
