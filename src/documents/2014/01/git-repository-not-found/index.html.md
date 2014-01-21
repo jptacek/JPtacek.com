@@ -35,7 +35,9 @@ You can see the message below
 
 ![GitHub Error](repoNotFound.png)
 
-Again, no changes have been made to the repo. Similar messages appeared in the GitHub client and WebStorm.
+Again, no changes have been made to the repo. Similar messages appeared in the GitHub client and WebStorm. Other
+repositories I had on GitHub I was able to commit and push changes to. The only thing I could think was that
+the case was different on my local origin in comparison to the backend GitHub repository.
 
 The fix was simple enough, reset the origin with and change the case of the URL so that it was exactly the
 same as my repository on GitHub.
