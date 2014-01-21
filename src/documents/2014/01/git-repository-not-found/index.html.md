@@ -9,7 +9,7 @@ tags: ["GitHub","Web"]
 This morning, I was pushing a small update to my blog and I received an error that my GitHub repository was unable to
 sync. Usually my workflow goes something like this...
 
-1. Commit GitHub changes via [WebStorm] (http://www.jetbrains.com/webstorm/)
+1. Commit GitHub changes via [WebStorm](http://www.jetbrains.com/webstorm/)
 2. If that doesn't work, use the GitHub Windows/WPF client http://windows.github.com/
 3. Use command line Git
 
