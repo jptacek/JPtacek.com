@@ -52,6 +52,6 @@ I then install the bevy of browsers that all web developers want at their dispos
 NodeJS, Text Editor, coding utilities, etc. I even have installation for applications I use specifically at home, for
 example, iTunes (I know, I vomit a little in my mouth each time I use it too).
 
-Not only can you setup explorer options, but you can aslo setup your Widnows environment! For example, I automatically
+Not only can you setup explorer options, but you can also setup your Windows environment! For example, I automatically
 enable Remote Desktop, Setup HyperV and IIS on my development machines. I do this all from a single command and it
 is awesome!
