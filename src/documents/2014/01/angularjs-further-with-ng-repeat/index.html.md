@@ -218,9 +218,10 @@ Green Bay Packer colors of Green and Gold. So I can add CSS elements like
 
 Then we can use the ``ng-class`` on the ``<tr>`` we are binding to in order to make even/odd rows change colors.
 
-'''xml
+
+```xml
 <tr data-ng-repeat="element in periodic.elements" data-ng-class="{tableEven: !($index%2), tableOdd: ($index%2)}">
-'''
+```
 
 It doesn't look pretty, and there are MUCH better ways to do this, but it gives you an example of how to
 think the "Angular way"
@@ -353,5 +354,5 @@ functionality is magic. Seriously, magic.
 You can either visit [http://angularperiodic.azurewebsites.net/](http://angularperiodic.azurewebsites.net/) to see the code in action and
 as always find the code out on [GitHub](https://github.com/jptacek/AngularPeriodic)
 </div>
- <script type="text/javascript" src="js/chemistryApp.js"></script>
- <script type="text/javascript" src="js/chemistryController.js"></script>
+ <script type="text/javascript" src="/2014/01/angularjs-further-with-ng-repeat/js/chemistryApp.js"></script>
+ <script type="text/javascript" src="/2014/01/angularjs-further-with-ng-repeat/js/chemistryController.js"></script>
