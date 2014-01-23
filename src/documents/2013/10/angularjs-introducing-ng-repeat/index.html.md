@@ -53,7 +53,7 @@ Our scope now has a JavaScript variable on our Angular scope called periodic, wh
 
 We start our list with a <span style="font-family: Courier New;">ul</span> tag. The next step is to apply the <span style="font-family: Courier New;">ng-repea</span>t directive to the markup we want to repeat, in this case, the <span style="font-family: Courier New;">li</span> tag, which we will go and display the name of the element. The syntax is <span style="font-family: Courier New;">ng-repeat="element in periodic.elements"</span>. Essentially, <span style="font-family: Courier New;">ng-repeat</span> is expecting an expression. In this instance, we are saying we want to loop through all items in our periodic data source, and we are going to call each item element. Last, we need to output the data for display. In this instance then element's name, which is a property on our json object called name.
 
-<pre class="brush: xml;">
+```xml
 <ul>
 
 <li data-ng-repeat="element in periodic.elements">
@@ -63,7 +63,8 @@ We start our list with a <span style="font-family: Courier New;">ul</span> tag. 
 
 </ul>
 
-</pre>
+```
+
 &nbsp;
 
 Here is a screen shot of the output
@@ -88,8 +89,10 @@ See it work in [JSiddle](http://jsfiddle.net)
 &nbsp;
 Looking at our page though, we have a lot of data that we are displaying. Angular has the concept of filters, which can be applied to our expressions. An example of this is the [limitTo](http://docs.angularjs.org/api/ng.filter:limitTo) filter. We can limit the number of items we display, in our scenario to 10\. This is as simple as
 
-<span style="font-family: Courier New;"><li data-ng-repeat="element in periodic.elements'limitTo:10 ">
-</span>
+```xml
+    <span ><li data-ng-repeat="element in periodic.elements'limitTo:10 ">
+    </span>
+```
 
 We now our displaying ten results on our page
 
@@ -103,8 +106,10 @@ See it work in [JSiddle](http://jsfiddle.net)
 
 Angular can also quickly allow the data to be searched. An input box can be created, we can use the ng-model syntax to define a variable, and then use that as our filter. First, we can create an input box
 
+```xml
 <span style="font-family: Courier New;"><input type="text" data-ng-model="elementName"/>
 </span>
+```
 
 Next, we use that as the parameter for our filter instead of limitTo by using the [filter](http://docs.angularjs.org/api/ng.filter:filter) keyword. The syntax for this is
 
