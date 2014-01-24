@@ -12,8 +12,13 @@ tags: ["AngularJS","JavaScript","Web"]
 
 ![AngularJS Logo](angularLogo.png)
 
-I am a pretty huge [Lou Reed](http://en.wikipedia.org/wiki/Lou_Reed) fan. It is quite probable I spent WAY too
-much time listening to Lou Reed and Velvet Underground music when I was a teenager. So, having said that, soon
+If you have spent any time with me in the real world, you quickly come to realize I am a music fan. If
+you have spent a little time with me, especially when I was a younger, you realize I am a huge
+[Lou Reed](http://en.wikipedia.org/wiki/Lou_Reed) fan too.
+My boss, [Tim VanHammond](https://twitter.com/tvanhammond) still holds it against me the one time
+I played Lou Reed's the Possum song without headphones when he was in the the office we shared.
+It is quite probable I spent WAY too
+much time listening to Lou Reed and Velvet Underground music when I was a teenager. So, having said all that, soon
 after Lou Reed died, I was doing a [presentation](/2013/11/fvnug-presentation-nov-2013/) at the
 [NorthEast Wisconsin Developer UserGroup](http://newdug.org/) (aka, NEWDUG and
 yes it is a lot to type) and I thought it would be fun to have a little Lou Reed shout out. Since the talk
@@ -51,11 +56,11 @@ for us!
             <td>{{album.album}}</td>
             <td>{{album.releaseDate|date}}</td>
             <td>{{album.producer}}</td>
-            <td>{{album.label}}</td>
+            <td>{{album.label}} {{album.image}}</td>
             <td><img src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;"></td>
         </tr>
     </table>
-    </div>
+   </div>
 
 Again, we have done this before. The interesting thing to note though is the album release date. JavaScript and
 dates are something that make me a little crazy, but having said that, AngularJS does a nice job. You can pass
@@ -73,9 +78,9 @@ AngularJS objects, this is something to be cognizant of. The fix is easy enough,
 attribute. This will then be part of the page processing that happens during the Angular load. Our image reference
 is now
 
-``xml
+```xml
 <img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;">
-``
+```
 
 <h3>Adding ng-src</h3>
  <div id="louTable1"  ng-controller="louCtrl" >
@@ -132,13 +137,13 @@ default local image we can reference. So let us use the Wikipedia image that I h
 
 Within our ``img`` tag we add an ``onerrror`` function like so
 
-``
+```xml
  onerror="this.src='Lou_Reed.jpg'"
-``
+``x
 
 so that our entire ``img`` tag is now
 
-``xml
+```xml
 <img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;">
 ```
 
@@ -156,7 +161,7 @@ onerror.
                 <td>{{album.releaseDate| date:'medium'}}</td>
                 <td>{{album.producer}}</td>
                 <td>{{album.label}}</td>
-                <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" onerror="this.src='Lou_Reed.jpg'" ></td>
+                <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" onerror="this.src='/2014/01/angularjs-lou-reed/Lou_Reed.jpg'" ></td>
             </tr>
         </table>
     </div>
