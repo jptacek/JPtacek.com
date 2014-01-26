@@ -24,7 +24,7 @@ This is based off the website of [Erv Walter](http://www.ewal.net/) and [Jason Y
 
 #### License
 
-Portions Copyright (c) 2013 [John Ptacek](http://www.jptacek.com/)
+Portions Copyright (c) 2014 [John Ptacek](http://www.jptacek.com/)
 
 Portions Copyright (c) 2013 [Jason Young](http://www.ytechie.com/)
 
