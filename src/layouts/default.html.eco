@@ -24,7 +24,8 @@
 
     <!-- Bootstrap -->
     <link href="/styles/site.css" rel="stylesheet" media="screen">
-
+<link href="/styles/united-bootstrap-min.css" rel="stylesheet" media="screen">
+    <link  rel="stylesheet" href="/styles/custom-bootstrap.css" />
     <link  rel="stylesheet" href="/styles/github.css" />
 
 
@@ -76,7 +77,7 @@
                     <a href="https://github.com/jptacek" class="github"><span class="icon icon-github"></span></a>
                 </li>
             </ul>
-            <form class="navbar-form navbar-right hidden-xs" role="search" action="http://google.com/search"
+            <form class="navbar-form navbar-right hidden-xs" role="search" action="http://bing.com/search"
                   method="get">
                 <div class="form-group">
                     <input type="search" name="q" class="form-control" placeholder="Search">
