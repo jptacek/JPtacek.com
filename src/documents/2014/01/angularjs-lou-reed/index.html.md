@@ -156,7 +156,7 @@ so that our entire ``img`` tag is now
 ```
 
 and we now handle missing images on page load (with ng-src) and missing images in our data source, with
-onerror.
+onerror by placing a default placeholder image for missing images.
 
  <h3>Resolve missing images</h3>
     <div id="louTable3"  ng-controller="lou2Ctrl" >
