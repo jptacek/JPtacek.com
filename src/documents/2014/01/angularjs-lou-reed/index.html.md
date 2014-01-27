@@ -49,7 +49,7 @@ for us!
 
 <h3>Lou Reed pages</h3>
 
-<div id='appContainer' ng-app="louApp">
+<div id='appLouContainer' ng-app="louApp">
  <div id="louTable0"  ng-controller="louCtrl" >
     <table class="table table-striped table-bordered table-hover table-condensed">
         <tr>
