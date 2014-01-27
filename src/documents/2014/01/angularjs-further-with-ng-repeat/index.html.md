@@ -284,6 +284,7 @@ Ultimately, our HTML looks like
             <option value="Gas">Gas</option>
             <option value="Solid">Solid</option>
             <option value="Liquid">Liquid</option>
+            <option value="Synthetic">Synthetic</option>
         </select>
         &nbsp;Order:
         <select data-ng-model="elementOrder">
