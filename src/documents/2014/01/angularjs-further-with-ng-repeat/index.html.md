@@ -62,7 +62,7 @@ First up, instead of creating an unordered list, we are going to create a table.
 
 Then we can add our data on a cell by cell basis. For this example, we are going to link to a Wikipedia article about
 each element, and then display things like the atomic number, atomic weight, etc. Tying this with our ``ng-repeat``
- directuve and
+ directove and
 our table markup becomes
 
 ```xml
@@ -346,9 +346,9 @@ Ultimately, our HTML looks like
 
 The interesting thing to note about this too is that this page is pretty heavy. It has many tables with the
 Periodic elements. However, by using client side code, we download all of the elements only once when we get
-our Javascript file. The client side functionality does the page building, helping the page load quicker.
+our JavaScript file. The client side functionality does the page building, helping the page load quicker.
 
-For those of you who hae been web coding for a while, these few number of lines to have all of this client side
+For those of you who have been web coding for a while, these few number of lines to have all of this client side
 functionality is magic. Seriously, magic.
 
 
