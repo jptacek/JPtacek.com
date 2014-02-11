@@ -236,7 +236,6 @@ and our HTML gets updated to
                 <th>Name</th><th>Atomic Number</th><th>Weight</th><th ng-show="displayAll()">Phase</th><th ng-show="displayAll()">Ionization Energy</th><th ng-show="displayAll()">Melting Point</th><th ng-show="displayAll()">Boiling</th>
             </tr>
             <tr ng-repeat="element in periodic.elements | filter:{name:elementNameOnlyTable} | limitTo:15" ng-include="templateSelect.url">
-
             </tr>
         </table>
     </form>
@@ -248,6 +247,11 @@ As you can see, templates in AngularJS offer a lot of functionality. They allow 
 work across large development teams. You can also dynamically update the look and feel based on the
 template the user selects. This is all happening client side too, reducing round trips to the server. Good
 stuff!
+
+You can either visit [http://angularperiodic.azurewebsites.net/](http://angularperiodic.azurewebsites.net/) to see the code in action and
+as always find the code out on [GitHub](https://github.com/jptacek/AngularPeriodic)
+
+
 
 <script type="text/javascript" src="/2014/02/angularJS-templates/js/chemistryApp.js"></script>
 <script type="text/javascript" src="/2014/02/angularJS-templates/js/chemistryController.js"></script>
