@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AngularJS - Lou Reed
+title: AngularJS - Image Binding in AngularJS with Lou Reed
 date: 2014-01-24
 tags: ["AngularJS","JavaScript","Web"]
 ---
@@ -11,6 +11,16 @@ tags: ["AngularJS","JavaScript","Web"]
  Contrast this to a framework like JQuery where the DOM will update your data.
 
 ![AngularJS Logo](angularLogo.png)
+
+This is the fifth in a series of posts on AngularJS where we are using Chemistry data from the periodic table
+to help us understand the framework. The others posts are
+
+1. [AngualrJS - Introduction](http://www.jptacek.com/2013/10/angularjs-introduction/)
+2. [AngularJS - Introducing AngularJS Controllers](http://www.jptacek.com/2013/10/introducing-angularjs-controllers/)
+3. [AngularJS - Introducing NG-Repeat](http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/)
+4. [AngularJS - More with NG-Repeat](http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/)
+5. AngularJS - Image Binding
+6. [AngularJS - Introducing Templates](http://www.jptacek.com/2014/02/angularJS-templates/)
 
 If you have spent any time with me in the real world, you quickly come to realize I am a music fan. If
 you have spent a little time with me, especially when I was a younger, you realize I am a huge

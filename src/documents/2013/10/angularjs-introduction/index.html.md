@@ -5,9 +5,22 @@ date: 2013-10-01
 tags: ["AngularJS","JavaScript","Web"]
 ---
 
-AngularJS is a Javascript MVC framework from the fine folks over at Google. The focus of Angular is building complex HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM. Contrast this to a framework like JQuery where the DOM will update your data.
+[AngularJS](http://www.angularjs.org) is a Javascript MVC framework from the fine folks over at
+[Google](http://www.google.com). The focus of Angular is building complex
+ HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
+ Contrast this to a framework like JQuery where the DOM will update your data.
 
-![](100113_2348_AngularJSIn1.png)
+![AngularJS Logo](angularLogo.png)
+
+This is the first in a series of posts on AngularJS where we are using Chemistry data from the periodic table
+to help us understand the framework. The others posts are
+
+1. AngualrJS - Introduction
+2. [AngularJS - Introducing AngularJS Controllers](http://www.jptacek.com/2013/10/introducing-angularjs-controllers/)
+3. [AngularJS - Introducing NG-Repeat](http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/)
+4. [AngularJS - More with NG-Repeat](http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/)
+5. [AngularJS - Image Binding](http://www.jptacek.com/2014/01/angularjs-lou-reed/)
+6. [AngularJS - Introducing Templates](http://www.jptacek.com/2014/02/angularJS-templates/)
 
 I am going to be dipping my fingers into Angular a bit over my next few blog posts, so I thought it would be worth starting with a very simple Hello World app, and then moving on to a temperature converter and finally a sphere calculator.
 
