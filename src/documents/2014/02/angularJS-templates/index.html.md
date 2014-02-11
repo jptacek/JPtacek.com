@@ -29,7 +29,7 @@ to help us understand the framework. The others posts are
 3. [AngularJS - Introducing NG-Repeat](http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/)
 4. [AngularJS - More with NG-Repeat](http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/)
 5. [AngularJS - Image Binding](http://www.jptacek.com/2014/01/angularjs-lou-reed/)
-6. [AngularJS - Introducing Templates](http://www.jptacek.com/2014/02/angularJS-templates/)
+6. AngularJS - Introducing Templates
 
 AngularJS has a lot of great features for working with HTML that allows you to split up development when you are
 doing team projects. The binding approach and directives allows for a nice separation between developers and
@@ -58,7 +58,7 @@ markup like the HTML header, etc.
 
 In our controller file, we setup an object that identifies the path to our template as in the following code snippet
 
-```xml
+```javascript
 $scope.template =  {name: 'template1.html', url: 'js/templates/element1.html'};
 ```
 
@@ -93,7 +93,7 @@ by dynamically setting the template. In our last post, we had committed crimes a
 We can do something similar here by having a second template get loaded by our page. To do this, we update our
 controller to have an array of templates, and choose which one we want, in this case, an ugly  Gold.
 
-```xml
+```javascript
 controller('chemTemplateCtrl2',
     function chemCtrl($scope) {
         $scope.periodic = perioicData;
@@ -196,7 +196,7 @@ in the page. We can easily create a function in our controller to set if we are 
 a subset based on the selected template. You can see this in the ``displayAll`` function in the final version
 of our controller
 
-```xml
+```javascript
 controller('chemTemplateCtrl3',
     function chemCtrl($scope) {
         $scope.periodic = perioicData;
