@@ -137,8 +137,8 @@ And just since we are having so much fun, we can use angular to calculate the vo
     <input type="number" ng-model="radius" value=0>
     <br/>
     <br/>
-    <b>Volume:</b> {{ (4*3.141*radius*radius*radius)/3 | number:3}} <br/>
-    <b>Surface area:</b> {{ (4*3.141*radius*radius) | number:3}} <br/>
+    <b>Volume:</b>{{(4*3.141*radius*radius*radius)/3 | number:3}}<br/>
+    <b>Surface area:</b>{{(4*3.141*radius*radius) | number:3}} <br/>
 </div>
 ```
 
