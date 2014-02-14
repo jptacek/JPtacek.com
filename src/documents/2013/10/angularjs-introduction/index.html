@@ -1,0 +1,140 @@
+---
+layout: post
+title: AngularJS - Introduction
+date: 2013-10-01
+tags: ["AngularJS","JavaScript","Web"]
+---
+
+<p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
+    <a href="http://www.google.com">Google</a>. The focus of Angular is building complex
+    HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
+    Contrast this to a framework like JQuery where the DOM will update your data.</p>
+<p><img src="angularLogo.png" alt="AngularJS Logo"></p>
+<p>This is the first in a series of posts on AngularJS where we are using Chemistry data from the periodic table
+    to help us understand the framework. The others posts are</p>
+<ol>
+    <li>AngualrJS - Introduction</li>
+    <li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
+    <li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
+    <li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
+    <li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
+    <li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
+</ol>
+<p>I am going to be dipping my fingers into Angular a bit over my next few blog posts, so I thought it would be worth
+    starting with a very simple Hello World app, and then moving on to a temperature converter and finally a
+    sphere calculator.</p>
+<p>First, like all good Javascript programs, you will need to download the Angular library or link to a CDN version.
+    You can always download the latest version from the Angular site at <a href="http://angularjs.org/"><a href="http://angularjs.org/">http://angularjs.org/</a></a>.
+    They will also show a link when you request a download of the latest Angular version via CDN, at the time of this
+    writing the link is <a href="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js">https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js</a>.</p>
+<p>Here is our HTML based page that uses Angular.</p>
+<pre class="highlight"><code class="xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Hello World<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"angular.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">ng-app</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"displayText"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>{{displayText}}<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+        <p>&nbsp;</p>
+<p>You can seed there are really four things we have done here.</p>
+<ol>
+    <li>Link out to the CDN version of the Angular library by putting a script tag in our HTML</li>
+    <li>The second is the inclusion of ng-app in our markup for the body tag. All Angular applications need to be
+        wrapped in this directive. It indicates that everything within the tab can be part of an Angular application.
+        For example, if we put the ng-app directive within a DIV tag, only content within that DIV would be within scope.
+        It is probably uber-best practice to prepend angular tags (which are always ng-something, with a data attribute to
+        ensure maximum HTML compliance, obviously, I am not doing that :)</li>
+    <li>The <code>ng-model=&quot;displayText&quot;</code> within the input type. This is the first part of our data-binding where we have
+        angular setup the variables to the name of our control</li>
+    <li>Last is the magical curly braces {{ }}. This is the Angular markup for databinding. It essentially says
+        display our model variable displayText
+        The cool thing is we are automatically displaying data from a HTML input control on our page and we have not
+        written any Javascript. The framework is handling.</li>
+</ol>
+<div id="app" ng-app="">
+
+    <div>
+        <input type="text" ng-model="displayText0" placeholder="type something">
+        <h3>{{displayText0}}</h3>
+    </div>
+
+    <p>The databinidng in Angular goes a little deeper than just displaying text. We would update our binding syntax to
+        tie into Javascript functions. For example, changing <code>{ {displayText} }</code> to
+        <code>{ {displayText.toUpperCase()} }</code> and our
+        input will then be uppercased.</p>
+    <div>
+        <input type="text" ng-model="displayText2" placeholder="type something">
+        <h3>{{displayText2.toUpperCase()}}</h3>
+    </div>
+
+    <p>You can also have expressions, such as <code>{ {&#39;You typed: &#39;+ displayText.toUpperCase()} }</code>.
+        This will then prepend
+        the string &#39;You typed: &#39; to what is displayed in our browser.</p>
+    <p><code>&lt;h3&gt;{ {&#39;You typed: &#39; + displayText.toUpperCase()} }&lt;/h3&gt;</code></p>
+    <p>&nbsp;</p>
+    <div>
+        <input type="text" ng-model="displayText3" placeholder="type something">
+        <h3>{{&#39;You typed:&#39; + displayText3.toUpperCase()}}</h3>
+    </div>
+
+    <p>The magic of curly braces continues though. Angular also has the concept of filters for our binding element that we
+        can then apply to the code. We can have Angular upper case our code instead of doing it ourselves by having our
+        binding be {{displayText | uppercase}}. You can also filter to things such as numbers, limit the inputs being
+        displayed etc.</p>
+    <p>Next up, let&#39;s just combine a couple of things to make an HTML application to convert the temperature from Degrees
+        Fahrenheit to degrees Celsius and Kelvin.</p>
+    <p>Our HTML</p>
+<pre class="highlight"><code class="handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Temperature (&amp;degF)<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"number"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"tempF"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">0</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Celcius:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> </span><span class="hljs-expression">{{ ((5/9)*(<span class="hljs-variable">tempF-</span>32)) |<span class="hljs-variable">number</span>:2 }}</span><span class="xml"> &amp;degC<span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Kelvin:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> </span><span class="hljs-expression">{{ (((5/9)*(<span class="hljs-variable">tempF-</span>32))<span class="hljs-variable">-</span>273<span class="hljs-variable">.</span>0) |<span class="hljs-variable">number</span>:2 }}</span><span class="xml"> K
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span></code></pre>
+    <p>&nbsp;</p>
+    <div id="tempConversion">
+        <b>Temperature (&deg;F)</b>
+        <input type="number" ng-model="tempF0" value="1">
+        <br>
+        <br>
+        <b>Celcius: </b> {{ (((5/9)*(tempF0-32))-0.0)|number:2 }}  &deg;C<br>
+        <b>Kelvin: </b> {{ (((5/9)*(tempF0-32))-273.0) |number:2 }} K
+    </div>
+
+    <p>And just since we are having so much fun, we can use angular to calculate the volume and surface area of a cube</p>
+    <p>&nbsp;</p>
+<pre class="highlight"><code class="handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Radius of Sphere<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"number"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"radius"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">0</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Volume:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span></span><span class="hljs-expression">{{(4*3<span class="hljs-variable">.</span>141*<span class="hljs-variable">radius</span>*<span class="hljs-variable">radius</span>*<span class="hljs-variable">radius</span>)/3 | <span class="hljs-variable">number</span>:3}}</span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Surface area:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span></span><span class="hljs-expression">{{(4*3<span class="hljs-variable">.</span>141*<span class="hljs-variable">radius</span>*<span class="hljs-variable">radius</span>) | <span class="hljs-variable">number</span>:3}}</span><span class="xml"> <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span></code></pre>
+    <div id="sphereVol">
+        <b>Radius of Sphere</b>
+        <input type="number" ng-model="radiusZ" value="1">
+        <br>
+        <br>
+        <b>Volume: </b> {{ radiusZ*radiusZ | number:3}} <br>
+        <b>Surface area: </b> {{ (4*3.141*radiusZ*radiusZ) | number:3}} <br>
+    </div>
+
+
+    <p></p></div>
+It is pretty cool that we are able to write these quick little applications without any Javascript. Just by using Angular and it&#39;s built in databinding functionality!<p></p>
+<p>I am still working on a good way to get some Javascript demos into my Wordpress blog. In the interim, you can check them out at an Azure website I created to host these demos, <a href="http://angularperiodic.azurewebsites.net/"><a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a></a>. Specifically</p>
+<p><a href="http://angularperiodic.azurewebsites.net/Demo1/helloworld.html">Hello World</a></p>
+<p><a href="http://angularperiodic.azurewebsites.net/Demo1/tempConversion.html">Temperature Conversion</a></p>
+<p><a href="http://angularperiodic.azurewebsites.net/Demo1/spherecalculation.html">Sphere Calculation</a></p>
+<p>&nbsp;</p>
+<p><strong>Update:</strong> I have created JSFiddles to embed the code samples. You can either visit <a href="http://angularperiodic.azurewebsites.net/"><a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a></a> to see the code in action or view the JSFiddles embedded on the page. As always, the code is out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a></p>
+
+</div>

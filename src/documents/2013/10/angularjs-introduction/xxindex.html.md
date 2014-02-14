@@ -67,12 +67,13 @@ written any Javascript. The framework is handling.
 <div id="app" ng-app>
 
 <div>
-    <input type="text" ng-model="displayText" placeholder="type something"/>
-    <h3>{{displayText}}</h3>
+    <input type="text" ng-model="displayText0" placeholder="type something"/>
+    <h3>{{displayText0}}</h3>
 </div>
 
 The databinidng in Angular goes a little deeper than just displaying text. We would update our binding syntax to
-tie into Javascript functions. For example, changing {{displayText}} to {{displayText.toUpperCase()}} and our
+tie into Javascript functions. For example, changing &#123;&#123;displayText&#125;&#125; to
+&#123;&#123;displayText.toUpperCase()&#125;&#125; and our
 input will then be uppercased.
 
 
@@ -83,7 +84,8 @@ input will then be uppercased.
     <h3>{{displayText2.toUpperCase()}}</h3>
 </div>
 
-You can also have expressions, such as ``{{'You typed: '+ displayText.toUpperCase()}}``. This will then prepend
+You can also have expressions, such as ``{{'You typed: '+ displayText.toUpperCase()}}``.
+This will then prepend
 the string 'You typed: ' to what is displayed in our browser.
 
 ``<h3>{{'You typed: ' + displayText.toUpperCase()}}</h3>``
@@ -97,7 +99,7 @@ the string 'You typed: ' to what is displayed in our browser.
 
 The magic of curly braces continues though. Angular also has the concept of filters for our binding element that we
 can then apply to the code. We can have Angular upper case our code instead of doing it ourselves by having our
-binding be {{ displayText | uppercase}}. You can also filter to things such as numbers, limit the inputs being
+binding be <pre>{{displayText | uppercase}}</pre>. You can also filter to things such as numbers, limit the inputs being
 displayed etc.
 
 Next up, let's just combine a couple of things to make an HTML application to convert the temperature from Degrees
@@ -120,11 +122,11 @@ Our HTML
 
 <div id="tempConversion">
     <b>Temperature (&degF)</b>
-    <input type="number" ng-model="tempF" value=0>
+    <input type="number" ng-model="tempF0" value=0>
     <br/>
     <br/>
-    <b>Celcius:</b> {{ (((5/9)*(tempF-32))-0.0)|number:2 }}  &degC<br/>
-    <b>Kelvin:</b> {{ (((5/9)*(tempF-32))-273.0) |number:2 }} K
+    <b>Celcius:</b> {{ (((5/9)*(tempF0-32))-0.0)|number:2 }}  &degC<br/>
+    <b>Kelvin:</b> {{ (((5/9)*(tempF0-32))-273.0) |number:2 }} K
 </div>
 
 And just since we are having so much fun, we can use angular to calculate the volume and surface area of a cube
@@ -144,11 +146,11 @@ And just since we are having so much fun, we can use angular to calculate the vo
 
 <div id="sphereVol">
     <b>Radius of Sphere</b>
-    <input type="number" ng-model="radius" value=0>
+    <input type="number" ng-model="radiusZ" value=0>
     <br/>
     <br/>
-    <b>Volume:</b> {{ ((4*3.141*radius*radius*radius)/3) | number:3}} <br/>
-    <b>Surface area:</b> {{ (4*3.141*radius*radius) | number:3}} <br/>
+    <b>Volume:</b> {{ radiusZ*radiusZ | number:3}} <br/>
+    <b>Surface area:</b> {{ (4*3.141*radius0*radius0) | number:3}} <br/>
 </div>
 
 
