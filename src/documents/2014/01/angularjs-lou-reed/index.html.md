@@ -26,7 +26,7 @@ If you have spent any time with me in the real world, you quickly come to realiz
 you have spent a little time with me, especially when I was a younger, you realize I am a huge
 [Lou Reed](http://en.wikipedia.org/wiki/Lou_Reed) fan too.
 My boss, [Tim VanHammond](https://twitter.com/tvanhammond) still holds it against me the one time
-I played Lou Reed's the Possum song without headphones when he was in the the office we shared.
+I played Lou Reed's the Possum song without headphones when he was in the office we shared.
 The reality is, I probably spent WAY too
 much time listening to Lou Reed and Velvet Underground music when I was a teenager. So, having said all that, soon
 after Lou Reed died, I was doing a [presentation](/2013/11/fvnug-presentation-nov-2013/) at the
