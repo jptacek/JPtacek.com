@@ -3,11 +3,11 @@
 var chemistryApp = angular.module('chemistryApp', ['ngRoute']).
     config(function($routeProvider) {
         $routeProvider
-            .when('/', {
-                templateUrl:'templates/chemList.html',
+            .when('/chemList', {
+                templateUrl:'/2014/02/angularJS-IntroToRouting/templates/chemList.html',
                 controller: 'chemListCtrl'
             }).when('/chemList/:atomicNumber', {
-                templateUrl:'templates/chemItem.html',
+                templateUrl:'/2014/02/angularJS-IntroToRouting/templates/chemItem.html',
                 controller: 'chemItemCtrl'
             })
             .otherwise({redirectTo: '/'});

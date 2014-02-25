@@ -80,7 +80,7 @@ Both of these routes are then chained to our creation of our app like so
 var chemistryApp = angular.module('chemistryApp', ['ngRoute']).
     config(function($routeProvider) {
         $routeProvider
-            .when('/', {
+            .when('/chemList', {
                 templateUrl:'templates/chemList.html',
                 controller: 'chemListCtrl'
             }).when('/chemList/:atomicNumber', {
@@ -100,6 +100,10 @@ a view to our page markup. That is as simple as
         <data-ng-view></data-ng-view>
 
 ```
+
+<a href="./#/chemList">List</a>
+<br/>
+        <ng-view></ng-view>
 
 Our controllers and templates are very similar to what we have done before. For example,
 our controller class is now
