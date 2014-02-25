@@ -133,6 +133,9 @@ parameter for the atomic number as above ``var itemId = $routeParams.atomicNumbe
 Now, we are dynamically loading data and swapping views based on the route we select. Very
 nice!
 
+You can either visit [http://angularperiodic.azurewebsites.net/](http://angularperiodic.azurewebsites.net/) to see the code in action and
+as always find the code out on [GitHub](https://github.com/jptacek/AngularPeriodic)
+
 
 <script type="text/javascript" src="/2014/02/angularJS-IntroToRouting/js/chemistryApp.js"></script>
 <script type="text/javascript" src="/2014/02/angularJS-IntroToRouting/js/chemistryController.js"></script>
