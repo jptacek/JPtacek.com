@@ -24,9 +24,13 @@ to help us understand the framework. The others posts are
 6. [AngularJS - Introducing Templates](http://www.jptacek.com/2014/02/angularJS-templates/)
 7. AngularJS - Introducing Routing
 
+Note: AngularJS does not allow for more than one ng-app directive. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.
+
 AngularJS is, at its heart, a Single Page Application (SPA) platform. While you can use it in
 many ways for client side development, it is great for SPA apps, and that means routing. In
-this post, we will introduce AnuglarJS routing. More information at the [official docs] (http://docs.angularjs.org/api/ngRoute/service/$route).
+this post, we will introduce AnuglarJS routing. More information can fe found at the
+[official docs](http://docs.angularjs.org/api/ngRoute/service/$route).
 
 Routes are a way for multiple views to be used within a single HTML page. This enables you
 page to look more "app-like" because users are not seeing page reloads happen within the
@@ -34,8 +38,10 @@ browser. To setup a page for routing there are several steps, but nothing overly
 
 First, AngularJS requires a service, the [route service](http://docs.angularjs.org/api/ngRoute/service/$route)
 that is not part of the default Angular library. You will need to load a separate
-javascript file, ``angular-route.js``, as part of your script loading. For us, that looks a
-lot like
+javascript file, ``angular-route.js``, as part of your script loading. This file can be downloaded as part of minified
+file from the [AngularJS.Org](http://www.angularjs.org) site or via CDN. After downloading, we update our
+scripts reference to include the routing file as so
+
 
 ```xml
 <script type="text/javascript" src="../js/lib/angular-route.min.js"></script>
@@ -101,21 +107,17 @@ a view to our page markup. That is as simple as
 
 ```
 
-<a href="./#/chemList">List</a>
-<br/>
-        <ng-view></ng-view>
-
 Our controllers and templates are very similar to what we have done before. For example,
 our controller class is now
 
 
 ```javascript
 chemistryApp.controller('chemListCtrl',
-    function chemCtrl($scope) {
+    function chemListCtrl($scope) {
         $scope.periodic = periodicData;
     }
 ).controller('chemItemCtrl',
-    function chemCtrl($scope, $log,$routeParams) {
+    function chemItemCtrl($scope, $log,$routeParams) {
         $log.info('hello world');
         var itemId = $routeParams.atomicNumber;
         $log.info(itemId);
@@ -132,6 +134,14 @@ parameter for the atomic number as above ``var itemId = $routeParams.atomicNumbe
 
 Now, we are dynamically loading data and swapping views based on the route we select. Very
 nice!
+
+Watch it in action
+<div id="app" ng-app="chemistryApp">
+<a href="./#/chemList">List</a>
+<br/>
+        <ng-view></ng-view>
+</div>
+
 
 You can either visit [http://angularperiodic.azurewebsites.net/](http://angularperiodic.azurewebsites.net/) to see the code in action and
 as always find the code out on [GitHub](https://github.com/jptacek/AngularPeriodic)

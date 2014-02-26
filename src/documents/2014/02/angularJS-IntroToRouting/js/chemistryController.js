@@ -1,9 +1,10 @@
 chemistryApp.controller('chemListCtrl',
-    function chemCtrl($scope) {
+    function chemListCtrl($scope,$log) {
+        $log.info('in list');
         $scope.periodic = periodicData;
     }
 ).controller('chemItemCtrl',
-    function chemCtrl($scope, $log,$routeParams) {
+    function chemItemCtrl($scope, $log,$routeParams) {
         $log.info('hello world');
         var itemId = $routeParams.atomicNumber;
         $log.info(itemId);
