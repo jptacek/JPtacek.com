@@ -21,6 +21,10 @@ to help us understand the framework. The others posts are
 4. [AngularJS - More with NG-Repeat](http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/)
 5. AngularJS - Image Binding
 6. [AngularJS - Introducing Templates](http://www.jptacek.com/2014/02/angularJS-templates/)
+7. [AngularJS - Introducing Routing](http://www.jptacek.com/2014/02/angularJS-IntroToRouting/)
+
+Note: AngularJS does not allow for more than one ng-app directive. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.
 
 If you have spent any time with me in the real world, you quickly come to realize I am a music fan. If
 you have spent a little time with me, especially when I was a younger, you realize I am a huge

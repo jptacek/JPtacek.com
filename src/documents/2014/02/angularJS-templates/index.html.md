@@ -30,6 +30,10 @@ to help us understand the framework. The others posts are
 4. [AngularJS - More with NG-Repeat](http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/)
 5. [AngularJS - Image Binding](http://www.jptacek.com/2014/01/angularjs-lou-reed/)
 6. AngularJS - Introducing Templates
+7. [AngularJS - Introducing Routing](http://www.jptacek.com/2014/02/angularJS-IntroToRouting/)
+
+Note: AngularJS does not allow for more than one ng-app directive. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.
 
 AngularJS has a lot of great features for working with HTML that allows you to split up development when you are
 doing team projects. The binding approach and directives allows for a nice separation between developers and

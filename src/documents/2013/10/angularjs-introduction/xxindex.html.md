@@ -21,6 +21,10 @@ to help us understand the framework. The others posts are
 4. [AngularJS - More with NG-Repeat](http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/)
 5. [AngularJS - Image Binding](http://www.jptacek.com/2014/01/angularjs-lou-reed/)
 6. [AngularJS - Introducing Templates](http://www.jptacek.com/2014/02/angularJS-templates/)
+7. [AngularJS - Introducing Routing](http://www.jptacek.com/2014/02/angularJS-IntroToRouting/)
+
+Note: AngularJS does not allow for more than one ng-app directive. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.
 
 I am going to be dipping my fingers into Angular a bit over my next few blog posts, so I thought it would be worth
 starting with a very simple Hello World app, and then moving on to a temperature converter and finally a

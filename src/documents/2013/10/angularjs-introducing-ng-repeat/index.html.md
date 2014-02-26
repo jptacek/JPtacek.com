@@ -21,6 +21,10 @@ to help us understand the framework. The others posts are
 4. [AngularJS - More with NG-Repeat](http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/)
 5. [AngularJS - Image Binding](http://www.jptacek.com/2014/01/angularjs-lou-reed/)
 6. [AngularJS - Introducing Templates](http://www.jptacek.com/2014/02/angularJS-templates/)
+7. [AngularJS - Introducing Routing](http://www.jptacek.com/2014/02/angularJS-IntroToRouting/)
+
+Note: AngularJS does not allow for more than one ng-app directive. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.
 
 We have previously talked about AngularJS and controllers. However, an important part of web development is displaying data, especially repeating data. We are going to use our Periodical data and look at options for displaying on the page.
 
