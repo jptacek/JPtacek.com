@@ -13,11 +13,11 @@ platform for creating mobile applications using native web technologies produced
 version 1.9 of the product, they Open Sourced PhoneGap and called it [Cordova](http://cordova.apache.org/). They kept the PhoneGap
  name and have extended things a bit by creating an great back end system to build for multiple platforms as well as starter solution
  for different platforms. More information about PhoneGap can be found at [phonegap.com](http://phonegap.com/). The reality is I,
- and most people refer to the names interchangeably, but there are differences.
+ and most people, refer to the names interchangeably, but there are differences.
 
-To install Cordova on Windows 8, follow these steps.
+So with that out of the way, let's look at how wo install Cordova on Windows 8.
 
-First, you will need to download and install Node.js (http://nodejs.org/download). After this, you should be able to start up PowerShell and run Node from the command line. You can ensure you have node setup by running node –version within a PowerShell prompt
+First, you will need to download and install Node.js from http://nodejs.org/download. After this, you should be able to start up PowerShell and run Node from the command line. You can ensure you have node setup by running node –version within a PowerShell prompt
 
 ![Cordova Version check](nodeCheck.png)
 
