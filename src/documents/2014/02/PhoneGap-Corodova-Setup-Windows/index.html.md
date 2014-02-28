@@ -1,12 +1,19 @@
 ---
 layout: post
 title: Setting Up Cordova (PhoneGap) for Development on Windows Machines
-date: 2014-02-10
+date: 2014-02-28
 tags: ["PhoneGap","Cordova","JavaScript","Web"]
 ---
 
 Cordova, also known as PhoneGap, is an interesting technology to bundle up mobile web apps created with HTML, CSS and JavaScript for deployment across multiple phone platforms, such as iOS and Android. Cordova also has a JavaScript library that provides access to phone features such as the camera, accelerometer, compass, etc. For organizations that don’t want to invest in coding up an application for multiple platforms, it can be a quick option.
 Recent versions of Cordova have utilized a Command Line Interface (CLI) for installation and configuration leveraging Node.JS for their implementation.
+
+The terms PhoneGap and Cordova can be a bit confusing for folks, especially for those just getting started. PhoneGap was a
+platform for creating mobile applications using native web technologies produced by Nitobi. Adobe then purchased PhoneGap. Around
+version 1.9 of the product, they Open Sourced PhoneGap and called it [Cordova](http://cordova.apache.org/). They kept the PhoneGap
+ name and have extended things a bit by creating an great back end system to build for multiple platforms as well as starter solution
+ for different platforms. More information about PhoneGap can be found at [phonegap.com](http://phonegap.com/). The reality is I,
+ and most people refer to the names interchangeably, but there are differences.
 
 To install Cordova on Windows 8, follow these steps.
 
