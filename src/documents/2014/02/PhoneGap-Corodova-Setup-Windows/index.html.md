@@ -80,14 +80,28 @@ Since we are doing this on a Windows machine, we will add two platforms, one for
 Note, if you try and add platforms that are not available for development, Cordova will not allow this. For example, you cannot do iOS development on a Windows 8 machine, so Cordova will not be able to find the XCode libraries and will raise an error trying to setup. If you want to be able to build locally for an Android device, you will need eclipse and the Android SDK, etc.
 
 By adding the platform, you are actually creating Visual Studio solution files for creating both a native Windows Phone 8 and
+
+
 Windows 8 application that can be loaded in Visual Studio and run with the appropriate emulator.
 
+![Solution Directory](slnDirectory.png)
+
 You can load up these solutions and run them natively. However, you first need to build the solution. At this point, you just have a skeleton setup for the project, no assets have been deployed to the skeleton of the project. To do this, you will run the build command in Cordova.
+
+```bash
 Cordova build
+```
+
 This then enables you to run either Windows 8 or Windows Phone 8 to see your solution. Two things… Since each build recreates your solution files from the default WWW directory, your changes will be overwritten. As a result, I usually don’t like doing my code editing with the WP8 and Windows 8 emulator.
+
 Second, since you essentially have a web application, you like having access to tools you have come to know and love like Chrome Developer tools or FireFox as you develop your code. For this reason, I usually will create a Virtual Directory to server up the WWW assets from a platform, for example, Windows8, that are deployed during a build. This allows for me to use my tools of choice for web development.
-The reality is, I am most likely to use build.phonegap.com for testing. Build.PhoneGap.com will actually take your source, and build your application for multiple platforms. Its hydrate function automatically check for new versions and downloads when you launch on a mobile device like Android or Windows Phone.
-I am VERY interested in the workflow other people use for Cordova/PhoneGap development, please share!
+
+The reality is, I am most likely to use [build.phonegap.com](build.phonegap.com) for testing by using the
+actual native deivces. Build.PhoneGap.com will actually take your source, and build your application for the multiple platforms
+supported by PhoneGap. Its hydrate function automatically check for new versions and downloads when you launch on a mobile device like Android or Windows Phone.
+
+I have not found a great way to do development with PhoneGap. I am VERY interested in the workflow other people use for
+their Cordova/PhoneGap development, please share!
 
 
 
