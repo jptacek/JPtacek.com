@@ -6,13 +6,14 @@ tags: ["Conferences","Build"]
 ---
 
 Build is a Microsoft developer conference that has taken the place of their Professional Developer Conference (PDC). The first
-Build was held in 2011 and introduced the world to Windows 8 Preview. You can read my thoughts on Build 2011 [here](http://www.jptacek.com/2011/09/observations-from-microsofts-build-conference/).
+Build was held in 2011 and introduced the world to Windows 8, along with an early preview of Windows 8 and Samsung Tablet.
+You can read my thoughts on Build 2011 [here](http://www.jptacek.com/2011/09/observations-from-microsofts-build-conference/).
 In 2012, Build was held in Seattle and saw the release of Windows 8 and
 Microsoft’s Surface RT tablet.  In 2013, Build was held in San Francisco and Microsoft announced Windows 8.1 and made available a preview
 release for developers. Last year I took a [stab](http://www.jptacek.com/2013/06/Speculation-Microsoft-Build/) at speculating about Build 2013 and did pretty spectactualry bad. With Build 2014 a
 month away, I thought it would be fun to do again!
 
-![Build 2013](build2013.png)
+![Build 2013](build2013.png)<caption>Build 2013 Registration</caption>
 
 
 First, it is interesting to look at how short the time is becoming between Microsoft Build conferences
@@ -42,9 +43,9 @@ today can be down right confusing. You have options between....
 
 For shops that are all in on the the Microsoft stack, it can be confusing to determine what to go all in on. If you are a web developer
 and love HTML and JavaScript, your options are limited for Windows Phone. If you love all things XAML, you have to choose amongst
-WPF, Windows Phone or Windows 8 flavor of XAMl. And while the XAML platforms are similar, they are not similar enough to not
+WPF, Windows Phone or Windows 8 flavor of XAML. And while the XAML platforms are similar, they are not similar enough to not
 have a lot of rework. Things have gotten better though over the years with the introduction of the [Cross-Platform portable class
-library](http://www.hanselman.com/blog/CrossPlatformPortableClassLibrariesWithNETAreHappening.aspx), it is still cumbersome hitting
+library](http://www.hanselman.com/blog/CrossPlatformPortableClassLibrariesWithNETAreHappening.aspx), though it is still cumbersome hitting
 multiple endpoints.
 
 Last summer I wrote
@@ -57,7 +58,8 @@ This year, I can write the same thing. There have been [rumors](http://www.wpcen
  coming from a leaked release of the Windows Phone 8.1 SDK of Universal Binaries that will allow Windows Phone 8.1 and Windows
  RT/Metro/Modern/Store Apps have a common base. According to the earlier, link over 75% of Windows phone and Windows RT have
  the same shared API. That would be a great staring point for Windows 8 developers, especially if WinJS development is now an option
- for Windows Phone 8.1
+ for Windows Phone 8.1. Given developers the opportunity to have one platform they can choose to develop on and hit multiple devices
+ in the Microsoft devices strategy would be a great leap forward.
 
 ###Windows RT###
 
@@ -113,5 +115,13 @@ thing that I am most interested in seeing Microsoft do, is if the speed of execu
 when he led the group can be bought to the whole Microsoft organization. If there is one person from within Microsoft that can
 execute on the Microsoft One strategy, it is Satya. I am intersted to see what happens next.
 
+###Pick a Name###
+I am still very confused by what Microsoft calls its non desktop platform, aka the Windows formerly called Metro. Is it Windows Store apps?
+Is it Modern apps? Is it Win RT? What is the Microsoft design language formerly known as Metro called? It would be nice to clearly and
+concisely pick the terms and have everyone use the same vocabulary. Even the Microsoft developers presenting at previous Builds still call
+everything Metro!
+
+###Conclusion###
 I have the sense that Build 2014 is really Build 2013, part 2. A lot of the pieces that weren't fully basked for Build last June should
-hopefully be announced this April. More to come!
+hopefully be announced this April. I am pretty hopeful that the Microsoft One vision will be introduced for developers at Build 2014.
+ I think this will really help Microsoft accelerate application across multiple platforms. More to come!
