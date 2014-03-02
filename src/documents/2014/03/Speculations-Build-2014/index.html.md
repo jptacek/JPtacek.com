@@ -122,6 +122,7 @@ concisely pick the terms and have everyone use the same vocabulary. Even the Mic
 everything Metro!
 
 ###Conclusion###
-I have the sense that Build 2014 is really Build 2013, part 2. A lot of the pieces that weren't fully basked for Build last June should
-hopefully be announced this April. I am pretty hopeful that the Microsoft One vision will be introduced for developers at Build 2014.
+I have the sense that Build 2014 is really Build 2013, part 2. A lot of the pieces that weren't fully basked for Build last June, like Xbox One and Windows Phone 8.1,
+ should
+be announced this April. I am quite hopeful that the Microsoft One vision will be introduced for developers at Build 2014.
  I think this will really help Microsoft accelerate application across multiple platforms. More to come!
