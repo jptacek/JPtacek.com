@@ -7,7 +7,7 @@ tags: ["Conferences","Build"]
 
 Build is a Microsoft developer conference that has taken the place of their Professional Developer Conference (PDC). The first
 Build was held in 2011 and introduced the world to Windows 8 Preview. Last year’s Build, saw the release of Windows 8 and
-Microsoft’s Surface RT tablet. Microsoft has not yet announced sessions or topics for this year’s Build, which will be held
+Microsoft’s Surface RT tablet. You can read my thoughts on Build 2011 [here](http://www.jptacek.com/2011/09/observations-from-microsofts-build-conference/). Microsoft has not yet announced sessions or topics for this year’s Build, which will be held
 June 26-28, 2013 in San Francisco’s Moscone Center. However, that is not stopping us from speculating on what we are going to see.
 
 **Windows 8.1** – It has already been announced that the next version of Windows, Windows 8.1, will be announced and available for
