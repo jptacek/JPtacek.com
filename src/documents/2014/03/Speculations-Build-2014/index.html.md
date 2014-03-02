@@ -15,7 +15,7 @@ month away, I thought it would be fun to do again!
 ![Build 2013](build2013.jpg)
 
 
-First, it is interesting to look at how quick Microsoft has been doing their build conferences
+First, it is interesting to look at how short the time is becoming between Microsoft Build conferences
 
 * Build 2011, Anaheim, CA September 13 - 16, 2011
 * Build 2012, Seattle, WA October 30 - November 2, 2012 (~13 months later)
@@ -24,10 +24,13 @@ First, it is interesting to look at how quick Microsoft has been doing their bui
 
 You can see that Microsoft is quickly iterating and getting information out to developers. However, having said that, certain parts
 of Microsoft are executing VERY fast (I am looking at you Azure) and other parts are executing VERY slow (I am looking at you Windows
-Phone). With the breadth of developer platforms Microsoft has, they have many opportunities to get in front of developers.
+Phone). With the breadth of developer platforms Microsoft has, they have many opportunities to get in front of developers. So all of that to say this.... A lot of my speculation for Build this year looks a lot like last year! There are still some
+important pieces for the Microsoft developer story that needs to be communicated.
 
-So all of that to say this.... A lot of my speculation for Build this year looks a lot like last year! There are still some
-important pieces for the Microsoft developer story that needs to be communicated. The reality is, developing on the Microsoft stack
+![3D Printer Guitar](guitar.jpg)
+
+###One API To Rule Them All###
+The reality is, developing on the Microsoft stack
 today can be down right confusing. You have options between....
 
 * Web using MVC with HTML/JS/CSS
@@ -37,9 +40,6 @@ today can be down right confusing. You have options between....
 * Windows Modern/Metro/Store Apps using XAML
 * Windows Phone (version of XAML)
 
-![3D Printer Guitar](guitar.jpg)
-
-###One API To Rule Them All###
 For shops that are all in on the the Microsoft stack, it can be confusing to determine what to go all in on. If you are a web developer
 and love HTML and JavaScript, your options are limited for Windows Phone. If you love all things XAML, you have to choose amongst
 WPF, Windows Phone or Windows 8 flavor of XAMl. And while the XAML platforms are similar, they are not similar enough to not
@@ -56,7 +56,7 @@ Last summer I wrote
 This year, I can write the same thing. There have been [rumors](http://www.wpcentral.com/rumor-windows-phone-81-ditch-back-button)
  coming from a leaked release of the Windows Phone 8.1 SDK of Universal Binaries that will allow Windows Phone 8.1 and Windows
  RT/Metro/Modern/Store Apps have a common base. According to the earlier, link over 75% of Windows phone and Windows RT have
- the same shared API. That would be a great staring point for Windows 8 developers, especially if WinJS development was now an option
+ the same shared API. That would be a great staring point for Windows 8 developers, especially if WinJS development is now an option
  for Windows Phone 8.1
 
 ###Windows RT###
@@ -70,24 +70,27 @@ Last summer I wrote
 Again, same thing this Build. Windows RT has not had a lot of explanation about its continued existence in the Windows ecosystem.
 I am not 100% sure, but I believe the only devices release for WinRT in 2013 were from Lumia (the [Lumia 2520](http://www.nokia.com/global/products/tablet/lumia2520/)) and Microsoft
 ([Surface2](http://www.microsoft.com/surface/en-us/products/surface-2)). The good news is, both of these devices were well received.
-The battery life and productivity make for great use cases. However, as Intel release improved Haswell chips and Atom chips with great battery
-life, it doesn't make long term support to develop both platforms. Unless, Microsoft's is focused on making Win RT the phone platform
-as well as a tablet only platform, wtihout the legacy desktop. I am pretty sure this is the case, but we haven't heard it from
+The battery life and productivity make for great use cases. However, as Intel releases improved Haswell and Atom chips with great battery
+life and the ability to run desktop applications, it doesn't make long term support to develop both platforms. Unless, Microsoft's is focused on making Win RT the phone platform
+as well as a tablet only platform, without the legacy desktop. I am pretty sure this is the case, but we haven't heard it from
 Microsoft yet. Maybe this Build we will?!?!
 
 ###Devices and Services Company###
 Microsoft has repeatedly said they are now a devices and services company. Since this announcement in 2012, they have release both Windows
-Surface Pro and Windows Surface RT, along with follow up versions in 2013. The Pro update was minimal in terms of hardware, but the Sruface RT 2,
+Surface Pro and Windows Surface RT, along with follow up versions in 2013. The Pro update was minimal in terms of hardware, but the Surface RT 2,
 now called Surface 2, saw a pretty significant upgrade in performance and hardware. In 2013, the release of Xbox One happened. Other
-than that, not a whole lot. Obviously, the purchase of Nokia's Lumia line will see a lot more in the channel. However, there
-has not bee a 7-8 inch surface release to mimic the iPad Mini or Microsoft laptop/Ultrabooks.
+than that, not a whole lot. Obviously, the purchase of Nokia's Lumia line will see a lot more Microsoft devices being release in 2014.
+However these will be phone devices, there
+has not bee a 7-8 inch surface release to mimic the iPad Mini or Microsoft laptop/Ultrabooks. Further, we still are not sure what happens
+to the Lumia Brand and the Surface Brand. Will they merge? Will one replace the other? Will one be the Tablet platform and the other the
+phone platform?
 
 I expect that Build 2014 will shed a lot more light on this, especially the company's strategy for integrating Nokia and the possible
 announcement of a Surface Mini, though Build 2014 is not a place where Microsoft is likely to announce new hardware.
 
 ###Xbox One###
-With the news that Xbox One is built on Windows 8, adn a tease at Build 2013 about a JavaScript based API for Xbox One, everyone
-I talk with indicates this will be part of Build 2014. Bring it on! This will be exciting for indie developers
+With the news that Xbox One is built on Windows 8, and a tease at Build 2013 about a JavaScript based API for Xbox One, everyone
+I talk with thinks Xbox One will be part of Build 2014. Bring it on! This will be exciting for indie developers.
 
 ###Windows Phone###
 My guess, is above all things, Build 2014 will be about Windows Phone 8.1. I, and most of the world, expect them to show Windows Phone
