@@ -12,7 +12,7 @@ Microsoft’s Surface RT tablet.  In 2013, Build was held in San Francisco and M
 release for developers. Last year I took a [stab](http://www.jptacek.com/2013/06/Speculation-Microsoft-Build/) at speculating about Build 2013 and did pretty spectactualry bad. With Build 2014 a
 month away, I thought it would be fun to do again!
 
-![Build 2013](build2013.jpg)
+![Build 2013](build2013.png)
 
 
 First, it is interesting to look at how short the time is becoming between Microsoft Build conferences
