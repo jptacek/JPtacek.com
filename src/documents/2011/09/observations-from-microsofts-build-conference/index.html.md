@@ -2,7 +2,7 @@
 layout: post
 title: Observations From Microsoft's Build Conference
 date: 2011-09-29
-tags: ["HTML 5","Web","Windows 8"]
+tags: ["HTML 5","Web","Windows 8","Build","Conferences"]
 ---
 
 **Overview**
