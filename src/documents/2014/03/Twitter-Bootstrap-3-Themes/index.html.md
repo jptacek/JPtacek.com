@@ -53,7 +53,9 @@ mortals.
 
  <img src="http://www.jptacek.com/2014/03/Twitter-Bootstrap-3-Themes/BuildStPatty.png" class="img-thumbnail" alt="Rules" />
 
- you can find the St Patrick's Day theme I downloaded from Bootswatch [here](http://bootswatch.com/shamrock/).
+ you can find the St Patrick's Day theme I downloaded from Bootswatch [here](http://bootswatch.com/shamrock/). Obviously,
+ since this is just for a short time, there are some UI things that would need to be redone on the site, but we will
+ be back to our regularly scheduled programming soon!
 
 Totally useless Ptacek news.... Obviously, the half Irish comes from my Mother's side. My Uncle Tom, a somewhat famous horse
 race announcer who used to call the Kentucky Derby and other Triple Crown races on television, would often get flown over
