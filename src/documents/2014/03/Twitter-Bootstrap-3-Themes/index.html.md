@@ -57,8 +57,8 @@ mortals.
  since this is just for a short time, there are some UI things that would need to be redone on the site, but we will
  be back to our regularly scheduled programming soon!
 
-Totally useless Ptacek news.... Obviously, the half Irish comes from my Mother's side. My Uncle Tom, a somewhat famous horse
-race announcer who used to call the Kentucky Derby and other Triple Crown races on television, would often get flown over
+Totally useless Ptacek news.... Obviously, the half Irish comes from my Mother's side. My Uncle [Tom Durkin](http://en.wikipedia.org/wiki/Tom_Durkin), a somewhat famous horse
+race announcer who [used to call](http://www.nytimes.com/2011/04/28/sports/28durkin.html?version=&action=click&adxnnl=1&region=searchResults#0&module=Search&url=http://query.nytimes.com/search/sitesearch/#/tom+durkin/&pagewanted=all&adxnnlx=1395057931-WaqX7ynUlBWydjqQznsZ1w) the Kentucky Derby and other Triple Crown races on television, would often get flown over
 to call the Irish Derby. Here is one of my favorite race calls he has ever done, but probably more appropriate for Talk
 Like a Pirate Day
 
