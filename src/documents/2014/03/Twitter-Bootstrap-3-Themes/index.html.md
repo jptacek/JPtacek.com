@@ -7,7 +7,7 @@ tags: ["Twitter BootStrap","Web","CSS"]
 
 With a name like Ptacek, you would of course, have to know I am half-Irish. So, to celebrate, we are going to wrap
 up a St Patrick's Day theme for the blog today (3/17/14). You may be saying to yourself, how could I spend so much time and effort totally
-retheming the blog to support a relatively minor holiday on the calendar. Easy! Twitter Bootstrap themes!
+retheming the blog to support a relatively minor holiday on the calendar? Easy! Twitter Bootstrap themes!
 
 Twitter Bootstrap, is obviously, a very popular web CSS framework. It enables web developers, without a lot of CSS expereince to
 quickly create responsive sites that look decent out of the box. One of the interesting things you can do with version 3 of
@@ -50,7 +50,7 @@ and then update my ``site.css.less``. I called the St Patrick's Day theme shamro
 Viola, a save and a publish later we have a total site look! It is like [CSSZenGarden](http://www.csszengarden.com/) for
 mortals.
 
- <img src="/2014/03/Twitter-Bootstrap-3-Themes/BuildStPatty.png" class="img-thumbnail" alt="Rules" />
+ <img src="http://www.jptacek.com/2014/03/Twitter-Bootstrap-3-Themes/BuildStPatty.png" class="img-thumbnail" alt="Rules" />
 
 Totally useless Ptacek news.... Obviously, the half Irish comes from my Mother's side. My Uncle Tom, a somewhat famous horse
 race announcer who used to call the Kentucky Derby and other Triple Crown races on television, would often get flown over
