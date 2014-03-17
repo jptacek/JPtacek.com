@@ -41,12 +41,12 @@ We will have two things, our app.js file to create our angular application, piAp
 
 Our HTML file is pretty basic,
 
-<div id="piApp" data-ng-app="piApp">
-    <div id="piCtrl" data-ng-controller="piAppController">
-        <input id="iteration" data-ng-model="iterations"/><br/>
+<div id="piApp" ng-app="piApp">
+    <div id="piCtrl" ng-controller="piAppController">
+        <input id="iteration" ng-model="iterations"/><br/>
         <div id="piCalc" >{{pi}}</div><br/>
         <div id="piCalcDiff" >{{delta}}</div><br/>
-        <button data-ng-click="calculatePi()" >Update</button>
+        <button ng-click="calculatePi()" >Update</button>
     </div>
 </div>
 
