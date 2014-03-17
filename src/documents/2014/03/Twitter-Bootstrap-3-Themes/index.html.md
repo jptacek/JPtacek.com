@@ -11,14 +11,15 @@ retheming the blog to support a relatively minor holiday on the calendar? Easy! 
 
 Twitter Bootstrap, is obviously, a very popular web CSS framework. It enables web developers, without a lot of CSS expereince to
 quickly create responsive sites that look decent out of the box. One of the interesting things you can do with version 3 of
-Twitter Bootstrap is quickly and update your site easily using themes.
+Twitter Bootstrap is quickly  update your site easily using themes.
 
 With Twitter Bootstrap, there are two ways you can do things. Option 1 is to download the minified files. This will result in three
-separate files, the ``bootstrap.min.css`` file, the ``bootstrap-theme.min.css`` file and the ``bootstrap.min.js``, which
+separate files, ``bootstrap.min.css`` , ``bootstrap-theme.min.css`` and ``bootstrap.min.js``, which
 is used in conjunction with jQuery. The theme elements are then contained in the ``bootstrap-theme.min.css`` file.
 
 The second approach you can use is to download the source files and compile the CSS yourself. This is done by downloading
-[LESS](http://lesscss.org/) files and using your favorite LESS compiler to generate CSS. With the LESS approach,
+[LESS](http://lesscss.org/) files and using your favorite LESS compiler to generate CSS. There are also SASS files for the
+ Ruby fans of the world. With the LESS approach,
 there are separate files for theming, a ``variable.less`` file and a bootstrap theme file. This is the approach I use for this site
 and most projects I start. Within the main ``site.css`` LESS file I import the theme files
 
@@ -28,7 +29,7 @@ and most projects I start. Within the main ``site.css`` LESS file I import the t
 ```
 
 The reason I like using the LESS approach rather than just downloading the minified CSS files is the theme part is a bit more
-isolated. I can keep all the theme content, which I really think of as the "skin" for a Bootstrap site, in two separated files.
+isolated. I can keep all the theme content, which I really think of as the "skin" for a Bootstrap site, in two separate files.
 This enables new versions of Bootstrap to be downloaded without loosing other CSS changes and to quickly swap them out, like we
 are doing here for St. Patrick's Day.
 
@@ -38,7 +39,7 @@ that would just be crazy talk). Example sites include [WrapBootstrap.com](https:
 and the one I tend to gravitate to, [Bootswatch](http://bootswatch.com/).
 
 To update your site UI you just simply download either minified CSS files and swap them out, or two LESS files and then reference
-them in your site. Since I use LESS, I download the files, rename them to a theme name, which allows me to keep my original,
+them in your site. Since I use LESS, I download the LESS files, rename them to a theme name, which allows me to keep my original,
 and then update my ``site.css.less``. I called the St Patrick's Day theme shamrock and my references are now
 
 
@@ -51,6 +52,8 @@ Viola, a save and a publish later we have a total site look! It is like [CSSZenG
 mortals.
 
  <img src="http://www.jptacek.com/2014/03/Twitter-Bootstrap-3-Themes/BuildStPatty.png" class="img-thumbnail" alt="Rules" />
+
+ you can find the St Patrick's Day theme I downloaded from Bootswatch [here](http://bootswatch.com/shamrock/).
 
 Totally useless Ptacek news.... Obviously, the half Irish comes from my Mother's side. My Uncle Tom, a somewhat famous horse
 race announcer who used to call the Kentucky Derby and other Triple Crown races on television, would often get flown over
