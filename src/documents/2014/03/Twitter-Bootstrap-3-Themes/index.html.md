@@ -57,9 +57,7 @@ race announcer who used to call the Kentucky Derby and other Triple Crown races 
 to call the Irish Derby. Here is one of my favorite race calls he has ever done, but probably more appropriate for Talk
 Like a Pirate Day
 
-<div id="youTube" class="col-md-4 offset-3">
 <iframe width="420" height="315" src="//www.youtube.com/embed/nf0wQzq9Yzg" frameborder="0" allowfullscreen></iframe>
-</div>
 
 
 Happy St. Patrick's Day!
