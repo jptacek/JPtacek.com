@@ -363,3 +363,4 @@ as always find the code out on [GitHub](https://github.com/jptacek/AngularPeriod
 </div>
  <script type="text/javascript" src="/2014/01/angularjs-further-with-ng-repeat/js/chemistryApp.js"></script>
  <script type="text/javascript" src="/2014/01/angularjs-further-with-ng-repeat/js/chemistryController.js"></script>
+ <script type="text/javascript" src="/2014/01/angularjs-further-with-ng-repeat/js/chemistry.js"></script>

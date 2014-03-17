@@ -1,3 +1,3 @@
 function chemCtrl($scope) {
-    $scope.periodic = perioicData;
+    $scope.periodic = periodicData;
 }
