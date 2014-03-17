@@ -50,16 +50,16 @@ and then update my ``site.css.less``. I called the St Patrick's Day theme shamro
 Viola, a save and a publish later we have a total site look! It is like [CSSZenGarden](http://www.csszengarden.com/) for
 mortals.
 
-
-![St Patrick's Day UI](BuildStPatty.png)
+ <img src="/2014/03/Twitter-Bootstrap-3-Themes/BuildStPatty.png" class="img-thumbnail" alt="Rules" />
 
 Totally useless Ptacek news.... Obviously, the half Irish comes from my Mother's side. My Uncle Tom, a somewhat famous horse
 race announcer who used to call the Kentucky Derby and other Triple Crown races on television, would often get flown over
 to call the Irish Derby. Here is one of my favorite race calls he has ever done, but probably more appropriate for Talk
 Like a Pirate Day
 
+<div id="youTube" class="col-md-4 offset-3">
 <iframe width="420" height="315" src="//www.youtube.com/embed/nf0wQzq9Yzg" frameborder="0" allowfullscreen></iframe>
-
+</div>
 
 
 Happy St. Patrick's Day!
