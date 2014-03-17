@@ -50,7 +50,8 @@ and then update my ``site.css.less``. I called the St Patrick's Day theme shamro
 Viola, a save and a publish later we have a total site look! It is like [CSSZenGarden](http://www.csszengarden.com/) for
 mortals.
 
-[St Patrick's Day UI](BuildStPatty.png)
+
+![St Patrick's Day UI](BuildStPatty.png)
 
 Totally useless Ptacek news.... Obviously, the half Irish comes from my Mother's side. My Uncle Tom, a somewhat famous horse
 race announcer who used to call the Kentucky Derby and other Triple Crown races on television, would often get flown over
