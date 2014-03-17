@@ -41,14 +41,16 @@ We will have two things, our app.js file to create our angular application, piAp
 
 Our HTML file is pretty basic,
 
+```xml
 <div id="piApp" ng-app="piApp">
     <div id="piCtrl" ng-controller="piAppController">
-        <input id="iteration" ng-model="iterations"/><br/>
+        <input id="iteration" data-ng-model="iterations"/><br/>
         <div id="piCalc" >{{pi}}</div><br/>
         <div id="piCalcDiff" >{{delta}}</div><br/>
-        <button ng-click="calculatePi()" >Update</button>
+        <button data-ng-click="calculatePi()" >Update</button>
     </div>
 </div>
+```
 
 We will enter in the number of random dots (iterations) we want our simulation to run. The more dots, the closer we get.
 We will then display the calculated value of π and how close we are to π actual. Last, we have a button that we will click to
@@ -67,12 +69,12 @@ ratios.
 This is not a super accurate, or super-fast method of calculating π, but it was an interesting chance to take a quick look at
 Monte Carlo methods, which are common place with a subset of our clients.
 
-<div id="piApp" data-ng-app="piApp">
-    <div id="piCtrl" data-ng-controller="piAppController">
-        <input id="iteration" data-ng-model="iterations"/><br/>
+<div id="piApp" ng-app="piApp">
+    <div id="piCtrl" ng-controller="piAppController">
+        <input id="iteration" -ng-model="iterations"/><br/>
         <div id="piCalc" >{{pi}}</div><br/>
         <div id="piCalcDiff" >{{delta}}</div><br/>
-        <button data-ng-click="calculatePi()" >Update</button>
+        <button ng-click="calculatePi()" >Update</button>
     </div>
 
 </div>
