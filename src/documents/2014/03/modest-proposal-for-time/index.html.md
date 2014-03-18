@@ -4,12 +4,11 @@ title: A Modest Proposal For Time
 date: 2014-03-18
 tags: ["Ephemera","Time"]
 ---
-<div class="well col-md-8 col-md-offset-8">
+
 <p>Time, if he could travel time<br/> He would have been on time<br/>
 Frank Black ,<i>Czar</i></p>
-</div>
 
-<div class="row">
+
 Time, when you really think about it, is CRAZY. We expect it to be this constant in life, slowly, we hope, marching forward,
 but invariably going quicker than we want. However, the concept of time, as in “What time is it?” has changed over
 the centuries, and with the pace escalating during the information age. If there is one thing Einstein taught us with the Theory of
@@ -68,18 +67,23 @@ ALL need to be on the same time as a country. In our agrarian past, it may have 
 sun was at its apex. However, for the most part, we are NOT an agrarian society currently. Our economy is an information and
 finance based economy. I can guarantee you, stock brokers living in California, don’t wake up at 9:30 AM PST for the opening bell
 on Wall Street, they wake and are ready to serve their customers every day at 6:30 AM PST to match the 9:30 EST opening bell. Our
-economy already is driven by the time when business happens, not when we WANT it to happen.
+economy already is driven by the time when business happens, not when we want it to happen.
 
 Many folks may think the idea of a single time zone in the states is crazy talk, and it probably is. As a country, we tend to
 be obstinate to change and prefer a glorified past. However, time marches and on, and more importantly, our economy marches
 on. It wasn’t until commerce became widespread, that the concept of time (or more exactly, time keeping) became prevalent. Our
 economy though has moved past local time, it has moved global. The reality is that countries like China are already ahead of us
-here, with a single time that spans five time zones.
+here, with a single time that spans five time zones. One needs to only look at the image of the differing morass of
+time zones from WikiPedia(http://en.wikipedia.org/wiki/Time_zone)
+to realize there is a huge opportunity for improvement.
+
+![WikiPedia time zones](wikiTimeZones.png)
 
 So then, let us take it to the logical conclusion. We should wipe out time zones everywhere in the world. They are no longer
 needed. ALL business should act on the same time. The first benefit of this is that the mental energy of the world spent on
 setting up a meeting disappears. Instead of everyone doing a little math determining their GMT offset, they just say what time.
-Everyone has the same reference. It all gets done much quicker.
+Everyone has the same reference. It all gets done much quicker. We loose the concept of 12:00 PM being when the sun is brightest,
+but the benefits are huge.
 
 The second benefit is that computer systems are MUCH more efficient. While we will never get past the scourge of developers
 checking if an item is NULL, the second thing they spend their time on is dealing with dates and times in their programming
@@ -102,7 +106,3 @@ consolidated by having a single global time.
 
 How hard can it be?!?!? Probably hard, the reality is it is coming sooner or later, with sooner being better.
 However, amazing things happen every day. Let us start.
-</div>
-
-
-
