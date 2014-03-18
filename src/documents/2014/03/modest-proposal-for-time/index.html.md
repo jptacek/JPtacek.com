@@ -28,7 +28,7 @@ which is always a good first step. This leads to other discussions. Do they ment
  which don't recognize Daylight Saving Time, is?
 
 They make it this far, you are happy. Next however, you hope they mention there really isn’t a decent way to know where a user
-is when they place an order to determine what time the thinks it is when they placed the order. Unless they explicitly provides
+is when they place an order to determine what time they think it is when they placed the order. Unless they explicitly provides
 an address or a time zone, you are not guaranteed to know where they are. You can
  guess based on things like IP address, however, this costs money. You can ask the user if you will let them use their location
  based on their browser geolocation feature, but if they are like me, this is a sign to go to another site.
@@ -44,10 +44,10 @@ CST. Which one wins?
 
 So it is a GREAT interview question because you get an idea of the breadth of experience of a candidate in dealing with
 large scale applications. However, I only tend
-to ask this question if I am trying to be a deliberate jerk. It is a HARD question.
+to ask this question if I am trying to be a deliberate jerk. It is a difficult question.
 
 If you work with large companies or companies with interests all over the world, you realize how much time you spend talking
-about time. Most people I talk to have no idea that when it is 8:00 AM in the lovely United States Midwest, in India it is
+about time. Most people I talk to have no idea that when it is 8:00 AM in the United States Midwest, in India it is
 6:30 PM. That is right, not only is the time many hours different than ours, it is staggered 30 minutes. Throw in the fact
 that countries all over the world have different ways of dealing with Daylight Savings Time and sometimes their governments
 will change it at the last minute and you have many, many opportunities for error. Time is a constant source of discussion when you
@@ -67,7 +67,8 @@ on Wall Street, they wake and are ready to serve their customers every day at 6:
 economy already is driven by the time when business happens, not when we want it to happen.
 
 Many folks may think the idea of a single time zone in the states is crazy talk, and it probably is. As a country, we tend to
-be obstinate to change and prefer to clint to the way things have been done. However, time marches and on, and more importantly, our economy marches
+be obstinate to change and prefer to cling to the way things have been done (I am looking at you Metric
+System conversion). However, time marches and on, and more importantly, our economy marches
 on. It wasn’t until commerce became widespread, that the concept of time (or more exactly, time keeping) became prevalent. Our
 economy though has moved past local time, it has moved global. The reality is that countries like China are already ahead of us
 here, with a single time that spans five time zones. One needs to only look at the image of the differing morass of
@@ -93,8 +94,9 @@ So then, what time is it? Well, the answer is easy. We already have it and it is
 [Coordinated Universal Time (UTC)](http://en.wikipedia.org/wiki/Coordinated_Universal_Time). The interesting thing is, from a
 programming standpoint, we are all moving there. If you do multi time zone or country work, you are most likely already saving
 time as UTC. If you aren’t, you soon will be as you move to a cloud infrastructure. Amazon Web Services (AWS) and Azure already
-default to UTC since their server are geographically dispersed. They already deal with this, we all need to listen 
-For example, on my development PCs I have two clocks, one for local time and one for UTC time. When I code, I spend more time in
+default to UTC since their servers are geographically dispersed and they need to standardize on tme.
+This is so prevalent, that for me personally, on my development PCs I have two times displayed,
+one for local time and one for UTC time. When I code, I spend more time in
 UTC than my local time zone.
 
 It is time for the geeks of the world to lead the charge on this. We need to encourage businesses to focus on driving costs
@@ -103,12 +105,12 @@ consolidated by having a single global time.
 
 In the news lately has been the disappearance of Malaysian Flight 370. Take for instance this article at the
 [New York Times](http://www.nytimes.com/2014/03/13/world/asia/missing-malaysia-airlines-flight-370.html)
-that discusses the timeline of the plane radar reading. It says it happened at 2:15 am local time. First, I
+that discusses the timeline of the plane radar reading. It says the last contact happened at 2:15 am local time. First, I
  assume they mean local time in Malaysia and not New York. If it is Malaysia, I have no idea without a little
- Internet searching what time that is for me. I think a good way to begin the journey is to start recording time with
- UTC whenever time is referenced. So 2:15 am local time becomes 2:15 am/Saturday 18:15 U, where the U designation indicates
+ Internet searching what time that is for me. I think a good way to begin the journey is to whenever we display time to also
+  display the UTC time. So 2:15 am local time in Malaysia becomes 2:15 am/Saturday 18:15 U, where the U designation indicates
  Universal time.
 
 How hard can it be?!?!? Probably hard, the reality is it is coming sooner or later, with sooner being better.
 However, amazing things happen every day. Let us start. I am posting this article at 6 AM in the morning, but 11:00 U
-where you are.
+wherever you are.
