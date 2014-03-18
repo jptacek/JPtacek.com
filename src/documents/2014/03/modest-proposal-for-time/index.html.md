@@ -106,7 +106,7 @@ In the news lately has been the disappearance of Malaysian Flight 370. Take for 
 that discusses the timeline of the plane radar reading. It says it happened at 2:15 am local time. First, I
  assume they mean local time in Malaysia and not New York. If it is Malaysia, I have no idea without a little
  Internet searching what time that is for me. I think a good way to begin the journey is to start recording time with
- UTC whenever time is referenced. So 2:15 am local time becomes 2:15 am/18:15 U, where the U designation indicates
+ UTC whenever time is referenced. So 2:15 am local time becomes 2:15 am/Saturday 18:15 U, where the U designation indicates
  Universal time.
 
 How hard can it be?!?!? Probably hard, the reality is it is coming sooner or later, with sooner being better.
