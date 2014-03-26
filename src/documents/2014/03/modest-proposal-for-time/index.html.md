@@ -10,9 +10,7 @@ but invariably going quicker than we want. However, the concept of time, as in â
 the centuries, with the pace escalating during the information age. If there is one thing Einstein taught us with the Theory of
 Relativity, it is that time is not constant.
 
-<p>
-<iframe src="//embed.gettyimages.com/embed/170005639?et=nWcnkqVu1kqdS502pKbOwQ&sig=s8_rsinXAg4An_OdikCOsC8wD4286jeXRHYq9O-CMXs=" width="400" height="551" frameborder="0" scrolling="no"></iframe>
-</p>
+![Melting Time](meltingTime.jpg)
 
 There are really two ideas of timeâ€¦ The first, relates to the time on a clock that we all reference. The second, is the larger concept of time that is part of the theories that
 Einstein laid out in his Special and General Theories of Relativity. We will focus on the clock for most of this.
