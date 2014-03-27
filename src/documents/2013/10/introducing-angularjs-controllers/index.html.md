@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introducing AngularJS Controllers
+title: AngularJS - Introducing AngularJS Controllers
 date: 2013-10-03
 tags: ["AngularJS","JavaScript","Web"]
 ---
