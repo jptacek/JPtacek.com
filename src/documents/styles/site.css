@@ -6205,7 +6205,6 @@ a {
 }
 .post + .post {
   padding-top: 30px;
-  border-top: 1px solid #dddddd;
 }
 #disqus_thread {
   border-bottom: 1px solid #dddddd;
