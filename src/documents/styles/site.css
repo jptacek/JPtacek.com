@@ -6165,7 +6165,8 @@ a {
   padding-bottom: 30px;
 }
 .post h1 {
-  margin-top: 0;
+  margin-top: 22px;
+  margin-bottom: 45px;
 }
 .post h1 a {
   color: #333333;
