@@ -21,7 +21,7 @@ Microsoft also introduced their version of Siri, called Cortana. The name comes 
 
 ![Build Crowd](build2.jpg)
 
-There was also a number of features announced that really improve the Windows Phone platform. An improved calendar, themes for the lock screen, better Skype integration, etc. All in all, Microsoft has made strides in making Windows Phone a more compelling platform for users. You can find out a LOT more information at the Windows Phone Blog http://blogs.windows.com/windows_phone/b/windowsphone/archive/2014/04/02/cortana-yes-and-many-many-other-great-features-coming-in-windows-phone-8-1.aspx
+There was also a number of features announced that really improve the Windows Phone platform. An improved calendar, themes for the lock screen, better Skype integration, etc. All in all, Microsoft has made strides in making Windows Phone a more compelling platform for users. You can find out a LOT more information at the [Windows Phone Blog](http://blogs.windows.com/windows_phone/b/windowsphone/archive/2014/04/02/cortana-yes-and-many-many-other-great-features-coming-in-windows-phone-8-1.aspx).
 
 There was also the introduction of Windows 8.1 Update 1 (yeah, I don’t know who names these things either). Update 1 enables more mouse functionality in desktop mode for users. The title bar now appears in Windows Store apps and the task bar will also display when running Windows metro apps. The search and power button are also more prominently displayed for desktop users. It appears a lot of the new features are to enable desktop users to be even more productive. We will all find out soon enough, downloads start on Tuesday April 8.
 
@@ -39,4 +39,4 @@ There was a host of other information in the nearly three hour keynote that is a
 
 Another big keynote tomorrow! On to the next session.
 
-This post originally appeard at [Skyline Technologies](http://www.skylinetechnologies.com/Blog/Article/2464/Build-2014-Observations-Day-1.aspx
+This post originally appeard at [Skyline Technologies](http://www.skylinetechnologies.com/Blog/Article/2464/Build-2014-Observations-Day-1.aspx)
