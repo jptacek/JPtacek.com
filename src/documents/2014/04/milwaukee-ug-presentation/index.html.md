@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Milwaukew .NET User Group Presentation - April 2014
+title: Milwaukee .NET User Group Presentation - April 2014
 date: 2014-04-10
 tags: ["Speaking","AngularJS"]
 ---
@@ -12,7 +12,7 @@ nice turnout and some good interactions and questions. I even got a little stres
 front of the room and my laptop with code demos in the back! Hopefully it wasn't too distracting for those of you
 in attendance.
 
-You can find a copy of my slides [here](AnuglarJS-Ineta.pptx).
+You can find a copy of my slides [here](AngularJS-Ineta.pptx).
 
 The code for my demo is available on [GitHub](http://www.github.com) at https://github.com/jptacek/Wi-Ineta-AngularJS
 
