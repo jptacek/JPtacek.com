@@ -16,7 +16,7 @@ You can find a copy of my slides [here](AngularJS-Ineta.pptx).
 
 The code for my demo is available on [GitHub](http://www.github.com) at https://github.com/jptacek/Wi-Ineta-AngularJS
 
-As always, feel free to reach out to me via email or on twitter or email.
+As always, feel free to reach out to me via email or on twitter.
 
 To those of you who attended, thanks much!
 
