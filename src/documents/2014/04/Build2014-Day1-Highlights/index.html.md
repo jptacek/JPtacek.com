@@ -35,7 +35,7 @@ Microsoft also announced that they were open sourcing their WinJS platform. The 
 
 ![AngularJS talk line](build3.jpg)
 
-There was a host of other information in the nearly three hour keynote that is available across Internet news sites. At the end of the day though, I think the message Microsoft and their CEO Satya Nadala are saying are pretty obvious. Microsoft is moving beyond just Windows and they are simplifying their development platform to reach more devices. The new version of Windows Phone and Windows show they are listening to their customers and end users by simplifying and consolidating their Windows platforms while branching out to other vendors. They communicated a vision for enabling success for developers, enterprises and users using Microsoft tolls and languages.
+There was a host of other information in the nearly three hour keynote that is available across Internet news sites. At the end of the day though, I think the message Microsoft and their CEO Satya Nadala are saying are pretty obvious. Microsoft is moving beyond just Windows and they are simplifying their development platform to reach more devices. The new version of Windows Phone and Windows show they are listening to their customers and end users by simplifying and consolidating their Windows platforms while branching out to other vendors. They communicated a vision for enabling success for developers, enterprises and users using Microsoft tools and languages.
 
 Another big keynote tomorrow! On to the next session.
 
