@@ -26,9 +26,11 @@ to help us understand the framework. The others posts are
 Note: AngularJS does not allow for more than one ng-app directive. I need to refactor the entire site to account for
 this. All of that to say this, you are best clicking on a single article so you can see the pages in action.
 
-We have previously talked about AngularJS and controllers. However, an important part of web development is displaying data, especially repeating data. We are going to use our Periodical data and look at options for displaying on the page.
+We have previously talked about AngularJS and controllers. However, an important part of web development is displaying data,
+especially repeating data. We are going to use our Periodic data and look at options for displaying that data on the page.
 
-For this example, we have created a chemistry controller that contains information from the periodic table. An element in our JSON object looks like
+For this example, we have created a chemistry controller that contains information from the periodic table. An element in our
+JSON object looks like
 
 ```javascript
  "atomicNumber": 1,
@@ -59,17 +61,23 @@ function chemCtrl($scope) {
 
 ....
 
-&nbsp;
  ]
  };
 }
 ```
 
-Our scope now has a JavaScript variable on our Angular scope called periodic, which hold all of our JSON chemistry data. To display this on the page, we want to take advantage of the [ng-repeat](http://docs.angularjs.org/api/ng.directive:ngRepeat) directive in AngularJS. The syntax for this is pretty simple. In our example, we will display all of the chemical element names from the periodic table in an unordered list.
+Our application now has a JavaScript variable on our Angular scope called periodic, which holds all of our
+JSON chemistry data. To display this on the page, we want to take advantage of the
+[ng-repeat](http://docs.angularjs.org/api/ng.directive:ngRepeat) directive in AngularJS.
+The syntax for this is pretty simple. In our example, we will display all of the chemical element names from the
+periodic table in an unordered list.
 
-We start our list with a ``ul`` tag. The next step is to apply the ``ng-repeat`` directive to the markup we want to repeat, in this case, the <span style="font-family: Courier New;">li</span> tag, which we will go and display the name of the element.
+We start our list with a ``ul`` tag. The next step is to apply the ``ng-repeat`` directive to the markup we want to
+repeat, in this case, the``li`` tag, in which we will display the name of the element.
 The syntax is ``ng-repeat="element in periodic.elements"``. Essentially, ``ng-repeat`` is expecting an expression.
-In this instance, we are saying we want to loop through all items in our periodic data source, and we are going to call each item element. Last, we need to output the data for display. In this instance then element's name, which is a property on our json object called name.
+In this instance, we are saying we want to loop through all items in our periodic data source, and we are going to call each
+item element, which will be a single item from our JSON object. Last, we need to output the data for display.
+In this instance then element's name, which is a property on our JSON object called name.
 
 ```xml
 <ul>
@@ -90,12 +98,12 @@ In this instance, we are saying we want to loop through all items in our periodi
 We could also go an easily update our markup to display the atomic weight along with the name by changing our ``li``
  display to
 
-```
+```xml
  {{element.name}} - {{element.atomicWeight}}
 ```
 
 
-Resulting in
+Resulting in a new look, where we are appending the atomic weight to the display of the element's name.
 
    <div id="elements2" ng-controller="chemCtrl" >
         <ul>
@@ -105,7 +113,10 @@ Resulting in
         </ul>
     </div>
 
-Looking at our page though, we have a lot of data that we are displaying. Angular has the concept of filters, which can be applied to our expressions. An example of this is the [limitTo](http://docs.angularjs.org/api/ng.filter:limitTo) filter. We can limit the number of items we display, in our scenario to 10\. This is as simple as
+Looking at our page though, we have a lot of data that we are displaying. Angular has the concept of filters,
+which can be applied to our expressions. An example of this is
+the [limitTo](http://docs.angularjs.org/api/ng.filter:limitTo) filter. We can limit the number of items we display,
+in our scenario to 10\. This is as simple as
 
 ```xml
     <li data-ng-repeat="element in periodic.elements|limitTo:10 ">
@@ -121,8 +132,11 @@ We now our displaying ten results on our page
          </ul>
      </div>
 
-Angular can also quickly allow the data to be searched. An input box can be created, we can use the ng-model syntax
-to define a variable, and then use that as our filter. First, we can create an input box
+Angular can also quickly allow the data to be searched using the ``ng-model`` attribute. We create a text input box,
+and decorate it with the ``ng-model`` syntax
+to define a variable which is available on our scope, and then use that as an input to the filter.
+
+First, we can create the input box
 
 ```xml
 <input type="text" data-ng-model="elementName"/>
@@ -134,7 +148,7 @@ Next, we use that as the parameter for our filter instead of limitTo by using th
 <li data-ng-repeat="element in periodic.elements ' filter:elementName">
 ```
 
-We can then type in an element name and the list will narrow down.,
+We can then type in an element name and the list will narrow down automatically. Give it a try!
 
 
    <div id="elements3" ng-controller="chemCtrl" >
@@ -163,7 +177,7 @@ What we want to be able to do is filter on the JSON object property. I bring thi
 
 Note, there appears to be a bug in the current version of AngularJS, 1.0.8, where you need to initialize the filter. Using the current release candidate, 1.2, resolves this issue. Thanks to my Skyline Technologies colleague [Berny Zamora](https://twitter.com/bernyzamora) for helping me chase that down.
 
-Now when we type 1, we get no results
+Now when we type 1, we no longer see results now.
 
    <div id="elements4" ng-controller="chemCtrl" >
     <input type="text" ng-model="elementNameOnly"/>
@@ -178,12 +192,7 @@ Now when we type 1, we get no results
 
 I have created an Azure Website to host all of this code at [http://angularperiodic.azurewebsites.net/](http://angularperiodic.azurewebsites.net/)
 
-<p>The code is also available on [GitHub](https://github.com/jptacek/AngularPeriodic)
-&nbsp;
-
-&nbsp;
-
-&nbsp;
+The code is also available on [GitHub](https://github.com/jptacek/AngularPeriodic)
 </div>
 
 
