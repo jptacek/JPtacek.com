@@ -1,7 +1,7 @@
 ---
 layout: post
-title: AngularJS - Introducing Services
-date: 2014-04-03
+title: AngularJS - Introduction to Services
+date: 2014-5-18
 ignored: true
 tags: ["AngularJS","JavaScript","Web"]
 ---
@@ -16,20 +16,20 @@ tags: ["AngularJS","JavaScript","Web"]
 This is the eight in a series of posts on AngularJS where we are using Chemistry data from the periodic table
 to help us understand the framework. The others posts are
 
-1. [AngualrJS - Introduction](http://www.jptacek.com/2013/10/angularjs-introduction/)
+1. [AngularJS - Introduction](http://www.jptacek.com/2013/10/angularjs-introduction/)
 2. [AngularJS - Introducing AngularJS Controllers](http://www.jptacek.com/2013/10/introducing-angularjs-controllers/)
 3. [AngularJS - Introducing NG-Repeat](http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/)
 4. [AngularJS - More with NG-Repeat](http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/)
 5. [AngularJS - Image Binding](http://www.jptacek.com/2014/01/angularjs-lou-reed/)
 6. [AngularJS - Introducing Templates](http://www.jptacek.com/2014/02/angularJS-templates/)
 7. [AngularJS - Introducing Routing](http://www.jptacek.com/2014/02/angularJS-IntroToRouting/)
-8. AngularJS - Introducing Services
+8. AngularJS - Introduction to Services
 
 In AngularJS, when we want to create common code to be shared across our application, we create services. In the Angular world,
 the controller is the traffic cop, which directs data to your view for binding. Logic for retrieving that data falls to a
 service.
 
-Services are stateless object that has shared functions that can be used in multiple controllers or views. The functions on
+Services are stateless object that have shared functions that can be used in multiple controllers or views. The functions on
 services are also available throughout; they can be accessed in directives, controllers, filters, etc.
 
 For an example of a real world service that I have used in the past…. When creating a select list in HTML for an AngularJS

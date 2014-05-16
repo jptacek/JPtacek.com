@@ -16,7 +16,7 @@ tags: ["AngularJS","JavaScript","Web"]
 This is the seventh in a series of posts on AngularJS where we are using Chemistry data from the periodic table
 to help us understand the framework. The others posts are
 
-1. [AngualrJS - Introduction](http://www.jptacek.com/2013/10/angularjs-introduction/)
+1. [AngularJS - Introduction](http://www.jptacek.com/2013/10/angularjs-introduction/)
 2. [AngularJS - Introducing AngularJS Controllers](http://www.jptacek.com/2013/10/introducing-angularjs-controllers/)
 3. [AngularJS - Introducing NG-Repeat](http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/)
 4. [AngularJS - More with NG-Repeat](http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/)
