@@ -25,7 +25,7 @@ digital identity on the web. I talked a lot about security, Azure Websites, Word
 
 This year, my presentation is entitled, You Can't Always Be Hiking - Ways to Hack Your Day to Better Health. You can read
 more about it at the [That Conference site](https://www.thatconference.com/Sessions/Session/2271). Here is a copy of the
-abstract from the site
+abstract
 
 
 >Developers do awesome things by creating apps and web sites that make users go ooh and ahh (and possibly occasionally curse).
@@ -38,5 +38,5 @@ I have several things I plan on talking about during presentation, but I would l
  embracing the awesomeness of community that [Clark Sell](http://www.csell.net/) and rest of the wizards at That Conference
  have created, give
  me some of your tips! What do you
-do to keep healthy during the day? Feel free to sound off in the Disqus comments below with ideas and comments!
+do to keep healthy during the day? Feel free to sound off in the Disqus comments below with ideas and discussion!
 
