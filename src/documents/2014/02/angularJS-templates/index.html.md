@@ -31,8 +31,10 @@ to help us understand the framework. The others posts are
 5. [AngularJS - Image Binding](http://www.jptacek.com/2014/01/angularjs-lou-reed/)
 6. AngularJS - Introducing Templates
 7. [AngularJS - Introducing Routing](http://www.jptacek.com/2014/02/angularJS-IntroToRouting/)
+8. [AngularJS - Introduction to Services](http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/)
 
-Note: AngularJS does not allow for more than one ng-app directive. I need to refactor the entire site to account for
+>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
+the home page of my blog, only one application will work. I need to refactor the entire site to account for
 this. All of that to say this, you are best clicking on a single article so you can see the pages in action.
 
 AngularJS has a lot of great features for working with HTML that allows you to split up development when you are
