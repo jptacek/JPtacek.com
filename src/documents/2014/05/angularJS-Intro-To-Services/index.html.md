@@ -24,6 +24,10 @@ to help us understand the framework. The others posts are
 7. [AngularJS - Introducing Routing](http://www.jptacek.com/2014/02/angularJS-IntroToRouting/)
 8. AngularJS - Introduction to Services
 
+>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
+the home page of my blog, only one application will work. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.
+
 In AngularJS, when we want to create common code to be shared across our application, we create services. In the Angular world,
 the controller is the traffic cop, which directs data to your view for binding. Logic for retrieving that data falls to a
 service.
@@ -32,15 +36,15 @@ Services are stateless object that have shared functions that can be used in mul
 services are also available throughout; they can be accessed in directives, controllers, filters, etc.
 
 For an example of a real world service that I have used in the past…. When creating a select list in HTML for an AngularJS
-application, you usually have an ID associated with a selected element from the list. You usually want to do something with
-this, maybe display all the properties of the JSON object. In JavaScript, to find this element, you need to loop through all
+application, you usually have an ID associated with a selected element from the list. Often you will
+display all the properties of the JSON object. In JavaScript, to find this element, you need to loop through all
 the elements in an array until you get a match on the key.  Depending on the size of your application, you end up writing this
-logic many, many times. What I have done in the past, is write a helper application that creates an array that I can
-lookup up an element by key value, thus reducing the need for repetitive array looping.
+logic many, many times. To minimize this, I have written a helper application that creates an array that allows for
+ an element to be accessed by a key value, thus reducing the need for repetitive array looping.
 
-Generally, there are two ways to create services within your application. The most common is to use the ``module.service`` on
+Generally, there are two ways to create services within your application. The most common is to use ``module.service`` within
  your application. The second is ``module.factory``. There are a couple of other ways, but we will skip those. AngularJS
- services are really singleton objects. These single objects are then available across your application via dependency
+ services are really singleton objects. The object from services are then available across your application via dependency
  injection, which we will look at soon.
 
  The main difference between the two service creation methods is how they are used. The ``module.service`` approach creates an
@@ -51,7 +55,7 @@ Generally, there are two ways to create services within your application. The mo
 
 The syntax for ``module.service`` is
 
-```xml
+```javascript
 var chemistryApp = angular.module('chemistryApp', []);
 
 //
@@ -71,7 +75,7 @@ function ChemCtrl($scope, chemistryService)
 
 The syntax for ``module.factory`` is
 
-```xml
+```javascript
 var chemistryApp = angular.module('chemistryApp', []);
 
 //
@@ -97,7 +101,7 @@ it. We showed this above, but just to be sure, by passing ``chemistryService`` t
 available within the
 controller scope
 
-```xml
+```javascript
 function ChemCtrl($scope, chemistryService)
 {
     ...
@@ -114,7 +118,7 @@ electronegativity. We will create a service that does two things, calculate the 
 based on the difference determine the tpe of bond.
 
 Our service then looks like
-```xml
+```javascript
 chemistryApp.service('chemistryService', function () {
 
     this.calculateElectronegativityDifference = function (element1, element2) {
@@ -142,7 +146,7 @@ Our controller creation then gets updated so that we are injecting the service i
 since $scope is our conduit for the view to talk to the service, we create a function on the controller that will
 consume the service when we have two elements selected.
 
-```xml
+```javascript
 chemistryApp.controller('chemServiceCtrl', ['$scope', 'chemistryService',
     function chemServiceCtrl($scope, $log, chemistryService) {
 
@@ -208,8 +212,7 @@ Tying it all together, we have something like this.
 </div>
 
 We can now start to see how AngularJS provides a platform for creating web applications. With services, we are able to
-encapsulate logic and use it within multiple controllers in our application. Next, we will take a look at creating
-custom directives.
+encapsulate logic and use it within multiple controllers in our application.
 
 You can either visit [http://angularperiodic.azurewebsites.net/](http://angularperiodic.azurewebsites.net/) to see the code in action and
 as always find the code out on [GitHub](https://github.com/jptacek/AngularPeriodic).
