@@ -15,28 +15,31 @@ Relativity, it is that time is not constant.
 There are really two ideas of time… The first, relates to the time on a clock that we all reference. The second, is the larger concept of time that is part of the theories that
 Einstein laid out in his Special and General Theories of Relativity. We will focus on the clock for most of this.
 
-![Einstein](einstein.jpg)
+![Einstein](einstein.jpg) (gratuitous Einstein picture)
 
 When I interview people for jobs, or talk with young programmers, I will sometimes ask a variation of this question, "you are running a
-website and are taking orders for customers all over the world, how do you handle the date and time of an order?". This question
+website and are taking orders for customers all over the world, how do you handle the date and time of an order?" This question
 is amazingly complex.
 
 First, you get an idea if the person has a grasp of time zones and local geography beyond the one they are in,
-which is always a good first step. This leads to other discussions. Do they mention Daylight Saving Time? Do they mention what a pain Indiana and/or Arizona,
- which don't recognize Daylight Saving Time, is?
+which is always a good first step. This leads to other discussions. Do they mention Daylight Saving Time? Do they mention 
+what a pain Indiana and/or Arizona are,
+ neither of which recognize Daylight Saving Time?
 
-They make it this far, you are happy. Next however, you hope they mention there really isn’t a decent way to know where a user
-is when they place an order to determine what time they think it is when they placed the order. Unless they explicitly provides
+They make it this far, you are happy. Next however, you hope they mention there really isn’t a decent way to know where a 
+user
+is when they place an order so that you can display a time when they think they bought their product.
+ Unless they explicitly provide 
 an address or a time zone, you are not guaranteed to know where they are. You can
- guess based on things like IP address, however, this costs money. You can ask the user if you will let them use their location
- based on their browser geolocation feature, but if they are like me, this is a sign to go to another site.
+ guess based on things like IP address, however, this costs money. You can ask the user if your application can use their 
+ browser geolocation feature to determine where they are, but if they are like me, this is a sign to go to another site.
 
-So, you say to yourself, the best thing I can do when a user places an order is to ask them to provide their username and
-address, this will surely solve the problem. No, it really won’t….. Do you save the time zone where they placed the order? If I
+So, you say to yourself, the best thing I can do when a user places an order is to ask them to provide a username that is tied
+to a physical address in the real world. This will surely solve the problem! No, it really won’t….. Do you save the time zone where they placed the order? If I
 am vacationing in sunny California and order the latest Marvel Blu-Ray to be shipped to my house, what is the proper order time
 from my perspective? The time back home or the time where I am?
 
-This does not even get into the craziness of time zone names. I live in the Midwest, home of Central Standard Time (CST).
+None of this touches on craziness of time zone names. I live in the United States Midwest, home of Central Standard Time (CST).
 However, there is also Cuba Standard Time, China Standard Time, and Central Standard Time in Australia, all claiming the acronym
 CST. Which one wins?
 
@@ -61,13 +64,14 @@ Second, and I assume much more controversially, let us abandon time zones in the
 ALL need to be on the same time as a country. In our agrarian past, it may have made sense for 12:00 PM to represent when the
 sun was at its apex. However, for the most part, we are NOT an agrarian society currently. Our economy is an information and
 finance based economy. I can guarantee you, stock brokers living in California, don’t wake up at 9:30 AM PST for the opening bell
-on Wall Street, they wake and are ready to serve their customers every day at 6:30 AM PST to match the 9:30 EST opening bell. Our
+on Wall Street, they wake and are ready to serve their customers every day by 6:30 AM PST to match the 9:30 AM EST opening bell. Our
 economy already is driven by the time when business happens, not when we want it to happen.
 
 Many folks may think the idea of a single time zone in the states is crazy talk, and it probably is. As a country, we tend to
 be obstinate to change and prefer to cling to the way things have been done (I am looking at you Metric
-System conversion). However, time marches and on, and more importantly, our economy marches
-on. It wasn’t until commerce became widespread, that the concept of time (or more exactly, time keeping) became prevalent. Our
+System conversion). However, time marches on, and more importantly, our economy marches
+on. It wasn’t until commerce became widespread, that the concept of time (or more exactly, time keeping) became prevalent in order
+to facilitate commerce. Our
 economy though has moved past local time, it has moved global. The reality is that countries like China are already ahead of us
 here, with a single time that spans five time zones. One needs to only look at the image of the differing morass of
 time zones from [WikiPedia](http://en.wikipedia.org/wiki/Time_zone)
