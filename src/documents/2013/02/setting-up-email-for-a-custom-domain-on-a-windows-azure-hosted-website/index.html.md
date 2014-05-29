@@ -37,6 +37,7 @@ Versus Chrome
 
     1.  nslookup -type=mx jptacek.com
     2.  nslookup -type=txt jptacek.com
+
 These should display values you entered earlier
 2.  <div>Return to Domains.live.com and log in with your Microsoft account. It will show you the domains. In this step, the DNS configuration can take a while too</div>
 ![](021513_1309_Settingupem7.png)
@@ -56,3 +57,7 @@ You are done! You can now go to newly created email site for your custom domain,
 &nbsp;
 
 You can now email me at blog [@] jptacek.com
+
+**Update - May 27, 2014** Microsoft has announced that it will no longer support custom domains using Outlook.Com. As a
+ result, this content of this post is no longer valid. They
+are encouraging customers to use Office 365 moving forward. You can find out more at [domains.live.com](http://domains.live.com/)
