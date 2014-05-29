@@ -51,8 +51,20 @@ going to create a custom directive, which will allow us to create our own HTML t
 Creating our own HTML tags, allow us to 
 start thinking of our HTML markup as a domain specific language. Throughout this series, we have been using Chemistry data
 to explore Angular. In keeping with that model, we are going to create a simple custom directive to display chemical 
-data in its own tag.
+data in its own "HTML" tag called ``periodicchartelement``. Cool things are starting to happen here people!
 
+So how do we do this? First, similar to controllers, directives are defined on the module for our application via the 
+``module.directive`` API. Templates then have the ability to setup a template. Our JavaScript would look something like
+
+```javascript
+.directive('periodicchartelement', function() {
+    return {
+      template: 'Name: {{element.name}} Atomic Weight: {{element.weight}}'
+    };
+  });
+```
+
+We can, of course, make it behave similar to the template we saw early by using a snippet of HTML, my preferred approach.
 
 
 <div id="app" ng-app="chemistryApp">
