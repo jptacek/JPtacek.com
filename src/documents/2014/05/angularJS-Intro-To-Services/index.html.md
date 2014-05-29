@@ -115,7 +115,7 @@ using the Periodic Data, which he kindly let me steal.
 
 What we are going to do is determine the type of bonds two elements would make, based on the differences in their
 electronegativity. We will create a service that does two things, calculate the differences in electronegativty and then
-based on the difference determine the tpe of bond.
+based on the difference determine the type of bond.
 
 Our service then looks like
 ```javascript
