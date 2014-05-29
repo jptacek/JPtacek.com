@@ -1,21 +1,16 @@
-chemistryApp.controller('chemServiceCtrl', ['$scope', 'chemistryService',
-        function chemServiceCtrl($scope,  chemistryService) {
+chemistryApp.controller('chemistryController', ['$scope', 'chemistryService','$log',
+        function chemistryController($scope,  chemistryService,$log) {
 
-            $scope.elements = periodicData.elements;
+            $scope.elements = chemistryService.getElements();
 
-            $scope.calculateBondPolarity = function () {
+            $scope.periodicElement = $scope.elements[0];
 
-                if ($scope.selectedElement1 && $scope.selectedElement2) {
+            $scope.getCssClassElement = chemistryService.getCssClassElement($scope.periodicElement.type);
 
-
-                    $scope.currentBondDifference = chemistryService.calculateElectronegativityDifference($scope.selectedElement1, $scope.selectedElement2);
-                    $scope.currentBondType = chemistryService.convertElectronegativityDifferenceToName($scope.currentBondDifference);
-
-                }
-
+            $scope.updateController = function(selectedElement) {
+                $scope.periodicElement = selectedElement;
+                $scope.getCssClassElement = chemistryService.getCssClassElement($scope.periodicElement.type);
             };
-
-            /* private methods */
 
         }]
 );
