@@ -31,7 +31,8 @@ the home page of my blog, only one application will work. I need to refactor the
 this. All of that to say this, you are best clicking on a single article so you can see the pages in action.
 
 On the AngularJS [homepage](https://angularjs.org/) you see the claim that Angular is "HTML Enhanced for Web Apps!".
-What does this actually mean though?
+What does this actually mean though? For me it means directives, which allow us to extend HTML and create new HTML
+markup. Let us pretend and call it our own HTML 6.
 
 ![AngularJS HomePage](htmlEnhanced.png)
 
@@ -54,7 +55,7 @@ to explore Angular. In keeping with that model, we are going to create a simple 
 data in its own "HTML" tag called ``periodicchartelement``. Cool things are starting to happen here people!
 
 So how do we do this? First, similar to controllers, directives are defined on the module for our application via the 
-``module.directive`` API. Templates then have the ability to setup a template. Our JavaScript would look something like
+``module.directive`` API. We can setup a samll template. Our JavaScript would look something like
 
 ```javascript
 .directive('periodicchartelement', function() {
@@ -64,8 +65,28 @@ So how do we do this? First, similar to controllers, directives are defined on t
   });
 ```
 
-We can, of course, make it behave similar to the template we saw early by using a snippet of HTML, my preferred approach.
+We can, of course, break the teamplate into its own file by using templateUrl as we have discussed 
+[earlier](http://www.jptacek.com/2014/02/angularJS-templates/), which is my preferred approach.
 
+We next define what part of our HTML our directive will be expanding. We do this by using ``restrict`` to 
+indicate the DOM element we are expanding or creating
+* ``'A'`` - The attribute a DOM element. <div periodicchartelement="element">
+* ``'C'`` - class name 
+* ``'E'`` - element name <periodicchartelement></periodicchartelement>
+
+There is also the ability creative directives tied to HTML comments with ``restrict:M``. The can also be combined into
+something like ACM, etc.
+
+```javascript
+.directive('periodicchartelement', function() {
+    return {        
+    restrict: 'E',
+      template: 'Name: {{element.name}} Atomic Weight: {{element.weight}}'
+    };
+  });
+```
+
+Our directive function now creates a new HTML element, ``periodicchartelement``. 
 
 <div id="app" ng-app="chemistryApp">
     <div id="app" ng-controller="chemistryController">
