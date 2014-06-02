@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AngularJS - Introduction to Services
+title: AngularJS - Introduction to Directives
 date: 2014-5-24
 ignore: true
 tags: ["AngularJS","JavaScript","Web"]
@@ -47,15 +47,15 @@ directives.
 
 While we have seen directives previously, they have been attributes that allow us to markup existing HTML elements with
 bits and pieces of Angular functionality. Examples of this have been ``ng-show`` or ``ng-repeat``. For this example, we are
-going to create a custom directive, which will allow us to create our own HTML tag. 
+going to make a custom directive, which will allow us to create our own HTML tag. 
 
-Creating our own HTML tags, allow us to 
+The valyue of creating our own tags, is that it allows us to 
 start thinking of our HTML markup as a domain specific language. Throughout this series, we have been using Chemistry data
 to explore Angular. In keeping with that model, we are going to create a simple custom directive to display chemical 
 data in its own "HTML" tag called ``periodicchartelement``. Cool things are starting to happen here people!
 
 So how do we do this? First, similar to controllers, directives are defined on the module for our application via the 
-``module.directive`` API. We can setup a samll template. Our JavaScript would look something like
+``module.directive`` API. We can setup a small template. Our JavaScript would look something like
 
 ```javascript
 .directive('periodicchartelement', function() {
@@ -65,17 +65,18 @@ So how do we do this? First, similar to controllers, directives are defined on t
   });
 ```
 
-We can, of course, break the teamplate into its own file by using templateUrl as we have discussed 
+We can, of course, break the template into its own file by using templateUrl as we have discussed 
 [earlier](http://www.jptacek.com/2014/02/angularJS-templates/), which is my preferred approach.
 
 We next define what part of our HTML our directive will be expanding. We do this by using ``restrict`` to 
-indicate the DOM element we are expanding or creating
+indicate the DOM element we are creating from the following options
+
 * ``'A'`` - The attribute a DOM element. <div periodicchartelement="element">
 * ``'C'`` - class name 
 * ``'E'`` - element name <periodicchartelement></periodicchartelement>
 
-There is also the ability creative directives tied to HTML comments with ``restrict:M``. The can also be combined into
-something like ACM, etc.
+There is also the ability creative directives tied to HTML comments with ``restrict:M``. The restrict keyword
+can also be combined together to form something like ACM, etc.
 
 ```javascript
 .directive('periodicchartelement', function() {
@@ -87,6 +88,107 @@ something like ACM, etc.
 ```
 
 Our directive function now creates a new HTML element, ``periodicchartelement``. 
+
+For our example we are creating, we have changed things a bit more. Based on our [introduction of services](http://www.jptacek.com/2014/05/angularJS-Intro-To-Services/)
+ last time, we have wrapped our periodic data into a service, called ``getElements()``. Second, we have expanded the properties 
+ of our Json object used in the application to include fields about the periodicity of chemical elements. Here is an example
+ 
+ ```javascript
+  {"atomicNumber": 1,
+  "name": "Hydrogen",
+  "atomicWeight": 1.00794,
+  "phase": "Gas",
+  "ionization": 13.5984,
+  "melting": -259.14,
+  "boiling": -252.87,
+  "electronegativity": 2.2,
+  "type": 'Non Metal',
+  "group": 1,
+  "group2": 'IA',
+  "period": 1,
+  "elecconfig": '1s1',
+  "symbol": 'H'},
+ ```
+
+With that in place, let's create a directive that will allow us to display elements from the periodic table.
+
+The first step is to create the directive function, we will create a new file, chemistryDirective.js and then hang 
+the directive off of our module and call it ```periodicchartelement`
+
+```javascript
+chemistryApp.directive('periodicchartelement', function (chemistryService) {;
+    return {
+        restrict: 'E',
+        templateUrl: '/2014/05/angularJS-intro-to-directives/template/periodic-template.html',
+        scope:{
+            element:'=',
+            cssType:'=csstypeclass'
+        }
+
+    }
+
+});
+```
+
+You will notice several things. First, we are using the ``restrict`` keyword to explicitly identify this as a
+HTML element. Second, we are loading a HTML template for display. Last, we are passing in two items, the element 
+from our JSON object and a cssType, which is a function to display our CSS class.
+
+Our HTML markup is pretty basic. Notice though where we are setting a CSS class based, using ``ng-class`` on the cssType.
+
+```xml
+<div class='periodicCell' ng-class="cssType">
+    <span style="text-align: left"><small>{{element.atomicNumber}}</small></span>&nbsp;&nbsp; <span style="text-align: right"><small>{{element.atomicWeight}}</small></span><br />
+    <span style="font-size:24px;"><strong>{{element.symbol}}</strong></span><br />
+    <span><small>{{element.name }}</small></span>
+</div>
+
+```
+
+Our CSS type is then a function that determines the CSS class based on the type of element and is defined in our
+service, ``chemistryService.js``
+
+```javascript
+var getCssClassElement = function ( elementType) {
+        var cssClass = '';
+        elementType = elementType.toLowerCase();
+        cssClass = elementType;
+        switch (elementType) {
+            case 'metalloids':
+                cssClass = 'metalloids';
+                break;
+            case 'alkali metal':
+                cssClass = 'alkaliMetal';
+                break;
+            case 'non metal':
+                cssClass = 'nonMetal';
+                break;
+            case 'noble gas':
+                cssClass = 'nobleGas';
+                break;
+            case 'halogen':
+                cssClass = 'halogen';
+                break;
+            case 'alkaline earth':
+                cssClass = 'alkalineEarth';
+                break;
+            case 'poor metal':
+                cssClass = 'poorMetal';
+                break;
+            case 'rare earth metal':
+                cssClass = 'lathanoids';
+                break;
+            case 'transition metal':
+                cssClass = 'actinoids';
+                break;
+            case 'alkaline earth metal':
+                cssClass = 'poorMetal';
+                break;
+        }
+        return cssClass;
+    };
+```
+
 
 <div id="app" ng-app="chemistryApp">
     <div id="app" ng-controller="chemistryController">
