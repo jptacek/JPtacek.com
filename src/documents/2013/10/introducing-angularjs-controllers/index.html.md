@@ -136,7 +136,7 @@ Now, we can have the values from our scope value inject into our HTML markup. Th
 curly braces. It is as simple as
 
 ```xml
-<b>Name:</b> &#123;&#123;elementName&#125;&#125; <b>Atomic Number:</b> {{atomicNumber}}
+<b>Name:</b> {{elementName}} <b>Atomic Number:</b> {{atomicNumber}}
 ```
 
 The value we set in our controller are automatically displayed.
