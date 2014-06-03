@@ -43,22 +43,30 @@ Second, we are adding a reference to <span style="font-family:Courier New">app.j
 
 **App.js**
 
-<pre class="brush: js">
+```javascript
 'use strict';
 
 var chemistryApp = angular.module('chemistryApp', []);
-</pre>
+```
 
-Now that our <span style="font-family:Courier New">app.js</span> file is identified, we add a <span style="font-family:Courier New">ng-app</span> directive to our body tag. That tells Angular that chemistryApp will be responsible for our page.
+Now that our ``app.js`` file is identified, we add a ``ng-app`` directive to our body tag. That tells Angular that 
+chemistryApp will be responsible for our page.
 
-Next, we want to create the controller. The controller will be responsible for managing data for the HTML view. Usually, controllers are associated with DIVs. First, we will create our controller called <span style="font-family:Courier New">chemistryController.js</span>
+Next, we want to create the controller. The controller will be responsible for managing data for the HTML view. 
+Usually, controllers are associated with DIVs. First, we will create our controller called 
+``chemistryController.js<``
 
-We reference our module, <span style="font-family:Courier New">chemistryApp</span>, from our <span style="font-family:Courier New">App.js</span> file. We then identify the name of the controller, chemistryController and then have a second parameter, which is a function, that is our actual controller. We want to be sure to pass in any parameters our controller will need. Almost all controllers will require the <span style="font-family:Courier New">$scope</span> variable, since the controller interacts with the view via this, so almost all of our controllers will at a minimum have this.
+We reference our module, ``chemistryApp``, from our``App.js`` file. We then identify the name of the controller, 
+chemistryController and then have a second parameter, which is a function, that is our actual controller.
+We want to be sure to pass in any parameters our controller will need. Almost all controllers will require the 
+``$scope`` variable, since the controller interacts with the view via this, so almost all of our controllers will at a 
+minimum have this.
 
 As of now, our controller skeleton is built and ready to go, it just not doing anything at the moment
 
 **chemistryController.js**
-<pre class="brush: js">
+
+```javascript
 'use strict';
 
 chemistryApp.controller('chemistryController',
@@ -66,17 +74,19 @@ chemistryApp.controller('chemistryController',
 
     }
 );
-</pre>
+```
 
 We go and add our controller JavaScript file to our HTML with a script tag, but we have to update our HTML to identify where the controller will function. This is done via the <span style="font-family:Courier New">ng-controller</span> directive. The syntax is as so
-<pre class="brush: xml">
+
+```xml
 <div class="container" id="ngChem1" ng-controller="chemistryController">
 
 </div>
-</pre>
+```
 
 And for now, our HTML looks like
-<pre class="brush: xml;">
+
+```xml
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,19 +104,22 @@ And for now, our HTML looks like
 <script src="chemistryController.js"></script>
 </body>
 </html>
-</pre>
+```
 
-This page renders, but does not do anything. Mostly as a result of us telling it to do nothing! In general though, these three steps are the basis of an Angular application. 
+This page renders, but does not do anything. Mostly as a result of us telling it to do nothing! In general though, 
+these three steps are the basis of an Angular application. 
 
 1.  We identify ng-app, via app.js, that is responsible for the page.
 2.  We create a controller, chemistryController.js, that takes the $scope variable from our page and then populates it with data and/or functions so our HTML can later render it. We have not seen this in action yet, but soon.
 3.  The last part then is identifying, via the ng-controller directive, the area of responsibility for our controller.
 
-As previously mentioned, the <span style="font-family:Courier New">$scope</span> variable is the glorified property bag we use to populate data. So within our controller, we can go and set some values for display in our view/web page. In our example, that will be the name of a chemical element and it's atomic number, Hydgroen and 1\. Our controller function now looks like
+As previously mentioned, the ``$scope`` variable is the glorified property bag we use to populate data. So within our 
+controller, we can go and set some values for display in our view/web page. In our example, that will be the name of a 
+chemical element and it's atomic number, Hydgroen and 1. Our controller function now looks like
 
 **chemistryController.js**
 
-<pre class="brush: js">
+```javascript
 
 'use strict';
 
@@ -117,12 +130,14 @@ chemistryApp.controller('chemistryController',
 
     }
 );
-</pre>
+```
 
-Now, we can have the values from our scope value inject into our HTML markup. This is done via our friend, the magical curly braces. It is as simple as
+Now, we can have the values from our scope value inject into our HTML markup. This is done via our friend, the magical 
+curly braces. It is as simple as
 
-<pre class="brush: xml;"><b>Name:</b> {{elementName}} <b>Atomic Number:</b> {{atomicNumber}}</pre>
-</span>
+```xml
+<b>Name:</b> {{elementName}} <b>Atomic Number:</b> {{atomicNumber}}
+```
 
 The value we set in our controller are automatically displayed.
 
