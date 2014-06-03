@@ -36,7 +36,7 @@ well as anything.
 We won’t spend a lot of time jumping into AngularJS. You can check out some previous posts at
 [http://www.jptacek.com/tags/angularjs/](http://www.jptacek.com/tags/angularjs/) for an introduction.
 
-We will have two things, our app.js file to create our angular application, piApp, and our controller,
+We will have two things, our chemistryApp.js file to create our angular application, piApp, and our controller,
  where the interesting stuff will happen.
 
 Our HTML file is pretty basic,

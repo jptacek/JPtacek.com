@@ -25,9 +25,9 @@ First, we essentially wire up our page to indicate we are going to have an Angul
 
 It is worth nothing that use of data-* attributes is more "semantically" correct. If you want to save yourself keystrokes, you can just use <span style="font-family:Courier New">ng-app</span> or <span style="font-family:Courier New">ng-controller</span>, but if you get bothered by having warnings in your code, like me, you will want to use <span style="font-family:Courier New">ng-app</span>, etc.
 
-Of course, this being Javascript and all, we need references to JavaScript files that contain this logic for implementation. Usually in structuring a project there will be an app.js file that sets up your Angular application, controllers for interacting between your model and the view as well as services.
+Of course, this being Javascript and all, we need references to JavaScript files that contain this logic for implementation. Usually in structuring a project there will be an chemistryApp.js file that sets up your Angular application, controllers for interacting between your model and the view as well as services.
 
-Our app.js file, which we call 12DaysApp.js, is just two lines and creates the scope we reference in our body markup, christmasApp.
+Our chemistryApp.js file, which we call 12DaysApp.js, is just two lines and creates the scope we reference in our body markup, christmasApp.
 
 
 _12DaysApp.js

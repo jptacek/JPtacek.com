@@ -54,7 +54,7 @@ Second, this is our first non-trivial look at the Dependency Injection model in 
 Angular's Dependency Injection model is crazy slick. When the application starts up, an
 injector is created that is responsible for loading modules. The injector is unaware of
 any of our services until we inject them. To take advantage of this, we inject the route service
-when we create our app module via a parameter. Our app.js now looks like
+when we create our app module via a parameter. Our chemistryApp.js now looks like
 
 ```javascript
 'use strict';

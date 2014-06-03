@@ -39,9 +39,9 @@ First, we want to take a look at our HTML.
 
 We are going to use Twitter bootstrap for some down the road reasons so we are going to add that CSS reference.
 
-Second, we are adding a reference to <span style="font-family:Courier New">app.js</span>. This is the starting script that identifies our Angular module. We are going to call our Application chemistryApp.
+Second, we are adding a reference to ``chemistryApp.js``. This is the starting script that identifies our Angular module. We are going to call our Application chemistryApp.
 
-**App.js**
+**chemistryApp.js**
 
 ```javascript
 'use strict';
@@ -49,7 +49,7 @@ Second, we are adding a reference to <span style="font-family:Courier New">app.j
 var chemistryApp = angular.module('chemistryApp', []);
 ```
 
-Now that our ``app.js`` file is identified, we add a ``ng-app`` directive to our body tag. That tells Angular that 
+Now that our ``chemistryApp.js`` file is identified, we add a ``ng-app`` directive to our body tag. That tells Angular that 
 chemistryApp will be responsible for our page.
 
 Next, we want to create the controller. The controller will be responsible for managing data for the HTML view. 
@@ -100,7 +100,7 @@ And for now, our HTML looks like
 </div>
 
 <script src="angular.min.js"></script>
-<script src="app.js"></script>
+<script src="chemistryApp.js"></script>
 <script src="chemistryController.js"></script>
 </body>
 </html>
@@ -109,7 +109,7 @@ And for now, our HTML looks like
 This page renders, but does not do anything. Mostly as a result of us telling it to do nothing! In general though, 
 these three steps are the basis of an Angular application. 
 
-1.  We identify ng-app, via app.js, that is responsible for the page.
+1.  We identify ng-app, via chemistryApp.js, that is responsible for the page.
 2.  We create a controller, chemistryController.js, that takes the $scope variable from our page and then populates it with data and/or functions so our HTML can later render it. We have not seen this in action yet, but soon.
 3.  The last part then is identifying, via the ng-controller directive, the area of responsibility for our controller.
 
