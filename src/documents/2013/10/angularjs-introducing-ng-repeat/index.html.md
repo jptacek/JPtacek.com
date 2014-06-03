@@ -199,6 +199,6 @@ The code is also available on [GitHub](https://github.com/jptacek/AngularPeriodi
 </div>
 
 
+<script type="text/javascript" src="/2013/10/angularjs-introducing-ng-repeat/js/chemistryApp.js"></script>
 <script type="text/javascript" src="/2013/10/angularjs-introducing-ng-repeat/js/chemistryController.js"></script>
 <script type="text/javascript" src="/2014/02/angularJS-templates/js/chemistry.js"></script>
-<script type="text/javascript" src="/2013/10/angularjs-introducing-ng-repeat/js/chemistryApp.js"></script>
