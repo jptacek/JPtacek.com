@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AngularJS - Introduction to Directives
-date: 2014-5-24
+date: 2014-6-3
 ignore: true
 tags: ["AngularJS","JavaScript","Web"]
 ---
@@ -46,16 +46,16 @@ pretty close to zero. However, Google starts earning the superheroic name it gav
 directives.
 
 While we have seen directives previously, they have been attributes that allow us to markup existing HTML elements with
-bits and pieces of Angular functionality. Examples of this have been ``ng-show`` or ``ng-repeat``. For this example, we are
+bits and pieces of Angular functionality. Examples of this have been ``ng-show`` or ``ng-repeat``. For this post, we are
 going to make a custom directive, which will allow us to create our own HTML tag. 
 
-The valyue of creating our own tags, is that it allows us to 
+The value of creating our own tags, is that it allows us to 
 start thinking of our HTML markup as a domain specific language. Throughout this series, we have been using Chemistry data
-to explore Angular. In keeping with that model, we are going to create a simple custom directive to display chemical 
+to explore Angular. In keeping with that theme, we are going to create a simple custom directive to display chemical 
 data in its own "HTML" tag called ``periodicchartelement``. Cool things are starting to happen here people!
 
 So how do we do this? First, similar to controllers, directives are defined on the module for our application via the 
-``module.directive`` API. We can setup a small template. Our JavaScript would look something like
+``module.directive`` API. Within here, we can setup a small template. Our JavaScript would look something like
 
 ```javascript
 .directive('periodicchartelement', function() {
@@ -65,18 +65,19 @@ So how do we do this? First, similar to controllers, directives are defined on t
   });
 ```
 
-We can, of course, break the template into its own file by using templateUrl as we have discussed 
-[earlier](http://www.jptacek.com/2014/02/angularJS-templates/), which is my preferred approach.
+Of course, we can break the template into its own file by using templateUrl as we have discussed 
+[earlier](http://www.jptacek.com/2014/02/angularJS-templates/), which is the preferred approach.
 
 We next define what part of our HTML our directive will be expanding. We do this by using ``restrict`` to 
 indicate the DOM element we are creating from the following options
 
-* ``'A'`` - The attribute a DOM element. <div periodicchartelement="element">
+* ``'A'`` - The attribute of a DOM element. for example  ``<div periodicchartelement="element">``
 * ``'C'`` - class name 
-* ``'E'`` - element name <periodicchartelement></periodicchartelement>
+* ``'E'`` - A new element name, for example  ``<periodicchartelement></periodicchartelement>``
 
 There is also the ability creative directives tied to HTML comments with ``restrict:M``. The restrict keyword
-can also be combined together to form something like ACM, etc.
+can also be combined together to in a manner such as ``ACM``, indicating the durective applied to attributes, classes, 
+and comments.
 
 ```javascript
 .directive('periodicchartelement', function() {
@@ -89,9 +90,10 @@ can also be combined together to form something like ACM, etc.
 
 Our directive function now creates a new HTML element, ``periodicchartelement``. 
 
-For our example we are creating, we have changed things a bit more. Based on our [introduction of services](http://www.jptacek.com/2014/05/angularJS-Intro-To-Services/)
- last time, we have wrapped our periodic data into a service, called ``getElements()``. Second, we have expanded the properties 
- of our Json object used in the application to include fields about the periodicity of chemical elements. Here is an example
+For the example we are creating, we have changed a few things in comparrison to previous posts. 
+Based on our [introduction of services](http://www.jptacek.com/2014/05/angularJS-Intro-To-Services/)
+ last time, we have wrapped our periodic data in a service with a function called ``getElements()``. Second, we have expanded the properties 
+ of our JSON object used in the application to include fields about the periodicity of chemical elements. Here is an example
  
  ```javascript
   {"atomicNumber": 1,
@@ -110,10 +112,10 @@ For our example we are creating, we have changed things a bit more. Based on our
   "symbol": 'H'},
  ```
 
-With that in place, let's create a directive that will allow us to display elements from the periodic table.
+With that in place, let's create a directive that will allow us to display an element from the periodic table.
 
 The first step is to create the directive function, we will create a new file, chemistryDirective.js and then hang 
-the directive off of our module and call it ```periodicchartelement`
+the directive off of our module and call it ```periodicchartelement``
 
 ```javascript
 chemistryApp.directive('periodicchartelement', function (chemistryService) {;
@@ -131,10 +133,11 @@ chemistryApp.directive('periodicchartelement', function (chemistryService) {;
 ```
 
 You will notice several things. First, we are using the ``restrict`` keyword to explicitly identify this as a
-HTML element. Second, we are loading a HTML template for display. Last, we are passing in two items, the element 
-from our JSON object and a cssType, which is a function to display our CSS class.
+HTML element by using the value of ``E``. Second, we are loading a HTML template for display. Last, we are passing in two items, the element 
+from our JSON object and a cssType, which is a function from our scope to display our CSS class.
 
-Our HTML markup is pretty basic. Notice though where we are setting a CSS class based, using ``ng-class`` on the cssType.
+Our HTML markup is pretty basic. Notice though where we are setting a CSS class using ``ng-class`` and binding to the value 
+of cssType.
 
 ```xml
 <div class='periodicCell' ng-class="cssType">
@@ -199,11 +202,30 @@ var getCssClassElement = function ( elementType) {
                 &nbsp;
             </div>
             <div class="row">
+            <div class="col-md-2">
                 <periodicchartelement element="periodicElement" csstypeclass="getCssClassElement"></periodicchartelement>
+                </div>
+            <div class="col-md-3">
+                <div class="metalloids"><b>Metalloids</b></div>
+                <div class="alkaliMetal"><b>Alkali Metal</b></div>
+                <div class="nonMetal"><b>Non Metal</b></div>
+                <div class="nobleGas"><b>Noble Gas</b></div>
+                <div class="halogen"><b>Halogen</b></div>
+                <div class="alkalineEarth"><b>Alkaline Earth</b></div>
+                <div class="poorMetal"><b>Poor Metal</b></div>
+                <div class="lathanoids"><b>Rare Earth Metal</b></div>
+                <div class="actinoids"><b>Transition Metal</b></div>
+                <div class="poorMetal"><b>Alkaline Earth Metal</b></div>
+                </div>
             </div>
     </div>
 </div>
+<br/>
+We have now created a new HTML element! It displays the atomic number, the atomic weight, atomic symbol and the name from 
+our JSON object of periodic data. Based on the element type, we then color code the element appropriately.
 
+This is the  most basic of introductions of creating (directives)[https://docs.angularjs.org/guide/directive] with AngularJS,
+ next time, we will dig in deeper!
 
 You can either visit [http://angularperiodic.azurewebsites.net/](http://angularperiodic.azurewebsites.net/) to see the code in action and
 as always find the code out on [GitHub](https://github.com/jptacek/AngularPeriodic).

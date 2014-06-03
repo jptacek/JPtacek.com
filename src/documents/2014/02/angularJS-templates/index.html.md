@@ -32,6 +32,7 @@ to help us understand the framework. The others posts are
 6. AngularJS - Introducing Templates
 7. [AngularJS - Introducing Routing](http://www.jptacek.com/2014/02/angularJS-IntroToRouting/)
 8. [AngularJS - Introduction to Services](http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/)
+9. [AngularJS - Introduction to Directives](http://www.jptacek.com/2014/06/angularJS-intro-to-directives/)
 
 >Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
 the home page of my blog, only one application will work. I need to refactor the entire site to account for
