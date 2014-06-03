@@ -143,8 +143,19 @@ The value we set in our controller are automatically displayed.
 
 ![](100313_2137_Introducing2.png)
 
+<div ng-app="chemistryApp">
+<div class="container" id="ngChem1" ng-controller="chemistryController">
+    <h1>Chemistry Controller</h1>
+    <b>Name:</b> {{elementName}} <b>Atomic Number:</b> {{atomicNumber}}
+</div>
+</div>
+
 You can see these code samples in action at the companion site for this blog series, [http://angularPeriodic.azurewebsites.net](http://angularPeriodic.azurewebsites.net)
 
-[Introducing AngularJS Controllers](http://angularperiodic.azurewebsites.net/Demo2/controller1.html)
+[Introducing AngularJS Controllers](http://angularperiodic.azurewebsites.net/Demo2-Controllers/controller1.html)
 
 You can download or view the code on Github, [https://github.com/jptacek/AngularPeriodic/](https://github.com/jptacek/AngularPeriodic/)
+
+
+<script type="text/javascript" src="/2013/10/introducing-angularjs-controllers/angularJS-templates/js/chemistry.js"></script>
+<script type="text/javascript" src="/2013/10/introducing-angularjs-controllers//js/chemistryApp.js"></script>
