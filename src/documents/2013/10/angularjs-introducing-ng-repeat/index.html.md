@@ -88,6 +88,16 @@ In this instance then element's name, which is a property on our JSON object cal
 </ul>
 ```
 
+<div id="ngApp" ng-app="chemistryApp">
+
+    <div id="elements1" ng-controller="chemCtrl" >
+        <ul>
+            <li ng-repeat="element in periodic.elements">
+                {{element.name}}
+            </li>
+        </ul>
+    </div>
+
 We could also go an easily update our markup to display the atomic weight along with the name by changing our ``li``
  display to
 
