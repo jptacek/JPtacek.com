@@ -30,20 +30,21 @@ to help us understand the framework. The others posts are
 the home page of my blog, only one application will work. I need to refactor the entire site to account for
 this. All of that to say this, you are best clicking on a single article so you can see the pages in action.
 
-On the AngularJS [homepage](https://angularjs.org/) you see the claim that Angular is "HTML Enhanced for Web Apps!".
-What does this actually mean though? For me it means directives, which allow us to extend HTML and create new HTML
+On the AngularJS [homepage](https://angularjs.org/) you see the claim that Angular is "HTML Enhanced for Web Apps!"
+What does this actually mean though? For me, it means directives, which allow us to extend HTML and create new HTML
 markup. Let us pretend and call it our own HTML 6.
 
 ![AngularJS HomePage](htmlEnhanced.png)
 
 HTML, when initially created, was a subset of SGML, which is popular in the print industry. HTML, especially in the early
-days, kept a lot of the print mentality. However, with Web 2.0 applications, it became obvious that HTML was moving way
+days, kept a lot of the print mentality. However, during the period when Web 2.0 applications emerged, it became 
+obvious that HTML was moving way
 beyond it's print background and becoming an application platform itself. 
 
 Given it's print background and laborious standards process that defines the HTML specification, HTML is relatively fixed 
 platform. Your chances of getting a new tag into the standard for use in your application in the next ten years are 
 pretty close to zero. However, Google starts earning the superheroic name it gave AngularJS by solving this problem with 
-directives.
+directives. To my knowledge, they are the only JavaScript framework that enables you to do this so far.
 
 While we have seen directives previously, they have been attributes that allow us to markup existing HTML elements with
 bits and pieces of Angular functionality. Examples of this have been ``ng-show`` or ``ng-repeat``. For this post, we are
@@ -76,7 +77,7 @@ indicate the DOM element we are creating from the following options
 * ``'E'`` - A new element name, for example  ``<periodicchartelement></periodicchartelement>``
 
 There is also the ability creative directives tied to HTML comments with ``restrict:M``. The restrict keyword
-can also be combined together to in a manner such as ``ACM``, indicating the durective applied to attributes, classes, 
+can also be combined together to in a manner such as ``ACM``, indicating the directive applies to attributes, classes, 
 and comments.
 
 ```javascript
@@ -90,7 +91,7 @@ and comments.
 
 Our directive function now creates a new HTML element, ``periodicchartelement``. 
 
-For the example we are creating, we have changed a few things in comparrison to previous posts. 
+For the example we are creating, we have changed a few things in comparison to previous posts. 
 Based on our [introduction of services](http://www.jptacek.com/2014/05/angularJS-Intro-To-Services/)
  last time, we have wrapped our periodic data in a service with a function called ``getElements()``. Second, we have expanded the properties 
  of our JSON object used in the application to include fields about the periodicity of chemical elements. Here is an example
@@ -121,7 +122,7 @@ the directive off of our module and call it ```periodicchartelement``
 chemistryApp.directive('periodicchartelement', function (chemistryService) {;
     return {
         restrict: 'E',
-        templateUrl: '/2014/05/angularJS-intro-to-directives/template/periodic-template.html',
+        templateUrl: '/2014/06/angularJS-intro-to-directives/template/periodic-template.html',
         scope:{
             element:'=',
             cssType:'=csstypeclass'
@@ -231,9 +232,9 @@ You can either visit [http://angularperiodic.azurewebsites.net/](http://angularp
 as always find the code out on [GitHub](https://github.com/jptacek/AngularPeriodic).
 
 
-<script type="text/javascript" src="/2014/05/angularJS-intro-to-directives/js/chemistryApp.js"></script>
-<script type="text/javascript" src="/2014/05/angularJS-intro-to-directives/js/chemistryController.js"></script>
-<script type="text/javascript" src="/2014/05/angularJS-intro-to-directives/js/chemistryService.js"></script>
-<script type="text/javascript" src="/2014/05/angularJS-intro-to-directives/js/chemistryDirective.js"></script>
+<script type="text/javascript" src="/2014/06/angularJS-intro-to-directives/js/chemistryApp.js"></script>
+<script type="text/javascript" src="/2014/06/angularJS-intro-to-directives/js/chemistryController.js"></script>
+<script type="text/javascript" src="/2014/06/angularJS-intro-to-directives/js/chemistryService.js"></script>
+<script type="text/javascript" src="/2014/06/angularJS-intro-to-directives/js/chemistryDirective.js"></script>
 
 
