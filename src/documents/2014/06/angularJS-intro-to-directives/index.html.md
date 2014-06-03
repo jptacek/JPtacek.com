@@ -2,7 +2,7 @@
 layout: post
 title: AngularJS - Introduction to Directives
 date: 2014-6-3
-ignore: true
+ignore: false
 tags: ["AngularJS","JavaScript","Web"]
 ---
  
