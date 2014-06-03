@@ -224,7 +224,7 @@ var getCssClassElement = function ( elementType) {
 We have now created a new HTML element! It displays the atomic number, the atomic weight, atomic symbol and the name from 
 our JSON object of periodic data. Based on the element type, we then color code the element appropriately.
 
-This is the  most basic of introductions of creating (directives)[https://docs.angularjs.org/guide/directive] with AngularJS,
+This is the  most basic of introductions of creating [directives](https://docs.angularjs.org/guide/directive) with AngularJS,
  next time, we will dig in deeper!
 
 You can either visit [http://angularperiodic.azurewebsites.net/](http://angularperiodic.azurewebsites.net/) to see the code in action and
