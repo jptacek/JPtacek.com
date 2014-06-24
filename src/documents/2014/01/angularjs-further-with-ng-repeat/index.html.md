@@ -190,7 +190,7 @@ on your page. As an example of this, let's say we want to hide
 every other element in the list. We could do something like
 
 ```xml
- <tr data-ng-repeat="element in periodic.elements" data-ng-hide="{$index%2)">
+ <tr data-ng-repeat="element in periodic.elements" data-ng-hide="$index%2">
 ```
 
 <div id="periodicTable2"  ng-controller="chemCtrl" >
