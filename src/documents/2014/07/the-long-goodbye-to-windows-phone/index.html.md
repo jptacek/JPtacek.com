@@ -40,14 +40,23 @@ thing though is,
 Microsoft has yet to relase and/or announce a new phone for the US market for their new phone Operating System. Four
 months after generating enthusiasm and excitemenet, no new phone models in the US, with the excpetion of the just 
 announced low-end Lumia 630 at T-Mobile last week. This is madness. They have a great platform, have consumer interest
-with their Cortana application, and no one can go into a store and buy one in the states.
+with their Cortana application, and no one can go into a store and buy one in the biggest mobile phone market in the 
+world.
+
+Pair this with the fact that between Microsoft and Nokia, who are now one company, they have not released a new flagship
+phone in over a year. The Lumia 1020, with its wonderful and mindblowign camera technology was released in July of
+2013. Since then, with the exception of the much larger 1520, no new high end Lumia devices in the States. (Calling
+Verizon's Icon a rework of the 920). If you cannot get new hardware into the the system, it is hard to create 
+enthusiasm, especially when you are behind on market share.
 
 ** Apps **
 I have never really been a big app fan, most of what I like to do, I can do on the web. However, this has started to 
-change as more and more companies are going app first, web later. When they go app first, it is always the Apple
+change recently as more and more companies are going app first, web later. When they go app first, it is always the Apple
 platform. The secondary driver for my mindshift on apps is the low energy Bluetooth things goign on. Synching with 
-your FitBit, taking advantage of iBeacons, etc. That is an app world, and not a web world. As a result, Windows Phone
-is, and as a result of their marketshare, will always be, way behind the competition. 
+your FitBit, taking advantage of iBeacons, etc. That is an app world only technolgy, and not a web world. 
+As a result, Windows Phone
+is, due to marketshare, way behind the competition. Also, they don't have any low energy Blue Tooth devices, because
+it is a Windows Phone 8.1 feature not available to most right now.
 
 Here are a list of applications I tried to use in the last week I cannot find on Windows Phone (and I am not making 
 this up)
