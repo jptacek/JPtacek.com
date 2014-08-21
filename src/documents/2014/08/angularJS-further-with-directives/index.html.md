@@ -68,7 +68,6 @@ chemistryApp.directive('periodicchartelement', function (chemistryService) {;
         restrict: 'E',
         templateUrl: './template/periodic-template.html',
         link: function (scope, elem, attrs) {
-            elem.addClass('nonMetal');
             elem.bind('click', function() {
                 // Change state
                 scope.$apply(function(){
@@ -93,12 +92,13 @@ chemistryApp.directive('periodicchartelement', function (chemistryService) {;
 With the exception of adding the link function, things are pretty similar to before. The link function does several 
 pieces of functionality.
 
-First, we add a default class to our element. The second, is we bind a click event to our chemical element. When
+First, we bind a click event to our chemical element. When
 that click event is called, we update a boolean variable on our scope, which is our parent scope from the calling 
-controller and set it to the opposite. Third, we also bind a mouseover event to manipulate our CSS to change the 
- cursor to a pointer.
+controller and set it to the opposite. Second, we also bind a mouseover event to manipulate our CSS to change the 
+ cursor to a pointer. As you can see, this is an elegeant way to add event behavior to our directive.
  
-Our template has now also been updated. The boolean scope variable, ``fullElement`` is used to show one of two different
+Our template has now also been updated. The boolean scope variable that we update on the click event, 
+``fullElement`` is used to show one of two different
 HTML "paths" in our template, one shows a small subset of data, the other a larger subset of data from the periodic 
 table. 
 
@@ -122,6 +122,19 @@ table.
       </div>
 ```
 
+It is also worth talking a bit about scope in directives. By default, you are binding to the parent scope of the controller.
+In many instances this will work well, but if you want to display your directive more than once on a page, you would need a 
+controller for each directive. That is no good. 
+
+AngularJS introduces the ability to create an isolated scope, which is what we are doing in our example. This allows us
+to use our directive multiple times on the same page. There are binding options in setting up the directive variables that we should
+briefly touch on.
+The use of the line `` elementCssClass:'@elementCssClass`` is indicating we want one way binding. The various options for
+setting up variables in the directive scope are:
+
+* ``=`` - Set up two way binding between the parent scope and our isolated scope
+* ``@`` - Set up one way binding between the parent scope adn the isolate scope
+* ``&`` - Allows to bind to parent scope functions
 
 
 <script type="text/javascript" src="/2014/08/angularJS-further-with-directives/js/chemistryApp.js"></script>
