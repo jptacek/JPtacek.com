@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AngularJS - Further with Directives
-date: 2014-8-22
+date: 2014-9-05
 ignore: true
 tags: ["AngularJS","JavaScript","Web"]
 ---
