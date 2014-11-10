@@ -77,9 +77,9 @@ written any Javascript. The framework is handling.
     <h3>{{displayText0}}</h3>
 </div>
 
-The databinidng in Angular goes a little deeper than just displaying text. We would update our binding syntax to
-tie into Javascript functions. For example, changing &#123;&#123;displayText&#125;&#125; to
-&#123;&#123;displayText.toUpperCase()&#125;&#125; and our
+The databinding in Angular goes a little deeper than just displaying text. We would update our binding syntax to
+tie into Javascript functions. For example, changing ``displayText`` to
+``displayText.toUpperCase()`` and our
 input will then be uppercased.
 
 
@@ -90,17 +90,16 @@ input will then be uppercased.
     <h3>{{displayText2.toUpperCase()}}</h3>
 </div>
 
-You can also have expressions, such as ``{{'You typed: '+ displayText.toUpperCase()}}``.
-This will then prepend
-the string 'You typed: ' to what is displayed in our browser.
+You can also have expressions, such as ``'You typed: '+ displayText.toUpperCase()``.
 
-``<h3>{{'You typed: ' + displayText.toUpperCase()}}</h3>``
+This will then prepend the string 'You typed: ' to what is displayed in our browser.
+
 
 &nbsp;
 
 <div>
     <input type="text" ng-model="displayText3" placeholder="type something"/>
-    <h3>{{'You typed:' + displayText3.toUpperCase()}}</h3>
+    <h3>{{'You typed: ' + displayText3.toUpperCase()}}</h3>
 </div>
 
 The magic of curly braces continues though. Angular also has the concept of filters for our binding element that we
@@ -115,7 +114,7 @@ Our HTML
 
 ```
 <div >
-    <b>Temperature (&degF)</b>
+    <b>Temperature </b>
     <input type="number" ng-model="tempF" value=0>
     <br/>
     <br/>
