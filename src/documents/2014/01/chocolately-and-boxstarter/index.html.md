@@ -55,3 +55,16 @@ example, iTunes (I know, I vomit a little in my mouth each time I use it too).
 Not only can you setup explorer options, but you can also setup your Windows environment! For example, I automatically
 enable Remote Desktop, Setup HyperV and IIS on my development machines. I do this all from a single command and it
 is awesome!
+
+**Update**
+A couple of people have run into issues if you are not using a default browser that does not support Click Once (for example
+Google Chrome). Matt Wrock identifies the workaround in the comments below.
+
+
+>It sounds like your default browser is not click-once enabled. Using START from the command line will invoke the url in your default browser. If that browser is IE or another browser that has a click-once extension, Boxstarter should be invoked. If Firefox or Chrome (or Opera or safari or anything not IE) is your default browser and you had no extension that is "click once" app aware, the behavior you describe sounds normal. Chrome is my default browser but I installed an extension from
+> [https://code.google.com/p/clickonceforchrome/](https://code.google.com/p/clickonceforchrome/) that will allow it to work with click once apps like Boxstarter's web launcher.
+
+Just to reiterate... You need to update your default browser to support click once. Links for
+
+* Google - [https://code.google.com/p/clickonceforchrome/](https://code.google.com/p/clickonceforchrome/)
+* FireFox - [https://addons.mozilla.org/en-us/firefox/addon/fxclickonce/](https://addons.mozilla.org/en-us/firefox/addon/fxclickonce/)
