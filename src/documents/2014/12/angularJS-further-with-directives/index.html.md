@@ -2,7 +2,6 @@
 layout: post
 title: AngularJS - Further with Directives
 date: 2014-12-10
-ignore: true
 tags: ["AngularJS","JavaScript","Web"]
 ---
  
@@ -148,38 +147,43 @@ Dan Wahlin has done an outstanding job on his blog of digging in deeper into dir
 Parts 5 and 6 should be coming too.
 
 We also have updated our page to show multiple elements to demonstrate a single directive interacting with unique scope. It
-is not very robust, so picking items at the end, aka curium, will cause some issues.
+is not very robust, so picking items at the end, aka Curium, will cause some issues.
 
-    <div class="row">
-        <select ng-model="periodicElement" ng-options="e.name for e in elements"
-                ng-click="updateController(periodicElement)"></select><br/>
-    </div>
-    <div class="row">
-        &nbsp;
-    </div>
-    <div class="row">
-        &nbsp;
-    </div>
-    <div class="row">
-        <div class="col-md-2">
-            <periodic-chart-element element="periodicElement" ></periodic-chart-element>
+<div id="app" ng-app="chemistryApp">
+    <div id="controller" ng-controller="chemistryController">
+
+        <div class="row">
+            <select ng-model="periodicElement" ng-options="e.name for e in elements"
+                    ng-click="updateController(periodicElement)"></select><br/>
         </div>
-        <div class="col-md-2">
+        <div class="row">
             &nbsp;
         </div>
-        <div class="col-md-2">
-            <periodic-chart-element element="elements[periodicElement.atomicNumber]"  ></periodic-chart-element>
-        </div>
-        <div class="col-md-2">
+        <div class="row">
             &nbsp;
         </div>
-        <div class="col-md-2">
-            <periodic-chart-element element="elements[periodicElement.atomicNumber+1]""></periodic-chart-element>
+        <div class="row">
+            <div class="col-md-2">
+                <periodic-chart-element element="periodicElement" ></periodic-chart-element>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-2">
+                <periodic-chart-element element="elements[periodicElement.atomicNumber]"  ></periodic-chart-element>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-2">
+                <periodic-chart-element element="elements[periodicElement.atomicNumber+1]"></periodic-chart-element>
+            </div>
         </div>
-
     </div>
+</div>
 
-
+So to recap, with directives we have created our HTML markup element ``periodic-chart-element`` where we can put multiple elements
+onto a single page by updating our directive to use its own version of scope.
 
 <script type="text/javascript" src="/2014/12/angularJS-further-with-directives/js/chemistryApp.js"></script>
 <script type="text/javascript" src="/2014/12/angularJS-further-with-directives/js/chemistryController.js"></script>
