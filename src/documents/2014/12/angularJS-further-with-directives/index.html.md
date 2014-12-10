@@ -42,8 +42,9 @@ uses the parent scope. So, in our case, when the directive is inside a controlle
 controller's scope.
 
 To get access to the scope, we can use the ``link`` function. The ``link`` function gets called every time the 
-element gets bound to the data in the ``$scope`` object. In general, ``link`` is used to manipulate the DOM, 
-either by adding event listeners or updating the dom.
+element gets bound to the data in the ``$scope`` object. In general, ``link`` is used to manipulate the Document
+Object Model (DOM),
+either by adding event listeners or updating the DOM.
 
 The link function takes three arguments:
 
@@ -89,7 +90,7 @@ chemistryApp.directive('periodicChartElement', function (chemistryService) {;
 ```
 
 With the exception of adding the link function, things are pretty similar to before. The link function does several 
-pieces of functionality.
+pieces of functionality that are worth nothing though.
 
 First, we bind a click event to our chemical element. When
 that click event is called, we update a boolean variable on our scope, which is our parent scope from the calling 
@@ -121,7 +122,7 @@ table.
 </div>
 ```
 
-It is also worth talking a bit about scope in directives. By default, you are binding to the parent scope of the controller.
+It is also worth talking a bit about scope in directives. As we mentioned earlier, by default, you are binding to the parent scope of the controller.
 In many instances this will work well, but if you want to display your directive more than once on a page, you would need a 
 controller for each directive. That is no good. 
 
@@ -182,8 +183,15 @@ is not very robust, so picking items at the end, aka Curium, will cause some iss
     </div>
 </div>
 
+<br/>
+
 So to recap, with directives we have created our HTML markup element ``periodic-chart-element`` where we can put multiple elements
 onto a single page by updating our directive to use its own version of scope.
+
+It has been several months since my last Angular blog post. More are coming. I have a plan for all of this, ultimately we
+will create an application that is the periodic table, done AngularJS style.
+
+Thanks for reading!
 
 <script type="text/javascript" src="/2014/12/angularJS-further-with-directives/js/chemistryApp.js"></script>
 <script type="text/javascript" src="/2014/12/angularJS-further-with-directives/js/chemistryController.js"></script>
