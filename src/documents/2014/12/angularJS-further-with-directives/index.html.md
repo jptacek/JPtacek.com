@@ -191,7 +191,12 @@ onto a single page by updating our directive to use its own version of scope.
 It has been several months since my last Angular blog post. More are coming. I have a plan for all of this, ultimately we
 will create an application that is the periodic table, done AngularJS style.
 
+You can either visit [http://angularperiodic.azurewebsites.net/](http://angularperiodic.azurewebsites.net/) to see the code in action and
+as always find the code out on [GitHub](https://github.com/jptacek/AngularPeriodic).
+
 Thanks for reading!
+
+
 
 <script type="text/javascript" src="/2014/12/angularJS-further-with-directives/js/chemistryApp.js"></script>
 <script type="text/javascript" src="/2014/12/angularJS-further-with-directives/js/chemistryController.js"></script>
