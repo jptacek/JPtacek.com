@@ -2,7 +2,6 @@
 layout: post
 title: Creating ASP.NET vNext application on OS X
 date: 2014-12-12
-ignore: true
 tags: ["ASP.NET vNext", "ASP.NET Core", "Skyline Technologies", "Web"]
 ---
 Santa Claus is Coming to Town!! All the geeks get pretty excited for Santa’s arrival to see what will be awaiting us under the tree
@@ -149,7 +148,8 @@ Links
 * OmniSharp.NET - [http://www.omnisharp.net/](http://www.omnisharp.net/)
 * GitHub for this Code - [https://github.com/jptacek/ChristmasCountdown](https://github.com/jptacek/ChristmasCountdown)
 
-This blog post originally appeared at [Skyline Technologies](http://skylinetechnologies.com/Blog/Article/2403/Day-Two-How-Much-Do-The-Twelve-Days-of-Christmas-Cost.aspx)
+This blog post originally appeared at [Skyline Technologies](http://www.skylinetechnologies.com/Blog/Article/2586/12-Days-of-Christmas-Mac.aspx)
+as part of their [12 Blogs of Christmas series](http://www.skylinetechnologies.com/Blog/Article/2586/12-Days-of-Christmas-Mac.aspx)
 
 
 
