@@ -140,6 +140,8 @@ Note: When running the web site, it will use the same port for the web server. I
 However, I need to list the processes using PS and then kill, by typing kill -9 <pid>, the process that is mono.
 That way I can restart.
 
+**UPDATE (December 17, 2014)** - Links updated to include link to Microsoft [post](http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx) on Yeoman
+
 Links
 
 * ASP.NET MVC Project Generator for Yeoman - [http://hassakarn.com/2014/02/07/asp-net-mvc-project-generator-for-yeoman/](http://hassakarn.com/2014/02/07/asp-net-mvc-project-generator-for-yeoman/)
@@ -147,6 +149,7 @@ Links
 * ASP.NET GitHub repo - [https://github.com/aspnet/home](https://github.com/aspnet/home)
 * OmniSharp.NET - [http://www.omnisharp.net/](http://www.omnisharp.net/)
 * GitHub for this Code - [https://github.com/jptacek/ChristmasCountdown](https://github.com/jptacek/ChristmasCountdown)
+* Microsoft on Yeoman for ASP.NET - [http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx](http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx]
 
 This blog post originally appeared at [Skyline Technologies](http://www.skylinetechnologies.com/Blog/Article/2586/12-Days-of-Christmas-Mac.aspx)
 as part of their [12 Blogs of Christmas series](http://www.skylinetechnologies.com/Blog/Article/2586/12-Days-of-Christmas-Mac.aspx)
