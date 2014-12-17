@@ -149,7 +149,7 @@ Links
 * ASP.NET GitHub repo - [https://github.com/aspnet/home](https://github.com/aspnet/home)
 * OmniSharp.NET - [http://www.omnisharp.net/](http://www.omnisharp.net/)
 * GitHub for this Code - [https://github.com/jptacek/ChristmasCountdown](https://github.com/jptacek/ChristmasCountdown)
-* Microsoft on Yeoman for ASP.NET - [http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx](http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx]
+* Microsoft on Yeoman for ASP.NET - [http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx](http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx)
 
 This blog post originally appeared at [Skyline Technologies](http://www.skylinetechnologies.com/Blog/Article/2586/12-Days-of-Christmas-Mac.aspx)
 as part of their [12 Blogs of Christmas series](http://www.skylinetechnologies.com/Blog/Article/2586/12-Days-of-Christmas-Mac.aspx)
