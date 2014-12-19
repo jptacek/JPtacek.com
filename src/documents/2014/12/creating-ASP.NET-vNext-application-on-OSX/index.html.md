@@ -142,7 +142,7 @@ That way I can restart.
 
 **UPDATE (December 17, 2014)** - Links updated to include link to Microsoft [post](http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx) on Yeoman
 
-**UPDAT2E (December 18, 2014)** - Thanks to [Sayed Hashimi](https://twitter.com/sayedihashimi) for helping clean up some typos
+**UPDATE 2 (December 18, 2014)** - Thanks to [Sayed Hashimi](https://twitter.com/sayedihashimi) for helping clean up some typos
 with case issues.
 [https://twitter.com/sayedihashimi/status/545720905171603456](https://twitter.com/sayedihashimi/status/545720905171603456)
 
