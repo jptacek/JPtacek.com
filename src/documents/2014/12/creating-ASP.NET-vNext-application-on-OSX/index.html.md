@@ -58,13 +58,13 @@ Similar commands are used for other platforms such as Linux and Windows, which u
 The next step is to install KVM (The K Version Manager), which is the runtime manager. It is responsible for getting the runtime and enables multiple different runtimes on the same machine. I have seen some mention of issues using KVM on OS X with different shells, like zsh. I use the Bash shell and have not run into issues. To install KVM type
 
 ```bash
-Brew install kvm
+brew install kvm
 ```
 
 Next we run a script to setup our environment variables, etc
 
 ```bash
-Source kvm.sh
+source kvm.sh
 ```
 
 We have pretty quickly setup and downloaded the environment to run ASP.NET vNext apps on an OS X machine, but, we have
@@ -76,7 +76,7 @@ Again, since we are talking developers, you probably already have all of this. T
 Yeoman, using NPM. From your Bash shell we will install Yeoman first
 
 ```bash
-Npm install –g yo
+npm install –g yo
 ```
 
 Next, we install the generator for ASP.Net
@@ -88,7 +88,7 @@ npm install -g generator-aspnet
 Next step, since we have all of the tools we need installed and downloaded, we can generate our application. This is done by running Yeoman from the bash shell type by typing
 
 ```bash
-Yo aspnet
+yo aspnet
 ```
 
 ![Running Yeoman, step1, choose MVC](osx1.png)
@@ -116,11 +116,11 @@ and Project files of Visual Studio. Very cool.
 
 To build and run the application, we use the commands shown in the previous screen shot of the bash shell
 
-``Kpm restore``, which gets the packages for your application
+``kpm restore``, which gets the packages for your application
 
-``Kpm build``, builds the application
+``kpm build``, builds the application
 
-``K kestrel``, fires up the web server to serve the pages
+``k kestrel``, fires up the web server to serve the pages
 
 By using the kestrel web server we are actually firing up Mono, the open source version of the .NET framework.
 We access the location locally on port 5004 (http://localhost:5004/)
@@ -141,6 +141,10 @@ However, I need to list the processes using PS and then kill, by typing kill -9 
 That way I can restart.
 
 **UPDATE (December 17, 2014)** - Links updated to include link to Microsoft [post](http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx) on Yeoman
+
+**UPDAT2E (December 18, 2014)** - Thanks to [Sayed Hashimi](https://twitter.com/sayedihashimi) for helping clean up some typos
+with case issues.
+[https://twitter.com/sayedihashimi/status/545720905171603456](https://twitter.com/sayedihashimi/status/545720905171603456)
 
 Links
 
