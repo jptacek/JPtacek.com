@@ -15,7 +15,7 @@ the last 15 years, focused mainly on the Microsoft technology stack.
 As much as John loves doing tech weenie stuff, even more than that,
 he enjoys hanging out with his awesome wife and collection of awesome kids.
 
-Find him on twitter [@jptacek](http://wwww.jptacek.com)
+Find him on twitter [@jptacek](https://www.twitter.com/jptacek)
 
 **This blog is my own, and represents my opinions, and not those of my employer.**
 
