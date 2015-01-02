@@ -2,7 +2,7 @@
 layout: post
 title: Build 2014 - Day One Highlights
 date: 2014-04-02
-tags: ["Build","Conferences"]
+tags: ["Build","Conferences","Skyline Technologies"]
 ---
 
 Today, April 2 2014,  is the first day of Microsoft’s Build conference, a developer focused conference from Microsoft. The Build conference is usually a big day for Microsoft as they talk through their development stack, tools and strategy. Today’s keynote was no exception.
