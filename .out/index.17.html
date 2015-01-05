@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<!--<![endif]-->
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="Working at getting better with Mobile, Web and JavaScript" />
+
+    <title>JPtacek.com  - JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <meta name="author" content="John Ptacek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/feed/" rel="alternate" title="Jptacek.com" type="application/atom+xml">
+    <link href="/favicon.ico?v=2" rel="shortcut icon">
+
+    <!-- Bootstrap -->
+    <link href="/styles/site.css" rel="stylesheet" media="screen">
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/scripts/vendor/html5shiv.js"></script>
+    <script src="/scripts/vendor/respond.min.js"></script>
+    <![endif]-->
+
+    <meta name="generator" content="DocPad v6.68.1" />
+    <style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style>
+<script src="/scripts/vendor/angular.min.js"></script>
+<script type="text/javascript" src="/scripts/vendor/angular-route.min.js"></script>
+
+    <!-- MS Live tile tag -->
+    <meta name="application-name" content="JPtacek.Com"/>
+     <meta name="msapplication-TileColor" content="#527578"/>
+     <meta name="msapplication-square70x70logo" content="tiny.png"/>
+     <meta name="msapplication-square150x150logo" content="square.png"/>
+     <meta name="msapplication-wide310x150logo" content="wide.png"/>
+     <meta name="msapplication-square310x310logo" content="large.png"/>
+
+</head>
+<body>
+
+<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">John Ptacek</a> <div class="navbar-brand"> - Musings on Code</div>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="/">Blog</a></li>-->
+
+                <li class="hidden-xs">
+                    <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
+                    <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
+                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><span class="icon icon-google-plus"></span></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><span class="icon icon-linkedin"></span></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><span class="icon icon-stackoverflow"></span></a>
+                    <a href="https://github.com/jptacek" class="github"><span class="icon icon-github"></span></a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right hidden-xs" role="search" action="http://google.com/search"
+                  method="get">
+                <div class="form-group">
+                    <input type="search" name="q" class="form-control" placeholder="Search">
+                    <input type="hidden" name="q" value="site:www.jptacek.com">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+        <div class="col-sm-12 col-md-10">
+            
+    <article class="post">
+    
+    <h1><a href='/2014/01/24/index/'>AngularJS - Image Binding in AngularJS with Lou Reed</a></h1>
+    
+        <div class="post-date">Jan 23rd, 2014</div>
+
+    <div class="post-content">
+        <p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
+<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
+ HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
+ Contrast this to a framework like JQuery where the DOM will update your data.</p>
+<p><img src="http://www.jptacek.comangularLogo.png" alt="AngularJS Logo"></p>
+<p>This is the fifth in a series of posts on AngularJS where we are using Chemistry data from the periodic table
+to help us understand the framework. The others posts are</p>
+<ol>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
+<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
+<li>AngularJS - Image Binding</li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
+<li><a href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
+<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
+<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
+</ol>
+<blockquote>
+<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
+the home page of my blog, only one application will work. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
+</blockquote>
+<p>If you have spent any time with me in the real world, you quickly come to realize I am a music fan. If
+you have spent a little time with me, especially when I was a younger, you realize I am a huge
+<a href="http://en.wikipedia.org/wiki/Lou_Reed">Lou Reed</a> fan too.
+My boss, <a href="https://twitter.com/tvanhammond">Tim VanHammond</a> still holds it against me the one time
+I played Lou Reed&#39;s the Possum song without headphones when he was in the office we shared.
+The reality is, I probably spent WAY too
+much time listening to Lou Reed and Velvet Underground music when I was a teenager. So, having said all that, soon
+after Lou Reed died, I was doing a <a href="http://www.jptacek.com/2013/11/fvnug-presentation-nov-2013/">presentation</a> at the
+<a href="http://newdug.org/">NorthEast Wisconsin Developer UserGroup</a> (aka, NEWDUG and
+yes it is a lot to type) and I thought it would be fun to have a little Lou Reed shout out. Since the talk
+was about AngularJS, it of course had an Angular flavor. So we did a little Lou Reed segue, and talked about
+binding images using AngularJS. Most important and of interest to you dear reader, is
+how I found out a way to deal with missing images!</p>
+<p><img src="http://www.jptacek.comLou_Reed.jpg" alt="Lou Reed"></p>
+<p>Instead of using chemistry data, we used Lou data. This data was a JSON object of record releases. Lou put out
+a lot of albums, and we are loading images, so to keep things quick, we are just doing the first few releases.
+One of our Lou
+objects looks like</p>
+<pre class="highlight"><code class="hljs javascript"> {
+            <span class="hljs-string">"album"</span>: <span class="hljs-string">"Lou Reed"</span>,
+            <span class="hljs-string">"artist"</span>: <span class="hljs-string">"Lou Reed"</span>,
+            <span class="hljs-string">"releaseDate"</span>: <span class="hljs-number">6</span>/<span class="hljs-number">1</span>/<span class="hljs-number">1972</span>,
+            <span class="hljs-string">"image"</span>: <span class="hljs-string">"http://upload.wikimedia.org/wikipedia/en/8/88/Lour72.jpg"</span>,
+            <span class="hljs-string">"label"</span>: <span class="hljs-string">"RCA"</span>
+        }
+</code></pre>
+<p>Essentially what we are doing is the same stuff that came before, instantiating the app and referencing our
+controller and looping through the albums and making a little table. This is quickly becoming old hat
+for us!</p>
+<h3>Lou Reed pages</h3>
+
+<div id="appLouContainer" ng-app="louApp">
+ <div id="louTable0" ng-controller="louCtrl">
+    <table class="table table-striped table-bordered table-hover table-condensed">
+        <tr>
+            <th>Album</th><th>Release</th><th>Producer</th><th>Label</th><th></th>
+        </tr>
+        <tr ng-repeat="album in louDrops.releases">
+            <td>{{album.album}}</td>
+            <td>{{album.releaseDate|date}}</td>
+            <td>{{album.producer}}</td>
+            <td>{{album.label}}</td>
+            <td><img src="http://www.jptacek.com{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;"></td>
+        </tr>
+    </table>
+   </div>
+
+<p><b>Note:</b> There is an issue with the markup being generated by DocPad prepending the local URL. You can see the
+actual correct HTML at <a href="http://angularperiodic.azurewebsites.net/lou/lou.html">http://angularperiodic.azurewebsites.net/lou/lou.html</a> until the I fix this.</p>
+<p>Again, we have done this before. The interesting thing to note though is the album release date. JavaScript and
+dates are something that make me a little crazy, but having said that, AngularJS does a nice job. You can pass
+a JSON date object to a filter and have it format, <code>{{album.releaseDate|date}}</code> as above. More info on the <code>date</code>
+filter at the <a href="http://docs.angularjs.org/api/ng.filter:date#!">AngularJS</a> site.</p>
+<p>The second thing to notice is we are using a <code>src</code> attribute in our <code>img</code> tag. Things are loading fine, but if
+you look at the page load, you will actually see a 404 error that happens.</p>
+<p><img src="http://www.jptacek.com404Error.png" alt="404 Error on image Get"></p>
+<p>This is because the AngularJS functionality is executed AFTER the page loads. We are still making the get request
+that the <code>src</code> attribute had identified because we have yet to get into the javscript
+processing on the page. With <code>src</code> attributes and <code>href</code> tags you that reference
+AngularJS objects, this is something you need to be cognizant of. The fix is easy enough, we just prepend a <code>ng</code> tag on our
+attribute. This will then be part of the page processing that happens during the Angular load. Our image reference
+is now</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">ng-src</span>=<span class="hljs-value">"\{\{album.image\}\}"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"\{\{album.album\}\} Cover Image"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"300px;"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"300px;"</span>&gt;</span>
+</code></pre>
+<h3>Adding ng-src</h3>
+ <div id="louTable1" ng-controller="louCtrl">
+    <table class="table table-striped table-bordered table-hover table-condensed">
+        <tr>
+            <th>Album</th><th>Release</th><th>Producer</th><th>Label</th><th></th>
+        </tr>
+        <tr ng-repeat="album in louDrops.releases">
+            <td>{{album.album}}</td>
+            <td>{{album.releaseDate|date}}</td>
+            <td>{{album.producer}}</td>
+            <td>{{album.label}}</td>
+            <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" src="http://www.jptacek.comundefined"></td>
+        </tr>
+    </table>
+</div>
+
+The last thing to hit on is on the image loading, and a cool little trick I learned. One of the customer sites
+I work at it is using AngularJS and they are integrating with a third party data source. What they wanted to be
+able to do is not show a broken or missing image. I sat there and thought to myself that this is going to be
+pretty difficult. Our client side scripting language was going to have to not call the source directly, but go
+through some kind of nutty proxy we would develop that would check if the image existed and then send that
+image or else a proxy for the missing image, etc. It wasn&#39;t going to be fun. However, a little time
+on the <a href="http://www.google.com">Google</a> found a MUCH easier way to get by this.
+
+To expand on our discussion, our images are coming from Wikipedia and reference images they have for entries on Lou Reed albums. If
+one of these images changes, we would get an error and display a broken image marker on our page. To illustrate, I have created a
+second controller where we change the image for Metal Machine Music and Transformer so they would return 404s.
+
+We now are receiving missing image links in our page. This is NOT use friendly
+
+<img src="http://www.jptacek.comLouCover404.png" alt="404 Error on Album Cover">
+
+You can see the example below
+
+<h3>Missing Images in Javascript Object</h3>
+
+   <div id="louTable2" ng-controller="lou2Ctrl">
+        <table class="table table-striped table-bordered table-hover table-condensed">
+            <tr>
+                <th>Album</th><th>Release</th><th>Producer</th><th>Label</th><th></th>
+            </tr>
+            <tr ng-repeat="album in lou2Drops.releases">
+                <td>{{album.album}}</td>
+                <td>{{album.releaseDate| date:&#39;medium&#39;}}</td>
+                <td>{{album.producer}}</td>
+                <td>{{album.label}}</td>
+                <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" src="http://www.jptacek.comundefined"></td>
+            </tr>
+        </table>
+    </div>
+
+<p>The fix is easy enough though! We can add an on error function within our <code>img</code> tag. First, we want to add a
+default local image we can reference. So let us use the Wikipedia image that I have at the top of our page.</p>
+<p>Within our <code>img</code> tag we add an <code>onerrror</code> function like so</p>
+<pre class="highlight"><code class="hljs xml"> onerror="this.src='Lou_Reed.jpg'"
+</code></pre>
+<p>so that our entire <code>img</code> tag is now</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">ng-src</span>=<span class="hljs-value">"\{\{album.image}}"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"\{\{album.album\}\} Cover Image"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"300px;"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"300px;"</span>&gt;</span>
+</code></pre>
+<p>and we now handle missing images on page load (with ng-src) and missing images in our data source, with
+onerror by placing a default placeholder image for missing images.</p>
+<p> <h3>Resolve missing images</h3>
+    <div id="louTable3" ng-controller="lou2Ctrl">
+        <table class="table table-striped table-bordered table-hover table-condensed">
+            <tr>
+                <th>Album</th><th>Release</th><th>Producer</th><th>Label</th><th></th>
+            </tr>
+            <tr ng-repeat="album in lou2Drops.releases">
+                <td>{{album.album}}</td>
+                <td>{{album.releaseDate| date:&#39;medium&#39;}}</td>
+                <td>{{album.producer}}</td>
+                <td>{{album.label}}</td>
+                <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" onerror="this.src=&apos;/2014/01/angularjs-lou-reed/Lou_Reed.jpg&apos;" src="http://www.jptacek.comundefined"></td>
+            </tr>
+        </table>
+    </div>
+</p></div><p></p>
+<p>So the when I gave my presentation someone asked me favorite Lou Reed album... Hard one, I think at various times
+most of them have been a favorite, but I will go with New York. Favorite song, same as album, it changes, but let&#39;s
+call it Street Hassle.</p>
+<p>You can either visit <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a> to see the code in action and
+as always find the code out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a></p>
+<p>(I am working on some display issues with the post with the Markdown/DocPad combo, I should have updated soon)</p>
+<script type="text/javascript" src="/2014/01/angularjs-lou-reed/js/louApp.js"></script>
+<script type="text/javascript" src="/2014/01/angularjs-lou-reed/js/louController.js"></script>
+<script type="text/javascript" src="/2014/01/angularjs-lou-reed/js/louController2.js"></script>
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+    <div id='socialTags'>
+    <!-- Twitter -->
+		<a href="https://twitter.com/share" data-text='AngularJS - Image Binding in AngularJS with Lou Reed' class="twitter-share-button" data-url="http://jptacek.com/2014/01/24/index/">Tweet</a>
+    <!-- Google+. -->
+    <div class="g-plusone" data-size="medium"></div>
+    <!-- LinkedIn -->
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/01/24/index/" ></script>&nbsp;
+    <!-- Facebook -->
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/01/24/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    </div>
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2014/01/01/index/'>Chocolately and BoxStarter</a></h1>
+    
+        <div class="post-date">Dec 31st, 2013</div>
+
+    <div class="post-content">
+        <p>I recently received a new work computer (an <a href="http://www.asus.com/Notebooks_Ultrabooks/ASUS_ZENBOOK_UX301LA/">Asus i7</a> that
+weighs 2.6 pounds, my old laptop, a Dell M6500 weighed over 8.5 lbs, it is like I am from the future now, but I digress).
+One of the things that I don&#39;t like about getting a new PC is setting up the computer. I am very good about making sure
+all of my files are stored in the cloud (via Skydrive and DropBox) and/or is under source control. I don&#39;t fear losing stuff, it
+is the loss time in restoring my applications and environments that makes me crazy. I always forget to install a utility
+I want. Or the exact moment I NEED to remote desktop is when I remember I forgot to ENABLE remote desktop.</p>
+<p>However, since my last PC install, the world of Windows has changed, and its name is <a href="http://chocolatey.org/">Chocolately</a>.
+Chocolatey is similar to apt-get on Linux, or the NPM package manager for <a href="http://www.nodejs.org">Node</a>. You can, via
+the command line, automatically install all kinds of applications that are available on <a href="http://www.nuget.org/">NuGet</a>.
+For example, to install ReSharprer, fire up a command prompt and type</p>
+<pre class="highlight"><code class="hljs bash">    cinst resharper
+</code></pre>
+<p>and away we go.</p>
+<p>You can find out more at the <a href="http://chocolatey.org/">Chocolately</a> site. Essentially though, you can achieve all of
+this goodness by staring a command prompt and pasting the following</p>
+<pre class="highlight"><code class="hljs bash">    @powershell -NoProfile -ExecutionPolicy unrestricted -Command <span class="hljs-string">"iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))"</span> &amp;&amp; SET PATH=%PATH%;%systemdrive%\chocolatey\bin
+</code></pre>
+<p>So, <a href="http://chocolatey.org/">Chocolately</a> solves problem the first, allowing for command line install of applications.
+When paired with <a href="http://boxstarter.org/">Boxstarter</a> however, it figures out problem the second of installing many different
+applications that require reboots, etc, when you are setting up a new PC. BoxStarter handles reboots and logins
+automatically for the user. You can type one command and be on your way!</p>
+<p><a href="http://boxstarter.org/">Boxstarter</a> also enables me to setup a URL that will have all of the applications that I want
+installed in a single location. For example, I created a Gist file on GitHub with all of the programs I want installed
+when I have a PC.</p>
+<pre class="highlight"><code class="hljs bash">    START http://boxstarter.org/package/nr/url?https://gist.github.com/jptacek/<span class="hljs-number">8099099</span>/raw/f691b3433c09dcd361fca8cc6cfe637ca7521771/boxstarter
+</code></pre>
+<p>You can take a look at the file, but it is pretty basic.</p>
+<p>I setup the Explorer options I want, for example, showing file extensions, and that provides me consistency across my
+installs.</p>
+<p>I then install the bevy of browsers that all web developers want at their disposal. This is followed by setups for Git,
+NodeJS, Text Editor, coding utilities, etc. I even have installation for applications I use specifically at home, for
+example, iTunes (I know, I vomit a little in my mouth each time I use it too).</p>
+<p>Not only can you setup explorer options, but you can also setup your Windows environment! For example, I automatically
+enable Remote Desktop, Setup HyperV and IIS on my development machines. I do this all from a single command and it
+is awesome!</p>
+<p><strong>Update</strong>
+A couple of people have run into issues if you are not using a default browser that does not support Click Once (for example
+Google Chrome). Matt Wrock identifies the workaround in the comments below.</p>
+<blockquote>
+<p>It sounds like your default browser is not click-once enabled. Using START from the command line will invoke the url in your default browser. If that browser is IE or another browser that has a click-once extension, Boxstarter should be invoked. If Firefox or Chrome (or Opera or safari or anything not IE) is your default browser and you had no extension that is &quot;click once&quot; app aware, the behavior you describe sounds normal. Chrome is my default browser but I installed an extension from
+<a href="https://code.google.com/p/clickonceforchrome/">https://code.google.com/p/clickonceforchrome/</a> that will allow it to work with click once apps like Boxstarter&#39;s web launcher.</p>
+</blockquote>
+<p>Just to reiterate... You need to update your default browser to support click once. Links for</p>
+<ul>
+<li>Google - <a href="https://code.google.com/p/clickonceforchrome/">https://code.google.com/p/clickonceforchrome/</a></li>
+<li>FireFox - <a href="https://addons.mozilla.org/en-us/firefox/addon/fxclickonce/">https://addons.mozilla.org/en-us/firefox/addon/fxclickonce/</a></li>
+</ul>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+    <div id='socialTags'>
+    <!-- Twitter -->
+		<a href="https://twitter.com/share" data-text='Chocolately and BoxStarter' class="twitter-share-button" data-url="http://jptacek.com/2014/01/01/index/">Tweet</a>
+    <!-- Google+. -->
+    <div class="g-plusone" data-size="medium"></div>
+    <!-- LinkedIn -->
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/01/01/index/" ></script>&nbsp;
+    <!-- Facebook -->
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/01/01/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    </div>
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2014/01/08/index/'>Deleting Windows 8.1 Wireless Profiles</a></h1>
+    
+        <div class="post-date">Jan 7th, 2014</div>
+
+    <div class="post-content">
+        <p>I have had some pretty strange behavior after upgrading to Windows 8.1. With Windows 8, Microsoft syncs up your wireless
+profiles to the cloud so when you have a new device, the wireless is already setup. So that is pretty cool. However, I
+have been having issues with it.</p>
+<p>For our home network, our SSID is not broadcast, like it should be on yours :). We manually add a hidden network and connect that way. With
+Windows 8.1, I would not be able to connect sometimes. I would then type in the name of our (hidden) SSID and the associated Password.
+It would then connect to the WiFi router, but the problem was it would create a new network profile each time. The way
+Windows 8 appears to build the name is by adding the number for the new wirless profile by checking the cloud or synched
+wireless profile that it could not connecting and adding one up to it. For example, if my wireless network is called
+Network Name, the second time I connected it would be, Network Name 2. The third time I connected it would be Network Name 2 3,
+and then Network Name 2 3 4, etc. . I ended up
+with VERY long strings for my network names. It also appears to add these to the cloud based profile no matter how often
+I clean up.</p>
+<p>Ultimately, I want to figure out how to clean up my wireless profiles that have been synched to the cloud. I don&#39;t really
+need or want the wireless profile for the restaraunt where I had a work meeting and accidently remembered the network. In the interim
+I have used PowerShell to enumerate all of the profiles and delete them, except the first one (aka Network Name).</p>
+<p>One of the things I want to do is spend more time in the command line this year. Mostly, I want to not have to lookup
+how to do things to interact with GitHub. So in that vain, I wrote a PowerShell script to delete all but the first
+wireless profile I created.</p>
+<p>So here is the PowerShell script</p>
+<pre class="highlight"><code class="hljs lasso"><span class="hljs-variable">$profile</span> <span class="hljs-subst">=</span> <span class="hljs-string">"Network Name"</span>
+<span class="hljs-variable">$total</span> <span class="hljs-subst">=</span> <span class="hljs-number">32</span>
+<span class="hljs-variable">$count</span> <span class="hljs-subst">=</span> <span class="hljs-number">2</span>
+Start<span class="hljs-attribute">-Transcript</span>
+netsh wlan show profiles
+<span class="hljs-keyword">do</span> {
+ <span class="hljs-variable">$profile</span> <span class="hljs-subst">=</span> <span class="hljs-variable">$profile</span> <span class="hljs-subst">+</span> <span class="hljs-string">" "</span> <span class="hljs-subst">+</span><span class="hljs-variable">$count</span>
+ <span class="hljs-variable">$execCommand</span> <span class="hljs-subst">=</span> <span class="hljs-string">"netsh wlan delete profile name="</span><span class="hljs-string">"$profile"</span><span class="hljs-string">""</span>
+ Write<span class="hljs-attribute">-Host</span>(<span class="hljs-variable">$execCommand</span>)
+ Invoke<span class="hljs-attribute">-Expression</span> <span class="hljs-variable">$execCommand</span>
+ <span class="hljs-variable">$count</span><span class="hljs-subst">++</span>
+}
+<span class="hljs-keyword">while</span> (<span class="hljs-variable">$count</span> <span class="hljs-attribute">-le</span> <span class="hljs-variable">$total</span>)
+</code></pre>
+<p>Also, as part of more command line, I have created a small GitHub repository to save scripts I create. Mostly so
+I can grab them when I am other machines. Feel free to have at em</p>
+<ul>
+<li>GitHub PowerShell Repository - <a href="https://github.com/jptacek/PowerShell">https://github.com/jptacek/PowerShell</a></li>
+<li>RemoveWirelessProfile.ps1 script on Github - <a href="https://github.com/jptacek/PowerShell/tree/master/Network/Wireless">https://github.com/jptacek/PowerShell/tree/master/Network/Wireless</a></li>
+</ul>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/powershell/'>PowerShell</a>, <a href='/tags/windows8/'>Windows8</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+    <div id='socialTags'>
+    <!-- Twitter -->
+		<a href="https://twitter.com/share" data-text='Deleting Windows 8.1 Wireless Profiles' class="twitter-share-button" data-url="http://jptacek.com/2014/01/08/index/">Tweet</a>
+    <!-- Google+. -->
+    <div class="g-plusone" data-size="medium"></div>
+    <!-- LinkedIn -->
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/01/08/index/" ></script>&nbsp;
+    <!-- Facebook -->
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/01/08/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    </div>
+</article>
+
+
+<div class="page-nav">
+    
+    <a class="page-nav-older" href="/index.18/"><span class="icon icon-arrow-left-2"></span> Older</a>
+    
+    
+    <a class="page-nav-newer" href="/index.16/">Newer <span class="icon icon-arrow-right-2"></span></a>
+    
+    <div class="page-nav-archives"><a href="/archives/">- Blog Archives -</a></div>
+</div>
+
+<div id="me">
+    <p>
+        <img src="/images/Headshot-Square.png" alt="John Ptacek" />
+        I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
+        This blog is my contains my content and opinions, which are not those of my employer.
+    </p>
+    <p>Currently, I am reading <a href="http://www.amazon.com/Bone-Clocks-Novel-David-Mitchell/dp/1400065674">The Bone Clocks</a>
+        by David Mitchell</p>
+    <p>
+        <a href="http://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="httpƒs://github.com/jptacek">GitHub</a> &#8226;
+        <a href="http://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
+        <a href="http://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
+        <a href="http://plus.google.com/+JohnPtacek">Google+</a>
+    </p>
+</div>
+
+        </div>
+</div>
+<div class="container">
+    <div class="navbar navbar-footer">
+        <p class="navbar-center navbar-text">Content copyright &copy; 2015 John Ptacek</p>
+    </div>
+</div>
+
+<script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="/scripts/vendor/highlight.pack.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/coffee-script/1.6.3/coffee-script.min.js"></script>-->
+<script src="/scripts/site.js"></script>
+
+
+<!-- social scripts-->
+<!-- G+ reference-->
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=142672925873397";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34910017-1']);
+    _gaq.push(['_setDomainName', 'jptacek.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>

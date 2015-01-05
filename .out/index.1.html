@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<!--<![endif]-->
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="Working at getting better with Mobile, Web and JavaScript" />
+
+    <title>JPtacek.com  - JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <meta name="author" content="John Ptacek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/feed/" rel="alternate" title="Jptacek.com" type="application/atom+xml">
+    <link href="/favicon.ico?v=2" rel="shortcut icon">
+
+    <!-- Bootstrap -->
+    <link href="/styles/site.css" rel="stylesheet" media="screen">
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/scripts/vendor/html5shiv.js"></script>
+    <script src="/scripts/vendor/respond.min.js"></script>
+    <![endif]-->
+
+    <meta name="generator" content="DocPad v6.68.1" />
+    <style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style>
+<script src="/scripts/vendor/angular.min.js"></script>
+<script type="text/javascript" src="/scripts/vendor/angular-route.min.js"></script>
+
+    <!-- MS Live tile tag -->
+    <meta name="application-name" content="JPtacek.Com"/>
+     <meta name="msapplication-TileColor" content="#527578"/>
+     <meta name="msapplication-square70x70logo" content="tiny.png"/>
+     <meta name="msapplication-square150x150logo" content="square.png"/>
+     <meta name="msapplication-wide310x150logo" content="wide.png"/>
+     <meta name="msapplication-square310x310logo" content="large.png"/>
+
+</head>
+<body>
+
+<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">John Ptacek</a> <div class="navbar-brand"> - Musings on Code</div>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="/">Blog</a></li>-->
+
+                <li class="hidden-xs">
+                    <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
+                    <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
+                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><span class="icon icon-google-plus"></span></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><span class="icon icon-linkedin"></span></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><span class="icon icon-stackoverflow"></span></a>
+                    <a href="https://github.com/jptacek" class="github"><span class="icon icon-github"></span></a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right hidden-xs" role="search" action="http://google.com/search"
+                  method="get">
+                <div class="form-group">
+                    <input type="search" name="q" class="form-control" placeholder="Search">
+                    <input type="hidden" name="q" value="site:www.jptacek.com">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+        <div class="col-sm-12 col-md-10">
+            
+    <article class="post">
+    
+    <h1><a href='/2011/04/13/index/'>SharePoint Search - Think Outside the (Search) Box!</a></h1>
+    
+        <div class="post-date">Apr 12th, 2011</div>
+
+    <div class="post-content">
+        <p>Search is ubiquitous in the world of the Internet. Everyone starts their questions by going to Google (or for a small minority Bing) and typing in their query as the entry to the Internet. The expectation is that the results are going to be exactly what you are looking for, and if that doesn&#39;t work out, adding a second term will get you there.</p>
+<p>In the Enterprise though, this is not always the case. Data exists in disparate system, files live on file shares, users keep documents on their hard drive, etc. Ultimately, it comes down to the fact that the data users need is not discoverable, for a variety of reasons. As a result, users generally don&#39;t regard search within the walls of the enterprise like they do search outside of the Enterprise. Instead of starting at the search page, they start at the application that hosts their data and search. This is a source of inefficiency. Additionally, what we are searching for may be the person within our organization who knows the most about a given topic so we can do research ourselves or resolve an issue. The good news is that SharePoint 2010 and its search functionality can enable an organization to overcome these inefficiencies or weaknesses.</p>
+<p>SharePoint 2010 has great built-in Enterprise search functionality which can certainly help solve these problems. The downside is it can get a bit confusing because there are many variations of the Microsoft search product offering. The products, with a description are:</p>
+<ul>
+<li><strong>SharePoint Foundation 2010 Search </strong>- This is the search engine that ships with SharePoint foundation. It is limited to a single site collection (or in non-SharePoint speak, a single site) and cannot index the content and data external to that given site.</li>
+<li><strong>Search Server 2010 Express </strong>- Search Server Express is a standalone product that is <a href="http://www.microsoft.com/enterprisesearch/searchserverexpress/en/us/default.aspx">available and free</a>. It supports external content sources and search federation. It is limited in its capability to scale to your organization&#39;s needs.</li>
+<li><strong>Search Server 2010 </strong>- This is the full product upgrade from Search Server Express. It is an Enterprise search engine that can scale across multiple servers. The product is focused for organizations that are not using SharePoint 2010 and can provide a great product offering for your internal or public website needs.</li>
+<li><strong>SharePoint Server 2010 Search </strong>- The search available in SharePoint server 2010 includes all of the Search Server 2010 functionality but also includes features specific to SharePoint. Examples of this include taxonomy and people search.</li>
+<li><strong>FAST Search Server 2010 for SharePoint </strong>- FAST is Microsoft&#39;s advanced search functionality. It is used by many organizations that need highly scalable and functional requirements. An example would be the Best Buy site, which uses FAST search to provide their categories.
+The great part about SharePoint search, starting with Search Server 2010, is the ability to integrate data from other systems within your Enterprise. Using the Business Connectivity Services functionality (a feature of SharePoint itself) with SharePoint search, you can integrate into Line of Business (LOB) applications. For example, if you have customer information and contacts in a CRM application, SharePoint can be setup to index that information and make it part of the results that are returned when users search from within your SharePoint site.</li>
+</ul>
+<p>Similarly, with the ability to search LOB applications, advanced versions of SharePoint allow search sources to be external to the server. SharePoint calls these content sources, and they can be a variety of types of data. Examples include corporate Intranet sites that aren&#39;t hosted in SharePoint, external file systems, and Internet sites. This is the majority of the data that organizations are interested in, all at the tip of employees&#39; fingers.</p>
+<p>Some examples of what customers have done with SharePoint search:</p>
+<ul>
+<li>Make a file server drive that has 15 years of data quickly accessible via your SharePoint searches</li>
+<li>Use SharePoint search to bring in product information from an ERP system with accompanying price as well as links to the ERP system</li>
+<li>Use Google News and other external news sources to mine information about competitors
+As you can see, leveraging SharePoint search beyond its out-of-the-box functionality can quickly turn your corporate Intranet into the starting point for information for all your knowledge workers!</li>
+</ul>
+<p>This blog post originally appeared at Skyline Technologies (<a href="http://www.skylinetechnologies.com/blog/Pages/sharepointsearch.aspx">http://www.skylinetechnologies.com/blog/Pages/sharepointsearch.aspx</a>)</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/search/'>Search</a>, <a href='/tags/sharepoint/'>SharePoint</a>, <a href='/tags/sharepoint/'>SharePoint</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+    <div id='socialTags'>
+    <!-- Twitter -->
+		<a href="https://twitter.com/share" data-text='SharePoint Search - Think Outside the (Search) Box!' class="twitter-share-button" data-url="http://jptacek.com/2011/04/13/index/">Tweet</a>
+    <!-- Google+. -->
+    <div class="g-plusone" data-size="medium"></div>
+    <!-- LinkedIn -->
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2011/04/13/index/" ></script>&nbsp;
+    <!-- Facebook -->
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2011/04/13/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    </div>
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2011/05/11/index/'>Mobile Apps Provide the &quot;Finishing Touches&quot; to the Appleton Compassion Project</a></h1>
+    
+        <div class="post-date">May 10th, 2011</div>
+
+    <div class="post-content">
+        <p>The <a href="http://www.appletoncompassion.org/">Appleton Compassion Project</a>is a community art project in which all Appleton Area School District students created a 6&quot; x 6&quot; tile depicting their idea of compassion. Each student then wrote a statement about their tile and what compassion means to them. The art and statements can be viewed in the Trout Museum of Art or online at www.appletoncompassion.org. Adding the writing element to the art project has produced some very well rounded, heartfelt depictions of the word &quot;Compassion&quot;.</p>
+<p>The artist statements range all over the board; from moving, to amusing, to first-grader-cute. It quickly became apparent that with the job of physically displaying over 10,000 pieces of Art on the walls of the Trout Museum of Art, that the compassion statements would not be available for display alongside the tiles. Since the writing element was just as important to the project as the art, we knew we needed to come up with a solution to allow museum visitors to read the statements. The answer? Smartphone apps! Skyline created applications for the three major platforms - Android, iPhone and Windows Phone 7 - that museum visitors can install on their mobile phones so they can view artist statements along with the art.</p>
+<p>Since this is the first time that Skyline has created mobile apps for the three major mobile platforms, I thought I&#39;d share how we approached the design of the applications, focusing on what was common between all three. Then, in future blog posts each of the mobile platforms will be discussed from a development standpoint.</p>
+<p>In essence, the goal of the mobile application design, at a high level, focused on two things: One, consistency of functionality within three applications, and two, have the application behave like a native application on the individual mobile phones. Okay, what does this really mean? We sat down as a team and identified the functionality the application should have. For the mobile applications these were the features we wanted:</p>
+<ul>
+<li>Highlight featured art upon entering the app</li>
+<li>By clicking on an image users would be able to view the compassion statement</li>
+<li>Search by student name</li>
+<li>Search by picture number</li>
+<li>Allow users to mark and keep a list of favorites</li>
+<li>Have static text to highlight information about the museum, exhibit, hours, Skyline, etc.
+Once a set of features was decided on, we focused on having those pieces display consistently within the applications, so that featured art was first, favorites was second, and so on. We also wanted to make sure that search was available on each screen across the application. Finally, we attempted to use consistency with the graphics across platforms wherever possible. All of the applications have the same splash screen (featuring Art by Skyline employees) and use the same logo where needed.</li>
+</ul>
+<p>Each developer took these requirements and implemented them within the various mobile platforms so they were consistent for the users of that platform. For example, the iPhone and Windows Phone 7 have very different UI implementations. The iPhone has more of a button-driven menu interface, where the Windows Phone UI utilizes text and swiping as a function of their Metro UI. This results in the search button being at the bottom of the screen for the iPhone application and at the top for the Windows Phone application. Each application has the same functionality, just implemented differently - appropriate for the native platform.</p>
+<p>The last part of the mobile applications is the data services that feed the application. Surprisingly enough, there are only two. The services are REST-based, with the data returned to the client in XML format.</p>
+<p>The first service returns a random set of featured art (<a href="http://www.appletoncompassion.org/rest/FeaturedStatements/12">http://www.appletoncompassion.org/rest/FeaturedStatements/12</a>). With REST, you can provide parameters in the URL, so in the instance the number tells you how many items to return. We have a single object type we used for both of the services to return, so in this instance there is some excess data in the XML stream that would not necessarily be needed, but it made development easier. This REST call is used to return the featured images that greet the user each time they start the application.</p>
+<p>The second service is responsible for searching. Within the application, there are two types of search. The first one is by picture number, so if you are at the exhibit in the museum you can type in a number and see the artist statement that corresponds with the tile. The second is by name, so you can look up a specific child. We were able to implement this search functionality in a single service call, by having the back end service worry about if the search was a number only or if it had text. The service can search by number (<a href="http://www.appletoncompassion.org/rest/search/7158">http://www.appletoncompassion.org/rest/search/7158</a>), last name (<a href="http://www.appletoncompassion.org/rest/search/ptacek">http://www.appletoncompassion.org/rest/search/ptacek</a>) or full name (<a href="http://www.appletoncompassion.org/rest/search/nora ptacek">http://www.appletoncompassion.org/rest/search/nora%20ptacek</a>).</p>
+<p>It&#39;s a small example, but it illustrates the point of trying to encapsulate as much logic is possible in our service calls and not put the burden on the mobile phone. This way if there&#39;s a bug or change that needs to be made in the search functionality, we can update the service call, and not have to go through the lengthy process of updating three mobile applications in their respective mobile stores.</p>
+<p>Watch for future blog posts that discuss each individual platform in more detail.</p>
+<p>This blog post originally appeared at Skyline Technologies (<a href="http://www.skylinetechnologies.com/blog/Pages/compassionmobileappdevelopment.aspx">http://www.skylinetechnologies.com/blog/Pages/compassionmobileappdevelopment.aspx</a>)</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/appleton-compassion/'>Appleton Compassion</a>, <a href='/tags/giveology/'>Giveology</a>, <a href='/tags/mobile/'>Mobile</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+    <div id='socialTags'>
+    <!-- Twitter -->
+		<a href="https://twitter.com/share" data-text='Mobile Apps Provide the &quot;Finishing Touches&quot; to the Appleton Compassion Project' class="twitter-share-button" data-url="http://jptacek.com/2011/05/11/index/">Tweet</a>
+    <!-- Google+. -->
+    <div class="g-plusone" data-size="medium"></div>
+    <!-- LinkedIn -->
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2011/05/11/index/" ></script>&nbsp;
+    <!-- Facebook -->
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2011/05/11/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    </div>
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2011/06/24/index/'>An Introduction to the Microsoft Razor View Engine</a></h1>
+    
+        <div class="post-date">Jun 23rd, 2011</div>
+
+    <div class="post-content">
+        <p>In past blog posts on <a href="http://www.skylinetechnologies.com/blog/Pages/mvcaspnet.aspx">MVC</a> and <a href="http://www.skylinetechnologies.com/blog/Pages/WebMatrix_for_Creating_Small_Sites.aspx">WebMatrix</a>I&#39;ve mentioned Razor. Today, I&#39;m going to get a bit more in depth on Razor and what it can do.</p>
+<p>ASP.NET MVC supports view engines. All web programming consists of providing developers a way to insert data dynamically into their HTML output. In ASP.NET Web forms, this was done using &lt;%= =%&gt; syntax to let the runtime know that code was coming. In previous versions of ASP.NET MVC, this same approach was used and was called the Web Forms view engine.
+ASP.NET MVC, however, had the ability to use other view engines. Ever since the introduction of MVC, people have not liked using the Web Forms View engine. During that time, several other view engines became popular for MVC development including <a href="http://sparkviewengine.com/">Spark</a>, <a href="http://code.google.com/p/string-template-view-engine-mvc/">StringTemplate</a> and <a href="http://code.google.com/p/nhaml/">NHAML</a>.</p>
+<p>With the release of ASP.NET MVC 3, Microsoft is now using the Razor view engine. You can still use the previous Web Forms view engine if you would like. The team at Microsoft outlined several design goals for Razor when they introduced it. The most important ones are that Razor be compact, expressive and fluid as well as easy to learn.</p>
+<p>One of the main complaints with the Web Forms View engine is how verbose the syntax was. Razor explicitly address this by using the @ keyword to enable script escaping.</p>
+<p>So what does this code look like? First, Razor files have the extension csHtml (C# Syntax) or vbHtml (VB syntax). Razor files then get processed by the runtime. If we have a variable defined message and have an HTML stream going, you can see the razor terseness in the following syntax:</p>
+<p></p><p>Message for the user @message</p>
+In ASP.NET Web Forms, this same line would have been<p></p>
+<p></p><p> Message for the user &lt;%= message %&gt;</p>
+Similarly, for example, if we have a list of sports teams showing their name and what place they are in and we want to iterate through to display the standings the syntax is:<p></p>
+<p><h3>Teams&lt;/h3&amp;gt</h3></p>
+<p><ul>
+@foreach (var t in teams) {
+<li>@t.Place - @t.Name </li>
+}
+</ul>
+On the screen this would print as follows:</p>
+<p><h3>Teams</h3></p>
+<p><ul></ul></p>
+<p><li>1 - Green Bay Packers</li></p>
+<p><li>2 - Chicago Bears</li></p>
+<p><li>3 - Detroit Lions</li></p>
+<p><li>4 - Minnesota Vikings</li>
+
+Similar syntax with Web Forms:</p>
+<p><h3>Teams</h3></p>
+<p><ul>
+&lt;% foreach (var t in teams) { %&gt;</ul></p>
+<p><li>&lt;%= t.Place%&gt; - &lt;%=t.Name%&gt; </li><li>
+&lt;%}%&gt;
+
+Razor also supports HTML Helpers, which are a way for users to create HTML snippets across their code. So in the example above, we could create an HTML Helper to create the football standings and use it multiple times in our view or across multiple views. The syntax is as such:</li></p>
+<p>@helper TeamStandings(FootballTeam team) {
+<li>@team.Place - @team.Name </li>
+}
+We could then update the page to call the helper:</p>
+<p><h3>Teams</h3></p>
+<p><ul>
+@foreach (var t in teams) {
+@TeamStandings(t)
+}
+</ul>
+You can see how less verbose the syntax is to use. It is also, in a lot of ways easier to use. You never need to remember if you should escape out using &lt;% or &lt;%= either. The Razor syntax also introduces new syntax for laying out pages, superseding the ASP.NET concept of master pages. In truth, the ideas are both the same, but the concept is now called LayoutPages. Instead of having ContentPlaceholder sprinkled throughout a master page, helper methods in the template are used to fill in specific content. For example, let&#39;s call this page _groovySiteLayout.cshtml:</p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html></html></p>
+<p><head></head></p>
+<p><title>Groovy Page</title>
+</p>
+<p><body></body></p>
+<p><div id="groovyMenu"><a href="http://www.jptacek.com/">Home</a></div></p>
+<p><div id="groovyPageBody">
+@RenderBody()
+</div>
+
+Then, within the view, we create our site content which includes a setting for the layout page. When the layout page hits the @RenderBoy helper method it injects the view content into the layout page and sends back to the browser.
+So for a simple view:</p>
+<p>
+{
+@LayoutPage = &quot;_groovySiteLayout.cshtml&quot;;
+}</p>
+<p><h1>Welcome to Groovy</h1></p>
+<p></p><p>Hello world</p>
+Would render the following HTML:<p></p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html></html></p>
+<p><head></head></p>
+<p><title>Groovy Page</title>
+</p>
+<p><body></body></p>
+<p><div id="groovyMenu"><a href="http://www.jptacek.com/">Home</a></div></p>
+<p><div id="groovyPageBody"></div></p>
+<p><h1>Welcome to Groovy</h1></p>
+<p></p><p>Hello world</p>
+
+
+There is a lot more to the Razor view engine, this is just a quick introduction, I will be talking about it a lot more in the future.<p></p>
+<p><strong>Why Use it?
+</strong>Razor is a new Microsoft view engine that is lightweight and easy to use. It is currently part of WebMatrix and ASP.NET MVC. There are even indications it will be an integral part of a future version of ASP.NET WebForms.</p>
+<p><strong>I want to learn more!
+</strong>• <a href="http://weblogs.asp.net/scottgu/archive/2010/07/02/introducing-razor.aspx">Microsoft Introduction</a> - This post on Scott Guthrie&#39;s blog is an excellent introduction!
+• <a href="http://www.asp.net/mvc">Microsoft ASP.NET MVC site</a> - Check out the pluralsight videos on the page</p>
+<p>This blog post was originally published at Skyline Technologies (<a href="http://www.skylinetechnologies.com/Blog/Lists/Posts/Post.aspx?ID=42">http://www.skylinetechnologies.com/Blog/Lists/Posts/Post.aspx?ID=42</a>)</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/razor/'>Razor</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/webmatrix/'>WebMatrix</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+    <div id='socialTags'>
+    <!-- Twitter -->
+		<a href="https://twitter.com/share" data-text='An Introduction to the Microsoft Razor View Engine' class="twitter-share-button" data-url="http://jptacek.com/2011/06/24/index/">Tweet</a>
+    <!-- Google+. -->
+    <div class="g-plusone" data-size="medium"></div>
+    <!-- LinkedIn -->
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2011/06/24/index/" ></script>&nbsp;
+    <!-- Facebook -->
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2011/06/24/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    </div>
+</article>
+
+
+<div class="page-nav">
+    
+    <a class="page-nav-older" href="/index.2/"><span class="icon icon-arrow-left-2"></span> Older</a>
+    
+    
+    <a class="page-nav-newer" href="/">Newer <span class="icon icon-arrow-right-2"></span></a>
+    
+    <div class="page-nav-archives"><a href="/archives/">- Blog Archives -</a></div>
+</div>
+
+<div id="me">
+    <p>
+        <img src="/images/Headshot-Square.png" alt="John Ptacek" />
+        I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
+        This blog is my contains my content and opinions, which are not those of my employer.
+    </p>
+    <p>Currently, I am reading <a href="http://www.amazon.com/Bone-Clocks-Novel-David-Mitchell/dp/1400065674">The Bone Clocks</a>
+        by David Mitchell</p>
+    <p>
+        <a href="http://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="httpƒs://github.com/jptacek">GitHub</a> &#8226;
+        <a href="http://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
+        <a href="http://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
+        <a href="http://plus.google.com/+JohnPtacek">Google+</a>
+    </p>
+</div>
+
+        </div>
+</div>
+<div class="container">
+    <div class="navbar navbar-footer">
+        <p class="navbar-center navbar-text">Content copyright &copy; 2015 John Ptacek</p>
+    </div>
+</div>
+
+<script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="/scripts/vendor/highlight.pack.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/coffee-script/1.6.3/coffee-script.min.js"></script>-->
+<script src="/scripts/site.js"></script>
+
+
+<!-- social scripts-->
+<!-- G+ reference-->
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=142672925873397";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34910017-1']);
+    _gaq.push(['_setDomainName', 'jptacek.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>

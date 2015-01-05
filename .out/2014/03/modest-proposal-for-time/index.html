@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<!--<![endif]-->
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="Working at getting better with Mobile, Web and JavaScript" />
+
+    <title>A Modest Proposal For Time - JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <meta name="author" content="John Ptacek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/feed/" rel="alternate" title="Jptacek.com" type="application/atom+xml">
+    <link href="/favicon.ico?v=2" rel="shortcut icon">
+
+    <!-- Bootstrap -->
+    <link href="/styles/site.css" rel="stylesheet" media="screen">
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/scripts/vendor/html5shiv.js"></script>
+    <script src="/scripts/vendor/respond.min.js"></script>
+    <![endif]-->
+
+    <meta name="generator" content="DocPad v6.68.1" />
+    <style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style>
+<script src="/scripts/vendor/angular.min.js"></script>
+<script type="text/javascript" src="/scripts/vendor/angular-route.min.js"></script>
+
+    <!-- MS Live tile tag -->
+    <meta name="application-name" content="JPtacek.Com"/>
+     <meta name="msapplication-TileColor" content="#527578"/>
+     <meta name="msapplication-square70x70logo" content="tiny.png"/>
+     <meta name="msapplication-square150x150logo" content="square.png"/>
+     <meta name="msapplication-wide310x150logo" content="wide.png"/>
+     <meta name="msapplication-square310x310logo" content="large.png"/>
+
+</head>
+<body>
+
+<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">John Ptacek</a> <div class="navbar-brand"> - Musings on Code</div>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="/">Blog</a></li>-->
+
+                <li class="hidden-xs">
+                    <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
+                    <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
+                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><span class="icon icon-google-plus"></span></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><span class="icon icon-linkedin"></span></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><span class="icon icon-stackoverflow"></span></a>
+                    <a href="https://github.com/jptacek" class="github"><span class="icon icon-github"></span></a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right hidden-xs" role="search" action="http://google.com/search"
+                  method="get">
+                <div class="form-group">
+                    <input type="search" name="q" class="form-control" placeholder="Search">
+                    <input type="hidden" name="q" value="site:www.jptacek.com">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+            <article class="post">
+    
+    <h1>A Modest Proposal For Time</h1>
+    
+        <div class="post-date">Mar 17th, 2014</div>
+
+    <div class="post-content">
+        <p>Time, when you really think about it, is CRAZY. We expect it to be this constant in life, slowly, we hope, marching forward,
+but invariably going quicker than we want. However, the concept of time, as in “What time is it?” has changed over
+the centuries, with the pace escalating during the information age. If there is one thing Einstein taught us with the Theory of
+Relativity, it is that time is not constant.</p>
+<p><img src="http://www.jptacek.commeltingTime.jpg" alt="Melting Time"></p>
+<p>There are really two ideas of time… The first, relates to the time on a clock that we all reference. The second, is the larger concept of time that is part of the theories that
+Einstein laid out in his Special and General Theories of Relativity. We will focus on the clock for most of this.</p>
+<p><img src="http://www.jptacek.comeinstein.jpg" alt="Einstein"> (gratuitous Einstein picture)</p>
+<p>When I interview people for jobs, or talk with young programmers, I will sometimes ask a variation of this question, &quot;you are running a
+website and are taking orders for customers all over the world, how do you handle the date and time of an order?&quot; This question
+is amazingly complex.</p>
+<p>First, you get an idea if the person has a grasp of time zones and local geography beyond the one they are in,
+which is always a good first step. This leads to other discussions. Do they mention Daylight Saving Time? Do they mention 
+what a pain Indiana and/or Arizona are,
+ neither of which recognize Daylight Saving Time?</p>
+<p>They make it this far, you are happy. Next however, you hope they mention there really isn’t a decent way to know where a 
+user
+is when they place an order so that you can display a time when they think they bought their product.
+ Unless they explicitly provide 
+an address or a time zone, you are not guaranteed to know where they are. You can
+ guess based on things like IP address, however, this costs money. You can ask the user if your application can use their 
+ browser geolocation feature to determine where they are, but if they are like me, this is a sign to go to another site.</p>
+<p>So, you say to yourself, the best thing I can do when a user places an order is to ask them to provide a username that is tied
+to a physical address in the real world. This will surely solve the problem! No, it really won’t….. Do you save the time zone where they placed the order? If I
+am vacationing in sunny California and order the latest Marvel Blu-Ray to be shipped to my house, what is the proper order time
+from my perspective? The time back home or the time where I am?</p>
+<p>None of this touches on craziness of time zone names. I live in the United States Midwest, home of Central Standard Time (CST).
+However, there is also Cuba Standard Time, China Standard Time, and Central Standard Time in Australia, all claiming the acronym
+CST. Which one wins?</p>
+<p>So it is a GREAT interview question because you get an idea of the breadth of experience of a candidate in dealing with
+large scale applications. However, I only tend
+to ask this question if I am trying to be a deliberate jerk. It is a difficult question.</p>
+<p>If you work with large companies or companies with interests all over the world, you realize how much time you spend talking
+about time. Most people I talk to have no idea that when it is 8:00 AM in the United States Midwest, in India it is
+6:30 PM. That is right, not only is the time many hours different than ours, it is staggered 30 minutes. Throw in the fact
+that countries all over the world have different ways of dealing with Daylight Savings Time and sometimes their governments
+will change it at the last minute and you have many, many opportunities for error. Time is a constant source of discussion when you
+work with people across the globe. That discussion of time costs the world money and effectiveness.</p>
+<p>So, I propose a few things. First, let me start in the United States. Let us abolish Daylight Savings Time. There really is no
+need for this anymore. We are not at war, and the cost savings for going through this process twice a year have not been <a href="http://phys.org/news/2014-03-daylight-energy.html">proven
+out</a>. Every person in Illinois who has missed a meeting with a colleague in
+Indiana when we “spring forward” or “fall back” can
+verify this.</p>
+<p>Second, and I assume much more controversially, let us abandon time zones in the United States. We live in a time and place where we
+ALL need to be on the same time as a country. In our agrarian past, it may have made sense for 12:00 PM to represent when the
+sun was at its apex. However, for the most part, we are NOT an agrarian society currently. Our economy is an information and
+finance based economy. I can guarantee you, stock brokers living in California, don’t wake up at 9:30 AM PST for the opening bell
+on Wall Street, they wake and are ready to serve their customers every day by 6:30 AM PST to match the 9:30 AM EST opening bell. Our
+economy already is driven by the time when business happens, not when we want it to happen.</p>
+<p>Many folks may think the idea of a single time zone in the states is crazy talk, and it probably is. As a country, we tend to
+be obstinate to change and prefer to cling to the way things have been done (I am looking at you Metric
+System conversion). However, time marches on, and more importantly, our economy marches
+on. It wasn’t until commerce became widespread, that the concept of time (or more exactly, time keeping) became prevalent in order
+to facilitate commerce. Our
+economy though has moved past local time, it has moved global. The reality is that countries like China are already ahead of us
+here, with a single time that spans five time zones. One needs to only look at the image of the differing morass of
+time zones from <a href="http://en.wikipedia.org/wiki/Time_zone">WikiPedia</a>
+to realize there is a huge opportunity for improvement.</p>
+<p><img src="http://www.jptacek.comwikiTimeZones.png" alt="WikiPedia time zones"></p>
+<p>So then, let us take it to the logical conclusion. We should wipe out time zones everywhere in the world. They are no longer
+needed. ALL business should act on the same time. The first benefit of this is that the mental energy the world spends each day
+to just set up a meeting with colleagues disappears. Instead of everyone doing a little math determining their GMT offset, they just say what time.
+Everyone has the same reference. It all gets done much quicker. We loose the concept of 12:00 PM being when the sun is brightest,
+but the benefits are huge.</p>
+<p>The second benefit is that computer systems are MUCH more efficient. While we will never get past the scourge of developers
+checking if an item is NULL, the second thing they spend their time on is dealing with dates and times in their programming
+language of choice. By consolidating on a single global time, that problem disappears. That is pretty cool. You may think this is
+ superfluous, but it is analogous to the metric and British system of units. One need only look at the loss of the <a href="http://en.wikipedia.org/wiki/Mars_Climate_Orbiter">Mars Climate
+ Orbiter</a> because of unit conversions to realize there are real reasons for
+ simplicity and very high costs for ignoring it!</p>
+<p>So then, what time is it? Well, the answer is easy. We already have it and it is
+<a href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time">Coordinated Universal Time (UTC)</a>. The interesting thing is, from a
+programming standpoint, we are all moving there. If you do multi time zone or country work, you are most likely already saving
+time as UTC. If you aren’t, you soon will be as you move to a cloud infrastructure. Amazon Web Services (AWS) and Azure already
+default to UTC since their servers are geographically dispersed and they need to standardize on tme.
+This is so prevalent, that for me personally, on my development PCs I have two times displayed,
+one for local time and one for UTC time. When I code, I spend more time in
+UTC than my local time zone.</p>
+<p>It is time for the geeks of the world to lead the charge on this. We need to encourage businesses to focus on driving costs
+down for doing business globally. We need to challenge politicians to take up the banner and make the world more connected and
+consolidated by having a single global time.</p>
+<p>In the news lately has been the disappearance of Malaysian Flight 370. Take for instance this article at the
+<a href="http://www.nytimes.com/2014/03/13/world/asia/missing-malaysia-airlines-flight-370.html">New York Times</a>
+that discusses the timeline of the plane radar reading. It says the last contact happened at 2:15 am local time. First, I
+ assume they mean local time in Malaysia and not New York. If it is Malaysia, I have no idea without a little
+ Internet searching what time that is for me. I think a good way to begin the journey is to whenever we display time to also
+  display the UTC time. So 2:15 am local time in Malaysia becomes 2:15 am/Saturday 18:15 U, where the U designation indicates
+ Universal time.</p>
+<p>How hard can it be?!?!? Probably hard, the reality is it is coming sooner or later, with sooner being better.
+However, amazing things happen every day. Let us start. I am posting this article at 6 AM in the morning, but 11:00 U
+wherever you are.</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/time/'>Time</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+    <div id='socialTags'>
+    <!-- Twitter -->
+		<a href="https://twitter.com/share" data-text='A Modest Proposal For Time' class="twitter-share-button" data-url="http://jptacek.com/2014/03/18/index/">Tweet</a>
+    <!-- Google+. -->
+    <div class="g-plusone" data-size="medium"></div>
+    <!-- LinkedIn -->
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/03/18/index/" ></script>&nbsp;
+    <!-- Facebook -->
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/03/18/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    </div>
+</article>
+            <div id="me">
+    <p>
+        <img src="/images/Headshot-Square.png" alt="John Ptacek" />
+        I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
+        This blog is my contains my content and opinions, which are not those of my employer.
+    </p>
+    <p>Currently, I am reading <a href="http://www.amazon.com/Bone-Clocks-Novel-David-Mitchell/dp/1400065674">The Bone Clocks</a>
+        by David Mitchell</p>
+    <p>
+        <a href="http://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="httpƒs://github.com/jptacek">GitHub</a> &#8226;
+        <a href="http://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
+        <a href="http://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
+        <a href="http://plus.google.com/+JohnPtacek">Google+</a>
+    </p>
+</div>
+
+            <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript></div>
+<script type="text/javascript">
+    var disqus_shortname = 'ewalnet';
+    var disqus_url = 'http://www.jptacek.com/2014/03/18/index/';
+    var disqus_identifier = disqus_url;
+    var disqus_title = 'A Modest Proposal For Time';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+</div>
+<div class="container">
+    <div class="navbar navbar-footer">
+        <p class="navbar-center navbar-text">Content copyright &copy; 2015 John Ptacek</p>
+    </div>
+</div>
+
+<script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="/scripts/vendor/highlight.pack.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/coffee-script/1.6.3/coffee-script.min.js"></script>-->
+<script src="/scripts/site.js"></script>
+
+
+<!-- social scripts-->
+<!-- G+ reference-->
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=142672925873397";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34910017-1']);
+    _gaq.push(['_setDomainName', 'jptacek.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>

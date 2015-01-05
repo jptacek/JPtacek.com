@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<!--<![endif]-->
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="Working at getting better with Mobile, Web and JavaScript" />
+
+    <title>JPtacek.com  - JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <meta name="author" content="John Ptacek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/feed/" rel="alternate" title="Jptacek.com" type="application/atom+xml">
+    <link href="/favicon.ico?v=2" rel="shortcut icon">
+
+    <!-- Bootstrap -->
+    <link href="/styles/site.css" rel="stylesheet" media="screen">
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/scripts/vendor/html5shiv.js"></script>
+    <script src="/scripts/vendor/respond.min.js"></script>
+    <![endif]-->
+
+    <meta name="generator" content="DocPad v6.68.1" />
+    <style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style>
+<script src="/scripts/vendor/angular.min.js"></script>
+<script type="text/javascript" src="/scripts/vendor/angular-route.min.js"></script>
+
+    <!-- MS Live tile tag -->
+    <meta name="application-name" content="JPtacek.Com"/>
+     <meta name="msapplication-TileColor" content="#527578"/>
+     <meta name="msapplication-square70x70logo" content="tiny.png"/>
+     <meta name="msapplication-square150x150logo" content="square.png"/>
+     <meta name="msapplication-wide310x150logo" content="wide.png"/>
+     <meta name="msapplication-square310x310logo" content="large.png"/>
+
+</head>
+<body>
+
+<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">John Ptacek</a> <div class="navbar-brand"> - Musings on Code</div>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="/">Blog</a></li>-->
+
+                <li class="hidden-xs">
+                    <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
+                    <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
+                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><span class="icon icon-google-plus"></span></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><span class="icon icon-linkedin"></span></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><span class="icon icon-stackoverflow"></span></a>
+                    <a href="https://github.com/jptacek" class="github"><span class="icon icon-github"></span></a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right hidden-xs" role="search" action="http://google.com/search"
+                  method="get">
+                <div class="form-group">
+                    <input type="search" name="q" class="form-control" placeholder="Search">
+                    <input type="hidden" name="q" value="site:www.jptacek.com">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+        <div class="col-sm-12 col-md-10">
+            
+    <article class="post">
+    
+    <h1><a href='/2013/10/31/index/'>AngularJS – Introducing ng-repeat</a></h1>
+    
+        <div class="post-date">Oct 30th, 2013</div>
+
+    <div class="post-content">
+        <p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
+<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
+ HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
+ Contrast this to a framework like JQuery where the DOM will update your data.</p>
+<p><img src="http://www.jptacek.comangularLogo.png" alt="AngularJS Logo"></p>
+<p>This is the third in a series of posts on AngularJS where we are using Chemistry data from the periodic table
+to help us understand the framework. The others posts are</p>
+<ol>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
+<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
+<li>AngularJS - Introducing NG-Repeat</li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
+<li><a href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
+<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
+<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
+</ol>
+<blockquote>
+<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
+the home page of my blog, only one application will work. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
+</blockquote>
+<p>We have previously talked about AngularJS and controllers. However, an important part of web development is displaying data,
+especially repeating data. We are going to use our Periodic data and look at options for displaying that data on the page.</p>
+<p>For this example, we have created a chemistry controller that contains information from the periodic table. An element in our
+JSON object looks like</p>
+<pre class="highlight"><code class="hljs javascript"> <span class="hljs-string">"atomicNumber"</span>: <span class="hljs-number">1</span>,
+ <span class="hljs-string">"name"</span>: <span class="hljs-string">"Hydrogen"</span>,
+ <span class="hljs-string">"atomicWeight"</span>: <span class="hljs-number">1.00794</span>,
+ <span class="hljs-string">"phase"</span>: <span class="hljs-string">"Gas"</span>,
+ <span class="hljs-string">"ionization"</span>: <span class="hljs-number">13.5984</span>,
+ <span class="hljs-string">"melting"</span>: -<span class="hljs-number">259.15</span>,
+ <span class="hljs-string">"boiling"</span>: -<span class="hljs-number">252.87</span>
+</code></pre>
+<p>Our chemistry controller essentially is responsible for setting a local scope variable.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope)</span> {</span>
+
+ $scope.periodic = {
+ elements: [
+ {
+ <span class="hljs-string">"atomicNumber"</span>: <span class="hljs-number">1</span>,
+ <span class="hljs-string">"name"</span>: <span class="hljs-string">"Hydrogen"</span>,
+ <span class="hljs-string">"atomicWeight"</span>: <span class="hljs-number">1.00794</span>,
+ <span class="hljs-string">"phase"</span>: <span class="hljs-string">"Gas"</span>,
+ <span class="hljs-string">"ionization"</span>: <span class="hljs-number">13.5984</span>,
+ <span class="hljs-string">"melting"</span>: -<span class="hljs-number">259.15</span>,
+ <span class="hljs-string">"boiling"</span>: -<span class="hljs-number">252.87</span>
+ },
+
+....
+
+ ]
+ };
+}
+</code></pre>
+<p>Our application now has a JavaScript variable on our Angular scope called periodic, which holds all of our
+JSON chemistry data. To display this on the page, we want to take advantage of the
+<a href="http://docs.angularjs.org/api/ng.directive:ngRepeat">ng-repeat</a> directive in AngularJS.
+The syntax for this is pretty simple. In our example, we will display all of the chemical element names from the
+periodic table in an unordered list.</p>
+<p>We start our list with a <code>ul</code> tag. The next step is to apply the <code>ng-repeat</code> directive to the markup we want to
+repeat, in this case, the<code>li</code> tag, in which we will display the name of the element.
+The syntax is <code>ng-repeat=&quot;element in periodic.elements&quot;</code>. Essentially, <code>ng-repeat</code> is expecting an expression.
+In this instance, we are saying we want to loop through all items in our periodic data source, and we are going to call each
+item element, which will be a single item from our JSON object. Last, we need to output the data for display.
+In this instance then element&#39;s name, which is a property on our JSON object called name.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements"</span>&gt;</span>{{element.name}} <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre>
+<div id="ngApp" ng-app="chemistryApp">
+
+    <div id="elements1" ng-controller="chemCtrl">
+        <ul>
+            <li ng-repeat="element in periodic.elements">
+                {{element.name}}
+            </li>
+        </ul>
+    </div>
+
+<p>We could also go an easily update our markup to display the atomic weight along with the name by changing our <code>li</code>
+ display to</p>
+<pre class="highlight"><code class="hljs xml"> {{element.name}} - {{element.atomicWeight}}
+</code></pre>
+<p>Resulting in a new look, where we are appending the atomic weight to the display of the element&#39;s name.</p>
+   <div id="elements2" ng-controller="chemCtrl">
+        <ul>
+            <li ng-repeat="element in periodic.elements">
+                {{element.name}} - {{element.atomicWeight}}
+            </li>
+        </ul>
+    </div>
+
+<p>Looking at our page though, we have a lot of data that we are displaying. Angular has the concept of filters,
+which can be applied to our expressions. An example of this is
+the <a href="http://docs.angularjs.org/api/ng.filter:limitTo">limitTo</a> filter. We can limit the number of items we display,
+in our scenario to 10. This is as simple as</p>
+<pre class="highlight"><code class="hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements|limitTo:10 "</span>&gt;</span>
+</code></pre>
+<p>We now our displaying ten results on our page</p>
+   <div id="elements2" ng-controller="chemCtrl">
+         <ul>
+             <li ng-repeat="element in periodic.elements|limitTo:10">
+                 {{element.name}} - {{element.atomicWeight}}
+             </li>
+         </ul>
+     </div>
+
+<p>Angular can also quickly allow the data to be searched using the <code>ng-model</code> attribute. We create a text input box,
+and decorate it with the <code>ng-model</code> syntax
+to define a variable which is available on our scope, and then use that as an input to the filter.</p>
+<p>First, we can create the input box</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementName"</span>/&gt;</span>
+</code></pre>
+<p>Next, we use that as the parameter for our filter instead of limitTo by using the <a href="http://docs.angularjs.org/api/ng.filter:filter">filter</a> keyword. The syntax for this is</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements ' filter:elementName"</span>&gt;</span>
+</code></pre>
+<p>We can then type in an element name and the list will narrow down automatically. Give it a try!</p>
+   <div id="elements3" ng-controller="chemCtrl">
+    <input type="text" ng-model="elementName">
+    <div id="elements3" ng-controller="chemCtrl">
+        <ul>
+            <li ng-repeat="element in periodic.elements | filter:elementName">
+                {{element.name}}
+            </li>
+        </ul>
+    </div>
+    </div>
+
+<p>You will notice that this does not REALLY work. What we want to be able to do is filter the name. For example, if
+you type 1, you will see results appear, for example Hydrogen. The reason for this is we are filtering on the
+WHOLE json object, so when we type 1 we are getting Hydrogen&#39;s Atomic number of 1 as a result and Lithium&#39;s atomic
+weight of 6.941, etc.</p>
+<p><img src="http://www.jptacek.com103113_1053_AngularJSIn7.png" alt=""></p>
+<p>What we want to be able to do is filter on the JSON object property. I bring this up, because AngularJS, of course, has the ability to do this. This is accomplished by updating our Filter expression to identify the property of the JSON object we want to filter on. For example</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">'element in periodic.elements '</span> <span class="hljs-attribute">filter:</span>{<span class="hljs-attribute">name:elementNameOnly</span>}'&gt;</span>
+</code></pre>
+<p>Note, there appears to be a bug in the current version of AngularJS, 1.0.8, where you need to initialize the filter. Using the current release candidate, 1.2, resolves this issue. Thanks to my Skyline Technologies colleague <a href="https://twitter.com/bernyzamora">Berny Zamora</a> for helping me chase that down.</p>
+<p>Now when we type 1, we no longer see results now.</p>
+   <div id="elements4" ng-controller="chemCtrl">
+    <input type="text" ng-model="elementNameOnly">
+        <ul>
+            <li ng-repeat="element in periodic.elements | filter:{name:elementNameOnly}">
+                {{element.name}}
+            </li>
+        </ul>
+    </div>
+
+
+
+<p>I have created an Azure Website to host all of this code at <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a></p>
+<p>The code is also available on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a>
+</p></div><p></p>
+<script type="text/javascript" src="/2013/10/angularjs-introducing-ng-repeat/js/chemistryApp.js"></script>
+<script type="text/javascript" src="/2013/10/angularjs-introducing-ng-repeat/js/chemistryController.js"></script>
+<script type="text/javascript" src="/2014/02/angularJS-templates/js/chemistry.js"></script>
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+    <div id='socialTags'>
+    <!-- Twitter -->
+		<a href="https://twitter.com/share" data-text='AngularJS – Introducing ng-repeat' class="twitter-share-button" data-url="http://jptacek.com/2013/10/31/index/">Tweet</a>
+    <!-- Google+. -->
+    <div class="g-plusone" data-size="medium"></div>
+    <!-- LinkedIn -->
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/10/31/index/" ></script>&nbsp;
+    <!-- Facebook -->
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/10/31/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    </div>
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2013/10/01/index/'>AngularJS - Introduction</a></h1>
+    
+        <div class="post-date">Sep 30th, 2013</div>
+
+    <div class="post-content">
+        <p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
+<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
+ HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
+ Contrast this to a framework like JQuery where the DOM will update your data.</p>
+<p><img src="http://www.jptacek.comangularLogo.png" alt="AngularJS Logo"></p>
+<p>This is the first in a series of posts on AngularJS where we are using Chemistry data from the periodic table
+to help us understand the framework. The others posts are</p>
+<ol>
+<li>AngularJS - Introduction</li>
+<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
+<li><a href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
+<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
+<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
+</ol>
+<blockquote>
+<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
+the home page of my blog, only one application will work. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
+</blockquote>
+<p>I am going to be dipping my fingers into Angular a bit over my next few blog posts, so I thought it would be worth
+starting with a very simple Hello World app, and then moving on to a temperature converter and finally a
+sphere calculator.</p>
+<p>First, like all good Javascript programs, you will need to download the Angular library or link to a CDN version.
+You can always download the latest version from the Angular site at <a href="http://angularjs.org/">http://angularjs.org/</a>.
+They will also show a link when you request a download of the latest Angular version via CDN, at the time of this
+writing the link is <a href="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js">angular.min.js</a>.</p>
+<p>Here is our HTML based page that uses Angular.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Hello World<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"angular.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">ng-app</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"displayText"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>{{displayText}}<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<p>You can seed there are really four things we have done here.</p>
+<ol>
+<li>Link out to the CDN version of the Angular library by putting a script tag in our HTML</li>
+<li>The second is the inclusion of ng-app in our markup for the body tag. All Angular applications need to be
+wrapped in this directive. It indicates that everything within the tab can be part of an Angular application.
+For example, if we put the ng-app directive within a DIV tag, only content within that DIV would be within scope.
+It is probably uber-best practice to prepend angular tags (which are always ng-something, with a data attribute to
+ensure maximum HTML compliance, obviously, I am not doing that :)</li>
+<li>The <code>ng-model=&quot;displayText&quot;</code> within the input type. This is the first part of our data-binding where we have
+angular setup the variables to the name of our control</li>
+<li>Last is the magical curly braces {{ }}. This is the Angular markup for databinding. It essentially says
+display our model variable displayText
+The cool thing is we are automatically displaying data from a HTML input control on our page and we have not
+written any Javascript. The framework is handling.</li>
+</ol>
+<div id="app" ng-app="">
+
+<div>
+    <input type="text" ng-model="displayText0" placeholder="type something">
+    <h3>{{displayText0}}</h3>
+</div>
+
+<p>The databinding in Angular goes a little deeper than just displaying text. We would update our binding syntax to
+tie into Javascript functions. For example, changing <code>displayText</code> to
+<code>displayText.toUpperCase()</code> and our
+input will then be uppercased.</p>
+<div>
+    <input type="text" ng-model="displayText2" placeholder="type something">
+    <h3>{{displayText2.toUpperCase()}}</h3>
+</div>
+
+<p>You can also have expressions, such as <code>&#39;You typed: &#39;+ displayText.toUpperCase()</code>.</p>
+<p>This will then prepend the string &#39;You typed: &#39; to what is displayed in our browser.</p>
+<p>&nbsp;</p>
+<div>
+    <input type="text" ng-model="displayText3" placeholder="type something">
+    <h3>{{&#39;You typed: &#39; + displayText3.toUpperCase()}}</h3>
+</div>
+
+<p>The magic of curly braces continues though. Angular also has the concept of filters for our binding element that we
+can then apply to the code. We can have Angular upper case our code instead of doing it ourselves by having our
+binding be {{displayText | uppercase}}. You can also filter to things such as numbers, limit the inputs being
+displayed etc.</p>
+<p>Next up, let&#39;s just combine a couple of things to make an HTML application to convert the temperature from Degrees
+Fahrenheit to degrees Celsius and Kelvin.</p>
+<p>Our HTML</p>
+<pre class="highlight"><code class="hljs handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Temperature <span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"number"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"tempF"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">0</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Celcius:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> </span><span class="hljs-expression">{{ ((5/9)*(<span class="hljs-variable">tempF-</span>32)) |<span class="hljs-variable">number</span>:2 }}</span><span class="xml"> &amp;degC<span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Kelvin:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> </span><span class="hljs-expression">{{ (((5/9)*(<span class="hljs-variable">tempF-</span>32))<span class="hljs-variable">-</span>273<span class="hljs-variable">.</span>0) |<span class="hljs-variable">number</span>:2 }}</span><span class="xml"> K
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</span></code></pre><p>&nbsp;</p>
+<div id="tempConversion">
+    <b>Temperature (&amp;degF)</b>
+    <input type="number" ng-model="tempF0" value="0">
+    <br>
+    <br>
+    <b>Celcius:</b> {{ (((5/9)<em>(tempF0-32))-0.0)|number:2 }}  &amp;degC<br>
+    <b>Kelvin:</b> {{ (((5/9)</em>(tempF0-32))-273.0) |number:2 }} K
+</div>
+
+<p>And just since we are having so much fun, we can use angular to calculate the volume and surface area of a cube</p>
+<p>&nbsp;</p>
+<pre class="highlight"><code class="hljs handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Radius of Sphere<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"number"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"radius"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">0</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Volume:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span></span><span class="hljs-expression">{{(4*3<span class="hljs-variable">.</span>141*<span class="hljs-variable">radius</span>*<span class="hljs-variable">radius</span>*<span class="hljs-variable">radius</span>)/3 | <span class="hljs-variable">number</span>:3}}</span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Surface area:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span></span><span class="hljs-expression">{{(4*3<span class="hljs-variable">.</span>141*<span class="hljs-variable">radius</span>*<span class="hljs-variable">radius</span>) | <span class="hljs-variable">number</span>:3}}</span><span class="xml"> <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</span></code></pre><div id="sphereVol">
+    <b>Radius of Sphere</b>
+    <input type="number" ng-model="radiusZ" value="0">
+    <br>
+    <br>
+    <b>Volume:</b> {{ radiusZ<em>radiusZ | number:3}} <br>
+    <b>Surface area:</b> {{ (4</em>3.141<em>radius0</em>radius0) | number:3}} <br>
+</div>
+
+
+<p></p></div>
+It is pretty cool that we are able to write these quick little applications without any Javascript. Just by using Angular and it&#39;s built in databinding functionality!<p></p>
+<p>I am still working on a good way to get some Javascript demos into my Wordpress blog. In the interim, you can check them out at an Azure website I created to host these demos, <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a>. Specifically</p>
+<p><a href="http://angularperiodic.azurewebsites.net/Demo1/helloworld.html">Hello World</a></p>
+<p><a href="http://angularperiodic.azurewebsites.net/Demo1/tempConversion.html">Temperature Conversion</a></p>
+<p><a href="http://angularperiodic.azurewebsites.net/Demo1/spherecalculation.html">Sphere Calculation</a></p>
+<p>&nbsp;</p>
+<p><strong>Update:</strong> I have created JSFiddles to embed the code samples. You can either visit <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a> to see the code in action or view the JSFiddles embedded on the page. As always, the code is out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a></p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+    <div id='socialTags'>
+    <!-- Twitter -->
+		<a href="https://twitter.com/share" data-text='AngularJS - Introduction' class="twitter-share-button" data-url="http://jptacek.com/2013/10/01/index/">Tweet</a>
+    <!-- Google+. -->
+    <div class="g-plusone" data-size="medium"></div>
+    <!-- LinkedIn -->
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/10/01/index/" ></script>&nbsp;
+    <!-- Facebook -->
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/10/01/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    </div>
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2013/10/03/index/'>AngularJS - Introducing AngularJS Controllers</a></h1>
+    
+        <div class="post-date">Oct 2nd, 2013</div>
+
+    <div class="post-content">
+        <p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
+<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
+ HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
+ Contrast this to a framework like JQuery where the DOM will update your data.</p>
+<p><img src="http://www.jptacek.comangularLogo.png" alt="AngularJS Logo"></p>
+<p>This is the second in a series of posts on AngularJS where we are using Chemistry data from the periodic table
+to help us understand the framework. The others posts are</p>
+<ol>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
+<li>AngularJS - Introducing AngularJS Controllers</li>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
+<li><a href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
+<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
+<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
+</ol>
+<blockquote>
+<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
+the home page of my blog, only one application will work. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
+</blockquote>
+<p>In general, just binding text boxes on a page may be able to create a simple calculator, but it is not what the web of 2013 and beyond is about. We want our pages to interact with backend data stores, we want to display this information on the page and send it back to the server so it is there the next time we view the page. </p>
+<p>Angular is really a Model View Controller (MVC) JavaScript library. The model is our data, the view is the presentation of this data and the controller is responsible for the marshalling between the two. In angular, this is done via the scope, which is a glorified object property bag available within your page. The first responsibility of the Controller is to create this scope object. The scope is then how you communicate with the view. The view is able to bind to properties and functions on the scope. It is also able to call functions on the scope. It is important to realize that the scope exposes the model to the view, however the scope is NOT the model. The model is updated, either via two way data binding on the scope, or functions on the scope that the view calls to update the data. So, if you are going to be doing a lot with Angular, say hello to your little friend, <span style="font-family:Courier New">$scope</span>.</p>
+<p>Let&#39;s take a look at the pieces needed to bring this together. First off, harking back to a time long, long ago, I am going to be working with information from the Periodic Table from Chemistry during these demos, so you will be seeing chemistry naming as we going along, so let us alleviate the confusion up front.</p>
+<p>First, we want to take a look at our HTML.</p>
+<p>We are going to use Twitter bootstrap for some down the road reasons so we are going to add that CSS reference.</p>
+<p>Second, we are adding a reference to <code>chemistryApp.js</code>. This is the starting script that identifies our Angular module. We are going to call our Application chemistryApp.</p>
+<p><strong>chemistryApp.js</strong></p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">'use strict'</span>;
+
+<span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
+</code></pre>
+<p>Now that our <code>chemistryApp.js</code> file is identified, we add a <code>ng-app</code> directive to our body tag. That tells Angular that 
+chemistryApp will be responsible for our page.</p>
+<p>Next, we want to create the controller. The controller will be responsible for managing data for the HTML view. 
+Usually, controllers are associated with DIVs. First, we will create our controller called 
+<code>chemistryController.js&lt;</code></p>
+<p>We reference our module, <code>chemistryApp</code>, from our<code>App.js</code> file. We then identify the name of the controller, 
+chemistryController and then have a second parameter, which is a function, that is our actual controller.
+We want to be sure to pass in any parameters our controller will need. Almost all controllers will require the 
+<code>$scope</code> variable, since the controller interacts with the view via this, so almost all of our controllers will at a 
+minimum have this.</p>
+<p>As of now, our controller skeleton is built and ready to go, it just not doing anything at the moment</p>
+<p><strong>chemistryController.js</strong></p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">'use strict'</span>;
+
+chemistryApp.controller(<span class="hljs-string">'chemistryController'</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemistryController</span><span class="hljs-params">($scope)</span> {</span>
+
+    }
+);
+</code></pre>
+<p>We go and add our controller JavaScript file to our HTML with a script tag, but we have to update our HTML to identify where the controller will function. This is done via the <span style="font-family:Courier New">ng-controller</span> directive. The syntax is as so</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"ngChem1"</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"chemistryController"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>And for now, our HTML looks like</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Controller Demo 1<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/css/bootstrap.min.css"</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">ng-app</span>=<span class="hljs-value">"chemistryApp"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Chemistry Controller<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"ngChem1"</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"chemistryController"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"angular.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"chemistryApp.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"chemistryController.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<p>This page renders, but does not do anything. Mostly as a result of us telling it to do nothing! In general though, 
+these three steps are the basis of an Angular application. </p>
+<ol>
+<li>We identify ng-app, via chemistryApp.js, that is responsible for the page.</li>
+<li>We create a controller, chemistryController.js, that takes the $scope variable from our page and then populates it with data and/or functions so our HTML can later render it. We have not seen this in action yet, but soon.</li>
+<li>The last part then is identifying, via the ng-controller directive, the area of responsibility for our controller.</li>
+</ol>
+<p>As previously mentioned, the <code>$scope</code> variable is the glorified property bag we use to populate data. So within our 
+controller, we can go and set some values for display in our view/web page. In our example, that will be the name of a 
+chemical element and it&#39;s atomic number, Hydgroen and 1. Our controller function now looks like</p>
+<p><strong>chemistryController.js</strong></p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">
+'use strict'</span>;
+
+chemistryApp.controller(<span class="hljs-string">'chemistryController'</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemistryController</span><span class="hljs-params">($scope)</span> {</span>
+        $scope.elementName = <span class="hljs-string">'Hydrogen'</span>;
+        $scope.atomicNumber = <span class="hljs-number">1</span>;
+
+    }
+);
+</code></pre>
+<p>Now, we can have the values from our scope value inject into our HTML markup. This is done via our friend, the magical 
+curly braces. It is as simple as</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Name:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> {{elementName}} <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Atomic Number:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> {{atomicNumber}}
+</code></pre>
+<p>The value we set in our controller are automatically displayed.</p>
+<p><img src="http://www.jptacek.com100313_2137_Introducing2.png" alt=""></p>
+<div ng-app="chemistryApp">
+<div class="container" id="ngChem1" ng-controller="chemistryController">
+    <h1>Chemistry Controller</h1>
+    <b>Name:</b> {{elementName}} <b>Atomic Number:</b> {{atomicNumber}}
+</div>
+</div>
+
+<p>You can see these code samples in action at the companion site for this blog series, <a href="http://angularPeriodic.azurewebsites.net">http://angularPeriodic.azurewebsites.net</a></p>
+<p><a href="http://angularperiodic.azurewebsites.net/Demo2-Controllers/controller1.html">Introducing AngularJS Controllers</a></p>
+<p>You can download or view the code on Github, <a href="https://github.com/jptacek/AngularPeriodic/">https://github.com/jptacek/AngularPeriodic/</a></p>
+<script type="text/javascript" src="/2013/10/introducing-angularjs-controllers/js/chemistryApp.js"></script>
+<script type="text/javascript" src="/2013/10/introducing-angularjs-controllers/js/chemistryController.js"></script>
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+    <div id='socialTags'>
+    <!-- Twitter -->
+		<a href="https://twitter.com/share" data-text='AngularJS - Introducing AngularJS Controllers' class="twitter-share-button" data-url="http://jptacek.com/2013/10/03/index/">Tweet</a>
+    <!-- Google+. -->
+    <div class="g-plusone" data-size="medium"></div>
+    <!-- LinkedIn -->
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/10/03/index/" ></script>&nbsp;
+    <!-- Facebook -->
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/10/03/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    </div>
+</article>
+
+
+<div class="page-nav">
+    
+    <a class="page-nav-older" href="/index.15/"><span class="icon icon-arrow-left-2"></span> Older</a>
+    
+    
+    <a class="page-nav-newer" href="/index.13/">Newer <span class="icon icon-arrow-right-2"></span></a>
+    
+    <div class="page-nav-archives"><a href="/archives/">- Blog Archives -</a></div>
+</div>
+
+<div id="me">
+    <p>
+        <img src="/images/Headshot-Square.png" alt="John Ptacek" />
+        I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
+        This blog is my contains my content and opinions, which are not those of my employer.
+    </p>
+    <p>Currently, I am reading <a href="http://www.amazon.com/Bone-Clocks-Novel-David-Mitchell/dp/1400065674">The Bone Clocks</a>
+        by David Mitchell</p>
+    <p>
+        <a href="http://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="httpƒs://github.com/jptacek">GitHub</a> &#8226;
+        <a href="http://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
+        <a href="http://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
+        <a href="http://plus.google.com/+JohnPtacek">Google+</a>
+    </p>
+</div>
+
+        </div>
+</div>
+<div class="container">
+    <div class="navbar navbar-footer">
+        <p class="navbar-center navbar-text">Content copyright &copy; 2015 John Ptacek</p>
+    </div>
+</div>
+
+<script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="/scripts/vendor/highlight.pack.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/coffee-script/1.6.3/coffee-script.min.js"></script>-->
+<script src="/scripts/site.js"></script>
+
+
+<!-- social scripts-->
+<!-- G+ reference-->
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=142672925873397";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34910017-1']);
+    _gaq.push(['_setDomainName', 'jptacek.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>

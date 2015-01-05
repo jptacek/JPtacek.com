@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<!--<![endif]-->
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="Working at getting better with Mobile, Web and JavaScript" />
+
+    <title>WebMatrix Proves an Excellent Tool for Creating Small Sites Quickly - JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <meta name="author" content="John Ptacek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/feed/" rel="alternate" title="Jptacek.com" type="application/atom+xml">
+    <link href="/favicon.ico?v=2" rel="shortcut icon">
+
+    <!-- Bootstrap -->
+    <link href="/styles/site.css" rel="stylesheet" media="screen">
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/scripts/vendor/html5shiv.js"></script>
+    <script src="/scripts/vendor/respond.min.js"></script>
+    <![endif]-->
+
+    <meta name="generator" content="DocPad v6.68.1" />
+    <style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style>
+<script src="/scripts/vendor/angular.min.js"></script>
+<script type="text/javascript" src="/scripts/vendor/angular-route.min.js"></script>
+
+    <!-- MS Live tile tag -->
+    <meta name="application-name" content="JPtacek.Com"/>
+     <meta name="msapplication-TileColor" content="#527578"/>
+     <meta name="msapplication-square70x70logo" content="tiny.png"/>
+     <meta name="msapplication-square150x150logo" content="square.png"/>
+     <meta name="msapplication-wide310x150logo" content="wide.png"/>
+     <meta name="msapplication-square310x310logo" content="large.png"/>
+
+</head>
+<body>
+
+<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">John Ptacek</a> <div class="navbar-brand"> - Musings on Code</div>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="/">Blog</a></li>-->
+
+                <li class="hidden-xs">
+                    <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
+                    <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
+                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><span class="icon icon-google-plus"></span></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><span class="icon icon-linkedin"></span></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><span class="icon icon-stackoverflow"></span></a>
+                    <a href="https://github.com/jptacek" class="github"><span class="icon icon-github"></span></a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right hidden-xs" role="search" action="http://google.com/search"
+                  method="get">
+                <div class="form-group">
+                    <input type="search" name="q" class="form-control" placeholder="Search">
+                    <input type="hidden" name="q" value="site:www.jptacek.com">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+            <article class="post">
+    
+    <h1>WebMatrix Proves an Excellent Tool for Creating Small Sites Quickly</h1>
+    
+        <div class="post-date">Jun 5th, 2011</div>
+
+    <div class="post-content">
+        <p>As our work on the <a href="http://www.appletoncompassion.org/">Appleton Compassion Project</a> was wrapping up, Skyline took over ownership of the database that runs the site from the School District so we could easily make corrections and additions without having to download a new version of the database each night. Now that we &quot;owned&quot; the database, we realized we needed a way to maintain and manage it. For this we used Microsoft&#39;s new tool, <a href="http://www.asp.net/WebMatrix">WebMatrix</a>.</p>
+<p>Right about now you are asking yourself, really, another programming tool? An excellent question. WebMatrix is a response from Microsoft to Ruby on Rails and PHP. The benefit these development stacks is that they can generally be used to implement data driven sites relatively quickly and, until now, Microsoft didn&#39;t have a tool that allowed that.</p>
+<p>While the .NET stack is a great development platform, it doesn&#39;t always allow for quick website development. As developers we tend to over-engineer sites, especially the ones that only need to be a couple of pages. We create a data layer, we create a business layer, and then we create a UI layer. These are, of course, industry best practices, but they are industry best practices for sites that are going to scale. If you&#39;re building a site for a couple of users who just want to see a list of their child&#39;s soccer games, this is definitely over engineering. WebMatrix is Microsoft&#39;s answer to that.</p>
+<p>WebMatrix harkens back to the days of Classic ASP. It contains code logic in a single page, including the SQL statement. You can then render your page using Microsoft&#39;s new <a href="http://www.computerworld.com/s/article/9178910/Microsoft_sharpening_Razor_view_engine_for_ASP.Net?source=rss_news">Razor</a>engine.</p>
+<p><strong>Getting Started
+</strong>To get started, <a href="http://www.asp.net/webmatrix">download WebMatrix </a>using Microsoft&#39;s web platform installer. Upon starting up the application you&#39;ll see a nice, simple-to-use page that includes many templates you can use to get started with your development quickly and easily.</p>
+<p><img src="http://www.jptacek.comWebMatrixScreen.jpg" alt=""></p>
+<p>So, what does the code look like? Truthfully, it&#39;s really simple. Here is the basis of a page we used to create a list of all students participating in the Compassion Project.</p>
+<p>The first thing to realize is the @{ } syntax is part of the Razor view engine. It is the replacement for &lt;%= %&gt; that tells the runtime you are escaping out to do something code like. Essentially, to get our list of data we do three things ... open a database connection, tell it the SQL command, and execute the SQL statement, the same three things we always do. In this case however, those three things are three lines:</p>
+<p>
+@{
+var db=Database.Open(&quot;Dev&quot;);
+var sqlQuery = &quot;select * from ProjectData order by LastName, FirstName&quot;;
+var data = db.Query(sqlQuery);
+}
+
+Next we have to render the output to the page. Again, we rely on the Razor View engine (look for the @ symbol):</p>
+<p></p>
+<p><body></body></p>
+<p><ul>
+@foreach (var row in data) {</ul></p>
+<p><li><a href="http://www.jptacek.comEditArtist.cshtml?id=@row.PictureNumber">@row.PictureNumber</a> @row.LastName @row.FirstName</li>
+}
+
+
+
+We are essentially saying for each (@foreach is Razor syntax) row in our data set (data is a globally scoped variable on the page), create a link to a key (@ is again the Razor syntax, so @row.PictureNumber tells the page to use the picture number) and create hypertext for the person&#39;s name. That&#39;s it! As you can see from the code snippets above, it takes very few lines to get data from a database.</p>
+<p>The update part is also similar. It is, of course, longer since there is a bit more logic, but notice how all of the syntax is on a single page:</p>
+<p>
+@{
+var id = Request[&quot;ID&quot;];
+var sqlSelect = &quot;select Id, PictureNumber, LastName, FirstName, Grade, HomeSchool, TileLocation,IsNull(DisplayStudentOnline,1) as DisplayStudentOnline,IsNull(FeaturedImage,0) as FeaturedImage,IsNull(FeaturedStatement,0) as FeaturedStatement,Description from ProjectData where PictureNumber=@0&quot;;
+var db=Database.Open(&quot;Dev&quot;);
+var sqlQuery = db.QuerySingle(sqlSelect,id);
+var studentFirstName = sqlQuery.FirstName;
+var studentLastName = sqlQuery.LastName;
+var compassionStatement = sqlQuery.Description;
+var homeSchool = sqlQuery.HomeSchool;
+var tileLocation = sqlQuery.TileLocation;
+var displayOnline = sqlQuery.DisplayStudentOnline;
+var isFeaturedImage = sqlQuery.FeaturedImage;
+var isFeaturedStatement = sqlQuery.FeaturedStatement;
+var pictureID = sqlQuery.PictureNumber;
+var imageUrl = &quot;<a href="http://images.appletoncompassion.org/compassionimagesfull/thumb/">http://images.appletoncompassion.org/compassionimagesfull/thumb/</a>&quot; + @pictureID + &quot;.jpg&quot;;
+var isImageCheck = string.Empty;
+if (isFeaturedImage) {
+isImageCheck = &quot;checked&quot;;
+}
+var isStatementCheck = &quot;&quot;;
+if (isFeaturedStatement) {
+isStatementCheck = &quot;checked&quot;;
+}</p>
+<p>var displayOnlineCheck = &quot;&quot;;
+if (displayOnline) {
+displayOnlineCheck = &quot;checked&quot;;
+}</p>
+<p>var ischeckedonpost = string.Empty;
+if (IsPost) {
+compassionStatement = Request[&quot;statement&quot;];
+tileLocation = Request[&quot;tileLoc&quot;]
+displayOnline = ParseCheckBox(Request[&quot;displayOnline&quot;]);
+isFeaturedImage = ParseCheckBox(Request[&quot;chkFeaturedImage&quot;]);
+isFeaturedStatement = ParseCheckBox(Request[&quot;chkFeaturedStatement&quot;]);
+var sqlUpdate = &quot;Update ProjectData set description = @0, TileLocation=@1, DisplayStudentOnline=@2, FeaturedImage=@3,FeaturedStatement=@4 where pictureNumber=@5&quot;;
+db.Execute(sqlUpdate,compassionStatement,tileLocation,displayOnline,isFeaturedImage,isFeaturedStatement,pictureID);
+Response.Redirect(&quot;Page.cshtml&quot;);</p>
+<p>}
+}</p>
+<p>@functions {
+bool ParseCheckBox(string checkBoxValue) {
+Response.Write(&quot;Value in: &quot; + checkBoxValue +&quot;<br>&quot;);
+bool returnValue = false;
+if (checkBoxValue == &quot;on&quot;) {
+returnValue = true;
+}
+else {
+returnValue = false;
+}
+Response.Write(&quot;Value out: &quot; + returnValue +&quot;<br>&quot;);
+return returnValue;
+}
+}
+&lt;!DOCTYPE html&gt;</p>
+<p><html lang="en"></html></p>
+<p><head></head></p>
+<p><meta charset="utf-8"></p>
+<p><title>Edit Artist</title>
+</p>
+<p><body>
+<a href="http://www.jptacek.comPage.cshtml">Home Page</a></body></p>
+<p><form action="" method="post"></form></p>
+<p></p><p>Picture Number: @pictureID</p><p></p>
+<p></p><p>First Name: @studentFirstName</p><p></p>
+<p></p><p>Last Name: @studentLastName</p><p></p>
+<p></p><p>Home School: @homeSchool</p><p></p>
+<p></p><p>Tile Location: <input type="text" name="tileLoc" value="@tileLocation"></p><p></p>
+<p></p><p>Statement:</p><p> <textarea id="txtStatement" rows="10" columns="20" style="width:600px" name="statement">@compassionStatement</textarea></p><p></p>
+<p></p><p>Display Student Online <input type="checkbox" name="displayOnline" @displayonlinecheck=""></p><p></p>
+<p></p><p>Featured Art <input type="checkbox" name="chkFeaturedImage" @isimagecheck=""></p><p></p>
+<p></p><p>Featured Statement<input type="checkbox" name="chkFeaturedStatement" @isstatementcheck=""></p>
+<img src="http://www.jptacek.com@imageUrl"><p></p>
+<p></p><p><input type="submit" value="Save"></p>
+
+
+
+
+<strong>Why Use it?
+</strong>WebMatrix is Microsoft&#39;s response to tools such as Ruby and PHP that generally use inline SQL and allow developers to quickly get sites published. It includes many templates so you can get started quickly, and it will tie into Open Source projects such as Joomla.<p></p>
+<p><strong>I want to learn more!
+</strong><a href="http://www.asp.net/webmatrix">Official WebMatrix Site</a></p>
+<p>WebMatrix Development 101</p>
+<p>&nbsp;</p>
+<p><a href="http://www.amazon.com/Web-Development-using-WebMatrix-ebook/dp/B004I6D676/ref=sr_1_2?ie=UTF8&amp;qid=1305890052&amp;sr=8-2">Web Matrix 101 book</a> - This is a nice little introduction and is only $1 for the Kindle.</p>
+<p>This blog post orginally appeared at <a href="http://www.skylinetechnologies.com/Blog/Lists/Posts/Post.aspx?ID=43"> Skyline Technologies</a></p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/appleton-compassion/'>Appleton Compassion</a>, <a href='/tags/giveology/'>Giveology</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/webmatrix/'>WebMatrix</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+    <div id='socialTags'>
+    <!-- Twitter -->
+		<a href="https://twitter.com/share" data-text='WebMatrix Proves an Excellent Tool for Creating Small Sites Quickly' class="twitter-share-button" data-url="http://jptacek.com/2011/06/06/index/">Tweet</a>
+    <!-- Google+. -->
+    <div class="g-plusone" data-size="medium"></div>
+    <!-- LinkedIn -->
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2011/06/06/index/" ></script>&nbsp;
+    <!-- Facebook -->
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2011/06/06/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    </div>
+</article>
+            <div id="me">
+    <p>
+        <img src="/images/Headshot-Square.png" alt="John Ptacek" />
+        I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
+        This blog is my contains my content and opinions, which are not those of my employer.
+    </p>
+    <p>Currently, I am reading <a href="http://www.amazon.com/Bone-Clocks-Novel-David-Mitchell/dp/1400065674">The Bone Clocks</a>
+        by David Mitchell</p>
+    <p>
+        <a href="http://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="httpƒs://github.com/jptacek">GitHub</a> &#8226;
+        <a href="http://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
+        <a href="http://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
+        <a href="http://plus.google.com/+JohnPtacek">Google+</a>
+    </p>
+</div>
+
+            <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript></div>
+<script type="text/javascript">
+    var disqus_shortname = 'ewalnet';
+    var disqus_url = 'http://www.jptacek.com/2011/06/06/index/';
+    var disqus_identifier = disqus_url;
+    var disqus_title = 'WebMatrix Proves an Excellent Tool for Creating Small Sites Quickly';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+</div>
+<div class="container">
+    <div class="navbar navbar-footer">
+        <p class="navbar-center navbar-text">Content copyright &copy; 2015 John Ptacek</p>
+    </div>
+</div>
+
+<script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="/scripts/vendor/highlight.pack.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/coffee-script/1.6.3/coffee-script.min.js"></script>-->
+<script src="/scripts/site.js"></script>
+
+
+<!-- social scripts-->
+<!-- G+ reference-->
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=142672925873397";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34910017-1']);
+    _gaq.push(['_setDomainName', 'jptacek.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>

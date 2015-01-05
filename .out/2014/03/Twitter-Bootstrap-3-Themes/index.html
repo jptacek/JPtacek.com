@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<!--<![endif]-->
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="Working at getting better with Mobile, Web and JavaScript" />
+
+    <title>Twitter Bootstrap Themes - JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <meta name="author" content="John Ptacek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/feed/" rel="alternate" title="Jptacek.com" type="application/atom+xml">
+    <link href="/favicon.ico?v=2" rel="shortcut icon">
+
+    <!-- Bootstrap -->
+    <link href="/styles/site.css" rel="stylesheet" media="screen">
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/scripts/vendor/html5shiv.js"></script>
+    <script src="/scripts/vendor/respond.min.js"></script>
+    <![endif]-->
+
+    <meta name="generator" content="DocPad v6.68.1" />
+    <style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style>
+<script src="/scripts/vendor/angular.min.js"></script>
+<script type="text/javascript" src="/scripts/vendor/angular-route.min.js"></script>
+
+    <!-- MS Live tile tag -->
+    <meta name="application-name" content="JPtacek.Com"/>
+     <meta name="msapplication-TileColor" content="#527578"/>
+     <meta name="msapplication-square70x70logo" content="tiny.png"/>
+     <meta name="msapplication-square150x150logo" content="square.png"/>
+     <meta name="msapplication-wide310x150logo" content="wide.png"/>
+     <meta name="msapplication-square310x310logo" content="large.png"/>
+
+</head>
+<body>
+
+<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">John Ptacek</a> <div class="navbar-brand"> - Musings on Code</div>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="/">Blog</a></li>-->
+
+                <li class="hidden-xs">
+                    <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
+                    <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
+                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><span class="icon icon-google-plus"></span></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><span class="icon icon-linkedin"></span></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><span class="icon icon-stackoverflow"></span></a>
+                    <a href="https://github.com/jptacek" class="github"><span class="icon icon-github"></span></a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right hidden-xs" role="search" action="http://google.com/search"
+                  method="get">
+                <div class="form-group">
+                    <input type="search" name="q" class="form-control" placeholder="Search">
+                    <input type="hidden" name="q" value="site:www.jptacek.com">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+            <article class="post">
+    
+    <h1>Twitter Bootstrap Themes</h1>
+    
+        <div class="post-date">Mar 16th, 2014</div>
+
+    <div class="post-content">
+        <p>With a name like Ptacek, you would of course, have to know I am half-Irish. So, to celebrate, we are going to wrap
+up a St Patrick&#39;s Day theme for the blog today (3/17/14). You may be saying to yourself, how could I spend so much time and effort totally
+retheming the blog to support a relatively minor holiday on the calendar? Easy! Twitter Bootstrap themes!</p>
+<p>Twitter Bootstrap, is obviously, a very popular web CSS framework. It enables web developers, without a lot of CSS expereince to
+quickly create responsive sites that look decent out of the box. One of the interesting things you can do with version 3 of
+Twitter Bootstrap is quickly  update your site easily using themes.</p>
+<p>With Twitter Bootstrap, there are two ways you can do things. Option 1 is to download the minified files. This will result in three
+separate files, <code>bootstrap.min.css</code> , <code>bootstrap-theme.min.css</code> and <code>bootstrap.min.js</code>, which
+is used in conjunction with jQuery. The theme elements are then contained in the <code>bootstrap-theme.min.css</code> file.</p>
+<p>The second approach you can use is to download the source files and compile the CSS yourself. This is done by downloading
+<a href="http://lesscss.org/">LESS</a> files and using your favorite LESS compiler to generate CSS. There are also SASS files for the
+ Ruby fans of the world. With the LESS approach,
+there are separate files for theming, a <code>variable.less</code> file and a bootstrap theme file. This is the approach I use for this site
+and most projects I start. Within the main <code>site.css</code> LESS file I import the theme files</p>
+<pre class="highlight"><code class="hljs xml">@import "bootstrapTheme/bootswatch.less";
+@import "bootstrapTheme/variables-bootswatch.less";
+</code></pre>
+<p>The reason I like using the LESS approach rather than just downloading the minified CSS files is the theme part is a bit more
+isolated. I can keep all the theme content, which I really think of as the &quot;skin&quot; for a Bootstrap site, in two separate files.
+This enables new versions of Bootstrap to be downloaded without loosing other CSS changes and to quickly swap them out, like we
+are doing here for St. Patrick&#39;s Day.</p>
+<p>It should be noted, that out of the box, Twitter Bootstrap ships with a default theme, a theme that makes the site look like
+Twitter Bootstrap 2.x. There is quite a growing community for creating themes for bootstrap (it&#39;s not WordPress type size,
+that would just be crazy talk). Example sites include <a href="https://wrapbootstrap.com/">WrapBootstrap.com</a>, <a href="http://bootstraptor.com/">Bootstraptor</a>
+and the one I tend to gravitate to, <a href="http://bootswatch.com/">Bootswatch</a>.</p>
+<p>To update your site UI you just simply download either minified CSS files and swap them out, or two LESS files and then reference
+them in your site. Since I use LESS, I download the LESS files, rename them to a theme name, which allows me to keep my original,
+and then update my <code>site.css.less</code>. I called the St Patrick&#39;s Day theme shamrock and my references are now</p>
+<pre class="highlight"><code class="hljs xml">@import "bootstrapTheme/shamrock-bootswatch.less";
+@import "bootstrapTheme/shamrock-variables.less";
+</code></pre>
+<p>Viola, a save and a publish later we have a total site look! It is like <a href="http://www.csszengarden.com/">CSSZenGarden</a> for
+mortals.</p>
+<p> <img src="http://www.jptacek.com/2014/03/Twitter-Bootstrap-3-Themes/BuildStPatty.png" class="img-thumbnail" alt="Rules"></p>
+<p>You can find the St Patrick&#39;s Day theme I downloaded from Bootswatch <a href="http://bootswatch.com/shamrock/">here</a>. Obviously,
+ since this is just for a short time, there are some UI things that would need to be redone on the site, but we will
+ be back to our regularly scheduled programming soon!</p>
+<p>Totally useless Ptacek news.... Obviously, the half Irish comes from my Mother&#39;s side. My Uncle <a href="http://en.wikipedia.org/wiki/Tom_Durkin">Tom Durkin</a>, a somewhat famous horse
+race announcer who <a href="http://www.nytimes.com/2011/04/28/sports/28durkin.html?version=&amp;action=click&amp;adxnnl=1&amp;region=searchResults#0&amp;module=Search&amp;url=http://query.nytimes.com/search/sitesearch/#/tom+durkin/&amp;pagewanted=all&amp;adxnnlx=1395057931-WaqX7ynUlBWydjqQznsZ1w">used to call</a> the Kentucky Derby and other Triple Crown races on television, would often get flown over
+to call the Irish Derby. Here is one of my favorite race calls he has ever done, but probably more appropriate for Talk
+Like a Pirate Day</p>
+<iframe width="420" height="315" src="//www.youtube.com/embed/nf0wQzq9Yzg" frameborder="0" allowfullscreen=""></iframe>
+
+
+<p>Happy St. Patrick&#39;s Day!</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/twitter-bootstrap/'>Twitter BootStrap</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/css/'>CSS</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+    <div id='socialTags'>
+    <!-- Twitter -->
+		<a href="https://twitter.com/share" data-text='Twitter Bootstrap Themes' class="twitter-share-button" data-url="http://jptacek.com/2014/03/17/index/">Tweet</a>
+    <!-- Google+. -->
+    <div class="g-plusone" data-size="medium"></div>
+    <!-- LinkedIn -->
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/03/17/index/" ></script>&nbsp;
+    <!-- Facebook -->
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/03/17/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    </div>
+</article>
+            <div id="me">
+    <p>
+        <img src="/images/Headshot-Square.png" alt="John Ptacek" />
+        I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
+        This blog is my contains my content and opinions, which are not those of my employer.
+    </p>
+    <p>Currently, I am reading <a href="http://www.amazon.com/Bone-Clocks-Novel-David-Mitchell/dp/1400065674">The Bone Clocks</a>
+        by David Mitchell</p>
+    <p>
+        <a href="http://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="httpƒs://github.com/jptacek">GitHub</a> &#8226;
+        <a href="http://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
+        <a href="http://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
+        <a href="http://plus.google.com/+JohnPtacek">Google+</a>
+    </p>
+</div>
+
+            <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript></div>
+<script type="text/javascript">
+    var disqus_shortname = 'ewalnet';
+    var disqus_url = 'http://www.jptacek.com/2014/03/17/index/';
+    var disqus_identifier = disqus_url;
+    var disqus_title = 'Twitter Bootstrap Themes';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+</div>
+<div class="container">
+    <div class="navbar navbar-footer">
+        <p class="navbar-center navbar-text">Content copyright &copy; 2015 John Ptacek</p>
+    </div>
+</div>
+
+<script >(function(){
+	/* Did we just livereload? */
+var log = !!(localStorage && console && console.log && true);
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReload completed at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var primus = new Primus('/docpad-livereload');
+	primus.on('data', function(data){
+		if ( data && data.message ) {
+			if ( data.message === 'generateBefore' ) {
+				if ( log ) {
+					console.log('LiveReload started at', new Date());
+				}
+				if ( typeof document.getElementsByTagName !== 'undefined' ) {
+	document.getElementsByTagName('html')[0].className += ' wait';
+}
+			}
+			else if ( data.message === 'generateAfter' ) {
+				if ( log ) {
+					localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+				}
+				document.location.reload();
+			}
+		}
+	});
+};
+	/* Inject socket into our page */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = 'async';
+	t.src = '/primus/primus.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t, s);
+};
+	if ( typeof Primus !== 'undefined' ) {
+		listen();
+	} else {
+		inject();
+	}
+})();</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="/scripts/vendor/highlight.pack.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/coffee-script/1.6.3/coffee-script.min.js"></script>-->
+<script src="/scripts/site.js"></script>
+
+
+<!-- social scripts-->
+<!-- G+ reference-->
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=142672925873397";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34910017-1']);
+    _gaq.push(['_setDomainName', 'jptacek.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>

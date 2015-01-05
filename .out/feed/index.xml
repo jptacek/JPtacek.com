@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <link href="http://www.jptacek.com/feed/" rel="self"/>
+    <link href="http://www.jptacek.com"/>
+    <updated>2015-01-05T23:26:56.201Z</updated>
+    <id>http://www.jptacek.com/</id>
+    <author>
+        <name>John Ptacek</name>
+        <email>john.ptacek@outlook.com</email>
+    </author>
+
+    
+    <entry>
+        <title>Developing with Microsoft's Azure Platform</title>
+        <link href="http://www.jptacek.com/2011/03/25/index/"/>
+        <updated>2011-03-25T00:00:00.000Z</updated>
+        <id>tag:www.jptacek.com,2011-03-25,/2011/03/25/index/</id>
+        <content type="html"><![CDATA[<p>For the past several months, Skyline has been working on an awesome charity project called the <a href="http://www.appletoncompassion.org/">Appleton Compassion Project</a>. This project will provide visitors to the <a href="http://www.troutmuseum.org/">Trout Museum of Art </a>a way to view the 10,500 pieces in the exhibit and their accompanying artist statements. It has also provided us with an excellent opportunity to develop in Azure and learn a thing or two which I&#39;m going to share with you.</p>
+<p>The Appleton Compassion Project is hosted on Microsoft Azure. Azure is Microsoft&#39;s platform for developing cloud applications based on its Microsoft .NET technology. The good news is that if you&#39;re a programmer doing .NET development you are already well positioned to do Azure programming!</p>
+<p>The cloud means a lot of different things to a lot of different people, but in discussing Azure, we can think of it as providing several features.</p>
+<p>First, it provides infrastructure. For the Appleton Compassion Project, this was important. The goals of the project were such that they were (and still are) hoping to have some big-name celebrities involved, which could result in a large number of visitors to the site. While we could plan for that kind of demand, the Appleton Area School District - who is sponsoring the project - could not afford the hardware to meet it. Since one of the features of Azure is the ease of scalability, it can quickly meet the demands by adding more compute instances (the virtual machines that Azure uses). This is an example of where we pay for what we use, and don&#39;t have to pay for demand that we plan for, that may or may not be used.</p>
+<p>Second, it provides scale. This is a necessity as the Virtual Exhibit on the site will contain over 10,000 individual images that need to be displayed. The process we have to create the Pivot collection for our current batch of 8,000 images creates over 750,000 Deep Zoom files, is computationally intense, and literally takes days to run. We can greatly reduce this time by paying more and using larger computer sizes and creating multiple tasks in parallel. Once the files are created, we can then reduce the computer size to serve up HTML pages until we need the increase in computing power. Doing this kind of implementation using computing hardware as needed on the school district&#39;s hardware would not be cost effective.</p>
+<p>Another variation of scale is disk space ... we only pay for what we use. We don&#39;t need to be concerned with checking for disk space before we run our collection creation process, estimating the amount of files we will create and ensuring we have enough. Azure will automatically grow and make redundant copies of our data, so that if the server goes down, the data is stored elsewhere.</p>
+<p>As I mentioned earlier, Azure is based on .NET technologies, making it relatively straightforward to move to cloud development. There are, of course, several differences. When you deploy an application to Azure, it starts a dedicated Virtual Machine to host your application in a Microsoft data center. The bigger the size of the machine you request, the more you pay. One result of the virtual machine being created for each deploy is that you don&#39;t want to persist data to these VMs. You will use blob storage for persisted data. This is one of the biggest differences between Azure and normal .NET development.</p>
+<p>This blog post originally appeared at Skyline Technologies (<a href="http://www.skylinetechnologies.com/blog/Pages/developingwithazure.aspx">http://www.skylinetechnologies.com/blog/Pages/developingwithazure.aspx</a>)</p>
+]]></content>
+    </entry>
+    
+    <entry>
+        <title>Create Interactive User Experiences Quickly and Easily with Silverlight Pivot Viewer</title>
+        <link href="http://www.jptacek.com/2011/04/25/index/"/>
+        <updated>2011-04-25T00:00:00.000Z</updated>
+        <id>tag:www.jptacek.com,2011-04-25,/2011/04/25/index/</id>
+        <content type="html"><![CDATA[<p>The Appleton Compassion Project, a recent charity project Skyline has completed, takes advantage of a great tool in the Microsoft toolset that few people know is out there, the Silverlight Pivot Viewer. Unfortunately, Microsoft has quite a few things named Pivot so you may find this confusing. Pivot Viewer is NOT:</p>
+<ul>
+<li>PowerPivot- This is an Excel tool that allows you to manipulate A LOT of data</li>
+<li>Excel Pivot - This is your day to day Excel pivot
+The Silverlight Pivot Viewer IS a tool that allow developers to quickly create an engaging and interactive data driven experience. To get an idea of what I&#39;m talking about, check out the <a href="http://www.appletoncompassion.org/VirtualExhibitViewer">Appleton Compassion Project Virtual Exhibit</a>.</li>
+</ul>
+<p>This online exhibit contains over 10,000 pieces of art done by students at dozens of different schools. You can see how site visitors can quickly click a school or a grade and narrow down the art that is displayed. Clicking an image will show the student&#39;s compassion statement and other demographic information without having to write any special code.</p>
+<p>So it looks nice, but how do we create something this interactive? The great part is it&#39;s really not too difficult!</p>
+<p>The first thing that needs to be done is create a Deep Zoom file, <a href="http://www.skylinetechnologies.com/blog/Pages/deepzoom.aspx">which I cover in another blog post</a>, that will provide the images for the viewing experience. An XML file, with the extension of CXML is created and that is the file the Silverlight Pivot Viewer consumes. The important thing to realize is there is NO User Interface code to write. To reiterate... ZERO user interface development is needed. You create the Deep Zoom file, create the CXML file, add the Pivot Viewer control to your Silverlight XAML and you have a HIGHLY interactive user experience.</p>
+<p>The CXML file has four parts to it. The first is a node called Collection, it is the top level node for the XML file.</p>
+<p>Second is a node called Facets. The facets are the categories that are displayed on the left of the screen. In the example above, School, Grade, Art Teacher and Teacher are all facets. The facets are then searchable within the Pivot Viewer. Visitors can type in a school name or use the check box to filter down the data.</p>
+<p>Third is a node for all of the Items. For the Appleton Compassion Project, the items are all the artists who created art work and accompanying compassion statements.</p>
+<p>The last node is the item node, which is the data that is used to populate the Pivot Viewer. The item node has data for each of the defined facets to populate the search experience on the left of the screen. For our example, a given artist would have a School Name, which are then automatically queried to create the list on the example.</p>
+<p>Here&#39;s an example of how the XML would look:</p>
+<p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;</p>
+<collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Appleton School Compassion Project" schemaversion="1.0" xmlns:p="http://schemas.microsoft.com/livelabs/pivot/collection/2009" xmlns="http://schemas.microsoft.com/collection/metadata/2009">
+
+<facetcategories>
+
+<facetcategory name="School" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="true" p:isfiltervisible="true"></facetcategory>
+
+<facetcategory name="Grade" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="true" p:isfiltervisible="true"></facetcategory>
+
+<facetcategory name="Art Teacher" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="true" p:isfiltervisible="true"></facetcategory>
+
+<facetcategory name="Teacher" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="true" p:isfiltervisible="true"></facetcategory>
+
+<facetcategory name="Picture Number" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="false" p:isfiltervisible="false"></facetcategory>
+
+<facetcategory name="Tile Location" type="String" p:iswordwheelvisible="false" p:ismetadatavisible="true" p:isfiltervisible="false"></facetcategory>
+
+</facetcategories>
+
+<items imgbase="collection-2521020991055083062.dzc">
+
+<item img="#301" id="3803" href="http://www.appletoncompassion.org/Artist/3803" name="Henry Ptacek">
+
+<description>Artist statement not yet available</description>
+
+<facets>
+
+<facet name="Picture Number"><string value="3803"></string></facet>
+
+<facet name="School"><string value="Franklin Elementary School"></string></facet>
+
+<facet name="Grade"><string value="4"></string></facet>
+
+<facet name="Art Teacher"><string value="Sara Wilda"></string></facet>
+
+<facet name="Teacher"><string value="Louann Graf"></string></facet>
+
+</facets>
+
+</item>
+
+</items>
+
+<p></p></collection>
+As you can see, it&#39;s relatively straight forward XML. There are many things I have not talked about, like the ability to have different types of data, sliders for your data, etc. Check out the links for more information.<p></p>
+<p><strong>Why Use it?
+</strong>The Silverlight Pivot viewer is a great data driven UI experience for end users. The creation process involves creating a Deep Zoom file and some Xml.</p>
+<p><strong>I want to learn more!
+</strong><a href="http://www.silverlight.net/learn/pivotviewer/">Microsoft&#39;s Silverlight Pivot viewer site </a></p>
+<p><a href="http://www.silverlight.net/learn/pivotviewer/collection-xml-schema/">Silverlight Pivot XML Schema information </a></p>
+<p>To Develop with the Silverlight Pivot viewer, you will need the Silverlight 4 SDK as well as the Pivot Viewer Control, which you can <a href="http://www.silverlight.net/learn/pivotviewer/">download here</a>.</p>
+<p>This post originally appeared at Skyline Technologies <a href="http://www.skylinetechnologies.com/">Skyline Technologies</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+        <title>Microsoft's Deep Zoom Technology Allows for Powerful User Experience</title>
+        <link href="http://www.jptacek.com/2011/04/25/index/"/>
+        <updated>2011-04-25T00:00:00.000Z</updated>
+        <id>tag:www.jptacek.com,2011-04-25,/2011/04/25/index/</id>
+        <content type="html"><![CDATA[<p>Closely tied to the Silverlight Pivot Viewer I discussed in my <a href="http://www.skylinetechnologies.com/blog/Pages/silverlightpivotviewer.aspx">previous blog post</a>, is Microsoft&#39;s Deep Zoom technology. Deep Zoom enables users to pan and zoom around a high resolution image, or in the case of how we use it for the <a href="http://www.appletoncompassion.org/VirtualExhibitViewer">Appleton Compassion Project Virtual Exhibit</a>, navigate a large collection of images.</p>
+<p>Deep Zoom accomplishes this by using a process similar to Google/Bing maps. There are layers to the image, so one layer can show the entire collection with very small sizes for the images. The images are also broken up into tiles, so as you go to higher resolution images, it may be broken up into several tiles so you do not have to load the entire image. As you zoom closer into the document, you are navigating to layers that are deeper and deeper in the collection, with increasing image resolution and will be loading a tile that is a subset of the image. Microsoft has a nice picture of this and an accompanying description at their <a href="http://blogs.msdn.com/b/jaimer/archive/2008/03/31/a-deepzoom-primer-explained-and-coded.aspx">MSDN site</a>.</p>
+<p>Deep Zoom consists of several XML based files. The first is the Deep Zoom image (DZI). This file is essentially an XML file that contains the layers and tile information for a given image. The Deep Zoom image creation process creates a directory for each image, this directory will then have the layers, and images that are broken into tiles. For example, in testing that we did, a single image taken with a home digital camera that is 4 MB in size, was broken up into 12 sub folders, each containing tiled images. One image created 12 directories and 238 files. For the Appleton Compassion Project, the collection of 10,000+ art pieces has created nearly one million files!</p>
+<p>The second deep zoom file type is the Deep Zoom Collection (DZC). This file essentially is the high level collection that points to the DZI files. The Silverlight Pivot viewer then references this DZC file for the zooming process.</p>
+<p>There are two ways to create Deep Zoom files. The first is to use the Deep Zoom composer that is part of Expression Blend. This process, outlined in the link above, is manual which obviously won&#39;t work for 10,000 images. The interesting thing is Microsoft really doesn&#39;t have an SDK or install for creating the Deep Zoom files. You need to physical copy a DLL from the Deep Zoom Composer directory and make it part of your application, <a href="http://blogs.msdn.com/b/expression/archive/2008/11/26/hello-deepzoomtools-dll-deep-zoom-image-tile-generation-made-easy.aspx">outlined here</a>.</p>
+<p><strong>Why Use it?
+</strong>Deep Zoom allows for a interactive zoom and pan user experience.</p>
+<p><strong>I want to learn more!
+</strong><a href="http://msdn.microsoft.com/en-us/library/cc645050(VS.95">MSDN Deep Zoom site </a>.aspx)</p>
+<p>Blog post on programmatically creating Deep Zoom</p>
+<p>&nbsp;</p>
+<p><a href="http://blogs.msdn.com/b/jaimer/archive/2008/03/31/a-deepzoom-primer-explained-and-coded.aspx">Jaime Rodrigues goes deep on Deep Zoom</a></p>
+<p>This post orgianlly appeared at Skyline Technologies (<a href="http://www.skylinetechnologies.com/blog/Pages/deepzoom.aspx">http://www.skylinetechnologies.com/blog/Pages/deepzoom.aspx</a>)</p>
+]]></content>
+    </entry>
+    
+    <entry>
+        <title>SharePoint Search - Think Outside the (Search) Box!</title>
+        <link href="http://www.jptacek.com/2011/04/13/index/"/>
+        <updated>2011-04-13T00:00:00.000Z</updated>
+        <id>tag:www.jptacek.com,2011-04-13,/2011/04/13/index/</id>
+        <content type="html"><![CDATA[<p>Search is ubiquitous in the world of the Internet. Everyone starts their questions by going to Google (or for a small minority Bing) and typing in their query as the entry to the Internet. The expectation is that the results are going to be exactly what you are looking for, and if that doesn&#39;t work out, adding a second term will get you there.</p>
+<p>In the Enterprise though, this is not always the case. Data exists in disparate system, files live on file shares, users keep documents on their hard drive, etc. Ultimately, it comes down to the fact that the data users need is not discoverable, for a variety of reasons. As a result, users generally don&#39;t regard search within the walls of the enterprise like they do search outside of the Enterprise. Instead of starting at the search page, they start at the application that hosts their data and search. This is a source of inefficiency. Additionally, what we are searching for may be the person within our organization who knows the most about a given topic so we can do research ourselves or resolve an issue. The good news is that SharePoint 2010 and its search functionality can enable an organization to overcome these inefficiencies or weaknesses.</p>
+<p>SharePoint 2010 has great built-in Enterprise search functionality which can certainly help solve these problems. The downside is it can get a bit confusing because there are many variations of the Microsoft search product offering. The products, with a description are:</p>
+<ul>
+<li><strong>SharePoint Foundation 2010 Search </strong>- This is the search engine that ships with SharePoint foundation. It is limited to a single site collection (or in non-SharePoint speak, a single site) and cannot index the content and data external to that given site.</li>
+<li><strong>Search Server 2010 Express </strong>- Search Server Express is a standalone product that is <a href="http://www.microsoft.com/enterprisesearch/searchserverexpress/en/us/default.aspx">available and free</a>. It supports external content sources and search federation. It is limited in its capability to scale to your organization&#39;s needs.</li>
+<li><strong>Search Server 2010 </strong>- This is the full product upgrade from Search Server Express. It is an Enterprise search engine that can scale across multiple servers. The product is focused for organizations that are not using SharePoint 2010 and can provide a great product offering for your internal or public website needs.</li>
+<li><strong>SharePoint Server 2010 Search </strong>- The search available in SharePoint server 2010 includes all of the Search Server 2010 functionality but also includes features specific to SharePoint. Examples of this include taxonomy and people search.</li>
+<li><strong>FAST Search Server 2010 for SharePoint </strong>- FAST is Microsoft&#39;s advanced search functionality. It is used by many organizations that need highly scalable and functional requirements. An example would be the Best Buy site, which uses FAST search to provide their categories.
+The great part about SharePoint search, starting with Search Server 2010, is the ability to integrate data from other systems within your Enterprise. Using the Business Connectivity Services functionality (a feature of SharePoint itself) with SharePoint search, you can integrate into Line of Business (LOB) applications. For example, if you have customer information and contacts in a CRM application, SharePoint can be setup to index that information and make it part of the results that are returned when users search from within your SharePoint site.</li>
+</ul>
+<p>Similarly, with the ability to search LOB applications, advanced versions of SharePoint allow search sources to be external to the server. SharePoint calls these content sources, and they can be a variety of types of data. Examples include corporate Intranet sites that aren&#39;t hosted in SharePoint, external file systems, and Internet sites. This is the majority of the data that organizations are interested in, all at the tip of employees&#39; fingers.</p>
+<p>Some examples of what customers have done with SharePoint search:</p>
+<ul>
+<li>Make a file server drive that has 15 years of data quickly accessible via your SharePoint searches</li>
+<li>Use SharePoint search to bring in product information from an ERP system with accompanying price as well as links to the ERP system</li>
+<li>Use Google News and other external news sources to mine information about competitors
+As you can see, leveraging SharePoint search beyond its out-of-the-box functionality can quickly turn your corporate Intranet into the starting point for information for all your knowledge workers!</li>
+</ul>
+<p>This blog post originally appeared at Skyline Technologies (<a href="http://www.skylinetechnologies.com/blog/Pages/sharepointsearch.aspx">http://www.skylinetechnologies.com/blog/Pages/sharepointsearch.aspx</a>)</p>
+]]></content>
+    </entry>
+    
+    <entry>
+        <title>Mobile Apps Provide the &quot;Finishing Touches&quot; to the Appleton Compassion Project</title>
+        <link href="http://www.jptacek.com/2011/05/11/index/"/>
+        <updated>2011-05-11T00:00:00.000Z</updated>
+        <id>tag:www.jptacek.com,2011-05-11,/2011/05/11/index/</id>
+        <content type="html"><![CDATA[<p>The <a href="http://www.appletoncompassion.org/">Appleton Compassion Project</a>is a community art project in which all Appleton Area School District students created a 6&quot; x 6&quot; tile depicting their idea of compassion. Each student then wrote a statement about their tile and what compassion means to them. The art and statements can be viewed in the Trout Museum of Art or online at www.appletoncompassion.org. Adding the writing element to the art project has produced some very well rounded, heartfelt depictions of the word &quot;Compassion&quot;.</p>
+<p>The artist statements range all over the board; from moving, to amusing, to first-grader-cute. It quickly became apparent that with the job of physically displaying over 10,000 pieces of Art on the walls of the Trout Museum of Art, that the compassion statements would not be available for display alongside the tiles. Since the writing element was just as important to the project as the art, we knew we needed to come up with a solution to allow museum visitors to read the statements. The answer? Smartphone apps! Skyline created applications for the three major platforms - Android, iPhone and Windows Phone 7 - that museum visitors can install on their mobile phones so they can view artist statements along with the art.</p>
+<p>Since this is the first time that Skyline has created mobile apps for the three major mobile platforms, I thought I&#39;d share how we approached the design of the applications, focusing on what was common between all three. Then, in future blog posts each of the mobile platforms will be discussed from a development standpoint.</p>
+<p>In essence, the goal of the mobile application design, at a high level, focused on two things: One, consistency of functionality within three applications, and two, have the application behave like a native application on the individual mobile phones. Okay, what does this really mean? We sat down as a team and identified the functionality the application should have. For the mobile applications these were the features we wanted:</p>
+<ul>
+<li>Highlight featured art upon entering the app</li>
+<li>By clicking on an image users would be able to view the compassion statement</li>
+<li>Search by student name</li>
+<li>Search by picture number</li>
+<li>Allow users to mark and keep a list of favorites</li>
+<li>Have static text to highlight information about the museum, exhibit, hours, Skyline, etc.
+Once a set of features was decided on, we focused on having those pieces display consistently within the applications, so that featured art was first, favorites was second, and so on. We also wanted to make sure that search was available on each screen across the application. Finally, we attempted to use consistency with the graphics across platforms wherever possible. All of the applications have the same splash screen (featuring Art by Skyline employees) and use the same logo where needed.</li>
+</ul>
+<p>Each developer took these requirements and implemented them within the various mobile platforms so they were consistent for the users of that platform. For example, the iPhone and Windows Phone 7 have very different UI implementations. The iPhone has more of a button-driven menu interface, where the Windows Phone UI utilizes text and swiping as a function of their Metro UI. This results in the search button being at the bottom of the screen for the iPhone application and at the top for the Windows Phone application. Each application has the same functionality, just implemented differently - appropriate for the native platform.</p>
+<p>The last part of the mobile applications is the data services that feed the application. Surprisingly enough, there are only two. The services are REST-based, with the data returned to the client in XML format.</p>
+<p>The first service returns a random set of featured art (<a href="http://www.appletoncompassion.org/rest/FeaturedStatements/12">http://www.appletoncompassion.org/rest/FeaturedStatements/12</a>). With REST, you can provide parameters in the URL, so in the instance the number tells you how many items to return. We have a single object type we used for both of the services to return, so in this instance there is some excess data in the XML stream that would not necessarily be needed, but it made development easier. This REST call is used to return the featured images that greet the user each time they start the application.</p>
+<p>The second service is responsible for searching. Within the application, there are two types of search. The first one is by picture number, so if you are at the exhibit in the museum you can type in a number and see the artist statement that corresponds with the tile. The second is by name, so you can look up a specific child. We were able to implement this search functionality in a single service call, by having the back end service worry about if the search was a number only or if it had text. The service can search by number (<a href="http://www.appletoncompassion.org/rest/search/7158">http://www.appletoncompassion.org/rest/search/7158</a>), last name (<a href="http://www.appletoncompassion.org/rest/search/ptacek">http://www.appletoncompassion.org/rest/search/ptacek</a>) or full name (<a href="http://www.appletoncompassion.org/rest/search/nora ptacek">http://www.appletoncompassion.org/rest/search/nora%20ptacek</a>).</p>
+<p>It&#39;s a small example, but it illustrates the point of trying to encapsulate as much logic is possible in our service calls and not put the burden on the mobile phone. This way if there&#39;s a bug or change that needs to be made in the search functionality, we can update the service call, and not have to go through the lengthy process of updating three mobile applications in their respective mobile stores.</p>
+<p>Watch for future blog posts that discuss each individual platform in more detail.</p>
+<p>This blog post originally appeared at Skyline Technologies (<a href="http://www.skylinetechnologies.com/blog/Pages/compassionmobileappdevelopment.aspx">http://www.skylinetechnologies.com/blog/Pages/compassionmobileappdevelopment.aspx</a>)</p>
+]]></content>
+    </entry>
+    
+    <entry>
+        <title>An Introduction to the Microsoft Razor View Engine</title>
+        <link href="http://www.jptacek.com/2011/06/24/index/"/>
+        <updated>2011-06-24T00:00:00.000Z</updated>
+        <id>tag:www.jptacek.com,2011-06-24,/2011/06/24/index/</id>
+        <content type="html"><![CDATA[<p>In past blog posts on <a href="http://www.skylinetechnologies.com/blog/Pages/mvcaspnet.aspx">MVC</a> and <a href="http://www.skylinetechnologies.com/blog/Pages/WebMatrix_for_Creating_Small_Sites.aspx">WebMatrix</a>I&#39;ve mentioned Razor. Today, I&#39;m going to get a bit more in depth on Razor and what it can do.</p>
+<p>ASP.NET MVC supports view engines. All web programming consists of providing developers a way to insert data dynamically into their HTML output. In ASP.NET Web forms, this was done using &lt;%= =%&gt; syntax to let the runtime know that code was coming. In previous versions of ASP.NET MVC, this same approach was used and was called the Web Forms view engine.
+ASP.NET MVC, however, had the ability to use other view engines. Ever since the introduction of MVC, people have not liked using the Web Forms View engine. During that time, several other view engines became popular for MVC development including <a href="http://sparkviewengine.com/">Spark</a>, <a href="http://code.google.com/p/string-template-view-engine-mvc/">StringTemplate</a> and <a href="http://code.google.com/p/nhaml/">NHAML</a>.</p>
+<p>With the release of ASP.NET MVC 3, Microsoft is now using the Razor view engine. You can still use the previous Web Forms view engine if you would like. The team at Microsoft outlined several design goals for Razor when they introduced it. The most important ones are that Razor be compact, expressive and fluid as well as easy to learn.</p>
+<p>One of the main complaints with the Web Forms View engine is how verbose the syntax was. Razor explicitly address this by using the @ keyword to enable script escaping.</p>
+<p>So what does this code look like? First, Razor files have the extension csHtml (C# Syntax) or vbHtml (VB syntax). Razor files then get processed by the runtime. If we have a variable defined message and have an HTML stream going, you can see the razor terseness in the following syntax:</p>
+<p></p><p>Message for the user @message</p>
+In ASP.NET Web Forms, this same line would have been<p></p>
+<p></p><p> Message for the user &lt;%= message %&gt;</p>
+Similarly, for example, if we have a list of sports teams showing their name and what place they are in and we want to iterate through to display the standings the syntax is:<p></p>
+<p><h3>Teams&lt;/h3&amp;gt</h3></p>
+<p><ul>
+@foreach (var t in teams) {
+<li>@t.Place - @t.Name </li>
+}
+</ul>
+On the screen this would print as follows:</p>
+<p><h3>Teams</h3></p>
+<p><ul></ul></p>
+<p><li>1 - Green Bay Packers</li></p>
+<p><li>2 - Chicago Bears</li></p>
+<p><li>3 - Detroit Lions</li></p>
+<p><li>4 - Minnesota Vikings</li>
+
+Similar syntax with Web Forms:</p>
+<p><h3>Teams</h3></p>
+<p><ul>
+&lt;% foreach (var t in teams) { %&gt;</ul></p>
+<p><li>&lt;%= t.Place%&gt; - &lt;%=t.Name%&gt; </li><li>
+&lt;%}%&gt;
+
+Razor also supports HTML Helpers, which are a way for users to create HTML snippets across their code. So in the example above, we could create an HTML Helper to create the football standings and use it multiple times in our view or across multiple views. The syntax is as such:</li></p>
+<p>@helper TeamStandings(FootballTeam team) {
+<li>@team.Place - @team.Name </li>
+}
+We could then update the page to call the helper:</p>
+<p><h3>Teams</h3></p>
+<p><ul>
+@foreach (var t in teams) {
+@TeamStandings(t)
+}
+</ul>
+You can see how less verbose the syntax is to use. It is also, in a lot of ways easier to use. You never need to remember if you should escape out using &lt;% or &lt;%= either. The Razor syntax also introduces new syntax for laying out pages, superseding the ASP.NET concept of master pages. In truth, the ideas are both the same, but the concept is now called LayoutPages. Instead of having ContentPlaceholder sprinkled throughout a master page, helper methods in the template are used to fill in specific content. For example, let&#39;s call this page _groovySiteLayout.cshtml:</p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html></html></p>
+<p><head></head></p>
+<p><title>Groovy Page</title>
+</p>
+<p><body></body></p>
+<p><div id="groovyMenu"><a href="http://www.jptacek.com/">Home</a></div></p>
+<p><div id="groovyPageBody">
+@RenderBody()
+</div>
+
+Then, within the view, we create our site content which includes a setting for the layout page. When the layout page hits the @RenderBoy helper method it injects the view content into the layout page and sends back to the browser.
+So for a simple view:</p>
+<p>
+{
+@LayoutPage = &quot;_groovySiteLayout.cshtml&quot;;
+}</p>
+<p><h1>Welcome to Groovy</h1></p>
+<p></p><p>Hello world</p>
+Would render the following HTML:<p></p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html></html></p>
+<p><head></head></p>
+<p><title>Groovy Page</title>
+</p>
+<p><body></body></p>
+<p><div id="groovyMenu"><a href="http://www.jptacek.com/">Home</a></div></p>
+<p><div id="groovyPageBody"></div></p>
+<p><h1>Welcome to Groovy</h1></p>
+<p></p><p>Hello world</p>
+
+
+There is a lot more to the Razor view engine, this is just a quick introduction, I will be talking about it a lot more in the future.<p></p>
+<p><strong>Why Use it?
+</strong>Razor is a new Microsoft view engine that is lightweight and easy to use. It is currently part of WebMatrix and ASP.NET MVC. There are even indications it will be an integral part of a future version of ASP.NET WebForms.</p>
+<p><strong>I want to learn more!
+</strong>• <a href="http://weblogs.asp.net/scottgu/archive/2010/07/02/introducing-razor.aspx">Microsoft Introduction</a> - This post on Scott Guthrie&#39;s blog is an excellent introduction!
+• <a href="http://www.asp.net/mvc">Microsoft ASP.NET MVC site</a> - Check out the pluralsight videos on the page</p>
+<p>This blog post was originally published at Skyline Technologies (<a href="http://www.skylinetechnologies.com/Blog/Lists/Posts/Post.aspx?ID=42">http://www.skylinetechnologies.com/Blog/Lists/Posts/Post.aspx?ID=42</a>)</p>
+]]></content>
+    </entry>
+    
+    <entry>
+        <title>Comparing ASP.NET MVC and Web Forms</title>
+        <link href="http://www.jptacek.com/2011/06/10/index/"/>
+        <updated>2011-06-10T00:00:00.000Z</updated>
+        <id>tag:www.jptacek.com,2011-06-10,/2011/06/10/index/</id>
+        <content type="html"><![CDATA[<p>Before we get into MVC proper, let&#39;s discuss why you should consider MVC at all. It&#39;s my personal feeling that MVC 3 is going to be a horrifically important technology for all of us. If you&#39;re moving into more mobile development, MVC is going to be a much better choice. Secondly, in a HTML 5 world, MVC is going to be a better choice due to its ability to control HTML markup and reference client IDs via JavaScript. It&#39;s not to say ASP.NET Web Forms will not allow for this kind of development, but as the current Web Forms platform exists, it will be more difficult. An example of this..., having the ViewState be part of HTML pages on mobile browsers can have significant impact on load times. Okay, time to jump off the soapbox.</p>
+<p>MVC stands for Model-View-Controller. In my mind, I think of it this way ... model is really our data or more correctly, business object. The model contains the data we want to render. The view is the page that we use to render the data. The controller is essentially the traffic cop that tells the data, what view it needs to go to. Most of this is handled automatically by MVC&#39;s concept of <a href="http://en.wikipedia.org/wiki/Convention_over_configuration">convention over configuration</a>.</p>
+<p>It all works something like this ... a user hits a URL and the controller gets called, based on routing rules it knows which controller to go to. The controller then loads the model from the database. Once the model is populated it then determines what view to load and passes the model to the view for rendering. One of the benefits of an approach like this is that the view is very lightweight with little code in the view proper. The code there is just for helping to render the data. This naturally leads to separation of concerns, which is always a good development practice that is hard to follow in Web Forms.</p>
+<p>One of the reasons for converting a site to MVC is to create both an HTML 5 version of the site and a mobile HTML version. In this scenario the controller would load one version of the data (aka the model), but based on the type of browser accessing the site, pass the model to a different view, for example the HTML 5 view. You can get a glimpse of the power. No matter the type of site we have, we are always accessing our data in the same way and passing the view.</p>
+<p>So, is ASP.NET Web Forms dead? Of course not! The real genesis of ASP.NET Web Forms was to provide an easier migration path for VB/Winform developers, who were familiar with event driven programming, into the stateless world of the web and web programming. Essentially, Web Forms abstract away the stateless nature of the web. As our paychecks prove, it&#39;s a great programming platform running millions of sites. Microsoft will continue to support Web Forms.</p>
+<p>There are times when Web Forms will make sense, and times where MVC will make sense. At a high level:</p>
+<p><strong>Advantages of Web Forms:</strong></p>
+<ul>
+<li>Developer Familiarity</li>
+<li>VERY rich eco system of server controls</li>
+<li>Provides a RAD development environment</li>
+<li>Event driven system</li>
+<li><p>Much easier development for data heavy LOB system
+<strong>Advantages of MVC:</strong></p>
+</li>
+<li><p>Full control over HTML</p>
+</li>
+<li>Easy integration with JavaScript frameworks</li>
+<li>Embraces the stateless nature of the web</li>
+<li>Easier Search Engine Optimization</li>
+<li>Allows for better testing
+At the end of the day, both MVC and Web forms are platforms built on ASP.NET and use the same runtime. HTML and HTML 5, while always an important part of what we do, are becoming more and more important. If you ever needed verification of this, Microsoft&#39;s <a href="http://www.microsoft.com/presspass/features/2011/jun11/06-01corporatenews.aspx">recent announcement</a>that Windows 8 would allow for the distribution of HTML 5 apps to Windows reinforces that. MVC and Web Forms are both platforms we need to make our customer successful in this kind of environment. While I feel MVC is going to be a preferred platform for HTML development, the truth is both platforms are suited for the creation of HTML sites.</li>
+</ul>
+<p><strong>Why Use it?
+</strong>ASP.NET MVC is a platform for developing HTML applications that provides the user much greater control over the HTML markup that is rendered. There are added benefits such as supporting testing and better code design too!</p>
+<p><strong>I Want To Learn More!</strong></p>
+<p><a href="http://www.amazon.com/Professional-ASP-NET-MVC-2-ebook/dp/B003RCJE9Q/ref=sr_1_2?ie=UTF8&amp;qid=1307102102&amp;sr=8-2">Professional ASP.NET MVC 2</a>(book)</p>
+<p><a href="http://www.amazon.com/ASP-NET-MVC-Action-Jeffrey-Palermo/dp/193518279X/ref=sr_1_2?ie=UTF8&amp;qid=1307102138&amp;sr=8-2">ASP.NET MVC 2 in Action </a>(book)</p>
+<p><a href="http://www.amazon.com/ASP-NET-Framework-Experts-Voice-NET/dp/1430228865">Pro ASP.NET MVC V2 Framework </a>(book)</p>
+<p><a href="http://www.asp.net/mvc">Microsoft ASP.NET MVC site</a>- Check out the pluralsight videos on the page!</p>
+<p><a href="http://stackoverflow.com/questions/102558/biggest-advantage-to-using-asp-net-mvc-vs-web-forms/3629415#3629415">StackOverflow question on Web Forms vs MVC</a></p>
+<p>Along this same line there is great NuGet package that you can use with MVC3 and EF 4.1 that will generate your views, controllers and Repositories. Yes, a code-gen tool that adheres to real world architecture practices, from your true POCO model classes. <a href="http://blog.stevensanderson.com/2011/01/13/scaffold-your-aspnet-mvc-3-project-with-the-mvcscaffolding-package/">Check it out</a>.</p>
+<p>&nbsp;</p>
+<p>This blog post orginally appeared at Skyline Technologies (<a href="http://www.skylinetechnologies.com/blog/Pages/mvcaspnet.aspx">http://www.skylinetechnologies.com/blog/Pages/mvcaspnet.aspx</a>)</p>
+]]></content>
+    </entry>
+    
+    <entry>
+        <title>HTML 5: A Little History</title>
+        <link href="http://www.jptacek.com/2011/06/28/index/"/>
+        <updated>2011-06-28T00:00:00.000Z</updated>
+        <id>tag:www.jptacek.com,2011-06-28,/2011/06/28/index/</id>
+        <content type="html"><![CDATA[<p>HTML 5 is being proposed as a magic potion for all that ails the world of developers. It slices, it dices, it chops and even calls your mom on her birthday when you forget. Let&#39;s jump on the bandwagon!</p>
+<p>To understand HTML 5, first you&#39;ll need a bit of history... HTML is a standard, standards are created by standards bodies, and they can take a while. The HTML standard is created by the World Wide Web Consortium (W3C), with the last HTML standard being <a href="http://www.w3.org/TR/REC-html40-971218/">HTML 4</a>, which was published in December of 1997. At that point, the W3C essentially said HTML is dead, long live HTML, but in the form of XHTML, a break from the previous version of HTML with HTML being recreated as strongly formed XML.</p>
+<p>The introduction of XHTML had one problem though; XHTML &quot;broke&quot; the internet. It didn&#39;t literally break it in the sense that you couldn&#39;t get your White Sox scores from ESPN, but without massive rewrites, it would have. HTML has always been a &quot;forgiving&quot; standard. If I develop an HTML page and have an opening </p><p> tag but not a corresponding closing </p> tag, my page will (most likely) work. XHTML would have resulted in a fatal error. People have estimated that fully implementing the XHMTL specification would have resulted in 99% of HTML pages at the time not rendering properly.<p></p>
+<p>So, our journey to the way back machine brings us to 2004, HTML 4 is the last W3C standard and their work has been focused on XHTML since 1997. During this time, XHTML has NOT taken off in the marketplace. People still want their White Sox scores from ESPN. As a result, browser developers, some web development companies, and some W3C members got together and proposed evolving HTML 4 with new features for modern browsers since a lot had changed in the years since the last standard (2004 -1997 = 73 Internet years). The W3C said they were not interested but the folks who proposed extending HTML WERE interested and went off and created the <a href="http://www.whatwg.org/news/start">Web Hypertext Application Technology (WHAT)</a>working group. So here is the state of the world: the people responsible for the HTML standard are not evolving the HTML standard any more, the folks who implement the HTML standard (the web browser creators, the app tool creators, etc.) want to evolve HTML.</p>
+<p>So the WHAT group went on doing its thing. Their main goal was backward compatibility. They wanted to be able to evolve HTML without breaking the 10 years of web development that came before. One of the more interesting things they did was explicitly identifying HOW to parse HTML so that it would be compatible across all browsers. In some ways, that became a new standard that indicated how all browsers should work.</p>
+<p>They also went on and introduced new features into HTML (without breaking HTML) including new form elements for things like dates. They thought, &quot;Wouldn&#39;t it be swell if browsers natively supported video and audio so we could get rid of things like Flash for streaming video?&quot;, so they added it. They also thought, &quot;Wouldn&#39;t it be awesome if you could animate things directly in the browser?&quot;, so they added a drawing canvas to HTML.</p>
+<p>The industry responded positively to these new ideas and the WHAT group started gaining momentum. During this time the W3C was working on XHTML 2, which none of the browser vendors implemented. I&#39;m not sure what you call a standard that nobody implements, but whatever you call it, it&#39;s pretty useless. It got to the point where in October of 2006, the W3C and the WHAT working group decided to join forces and evolve HTML and create HTML 5.</p>
+<p>Today we are at a point where these two groups are working together to create the HTML 5 standard. The next question is WHEN will there be an HTML 5 standard? It&#39;s going to be a while, maybe as far out as 2022 or later. So is that a problem? The answer is, hopefully not.</p>
+<p>Part of the reason for the long time is that the HTML 4 specification is very vague or even undefined on how things work. If you forget to include your closing paragraph tag, it was up to the browser vendor to figure it out. This leads to different implementations across vendors so things don&#39;t work as expected across all the browsers, something you are no doubt very familiar with. As a first step, sometime in 2012, a candidate recommendation for the HTML 5 standard will be released. At that point, the feature set, already very close to being final, will be official. A good part of the remaining 10 years will be spent on officially documenting how the standard should parse HTML.</p>
+<p>Another, even more important thing, is that the HTML 5 team is working on test suites. The idea is that browser vendors will have to run their browsers against the test suite and not until they hit 100% in a test suite will they be considered to have passed. In a lot of ways, the test suite becomes the standard. In fact, not until two major browser vendors pass the test suite with 100%, will the standard be considered completed. This is part of the reason for the very long elapsed time.</p>
+<p>The other player in this is how HTML 5 works other devices. HTML 5 is or will be supported by all major smart phone vendors as well as tablet vendors, e-readers and most likely a plethora of things not even imagined yet. In fact, some sites, such as the ubiquitous Facebook, are rumored to be developing HTML 5 applications rather than native applications for mobile or tablet vendors. Part of the reason for this is that some of the hardware vendors are requiring essentially a commission on any purchases within a native application. As a result, a lot of sites may be looking to bypass the App Store approach and create <a href="http://www.zdnet.com/blog/facebook/rumor-facebook-to-take-on-apple-with-html5-platform/1612">native HTML 5</a>so they don&#39;t need to worry about giving hardware vendors a percentage of their revenue.</p>
+<p>HTML 5 is a lot of hope and promise. In the past I have called it Java-esque, in the promise of the write once, run everywhere. What is different this time? A couple of things, one is the test suite that browser vendors will need to pass. The other is that there really seems to be a good cross section of the industry that REALLY wants this to work. It&#39;s not often that Apple, Google, Microsoft and other big companies are working towards the same thing. Do they always agree? Of course not! Will it cause problems? It already is. However, the industry is working hard to make this a reality.</p>
+<p>It will be interesting to see how it all plays out. Browsers like Google Chrome are working hard on supporting HTML 5 across many platforms. IE is working towards supporting HTML 5 on the Windows platform using hardware acceleration. You will see differences where HTML 5 rendered using IE which will run much faster and can do more, so that performance issues of other browsers may be a concern. Vice-versa you can have issues where IE is not rendering something the same way Chrome is.</p>
+<p>It&#39;s a long article just discussing the history of HTML 5 with none of the introduction of what HTML 5 is. However, it&#39;s important to understand the history of how we got here, and why the industry thinks this will be important. Next time I&#39;ll actually discuss some of what&#39;s new in HTML 5!</p>
+<p><strong>Why Use it?
+</strong>HTML 5 is going to (soon) be the industry standard for web applications</p>
+<p><strong>I want to learn more!
+</strong><a href="http://www.techrepublic.com/blog/programming-and-development/html-5-editor-ian-hickson-discusses-features-pain-points-adoption-rate-and-more/718">Interview with Ian Hickson discussing HTML 5 adoption rates</a></p>
+<p>This blog post originally appeared at Skyline Technologies (<a href="http://www.skylinetechnologies.com/blog/Pages/HTML_5_History.aspx">http://www.skylinetechnologies.com/blog/Pages/HTML_5_History.aspx</a>)</p>
+]]></content>
+    </entry>
+    
+    <entry>
+        <title>WebMatrix Proves an Excellent Tool for Creating Small Sites Quickly</title>
+        <link href="http://www.jptacek.com/2011/06/06/index/"/>
+        <updated>2011-06-06T00:00:00.000Z</updated>
+        <id>tag:www.jptacek.com,2011-06-06,/2011/06/06/index/</id>
+        <content type="html"><![CDATA[<p>As our work on the <a href="http://www.appletoncompassion.org/">Appleton Compassion Project</a> was wrapping up, Skyline took over ownership of the database that runs the site from the School District so we could easily make corrections and additions without having to download a new version of the database each night. Now that we &quot;owned&quot; the database, we realized we needed a way to maintain and manage it. For this we used Microsoft&#39;s new tool, <a href="http://www.asp.net/WebMatrix">WebMatrix</a>.</p>
+<p>Right about now you are asking yourself, really, another programming tool? An excellent question. WebMatrix is a response from Microsoft to Ruby on Rails and PHP. The benefit these development stacks is that they can generally be used to implement data driven sites relatively quickly and, until now, Microsoft didn&#39;t have a tool that allowed that.</p>
+<p>While the .NET stack is a great development platform, it doesn&#39;t always allow for quick website development. As developers we tend to over-engineer sites, especially the ones that only need to be a couple of pages. We create a data layer, we create a business layer, and then we create a UI layer. These are, of course, industry best practices, but they are industry best practices for sites that are going to scale. If you&#39;re building a site for a couple of users who just want to see a list of their child&#39;s soccer games, this is definitely over engineering. WebMatrix is Microsoft&#39;s answer to that.</p>
+<p>WebMatrix harkens back to the days of Classic ASP. It contains code logic in a single page, including the SQL statement. You can then render your page using Microsoft&#39;s new <a href="http://www.computerworld.com/s/article/9178910/Microsoft_sharpening_Razor_view_engine_for_ASP.Net?source=rss_news">Razor</a>engine.</p>
+<p><strong>Getting Started
+</strong>To get started, <a href="http://www.asp.net/webmatrix">download WebMatrix </a>using Microsoft&#39;s web platform installer. Upon starting up the application you&#39;ll see a nice, simple-to-use page that includes many templates you can use to get started with your development quickly and easily.</p>
+<p><img src="http://www.jptacek.comWebMatrixScreen.jpg" alt=""></p>
+<p>So, what does the code look like? Truthfully, it&#39;s really simple. Here is the basis of a page we used to create a list of all students participating in the Compassion Project.</p>
+<p>The first thing to realize is the @{ } syntax is part of the Razor view engine. It is the replacement for &lt;%= %&gt; that tells the runtime you are escaping out to do something code like. Essentially, to get our list of data we do three things ... open a database connection, tell it the SQL command, and execute the SQL statement, the same three things we always do. In this case however, those three things are three lines:</p>
+<p>
+@{
+var db=Database.Open(&quot;Dev&quot;);
+var sqlQuery = &quot;select * from ProjectData order by LastName, FirstName&quot;;
+var data = db.Query(sqlQuery);
+}
+
+Next we have to render the output to the page. Again, we rely on the Razor View engine (look for the @ symbol):</p>
+<p></p>
+<p><body></body></p>
+<p><ul>
+@foreach (var row in data) {</ul></p>
+<p><li><a href="http://www.jptacek.comEditArtist.cshtml?id=@row.PictureNumber">@row.PictureNumber</a> @row.LastName @row.FirstName</li>
+}
+
+
+
+We are essentially saying for each (@foreach is Razor syntax) row in our data set (data is a globally scoped variable on the page), create a link to a key (@ is again the Razor syntax, so @row.PictureNumber tells the page to use the picture number) and create hypertext for the person&#39;s name. That&#39;s it! As you can see from the code snippets above, it takes very few lines to get data from a database.</p>
+<p>The update part is also similar. It is, of course, longer since there is a bit more logic, but notice how all of the syntax is on a single page:</p>
+<p>
+@{
+var id = Request[&quot;ID&quot;];
+var sqlSelect = &quot;select Id, PictureNumber, LastName, FirstName, Grade, HomeSchool, TileLocation,IsNull(DisplayStudentOnline,1) as DisplayStudentOnline,IsNull(FeaturedImage,0) as FeaturedImage,IsNull(FeaturedStatement,0) as FeaturedStatement,Description from ProjectData where PictureNumber=@0&quot;;
+var db=Database.Open(&quot;Dev&quot;);
+var sqlQuery = db.QuerySingle(sqlSelect,id);
+var studentFirstName = sqlQuery.FirstName;
+var studentLastName = sqlQuery.LastName;
+var compassionStatement = sqlQuery.Description;
+var homeSchool = sqlQuery.HomeSchool;
+var tileLocation = sqlQuery.TileLocation;
+var displayOnline = sqlQuery.DisplayStudentOnline;
+var isFeaturedImage = sqlQuery.FeaturedImage;
+var isFeaturedStatement = sqlQuery.FeaturedStatement;
+var pictureID = sqlQuery.PictureNumber;
+var imageUrl = &quot;<a href="http://images.appletoncompassion.org/compassionimagesfull/thumb/">http://images.appletoncompassion.org/compassionimagesfull/thumb/</a>&quot; + @pictureID + &quot;.jpg&quot;;
+var isImageCheck = string.Empty;
+if (isFeaturedImage) {
+isImageCheck = &quot;checked&quot;;
+}
+var isStatementCheck = &quot;&quot;;
+if (isFeaturedStatement) {
+isStatementCheck = &quot;checked&quot;;
+}</p>
+<p>var displayOnlineCheck = &quot;&quot;;
+if (displayOnline) {
+displayOnlineCheck = &quot;checked&quot;;
+}</p>
+<p>var ischeckedonpost = string.Empty;
+if (IsPost) {
+compassionStatement = Request[&quot;statement&quot;];
+tileLocation = Request[&quot;tileLoc&quot;]
+displayOnline = ParseCheckBox(Request[&quot;displayOnline&quot;]);
+isFeaturedImage = ParseCheckBox(Request[&quot;chkFeaturedImage&quot;]);
+isFeaturedStatement = ParseCheckBox(Request[&quot;chkFeaturedStatement&quot;]);
+var sqlUpdate = &quot;Update ProjectData set description = @0, TileLocation=@1, DisplayStudentOnline=@2, FeaturedImage=@3,FeaturedStatement=@4 where pictureNumber=@5&quot;;
+db.Execute(sqlUpdate,compassionStatement,tileLocation,displayOnline,isFeaturedImage,isFeaturedStatement,pictureID);
+Response.Redirect(&quot;Page.cshtml&quot;);</p>
+<p>}
+}</p>
+<p>@functions {
+bool ParseCheckBox(string checkBoxValue) {
+Response.Write(&quot;Value in: &quot; + checkBoxValue +&quot;<br>&quot;);
+bool returnValue = false;
+if (checkBoxValue == &quot;on&quot;) {
+returnValue = true;
+}
+else {
+returnValue = false;
+}
+Response.Write(&quot;Value out: &quot; + returnValue +&quot;<br>&quot;);
+return returnValue;
+}
+}
+&lt;!DOCTYPE html&gt;</p>
+<p><html lang="en"></html></p>
+<p><head></head></p>
+<p><meta charset="utf-8"></p>
+<p><title>Edit Artist</title>
+</p>
+<p><body>
+<a href="http://www.jptacek.comPage.cshtml">Home Page</a></body></p>
+<p><form action="" method="post"></form></p>
+<p></p><p>Picture Number: @pictureID</p><p></p>
+<p></p><p>First Name: @studentFirstName</p><p></p>
+<p></p><p>Last Name: @studentLastName</p><p></p>
+<p></p><p>Home School: @homeSchool</p><p></p>
+<p></p><p>Tile Location: <input type="text" name="tileLoc" value="@tileLocation"></p><p></p>
+<p></p><p>Statement:</p><p> <textarea id="txtStatement" rows="10" columns="20" style="width:600px" name="statement">@compassionStatement</textarea></p><p></p>
+<p></p><p>Display Student Online <input type="checkbox" name="displayOnline" @displayonlinecheck=""></p><p></p>
+<p></p><p>Featured Art <input type="checkbox" name="chkFeaturedImage" @isimagecheck=""></p><p></p>
+<p></p><p>Featured Statement<input type="checkbox" name="chkFeaturedStatement" @isstatementcheck=""></p>
+<img src="http://www.jptacek.com@imageUrl"><p></p>
+<p></p><p><input type="submit" value="Save"></p>
+
+
+
+
+<strong>Why Use it?
+</strong>WebMatrix is Microsoft&#39;s response to tools such as Ruby and PHP that generally use inline SQL and allow developers to quickly get sites published. It includes many templates so you can get started quickly, and it will tie into Open Source projects such as Joomla.<p></p>
+<p><strong>I want to learn more!
+</strong><a href="http://www.asp.net/webmatrix">Official WebMatrix Site</a></p>
+<p>WebMatrix Development 101</p>
+<p>&nbsp;</p>
+<p><a href="http://www.amazon.com/Web-Development-using-WebMatrix-ebook/dp/B004I6D676/ref=sr_1_2?ie=UTF8&amp;qid=1305890052&amp;sr=8-2">Web Matrix 101 book</a> - This is a nice little introduction and is only $1 for the Kindle.</p>
+<p>This blog post orginally appeared at <a href="http://www.skylinetechnologies.com/Blog/Lists/Posts/Post.aspx?ID=43"> Skyline Technologies</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+        <title>Observations From Microsoft's Build Conference</title>
+        <link href="http://www.jptacek.com/2011/09/29/index/"/>
+        <updated>2011-09-29T00:00:00.000Z</updated>
+        <id>tag:www.jptacek.com,2011-09-29,/2011/09/29/index/</id>
+        <content type="html"><![CDATA[<p><strong>Overview</strong>
+Build was a bit of a different conference.... Initially, when it was announced at MIX it was called PDC (Microsoft&#39;s Professional Developers Conference). PDC generally has topics that cover the breadth of the Microsoft eco system from a developer&#39;s perspective; creating ASP.NET applications, C# , VB.NET , Entity Framework this and Entity Framework that. Build was NOT that, it was specifically dedicated to Microsoft&#39;s upcoming Windows 8 operating system, and especially to the new Metro UI introduced as part of the OS.</p>
+<p>Windows 8 is, quite obviously, the next version of Microsoft&#39;s Windows platform. Microsoft is laser-focused on optimizing Windows for alternative form factors, especially the tablet. They have reduced the footprint of Windows by eliminating several core services that start up as part of the Operating system as well as the memory footprint. A demo played on an old netbook showed overall resource usage actually decreased when moving from Windows 7 to Windows 8, the first time that a new version of their operating system has had decreased baseline hardware requirements.</p>
+<p>The biggest change though is the introduction of the Metro UI for Windows, which can be thought of as the tablet interface for Windows. It is a &#39;fast and fluid&#39; touch-based interface, similar in some ways to Windows Phone 7, especially in the use of the Live Tiles, which are uber-icons that update with information. Take a look at the screen shot below to see what the new &#39;start screen&#39; looks like, gone is the iconic start menu introduced in Windows 95, replaced with a &#39;Windows Phone on steroids&#39; style home screen.</p>
+<p><a href="http://www.jptacek.com/wp-content/uploads/2012/10/Win8screen1.jpg"><img src="http://www.jptacek.comWin8screen1-300x169.jpg" alt="" title="Win8screen1"></a></p>
+<p>The interface has been well received by folks at large. It&#39;s a pretty bold reworking of Windows, part of which involves the fact there are NO Windows, just one or two running applications on screen at a time. For developers, the good news with Windows 8 is that you can also get to the desktop and use all of the applications you already use on Windows 7.</p>
+<p>To make all of this fluid, swipey goodness, Microsoft has introduced a new programming API called WinRT, which stands for Windows Runtime. WinRT is to Win32 what Silverlight or Windows Phone 7 are to the full .NET Framework, a smaller API surface optimized for their respective platforms. However, it is different in a couple of ways. First, it introduces new areas to the core Windows API, most of which are focused on using Windows for things like storage and search. Second, Microsoft is providing [or projecting] the WinRT APIs for direct use by C#, C++, VB.NET and JavaScript (and possibly F#), so instead of calling .NET framework libraries that in turn call Win32 APIs, the .NET code directly executes WinRT calls, similar to existing COM interop and P/Invoke technologies. The difference is that the projections include rich metadata so that the libraries appear as &#39;native&#39; class libraries in each of their respective languages, avoiding a lot of the headaches of existing COM and P/Invoke interactions.</p>
+<p>The diagram below outlines the various options for creating applications on Windows 8.</p>
+<p><a href="http://www.jptacek.com/wp-content/uploads/2012/10/Win8screen2.jpg"><img src="http://www.jptacek.comWin8screen2-300x169.jpg" alt="" title="Win8screen2"></a></p>
+<p>The &#39;Desktop Apps&#39; section of the diagram is the same types of applications that we currently know and love (or love to hate). These types of applications will continue to be supported and extended moving forward, but WILL NOT be able to interact directly with Metro apps, nor participate in the Windows 8 contracts that provide the rich &#39;web of applications&#39; that are one of Windows 8&#39;s signature features. These applications will also not be able to be installed through the new Windows Store (think the App Store, but for Windows). Desktop applications will be linked through the store, but are not subject to the same certification and safety guarantees as Metro apps.</p>
+<p>Similar to how C#, VB.NET, F#, and a host of other languages can create applications using the .NET Framework APIs, there are several options for creating WinRT applications. The options can be split into three different groups. The first group is C/C++ applications using either DirectX or XAML based UI technologies. DirectX is primarily used for game creation or complex imaging applications, and XAML based UIs are really Microsoft&#39;s replacement for their existing MFC framework. The second group is a Metro equivalent to WPF applications, written in either C# or VB.NET. The final group is the newly introduced/repurposed HTML/CSS/JavaScript stack, which allows the creation and packing of applications Windows 8 Metro applications using HTML/CSS as the UI layer, and JavaScript as the interface. An entire article could be written on what the HTML/JS layers represent and how they are different than &#39;web apps&#39;, but these types of applications are not executed &#39;in browser&#39;, they are fully fledged &#39;Metro&#39; apps, using IE&#39;s JavaScript engine (Chakra) as the runtime interpreter. To be clear, there is NO fundamental difference in the end result for &#39;Metro&#39; apps, regardless of what technology stack you choose to use, they really are just options that allow you to use your existing skillset to build Win8 Metro applications.</p>
+<p><strong>Quick Hits</strong>
+Here are some quick bullet points for takeaway...</p>
+<p><strong>Microsoft got its C++ love back -</strong>There was quite a lot of time and energy from Microsoft put into the development tools for C++. One of the sessions even stated &quot;C++ is back because performance matters&quot;. If you are looking to create uber-optimized WinRT apps on Windows 8, C++ may be the best option. If you are looking to get a date or see your family grow up, the .NET stack is still going to be the best way to create Line of Business applications (LOB). Also, WinRT applications run great with C#/VB/JS languages!</p>
+<p><strong>All Services All the Time -</strong>The data story for WinRT is going to be REST/JSON services. As of now, there is no way to run something like an Entity Framework model on the Metro UI. There are some rumors of SQL Lite support, but the hard push is for connected apps that require backend data sources that are NOT LOCAL to the machine (or even network) in question.</p>
+<p><strong>Metro UI on other processors -</strong>Microsoft is looking to have folks create many different devices and form factors using Windows 8. A lot of these will run on ARM processors, which are the low energy, middling performance chips that power things like iPads and mobile phones. For classic non-.NET desktop applications to run on these processors they will need to be recompiled. It is worth noting that there are LOTS of confusing statements about this, but as of now, that is the current understanding. Currently there is, at least, a subset of the .NET framework (the Windows Phone runtime) that runs on ARM, so it seems like good .NET framework support should be possible, even on ARM.</p>
+<p><strong>Visual Studio 2011 -</strong>Microsoft has a new version of Visual Studio 2011 that supports templates for many of the WinRT application types</p>
+<p><strong>Asynchronous data access -</strong>Microsoft has a new async/await keywords that are being introduced with the .NET Framework 4.5. These keywords allow a call to be made on a different thread. This becomes VITALLY important for performant applications because the thread that runs the UI has to wait for data to come back. Microsoft states that any call that takes longer than 50 (or 15, both have been mentioned) milliseconds should be asynchronous. Get used to coding a lot of async calls in the future! The good news is that the new keywords and compiler support mean that writing Metro (and .NET 4.5) applications will look a lot like standard synchronous code that &#39;just works&#39;.</p>
+<p><strong>Promises -</strong>JavaScript programming on the WinRT stack is going to be implementing the idea of promises. This is the JavaScript version of async/await. Essentially, have JavaScript go get some data, promise data comes back and there is a then() function (or continuation) which will run after your data returns.</p>
+<p><strong>Windows Store -</strong>Microsoft is introducing a Windows Store for users to go and download applications and easily install them on their computer. This will be for WinRT applications only! Other .NET/Win32 applications may exist in the store, but they will link to external sites for purchase and install.</p>
+<p><strong>Conclusion</strong>
+So, what does it all mean? At the end of day, at least for now, not a whole lot! In all seriousness, Microsoft is probably a year away from releasing Windows 8 and clients will be at least 6 months to a year out from installing and asking for it. But, be sure to be ready when they start asking!</p>
+<p>Having said that, Windows 8 represents a HUGE opportunity! According to Microsoft there are soon to be over 500 million copies of Windows in use. That is more than all the other mobile platforms combined. If there is one thing you want to do today to get ready for Windows 8, I would recommend this... Get your HTML 5/XAML skills up to speed and learn to love creating data services that can be consumed on mobile platforms.</p>
+<p>This blog post originally appeared at Skyline Technologies (<a href="http://www.skylinetechnologies.com/blog/Pages/Observations_Microsoft_Build_Conference.aspx">http://www.skylinetechnologies.com/blog/Pages/Observations_Microsoft_Build_Conference.aspx</a>)</p>
+]]></content>
+    </entry>
+    
+</feed>
