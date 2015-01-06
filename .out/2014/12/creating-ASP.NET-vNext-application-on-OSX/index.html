@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -156,15 +160,15 @@ Yeoman, using NPM. From your Bash shell we will install Yeoman first</p>
 <p>Next step, since we have all of the tools we need installed and downloaded, we can generate our application. This is done by running Yeoman from the bash shell type by typing</p>
 <pre class="highlight"><code class="hljs bash">yo aspnet
 </code></pre>
-<p><img src="http://www.jptacek.comosx1.png" alt="Running Yeoman, step1, choose MVC"></p>
+<p><img src="/2014/12/12/index/osx1.png" alt="Running Yeoman, step1, choose MVC"></p>
 <p>We have the option of choosing a console application, a Web App, MVC app or Nancy ASP.NET app. We choose MVC
 application and provide a name</p>
-<p><img src="http://www.jptacek.comosx2.png" alt="Running Yeoman, step2, choose Project Name"></p>
+<p><img src="/2014/12/12/index/osx2.png" alt="Running Yeoman, step2, choose Project Name"></p>
 <p>And our application gets generated</p>
-<p><img src="http://www.jptacek.comosx3.png" alt="Running Yeoman, step3, application is generated"></p>
+<p><img src="/2014/12/12/index/osx3.png" alt="Running Yeoman, step3, application is generated"></p>
 <p>And we can take a look and see our directory structure, with many of the controllers and views most of us know from
 our MVC projects.</p>
-<p><img src="http://www.jptacek.comosx4.png" alt="After Running Yeoman, step last, tree view"></p>
+<p><img src="/2014/12/12/index/osx4.png" alt="After Running Yeoman, step last, tree view"></p>
 <p>For those of you well versed in ASP.NET, a couple of pretty interesting things to note. First, no solution file!
 Second, no Project file! Most of the Visual Studio generate file constructs are gone. Similar to a Node.JS
 application, there is a json file outlining the dependencies needed for an application, as opposed to the Solution
@@ -175,7 +179,7 @@ and Project files of Visual Studio. Very cool.</p>
 <p><code>k kestrel</code>, fires up the web server to serve the pages</p>
 <p>By using the kestrel web server we are actually firing up Mono, the open source version of the .NET framework.
 We access the location locally on port 5004 (<a href="http://localhost:5004/">http://localhost:5004/</a>)</p>
-<p><img src="http://www.jptacek.comosx5.png" alt="MVC app on OS X"></p>
+<p><img src="/2014/12/12/index/osx5.png" alt="MVC app on OS X"></p>
 <p>So that is all kind of Christmas goodies Santa has for us, what is the most impressive programming language
 for business development being able to run on non-Microsoft platforms. When you start thinking about integrating in
 with some popular Linux tools like Docker, it doesn’t take a lot to realize things will be a lot different on the .NET
@@ -242,7 +246,7 @@ as part of their <a href="http://www.skylinetechnologies.com/Blog/Article/2586/1
 
             <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript></div>
 <script type="text/javascript">
-    var disqus_shortname = 'ewalnet';
+    var disqus_shortname = 'jptacek';
     var disqus_url = 'http://www.jptacek.com/2014/12/12/index/';
     var disqus_identifier = disqus_url;
     var disqus_title = 'Creating ASP.NET vNext application on OS X';

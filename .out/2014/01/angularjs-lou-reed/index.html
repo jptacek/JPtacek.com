@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -100,7 +104,7 @@
 <a href="http://www.google.com">Google</a>. The focus of Angular is building complex
  HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
  Contrast this to a framework like JQuery where the DOM will update your data.</p>
-<p><img src="http://www.jptacek.comangularLogo.png" alt="AngularJS Logo"></p>
+<p><img src="/2014/01/24/index/angularLogo.png" alt="AngularJS Logo"></p>
 <p>This is the fifth in a series of posts on AngularJS where we are using Chemistry data from the periodic table
 to help us understand the framework. The others posts are</p>
 <ol>
@@ -127,13 +131,13 @@ My boss, <a href="https://twitter.com/tvanhammond">Tim VanHammond</a> still hold
 I played Lou Reed&#39;s the Possum song without headphones when he was in the office we shared.
 The reality is, I probably spent WAY too
 much time listening to Lou Reed and Velvet Underground music when I was a teenager. So, having said all that, soon
-after Lou Reed died, I was doing a <a href="http://www.jptacek.com/2013/11/fvnug-presentation-nov-2013/">presentation</a> at the
+after Lou Reed died, I was doing a <a href="/2014/01/24/index//2013/11/fvnug-presentation-nov-2013/">presentation</a> at the
 <a href="http://newdug.org/">NorthEast Wisconsin Developer UserGroup</a> (aka, NEWDUG and
 yes it is a lot to type) and I thought it would be fun to have a little Lou Reed shout out. Since the talk
 was about AngularJS, it of course had an Angular flavor. So we did a little Lou Reed segue, and talked about
 binding images using AngularJS. Most important and of interest to you dear reader, is
 how I found out a way to deal with missing images!</p>
-<p><img src="http://www.jptacek.comLou_Reed.jpg" alt="Lou Reed"></p>
+<p><img src="/2014/01/24/index/Lou_Reed.jpg" alt="Lou Reed"></p>
 <p>Instead of using chemistry data, we used Lou data. This data was a JSON object of record releases. Lou put out
 a lot of albums, and we are loading images, so to keep things quick, we are just doing the first few releases.
 One of our Lou
@@ -162,7 +166,7 @@ for us!</p>
             <td>{{album.releaseDate|date}}</td>
             <td>{{album.producer}}</td>
             <td>{{album.label}}</td>
-            <td><img src="http://www.jptacek.com{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;"></td>
+            <td><img src="/2014/01/24/index/{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;"></td>
         </tr>
     </table>
    </div>
@@ -175,7 +179,7 @@ a JSON date object to a filter and have it format, <code>{{album.releaseDate|dat
 filter at the <a href="http://docs.angularjs.org/api/ng.filter:date#!">AngularJS</a> site.</p>
 <p>The second thing to notice is we are using a <code>src</code> attribute in our <code>img</code> tag. Things are loading fine, but if
 you look at the page load, you will actually see a 404 error that happens.</p>
-<p><img src="http://www.jptacek.com404Error.png" alt="404 Error on image Get"></p>
+<p><img src="/2014/01/24/index/404Error.png" alt="404 Error on image Get"></p>
 <p>This is because the AngularJS functionality is executed AFTER the page loads. We are still making the get request
 that the <code>src</code> attribute had identified because we have yet to get into the javscript
 processing on the page. With <code>src</code> attributes and <code>href</code> tags you that reference
@@ -195,7 +199,7 @@ is now</p>
             <td>{{album.releaseDate|date}}</td>
             <td>{{album.producer}}</td>
             <td>{{album.label}}</td>
-            <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" src="http://www.jptacek.comundefined"></td>
+            <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" src="/2014/01/24/index/undefined"></td>
         </tr>
     </table>
 </div>
@@ -214,7 +218,7 @@ second controller where we change the image for Metal Machine Music and Transfor
 
 We now are receiving missing image links in our page. This is NOT use friendly
 
-<img src="http://www.jptacek.comLouCover404.png" alt="404 Error on Album Cover">
+<img src="/2014/01/24/index/LouCover404.png" alt="404 Error on Album Cover">
 
 You can see the example below
 
@@ -230,7 +234,7 @@ You can see the example below
                 <td>{{album.releaseDate| date:&#39;medium&#39;}}</td>
                 <td>{{album.producer}}</td>
                 <td>{{album.label}}</td>
-                <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" src="http://www.jptacek.comundefined"></td>
+                <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" src="/2014/01/24/index/undefined"></td>
             </tr>
         </table>
     </div>
@@ -256,7 +260,7 @@ onerror by placing a default placeholder image for missing images.</p>
                 <td>{{album.releaseDate| date:&#39;medium&#39;}}</td>
                 <td>{{album.producer}}</td>
                 <td>{{album.label}}</td>
-                <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" onerror="this.src=&apos;/2014/01/angularjs-lou-reed/Lou_Reed.jpg&apos;" src="http://www.jptacek.comundefined"></td>
+                <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" onerror="this.src=&apos;/2014/01/angularjs-lou-reed/Lou_Reed.jpg&apos;" src="/2014/01/24/index/undefined"></td>
             </tr>
         </table>
     </div>
@@ -311,7 +315,7 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
 
             <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript></div>
 <script type="text/javascript">
-    var disqus_shortname = 'ewalnet';
+    var disqus_shortname = 'jptacek';
     var disqus_url = 'http://www.jptacek.com/2014/01/24/index/';
     var disqus_identifier = disqus_url;
     var disqus_title = 'AngularJS - Image Binding in AngularJS with Lou Reed';

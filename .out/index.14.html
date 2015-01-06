@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -93,175 +97,15 @@
             
     <article class="post">
     
-    <h1><a href='/2013/10/31/index/'>AngularJS – Introducing ng-repeat</a></h1>
+    <h1><a href='/2013/04/13/index/'>Privacy</a></h1>
     
-        <div class="post-date">Oct 30th, 2013</div>
+        <div class="post-date">Apr 12th, 2013</div>
 
     <div class="post-content">
-        <p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
-<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
- HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
- Contrast this to a framework like JQuery where the DOM will update your data.</p>
-<p><img src="http://www.jptacek.comangularLogo.png" alt="AngularJS Logo"></p>
-<p>This is the third in a series of posts on AngularJS where we are using Chemistry data from the periodic table
-to help us understand the framework. The others posts are</p>
-<ol>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
-<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
-<li>AngularJS - Introducing NG-Repeat</li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
-<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
-<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
-<li><a href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
-<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
-<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
-</ol>
-<blockquote>
-<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
-the home page of my blog, only one application will work. I need to refactor the entire site to account for
-this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
-</blockquote>
-<p>We have previously talked about AngularJS and controllers. However, an important part of web development is displaying data,
-especially repeating data. We are going to use our Periodic data and look at options for displaying that data on the page.</p>
-<p>For this example, we have created a chemistry controller that contains information from the periodic table. An element in our
-JSON object looks like</p>
-<pre class="highlight"><code class="hljs javascript"> <span class="hljs-string">"atomicNumber"</span>: <span class="hljs-number">1</span>,
- <span class="hljs-string">"name"</span>: <span class="hljs-string">"Hydrogen"</span>,
- <span class="hljs-string">"atomicWeight"</span>: <span class="hljs-number">1.00794</span>,
- <span class="hljs-string">"phase"</span>: <span class="hljs-string">"Gas"</span>,
- <span class="hljs-string">"ionization"</span>: <span class="hljs-number">13.5984</span>,
- <span class="hljs-string">"melting"</span>: -<span class="hljs-number">259.15</span>,
- <span class="hljs-string">"boiling"</span>: -<span class="hljs-number">252.87</span>
-</code></pre>
-<p>Our chemistry controller essentially is responsible for setting a local scope variable.</p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope)</span> {</span>
+        <p>Your personal information is not used at all</p>
 
- $scope.periodic = {
- elements: [
- {
- <span class="hljs-string">"atomicNumber"</span>: <span class="hljs-number">1</span>,
- <span class="hljs-string">"name"</span>: <span class="hljs-string">"Hydrogen"</span>,
- <span class="hljs-string">"atomicWeight"</span>: <span class="hljs-number">1.00794</span>,
- <span class="hljs-string">"phase"</span>: <span class="hljs-string">"Gas"</span>,
- <span class="hljs-string">"ionization"</span>: <span class="hljs-number">13.5984</span>,
- <span class="hljs-string">"melting"</span>: -<span class="hljs-number">259.15</span>,
- <span class="hljs-string">"boiling"</span>: -<span class="hljs-number">252.87</span>
- },
-
-....
-
- ]
- };
-}
-</code></pre>
-<p>Our application now has a JavaScript variable on our Angular scope called periodic, which holds all of our
-JSON chemistry data. To display this on the page, we want to take advantage of the
-<a href="http://docs.angularjs.org/api/ng.directive:ngRepeat">ng-repeat</a> directive in AngularJS.
-The syntax for this is pretty simple. In our example, we will display all of the chemical element names from the
-periodic table in an unordered list.</p>
-<p>We start our list with a <code>ul</code> tag. The next step is to apply the <code>ng-repeat</code> directive to the markup we want to
-repeat, in this case, the<code>li</code> tag, in which we will display the name of the element.
-The syntax is <code>ng-repeat=&quot;element in periodic.elements&quot;</code>. Essentially, <code>ng-repeat</code> is expecting an expression.
-In this instance, we are saying we want to loop through all items in our periodic data source, and we are going to call each
-item element, which will be a single item from our JSON object. Last, we need to output the data for display.
-In this instance then element&#39;s name, which is a property on our JSON object called name.</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements"</span>&gt;</span>{{element.name}} <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
-</code></pre>
-<div id="ngApp" ng-app="chemistryApp">
-
-    <div id="elements1" ng-controller="chemCtrl">
-        <ul>
-            <li ng-repeat="element in periodic.elements">
-                {{element.name}}
-            </li>
-        </ul>
     </div>
 
-<p>We could also go an easily update our markup to display the atomic weight along with the name by changing our <code>li</code>
- display to</p>
-<pre class="highlight"><code class="hljs xml"> {{element.name}} - {{element.atomicWeight}}
-</code></pre>
-<p>Resulting in a new look, where we are appending the atomic weight to the display of the element&#39;s name.</p>
-   <div id="elements2" ng-controller="chemCtrl">
-        <ul>
-            <li ng-repeat="element in periodic.elements">
-                {{element.name}} - {{element.atomicWeight}}
-            </li>
-        </ul>
-    </div>
-
-<p>Looking at our page though, we have a lot of data that we are displaying. Angular has the concept of filters,
-which can be applied to our expressions. An example of this is
-the <a href="http://docs.angularjs.org/api/ng.filter:limitTo">limitTo</a> filter. We can limit the number of items we display,
-in our scenario to 10. This is as simple as</p>
-<pre class="highlight"><code class="hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements|limitTo:10 "</span>&gt;</span>
-</code></pre>
-<p>We now our displaying ten results on our page</p>
-   <div id="elements2" ng-controller="chemCtrl">
-         <ul>
-             <li ng-repeat="element in periodic.elements|limitTo:10">
-                 {{element.name}} - {{element.atomicWeight}}
-             </li>
-         </ul>
-     </div>
-
-<p>Angular can also quickly allow the data to be searched using the <code>ng-model</code> attribute. We create a text input box,
-and decorate it with the <code>ng-model</code> syntax
-to define a variable which is available on our scope, and then use that as an input to the filter.</p>
-<p>First, we can create the input box</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementName"</span>/&gt;</span>
-</code></pre>
-<p>Next, we use that as the parameter for our filter instead of limitTo by using the <a href="http://docs.angularjs.org/api/ng.filter:filter">filter</a> keyword. The syntax for this is</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements ' filter:elementName"</span>&gt;</span>
-</code></pre>
-<p>We can then type in an element name and the list will narrow down automatically. Give it a try!</p>
-   <div id="elements3" ng-controller="chemCtrl">
-    <input type="text" ng-model="elementName">
-    <div id="elements3" ng-controller="chemCtrl">
-        <ul>
-            <li ng-repeat="element in periodic.elements | filter:elementName">
-                {{element.name}}
-            </li>
-        </ul>
-    </div>
-    </div>
-
-<p>You will notice that this does not REALLY work. What we want to be able to do is filter the name. For example, if
-you type 1, you will see results appear, for example Hydrogen. The reason for this is we are filtering on the
-WHOLE json object, so when we type 1 we are getting Hydrogen&#39;s Atomic number of 1 as a result and Lithium&#39;s atomic
-weight of 6.941, etc.</p>
-<p><img src="http://www.jptacek.com103113_1053_AngularJSIn7.png" alt=""></p>
-<p>What we want to be able to do is filter on the JSON object property. I bring this up, because AngularJS, of course, has the ability to do this. This is accomplished by updating our Filter expression to identify the property of the JSON object we want to filter on. For example</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">'element in periodic.elements '</span> <span class="hljs-attribute">filter:</span>{<span class="hljs-attribute">name:elementNameOnly</span>}'&gt;</span>
-</code></pre>
-<p>Note, there appears to be a bug in the current version of AngularJS, 1.0.8, where you need to initialize the filter. Using the current release candidate, 1.2, resolves this issue. Thanks to my Skyline Technologies colleague <a href="https://twitter.com/bernyzamora">Berny Zamora</a> for helping me chase that down.</p>
-<p>Now when we type 1, we no longer see results now.</p>
-   <div id="elements4" ng-controller="chemCtrl">
-    <input type="text" ng-model="elementNameOnly">
-        <ul>
-            <li ng-repeat="element in periodic.elements | filter:{name:elementNameOnly}">
-                {{element.name}}
-            </li>
-        </ul>
-    </div>
-
-
-
-<p>I have created an Azure Website to host all of this code at <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a></p>
-<p>The code is also available on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a>
-</p></div><p></p>
-<script type="text/javascript" src="/2013/10/angularjs-introducing-ng-repeat/js/chemistryApp.js"></script>
-<script type="text/javascript" src="/2013/10/angularjs-introducing-ng-repeat/js/chemistryController.js"></script>
-<script type="text/javascript" src="/2014/02/angularJS-templates/js/chemistry.js"></script>
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
-    </div>
     
     <br/>
     By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
@@ -269,167 +113,55 @@ weight of 6.941, etc.</p>
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='AngularJS – Introducing ng-repeat' class="twitter-share-button" data-url="http://jptacek.com/2013/10/31/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Privacy' class="twitter-share-button" data-url="http://jptacek.com/2013/04/13/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/10/31/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/04/13/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/10/31/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/04/13/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2013/10/01/index/'>AngularJS - Introduction</a></h1>
+    <h1><a href='/2013/03/28/index/'>Setting up Google Two Factor authentication</a></h1>
     
-        <div class="post-date">Sep 30th, 2013</div>
+        <div class="post-date">Mar 27th, 2013</div>
 
     <div class="post-content">
-        <p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
-<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
- HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
- Contrast this to a framework like JQuery where the DOM will update your data.</p>
-<p><img src="http://www.jptacek.comangularLogo.png" alt="AngularJS Logo"></p>
-<p>This is the first in a series of posts on AngularJS where we are using Chemistry data from the periodic table
-to help us understand the framework. The others posts are</p>
-<ol>
-<li>AngularJS - Introduction</li>
-<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
-<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
-<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
-<li><a href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
-<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
-<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
-</ol>
-<blockquote>
-<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
-the home page of my blog, only one application will work. I need to refactor the entire site to account for
-this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
-</blockquote>
-<p>I am going to be dipping my fingers into Angular a bit over my next few blog posts, so I thought it would be worth
-starting with a very simple Hello World app, and then moving on to a temperature converter and finally a
-sphere calculator.</p>
-<p>First, like all good Javascript programs, you will need to download the Angular library or link to a CDN version.
-You can always download the latest version from the Angular site at <a href="http://angularjs.org/">http://angularjs.org/</a>.
-They will also show a link when you request a download of the latest Angular version via CDN, at the time of this
-writing the link is <a href="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js">angular.min.js</a>.</p>
-<p>Here is our HTML based page that uses Angular.</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Hello World<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"angular.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">ng-app</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"displayText"</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>{{displayText}}<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
-</code></pre>
-<p>You can seed there are really four things we have done here.</p>
-<ol>
-<li>Link out to the CDN version of the Angular library by putting a script tag in our HTML</li>
-<li>The second is the inclusion of ng-app in our markup for the body tag. All Angular applications need to be
-wrapped in this directive. It indicates that everything within the tab can be part of an Angular application.
-For example, if we put the ng-app directive within a DIV tag, only content within that DIV would be within scope.
-It is probably uber-best practice to prepend angular tags (which are always ng-something, with a data attribute to
-ensure maximum HTML compliance, obviously, I am not doing that :)</li>
-<li>The <code>ng-model=&quot;displayText&quot;</code> within the input type. This is the first part of our data-binding where we have
-angular setup the variables to the name of our control</li>
-<li>Last is the magical curly braces {{ }}. This is the Angular markup for databinding. It essentially says
-display our model variable displayText
-The cool thing is we are automatically displaying data from a HTML input control on our page and we have not
-written any Javascript. The framework is handling.</li>
-</ol>
-<div id="app" ng-app="">
-
-<div>
-    <input type="text" ng-model="displayText0" placeholder="type something">
-    <h3>{{displayText0}}</h3>
-</div>
-
-<p>The databinding in Angular goes a little deeper than just displaying text. We would update our binding syntax to
-tie into Javascript functions. For example, changing <code>displayText</code> to
-<code>displayText.toUpperCase()</code> and our
-input will then be uppercased.</p>
-<div>
-    <input type="text" ng-model="displayText2" placeholder="type something">
-    <h3>{{displayText2.toUpperCase()}}</h3>
-</div>
-
-<p>You can also have expressions, such as <code>&#39;You typed: &#39;+ displayText.toUpperCase()</code>.</p>
-<p>This will then prepend the string &#39;You typed: &#39; to what is displayed in our browser.</p>
-<p>&nbsp;</p>
-<div>
-    <input type="text" ng-model="displayText3" placeholder="type something">
-    <h3>{{&#39;You typed: &#39; + displayText3.toUpperCase()}}</h3>
-</div>
-
-<p>The magic of curly braces continues though. Angular also has the concept of filters for our binding element that we
-can then apply to the code. We can have Angular upper case our code instead of doing it ourselves by having our
-binding be {{displayText | uppercase}}. You can also filter to things such as numbers, limit the inputs being
-displayed etc.</p>
-<p>Next up, let&#39;s just combine a couple of things to make an HTML application to convert the temperature from Degrees
-Fahrenheit to degrees Celsius and Kelvin.</p>
-<p>Our HTML</p>
-<pre class="highlight"><code class="hljs handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> &gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Temperature <span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"number"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"tempF"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">0</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Celcius:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> </span><span class="hljs-expression">{{ ((5/9)*(<span class="hljs-variable">tempF-</span>32)) |<span class="hljs-variable">number</span>:2 }}</span><span class="xml"> &amp;degC<span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Kelvin:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> </span><span class="hljs-expression">{{ (((5/9)*(<span class="hljs-variable">tempF-</span>32))<span class="hljs-variable">-</span>273<span class="hljs-variable">.</span>0) |<span class="hljs-variable">number</span>:2 }}</span><span class="xml"> K
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-</span></code></pre><p>&nbsp;</p>
-<div id="tempConversion">
-    <b>Temperature (&amp;degF)</b>
-    <input type="number" ng-model="tempF0" value="0">
-    <br>
-    <br>
-    <b>Celcius:</b> {{ (((5/9)<em>(tempF0-32))-0.0)|number:2 }}  &amp;degC<br>
-    <b>Kelvin:</b> {{ (((5/9)</em>(tempF0-32))-273.0) |number:2 }} K
-</div>
-
-<p>And just since we are having so much fun, we can use angular to calculate the volume and surface area of a cube</p>
-<p>&nbsp;</p>
-<pre class="highlight"><code class="hljs handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> &gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Radius of Sphere<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"number"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"radius"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">0</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Volume:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span></span><span class="hljs-expression">{{(4*3<span class="hljs-variable">.</span>141*<span class="hljs-variable">radius</span>*<span class="hljs-variable">radius</span>*<span class="hljs-variable">radius</span>)/3 | <span class="hljs-variable">number</span>:3}}</span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Surface area:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span></span><span class="hljs-expression">{{(4*3<span class="hljs-variable">.</span>141*<span class="hljs-variable">radius</span>*<span class="hljs-variable">radius</span>) | <span class="hljs-variable">number</span>:3}}</span><span class="xml"> <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-</span></code></pre><div id="sphereVol">
-    <b>Radius of Sphere</b>
-    <input type="number" ng-model="radiusZ" value="0">
-    <br>
-    <br>
-    <b>Volume:</b> {{ radiusZ<em>radiusZ | number:3}} <br>
-    <b>Surface area:</b> {{ (4</em>3.141<em>radius0</em>radius0) | number:3}} <br>
-</div>
-
-
-<p></p></div>
-It is pretty cool that we are able to write these quick little applications without any Javascript. Just by using Angular and it&#39;s built in databinding functionality!<p></p>
-<p>I am still working on a good way to get some Javascript demos into my Wordpress blog. In the interim, you can check them out at an Azure website I created to host these demos, <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a>. Specifically</p>
-<p><a href="http://angularperiodic.azurewebsites.net/Demo1/helloworld.html">Hello World</a></p>
-<p><a href="http://angularperiodic.azurewebsites.net/Demo1/tempConversion.html">Temperature Conversion</a></p>
-<p><a href="http://angularperiodic.azurewebsites.net/Demo1/spherecalculation.html">Sphere Calculation</a></p>
-<p>&nbsp;</p>
-<p><strong>Update:</strong> I have created JSFiddles to embed the code samples. You can either visit <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a> to see the code in action or view the JSFiddles embedded on the page. As always, the code is out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a></p>
+        <p>My daughter was recently asking me what classes she should take for next year, one of the options was Creative Writing. I told her the choice was easy, Creative Writing, &quot;You can never be too good of a writer&quot;. Similarly for the Internet, you can never be too secure.</p>
+<p>There are LOTS of horror stories out about people who have had their lives severely impacted by people getting access to their account information. Last year, Matt Honan <a href="http://www.wired.com/gadgetlab/2012/08/apple-amazon-mat-honan-hacking/all/">wrote</a> a cautionary tale about how easily someone was able to take over his digital life for Wired. It is well worth reading. If that one was not enough, then you can read another account from James Fallows <a href="http://www.theatlantic.com/magazine/archive/2011/11/hacked/308673/?single_page=true">wrote</a> for the Atlantic.</p>
+<p>First off, you should be doing basic things. Do NOT use the same password for all sites. DO NOT have passwords that exist in the dictionary. DO have special characters, numbers and mixed case in your passwords. That is just plain, Internet common sense though.</p>
+<p>The reality though is, your password is only so good. What everyone should do is setup two factor authentication. Two factor authentication is really &quot;something you know&quot; (your password) and &quot;something you have&quot;, an object like a phone. For enterprise users, this is old hat. The vast majority of large companies require users to have a SecurID card to get access to their network. The card generates a token that changes on a regular internal (60 seconds for example) that user needs to enter when logging in.</p>
+<p>However, in the consumer space, this has been much slower in coming. Several years ago Google introduced two factor authentication. Facebook also has the ability for you to enable a variation of two factor authentication. If the browser is not recognized as one you have used before, it will send a SMS to your phone. Twitter is in the process of enabling two factor authentication after 250,000 user accounts were compromised. Microsoft has SOME variation of it. It will occasionally prompt you with a verification code when making account changes or accessing the device from a non-trusted PC. It is however, not a default option for login, and I have never been able to figure out how it decides to send SMS messages. Microsoft really needs to have this option available for those who want it.</p>
+<p>We are going to step three enabling Google&#39;s two factor authentication, since so many folks have Google accounts.</p>
+<p>To enable Google&#39;s two factor authentication, first, go to your Google Account and click security and find 2-step verification.</p>
+<p><img src="/2013/03/28/index/032813_1351_SettingupGo1.png" alt=""></p>
+<p>For 2-step verification, change the settings form Off to On.</p>
+<p>You will then be prompted for a phone number to use for SMS messages. The phone, along with the accompanying verification code, is the second factor of authentication, it is the thing you have. Type in the mobile phone number</p>
+<p><img src="/2013/03/28/index/032813_1351_SettingupGo2.png" alt=""></p>
+<p>Enter in your phone number and a verification code will be sent to your mobile device. You will then be asked to verify the code</p>
+<p><img src="/2013/03/28/index/032813_1351_SettingupGo3.png" alt=""></p>
+<p>You will then be asked if you want to trust the computer you are on. This will allow you to log in without being prompted with a code very time. This trust usually lasts 30 days.</p>
+<p><img src="/2013/03/28/index/032813_1351_SettingupGo4.png" alt=""></p>
+<p>And then lastly, click confirm</p>
+<p><img src="/2013/03/28/index/032813_1351_SettingupGo5.png" alt=""></p>
+<p>Now, each time you log into your Google account from a non trusted computer, a SMS message will be sent to your phone that will need to enter.</p>
+<p><img src="/2013/03/28/index/032813_1351_SettingupGo6.png" alt=""></p>
+<p>Now, this is a bit cumbersome, I grant you. However, it is almost necessary if you are using Google services for anything remotely important to your non-digital world. Do you have bank account information in Gmail? Then turn on two factor authentication. Do you have send yourself passwords in Gmail? Then turn on two factor authentication. Do you have health information in Gmail? Then turn on two factor authentication. Do you use your Google account as your account name for anything important? Then turn on two factor authentication.</p>
+<p>There are a couple of things to realize. You NEED your cell phone to log into Google services now. If you do not have your cell phone with you, or you are travelling overseas without phone access, then you will not be able to log in to your account. However, Google has several options for you. First, for those on the Android platform they have an app called <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&amp;hl=en">Google Authenticator</a> that will generate the authentication codes for you. Option the second is you can print out a small piece of paper that has a one time, ten digit codes that you can use to get access.</p>
+<p>Second, applications that log into Google services to get access to your mail or contacts via POP or IMAP will no longer work. To work around this, Google allows you to create application specific passwords. These passwords are generated on the screen and then you never see them again. There are steps on how to do this at <a href="http://support.google.com/accounts/bin/answer.py?hl=en&amp;answer=185833">http://support.google.com/accounts/bin/answer.py?hl=en&amp;answer=185833</a>. For those using Outlook, Apple Mail, accessing email via phone, this will need to be done. Those of you paying attention at home will realize you are really back to a single password. While this is true, you cannot get access to your account via web browsers. Second, and more importantly, you cannot manage your account with it. You can also revoke access to anyone of these passwords at any time.</p>
+<p>Last, it is good measure to, in Google, Facebook, Twitter, your Microsoft account, anything account you allow to do authorization at other locations, to review what applications you have authorized. So while you are on your account page, review the Connected applications and sites to see who you have authorized to have access, and what level of access to your Google account data.</p>
+<p><img src="/2013/03/28/index/032813_1351_SettingupGo7.png" alt=""></p>
+<p>Personally, I have a Gmail account that I use for my &quot;public&quot; life. It is the address I sign up for things like Facebook with, the email address I use for accessing services I subscribe to, like Netflix, etc. For personal use, I also have a Google Apps domain that I use for personal email with family and friends. Google Apps also support two factor authentication.</p>
+<p>As digital identity becomes more and more integrated into daily lives, it is everyone&#39;s responsibility to ensure they can be secure as possible. Take the steps now where you can, because by the time you should have taken the steps, it will be too late.</p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
+        Posted In: <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/google/'>Google</a>, <a href='/tags/security/'>Security</a>, <a href='/tags/two-factor-authentication/'>Two Factor Authentication</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
@@ -438,147 +170,236 @@ It is pretty cool that we are able to write these quick little applications with
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='AngularJS - Introduction' class="twitter-share-button" data-url="http://jptacek.com/2013/10/01/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Setting up Google Two Factor authentication' class="twitter-share-button" data-url="http://jptacek.com/2013/03/28/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/10/01/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/03/28/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/10/01/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/03/28/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2013/10/03/index/'>AngularJS - Introducing AngularJS Controllers</a></h1>
+    <h1><a href='/2013/03/15/index/'>Have Your Pi and Eat it Too: A Comparison of C# and C++ Performance</a></h1>
     
-        <div class="post-date">Oct 2nd, 2013</div>
+        <div class="post-date">Mar 14th, 2013</div>
 
     <div class="post-content">
-        <p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
-<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
- HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
- Contrast this to a framework like JQuery where the DOM will update your data.</p>
-<p><img src="http://www.jptacek.comangularLogo.png" alt="AngularJS Logo"></p>
-<p>This is the second in a series of posts on AngularJS where we are using Chemistry data from the periodic table
-to help us understand the framework. The others posts are</p>
-<ol>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
-<li>AngularJS - Introducing AngularJS Controllers</li>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
-<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
-<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
-<li><a href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
-<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
-<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
-</ol>
-<blockquote>
-<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
-the home page of my blog, only one application will work. I need to refactor the entire site to account for
-this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
-</blockquote>
-<p>In general, just binding text boxes on a page may be able to create a simple calculator, but it is not what the web of 2013 and beyond is about. We want our pages to interact with backend data stores, we want to display this information on the page and send it back to the server so it is there the next time we view the page. </p>
-<p>Angular is really a Model View Controller (MVC) JavaScript library. The model is our data, the view is the presentation of this data and the controller is responsible for the marshalling between the two. In angular, this is done via the scope, which is a glorified object property bag available within your page. The first responsibility of the Controller is to create this scope object. The scope is then how you communicate with the view. The view is able to bind to properties and functions on the scope. It is also able to call functions on the scope. It is important to realize that the scope exposes the model to the view, however the scope is NOT the model. The model is updated, either via two way data binding on the scope, or functions on the scope that the view calls to update the data. So, if you are going to be doing a lot with Angular, say hello to your little friend, <span style="font-family:Courier New">$scope</span>.</p>
-<p>Let&#39;s take a look at the pieces needed to bring this together. First off, harking back to a time long, long ago, I am going to be working with information from the Periodic Table from Chemistry during these demos, so you will be seeing chemistry naming as we going along, so let us alleviate the confusion up front.</p>
-<p>First, we want to take a look at our HTML.</p>
-<p>We are going to use Twitter bootstrap for some down the road reasons so we are going to add that CSS reference.</p>
-<p>Second, we are adding a reference to <code>chemistryApp.js</code>. This is the starting script that identifies our Angular module. We are going to call our Application chemistryApp.</p>
-<p><strong>chemistryApp.js</strong></p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">'use strict'</span>;
+        <p>In honor of <a href="http://en.wikipedia.org/wiki/Pi_Day">National Pi Day</a>, we thought it would be fun to calculate Pi and talk about performance differences between C# and C++. There is some math coming your way (yeah Math!), but feel free to skip to the end for a discussion on performance.</p>
+<p>So back in the day, when things where WAY different, Pi was calculated using a mathematical series. One of the more famous ones uses the arctan math function to calculate the value of π. This is called the Leibniz formula for π and is represented by</p>
+<pre class="highlight"><code class="hljs markdown">[<span class="hljs-link_label">![pi1</span>](<span class="hljs-link_url">http://www.jptacek.com/wp-content/uploads/2013/03/pi1.jpg</span>)](<span class="hljs-link_url">pi1.jpg</span>)
+</code></pre><p>Now, this is one of the more inefficient ways to calculate π, it takes about 10 million terms to get an accuracy of 7 decimal places. For those of us asking performance differences between languages though, that is great! </p>
+<p>We have written two programs to calculate π, one in C# and one in C++. They are both syntactically similar and use the same algorithm. We tried to get as close to an apples comparison as we could, but in comparing two different languages, we did our best, you are still comparing an apple to an orange.</p>
+<p>So, what did we see? We calculated π to 15 decimal points, 3.141592653589793 for those of you keeping track at home. Both programs took almost 100 million iterations to converge, 99,995,330 to be exact. We ran each of the programs 10 times to get an average as shown in the following table</p>
+<div style="text-align: center"><table style="border-collapse:collapse" border="0"><colgroup><col style="width:102px"><col style="width:102px"><col style="width:66px"></colgroup><tbody valign="top"><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  solid 0.5pt; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
 
-<span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
-</code></pre>
-<p>Now that our <code>chemistryApp.js</code> file is identified, we add a <code>ng-app</code> directive to our body tag. That tells Angular that 
-chemistryApp will be responsible for our page.</p>
-<p>Next, we want to create the controller. The controller will be responsible for managing data for the HTML view. 
-Usually, controllers are associated with DIVs. First, we will create our controller called 
-<code>chemistryController.js&lt;</code></p>
-<p>We reference our module, <code>chemistryApp</code>, from our<code>App.js</code> file. We then identify the name of the controller, 
-chemistryController and then have a second parameter, which is a function, that is our actual controller.
-We want to be sure to pass in any parameters our controller will need. Almost all controllers will require the 
-<code>$scope</code> variable, since the controller interacts with the view via this, so almost all of our controllers will at a 
-minimum have this.</p>
-<p>As of now, our controller skeleton is built and ready to go, it just not doing anything at the moment</p>
-<p><strong>chemistryController.js</strong></p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">'use strict'</span>;
+<span style="color:black; font-size:9pt"><strong>Run</strong></span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  solid 0.5pt; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
 
-chemistryApp.controller(<span class="hljs-string">'chemistryController'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemistryController</span><span class="hljs-params">($scope)</span> {</span>
+<span style="color:black; font-size:9pt"><strong>C++</strong></span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  solid 0.5pt; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
 
+<span style="color:black; font-size:9pt"><strong>C#</strong></span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">1</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.384</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.908</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">2</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.299</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.466</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">3</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.3375</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.805</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.18</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.584</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">5</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.523</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.516</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.186</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.518</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">7</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.164</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.492</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">8</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.175</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.351</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">9</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.274</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.56</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">10</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.342</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.589</span>
+</td></tr><tr><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:#444444; font-family:Segoe UI; font-size:9pt">Average</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.29</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.58</span>
+</td></tr></tbody></table></div>
+
+<p>The calculation of π using C++ is 35% faster that it&#39;s corresponding C# code. This is to be expected. Many modern languages such as C# and Java run through a managed runtime. This brings MANY efficiencies to developers. However, the runtime tends to add overhead when it comes to performance. </p>
+<p>The pragmatic folks reading this realize, that the benefits of a managed execution environment and modern language generally outweigh performance gains from a language like C++. There are reasons that C# and Java are used instead of C++ because developers can be more productive. Our example here, using a very slow numerical algorithm and running it for ten million iterations is a stretch for most scenarios. The 2.5 second difference for such an intensive calculation, while relatively large in our example, in the grand scheme of things is not that big of difference.</p>
+<p>So why bring it up? It is important to think through performance more and more in today&#39;s computing environment for two reasons. The first is cost. As more and more organization move to utility based computing with hosted services, such as Amazon Web Services (AWS) and Azure, organization are paying for their compute cost. If you can realize performance gains that reduce CPU cycles that has a direct impact on the bottom line. The second reason is that mobile is taking over the world, and mobile users want more battery life, not less. Fewer CPU cycles on a smartphone or tablet will result in better battery life. </p>
+<p>It will be very rare that most organizations would use C++ or other &quot;closer to the metal&quot; languages for their Line of Business (LOB) applications. The moral of the story though is for intensive processes in cloud hosted or mobile environments, you want to be razor focused on optimizing your code for performance, no matter what language you choose.</p>
+<p>Both code examples are included, so for National Pi day, make a circle, calculate some π, eat some pie and enjoy!</p>
+<p>C++</p>
+
+// LifeOfPi.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+void pi( double *pi_value, int *iterations);  
+
+int main ( void )  
+{  
+
+      int iterations = 0;     // number of actual loop iterations in pi 
+      double pi_value = 0;    // computed value of pi 
+
+      clock_t cBegin = (double)clock () ; 
+      pi(&pi_value, &iterations);  
+      printf("   %0.15f with %d iterations\n",  pi_value, iterations);  
+      clock_t cEnd = (double) clock() ; 
+
+      std::cout << float(="" cend="" -="" cbegin="" )="" return="" 0;="" }="" void="" pi(="" double="" *pi_value,="" int="" *iterations)="" {="" i;="" k="1;" realpi="3.141592653589793;" epsilon="0.00000001;" delta="10;" *pi_value="0;" while="" (delta="">epsilon) {
+            *pi_value += pow(-1,(k+1))/(2*k-1);
+            delta = fabs((4* *pi_value)-realPi);
+            k++;
+      }
+      *iterations = k;
+      *pi_value = 4 * *pi_value;
+
+      return; // indicate program ended sucessfully 
+
+} // end fucntion main 
+
+
+<p></p>
+<p>C#</p>
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LifeOfPiCSharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int iterations = 0;
+            double pi_value = 0;
+
+            DateTime startTime = DateTime.Now;
+            pi(out pi_value,out iterations);
+            DateTime endTime = DateTime.Now;
+            Console.WriteLine(pi_value.ToString() + " in " + iterations);
+            TimeSpan diff = endTime.Subtract(startTime);
+            Console.WriteLine(diff.Seconds + "."+diff.Milliseconds);
+        }
+
+        public static void pi(out double pi_value, out int totalIterations)
+        {
+            double realPi = 3.141592653589793;
+            double epsilon = 0.00000001;
+            double delta = 10;
+            int k = 1;
+
+            pi_value = 0;
+            while (delta > epsilon)
+            {
+                pi_value += Math.Pow(-1, (k + 1)) / (2 * k - 1);
+                delta = Math.Abs((4 * pi_value) - realPi);
+                k++;
+            }
+            totalIterations = k;
+            pi_value = 4 * pi_value;
+
+        }
     }
-);
-</code></pre>
-<p>We go and add our controller JavaScript file to our HTML with a script tag, but we have to update our HTML to identify where the controller will function. This is done via the <span style="font-family:Courier New">ng-controller</span> directive. The syntax is as so</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"ngChem1"</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"chemistryController"</span>&gt;</span>
+} 
 
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-</code></pre>
-<p>And for now, our HTML looks like</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">"en"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Controller Demo 1<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/css/bootstrap.min.css"</span>/&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">ng-app</span>=<span class="hljs-value">"chemistryApp"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Chemistry Controller<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"ngChem1"</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"chemistryController"</span>&gt;</span>
 
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-
-<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"angular.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"chemistryApp.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"chemistryController.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
-</code></pre>
-<p>This page renders, but does not do anything. Mostly as a result of us telling it to do nothing! In general though, 
-these three steps are the basis of an Angular application. </p>
-<ol>
-<li>We identify ng-app, via chemistryApp.js, that is responsible for the page.</li>
-<li>We create a controller, chemistryController.js, that takes the $scope variable from our page and then populates it with data and/or functions so our HTML can later render it. We have not seen this in action yet, but soon.</li>
-<li>The last part then is identifying, via the ng-controller directive, the area of responsibility for our controller.</li>
-</ol>
-<p>As previously mentioned, the <code>$scope</code> variable is the glorified property bag we use to populate data. So within our 
-controller, we can go and set some values for display in our view/web page. In our example, that will be the name of a 
-chemical element and it&#39;s atomic number, Hydgroen and 1. Our controller function now looks like</p>
-<p><strong>chemistryController.js</strong></p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">
-'use strict'</span>;
-
-chemistryApp.controller(<span class="hljs-string">'chemistryController'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemistryController</span><span class="hljs-params">($scope)</span> {</span>
-        $scope.elementName = <span class="hljs-string">'Hydrogen'</span>;
-        $scope.atomicNumber = <span class="hljs-number">1</span>;
-
-    }
-);
-</code></pre>
-<p>Now, we can have the values from our scope value inject into our HTML markup. This is done via our friend, the magical 
-curly braces. It is as simple as</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Name:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> {{elementName}} <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Atomic Number:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> {{atomicNumber}}
-</code></pre>
-<p>The value we set in our controller are automatically displayed.</p>
-<p><img src="http://www.jptacek.com100313_2137_Introducing2.png" alt=""></p>
-<div ng-app="chemistryApp">
-<div class="container" id="ngChem1" ng-controller="chemistryController">
-    <h1>Chemistry Controller</h1>
-    <b>Name:</b> {{elementName}} <b>Atomic Number:</b> {{atomicNumber}}
-</div>
-</div>
-
-<p>You can see these code samples in action at the companion site for this blog series, <a href="http://angularPeriodic.azurewebsites.net">http://angularPeriodic.azurewebsites.net</a></p>
-<p><a href="http://angularperiodic.azurewebsites.net/Demo2-Controllers/controller1.html">Introducing AngularJS Controllers</a></p>
-<p>You can download or view the code on Github, <a href="https://github.com/jptacek/AngularPeriodic/">https://github.com/jptacek/AngularPeriodic/</a></p>
-<script type="text/javascript" src="/2013/10/introducing-angularjs-controllers/js/chemistryApp.js"></script>
-<script type="text/javascript" src="/2013/10/introducing-angularjs-controllers/js/chemistryController.js"></script>
+<p>&nbsp;</p>
+<p>This blog post originally appeared at <a href="http://www.skylinetechnologies.com/Blog/Lists/Posts/Post.aspx?ID=186">Skyline Technologies</a></p>
+</<></iomanip></iostream>
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
+        Posted In: <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/pi/'>Pi</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>
     </div>
     
     <br/>
@@ -587,13 +408,13 @@ curly braces. It is as simple as</p>
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='AngularJS - Introducing AngularJS Controllers' class="twitter-share-button" data-url="http://jptacek.com/2013/10/03/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Have Your Pi and Eat it Too: A Comparison of C# and C++ Performance' class="twitter-share-button" data-url="http://jptacek.com/2013/03/15/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/10/03/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/03/15/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/10/03/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/03/15/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 

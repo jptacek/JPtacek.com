@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -115,7 +119,7 @@ the repository locally and how GitHub may be handling it on the backend today.</
 fatal: repository <span class="hljs-string">'http://github.com/jptacek/JPTACEK.com.git/'</span> not found
 </code></pre>
 <p>You can see the message below</p>
-<p><img src="http://www.jptacek.comrepoNotFound.png" alt="GitHub Error"></p>
+<p><img src="/2014/01/21/index/repoNotFound.png" alt="GitHub Error"></p>
 <p>Again, no changes have been made to the repo. Similar messages appeared in the GitHub client and WebStorm. Other
 repositories I had on GitHub I was able to commit and push changes to. The only thing I could think was that
 the case was different on my local origin in comparison to the backend GitHub repository.</p>
@@ -126,7 +130,7 @@ same as my repository on GitHub.</p>
 <p>After this, I was then able to commit changes without issue in all the different client apps as well as the command
 line.</p>
 <p>as shown in the following screen shot</p>
-<p> <img src="http://www.jptacek.comrepoFound.png" alt="Repo found"></p>
+<p> <img src="/2014/01/21/index/repoFound.png" alt="Repo found"></p>
 <p>It strikes me as pretty odd that GitHub would suddenly stop working because of a case issue between my local dev
 machine, which has been working fine for many months, and the GitHub server. However, that appears to be the case in this instance.</p>
 <p>Pretty much just documenting this for my future self :)</p>
@@ -172,7 +176,7 @@ machine, which has been working fine for many months, and the GitHub server. How
 
             <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript></div>
 <script type="text/javascript">
-    var disqus_shortname = 'ewalnet';
+    var disqus_shortname = 'jptacek';
     var disqus_url = 'http://www.jptacek.com/2014/01/21/index/';
     var disqus_identifier = disqus_url;
     var disqus_title = 'GitHub Repository Not Found - Case Issue?';

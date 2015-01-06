@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -93,26 +97,55 @@
             
     <article class="post">
     
-    <h1><a href='/2013/10/21/index/'>Upgrading to Windows 8.1 from the Windows 8.1 Preview</a></h1>
+    <h1><a href='/2013/03/05/index/'>Automatic Builds and Deploys to Azure Websites</a></h1>
     
-        <div class="post-date">Oct 20th, 2013</div>
+        <div class="post-date">Mar 4th, 2013</div>
 
     <div class="post-content">
-        <p>I recently upgraded a Windows RT device from the Win 8.1 preview to the final version of Win 8.1. Inexplicably, I found the install a bit confusing. There really did not seem to be a lot of information being displayed during the process, which made the install look like it was hung. I thought I would document the steps I took to make things a bit more apparent what is happening during the install.</p>
-<p>To upgrade from Windows 8 to Windows 8.1, you are supposed to be able to go to the Windows store and see something like the screen shot below.</p>
-<p><img src="http://www.jptacek.com102113_1200_Upgradingto1.jpg" alt=""></p>
-<p>I DID NOT see this, most likely a result of running the Win 8.1 preview. So I followed Microsoft&#39;s instructions at <a href="http://windows.microsoft.com/en-us/windows-8/update-from-preview">http://windows.microsoft.com/en-us/windows-8/update-from-preview</a> which has the link to install directly from the Windows store (<a href="http://www.jptacek.comms-windows-store:WindowsUpgrade">ms-windows-store:WindowsUpgrade</a>). </p>
-<p>This starts the install, which begins by downloading a very large file. Unfortunately, it appears that nothing has been initiated leaving people to think the install has not started. In reality, the download has begun but the status is not being displayed. In order to see the progress of the download, you will want to use a second Windows Store URL, <a href="http://www.jptacek.comms-windows-store:installprogress">ms-windows-store:installprogress</a>, to display the progress.</p>
-<p>Entering this link in a browser will then show you the progress bar for the download</p>
-<p><img src="http://www.jptacek.com102113_1200_Upgradingto2.png" alt=""></p>
-<p><strong>Update:</strong> Upgrades to Windows RT 8.1 have been temporarily <a href="http://www.winbeta.org/news/microsoft-pulls-windows-rt-81-update-windows-store-due-situation">suspended</a>.</p>
-<p></p><p><strong>Update:</strong> As of October 23, 2013, update to Win 8.1 RT are back from <a href="http://www.zdnet.com/microsoft-fixes-windows-rt-8-1-update-is-back-in-windows-store-7000022259/">Mary Jo Foley</a>.</p>
+        <p><a href="http://www.windowsazure.com/en-us/home/scenarios/web-sites/">Azure Websites</a> are a great tool to explore pieces of the various technology stacks, especially in the Microsoft space. They include the ability to quickly spin up servers running blogging engines, CMS systems, etc. You can also create other services such as SQL back ends, Media services, Access control services, etc. At the end of the day though, what you are really getting is a shared server in the cloud, than can host all kinds of custom applications as long as you know how to get them there.</p>
+<p>For developers, one of my favorite parts of Azure websites is the integration with cloud hosted source code repositories such as <a href="https://github.com/">Github</a> and Microsoft&#39;s cloud version of <a href="https://tfs.visualstudio.com">Team Foundation Server</a>. You can setup your Azure hosted website so that any time you or members of development teams you are on check in code, it is automatically built and deployed to your site. Organizations that implement projects in this manner, with automatic builds, unit tests and deploys to test or production servers without ever touching the server are much more mature organizations with less bugs and more reliable code. If you are at an organization were you are NOT doing this, Azure websites and integration with TFS or Git can be a great tool in helping build a business case within the organization.</p>
+<p>The good news is setting this up with Azure websites is trivial. Let&#39;s walk through the process.</p>
+<p>For this post, we will automatically deploy a MVC project in Visual Studio hosted in the cloud version of TFS to an Azure website. The first step is to create a TFS account in the cloud if you have yet to do so. You can do this at <a href="https://tfs.visualstudio.com">https://tfs.visualstudio.com</a>. The good news is for individuals and small companies or development shops, this is free. Microsoft allows for up to five users for TFS cloud hosted project. Teams that are bigger than that can also use TFS, but will have to migrate to a paid version down the road. As of this time (March 2013) pricing has yet to be announced.</p>
+<p>Click the Sign up for free link after signing into TFS preview. You will then be asked to create a URL for your TFS project</p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu1.png" alt=""></p>
+<p>Click create account and you are then take to the Project screen. From here you can either create a Team Project or a Team Project with Git support.</p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu2.png" alt=""></p>
+<p>We will create a New Team Project</p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu3.png" alt=""></p>
+<p>A few seconds later, a Team Project is created. </p>
+<p>You can now connect to this TFS site from Visual Studio. To do that, go to the Team menu and select Connect to Team Foundation server</p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu4.png" alt=""></p>
+<p>Click the Add button and type in the URL that you just created, in our example, CodeMoneky.VisualStudio.com (I realize typo, the original URL was taken...)</p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu5.png" alt=""></p>
+<p>You will be prompted to sign in with your Microsoft account. You can then create your project and check it an as you as you normally would. Add the solution to source control</p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu6.png" alt=""></p>
+<p>And check in your code</p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu7.png" alt=""></p>
+<p>Now you have gone through the process of adding your code to TFS. The next step is to get the automatic build and deploy working. That is the easy part!</p>
+<p>Log into the Azure Management console and create a new Azure website by clicking the new button in the bottom right</p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu8.png" alt=""></p>
+<p>Choose custom create from the options</p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu9.png" alt=""></p>
+<p>Create a URL for your site and make sure Publish from source control is checked. By default it is not</p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu10.png" alt=""></p>
+<p>Click the source code repository of your choice, our example will be TFS. </p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu11.png" alt=""></p>
+<p>Independent of the back end (TFS, Git), we will authorize the account. For TFS, click the Authorize Now link</p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu12.png" alt=""></p>
+<p>It will then show a list of projects hosted in TFS, we just choose the project to deploy.</p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu13.png" alt=""></p>
+<p>It then creates the project. We wait a few minutes, if we have not waited long enough we see a screen like this</p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu14.png" alt=""></p>
+<p>And after we are done, the default MVC template project.</p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu15.png" alt=""></p>
+<p>The best part, now whenever solution changes are checked in by you, or project team members, they are automatically deployed from TFS to your Azure website. This functionality is the same for other source code repositories.</p>
+<p>As you can see, Azure websites integration with source control systems like Git and TFS make the automation of your build process sleek and simple. It is a great opportunities for small companies and startups to have best practices in place as well as the ability to quickly see code changes and updates. Check it out!</p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/windows-8/'>Windows 8</a>
+        Posted In: <a href='/tags/azure/'>Azure</a>, <a href='/tags/azure-websites/'>Azure Websites</a>, <a href='/tags/git/'>Git</a>, <a href='/tags/tfs/'>TFS</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
@@ -121,35 +154,64 @@
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Upgrading to Windows 8.1 from the Windows 8.1 Preview' class="twitter-share-button" data-url="http://jptacek.com/2013/10/21/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Automatic Builds and Deploys to Azure Websites' class="twitter-share-button" data-url="http://jptacek.com/2013/03/05/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/10/21/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/03/05/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/10/21/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/03/05/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2013/11/18/index/'>Fox Valley .NET User Group Presentation – Nov 2013</a></h1>
+    <h1><a href='/2013/02/27/index/'>Being John Ptacek – Configuring Wordpress for Authorship Markup</a></h1>
     
-        <div class="post-date">Nov 17th, 2013</div>
+        <div class="post-date">Feb 26th, 2013</div>
 
     <div class="post-content">
-        <p>Thanks to everyone who came to my Fox Valley .NET User Group presentation last Wed, Nov 13, 2013 on AngularJS. There was a GREAT turnout! Close to 70 people showed up, which was great for a Wed night. See for yourself (and thus was early before the talk started up). It really shows the type of developers we have in Northeast Wisconsin, always learning more.</p>
-<p><img src="http://www.jptacek.com111813_1355_FoxValleyNE1.jpg" alt="Crowd"></p>
-<p>The Fox Valley .NET User Group is expanding its scope and incorporating more technologies beyond just .NET, like Microsoft itself, who includes knockout and jQuery with Visual Studio for web development. There are a lot of tools and libraries for developers to look into and take advantage these days, way too many actually<span style="font-family:Wingdings">J</span>. As part of this expanding scope, the group will also be changing its name from the Fox Valley .NET User Group to something new. Currently, it may be the NorthEast Wisconsin Developer Users Group, though that may change.</p>
-<p>As part of the expanding of scope, I thought I would embrace it and jump in with both feet. Instead of using Visual Studio, I did the entire presentation in WebStorm, a first for me. I also showed off the awesomeness of Microsoft&#39;s Azure <a href="http://www.windowsazure.com/en-us/solutions/web/">Websites</a> and their integration with <a href="https://github.com/">GitHub</a> by committing my changes and having them auto deploy during the talk. It worked pretty well, until I fell behind!</p>
-<p>My slides are available on the blog at <a href="http://www.jptacek.comAngularJS.pptx">http://www.jptacek.com/2013/11/fvnug-presentation-nov-2013/AngularJS.pptx</a>. All of the source code from my demo is available on my Github at <a href="https://github.com/jptacek/AngularJSFVNUG">https://github.com/jptacek/AngularJSFVNUG</a> as is the PowerPoint slide deck. Finally, the Azure Website used during my presentation is available at <a href="http://loureed.azurewebsites.net/">http://loureed.azurewebsites.net/</a> . This link may or may not be available long term.</p>
-<p>The group was a lot of fun. I tried my best to code up in real time with plenty of typos and many rescues from the audience. Great participation by the attendees. Lucky to be able to present and be part of the vibrant and engaged dev community in NorthEast Wisconsin. Hopefully they will have me back to talk again!</p>
+        <p>A while back, Scott Hanselman had a blog <a href="http://www.hanselman.com/blog/EmbraceAuthorshipTheImportanceOfRelmeAndRelauthorOnYourContentsSEOAndGoogle.aspx">post</a> about embracing authorship. Essentially, it was a discussion about using Google&#39;s authorship <a href="http://googlewebmastercentral.blogspot.com/2011/06/authorship-markup-and-web-search.html">markup</a> on your website to help identify content you wrote. Like a lot of my recent posts, I decided to give this a run on my blog, which is an Azure hosted site running Wordpress.</p>
+<p>At a high level, implementing this is a two-step process. First, Google needs to have a trusted &quot;identity card&quot;. A place where the author identity is managed. As you can imagine, for Google this is <a href="http://plus.google.com/">Google+.</a> You need to use your identity card (Google+) and say that you write content for a given site (in this example, <a href="http://www.jptacek.com/">jptacek.com</a>). The next step is when you write content, you need to link back to your Google+ profile.</p>
+<p>First why, would someone do this? There are quite a few reasons</p>
+<p>1 - Manage &quot;brand&quot;. Whether it is your personal brand or your corporate brand, it helps build online presence</p>
+<p>2 - Search Engine Optimization. Google keeps the magic sauce of its page ranking very close to the vest. However, former Google CEO Eric Schmidt has explicitly stated in the future, content linked to online profiles will be ranked higher. </p>
+<p>3 - Search Results will be more eye catching. Google will put your author photo into links for pages you have created.</p>
+<p>For more on this, Forbes recently published an <a href="http://www.forbes.com/sites/johnhall/2013/02/26/6-reasons-why-googles-author-tags-are-important-to-leaders/?ss=strategies-solutions">article</a> about why business should be using Google author tags.</p>
+<p>So what are the steps to do this for your site? There are several sites that explain this. Google has a nice <a href="http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=2539557">introduction</a> as well as the Scott Hanselman <a href="http://www.hanselman.com/blog/EmbraceAuthorshipTheImportanceOfRelmeAndRelauthorOnYourContentsSEOAndGoogle.aspx">post</a>. </p>
+<p>The first step is to identify to Google that you contribute to a site. This is done by going to your Google+ profile at <a href="http://profiles.google.com/me">http://profiles.google.com/me</a> and clicking Edit Profile.</p>
+<p><img src="/2013/02/27/index/022713_1235_BeingJohnPt1.png" alt=""></p>
+<p>Click Add a custom link and link to your blog. I blog a lot for at <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>, where I work, so I included a contributor link there. I also blog on my personal site. You will notice that each link has multiple links. This is a result of adding the link manually for each site as well as doing a corresponding email verification. So we have finished part one, letting Google know where we are creating content.</p>
+<p>The next step is to update Wordpress to have posts link back my author profile with the author tag. For my profile, the url is <a href="https://plus.google.com/117170075977212738060?rel=author">https://plus.google.com/117170075977212738060?rel=author</a>. You will want to change the really long number to be your profile ID. </p>
+<p></p><p>I did this in several ways. First, on the main site I have a list of links for things like Twitter and LinkedIn. I included a link to Google+ here also</p>
+<p><img src="/2013/02/27/index/022713_1235_BeingJohnPt2.png" alt=""></p>
+<p>Next, I update footer.php template for Wordpress to have a link back to the Google Profile. This will ensure each page on the site is identified. Last, the header.php section was updated with a Meta tag </p>
+<p><span style="font-family:Arial; font-size:10pt"><span style="color:#a31515"><link<></link<>
+            <span style="color:red">rel<span style="color:blue">=&quot;author&quot;</span> href<span style="color:blue">=&quot;<a href="https://plus.google.com/117170075977212738060?rel=me">https://plus.google.com/117170075977212738060?rel=me</a>&quot;</span>
+                <span style="color:blue">/&gt;</span>
+            </span></span></span></p>
+<p>Last, is to add a link to the content.php identifying the author of the article that links back to your Google Profile</p>
+<p>By <a href="https://plus.google.com/117170075977212738060?rel=author">John Ptacek</a></p>
+<p>Okay, we have setup a bunch of links. How do we know if it works? Google has a Structured Data Testing tool that will tell you. If you go to <a href="http://www.google.com/webmasters/tools/richsnippets">http://www.google.com/webmasters/tools/richsnippets</a> you can check your blog and see if Google recognizes the markup.</p>
+<p><img src="/2013/02/27/index/022713_1235_BeingJohnPt3.png" alt=""></p>
+<p>You also notice that there is an email verification. This is another way to ensure your links are set. This is the reason two links appear for each site I was a contributor to in my Google Plus profile. I added each URL manually, and then as another level of verification, I verified an email address for each site.</p>
+<p>What is the end result? When I search Google for content, my picture is now appearing in the search results</p>
+<p><img src="/2013/02/27/index/022713_1235_BeingJohnPt4.png" alt=""></p>
+<p>Posts I have a written now appear with a picture next to my name. You can also see that there are several hyperlinks in the search results. </p>
+<p>The first, the byline (by John Ptacek) links to my Google+ profile.</p>
+<p><img src="/2013/02/27/index/022713_1235_BeingJohnPt5.png" alt=""></p>
+<p>The second, More by John Ptacek, </p>
+<p><img src="/2013/02/27/index/022713_1235_BeingJohnPt6.png" alt=""></p>
+<p>displays articles I have written as well as author information as you can see <a href="http://www.google.com/#hl=en&amp;tbs=ppl_ids:--117170075977212738060-%2Cppl_nps%3AJohn+Ptacek%2Cppl_aut%3A1&amp;sclient=psy-ab&amp;dq=&amp;q=John+Ptacek&amp;oq=John+Ptacek&amp;gs_l=serp.3...31815.31815.0.32252.0.0.0.0.0.0.0.0..0.0.les%3B..0.0...1c.1.5.psy-ab.xk3_MinTqHs&amp;pbx=1&amp;bav=on.2,or.r_gc.r_pw.r_qf.&amp;fp=95c9c19312d4e19&amp;biw=1478&amp;bih=757">here</a></p>
+<p><img src="/2013/02/27/index/022713_1235_BeingJohnPt7.png" alt=""></p>
+<p>As you can see, it is relatively easy to start identifying content you have created and having increased visibility in page results.</p>
+<p>As organizations embrace thought leadership, this is a great tool to ensure your employees and their content continues to be discoverable!</p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/fvnug/'>FVNUG</a>, <a href='/tags/speaking/'>Speaking</a>, <a href='/tags/web/'>Web</a>
+        Posted In: <a href='/tags/azure/'>Azure</a>, <a href='/tags/business/'>Business</a>, <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/wordpress/'>WordPress</a>
     </div>
     
     <br/>
@@ -158,315 +220,82 @@
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Fox Valley .NET User Group Presentation – Nov 2013' class="twitter-share-button" data-url="http://jptacek.com/2013/11/18/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Being John Ptacek – Configuring Wordpress for Authorship Markup' class="twitter-share-button" data-url="http://jptacek.com/2013/02/27/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/11/18/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/02/27/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/11/18/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/02/27/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2013/12/12/index/'>Calculating the Cost of the 12 Days of Christmas</a></h1>
+    <h1><a href='/2013/02/22/index/'>Skyline Annual Retreat</a></h1>
     
-        <div class="post-date">Dec 11th, 2013</div>
+        <div class="post-date">Feb 21st, 2013</div>
 
     <div class="post-content">
-        <script src="/2013/12/calculating-the-cost-of-the-12-days-of-christmas/scripts/12DaysApp.js"></script>
-<script src="/2013/12/calculating-the-cost-of-the-12-days-of-christmas/scripts/christmasController.js"></script>
-
-<p>Every year in December, families gather around the table to celebrate Christmas. If your house is anything like my house, the good times, food and conversation can quickly escalate into a battle over what is the true cost of the classic Christmas Song, the 12 Days of Christmas! This year, I took matters into my own hand and wrote a calculator, that will calculate the cost of the 12 days of Christmas using Google&#39;s Javascript Framework, AngularJS. No more bickering at the family table over the holidays!</p>
-<p>AngularJS is a Javascript framework from Google that focuses on building complex data applications. It has a very strong data first philosophy, which is a little different than jQuery which focuses more on DOM manipulation. You can find out more about AngularJS at the <a href="http://angularjs.org/">official site</a>, or read some recent blog posts I have written up at <a href="http://www.jptacek.com/tags/angularjs/">http://www.jptacek.com/tags/angularjs/</a>.</p>
-<p>AngularJS is a Model View Controller (MVC) framework. The model represents our data, or an object. In our case, the model will be the cost of the items in the twelve days of Christmas; e.g., a partridge, a pear tree, a turtle dove, etc. The view is our HTML page which is responsible for displaying data. The controller is responsible for marshalling the data to the view, and helping control its state. To enable our 12 Days calculator, we will take advantage of these AngularJS features.</p>
-<p>First, we essentially wire up our page to indicate we are going to have an Angular app by putting a <span style="font-family:Courier New">ng-app</span> attribute in the HTML body tag. Next, we set an area of our HTML markup that our controller is responsible for with a <span style="font-family:Courier New">ng-controller</span> attribute in a DIV tag.</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">ng-app</span>=<span class="hljs-value">"christmasApp"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>12 Days of Christmas Calculator<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"12Days"</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"christmasController"</span>&gt;</span>
-...
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-</code></pre>
-<p>It is worth nothing that use of data-* attributes is more &quot;semantically&quot; correct. If you want to save yourself keystrokes, you can just use <span style="font-family:Courier New">ng-app</span> or <span style="font-family:Courier New">ng-controller</span>, but if you get bothered by having warnings in your code, like me, you will want to use <span style="font-family:Courier New">ng-app</span>, etc.</p>
-<p>Of course, this being Javascript and all, we need references to JavaScript files that contain this logic for implementation. Usually in structuring a project there will be an chemistryApp.js file that sets up your Angular application, controllers for interacting between your model and the view as well as services.</p>
-<p>Our chemistryApp.js file, which we call 12DaysApp.js, is just two lines and creates the scope we reference in our body markup, christmasApp.</p>
-<p><em>12DaysApp.js
-</em></p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">'use strict'</span>;
-<span class="hljs-keyword">var</span> christmasApp = angular.module(<span class="hljs-string">'christmasApp'</span>, []);
-</code></pre>
-<p>Our next Javascript file is the controller and this is where the interesting stuff is. Essentially, AngularJS has the concept of a <span style="font-family:Courier New">$scope</span>. This is essentially a glorified property bad or state manage for interacting with the page. Within our controller, we create variables on the scope for each of our items. We are grabbing costs from a USA Today story from last year (<a href="http://www.usatoday.com/story/money/business/2012/11/26/12-days-of-christmas-107k/1726807/">http://www.usatoday.com/story/money/business/2012/11/26/12-days-of-christmas-107k/1726807/</a>).</p>
-<p>To setup our controller, we create a controller with a callback such as</p>
-<p>_christmasController.js</p>
-<pre class="highlight"><code class="hljs javascript">christmasApp.controller(<span class="hljs-string">'christmasController'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">christmasController</span><span class="hljs-params">($scope)</span> {</span>
-
-);
-</code></pre>
-<p>Notice passing in the $scope variable on the parameter list. AngularJS does a VERY nice job with Dependency Injection. By passing in the $scope variable we are enabling its use within our controller and the HTML view. As you explore Angular, you will come to appreciate how quickly you can add services or logging, etc. with their Dependency Injection framework.
-
-We can then create a variable on the scope to set the cost for items we are getting for the 12 days of Christmas. For example, to set the price of a pear tree to $189.99 and a partridge, we have the following lines in our controller
-
-<code>javascript
-$scope.pearTree = 189.99;
-$scope.partridge = 15.00;</code>
-
-We then create a JavaScript function to calculate the cost of the first day.
-
-<code>javascript
-  $scope.day1 =  function () {
-  return parseFloat($scope.pearTree) +  parseFloat($scope.partridge);
- };</code>
-
-Now, the magic of two way data binding can start, by including the AngularJS library, our application JavaScript file and our Controller JavaScript file, get two way databinding. In our HTML markup, curly braces ( <span style="font-family:Courier New">{{ }}</span> ) indicate our AngularJS model.
-
-So for the following markup, the <span style="font-family:Courier New">ng-model=&quot;partridge&quot;</span> on our Input element says that we are two way binding the <span style="font-family:Courier New">$scope.partidge</span> value in our UI. And since this binding is part of a HTML Input box, whenever we make changes, it will update our UI. For example, we are displaying the Day 1 whatever value we initially set will be displayed. We then automatically update the value of function day1 via the function. This function is automatically updated and our UI as well whenever we type in a new value. This is pretty magical for developers who used to capture JavaScript key up and down events!
-
-</p><p>&nbsp;</p>
-
-<div id="appContainer" ng-app="christmasApp">
-<div id="12Days" ng-controller="christmasController">
-    <h3>12 Days of Christmas</h3>
- <div class="row">
-        <div class="col-sm-6">Partridge: <input id="partridgeEle" ng-model="partridge" type="text">  </div>
-        <div class="col-sm-4">Day 1: {{day1()| currency:&quot;$&quot;}}</div>
- </div>
- <div class="row">
-        <div class="col-sm-6">Pear Tree: <input id="pearTreeEle" ng-model="pearTree" type="text"> </div>
-        <div class="col-sm-4">&nbsp;</div>
- </div>
-     <div class="row">
-        <div class="col-sm-6">Two Turtle Doves: <input id="turtleEle" ng-model="turtleDove" type="text"> </div>
-        <div class="col-sm-4">Day 2: {{day2()| currency:&quot;$&quot;}}</div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">Three French Hens: <input id="frenchHenEle" ng-model="frenchHen" type="text"> </div>
-        <div class="col-sm-4">Day 3: {{day3()| currency:&quot;$&quot;}}</div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">Four Colly Birds: <input id="callingBirdElee" ng-model="callingBird" type="text"> </div>
-        <div class="col-sm-4">Day 4: {{day4()| currency:&quot;$&quot;}}</div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">Five Gold Rings: <input id="goldRingEle" ng-model="goldRing" type="text"> </div>
-        <div class="col-sm-4">Day 5: {{day5()| currency:&quot;$&quot;}}</div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">Six Geese a-laying: <input id="geeseEle" ng-model="geese" type="text"> </div>
-        <div class="col-sm-4">Day 6: {{day6()| currency:&quot;$&quot;}}</div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">Seven Swans a swimming: <input id="swansEle" ng-model="swan" type="text"> </div>
-        <div class="col-sm-4">Day 7: {{day7()| currency:&quot;$&quot;}}</div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">Eight Maids a Milking: <input id="milkingMaidElee" ng-model="milkingMaid" type="text"> </div>
-        <div class="col-sm-4">Day 8: {{day8()| currency:&quot;$&quot;}}</div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">Nine Ladies Dancing: <input id="ladiesEle" ng-model="dancingLady" type="text"> </div>
-        <div class="col-sm-4">Day 9: {{day9()| currency:&quot;$&quot;}}</div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">10 Lords-a-Leaping: <input id="lordsEle" ng-model="lord" type="text"> </div>
-        <div class="col-sm-4">Day 10: {{day10()| currency:&quot;$&quot;}}</div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">Eleven Pipers piping: <input id="pipersEle" ng-model="piper" type="text"> </div>
-        <div class="col-sm-4">Day 11: {{day11()| currency:&quot;$&quot;}}</div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">Twelve Drummers Drumming: <input id="drummersEle" ng-model="drummer" type="text"> </div>
-        <div class="col-sm-4">Day 12: {{day12()| currency:&quot;$&quot;}}</div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6"><strong>Total Cost of the twelve days:</strong></div>
-        <div class="col-sm-4">{{totalCostChristmas()| currency:&quot;$&quot;}}</div>
-    </div>
-    </div>
-</div>
-
-<p>&nbsp;</p>
-
-<p><strong>christmasController.js Code</strong></p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">'use strict'</span>;
-
-christmasApp.controller(<span class="hljs-string">'christmasController'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">christmasController</span><span class="hljs-params">($scope)</span> {</span>
-        <span class="hljs-comment">// http://www.irishmirror.ie/female/family/how-much-would-cost-presents-2851366</span>
-        <span class="hljs-comment">// http://www.usatoday.com/story/money/business/2012/11/26/12-days-of-christmas-107k/1726807/</span>
-        <span class="hljs-comment">//one</span>
-        $scope.pearTree = <span class="hljs-number">189.99</span>;
-        $scope.partridge = <span class="hljs-number">15.00</span>;
-
-        <span class="hljs-comment">//two</span>
-        $scope.turtleDove = <span class="hljs-number">62.50</span>;
-
-        <span class="hljs-comment">// three</span>
-        $scope.frenchHen = <span class="hljs-number">55</span>;
-
-        <span class="hljs-comment">// four</span>
-        $scope.callingBird = <span class="hljs-number">129.24</span>;
-
-        <span class="hljs-comment">// five</span>
-        $scope.goldRing = <span class="hljs-number">150</span>;
-        <span class="hljs-comment">// six</span>
-        $scope.geese = <span class="hljs-number">35</span>;
-
-        <span class="hljs-comment">// seven swans</span>
-        $scope.swan = <span class="hljs-number">1000.0</span>;
-
-        <span class="hljs-comment">// eight</span>
-        $scope.milkingMaid = <span class="hljs-number">7.25</span>;
-
-        <span class="hljs-comment">// nine ladies dancing</span>
-        $scope.dancingLady = <span class="hljs-number">700.0</span>;
-
-        <span class="hljs-comment">// ten lords</span>
-        $scope.lord = <span class="hljs-number">476.7</span>;
-
-        <span class="hljs-comment">// eleven pipers at 232.91/hour</span>
-        $scope.piper = <span class="hljs-number">232.91</span>;
-
-        <span class="hljs-comment">// twelve drummers drumming</span>
-        $scope.drummer = <span class="hljs-number">231.33</span>;
-
-        $scope.day1 =  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
-            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.pearTree) +  <span class="hljs-built_in">parseFloat</span>($scope.partridge);
-
-        };
-
-        $scope.day2 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
-            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.turtleDove) * <span class="hljs-number">2</span>;
-        };
-
-        $scope.day3 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
-            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.frenchHen) * <span class="hljs-number">3</span>;
-        };
-
-        $scope.day4 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
-            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.callingBird) * <span class="hljs-number">4</span>;
-        };
-
-        $scope.day5 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
-            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.goldRing) * <span class="hljs-number">5</span>;
-        };
-
-        $scope.day6 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
-            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.geese) * <span class="hljs-number">6</span>;
-        };
-
-        $scope.day7 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
-            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.swan) * <span class="hljs-number">7</span>;
-        };
-
-        $scope.day8 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
-            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.milkingMaid) * <span class="hljs-number">8</span>;
-        };
-
-        $scope.day9 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
-            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.dancingLady) * <span class="hljs-number">9</span>;
-        };
-
-        $scope.day10 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
-            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.lord) * <span class="hljs-number">10</span>;
-        };
-
-        $scope.day11 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
-            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.piper) * <span class="hljs-number">11</span>;
-        };
-
-        $scope.day12 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
-            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.drummer) * <span class="hljs-number">12</span>;
-        };
-
-        $scope.totalCostChristmas = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-            <span class="hljs-keyword">return</span>  <span class="hljs-number">12</span>* $scope.day1() + <span class="hljs-number">11</span>* $scope.day2() + <span class="hljs-number">10</span>*  $scope.day3() +  <span class="hljs-number">9</span> * $scope.day4()+ <span class="hljs-number">8</span> * $scope.day5()+ <span class="hljs-number">7</span>* $scope.day6() +
-                <span class="hljs-number">6</span> * $scope.day7() +  <span class="hljs-number">5</span>* $scope.day8() +  <span class="hljs-number">4</span>* $scope.day9() + <span class="hljs-number">3</span>* $scope.day10() +  <span class="hljs-number">2</span>* $scope.day11() +  $scope.day12();
-        };
-
-    }
-);
-</code></pre>
-<p><strong>HTML Code</strong></p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>12 Days of Christmas<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"css/bootstrap.min.css"</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"angular.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"12DaysApp.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"christmasController.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">ng-app</span>=<span class="hljs-value">"christmasApp"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>12 Days of Christmas Calculator<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"12Days"</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"christmasController"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>12 Days of Christmas<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span6"</span>&gt;</span>Partridge: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"partridgeEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"partridge"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> Pear Tree: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"pearTreeEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"pearTree"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span2"</span>&gt;</span>Day 1: {{day1()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Two Turtle Doves: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"turtleEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"turtleDove"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 2: {{day2()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Three French Hens: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"frenchHenEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"frenchHen"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 3: {{day3()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Four Colly Birds: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"callingBirdElee"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"callingBird"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 4: {{day4()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Five Gold Rings: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"goldRingEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"goldRing"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 5: {{day5()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Six Geese a-laying: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"geeseEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"geese"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 6: {{day6()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Seven Swans a swimming: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"swansEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"swan"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 7: {{day7()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Eight Maids a Milking: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"milkingMaidElee"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"milkingMaid"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 8: {{day8()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Nine Ladies Dancing: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"ladiesEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"dancingLady"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 9: {{day9()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>10 Lords-a-Leaping: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"lordsEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"lord"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 10: {{day10()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Eleven Pipers piping: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"pipersEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"piper"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 11: {{day11()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Twelve Drummers Drumming: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"drummersEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"drummer"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 12: {{day12()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Total Cost of the twelve days:<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>{{totalCostChristmas()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
-</code></pre>
-<p>This blog post originally appeared at <a href="http://skylinetechnologies.com/Blog/Article/2403/Day-Two-How-Much-Do-The-Twelve-Days-of-Christmas-Cost.aspx">Skyline Technologies</a></p>
+        <p>The company I work at, <a href="http://www.skylinetechnologies.com/">Skyline Technologies</a>, hosts an annual retreat for its associates every year. I thought it would be worth talking about what I think the great things Skyline does at these events and how they help foster and grow great teams.</p>
+<p>Our founders, Pat Deprey and Keith Kaufman, felt it was important that our associates and their families get to know one another. When you are a consulting company, with associates at various customer locations, it takes organizational focus to make sure people know one another and feel like part of the organization. We have now had the annual retreat for over twenty years, with CEO changes and ups and downs in the economy; preserving the Annual Retreat has always been a top priority. As a matter of fact, as we have added offices in Appleton and Milwaukee, and have associates working all over Wisconsin and the Midwest, it has become even more important.</p>
+<p>Previous years have been in Sister Bay, WI, where we took up two different resorts. As our company grows, especially our Milwaukee office, we moved the event further south in Door County to Egg Harbor so we could have all associates at a single location.</p>
+<p>So what makes our Annual Retreat such a great event? Let&#39;s talk about a few of the ways company get-togethers can help any group grow the strength of their organization:</p>
+<h2 id="family-fun">Family Fun</h2>
+<p>Here is a picture of my kids and their friends as we headed on the road. <img src="/2013/02/22/index/022213_1452_1.jpg" alt=""></p>
+<p>As you can see, they are an excited group. The Skyline team that puts together the Annual Retreat makes sure that there are events going on throughout the weekend for families. Some of those events are kid friendly, some of those events are spouse friendly, and some of them are even teenager friendly. </p>
+<p>Friday night starts off with a dinner where associates and their families have the opportunity to get together and socialize. The team I am part of, has associates working out of Madison, Milwaukee, Appleton and Green Bay, and we are pretty evenly distributed. The dinner and social aspects of the weekend are one of the few times each year we are all in the same place and get to have fun together.</p>
+<p>On Saturday, we have an overview of the business and how things are going for the company and where we are going. Associates are encouraged to invite their spouses/significant others to join the meeting and learn about the company. With so many new associates joining each year, it is a great way to introduce the organization to our associates&#39; families. For new associates, it really drives home what makes Skyline different from other consulting and tech companies in the Midwest. </p>
+<p><img src="/2013/02/22/index/022213_1452_2.jpg" alt=""></p>
+<h2 id="fun-events">Fun Events</h2>
+<p>Organizationally, Skyline is also committed to making a fun work environment. We even have a Director of Fun, who organizes events throughout the year. Door County is littered with events for associates and/or their families to attend. A small example of them:</p>
+<ul>
+<li><p>Poker Game</p>
+</li>
+<li><p>Cribbage Game</p>
+</li>
+<li><p>Board Games like Settles of Catan, Carcassone and many more</p>
+</li>
+<li><p>Scavenger Hunt</p>
+</li>
+<li><p>Magic Show</p>
+</li>
+<li><p>Fish Boil</p>
+</li>
+<li><p>Bonfire and Smores</p>
+</li>
+<li><p>Karaoke</p>
+</li>
+</ul>
+<p>As you can see from some of these pictures, a good time is had by all!</p>
+<p><img src="/2013/02/22/index/022213_1452_3.jpg" alt=""><img src="/2013/02/22/index/022213_1452_4.jpg" alt=""><img src="/2013/02/22/index/022213_1452_5.jpg" alt=""><img src="/2013/02/22/index/022213_1452_6.jpg" alt=""></p>
+<p><img src="/2013/02/22/index/022213_1452_7.jpg" alt=""></p>
+<h2 id="associate-recognition">Associate Recognition</h2>
+<p>Another big highlight during our Annual Retreat are the associate recognition awards. In the state of Wisconsin, Skyline has more certifications than any other Microsoft partner. Below is a picture of all the associates who received certifications in the last year. </p>
+<p><img src="/2013/02/22/index/022213_1452_8.jpg" alt=""></p>
+<p>This is one example of an award during the weekend. Skyline has always made it a point of recognizing associates who contribute to our organization. These awards have become one of the highlights of the annual retreat. One of the best parts is recognizing the people who do good work in front of their spouse/significant as well as their peers. </p>
+<p><img src="/2013/02/22/index/022213_1452_9.jpg" alt=""></p>
+<h2 id="highlights-for-making-a-great-company-event">Highlights for making a great company event</h2>
+<ul>
+<li><p>Make it family friendly</p>
+</li>
+<li><p>Provide opportunities for spouses and significant other to learn about the company and its leaders</p>
+</li>
+<li><p>Provide recognition for employees </p>
+</li>
+<li><p>Have events for employees and their families</p>
+</li>
+<li><p>Provide downtime</p>
+</li>
+<li><p>Provide opportunities for community</p>
+</li>
+</ul>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>
+        Posted In: <a href='/tags/business/'>Business</a>, <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>
     </div>
     
     <br/>
@@ -475,13 +304,13 @@ christmasApp.controller(<span class="hljs-string">'christmasController'</span>,
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Calculating the Cost of the 12 Days of Christmas' class="twitter-share-button" data-url="http://jptacek.com/2013/12/12/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Skyline Annual Retreat' class="twitter-share-button" data-url="http://jptacek.com/2013/02/22/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/12/12/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/02/22/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/12/12/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/02/22/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 

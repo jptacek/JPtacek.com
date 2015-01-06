@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -93,17 +97,37 @@
             
     <article class="post">
     
-    <h1><a href='/2014/07/10/index/'>The Long Good Bye to Windows Phone</a></h1>
+    <h1><a href='/2011/05/11/index/'>Mobile Apps Provide the &quot;Finishing Touches&quot; to the Appleton Compassion Project</a></h1>
     
-        <div class="post-date">Jul 10th, 2014</div>
+        <div class="post-date">May 10th, 2011</div>
 
     <div class="post-content">
-        null
+        <p>The <a href="http://www.appletoncompassion.org/">Appleton Compassion Project</a>is a community art project in which all Appleton Area School District students created a 6&quot; x 6&quot; tile depicting their idea of compassion. Each student then wrote a statement about their tile and what compassion means to them. The art and statements can be viewed in the Trout Museum of Art or online at www.appletoncompassion.org. Adding the writing element to the art project has produced some very well rounded, heartfelt depictions of the word &quot;Compassion&quot;.</p>
+<p>The artist statements range all over the board; from moving, to amusing, to first-grader-cute. It quickly became apparent that with the job of physically displaying over 10,000 pieces of Art on the walls of the Trout Museum of Art, that the compassion statements would not be available for display alongside the tiles. Since the writing element was just as important to the project as the art, we knew we needed to come up with a solution to allow museum visitors to read the statements. The answer? Smartphone apps! Skyline created applications for the three major platforms - Android, iPhone and Windows Phone 7 - that museum visitors can install on their mobile phones so they can view artist statements along with the art.</p>
+<p>Since this is the first time that Skyline has created mobile apps for the three major mobile platforms, I thought I&#39;d share how we approached the design of the applications, focusing on what was common between all three. Then, in future blog posts each of the mobile platforms will be discussed from a development standpoint.</p>
+<p>In essence, the goal of the mobile application design, at a high level, focused on two things: One, consistency of functionality within three applications, and two, have the application behave like a native application on the individual mobile phones. Okay, what does this really mean? We sat down as a team and identified the functionality the application should have. For the mobile applications these were the features we wanted:</p>
+<ul>
+<li>Highlight featured art upon entering the app</li>
+<li>By clicking on an image users would be able to view the compassion statement</li>
+<li>Search by student name</li>
+<li>Search by picture number</li>
+<li>Allow users to mark and keep a list of favorites</li>
+<li>Have static text to highlight information about the museum, exhibit, hours, Skyline, etc.
+Once a set of features was decided on, we focused on having those pieces display consistently within the applications, so that featured art was first, favorites was second, and so on. We also wanted to make sure that search was available on each screen across the application. Finally, we attempted to use consistency with the graphics across platforms wherever possible. All of the applications have the same splash screen (featuring Art by Skyline employees) and use the same logo where needed.</li>
+</ul>
+<p>Each developer took these requirements and implemented them within the various mobile platforms so they were consistent for the users of that platform. For example, the iPhone and Windows Phone 7 have very different UI implementations. The iPhone has more of a button-driven menu interface, where the Windows Phone UI utilizes text and swiping as a function of their Metro UI. This results in the search button being at the bottom of the screen for the iPhone application and at the top for the Windows Phone application. Each application has the same functionality, just implemented differently - appropriate for the native platform.</p>
+<p>The last part of the mobile applications is the data services that feed the application. Surprisingly enough, there are only two. The services are REST-based, with the data returned to the client in XML format.</p>
+<p>The first service returns a random set of featured art (<a href="http://www.appletoncompassion.org/rest/FeaturedStatements/12">http://www.appletoncompassion.org/rest/FeaturedStatements/12</a>). With REST, you can provide parameters in the URL, so in the instance the number tells you how many items to return. We have a single object type we used for both of the services to return, so in this instance there is some excess data in the XML stream that would not necessarily be needed, but it made development easier. This REST call is used to return the featured images that greet the user each time they start the application.</p>
+<p>The second service is responsible for searching. Within the application, there are two types of search. The first one is by picture number, so if you are at the exhibit in the museum you can type in a number and see the artist statement that corresponds with the tile. The second is by name, so you can look up a specific child. We were able to implement this search functionality in a single service call, by having the back end service worry about if the search was a number only or if it had text. The service can search by number (<a href="http://www.appletoncompassion.org/rest/search/7158">http://www.appletoncompassion.org/rest/search/7158</a>), last name (<a href="http://www.appletoncompassion.org/rest/search/ptacek">http://www.appletoncompassion.org/rest/search/ptacek</a>) or full name (<a href="http://www.appletoncompassion.org/rest/search/nora ptacek">http://www.appletoncompassion.org/rest/search/nora%20ptacek</a>).</p>
+<p>It&#39;s a small example, but it illustrates the point of trying to encapsulate as much logic is possible in our service calls and not put the burden on the mobile phone. This way if there&#39;s a bug or change that needs to be made in the search functionality, we can update the service call, and not have to go through the lengthy process of updating three mobile applications in their respective mobile stores.</p>
+<p>Watch for future blog posts that discuss each individual platform in more detail.</p>
+<p>This blog post originally appeared at Skyline Technologies (<a href="http://www.skylinetechnologies.com/blog/Pages/compassionmobileappdevelopment.aspx">http://www.skylinetechnologies.com/blog/Pages/compassionmobileappdevelopment.aspx</a>)</p>
+
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/mobile/'>Mobile</a>, <a href='/tags/windows-phone/'>Windows Phone</a>, <a href='/tags/ephemera/'>Ephemera</a>
+        Posted In: <a href='/tags/appleton-compassion/'>Appleton Compassion</a>, <a href='/tags/giveology/'>Giveology</a>, <a href='/tags/mobile/'>Mobile</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
@@ -112,33 +136,95 @@
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='The Long Good Bye to Windows Phone' class="twitter-share-button" data-url="http://jptacek.com/2014/07/10/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Mobile Apps Provide the &quot;Finishing Touches&quot; to the Appleton Compassion Project' class="twitter-share-button" data-url="http://jptacek.com/2011/05/11/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/07/10/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2011/05/11/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/07/10/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2011/05/11/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2014/08/12/index/'>2014 That Conference</a></h1>
+    <h1><a href='/2011/04/25/index/'>Create Interactive User Experiences Quickly and Easily with Silverlight Pivot Viewer</a></h1>
     
-        <div class="post-date">Aug 12th, 2014</div>
+        <div class="post-date">Apr 24th, 2011</div>
 
     <div class="post-content">
-        <p>Thanks to everyone wbo attended my That Conference talk this year. I enjoyed the conversations about the talk during and 
-throughout the day.</p>
-<p>The slides are available at <a href="http://www.jptacek.com2014-That-Conference.pptx">http://www.jptacek.com/2014/08/2014-that-conference-presentation/2014-That-Conference.pptx</a></p>
-<p><img src="http://www.jptacek.comThatConf.jpg" alt="Clark Sell playing flappy bird"></p>
+        <p>The Appleton Compassion Project, a recent charity project Skyline has completed, takes advantage of a great tool in the Microsoft toolset that few people know is out there, the Silverlight Pivot Viewer. Unfortunately, Microsoft has quite a few things named Pivot so you may find this confusing. Pivot Viewer is NOT:</p>
+<ul>
+<li>PowerPivot- This is an Excel tool that allows you to manipulate A LOT of data</li>
+<li>Excel Pivot - This is your day to day Excel pivot
+The Silverlight Pivot Viewer IS a tool that allow developers to quickly create an engaging and interactive data driven experience. To get an idea of what I&#39;m talking about, check out the <a href="http://www.appletoncompassion.org/VirtualExhibitViewer">Appleton Compassion Project Virtual Exhibit</a>.</li>
+</ul>
+<p>This online exhibit contains over 10,000 pieces of art done by students at dozens of different schools. You can see how site visitors can quickly click a school or a grade and narrow down the art that is displayed. Clicking an image will show the student&#39;s compassion statement and other demographic information without having to write any special code.</p>
+<p>So it looks nice, but how do we create something this interactive? The great part is it&#39;s really not too difficult!</p>
+<p>The first thing that needs to be done is create a Deep Zoom file, <a href="http://www.skylinetechnologies.com/blog/Pages/deepzoom.aspx">which I cover in another blog post</a>, that will provide the images for the viewing experience. An XML file, with the extension of CXML is created and that is the file the Silverlight Pivot Viewer consumes. The important thing to realize is there is NO User Interface code to write. To reiterate... ZERO user interface development is needed. You create the Deep Zoom file, create the CXML file, add the Pivot Viewer control to your Silverlight XAML and you have a HIGHLY interactive user experience.</p>
+<p>The CXML file has four parts to it. The first is a node called Collection, it is the top level node for the XML file.</p>
+<p>Second is a node called Facets. The facets are the categories that are displayed on the left of the screen. In the example above, School, Grade, Art Teacher and Teacher are all facets. The facets are then searchable within the Pivot Viewer. Visitors can type in a school name or use the check box to filter down the data.</p>
+<p>Third is a node for all of the Items. For the Appleton Compassion Project, the items are all the artists who created art work and accompanying compassion statements.</p>
+<p>The last node is the item node, which is the data that is used to populate the Pivot Viewer. The item node has data for each of the defined facets to populate the search experience on the left of the screen. For our example, a given artist would have a School Name, which are then automatically queried to create the list on the example.</p>
+<p>Here&#39;s an example of how the XML would look:</p>
+<p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;</p>
+<collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Appleton School Compassion Project" schemaversion="1.0" xmlns:p="http://schemas.microsoft.com/livelabs/pivot/collection/2009" xmlns="http://schemas.microsoft.com/collection/metadata/2009">
+
+<facetcategories>
+
+<facetcategory name="School" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="true" p:isfiltervisible="true"></facetcategory>
+
+<facetcategory name="Grade" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="true" p:isfiltervisible="true"></facetcategory>
+
+<facetcategory name="Art Teacher" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="true" p:isfiltervisible="true"></facetcategory>
+
+<facetcategory name="Teacher" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="true" p:isfiltervisible="true"></facetcategory>
+
+<facetcategory name="Picture Number" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="false" p:isfiltervisible="false"></facetcategory>
+
+<facetcategory name="Tile Location" type="String" p:iswordwheelvisible="false" p:ismetadatavisible="true" p:isfiltervisible="false"></facetcategory>
+
+</facetcategories>
+
+<items imgbase="collection-2521020991055083062.dzc">
+
+<item img="#301" id="3803" href="http://www.appletoncompassion.org/Artist/3803" name="Henry Ptacek">
+
+<description>Artist statement not yet available</description>
+
+<facets>
+
+<facet name="Picture Number"><string value="3803"></string></facet>
+
+<facet name="School"><string value="Franklin Elementary School"></string></facet>
+
+<facet name="Grade"><string value="4"></string></facet>
+
+<facet name="Art Teacher"><string value="Sara Wilda"></string></facet>
+
+<facet name="Teacher"><string value="Louann Graf"></string></facet>
+
+</facets>
+
+</item>
+
+</items>
+
+<p></p></collection>
+As you can see, it&#39;s relatively straight forward XML. There are many things I have not talked about, like the ability to have different types of data, sliders for your data, etc. Check out the links for more information.<p></p>
+<p><strong>Why Use it?
+</strong>The Silverlight Pivot viewer is a great data driven UI experience for end users. The creation process involves creating a Deep Zoom file and some Xml.</p>
+<p><strong>I want to learn more!
+</strong><a href="http://www.silverlight.net/learn/pivotviewer/">Microsoft&#39;s Silverlight Pivot viewer site </a></p>
+<p><a href="http://www.silverlight.net/learn/pivotviewer/collection-xml-schema/">Silverlight Pivot XML Schema information </a></p>
+<p>To Develop with the Silverlight Pivot viewer, you will need the Silverlight 4 SDK as well as the Pivot Viewer Control, which you can <a href="http://www.silverlight.net/learn/pivotviewer/">download here</a>.</p>
+<p>This post originally appeared at Skyline Technologies <a href="http://www.skylinetechnologies.com/">Skyline Technologies</a></p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/speaking/'>Speaking</a>, <a href='/tags/that-conference/'>That Conference</a>, <a href='/tags/health/'>Health</a>
+        Posted In: <a href='/tags/appleton-compassion/'>Appleton Compassion</a>, <a href='/tags/giveology/'>Giveology</a>, <a href='/tags/pivot-viewer/'>Pivot Viewer</a>, <a href='/tags/silverlight/'>Silverlight</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
@@ -147,199 +233,42 @@ throughout the day.</p>
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='2014 That Conference' class="twitter-share-button" data-url="http://jptacek.com/2014/08/12/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Create Interactive User Experiences Quickly and Easily with Silverlight Pivot Viewer' class="twitter-share-button" data-url="http://jptacek.com/2011/04/25/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/08/12/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2011/04/25/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/08/12/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2011/04/25/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2014/12/10/index/'>AngularJS - Further with Directives</a></h1>
+    <h1><a href='/2011/04/25/index/'>Microsoft's Deep Zoom Technology Allows for Powerful User Experience</a></h1>
     
-        <div class="post-date">Dec 9th, 2014</div>
+        <div class="post-date">Apr 24th, 2011</div>
 
     <div class="post-content">
-        <p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
-<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
- HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
- Contrast this to a framework like JQuery where the DOM will update your data.</p>
-<p><img src="http://www.jptacek.comangularLogo.png" alt="AngularJS Logo"></p>
-<p>This is the tenth (I know, right!!?!!?!) in a series of posts on AngularJS where we are using Chemistry data from the periodic table
-to help us understand the framework. The others posts are</p>
-<ol>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
-<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
-<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
-<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
-<li><a href="http://www.jptacek.com/2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
-<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
-<li>AngularJS - Further with Directives</li>
-</ol>
-<blockquote>
-<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
-the home page of my blog, only one application will work. I need to refactor the entire site to account for
-this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
-</blockquote>
-<p>Previously, we took an introductory look at directives. This time we will go a bit deeper.</p>
-<p>In our previous example, we displayed data from the periodic table, specifically, the atomic weight, atomic number
-and element name. Our data source, has a lot more information, such as boiling and melting points, density, etc. In
-this example, we will expand the directive by enabling a click event to display expanded data about the selected element.</p>
-<p>The first thing to mention is scope. Scope, as we have already seen, is the magical tool that Angular uses to 
-communicate between your view and services, etc. By default, a directive does not get a new child scope, but
-uses the parent scope. So, in our case, when the directive is inside a controller, it will use the 
-controller&#39;s scope.</p>
-<p>To get access to the scope, we can use the <code>link</code> function. The <code>link</code> function gets called every time the 
-element gets bound to the data in the <code>$scope</code> object. In general, <code>link</code> is used to manipulate the Document
-Object Model (DOM),
-either by adding event listeners or updating the DOM.</p>
-<p>The link function takes three arguments:</p>
-<ul>
-<li><code>scope</code> - Scope gets passed to the directive. This is generally the scope of the calling controller</li>
-<li><code>elem</code> - The element on which the directive is derived. In our case, it will be the template markup for
-the chemical element</li>
-<li><code>attrs</code> - Attributes associated with our element</li>
-</ul>
-<p>It is worth noting that AngularJS ships with jQLite, which is a subset of the full 
-<a href="http://jquery.com/">jQuery</a> library. If you are using full
-jQuery within your web app, then that will be used instead. All of that to say this, you access DOM elements 
-similarly as you do in jQuery, and since jQuery is already wrapped, you don&#39;t need to use your old school
-<code>$</code> for access.</p>
-<p>In our example, we are going to use the <code>link</code> function to manipulate the DOM. First, let us take a look
-at the JavaScript</p>
-<pre class="highlight"><code class="hljs javascript">chemistryApp.directive(<span class="hljs-string">'periodicChartElement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(chemistryService)</span> {</span>;
-    <span class="hljs-keyword">return</span> {
-        restrict: <span class="hljs-string">'E'</span>,
-        templateUrl: <span class="hljs-string">'./template/periodic-template.html'</span>,
-        link: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(scope, elem, attrs)</span> {</span>
-            elem.bind(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-                <span class="hljs-comment">// Change state</span>
-                scope.$apply(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
-                    scope.fullElement = !(scope.fullElement);
-                });
+        <p>Closely tied to the Silverlight Pivot Viewer I discussed in my <a href="http://www.skylinetechnologies.com/blog/Pages/silverlightpivotviewer.aspx">previous blog post</a>, is Microsoft&#39;s Deep Zoom technology. Deep Zoom enables users to pan and zoom around a high resolution image, or in the case of how we use it for the <a href="http://www.appletoncompassion.org/VirtualExhibitViewer">Appleton Compassion Project Virtual Exhibit</a>, navigate a large collection of images.</p>
+<p>Deep Zoom accomplishes this by using a process similar to Google/Bing maps. There are layers to the image, so one layer can show the entire collection with very small sizes for the images. The images are also broken up into tiles, so as you go to higher resolution images, it may be broken up into several tiles so you do not have to load the entire image. As you zoom closer into the document, you are navigating to layers that are deeper and deeper in the collection, with increasing image resolution and will be loading a tile that is a subset of the image. Microsoft has a nice picture of this and an accompanying description at their <a href="http://blogs.msdn.com/b/jaimer/archive/2008/03/31/a-deepzoom-primer-explained-and-coded.aspx">MSDN site</a>.</p>
+<p>Deep Zoom consists of several XML based files. The first is the Deep Zoom image (DZI). This file is essentially an XML file that contains the layers and tile information for a given image. The Deep Zoom image creation process creates a directory for each image, this directory will then have the layers, and images that are broken into tiles. For example, in testing that we did, a single image taken with a home digital camera that is 4 MB in size, was broken up into 12 sub folders, each containing tiled images. One image created 12 directories and 238 files. For the Appleton Compassion Project, the collection of 10,000+ art pieces has created nearly one million files!</p>
+<p>The second deep zoom file type is the Deep Zoom Collection (DZC). This file essentially is the high level collection that points to the DZI files. The Silverlight Pivot viewer then references this DZC file for the zooming process.</p>
+<p>There are two ways to create Deep Zoom files. The first is to use the Deep Zoom composer that is part of Expression Blend. This process, outlined in the link above, is manual which obviously won&#39;t work for 10,000 images. The interesting thing is Microsoft really doesn&#39;t have an SDK or install for creating the Deep Zoom files. You need to physical copy a DLL from the Deep Zoom Composer directory and make it part of your application, <a href="http://blogs.msdn.com/b/expression/archive/2008/11/26/hello-deepzoomtools-dll-deep-zoom-image-tile-generation-made-easy.aspx">outlined here</a>.</p>
+<p><strong>Why Use it?
+</strong>Deep Zoom allows for a interactive zoom and pan user experience.</p>
+<p><strong>I want to learn more!
+</strong><a href="http://msdn.microsoft.com/en-us/library/cc645050(VS.95">MSDN Deep Zoom site </a>.aspx)</p>
+<p>Blog post on programmatically creating Deep Zoom</p>
+<p>&nbsp;</p>
+<p><a href="http://blogs.msdn.com/b/jaimer/archive/2008/03/31/a-deepzoom-primer-explained-and-coded.aspx">Jaime Rodrigues goes deep on Deep Zoom</a></p>
+<p>This post orgianlly appeared at Skyline Technologies (<a href="http://www.skylinetechnologies.com/blog/Pages/deepzoom.aspx">http://www.skylinetechnologies.com/blog/Pages/deepzoom.aspx</a>)</p>
 
-            });
-            elem.bind(<span class="hljs-string">'mouseover'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-                elem.css(<span class="hljs-string">'cursor'</span>, <span class="hljs-string">'pointer'</span>);
-            });
-
-        },
-        scope:{
-            element:<span class="hljs-string">'='</span>
-        }
-
-    }
-
-});
-</code></pre>
-<p>With the exception of adding the link function, things are pretty similar to before. The link function does several 
-pieces of functionality that are worth nothing though.</p>
-<p>First, we bind a click event to our chemical element. When
-that click event is called, we update a boolean variable on our scope, which is our parent scope from the calling 
-controller and set it to the opposite. Second, we also bind a mouseover event to manipulate our CSS to change the 
- cursor to a pointer. As you can see, this is an elegant way to add event behavior to our directive.</p>
-<p>Our template has now also been updated. The boolean scope variable that we update on the click event, 
-<code>fullElement</code> is used to show one of two different
-HTML &quot;paths&quot; in our template, one shows a small subset of data, the other a larger subset of data from the periodic 
-table. </p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'periodicCell {{element.cssForDisplay}}'</span> <span class="hljs-attribute">data-ng-hide</span>=<span class="hljs-value">"fullElement"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"atomicNumber"</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"atomicWeight"</span>&gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"atomicSymbol"</span>&gt;</span>{{element.symbol}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"centerElementDisplay"</span>&gt;</span>{{element.name }}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'periodicPop {{element.cssForDisplay}}'</span>  <span class="hljs-attribute">data-ng-show</span>=<span class="hljs-value">"fullElement"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"atomicNumberPop"</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"atomicWeightPop"</span>&gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"atomicSymbolPop"</span>&gt;</span>{{element.symbol}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"density"</span>&gt;</span>{{element.density || '-'}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"meltingPoint"</span>&gt;</span>{{element.melting + 273.15|number:2}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"boilingPoint"</span>&gt;</span>{{element.boiling + 273.15|number:2}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"elecConfig"</span>&gt;</span>{{element.elecconfig }}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"elctroNeg"</span>&gt;</span>{{element.electronegativity}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"centerElementDisplayPop"</span>&gt;</span>{{element.name }}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-</code></pre>
-<p>It is also worth talking a bit about scope in directives. As we mentioned earlier, by default, you are binding to the parent scope of the controller.
-In many instances this will work well, but if you want to display your directive more than once on a page, you would need a 
-controller for each directive. That is no good. </p>
-<p>AngularJS introduces the ability to create an isolated scope, which is what we are doing in our example. This allows us
-to use our directive multiple times on the same page. There are binding options in setting up the directive variables that we should
-briefly touch on.</p>
-<p>The various options for
-setting up variables in the directive scope are:</p>
-<ul>
-<li><code>=</code> - Set up two way binding between the parent scope and our isolated scope</li>
-<li><code>@</code> - Set up one way binding between the parent scope adn the isolate scope</li>
-<li><code>&amp;</code> - Allows to bind to parent scope functions</li>
-</ul>
-<p>Dan Wahlin has done an outstanding job on his blog of digging in deeper into directives and scope. His articles are at</p>
-<ol>
-<li><a href="http://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-i-the-fundamentals">Creating Custom AngularJS Directives Part I – The Fundamentals</a></li>
-<li><a href="http://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-2-isolate-scope">Creating Custom AngularJS Directives Part 2 – Isolate Scope</a></li>
-<li><a href="http://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-3-isolate-scope-and-function-parameters">Creating Custom AngularJS Directives Part 3 - Isolate Scope and Function Parameters</a></li>
-<li><a href="https://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-4-transclusion-and-restriction">Creating Custom AngularJS Directives Part 4 - Transclusion and Restriction</a></li>
-<li><a href="https://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-7-%E2%80%93-creating-a-unique-value-directive-using-asyncvalidators">Creating Custom AngularJS Directives Part 7 – Creating a Unique Value Directive using $asyncValidators</a></li>
-</ol>
-<p>Parts 5 and 6 should be coming too.</p>
-<p>We also have updated our page to show multiple elements to demonstrate a single directive interacting with unique scope. It
-is not very robust, so picking items at the end, aka Curium, will cause some issues.</p>
-<div id="app" ng-app="chemistryApp">
-    <div id="controller" ng-controller="chemistryController">
-
-        <div class="row">
-            <select ng-model="periodicElement" ng-options="e.name for e in elements" ng-click="updateController(periodicElement)"></select><br>
-        </div>
-        <div class="row">
-            &nbsp;
-        </div>
-        <div class="row">
-            &nbsp;
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                <periodic-chart-element element="periodicElement"></periodic-chart-element>
-            </div>
-            <div class="col-md-2">
-                &nbsp;
-            </div>
-            <div class="col-md-2">
-                <periodic-chart-element element="elements[periodicElement.atomicNumber]"></periodic-chart-element>
-            </div>
-            <div class="col-md-2">
-                &nbsp;
-            </div>
-            <div class="col-md-2">
-                <periodic-chart-element element="elements[periodicElement.atomicNumber+1]"></periodic-chart-element>
-            </div>
-        </div>
-    </div>
-</div>
-
-<p><br></p>
-<p>So to recap, with directives we have created our HTML markup element <code>periodic-chart-element</code> where we can put multiple elements
-onto a single page by updating our directive to use its own version of scope.</p>
-<p>It has been several months since my last Angular blog post. More are coming. I have a plan for all of this, ultimately we
-will create an application that is the periodic table, done AngularJS style.</p>
-<p>You can either visit <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a> to see the code in action and
-as always find the code out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a>.</p>
-<p>Thanks for reading!</p>
-<script type="text/javascript" src="/2014/12/angularJS-further-with-directives/js/chemistryApp.js"></script>
-<script type="text/javascript" src="/2014/12/angularJS-further-with-directives/js/chemistryController.js"></script>
-<script type="text/javascript" src="/2014/12/angularJS-further-with-directives/js/chemistryService.js"></script>
-<script type="text/javascript" src="/2014/12/angularJS-further-with-directives/js/chemistryDirective.js"></script>
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
+        Posted In: <a href='/tags/appleton-compassion/'>Appleton Compassion</a>, <a href='/tags/deep-zoom/'>Deep Zoom</a>, <a href='/tags/giveology/'>Giveology</a>, <a href='/tags/silverlight/'>Silverlight</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
@@ -348,13 +277,13 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='AngularJS - Further with Directives' class="twitter-share-button" data-url="http://jptacek.com/2014/12/10/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Microsoft's Deep Zoom Technology Allows for Powerful User Experience' class="twitter-share-button" data-url="http://jptacek.com/2011/04/25/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/12/10/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2011/04/25/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/12/10/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2011/04/25/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 

@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -99,7 +103,7 @@
         <p>When running Wordpress on Azure websites, you have the ability to create sitemaps. This enables search engines such as Google and Bing to make you content more discoverable. You can find out more about Sitemaps from <a href="http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=156184">Google</a>.</p>
 <p>The first step in the process is to upload placeholder files for the sitemap files. These are two files, Sitemap.xml and Sitemap.xml.gz (a compressed format). These files are both available on the Wordpress site, so download both <a href="http://www.wp-starter.com/wp-content/uploads/sitemap/sitemap.xml">Sitemap.xml</a> and <a href="http://www.wp-starter.com/wp-content/uploads/sitemap/sitemap.xml.gz">sitemap.xml.gz</a> locally to your computer. For this example, our local directory will be c:\scratch.</p>
 <p>Next, you are going to need to upload the files to your hosted Azure website. This requires using FTP. The Azure management site has the link to this.</p>
-<p><img src="http://www.jptacek.com021313_1142_CreatingSit1.png" alt=""></p>
+<p><img src="/2013/02/13/index/021313_1142_CreatingSit1.png" alt=""></p>
 <p>&nbsp;</p>
 <p>Clicking the URL will pop up the FTP client in your favorite browser. I hate that FTP client (this hate is browser agnostic). Instead, I use the FTP client on the local OS, in this case Windows 8. Go to the command prompt and:</p>
 <ol>
@@ -107,7 +111,7 @@
 <li>Type in your FTP user name, being sure to include the domain name</li>
 <li><p>This will put you at the top level of your hosted Azure website. You can see the files there by typing <span style="font-family: Courier New;">LS </span>(the UNIX version of the Dir command)<span style="font-family: Courier New;">
 </span>
-<img src="http://www.jptacek.com021313_1142_CreatingSit2.png" alt=""></p>
+<img src="/2013/02/13/index/021313_1142_CreatingSit2.png" alt=""></p>
 </li>
 <li><p>You will need to change directories to the location on your server that is the root for Wordpress site, in our case that is wwwroot; <span style="font-family: Courier New;">cd site\wwwroot</span></p>
 </li>
@@ -127,19 +131,19 @@ It goes without saying you can use your favorite FTP client to upload the files,
 <p>To install this on your Wordpress site hosted on Azure is easy enough. Log in as administrator to your account.</p>
 <ol>
 <li><div>Go to you Plugins and choose Add New and type Google XML Sitemaps and click search</div>
-<img src="http://www.jptacek.com021313_1142_CreatingSit3.png" alt=""></li>
+<img src="/2013/02/13/index/021313_1142_CreatingSit3.png" alt=""></li>
 <li>Click Install Now and move onto setup
 You will want to verify the location of your Sitemaps file, which the plugin automatically detect</li>
 </ol>
-<p><img src="http://www.jptacek.com021313_1142_CreatingSit4.png" alt=""></p>
+<p><img src="/2013/02/13/index/021313_1142_CreatingSit4.png" alt=""></p>
 <p>&nbsp;</p>
 <p>The basic options are fine for most implementations. The Plugin will automatically create zipped up files of your sitemap, rebuild on content change as well as notify Google and Bing of changes</p>
-<p><img src="http://www.jptacek.com021313_1142_CreatingSit5.png" alt=""></p>
+<p><img src="/2013/02/13/index/021313_1142_CreatingSit5.png" alt=""></p>
 <p>&nbsp;</p>
 <p>The plugin allows you to build the sitemap for the first time. After it is done, you will see</p>
-<p><img src="http://www.jptacek.com021313_1142_CreatingSit6.png" alt=""></p>
+<p><img src="/2013/02/13/index/021313_1142_CreatingSit6.png" alt=""></p>
 <p>You can verify the sitemap by looking at the xml for the file. In the case of this blog, <a href="http://www.jptacek.com/sitemap.xml">http://www.jptacek.com/sitemap.xml</a></p>
-<p><img src="http://www.jptacek.com021313_1142_CreatingSit7.png" alt=""></p>
+<p><img src="/2013/02/13/index/021313_1142_CreatingSit7.png" alt=""></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
@@ -184,7 +188,7 @@ You will want to verify the location of your Sitemaps file, which the plugin aut
 
             <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript></div>
 <script type="text/javascript">
-    var disqus_shortname = 'ewalnet';
+    var disqus_shortname = 'jptacek';
     var disqus_url = 'http://www.jptacek.com/2013/02/13/index/';
     var disqus_identifier = disqus_url;
     var disqus_title = 'Creating Sitemaps.xml file for Wordpress blogs on Azure Websites';

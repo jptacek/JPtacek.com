@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -102,7 +106,7 @@
 <p>WebMatrix harkens back to the days of Classic ASP. It contains code logic in a single page, including the SQL statement. You can then render your page using Microsoft&#39;s new <a href="http://www.computerworld.com/s/article/9178910/Microsoft_sharpening_Razor_view_engine_for_ASP.Net?source=rss_news">Razor</a>engine.</p>
 <p><strong>Getting Started
 </strong>To get started, <a href="http://www.asp.net/webmatrix">download WebMatrix </a>using Microsoft&#39;s web platform installer. Upon starting up the application you&#39;ll see a nice, simple-to-use page that includes many templates you can use to get started with your development quickly and easily.</p>
-<p><img src="http://www.jptacek.comWebMatrixScreen.jpg" alt=""></p>
+<p><img src="/2011/06/06/index/WebMatrixScreen.jpg" alt=""></p>
 <p>So, what does the code look like? Truthfully, it&#39;s really simple. Here is the basis of a page we used to create a list of all students participating in the Compassion Project.</p>
 <p>The first thing to realize is the @{ } syntax is part of the Razor view engine. It is the replacement for &lt;%= %&gt; that tells the runtime you are escaping out to do something code like. Essentially, to get our list of data we do three things ... open a database connection, tell it the SQL command, and execute the SQL statement, the same three things we always do. In this case however, those three things are three lines:</p>
 <p>
@@ -117,7 +121,7 @@ Next we have to render the output to the page. Again, we rely on the Razor View 
 <p><body></body></p>
 <p><ul>
 @foreach (var row in data) {</ul></p>
-<p><li><a href="http://www.jptacek.comEditArtist.cshtml?id=@row.PictureNumber">@row.PictureNumber</a> @row.LastName @row.FirstName</li>
+<p><li><a href="/2011/06/06/index/EditArtist.cshtml?id=@row.PictureNumber">@row.PictureNumber</a> @row.LastName @row.FirstName</li>
 }
 
 
@@ -185,7 +189,7 @@ return returnValue;
 <p><title>Edit Artist</title>
 </p>
 <p><body>
-<a href="http://www.jptacek.comPage.cshtml">Home Page</a></body></p>
+<a href="/2011/06/06/index/Page.cshtml">Home Page</a></body></p>
 <p><form action="" method="post"></form></p>
 <p></p><p>Picture Number: @pictureID</p><p></p>
 <p></p><p>First Name: @studentFirstName</p><p></p>
@@ -196,7 +200,7 @@ return returnValue;
 <p></p><p>Display Student Online <input type="checkbox" name="displayOnline" @displayonlinecheck=""></p><p></p>
 <p></p><p>Featured Art <input type="checkbox" name="chkFeaturedImage" @isimagecheck=""></p><p></p>
 <p></p><p>Featured Statement<input type="checkbox" name="chkFeaturedStatement" @isstatementcheck=""></p>
-<img src="http://www.jptacek.com@imageUrl"><p></p>
+<img src="/2011/06/06/index/@imageUrl"><p></p>
 <p></p><p><input type="submit" value="Save"></p>
 
 
@@ -252,7 +256,7 @@ return returnValue;
 
             <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript></div>
 <script type="text/javascript">
-    var disqus_shortname = 'ewalnet';
+    var disqus_shortname = 'jptacek';
     var disqus_url = 'http://www.jptacek.com/2011/06/06/index/';
     var disqus_identifier = disqus_url;
     var disqus_title = 'WebMatrix Proves an Excellent Tool for Creating Small Sites Quickly';

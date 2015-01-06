@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -93,51 +97,31 @@
             
     <article class="post">
     
-    <h1><a href='/2014/01/21/index/'>GitHub Repository Not Found - Case Issue?</a></h1>
+    <h1><a href='/2012/10/08/index/'>Xbox Phone</a></h1>
     
-        <div class="post-date">Jan 20th, 2014</div>
+        <div class="post-date">Oct 7th, 2012</div>
 
     <div class="post-content">
-        <p>This morning, I was pushing a small update to my blog and I received an error that my GitHub repository was unable to
-sync. Usually my workflow goes something like this...</p>
-<ol>
-<li>Commit GitHub changes via <a href="http://www.jetbrains.com/webstorm/">WebStorm</a></li>
-<li>If that doesn&#39;t work, use the GitHub Windows/WPF client <a href="http://windows.github.com/">http://windows.github.com/</a></li>
-<li>Use command line Git</li>
-</ol>
-<p>While I want to get better at 3, 1 is much easier and when I do 2, I am in a hurry. :)</p>
-<p>Ultimately, I am not really sure what happened. My development environment worked fine yesterday when I committed
-changes, but today there were issues. I THINK it may have to do with case differences between when I setup
-the repository locally and how GitHub may be handling it on the backend today.</p>
-<p>When I pushed my commit to the repo with the command</p>
-<pre class="highlight"><code class="hljs bash">git push origin master
-</code></pre>
-<p>The following error was returned</p>
-<pre class="highlight"><code class="hljs bash">remote: Repository not found.
-fatal: repository <span class="hljs-string">'http://github.com/jptacek/JPTACEK.com.git/'</span> not found
-</code></pre>
-<p>You can see the message below</p>
-<p><img src="http://www.jptacek.comrepoNotFound.png" alt="GitHub Error"></p>
-<p>Again, no changes have been made to the repo. Similar messages appeared in the GitHub client and WebStorm. Other
-repositories I had on GitHub I was able to commit and push changes to. The only thing I could think was that
-the case was different on my local origin in comparison to the backend GitHub repository.</p>
-<p>The fix was simple enough, reset the origin with and change the case of the URL so that it was exactly the
-same as my repository on GitHub.</p>
-<pre class="highlight"><code class="hljs bash"> git remote <span class="hljs-keyword">set</span>-url origin https://github.com/jptacek/JPtacek.com.git
-</code></pre>
-<p>After this, I was then able to commit changes without issue in all the different client apps as well as the command
-line.</p>
-<p>as shown in the following screen shot</p>
-<p> <img src="http://www.jptacek.comrepoFound.png" alt="Repo found"></p>
-<p>It strikes me as pretty odd that GitHub would suddenly stop working because of a case issue between my local dev
-machine, which has been working fine for many months, and the GitHub server. However, that appears to be the case in this instance.</p>
-<p>Pretty much just documenting this for my future self :)</p>
+        <p>Last week saw a lot of rumors running around that Microsoft would be releasing their own Windows Phone next year. <a href="http://www.wpcentral.com/microsoft-does-indeed-have-their-own-windows-phone">WPCentral</a>, <a href="http://www.bgr.com/2012/10/02/microsoft-surface-phone-release-date-windows-phone-8/">BGR</a> and <a href="http://www.theverge.com/2012/10/3/3445860/microsoft-surface-phone-rumors-windows-phone">The Verge</a> had &quot;trusted&quot; sources confirm the release of a Windows Phone next year (2013). Even <a href="http://www.forbes.com/sites/ewanspence/2012/10/07/why-its-a-good-idea-for-microsoft-to-build-their-own-surface-smartphone-windows-phone-surface-smartphone/">Forbes</a> got into the mix saying it would be a good idea.</p>
+<p>There are a lot of ways this would be difficult for Microsoft. They do not have distribution with the carriers, and that takes work. They have also burnt some bridges along the way (&quot;Remember the Kin&quot; I think is a Verizon rallying cry). They have also invested a lot in their relationship with Nokia.</p>
+<p>If they are REALLY looking to get into the mobile phone business, they would just buy Nokia. Microsoft makes money from nearly every Android device sold and Nokia makes money on every iPhone sold. Having your competitors help pay for your developers as you try to take market share is fun. There is also a ton of Intellectual Property that Nokia brings to the mobile space that Microsoft can realize benefit from. Their mapping technology is one of the top two (if not top) in the industry. They also have excellent native apps that Microsoft could leverage natively for all of their phones. Moving away from a Nokia partnership could set Microsoft back, especially if the relationship changes in a way that they lose their mapping technology.</p>
+<p>Lots of the speculation is that Microsoft would be making an unlocked device that they could sell directly to consumers, ala the Google approach with Nexus. I don&#39;t think that is going to happen. What I think is going to happen is that Microsoft is going to make a portable Xbox based on Windows Phone. Let&#39;s call it the XBox Surface.</p>
+<p>What do we know.</p>
+<p><strong>New Xbox Next year</strong> - Microsoft is rumored to be releasing a new version of the XBox next year. There is also rumors/confirmation that the new Xbox will be based on the same core as Windows 8. You can be pretty sure that the new Xbox will be launching later next year, in time for the Holiday season. Both of the previous version of the XBoxes launched in November.</p>
+<p><strong>Windows Phone</strong> - The upcoming release of Windows Phone 8 is also reworked to be based on the Windows 8 OS. With all of the secrecy it is hard to say, but it SEEMS that Microsoft has not totally baked this through. Next year, you can expect it to be more fully integrated. Also, Microsoft traditionally updates their OS in October/November time frame.</p>
+<p><strong>Windows 8.Next</strong> - Microsoft has stated they would like to get into quicker rev cycles for both Office and Windows. The Windows RT side of the OS seems like this would be readily doable. We can assume that this would happen about a year after the release, which gets us into September/October</p>
+<p><strong>One OS To Rule Them All</strong> - A good deal of Microsoft&#39;s success comes from the ability to make developers productive and create apps. Recently, Microsoft has been promoting a &quot;Shared Windows Core&quot;. This makes it easier for developers to create applications once and deploy to Windows 8 or Windows Phone, and one assumes Xbox.Next. While this is coming along, it doesn&#39;t feel like it is totally completed. I think it will be MUCH closer to fully baked next year.</p>
+<p>So what do we have... Rumors that Microsoft is building a Windows Phone Surface type device, a new version of the XBox and the assumption of new Windows Phone and Windows releases next fall. I think you throw this all into a blender, and Microsoft will not be releasing a Surface Phone, but a handheld Xbox based phone.</p>
+<p>The Xbox Surface would be based on the next version of Windows Phone 8, which I believe will be tightly integrated with the next Xbox. It will allow developers to much more easily create applications for both the next Xbox as well as the phone. Obviously you will not play Halo 5 on the phone, but you could maybe have a lighter graphic version of the FPS as well as augmented second screen for play if you wanted. Think the next version of Microsoft&#39;s SmartGlass on steroids, which will be more close to what Nintendo is doing with the WII U.</p>
+<p>Microsoft has had tremendous success with the Xbox in the consumer space. It is a brand consumers trust. They do not have a competitor to Sony&#39;s PSP line. It is well past time they create one. With the upcoming release  of the new Xbox it is my guess you will see one and it will be based on Windows Phone. And hey, if your new Xbox portable gaming device makes phone calls, well that is just a bonus.</p>
+<p>And just like that, Microsoft has a path to gain traction in the phone space.</p>
+<p>&nbsp;</p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/github/'>GitHub</a>, <a href='/tags/web/'>Web</a>
+        Posted In: <a href='/tags/business/'>Business</a>, <a href='/tags/windows-8/'>Windows 8</a>
     </div>
     
     <br/>
@@ -146,47 +130,41 @@ machine, which has been working fine for many months, and the GitHub server. How
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='GitHub Repository Not Found - Case Issue?' class="twitter-share-button" data-url="http://jptacek.com/2014/01/21/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Xbox Phone' class="twitter-share-button" data-url="http://jptacek.com/2012/10/08/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/01/21/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2012/10/08/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/01/21/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2012/10/08/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2014/01/11/index/'>What is Yammer... and why should your company use it?</a></h1>
+    <h1><a href='/2012/09/18/index/'>Windows 8 Dev Camp</a></h1>
     
-        <div class="post-date">Jan 10th, 2014</div>
+        <div class="post-date">Sep 17th, 2012</div>
 
     <div class="post-content">
-        <p>In real life, I can tend to be a socially awkward computer geek. In digital life, I am quite social where I have accounts on
-<a href="http://www.jptacek.comwww.twitter.com/jptacek">Twitter</a>, <a href="http://www.jptacek.comwww.linkedin.com/in/johnptacek">LinkedIn</a>, <a href="http://plus.google.com/+JohnPtacek">Google+</a>,
-etc. Recently, our company has started using Yammer and I struggled with do I need another social media account. How does Yammer work better than the sites I already use? How does it supplant and/or supplement the awesome way Skyline uses SharePoint to drive collaboration within our growing company?</p>
-<p>One of my favorite words to use is Grok. It is from Robert Heinlein’s Stranger in a Strange Land. Essentially, grok is to understand something truly (<a href="http://en.wikipedia.org/wiki/Grok">http://en.wikipedia.org/wiki/Grok</a>). I try on occasion to grok things. It doesn’t always work well. So, here is where I am currently on trying to grok Yammer and how it can be used in SharePoint, within our teams, and Skyline (or your company) to enable us to better deliver for our clients.</p>
-<p>So what is the first thing I think….. Yammer is ALL about the timeline. What do I mean by that? Let me start by example. I walk around with what I call my little black book, which is a Moleskine I use for writing stuff in it all the time. It is meeting notes, To-Dos, etc. I used to use OneNote a lot, but the reason I moved away from it is there is no sense of the flow of time. I know if I wrote something ~ three months ago, but I don’t know if I wrote it in a SharePoint ideas folder, a blog ideas folder, or my dev things to explore. I was impacted because I never had a good way to see things chronologically by paging through the content flow. The lack of timeline has moved me away from OneNote unless it is recording info from my brain. I use it for information I need at a later point. For example, what are my favorite recipes, what is the URL that explains WIF security, what is the wireless password, what music do I need to check out, that kind of stuff. OneNote has become the persistence mechanism for information I need.</p>
-<p>I see SharePoint as the location of storage for information for companies. Essentially where instead of looking for information that is pertinent to me, SharePoint is information that is important to an organization. It is there for persistence of business information. What is the customer deliverable for a project, where is information about our benefits, where is the blog post one of my colleagues wrote on FAST search. However, not all business information NEEDS to be persisted. Some of it can be very valuable in the timeline sense. I posted a link recently within our internal Skyline Yammer about Mercury Marine expanding in Fon Du Lac. Is it interesting to Skyline? Maybe. Does it need to be in SharePoint for business needs? No. Is the information valuable for a short time frame? Definitely. It is that ephemeral type of content and discussion that Yammer is useful for.</p>
-<p>So here is an EXCELLENT example of where Yammer is useful for an organization and how the concept of a timeline is valuable. Our CEO, Mitch Weckop, writes some pretty interesting blog posts on our SharePoint Intranet. Mitch talks about the economy or current legislation and how it can impact our business. Mitch meets with lots of our customers and shares his experiences in terms of how we can make Skyline better. Using these posts, Mitch does a great job trying to engage our associates in dialog. However, unless you subscribe to the blog posts via an alert or you notice it on our Skyline Intranet, our associates would miss it. However, if you log onto Yammer, where Mitch also posts a link back to his blog, it appears in our Associates’ timeline, right near the top, since it is recent. Organizationally, this timeline drives further value because unless you are Mitch, you are not seeing any comments that are being put on his blog after you visit it. When our company has a dialog within Yammer about the blog posts, everyone will see recent comments because they are at the top of the timeline. It essentially pokes the discussion back to the top of the information flow. Previously, this would not happen unless you were constantly checking the blog posts internally, because SharePoint does not have a great, “hey look here!” mechanism.</p>
-<p><img src="http://www.jptacek.comyammer.png" alt="Yammer Home Page"></p>
-<p>So ultimately, thing one I have come to understand about Yammer is the value comes in taking the flow of organizational information, and getting in front of people in terms of timeliness. THIS is the reason email continues to persist I believe. You have a timeline. You know the emails of today are MUCH more important than the information of six months ago. SharePoint as the persistence of business critical information has a difficult time projecting this information as a flow of time for its users. Hence, Microsoft’s buy of Yammer. It allows Microsoft to provide time pertinent information to organizations on top of SharePoint’s persistence based excellence.</p>
-<p>Thing two about Yammer is the social aspect. Any of you folks who jump on Twitter realize you learn and understand people a bit better than you otherwise would. If you follow me on Twitter, you know I occasionally babble on my family, listen to too much music, etc. Is there any business value in that? You bet. As organizations grow, they are not going to have a metaphorical water cooler to gather at. Companies need to try and use a social tools like Yammer to get a sense of the people they work with. At Skyline recently we have learned through Yammer that some of our Green Bay associates were rocking some pretty awesome mustaches for Movember. We learned about the results of sponsorships we do for hackathons in Milwaukee. We also learned who is on the naughty list (Bear fans) and who is on the nice list (Packer fans), or vice versa. Using Yammer helps employees build social capital with your organization. The cool thing this social capital does is allow us to have bad days (I went to school at UW-Madison, so I apologize if this is getting too touch/feely). You are much more likely to give the benefit of the doubt to a peer when they have a bad day if you know them personally, and social tools like Yammer help build that for organizations, especially geographically disperse organization where you do not have day to day interactions. Digital tools will never be the most important part of building social capital, but it can be valuable part, because even though you may not interact on a day to day basis, you still can learn about your peers. With Yammer, you can help socialize your culture.</p>
-<p>To summarize</p>
-<p>1 – Yammer is timeline. Get timely information in front of associates and yourself</p>
-<p>2 – Yammer is dialog. Dialoging about the timely information to provide input, feedback and discussion</p>
-<p>3 – Yammer is NOT about persistence. Yammer is not the place for project proposals, financials, etc</p>
-<p>4- Yammer is people. Yammer can be the virtual water cooler (or Skyline style, virtual coffee machine). An opportunity to engage people as people, rather than employees</p>
-<p>5 – Yammer is NOT required. Just like you don’t want to try and keep up to date on your entire Twitter feed, you shouldn’t have to feel like that with Yammer. Business persisted information happens generally outside of Yammer, business supplementing happens with in. As cultures grow, this can change over time, but definitely not day one!</p>
-<p>If you want to learn more about Yammer or how your organization can use, feel free to reach out to me!</p>
-<p>This blog origanally appeared at  <a href="http://www.skylinetechnologies.com/Blog/Article/2428/What-is-Yammer-and-why-should-your-company-use-it.aspx#">http://www.skylinetechnologies.com/Blog/Article/2428/What-is-Yammer-and-why-should-your-company-use-it.aspx#</a></p>
+        <p>I work at <a href="http://www.skylinetechnologies.com">Skyline Technologies</a>, which is a Wisconsin based consulting company. One way that we really differentiate ourselves in the consulting space is our associate focus. We are always looking for interesting ways to get our teams together, engage with one another and learn from the smart people we have in our organization.</p>
+<p>An example of this... our management team had an awesome idea. Let&#39;s get everyone together and learn how to write Windows 8 apps. They then said let&#39;s make it more awesome, let&#39;s get everyone that writes Windows 8 apps a <a href="http://www.microsoft.com/surface/en/us/about.aspx">Windows Surface RT</a> when they ship. This last weekend (9/15/12 - 9/16/12), we had close to 50 associates show up at our Appleton office to sling code for two days. It was awesome.</p>
+<p>[caption id=&quot;attachment_1011&quot; align=&quot;aligncenter&quot; width=&quot;300&quot;]<a href="http://www.jptacek.com/wp-content/uploads/2012/09/Win8DevCamp.jpg"><img src="/2012/09/18/index/Win8DevCamp-300x199.jpg" alt="Windows 8 Dev Camp" title="Win8DevCamp"></a> Win 8 Dev Camp[/caption]</p>
+<p>We developed six different applications, three on the HTML/Javascript stack and three on the C#/XAML stack. We had several of our associates who have already created applications, including <a href="http://apps.microsoft.com/webpdp/ur-pk/app/cleartrend/8c19bfc1-39de-45f5-b8b9-77fa3717ba81">clearTREND</a>, which has been <a href="http://www.youtube.com/watch?v=zFwnXTBw-xY&amp;feature=colike">recognized</a> by Microsoft for its innovative UX. We were able to have those associates help out our six development teams whenever people hit roadblocks.</p>
+<p>The best part about the <a href="http://www.skylinetechnologies.com/blog/Pages/Dev_Camps_Bring_Out_the_Best.aspx">Dev Camps</a>, <a href="http://www.skylinetechnologies.com/news/Pages/RiverviewGardensGiveCamp.aspx">Give Camps</a> and <a href="http://www.microsoft.com/casestudies/Windows-Azure/Trout-Museum-of-Art/Museum-Increases-Exhibit-s-Reach-Threefold-with-Interactive-Virtual-Exhibit/4000010875">Community projects</a> we do, is the opportunity to work and hang out with one another. I am constantly amazed by how smart and engaged the people I work with are. Despite spending a weekend full of 12+ hours days working (with a little beer drinking and football watching thrown in for good measure), we all left energized and excited.</p>
+<p><a href="/2012/09/18/index/devcamp1.jpg"><img src="http://www.jptacek.com/wp-content/uploads/2012/09/devcamp1.jpg" alt="" title="devcamp1"></a></p>
+<p>Great people and great apps make for a great weekend.</p>
+<p>&nbsp;</p>
+<p>[caption id=&quot;attachment_1081&quot; align=&quot;aligncenter&quot; width=&quot;300&quot;]<a href="http://www.jptacek.com/wp-content/uploads/2012/09/WP_000165.jpg"><img src="/2012/09/18/index/WP_000165-300x224.jpg" alt="Kickoff" title="WP_000165"></a> Getting Started</p>
+<p><div class="mceTemp mceIEcenter"><dl id="attachment_1091" class="wp-caption aligncenter" style="width: 310px;"><dt class="wp-caption-dt"><a href="http://www.jptacek.com/wp-content/uploads/2012/09/WP_000166.jpg"><img src="/2012/09/18/index/WP_000166-300x224.jpg" alt="Kickoff" title="WP_000166"></a></dt><dd class="wp-caption-dd">Morning Kickoff[/caption]</dd></dl></div></p>
+<p>
+&nbsp;</p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/yammer/'>Yammer</a>, <a href='/tags/web/'>Web</a>
+        Posted In: <a href='/tags/appleton-compassion/'>Appleton Compassion</a>, <a href='/tags/giveology/'>Giveology</a>, <a href='/tags/html-5/'>HTML 5</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/windows-8/'>Windows 8</a>
     </div>
     
     <br/>
@@ -195,87 +173,36 @@ etc. Recently, our company has started using Yammer and I struggled with do I ne
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='What is Yammer... and why should your company use it?' class="twitter-share-button" data-url="http://jptacek.com/2014/01/11/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Windows 8 Dev Camp' class="twitter-share-button" data-url="http://jptacek.com/2012/09/18/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/01/11/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2012/09/18/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/01/11/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2012/09/18/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2014/02/28/index/'>Setting Up Cordova (PhoneGap) for Development on Windows Machines</a></h1>
+    <h1><a href='/2012/09/10/index/'>Windows Identity Foundation and Windows 8</a></h1>
     
-        <div class="post-date">Feb 27th, 2014</div>
+        <div class="post-date">Sep 9th, 2012</div>
 
     <div class="post-content">
-        <p>Cordova, also known as PhoneGap, is an interesting technology to bundle up mobile web apps created with HTML, CSS and JavaScript for deployment across multiple phone platforms, such as iOS and Android. Cordova also has a JavaScript library that provides access to phone features such as the camera, accelerometer, compass, etc. For organizations that don’t want to invest in coding up an application for multiple platforms, it can be a quick option.
-Recent versions of Cordova have utilized a Command Line Interface (CLI) for installation and configuration leveraging Node.JS for their implementation.</p>
-<p>The terms PhoneGap and Cordova can be a bit confusing for folks, especially for those just getting started. PhoneGap was a
-platform for creating mobile applications using native web technologies produced by Nitobi. Adobe then purchased PhoneGap. Around
-version 1.9 of the product, they Open Sourced PhoneGap and called it <a href="http://cordova.apache.org/">Cordova</a>. They kept the PhoneGap
- name and have extended things a bit by creating an great back end system to build for multiple platforms as well as starter solution
- for different platforms. More information about PhoneGap can be found at <a href="http://phonegap.com/">phonegap.com</a>. The reality is I,
- and most people, refer to the names interchangeably, but there are differences.</p>
-<p>So with that out of the way, let&#39;s look at how wo install Cordova on Windows 8.</p>
-<p>First, you will need to download and install Node.js from <a href="http://nodejs.org/download">http://nodejs.org/download</a>. After this, you should be able to start up PowerShell and run Node from the command line. You can ensure you have node setup by running node –version within a PowerShell prompt</p>
-<p><img src="http://www.jptacek.comnodeCheck.png" alt="Cordova Version check"></p>
-<p>We will be installing global packages via the Node Package Manager (NPM). If you have never used or installed Node previously, you will need to update your path variables to the global packages location is in your path.</p>
-<p>This is done by going to the computer properties and selecting Advanced System Settings</p>
-<p><img src="http://www.jptacek.comsystemSettings.png" alt="System Settings"></p>
-<p>Since we need to update the path, we choose Environment Variables</p>
-<p><img src="http://www.jptacek.comenvVariables.png" alt="Environment Variables"></p>
-<p>Within the Environment Variables, there are two paths you can choose between, the path for the logged in use and the path for all users. I usually update the current logged in user (the first Path listed under user variables for jptacek)</p>
-<p><img src="http://www.jptacek.compathVariables.png" alt="Path variables"></p>
-<p>You then just update the Path by clicking edit and adding the location of the NPM packages by appending the following</p>
-<pre class="highlight"><code class="hljs bash">%userprofile%\AppData\Roaming\npm
-</code></pre>
-<p>Note, if you did not have the NPM packages in your path and have taken these steps, you will need to restart PowerShell for your environment variables to be set.
-At this point, we have Node setup and are set to install Cordova. This is accomplished via the Node Package Manager (NPM), which downloads and sets up Node applications.</p>
-<pre class="highlight"><code class="hljs bash">Npm install –g cordova
-</code></pre>
-<p><img src="http://www.jptacek.comcordovaInstall.png" alt="Cordova Install"></p>
-<p>The <code>–g</code> flag indicates to the NPM package manager that that package should be installed globally. On Windows, this directory
-is often your user directory, <code>AppData\Roaming\NPM</code>, which we talked about setting up above.</p>
-<p>Now that we have Node and Cordova setup and configured on our machine, we are moving on to the fun stuff, app development!</p>
-<p>The way Cordova applications work is by having a base web application with our HTML, JavaScript, CSS and other assets. For each platform we want to deploy and build locally, we have to add the platform. This will also enable us to use emulators for devices on our development machine. We will then invoke the build process, which takes assets from our main WWW application and packages and deploys them to the various platforms we have on our machine. So if, as we are about to do, have platforms for Windows Phone 8 and Windows 8, the build process takes our web assets from our base WWW app, copies them to those specific platform installs.</p>
-<p>Let us take a look at this…</p>
-<p>To create an application in Cordova, we use the CLI to have it generate the shell of our application by running the Cordova create command</p>
-<pre class="highlight"><code class="hljs bash">cordova create MyApp com.jptacek.MyApp MyApplication
-</code></pre>
-<p>The <code>MyApp</code> parameter identifies the directory for the application, which will be created. The second argument,
-is the identifier, which you want to be unique. Most people use the reverse domain style identifier.
-The last parameter is optional, but is the title of the application for display.</p>
-<p>This process will actually go and download the latest template and create the project structure</p>
-<p><img src="http://www.jptacek.comappCreation.png" alt="Cordova App Creation"></p>
-<p>If we take a look in our directory, you will see it created the default structure for the application with the creation of a www directory with a shell application, a plugins directory, etc.</p>
-<p><img src="http://www.jptacek.comdirectoryStructure.png" alt="Cordova App Creation"></p>
-<p>So far, so good, but we cannot actually BUILD anything yet because we haven’t created any platforms on the development machine. The WWW directory shown above has our HTML, JavaScript, CSS and other assets. The platforms are the various devices we want to be able to build locally on our machine. The implication here is that you need to setup the local machine for those platforms. This is done by adding the platforms via the CLI.</p>
-<p>Since we are doing this on a Windows machine, we will add two platforms, one for Windows Phone 8 and one for Windows “Metro” 8</p>
-<p><img src="http://www.jptacek.comaddPlatform.png" alt="Add application platform"></p>
-<p>Note, if you try and add platforms that are not available for development, Cordova will not allow this. For example, you cannot do iOS development on a Windows 8 machine, so Cordova will not be able to find the XCode libraries and will raise an error trying to setup. If you want to be able to build locally for an Android device, you will need eclipse and the Android SDK, etc.</p>
-<p>By adding the platform, you are actually creating Visual Studio solution files for creating both a native Windows Phone 8 and</p>
-<p>Windows 8 application that can be loaded in Visual Studio and run with the appropriate emulator.</p>
-<p><img src="http://www.jptacek.comslnDirectory.png" alt="Solution Directory"></p>
-<p>You can load up these solutions and run them natively. However, you first need to build the solution. At this point, you just have a skeleton setup for the project, no assets have been deployed to the skeleton of the project. To do this, you will run the build command in Cordova.</p>
-<pre class="highlight"><code class="hljs bash">Cordova build
-</code></pre>
-<p>This then enables you to run either Windows 8 or Windows Phone 8 to see your solution. Two things… Since each build recreates your solution files from the default WWW directory, your changes will be overwritten. As a result, I usually don’t like doing my code editing with the WP8 and Windows 8 emulator.</p>
-<p>Second, since you essentially have a web application, you like having access to tools you have come to know and love like Chrome Developer tools or FireFox as you develop your code. For this reason, I usually will create a Virtual Directory to server up the WWW assets from a platform, for example, Windows8, that are deployed during a build. This allows for me to use my tools of choice for web development.</p>
-<p>The reality is, I am most likely to use <a href="http://www.jptacek.combuild.phonegap.com">build.phonegap.com</a> for testing by using the
-actual native deivces. Build.PhoneGap.com will actually take your source, and build your application for the multiple platforms
-supported by PhoneGap. Its hydrate function automatically check for new versions and downloads when you launch on a mobile device like Android or Windows Phone.</p>
-<p>I have not found a great way to do development with PhoneGap. I am VERY interested in the workflow other people use for
-their Cordova/PhoneGap development, please share!</p>
+        <p>In upgrading to Windows 8, I had issues with existing projects that were using Windows Identity Foundation 3.5 (WIF). Attempts to install the WIF SDK or the stand alone installer resulted in an error. With the installed the message was</p>
+<p>Installer encountered an error: 0x80096002. The certificate for the signer of the message is invalid or not found.</p>
+<p>&nbsp;</p>
+<p><a href="http://jptacek.azurewebsites.net/wp-content/uploads/2012/09/InstallError.png"><img src="/2012/09/10/index/InstallError-300x180.png" alt="WIF install error on Windows 8" title="WIFInstallError"></a></p>
+<p>It turns out WIF 3.5 ships with Windows 8. You need to enable this feature to work. To do that, go to Win 8 Search and the application settings area and search for Turn Windows features on or off and enable Windows Identity Foundation 3.5</p>
+<p><a href="http://jptacek.azurewebsites.net/wp-content/uploads/2012/09/WIF35Enable.png"><img src="/2012/09/10/index/WIF35Enable-300x269.png" alt="Eanble WIF 3.5 for Windows 8" title="WIF35Enable"></a></p>
+<p>&nbsp;</p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/phonegap/'>PhoneGap</a>, <a href='/tags/cordova/'>Cordova</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
+        Posted In: <a href='/tags/windows-8/'>Windows 8</a>
     </div>
     
     <br/>
@@ -284,13 +211,13 @@ their Cordova/PhoneGap development, please share!</p>
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Setting Up Cordova (PhoneGap) for Development on Windows Machines' class="twitter-share-button" data-url="http://jptacek.com/2014/02/28/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Windows Identity Foundation and Windows 8' class="twitter-share-button" data-url="http://jptacek.com/2012/09/10/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/02/28/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2012/09/10/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/02/28/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2012/09/10/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 

@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -93,444 +97,66 @@
             
     <article class="post">
     
-    <h1><a href='/2013/12/28/index/'>Saying Goodbye to WordPress</a></h1>
+    <h1><a href='/2013/02/15/index/'>Setting up email for a Custom Domain on a Windows Azure hosted website</a></h1>
     
-        <div class="post-date">Dec 27th, 2013</div>
+        <div class="post-date">Feb 14th, 2013</div>
 
     <div class="post-content">
-        <p>I have been using WordPress for a while with my personal blog, <a href="http://www.jptacek.com">JPtacek.com</a>. I have been a big fan and have written up many posts about setting up <a href="http://www.jptacek.com/tag/wordpress/">WordPress</a> using the awesomeness of Azure websites. However, the time to move on has come upon to a new blogging platform.
-<img src="http://www.jptacek.comsylvester.jpg" alt="Sylvester ByeBye"> <img src="http://www.jptacek.comwordpressLogo.jpg" alt="WordPress logo">
-So the question is why... Well here is my reasoning</p>
-<ul>
-<li>A CMS does a great many things, but ultimately they are for people to be able to host websites and publish content. And most CMSes are for people who do not want to learn about things like HTML. However, with a developer background I kept running into things I could easily do in HTML, but were near impossible within WordPress</li>
-<li>Azure is great, however I still pay for Azure. I am responsible for CPU and bandwidth. Since WordPress is a platform, every page requests is essentially run through a CPU, where the WordPress blackbox does its magic, queries a database and spits out HTML. This is a cost. (To be honest, it is not a BIG cost)</li>
-<li>It always felt a bit goofy to have simple web pages hosted in a back end database. Everything starts as a document or HTML, then gets thrown into a database. I need to be responsible for backing up the database and being a good admin type person. I would rather just have my one true source be HTML that I can save in Dropbox or SkyDrive</li>
-<li>PHP is not my thing. I am always up for learning something new, but PHP is NOT something I that is on the learn something new list.</li>
-<li>Update, update, update. Since WordPress is a platform, hackers tend to get bored and are always looking to hack into it. You constantly need to be aware of keeping your software and plugins up to date if you are hosting your own WordPress environment. This is not an issue if you are hosting at <a href="http://www.WordPress.com">WordPress.com</a>, but I am not, on account of the awesomeness of Azure Websites</li>
-<li>Truthfully, probably the biggest reason is JavaScript. Doing web front end things with WordPress is really not a pleasant experience. I have found myself resorting to embedding <a href="http://www.jsfiddle.net">JSFiddles</a> into my pages to show functionality that is plain easy to do on other platforms.</li>
-</ul>
-<p>So what am I looking for?</p>
-<ul>
-<li>More web, please. I want to be able to have a blog engine that supports HTML and JavaScript, rather than make me miserable</li>
-<li>Speedy please</li>
-<li>Reduce hosting costs, please</li>
-<li>Help me learn something new, please</li>
-</ul>
-<p>I have been spending time thinking about this. I believe I have an answer. Any suggestions from you oh mighty Internet?</p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/wordpress/'>WordPress</a>, <a href='/tags/blog/'>Blog</a>
-    </div>
-    
-    <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
-    <p>&nbsp;</p>
-
-    <div id='socialTags'>
-    <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Saying Goodbye to WordPress' class="twitter-share-button" data-url="http://jptacek.com/2013/12/28/index/">Tweet</a>
-    <!-- Google+. -->
-    <div class="g-plusone" data-size="medium"></div>
-    <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/12/28/index/" ></script>&nbsp;
-    <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/12/28/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
-    </div>
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2013/12/29/index/'>Saying Hello to.... DocPad</a></h1>
-    
-        <div class="post-date">Dec 28th, 2013</div>
-
-    <div class="post-content">
-        <p>I recently <a href="http://www.jptacek.com/2013/12/saying-goodbye-to-wordpress/">blogged</a> about moving off of WordPress to a new blogging platform.
-I have been looking at several different options during this time and have finally picked one. There were three that really piqued my interest; <a href="http://www.tryghost.org">Ghost</a>, <a href="http://jekyllrb.com/">Jekyll</a> with hosting on Github, and <a href="http://docpad.org/">DocPad</a>.</p>
-<p>Each of the platforms had different things that made it interesting to me, and some things I did not like. Let&#39;s review each of them</p>
-<h2 id="ghost">Ghost</h2>
-<p><img src="http://www.jptacek.comGhostLogo.png" alt="Ghost Logo"></p>
-<p>I think <a href="http://www.Ghost.org">Ghost</a> is pretty awesome. When I started thinking about redoing my blog, it had a lot of things I was interested in. The platform is elegant. It uses Markdown for creating content, and the online editor for it is VERY nice. The other thing that really interested me is that it is all built on Node.JS. This is a platform I am definitely interested in growing my skill base.</p>
-<p>However, despite all of these things, Ghost was not for me. In reality, is another blogging/CMS platform. The same limitations I was having with WordPress, in terms of page structure, adding JavaScript content, etc, would still be an impediment on Ghost. Essentially, Ghost is WordPress 2.0, a MUCH nice WordPress, hosted with Node.JS instead of PHP, but not for me and the things I would like to do.</p>
-<h2 id="jekyll">Jekyll</h2>
-<p><img src="http://www.jptacek.comJekyllLogo.png" alt="Jekyll Logo"></p>
-<p><a href="http://jekyllrb.com/">Jekyll</a> was VERY close to being what I chose. The magic of Jekyll is that it creates static HTML from templates. Essentially, you create a page layout. You can then create posts and content using Markdown to be combined with your layout and it will create static HTML. By serving up static HTML, your hosting costs quickly become much less since you are serving up static pages, and millions of web servers over the world are VERY good at that.</p>
-<p>Jekyll also has the added benefit of being tied to <a href="http://www.GitHub.com">GitHub</a> and its <a href="http://pages.github.com/">GitHub Pages</a> platform. I can have the fine folks at GitHub and their operations folks be responsible for ensuring my site is up. It also has some slick features where you check in your Markdown file in GitHub and your site content is automatically deployed.</p>
-<p>However, like Goldilocks finding the porridge a bit too cool, there were some things that steered me away. First, while the automatic updating feature is slick, it is a limited subset of the Jekyll functionality. Further, Jekyll is based on the Ruby programming platform. While I find that more interesting than WordPresss’ PHP, it is definitely not as high up on my list as Node.JS.</p>
-<p>Which brings us too….</p>
-<h2 id="docpad">DocPad</h2>
-<p><img src="http://www.jptacek.comDocPadLogo.png" alt="DocPad Logo"></p>
-<p>Ultimately, I ended up picking <a href="http://docpad.org/">DocPad</a>. I REALLY liked the idea of static page generation. I have been around the web now that it is all back where it started, with developers putting static HTML files on a server. Who would have thunk? Of course, this is much nicer since you have templates to go and create the site. It is also a Node.JS application, which is of interest. You can also auto deploy your markdown files and have it create the static HTML in an Azure web instance after you commit and push your changes to GitHub. VERY SLICK. Of course, I pay for the CPU part of that, and only when I create content. The rest will all be static HTML files being sent by IIS.</p>
-<p>It is really very slick how easy the site setup was. I will detail my instructions down the road. I do LOVE the Node Package Manager and the magic of package.json which allows you to quickly get a site up and running on your machine.</p>
-<p>I give a lot of credit to the site redo to my old <a href="http://www.SkylineTechnologies">Skyline</a> colleague and now Microsoft guy, <a href="http://www.yTechie.com">Jason Young</a>. As I was investigating my next blog platform, he published a <a href="http://www.ytechie.com/2013/11/blogging-awesomeness-with-a-static-generator-and-markdown/">post</a> about migrating his site to DocPad. The gold star for Jason was taking the DocPad site and configuring Azure to compile the markdown to static HTML and then set for hosting. This is what moved me from going to Jekyll to Docpad. VERY COOL!</p>
-<p>Also, hat tip to <a href="http://www.ewal.net/">Erv Walter</a> for great stuff he did in setting up the platform and UI that Jason and I have both, VERY liberally borrowed from.</p>
-<p>Obviously, my site has a lot of UI cleanup I would like to do, I also need to edit a lot of posts, but here it is, in all of it&#39;s static glory.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>Why DocPad</p>
-<ul>
-<li>Node.JS platform</li>
-<li>Templating engine to allow creation of static HTML files</li>
-<li>Enable Javascript on pages</li>
-<li>Auto publish from a GitHub repository</li>
-<li>Markdown language for publishing</li>
-<li>Lots of extensibility via Plugins</li>
-</ul>
-<p><a href="https://github.com/ervwalter/ewalnet-docpad">Erv Walter GitHub repository for Ewal.net</a></p>
-<p><a href="https://github.com/ytechie/ytechie-docpad">Jason Young GitHub repository for Ytechie.com</a></p>
-<p><a href="https://github.com/jptacek/JPtacek.com">My GitHub repository for JPtacek.com</a></p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/wordpress/'>WordPress</a>, <a href='/tags/blog/'>Blog</a>, <a href='/tags/docpad/'>DocPad</a>
-    </div>
-    
-    <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
-    <p>&nbsp;</p>
-
-    <div id='socialTags'>
-    <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Saying Hello to.... DocPad' class="twitter-share-button" data-url="http://jptacek.com/2013/12/29/index/">Tweet</a>
-    <!-- Google+. -->
-    <div class="g-plusone" data-size="medium"></div>
-    <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/12/29/index/" ></script>&nbsp;
-    <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/12/29/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
-    </div>
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2014/01/23/index/'>AngularJS - More with ng-repeat</a></h1>
-    
-        <div class="post-date">Jan 22nd, 2014</div>
-
-    <div class="post-content">
-        <style>
-        .tableOdd {
-            background-color: green;
-        }
-        .tableEven {
-            background-color: gold;
-        }
-    </style>
-
-<p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
-<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
- HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
- Contrast this to a framework like JQuery where the DOM will update your data.</p>
-<p><img src="http://www.jptacek.comangularLogo.png" alt="AngularJS Logo"></p>
-<p>This is the fourth in a series of posts on AngularJS where we are using Chemistry data from the periodic table
-to help us understand the framework. The others posts are</p>
+        <p>The blog site you are currently on, jptacek.com, is using <a href="http://www.windowsazure.com/en-us/home/scenarios/web-sites/">Windows Azure websites</a>, which is a great way to quickly get a web presence up and running. The site also provides very low barrier to entry for setting up blogging engines or CMS applications. The one thing it does not do though is offer email services out of the box.</p>
+<p>One way to remedy this is to use Google Apps to create a domain for hosting of email. I use Google Apps for my personal email for me and my family and it works great. In the hope of learning something new, I thought I would see what Microsoft has to offer in the space and see what setup was like.</p>
+<p>In the Microsoft world, their Google Apps competitor is really Office 365. This is overkill for what I want, since I am just looking for email. It also costs money. Microsoft offers Custom Domains which allows us to use the Outlook.Com email service for our domain.</p>
+<p>Steps for getting this setup</p>
 <ol>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
-<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
-<li>AngularJS - More with NG-Repeat</li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
-<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
-<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
-<li><a href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
-<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
-<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
+<li>Go to <a href="http://Domains.live.com">http://Domains.live.com</a>. Note, you are going to want to use Chrome for this. The IE 10 browser looks awful
+<img src="/2013/02/15/index/021513_1309_Settingupem1.png" alt=""></li>
 </ol>
-<blockquote>
-<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
-the home page of my blog, only one application will work. I need to refactor the entire site to account for
-this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
-</blockquote>
-<p>In this post, we are going to dig a bit deeper into ng-repeat and discover a few things.</p>
-<p>To level set, we have a controller called chemistryApp.js. This creates our AngularJS application</p>
-<p><em>chemistryApp.js</em></p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
-</code></pre>
-<p>and a controller that references are json file of chemistry data and sets it to a scope variable</p>
-<p><em>chemistryController.js</em></p>
-<pre class="highlight"><code class="hljs javascript">chemistryApp.controller(<span class="hljs-string">'chemCtrl'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope)</span> {</span>
-        $scope.periodic = perioicData;
-    }
-);
-</code></pre>
-<p>First up, instead of creating an unordered list, we are going to create a table. This is done by putting the
-<code>ng-repeat</code> directive on a <code>&lt;tr&gt;</code> tag. For example</p>
-<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements "</span>&gt;</span>
-</code></pre>
-<p>Then we can add our data on a cell by cell basis. For this example, we are going to link to a Wikipedia article about
-each element, and then display things like the atomic number, atomic weight, etc. Tying this with our <code>ng-repeat</code>
- directove and
-our table markup becomes</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table table-striped table-bordered table-hover table-condensed"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements "</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://en.wikipedia.org/wiki/{{element.name}}"</span> <span class="hljs-attribute">Title</span>=<span class="hljs-value">"Wikipedia article on {{element.name}}"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_top"</span>&gt;</span>{{element.name}}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.phase}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.ionization}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.melting}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.boiling}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
-</code></pre>
-<p>We now have a list of the Chemical elements in a table.</p>
-<div id="appContainer" ng-app="chemistryApp">
- <div id="periodicTable0" ng-controller="chemCtrl">
-        <table class="table table-striped table-bordered table-hover table-condensed">
-            <tr>
-                <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
-            </tr>
-            <tr ng-repeat="element in periodic.elements ">
-                <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
-                <td>{{element.atomicNumber}}</td>
-                <td>{{element.atomicWeight}}</td>
-                <td>{{element.phase}}</td>
-                <td>{{element.ionization}}</td>
-                <td>{{element.melting}}</td>
-                <td>{{element.boiling}}</td>
-            </tr>
-        </table>
-    </div>
+<p>Versus Chrome</p>
+<p><img src="/2013/02/15/index/021513_1309_Settingupem2.png" alt=""></p>
+<ol>
+<li>Click the sign in button and use your Microsoft account and then click the Get Started link</li>
+<li><div>Type in the custom domain you will want email for, in our case, jptacek.com. Make sure Set up Outlook.com is selected for your domain mail service, and then hit the continue button</div>
+<img src="/2013/02/15/index/021513_1309_Settingupem3.png" alt=""></li>
+<li><div>You will then need to battle Microsoft&#39;s exceedingly unforgiving CAPTCHA system, after which you will be taken to the registration screen. The first step is to configure the MX record (MX is the DNS record used for mail)</div>
+<img src="/2013/02/15/index/021513_1309_Settingupem4.png" alt=""></li>
+<li>Log onto your DNS provider, in our case DNSImple.com, and add the record. This varies by DNS provider. IN the case on DNSimple, we go to the Advanced section, and choose Add a Record and select MX from the dropdown</li>
+<li><div>Our next step is to create a server trust record as recommended on the admin screen. This is a TXT DNS record that helps verify our email address and helps prevent the email from the site from being marked as junk</div>
+<img src="/2013/02/15/index/021513_1309_Settingupem5.png" alt=""></li>
+<li>Next, we want a URL we can use to access our email. To do this, we create a CNAME record that points back to the Hotmail/Outlook . We will use mail, so mail.jptacek.com will be the URL we use when accessing email. You could use <a href="http://www.youtube.com/watch?v=-VILl6FOm6s">kwyjibo</a> if you wanted to, just remember it <span style="font-family: Wingdings;">J</span> The CNAME record needs to point back to go.domains.live.com
+&nbsp;</li>
+</ol>
+<p><img src="/2013/02/15/index/021513_1309_Settingupem6.png" alt=""></p>
+<ol>
+<li><div>It can take up to 60 minutes for your domain to resolve, you can see if your domain records are updated by using your favorite command prompt and typing the commands</div>
 
-<p>We can also, just like in our previous example, bind a filter to an input box and search for a chemical element
-by name and have it filter the list automatically.</p>
-<pre class="highlight"><code class="hljs xml">   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"periodicTable"</span>  <span class="hljs-attribute">data-ng-controller</span>=<span class="hljs-value">"chemCtrl"</span> &gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementNameOnlyTable"</span>/&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table table-striped table-bordered table-hover table-condensed"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements | filter:{name:elementNameOnlyTable}"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://en.wikipedia.org/wiki/{{element.name}}"</span> <span class="hljs-attribute">Title</span>=<span class="hljs-value">"Wikipedia article on {{element.name}}"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_top"</span>&gt;</span>{{element.name}}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.phase}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.ionization}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.melting}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.boiling}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-</code></pre>
- <div id="periodicTable" ng-controller="chemCtrl">
-    <form id="frm1">
-    <input type="text" ng-model="elementNameOnlyTable">
-    <table class="table table-striped table-bordered table-hover table-condensed">
-        <tr>
-            <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
-        </tr>
-        <tr ng-repeat="element in periodic.elements | filter:{name:elementNameOnlyTable}">
-            <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
-            <td>{{element.atomicNumber}}</td>
-            <td>{{element.atomicWeight}}</td>
-            <td>{{element.phase}}</td>
-            <td>{{element.ionization}}</td>
-            <td>{{element.melting}}</td>
-            <td>{{element.boiling}}</td>
-        </tr>
-    </table>
-    </form>
-</div>
-
-
-<p>The ng-repeat also has some intrinsic variable definitions. One is <code>$index</code> which is the current key of the element
-of the loop you are on.</p>
- <div id="periodicTable1" ng-controller="chemCtrl">
-        <input type="text" ng-model="elementNameOnlyTable2">
-        <table class="table table-striped table-bordered table-hover table-condensed">
-            <tr>
-                <th>Name</th><th>$Index</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
-            </tr>
-            <tr ng-repeat="element in periodic.elements | filter:{name:elementNameOnlyTable2}">
-                <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
-                <td>{{$index}}</td>
-                <td>{{element.atomicNumber}}</td>
-                <td>{{element.atomicWeight}}</td>
-                <td>{{element.phase}}</td>
-                <td>{{element.ionization}}</td>
-                <td>{{element.melting}}</td>
-                <td>{{element.boiling}}</td>
-            </tr>
-        </table>
-    </div>
-
-
-<p>It is interesting to note that the index is for the values you are filtering on too. So if you were to type Aluminum
-you will see it becomes the zero element, instead of Hydrogen.</p>
-<p>Angular also has  directives like <code>ng-hide</code>,
-<code>ng-show</code> and <code>ng-class</code> along with a <a href="http://docs.angularjs.org/guide/directive">plethora of other attributes</a>.</p>
-<p>We can use these in conjunctions with <code>$index</code>. This is really the key step along the journey in thinking the &quot;Angular way&quot;.
-You don&#39;t want to update the dom via javascript, but use Angular to control what is displayed
-on your page. As an example of this, let&#39;s say we want to hide
-every other element in the list. We could do something like</p>
-<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements"</span> <span class="hljs-attribute">data-ng-hide</span>=<span class="hljs-value">"$index%2"</span>&gt;</span>
-</code></pre>
-<div id="periodicTable2" ng-controller="chemCtrl">
-    <table class="table ">
-        <tr>
-            <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
-        </tr>
-        <tr ng-repeat="element in periodic.elements" ng-hide="$index%2">
-            <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
-            <td>{{element.atomicNumber}}</td>
-            <td>{{element.atomicWeight}}</td>
-            <td>{{element.phase}}</td>
-            <td>{{element.ionization}}</td>
-            <td>{{element.melting}}</td>
-            <td>{{element.boiling}}</td>
-         </tr>
-     </table>
-</div>
-
-<p>We can also perform some Crimes Against web design. For example, nothing is uglier than wrapping your table in
-Green Bay Packer colors of Green and Gold. So I can add CSS elements like</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
-        <span class="hljs-class">.tableOdd</span> <span class="hljs-rules">{
-            <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> green</span></span>;
-        <span class="hljs-rule">}</span></span>
-        <span class="hljs-class">.tableEven</span> <span class="hljs-rules">{
-            <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> gold</span></span>;
-        <span class="hljs-rule">}</span></span>
-    </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
-</code></pre>
-<p>Then we can use the <code>ng-class</code> on the <code>&lt;tr&gt;</code> we are binding to in order to make even/odd rows change colors.</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements"</span> <span class="hljs-attribute">data-ng-class</span>=<span class="hljs-value">"{tableEven: !($index%2), tableOdd: ($index%2)}"</span>&gt;</span>
-</code></pre>
-<p>It doesn&#39;t look pretty, and there are MUCH better ways to do this, but it gives you an example of how to
-think the &quot;Angular way&quot;</p>
- <div id="periodicTable3" ng-controller="chemCtrl">
-        <table class="table ">
-            <tr>
-                <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
-            </tr>
-            <tr ng-repeat="element in periodic.elements" ng-class="{tableEven: !($index%2), tableOdd: ($index%2)}">
-                <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
-                <td>{{element.atomicNumber}}</td>
-                <td>{{element.atomicWeight}}</td>
-                <td>{{element.phase}}</td>
-                <td>{{element.ionization}}</td>
-                <td>{{element.melting}}</td>
-                <td>{{element.boiling}}</td>
-            </tr>
-        </table>
-    </div>
-
-<p>Last, we can also do fun things like sort by using select lists to quickly filter data. For example, we create a
-dropdown list for both the element phase</p>
-<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementPhase"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Gas"</span>&gt;</span>Gas<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Solid"</span>&gt;</span>Solid<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Liquid"</span>&gt;</span>Liquid<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Synthetic"</span>&gt;</span>Synthetic<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
-</code></pre>
-<p>and an ordering criteria</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementOrder"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"name"</span> <span class="hljs-attribute">selected</span>&gt;</span>Name (ascending)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"-name"</span>&gt;</span>Name (descending)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"melting"</span>&gt;</span>Melting Point (asc)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"-melting"</span>&gt;</span>Melting Point (desc)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
-</code></pre>
-<p>We can then use the <code>ng-filter</code> and <code>ng-order</code> directives to filter and sort our table. Further, we can
-combine with our text box for searching by name and chain them together.</p>
-<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements | filter:{name:elementName} | filter:{phase:elementPhase} | orderBy:elementOrder"</span>&gt;</span>
-</code></pre>
-<p>Ultimately, our HTML looks like</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"periodicTable5"</span>  <span class="hljs-attribute">data-ng-controller</span>=<span class="hljs-value">"chemCtrl"</span> &gt;</span>
-        Element Name:<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementName"</span>/&gt;</span>
-        &amp;nbsp;State:
-        <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementPhase"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Gas"</span>&gt;</span>Gas<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Solid"</span>&gt;</span>Solid<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Liquid"</span>&gt;</span>Liquid<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Synthetic"</span>&gt;</span>Synthetic<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
-        &amp;nbsp;Order:
-        <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementOrder"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"name"</span> <span class="hljs-attribute">selected</span>&gt;</span>Name (ascending)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"-name"</span>&gt;</span>Name (descending)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"melting"</span>&gt;</span>Melting Point (asc)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"-melting"</span>&gt;</span>Melting Point (desc)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
-
-        <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table "</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements | filter:{name:elementName} | filter:{phase:elementPhase} | orderBy:elementOrder"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://en.wikipedia.org/wiki/{{element.name}}"</span> <span class="hljs-attribute">Title</span>=<span class="hljs-value">"Wikipedia article on {{element.name}}"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_top"</span>&gt;</span>{{element.name}}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span> &gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.phase}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.ionization}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.melting}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.boiling}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-</code></pre>
-<div id="periodicTable5" ng-controller="chemCtrl">
-        Element Name:<input type="text" ng-model="elementName">
-        &nbsp;State:
-        <select ng-model="elementPhase">
-            <option value="">All</option>
-            <option value="Gas">Gas</option>
-            <option value="Solid">Solid</option>
-            <option value="Liquid">Liquid</option>
-            <option value="Synthetic">Synthetic</option>
-        </select>
-        &nbsp;Order:
-        <select ng-model="elementOrder">
-            <option value="name" selected>Name (ascending)</option>
-            <option value="-name">Name (descending)</option>
-            <option value="melting">Melting Point (asc)</option>
-            <option value="-melting">Melting Point (desc)</option>
-        </select>
-
-        <table class="table ">
-            <tr>
-                <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
-            </tr>
-            <tr ng-repeat="element in periodic.elements | filter:{name:elementName} | filter:{phase:elementPhase} | orderBy:elementOrder">
-            <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
-                <td>{{element.atomicNumber}}</td>
-                <td>{{element.atomicWeight}}</td>
-                <td>{{element.phase}}</td>
-                <td>{{element.ionization}}</td>
-                <td>{{element.melting}}</td>
-                <td>{{element.boiling}}</td>
-            </tr>
-        </table>
-    </div>
-
-<p>The interesting thing to note about this too is that this page is pretty heavy. It has many tables with the
-Periodic elements. However, by using client side code, we download all of the elements only once when we get
-our JavaScript file. The client side functionality does the page building, helping the page load quicker.</p>
-<p>For those of you who have been web coding for a while, these few number of lines to have all of this client side
-functionality is magic. Seriously, magic.</p>
-<p>You can either visit <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a> to see the code in action and
-as always find the code out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a>
-</p></div>
- <script type="text/javascript" src="/2014/01/angularjs-further-with-ng-repeat/js/chemistryApp.js"></script>
- <script type="text/javascript" src="/2014/01/angularjs-further-with-ng-repeat/js/chemistryController.js"></script>
- <script type="text/javascript" src="/2014/01/angularjs-further-with-ng-repeat/js/chemistry.js"></script><p></p>
+<ol>
+<li>nslookup -type=mx jptacek.com</li>
+<li>nslookup -type=txt jptacek.com</li>
+</ol>
+</li>
+</ol>
+<p>These should display values you entered earlier</p>
+<ol>
+<li><div>Return to Domains.live.com and log in with your Microsoft account. It will show you the domains. In this step, the DNS configuration can take a while too</div>
+<img src="/2013/02/15/index/021513_1309_Settingupem7.png" alt=""></li>
+<li>When your domain is active, you can add accounts, up to 50 of them. To do this click the domain name, and click the Add button for member accounts
+<img src="/2013/02/15/index/021513_1309_Settingupem8.png" alt=""></li>
+</ol>
+<p><img src="/2013/02/15/index/021513_1309_Settingupem9.png" alt="">Enter the account you want to create a long with a password</p>
+<p>&nbsp;</p>
+<p>You are done! You can now go to newly created email site for your custom domain, and login with your user name.</p>
+<p><img src="/2013/02/15/index/021513_1309_Settingupem10.png" alt=""></p>
+<p><img src="/2013/02/15/index/021513_1309_Settingupem11.png" alt=""></p>
+<p>&nbsp;</p>
+<p>You can now email me at blog [@] jptacek.com</p>
+<p><strong>Update - May 27, 2014</strong> Microsoft has announced that it will no longer support custom domains using Outlook.Com. As a
+ result, this content of this post is no longer valid. They
+are encouraging customers to use Office 365 moving forward. You can find out more at <a href="http://domains.live.com/">domains.live.com</a></p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
+        Posted In: <a href='/tags/azure/'>Azure</a>, <a href='/tags/dns/'>DNS</a>, <a href='/tags/dnsimple/'>DNSimple</a>, <a href='/tags/email/'>email</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
@@ -539,13 +165,149 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='AngularJS - More with ng-repeat' class="twitter-share-button" data-url="http://jptacek.com/2014/01/23/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Setting up email for a Custom Domain on a Windows Azure hosted website' class="twitter-share-button" data-url="http://jptacek.com/2013/02/15/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/01/23/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/02/15/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/01/23/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/02/15/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    </div>
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2013/02/13/index/'>Creating Sitemaps.xml file for Wordpress blogs on Azure Websites</a></h1>
+    
+        <div class="post-date">Feb 12th, 2013</div>
+
+    <div class="post-content">
+        <p>When running Wordpress on Azure websites, you have the ability to create sitemaps. This enables search engines such as Google and Bing to make you content more discoverable. You can find out more about Sitemaps from <a href="http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=156184">Google</a>.</p>
+<p>The first step in the process is to upload placeholder files for the sitemap files. These are two files, Sitemap.xml and Sitemap.xml.gz (a compressed format). These files are both available on the Wordpress site, so download both <a href="http://www.wp-starter.com/wp-content/uploads/sitemap/sitemap.xml">Sitemap.xml</a> and <a href="http://www.wp-starter.com/wp-content/uploads/sitemap/sitemap.xml.gz">sitemap.xml.gz</a> locally to your computer. For this example, our local directory will be c:\scratch.</p>
+<p>Next, you are going to need to upload the files to your hosted Azure website. This requires using FTP. The Azure management site has the link to this.</p>
+<p><img src="/2013/02/13/index/021313_1142_CreatingSit1.png" alt=""></p>
+<p>&nbsp;</p>
+<p>Clicking the URL will pop up the FTP client in your favorite browser. I hate that FTP client (this hate is browser agnostic). Instead, I use the FTP client on the local OS, in this case Windows 8. Go to the command prompt and:</p>
+<ol>
+<li>Type ftp server.ftp.azurewebsites.windows.net</li>
+<li>Type in your FTP user name, being sure to include the domain name</li>
+<li><p>This will put you at the top level of your hosted Azure website. You can see the files there by typing <span style="font-family: Courier New;">LS </span>(the UNIX version of the Dir command)<span style="font-family: Courier New;">
+</span>
+<img src="/2013/02/13/index/021313_1142_CreatingSit2.png" alt=""></p>
+</li>
+<li><p>You will need to change directories to the location on your server that is the root for Wordpress site, in our case that is wwwroot; <span style="font-family: Courier New;">cd site\wwwroot</span></p>
+</li>
+<li>Now change your local directory to the location of the sitemap files you downloaded earlier using the FTP command LCD. This will change your local directory for you. In our example the location directory is c:\scratch, so <span style="font-family: Courier New;">LCD c:\scratch</span></li>
+<li>You can verify the files are present locally by typing <span style="font-family: Courier New;">!dir</span>, which shells out to the command prompt</li>
+<li><div>For each file, type PUT filename;</div>
+
+<ol>
+<li><span style="font-family: Courier New;">PUT sitemap.xml</span></li>
+<li><span style="font-family: Courier New;">PUT sitemamp.xml.gz
+</span>
+It goes without saying you can use your favorite FTP client to upload the files, I just made sure to document at least one.</li>
+</ol>
+</li>
+</ol>
+<p>Now that the sitemap files are present, you need to create the content for them. This can be done by installing a Wordpress plugin. The one I use is the Google XML Sitemaps application that can be downloaded here.</p>
+<p>To install this on your Wordpress site hosted on Azure is easy enough. Log in as administrator to your account.</p>
+<ol>
+<li><div>Go to you Plugins and choose Add New and type Google XML Sitemaps and click search</div>
+<img src="/2013/02/13/index/021313_1142_CreatingSit3.png" alt=""></li>
+<li>Click Install Now and move onto setup
+You will want to verify the location of your Sitemaps file, which the plugin automatically detect</li>
+</ol>
+<p><img src="/2013/02/13/index/021313_1142_CreatingSit4.png" alt=""></p>
+<p>&nbsp;</p>
+<p>The basic options are fine for most implementations. The Plugin will automatically create zipped up files of your sitemap, rebuild on content change as well as notify Google and Bing of changes</p>
+<p><img src="/2013/02/13/index/021313_1142_CreatingSit5.png" alt=""></p>
+<p>&nbsp;</p>
+<p>The plugin allows you to build the sitemap for the first time. After it is done, you will see</p>
+<p><img src="/2013/02/13/index/021313_1142_CreatingSit6.png" alt=""></p>
+<p>You can verify the sitemap by looking at the xml for the file. In the case of this blog, <a href="http://www.jptacek.com/sitemap.xml">http://www.jptacek.com/sitemap.xml</a></p>
+<p><img src="/2013/02/13/index/021313_1142_CreatingSit7.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/azure/'>Azure</a>, <a href='/tags/seo/'>SEO</a>, <a href='/tags/wordpress/'>WordPress</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+    <div id='socialTags'>
+    <!-- Twitter -->
+		<a href="https://twitter.com/share" data-text='Creating Sitemaps.xml file for Wordpress blogs on Azure Websites' class="twitter-share-button" data-url="http://jptacek.com/2013/02/13/index/">Tweet</a>
+    <!-- Google+. -->
+    <div class="g-plusone" data-size="medium"></div>
+    <!-- LinkedIn -->
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/02/13/index/" ></script>&nbsp;
+    <!-- Facebook -->
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/02/13/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    </div>
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2013/02/11/index/'>Configuring DNSimple for Azure Hosted Domains</a></h1>
+    
+        <div class="post-date">Feb 10th, 2013</div>
+
+    <div class="post-content">
+        <p><a href="https://dnsimple.com/">DNSimple</a> is a great service for hosting and configuring DNS for domains you control. It also benefits by not being Go Daddy. I hate Go Daddy. They supported both SOPA and PIPA, run sexist television commercials and I have no love for their elephant killing CEO. Then there is their utterly confusing website, upselling tricks and poor customer service. Don&#39;t use Go Daddy.</p>
+<p>DNSimple allows you to host up to 10 domains for $36 (USD) for the year. You can find pricing information at <a href="https://dnsimple.com/pricing">https://dnsimple.com/pricing</a>. For multiple domains, this is significantly cheaper than Go Daddy.</p>
+<p>Another nice feature of DNSimple is they have templates for many popular sites to configure all of the necessary DNS settings required for hosting. They have templates for Google App pages, Tumblr, Wordpress, etc. While I am a developer and tend to be technical, I get lost pretty quick in the world of DNS configuration. A records, CNAME, MX, etc, etc. The templates help users get up and moving quickly.</p>
+<p>However, they do not have support for Azure hosted websites. It took me a little messing around to get this to work, and finally I have it set correctly.</p>
+<p>First, for this to work. You need to be hosting your website in Shared or Reserved mode. Free mode will not allow for users to have a custom domain name. To do this, log onto the Azure management portal and go to Web sites and choose your domain. Click scale and configure either Shared or Reserved. Shared is going to be MUCH cheaper.</p>
+<p><img src="/2013/02/11/index/021113_1414_Configuring1.png" alt=""></p>
+<p>&nbsp;</p>
+<p>You will then want to configure your domain names. This is done by clicking Configure and Manage Domains</p>
+<p><img src="/2013/02/11/index/021113_1414_Configuring2.png" alt=""></p>
+<p>&nbsp;</p>
+<p>This will provide a screen for managing custom domains.</p>
+<p><img src="/2013/02/11/index/021113_1414_Configuring3.png" alt=""></p>
+<p>The instructions do a good job of telling you what do. You want to have any domain that you want DNS to resolve for added here. In IIS speak, these are the Host headers. You will want one for WWW and another for your TLD, jptacek.com in our case. The issues I ran into was jptacek.com not registering properly and did not redirect to the main site.</p>
+<p>Next, you will need to configure your DNS settings in DNSimple. Go to <a href="http://www.Dnsimple.com">www.Dnsimple.com</a> and login. To configure your DNS, go to Domains, and select the Domain you want to manage</p>
+<p><img src="/2013/02/11/index/021113_1414_Configuring4.png" alt=""></p>
+<p>Once in manage, you will want to go the Advanced Editor, which is what to use when a template is not present.</p>
+<p>In here you will add for records, three CNAME records and an A name record. First, add a wildcard CNAME and have it point to your azure hosted website.</p>
+<p><img src="/2013/02/11/index/021113_1414_Configuring5.png" alt=""></p>
+<p>Next, as mentioned on the Azure site, you will need a record that will verify you own the DNS. To do that, configure the AWVerify to point to Azure&#39;s service</p>
+<p><img src="/2013/02/11/index/021113_1414_Configuring6.png" alt=""></p>
+<p>Next, a third CNAME record for WWW that goes to the Azure site</p>
+<p><img src="/2013/02/11/index/021113_1414_Configuring7.png" alt=""></p>
+<p>Last, and this is the area I ran into issues, you need to create an A record for the domain that points to the IP Address provided by Azure. This can be found on the Manage Domain settings. This will ensure that a request to the top level site, jptacek.com, will redirect to your site. Be sure to leave your subdomain blank.</p>
+<p><img src="/2013/02/11/index/021113_1414_Configuring8.png" alt=""></p>
+<p>&nbsp;</p>
+<p>You may have to wait up to an hour for the changes to take effect. It is also good to flush your DNS to ensure no issues.</p>
+<p>If you are looking for a DNS provider or want to switch from Go Daddy (which is horrible, have we mentioned that), check out DNSimple.com If you want, you can even click on the referral link <a href="https://dnsimple.com/r/b8a105607bde67">https://dnsimple.com/r/b8a105607bde67</a>, and get one month of free hosted DNS. Even better, I would get a free month of free hosted DNS <span style="font-family: Wingdings;">J</span></p>
+<p>&nbsp;</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/azure/'>Azure</a>, <a href='/tags/dnsimple/'>DNSimple</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+    <div id='socialTags'>
+    <!-- Twitter -->
+		<a href="https://twitter.com/share" data-text='Configuring DNSimple for Azure Hosted Domains' class="twitter-share-button" data-url="http://jptacek.com/2013/02/11/index/">Tweet</a>
+    <!-- Google+. -->
+    <div class="g-plusone" data-size="medium"></div>
+    <!-- LinkedIn -->
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/02/11/index/" ></script>&nbsp;
+    <!-- Facebook -->
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/02/11/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 

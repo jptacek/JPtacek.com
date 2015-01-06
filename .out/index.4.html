@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -93,45 +97,62 @@
             
     <article class="post">
     
-    <h1><a href='/2012/03/22/index/'>HTML 5 Markup</a></h1>
+    <h1><a href='/2014/03/17/index/'>Twitter Bootstrap Themes</a></h1>
     
-        <div class="post-date">Mar 21st, 2012</div>
+        <div class="post-date">Mar 16th, 2014</div>
 
     <div class="post-content">
-        <p>Here&#39;s another post in my series about the technology for the <a href="http://www.skylinetechnologies.com/news/Pages/RiverviewGardensGiveCamp.aspx">Riverview Gardens Give Camp</a> Skyline held recently. One of the great things about the Give Camp was the learning opportunities for our associates.</p>
-<p>The emerging HTML 5 standard has many new and interesting pieces that make it a great tool for developing web based applications. Let&#39;s take a look at some of the new tags. </p>
-<p>New Input types 
-HTML 5 introduces many new input types, that make it easier for end users to enter data. Here is a quick list:</p>
-<p>In general, the new input types will validate that an input is in the expected format (i.e. email or url) and display a message to the user. </p>
-<p?all 9="" of="" these="" attributes="" are="" implemented="" in="" various="" shapes="" and="" forms="" across="" the="" browser="" vendors.="" for="" example,="" ie="" does="" not,="" at="" this="" point="" support="" any="" input="" types,="" though="" many="" supported="" 10\.="" they="" also="" differently="" good="" news="" is="" your="" pages="" will="" still="" render="" as="" generic="" boxes="" if="" it="" not="" recognize="" new="" types.="" <=""></p?all>
+        <p>With a name like Ptacek, you would of course, have to know I am half-Irish. So, to celebrate, we are going to wrap
+up a St Patrick&#39;s Day theme for the blog today (3/17/14). You may be saying to yourself, how could I spend so much time and effort totally
+retheming the blog to support a relatively minor holiday on the calendar? Easy! Twitter Bootstrap themes!</p>
+<p>Twitter Bootstrap, is obviously, a very popular web CSS framework. It enables web developers, without a lot of CSS expereince to
+quickly create responsive sites that look decent out of the box. One of the interesting things you can do with version 3 of
+Twitter Bootstrap is quickly  update your site easily using themes.</p>
+<p>With Twitter Bootstrap, there are two ways you can do things. Option 1 is to download the minified files. This will result in three
+separate files, <code>bootstrap.min.css</code> , <code>bootstrap-theme.min.css</code> and <code>bootstrap.min.js</code>, which
+is used in conjunction with jQuery. The theme elements are then contained in the <code>bootstrap-theme.min.css</code> file.</p>
+<p>The second approach you can use is to download the source files and compile the CSS yourself. This is done by downloading
+<a href="http://lesscss.org/">LESS</a> files and using your favorite LESS compiler to generate CSS. There are also SASS files for the
+ Ruby fans of the world. With the LESS approach,
+there are separate files for theming, a <code>variable.less</code> file and a bootstrap theme file. This is the approach I use for this site
+and most projects I start. Within the main <code>site.css</code> LESS file I import the theme files</p>
+<pre class="highlight"><code class="hljs xml">@import "bootstrapTheme/bootswatch.less";
+@import "bootstrapTheme/variables-bootswatch.less";
+</code></pre>
+<p>The reason I like using the LESS approach rather than just downloading the minified CSS files is the theme part is a bit more
+isolated. I can keep all the theme content, which I really think of as the &quot;skin&quot; for a Bootstrap site, in two separate files.
+This enables new versions of Bootstrap to be downloaded without loosing other CSS changes and to quickly swap them out, like we
+are doing here for St. Patrick&#39;s Day.</p>
+<p>It should be noted, that out of the box, Twitter Bootstrap ships with a default theme, a theme that makes the site look like
+Twitter Bootstrap 2.x. There is quite a growing community for creating themes for bootstrap (it&#39;s not WordPress type size,
+that would just be crazy talk). Example sites include <a href="https://wrapbootstrap.com/">WrapBootstrap.com</a>, <a href="http://bootstraptor.com/">Bootstraptor</a>
+and the one I tend to gravitate to, <a href="http://bootswatch.com/">Bootswatch</a>.</p>
+<p>To update your site UI you just simply download either minified CSS files and swap them out, or two LESS files and then reference
+them in your site. Since I use LESS, I download the LESS files, rename them to a theme name, which allows me to keep my original,
+and then update my <code>site.css.less</code>. I called the St Patrick&#39;s Day theme shamrock and my references are now</p>
+<pre class="highlight"><code class="hljs xml">@import "bootstrapTheme/shamrock-bootswatch.less";
+@import "bootstrapTheme/shamrock-variables.less";
+</code></pre>
+<p>Viola, a save and a publish later we have a total site look! It is like <a href="http://www.csszengarden.com/">CSSZenGarden</a> for
+mortals.</p>
+<p> <img src="http://www.jptacek.com/2014/03/Twitter-Bootstrap-3-Themes/BuildStPatty.png" class="img-thumbnail" alt="Rules"></p>
+<p>You can find the St Patrick&#39;s Day theme I downloaded from Bootswatch <a href="http://bootswatch.com/shamrock/">here</a>. Obviously,
+ since this is just for a short time, there are some UI things that would need to be redone on the site, but we will
+ be back to our regularly scheduled programming soon!</p>
+<p>Totally useless Ptacek news.... Obviously, the half Irish comes from my Mother&#39;s side. My Uncle <a href="http://en.wikipedia.org/wiki/Tom_Durkin">Tom Durkin</a>, a somewhat famous horse
+race announcer who <a href="http://www.nytimes.com/2011/04/28/sports/28durkin.html?version=&amp;action=click&amp;adxnnl=1&amp;region=searchResults#0&amp;module=Search&amp;url=http://query.nytimes.com/search/sitesearch/#/tom+durkin/&amp;pagewanted=all&amp;adxnnlx=1395057931-WaqX7ynUlBWydjqQznsZ1w">used to call</a> the Kentucky Derby and other Triple Crown races on television, would often get flown over
+to call the Irish Derby. Here is one of my favorite race calls he has ever done, but probably more appropriate for Talk
+Like a Pirate Day</p>
+<iframe width="420" height="315" src="//www.youtube.com/embed/nf0wQzq9Yzg" frameborder="0" allowfullscreen=""></iframe>
 
-<p>Some of the inputs are not things that can be validated, like tel, which indicates a telephone number, because of the many different phone number formats across the globe. So why use it at all? Because by explicitly identifying the input type, we are better able to describe the purpose of the input. It becomes useful on things like mobile websites where a mobile browser can immediately display a number pad rather than an alpha keyboard. </p>
-<p>Another slick feature is the introduction of the placeholder attribute. When creating an HTML form, the placeholder will display information about the text. Once the user places focus on the input, it disappears. In Chrome, the following markup:</p>
-<input type="email">
 
-<p>Renders: </p>
-<p><a href="http://www.jptacek.comHTMLMarkup2.jpg"><img src="http://www.jptacek.com/wp-content/uploads/2012/10/HTMLMarkup2.jpg" alt="HTMLMarkup2"></a></p>
-<p>Semantic 
-Another focus of HTML 5 is the introduction of new sematic elements. The semantic elements exist to more explicitly identify what your document items are. This is helpful for web pages which need to be used by screen readers, or to search engines in trying to parse the content of your document. 
-The first part of semantic is the introduction of several new tags that define your HTML document structure. They are: </p>
-<p>There are several more semantic elements, but you get the gist of it. It is important to remember these elements don&#39;t really DO anything for presentation on the page. You are still responsible for styling your header or footer, or providing navigation elements each time you render the page into the nav element. What it does do is describe your document. </p>
-<p>A second part of semantics is the use of microdata to even further describe your document. More can be learned about microdata in a previous blog post. </p>
-<p>More elements 
-There are new video and audio tags to explicitly play, wait for it... big surprise coming, video and audio files in your browser without requiring plugins. The reality however gets pretty complicated pretty quick. All of the vendors have a &quot;preferred&quot; video format, the reality of which results in you having to encode your video to support these various vendor specific implementations. </p>
-
-<audio src="StuckBetweenStations.mp3" controls autoplay></audio> 
-
-<video src="WhiteSoxVsBrewersWorldSeriesGame1.mp4" controls height="200px" width="400px"></video>
-
-
-<p>The canvas tag purpose in life is really a drawing surface. You can draw and animate using JavaScript and style elements across the canvas tag. This is another way of saying, let&#39;s make some games. The canvas obviously serves other purposes, but it is a deep topic we will just introduce here. </p>
-<p>There you go ... a high level introduction into some of the new HTML tags that are part of HTML 5. Next we will discuss some programming items, such as persisting data.</p>
+<p>Happy St. Patrick&#39;s Day!</p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/html-5/'>HTML 5</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>
+        Posted In: <a href='/tags/twitter-bootstrap/'>Twitter BootStrap</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/css/'>CSS</a>
     </div>
     
     <br/>
@@ -140,48 +161,88 @@ There are new video and audio tags to explicitly play, wait for it... big surpri
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='HTML 5 Markup' class="twitter-share-button" data-url="http://jptacek.com/2012/03/22/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Twitter Bootstrap Themes' class="twitter-share-button" data-url="http://jptacek.com/2014/03/17/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2012/03/22/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/03/17/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2012/03/22/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/03/17/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2012/04/18/index/'>Going Green for Earth Day</a></h1>
+    <h1><a href='/2014/03/14/index/'>National Pi Day - Calculating PI With AngularJS and a Monte Carlo Simulation</a></h1>
     
-        <div class="post-date">Apr 17th, 2012</div>
+        <div class="post-date">Mar 13th, 2014</div>
 
     <div class="post-content">
-        <p>Earth Day, which happens every year on April 22nd, was started by former Wisconsin Senator Gaylord Nelson and is celebrated in over 175 countries. The purpose of Earth Day is to spend time focusing on environmental issues, so let&#39;s look at a few ways your organization can implement some IT elements to go green for Earth Day, but also get some green for your company.</p>
-<p><strong>Two-Sided Printing
-</strong>Many companies have printers in their organization that are capable of printing on both sides of a piece of paper, but they are not taking advantage of it.
-The reality is, the majority of the printing that happens at organizations is for internal use, and not for presentation to customers. By setting your default print mode to be on both sides of the page, you can greatly reduce your paper usage and costs.</p>
-<p><strong>Don&#39;t Print or Print Less</strong>
-Two-sided printing is one way to reduce paper consumption and save money on things like toner and ink. Another way to save money is to not print at all. Services like Instaper.com will take a web page and save it for viewing later on a tablet or Kindle. This is especially handy for long form articles you don&#39;t want to read in front of a computer screen, simply save them and read them later on your eBook reader of choice.</p>
-<p>If you still want to print an article, something like Instapaper is great because it grabs the content of the article, and not all of the ads the populate today&#39;s web pages. This will save paper and expensive color ink if you do decide to print an article.</p>
-<p><strong>Go to the Cloud
-</strong>One of the main costs for organizations with large Infrastructure is the energy costs associated with server rooms. Not only do IT managers need to be concerned, with the energy costs associated with the power consumption of their servers, but also by the costs associated with cooling the servers.</p>
-<p>One of the big benefits of the virtualization of hardware enabled by software vendors such as VMWare and Microsoft has been the ability for organizations to reduce power consumption by consolidation numerous servers to a single server.</p>
-<p>Another, even bigger way to drive down these energy costs, is to move your application servers out of your local IT infrastructure totally, by having them run in the cloud. There are, obviously, many times when this would not make sense. However, for times when it does, moving your infrastructure to the cloud can be doubly green. Cloud providers like Amazon, Google and Microsoft are hyper-focused on minimizing the power consumption of their data centers. The more efficient they can be in cooling and powering their data centers, the greater their return on environment. By moving your organization to the cloud, you will also see a reduction in costs for power and cooling within your own organization.</p>
-<p><strong>Sleep Mode</strong>
-Both Microsoft and Apple have sleep mode available for their systems. After a period of inactivity, the state of the computer is essentially saved and it goes to &quot;sleep&quot;. In this mode, the computer is still on, but it uses much less power than it normally would.
-If you are a large organization with many computers, setting them to automatically go into sleep mode when they are not being used, especially when employees are at home, can result in a significant reduction in energy consumption.</p>
-<p>If you have users who access their computers remotely when they are out of office be sure to enable Wake-On Lan for them. Wake On Lan allows a user to access the computer, or a file on the computer, remotely when the computer is in sleep mode. It will, as the name implies, wake it up from sleep mode.</p>
-<p><strong>Recycle Old Computers</strong>
-Be sure to recycle your old computers since they are full of heavy metals like cadmium, mercury, and lead that are bad for the environment. A great way to recycle computers is ask your area school districts if they would be willing to receive a donation. Many school districts are running very long computer replacement cycles and would appreciate the donation. Better yet, your organization will appreciate the tax write off. Just be sure to wipe your hard drive before donating.</p>
-<p>These ideas are just a few of the ways your organization can be greener and save a little money in the process!</p>
-<p>This blog post originally appeared at Skyline Technologies (<a href="http://www.skylinetechnologies.com/blog/Pages/Going_Green_for_Earth_Day.aspx">http://www.skylinetechnologies.com/blog/Pages/Going_Green_for_Earth_Day.aspx</a>)</p>
+        <p>Every year on 3/14, Geeks everywhere can let their geek flag fly by
+celebrating <a href="http://en.wikipedia.org/wiki/Pi_Day">National Pi Day</a>. On this day, every year, the date equals the first three
+digits of π, 3.14. Last year we celebrated with a <a href="http://www.jptacek.com/2013/03/have_your_pi/">blog post</a>, so let’s do it again!</p>
+<p>In last year’s post, we calculated Pi using Leibiniz formula to determine π, which is a relatively slow algorithm.</p>
+<p>This year we are going to look at a totally different approach, a Monte Carlo simulation.
+A <a href="http://en.wikipedia.org/wiki/Monte_Carlo_method">Monte Carlo simulation</a> is a statistical approach where you use
+random numbers to run a simulation over and over and record those results. It is very popular in the fields of finance,
+fluid mechanics and the study of Brownian Motion. For our scenario today, you can also use a Monte Carlo method to calculate π!</p>
+<p>To do this, we are going to use two geometric formulas, one to calculate the area of a square and the second the area of a
+circle. If we put a circle of radius R in a square of length 2R, we have a scenario as shown in Figure 1.</p>
+<p><img src="/2014/03/14/index/PtacekPie_002.GIF" alt="Circle in Square"></p>
+<p>The area of the rectangle will then be 4R<sup>2&nbsp;</sup>  and the area of the circle will be πR<sup>2&nbsp;</sup>.
+Dividing the area of the circle by the area of the rectangle give us π /4. Stated another way, the ratio of area of the
+circle to that of the square is Pi/4.</p>
+<p>The Monte Carlo method comes into play because we will randomly put a point on the square. If the point falls within
+the circle, we record it. The total ratio of points in the circle (aka, the area of the circle) to total points
+(aka, the area of the square) will tell us π /4.</p>
+<p>So, we now know a way to calculate π, the next step is to actually write some code. There are, obviously, many
+ways we could go and do this, but lately I have been kicking the tires with AngularJS and thought this would work as
+well as anything.</p>
+<p>We won’t spend a lot of time jumping into AngularJS. You can check out some previous posts at
+<a href="http://www.jptacek.com/tags/angularjs/">http://www.jptacek.com/tags/angularjs/</a> for an introduction.</p>
+<p>We will have two things, our chemistryApp.js file to create our angular application, piApp, and our controller,
+ where the interesting stuff will happen.</p>
+<p>Our HTML file is pretty basic,</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"piApp"</span> <span class="hljs-attribute">ng-app</span>=<span class="hljs-value">"piApp"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"piCtrl"</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"piAppController"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"iteration"</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"iterations"</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"piCalc"</span> &gt;</span>{{pi}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"piCalcDiff"</span> &gt;</span>{{delta}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">data-ng-click</span>=<span class="hljs-value">"calculatePi()"</span> &gt;</span>Update<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>We will enter in the number of random dots (iterations) we want our simulation to run. The more dots, the closer we get.
+We will then display the calculated value of π and how close we are to π actual. Last, we have a button that we will click to
+execute our Monte Carlo simulation.</p>
+<p>Our AngularJS controller is where the interesting stuff is happening, and that is not even particularly interesting.</p>
+<p>We have created a function, determinePi, which will perform our calculation. We assume a circle with a radius of 1.
+We then generate two random numbers, one for the x position and one for the y position. We know that
+(x<sup>2&nbsp;</sup> + y<sup>2&nbsp;</sup>)=1 (the radius of our circle), so for any value that is less than this, we know we are
+inside the circle and increment a counter for hits inside. Once we are done with the iterations, we determine our
+calculated version of π and the difference from our known value of π for display on the page. In our calculation, we are only
+really doing a quadrant, just to make the code a bit easier to follow. It all works though since we are just talking about
+ratios.</p>
+<p>This is not a super accurate, or super-fast method of calculating π, but it was an interesting chance to take a quick look at
+Monte Carlo methods, which are common place with a subset of our clients.</p>
+<div id="piApp" ng-app="piApp">
+    <div id="piCtrl" ng-controller="piAppController">
+        <input id="iteration" -ng-model="iterations"><br>
+        <div id="piCalc">{{pi}}</div><br>
+        <div id="piCalcDiff">{{delta}}</div><br>
+        <button ng-click="calculatePi()">Update</button>
+    </div>
 
+<p></p></div><p></p>
+<p>Happy Pi day! Go have a nice piece of Apple Pie and enjoy the day!!</p>
+<p>This post originally appeared at <a href="http://skylinetechnologies.com/Blog/Article/2453/National-Pi-Day-Calculating-Pi-with-AngularJS-and-a-Monte-Carlo-simulation.aspx">Skyline Technologies</a></p>
+<script type="text/javascript" src="/2014/03/National-Pi-Day-2014/js/piApp.js"></script>
+<script type="text/javascript" src="/2014/03/National-Pi-Day-2014/js/piController.js"></script>
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/business/'>Business</a>, <a href='/tags/earth-day/'>Earth Day</a>
+        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/pi/'>Pi</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>
     </div>
     
     <br/>
@@ -190,31 +251,143 @@ Be sure to recycle your old computers since they are full of heavy metals like c
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Going Green for Earth Day' class="twitter-share-button" data-url="http://jptacek.com/2012/04/18/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='National Pi Day - Calculating PI With AngularJS and a Monte Carlo Simulation' class="twitter-share-button" data-url="http://jptacek.com/2014/03/14/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2012/04/18/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/03/14/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2012/04/18/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/03/14/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2012/07/20/index/'>Blog Redo</a></h1>
+    <h1><a href='/2014/03/02/index/'>Speculations for Build 2014</a></h1>
     
-        <div class="post-date">Jul 19th, 2012</div>
+        <div class="post-date">Mar 1st, 2014</div>
 
     <div class="post-content">
-        <p>My old blog hosting site was hacked a while back and I lost a lot of content I had out there, especially focused on PhoneGap, which is a bit of a bummer.</p>
-<p>I am slowly bringing it back to life......</p>
+        <p>Build is a Microsoft developer conference that has taken the place of their Professional Developer Conference (PDC). The first
+Build was held in 2011 and introduced the world to Windows 8, along with an early preview of Windows 8 and a Samsung tablet.
+You can read my thoughts on Build 2011 <a href="http://www.jptacek.com/2011/09/observations-from-microsofts-build-conference/">here</a>.
+In 2012, Build was held in Seattle and saw the release of Windows 8 and
+Microsoft’s Surface RT tablet.  In 2013, Build was held in San Francisco and Microsoft announced Windows 8.1 as well as
+made available a preview
+release for developers. Before Build 2013 last year, I took a <a href="http://www.jptacek.com/2013/06/Speculation-Microsoft-Build/">stab</a> at
+ speculating about what would be coming and did pretty spectacularly bad. With Build 2014 a
+month away, I thought it would be fun to try again!</p>
+<p><img src="/2014/03/02/index/build2013.png" alt="Build 2013"></p>
+<p>First, it is interesting to look at how short the time is becoming between Microsoft Build conferences</p>
+<ul>
+<li>Build 2011, Anaheim, CA September 13 - 16, 2011</li>
+<li>Build 2012, Seattle, WA October 30 - November 2, 2012 (~13 months later)</li>
+<li>Build 2013, San Francisco, CA June 26-28, 2013 (~8 months later)</li>
+<li>Build 2014, San Francisco, CA April 2-4, 2014 (~9 months later)</li>
+</ul>
+<p>You can see that Microsoft is quickly iterating and getting information out to developers. However, having said that, certain parts
+of Microsoft are executing VERY fast (I am looking at you Azure) and other parts are executing VERY slow (I am looking at you Windows
+Phone). With the breadth of developer platforms Microsoft has, they have many opportunities to get in front of developers, but it
+not always what the developers are expecting. So all of that to say this.... A lot of my speculation for Build this year looks a lot like last year! There are still some
+important pieces for the Microsoft developer story that I believe have yet to be communicated.</p>
+<p><img src="/2014/03/02/index/guitar.jpg" alt="3D Printer Guitar"></p>
+<h3 id="one-api-to-rule-them-all">One API To Rule Them All</h3>
+<p>The reality is, developing on the Microsoft stack
+today can be downright confusing. You have options between....</p>
+<ul>
+<li>Web using MVC with HTML/JS/CSS</li>
+<li>Web using Silverlight (version of XAML), though this is deprecated</li>
+<li>Desktop using WPF (version of XAML)</li>
+<li>Windows Modern/Metro/Store Apps using WinJS with HTML/JS/CSS</li>
+<li>Windows Modern/Metro/Store Apps using XAML</li>
+<li>Windows Phone (version of XAML)</li>
+</ul>
+<p>For shops that are all in on the Microsoft stack, it can be confusing to determine what to go all in on. If you are a web developer
+and love HTML and JavaScript, your options are limited for Windows Phone. If you love all things XAML, you have to choose amongst
+WPF, Windows Phone or Windows 8 flavor of XAML. And while the XAML platforms are similar, they are not similar enough to not
+have a lot of rework. Things have gotten better though over the years with the introduction of the <a href="http://www.hanselman.com/blog/CrossPlatformPortableClassLibrariesWithNETAreHappening.aspx">Cross-Platform portable class
+library</a>, though it is still cumbersome hitting
+multiple endpoints.</p>
+<p>Last summer I wrote</p>
+<div class="well">
+<p><strong>One API To Rule Them All</strong> – With the core of Windows driving Xbox One, Windows Phone and Windows 8, will Microsoft release a single API that enables development across all of their platform? That would be great to see and could drive a lot of great applications across Windows, Windows Phone and Xbox!</p>
+</div>
+
+<p>This year, I can write the same thing. There have been <a href="http://www.wpcentral.com/rumor-windows-phone-81-ditch-back-button">rumors</a>
+ coming from a leaked release of the Windows Phone 8.1 SDK of Universal Binaries that will allow Windows Phone 8.1 and Windows
+ RT/Metro/Modern/Store Apps have a common base. According to the earlier link, over 75% of Windows Phone and Windows RT have
+ the same shared API. That would be a great starting point for Windows 8 developers, especially if WinJS development is now an option
+ for Windows Phone 8.1. Giving developers the opportunity to have one platform they can choose to develop on and hit multiple devices
+ in the Microsoft devices strategy would be a great leap forward.</p>
+<h3 id="windows-rt">Windows RT</h3>
+<p>Last summer I wrote</p>
+<div class="well">
+<p><strong>Windows RT</strong> – Microsoft Windows RT, the ARM based version of their Operating System, is in a weird place. It runs Metro/Modern Design apps in a full touch mode. It also ships with a subset of Microsoft Office such as Word and Excel. However it does not run other Windows applications. What it does do is run all day on a single charge. It is a great productivity tool for knowledge workers. However, with the release of Intel’s Haswell chipset it seems that all-day battery life will be available on much more powerful chipsets. What, then, becomes the future of Windows RT? Will it move to being Microsoft Windows Phone OS? Will Microsoft reduce the cost of Windows RT to get more hardware vendors building machines? Maybe we will find out more at Build!</p>
+</div>
+
+<p>Again, same thing this Build. Windows RT has not had a lot of explanation about its continued existence in the Windows ecosystem.
+I am not 100% sure, but I believe the only devices released for WinRT in 2013 were from Lumia (<a href="http://www.nokia.com/global/products/tablet/lumia2520/">Lumia 2520</a>) and Microsoft
+(<a href="http://www.microsoft.com/surface/en-us/products/surface-2">Surface2</a>). The good news is, both of these devices were well received.
+The battery life and productivity for ARM based tablets running RT make for great use cases. However, as Intel releases improved Haswell and Atom chips with great battery
+life and the ability to run desktop applications, it doesn&#39;t make long term sense for Microsoft to support both platforms the way they are now.
+Unless, Microsoft is focused on making Win RT the phone platform
+as well as a tablet only platform, without the legacy desktop. I am pretty sure this is the case, but we haven&#39;t heard it from
+Microsoft yet. Maybe this Build we will?!?!</p>
+<h3 id="devices-and-services-company">Devices and Services Company</h3>
+<p>Microsoft has repeatedly said they are now a devices and services company. Since this announcement in 2012, they have released both Windows
+Surface Pro and Windows Surface RT, along with follow up versions in 2013. The Pro update was minimal in terms of hardware (adding the Haswell chip),
+but the Surface RT 2,
+now called Surface 2, saw a pretty significant upgrade in performance and hardware. In 2013, the release of Xbox One happened. Other
+than that, not a whole lot in terms of devices.</p>
+<p>Obviously, the purchase of Nokia&#39;s Lumia line will see a lot more Microsoft devices being released in 2014.
+However these will be phone devices, there
+has not been a 7-8 inch Surface release to compete with the iPad Mini or Kindle fire, the fastest growing tablet market. There also has not been a
+Microsoft Laptop/Ultrabooks released. Further, we still are not sure what happens
+to the Lumia Brand and the Surface Brand. Will they merge? Will one replace the other? Will one be the Tablet platform and the other the
+Phone platform? Will one be for consumers and the other for enterprises? An explanation of these brands moving forward would be great!</p>
+<p>I expect that Build 2014 will shed a lot more light on this, especially the company&#39;s strategy for integrating Nokia and the possible
+announcement of a Surface Mini. In general, except for the first Build, it is not a place where Microsoft announces hardware though.</p>
+<h3 id="xbox-one">Xbox One</h3>
+<p>With the news that Xbox One is built on Windows 8, and a tease at Build 2013 about a JavaScript based API for Xbox One, everyone
+I talk with thinks Xbox One will be part of Build 2014. Bring it on! This will be exciting for indie developers.</p>
+<h3 id="windows-phone">Windows Phone</h3>
+<p>My guess, and that of many others, is above all things, Build 2014 will be about Windows Phone 8.1. I, and most of the world, expect them to show Windows Phone
+8.1 while hitting on the developer story. It may be even that some new Lumia devices are announced to drive developer enthusiasm.</p>
+<h3 id="kinect-for-windows-rt">Kinect for Windows RT</h3>
+<p>Last year I wrote</p>
+<div class="well">
+<p>Microsoft’s Kinect is impressive technology. Microsoft released a Kinect for Windows last year, but the hardware did not work on the RT side of the house. Will there be APIs in Windows RT for Kinect? Will there be new Kinect hardware?</p>
+</div>
+
+<p>This year, I again hope that the Kinect API will be part of the Win Metro API so developers can take advantage of the Kinect in
+Windows 8.1 apps. The technology is too impressive for Microsoft to just let it be used on the Xbox platform!</p>
+<h3 id="azure">Azure</h3>
+<p>Microsoft&#39;s Azure platform is amazing. The degree to which the Azure team can execute and release new features is dizzying. As someone
+who is a big proponent of the cloud for organizations to embrace, I spend time following the various platforms. It is hard to keep up
+with all the great things the Azure team is doing.</p>
+<p>The one
+thing that I am most interested in seeing from Microsoft over the next year, is if the speed of execution that Satya Nadella bought to the Azure team
+when he led the group, can be bought to the whole Microsoft organization. If there is one person from within Microsoft that can
+execute on the Microsoft One strategy, it is Satya. It will be something to watch in 2014.</p>
+<h3 id="pick-a-name">Pick a Name</h3>
+<p>I am still very confused by what Microsoft calls its non-desktop platform, aka the Windows formerly called Metro. Is it Windows Store apps?
+Is it Modern apps? Is it Win RT? What is the Microsoft design language formerly known as Metro called? It would be nice to clearly and
+concisely pick the terms and have everyone use the same vocabulary. Even the Microsoft developers presenting at previous Builds still call
+everything Metro!</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>I have the sense that Build 2014 is really Build 2013, part 2. A lot of the pieces that weren&#39;t fully basked for Build last June, like Xbox One and Windows Phone 8.1,
+ should
+be announced this April. I am quite hopeful that the Microsoft One vision will be introduced for developers at Build 2014.
+ I believe this will really help Microsoft accelerate application across multiple platforms and give developers a sense
+ of ease about a single execution strategy. More to come!</p>
+<p> I will be out at Build 2014. Feel free to hit me up on twitter, <a href="http://twitter.com/jptacek">@jptacek</a> if you are out there in
+ April.</p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/ephemera/'>Ephemera</a>
+        Posted In: <a href='/tags/conferences/'>Conferences</a>, <a href='/tags/build/'>Build</a>
     </div>
     
     <br/>
@@ -223,13 +396,13 @@ Be sure to recycle your old computers since they are full of heavy metals like c
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Blog Redo' class="twitter-share-button" data-url="http://jptacek.com/2012/07/20/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Speculations for Build 2014' class="twitter-share-button" data-url="http://jptacek.com/2014/03/02/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2012/07/20/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/03/02/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2012/07/20/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/03/02/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 

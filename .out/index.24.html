@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -93,121 +97,37 @@
             
     <article class="post">
     
-    <h1><a href='/2014/12/12/index/'>Creating ASP.NET vNext application on OS X</a></h1>
+    <h1><a href='/2011/04/13/index/'>SharePoint Search - Think Outside the (Search) Box!</a></h1>
     
-        <div class="post-date">Dec 11th, 2014</div>
+        <div class="post-date">Apr 12th, 2011</div>
 
     <div class="post-content">
-        <p>Santa Claus is Coming to Town!! All the geeks get pretty excited for Santa’s arrival to see what will be awaiting us under the tree
-each year. However, sometimes the things geeks are most excited about aren’t ready for Christmas. We can read about them, maybe see
-some snippets or even get a preview.</p>
-<p>For example, there is a new Star Wars movie coming, but that will not be out until December of 2015, right before Santa’s
-next visit. There are also a good percentage of geeks getting excited for the release of Apple Watch, which will be out
-sometime in early 2015, so it won’t be waiting under the Christmas tree this year either.</p>
-<p>However, one of the things I am most interested in, workwise, while it is arriving in 2015, is available
-to kick the tires on now. The early preview present under the tree is running .NET on non-Microsoft platforms like
-the OS X or Linux. So while Santa will not be putting the final version under my tree this year, we can at least start
-getting ready.</p>
-<p>November and December are always exceedingly busy times, but it is worth taking a moment to realize that something huge
-happened. Microsoft has opened sourced their .NET framework. I am a big fan of Microsoft’s C# language. I think, for
-most developers, it is a great and productive way to get work done. Having this option available on Linux and Mac
-machines is going to be great. Throw in ASP.NET MVC and Web API coming along too, and 2015 will be awesome one for
-developers.</p>
-<p>Scott Hanselman has a <a href="http://www.hanselman.com/blog/AnnouncingNET2015NETAsOpenSourceNETOnMacAndLinuxAndVisualStudioCommunity.aspx">blog post</a>
- where he gets into the details about the open sourcing of .NET and there is a lot to
-get into. However, but for now, let us just build an ASP.Net vNext app and jump into it like a kid opening presents on
-Christmas morning!</p>
-<p>We are going to create an ASP.NET vNext app to countdown several things… the days until Christmas, the days
-until the release of the next ASP (assuming Build 2015) and finally, the days until new Star Wars movie.</p>
-<p>How do we jump in? These steps are mostly identified on the ASP.NET GitHub page (I know, crazy, right. Microsoft
-documenting stuff on GitHub!?!?) at <a href="https://github.com/aspnet/home">https://github.com/aspnet/home</a>. We can still step through.</p>
-<p>First, because vocabulary is important…. Since the codename for the next version of ASP.NET vNext is Katana,
-Microsoft is going all in with the letter K. So many of the tools utilize the letter K. A quick run through of the
-most important.</p>
+        <p>Search is ubiquitous in the world of the Internet. Everyone starts their questions by going to Google (or for a small minority Bing) and typing in their query as the entry to the Internet. The expectation is that the results are going to be exactly what you are looking for, and if that doesn&#39;t work out, adding a second term will get you there.</p>
+<p>In the Enterprise though, this is not always the case. Data exists in disparate system, files live on file shares, users keep documents on their hard drive, etc. Ultimately, it comes down to the fact that the data users need is not discoverable, for a variety of reasons. As a result, users generally don&#39;t regard search within the walls of the enterprise like they do search outside of the Enterprise. Instead of starting at the search page, they start at the application that hosts their data and search. This is a source of inefficiency. Additionally, what we are searching for may be the person within our organization who knows the most about a given topic so we can do research ourselves or resolve an issue. The good news is that SharePoint 2010 and its search functionality can enable an organization to overcome these inefficiencies or weaknesses.</p>
+<p>SharePoint 2010 has great built-in Enterprise search functionality which can certainly help solve these problems. The downside is it can get a bit confusing because there are many variations of the Microsoft search product offering. The products, with a description are:</p>
 <ul>
-<li><p>KRE is the K Runtime Environment. This is the code that bootstraps your ASP.NET vNext application; compilers,
-Common Language Runtime (CLR), etc.</p>
-</li>
-<li><p>KVM is the K Version Manager. It will install appropriate version of the KRE. You will be able to have multiple ASP.NET vNext runtimes and applications running on your machine.</p>
-</li>
-<li><p>KPM is the K Package Manager. This will download packages needed for your application to run.</p>
-</li>
+<li><strong>SharePoint Foundation 2010 Search </strong>- This is the search engine that ships with SharePoint foundation. It is limited to a single site collection (or in non-SharePoint speak, a single site) and cannot index the content and data external to that given site.</li>
+<li><strong>Search Server 2010 Express </strong>- Search Server Express is a standalone product that is <a href="http://www.microsoft.com/enterprisesearch/searchserverexpress/en/us/default.aspx">available and free</a>. It supports external content sources and search federation. It is limited in its capability to scale to your organization&#39;s needs.</li>
+<li><strong>Search Server 2010 </strong>- This is the full product upgrade from Search Server Express. It is an Enterprise search engine that can scale across multiple servers. The product is focused for organizations that are not using SharePoint 2010 and can provide a great product offering for your internal or public website needs.</li>
+<li><strong>SharePoint Server 2010 Search </strong>- The search available in SharePoint server 2010 includes all of the Search Server 2010 functionality but also includes features specific to SharePoint. Examples of this include taxonomy and people search.</li>
+<li><strong>FAST Search Server 2010 for SharePoint </strong>- FAST is Microsoft&#39;s advanced search functionality. It is used by many organizations that need highly scalable and functional requirements. An example would be the Best Buy site, which uses FAST search to provide their categories.
+The great part about SharePoint search, starting with Search Server 2010, is the ability to integrate data from other systems within your Enterprise. Using the Business Connectivity Services functionality (a feature of SharePoint itself) with SharePoint search, you can integrate into Line of Business (LOB) applications. For example, if you have customer information and contacts in a CRM application, SharePoint can be setup to index that information and make it part of the results that are returned when users search from within your SharePoint site.</li>
 </ul>
-<p>First thing to do is ensure you have Homebrew setup on your OS X machine. If you are doing development work, you most likely have this already, so we will assume you are ready to go.</p>
-<p>Next, we need to install the ASP.NET vNext runtime environment (KRE). This is done by downloading appropriate git repositories via a bash script.</p>
-<pre class="highlight"><code class="hljs bash">brew tap aspnet/k
-</code></pre>
-<p>Similar commands are used for other platforms such as Linux and Windows, which uses PowerShell.</p>
-<p>The next step is to install KVM (The K Version Manager), which is the runtime manager. It is responsible for getting the runtime and enables multiple different runtimes on the same machine. I have seen some mention of issues using KVM on OS X with different shells, like zsh. I use the Bash shell and have not run into issues. To install KVM type</p>
-<pre class="highlight"><code class="hljs bash">brew install kvm
-</code></pre>
-<p>Next we run a script to setup our environment variables, etc</p>
-<pre class="highlight"><code class="hljs bash"><span class="hljs-built_in">source</span> kvm.sh
-</code></pre>
-<p>We have pretty quickly setup and downloaded the environment to run ASP.NET vNext apps on an OS X machine, but, we have
-no code! Thankfully, someone wrote an ASP.NET MVC Project Generator for Yeoman. Yeoman, for those of you not familiar,
-is a tool to generate scaffolding for your projects. It utilizes Node.js.</p>
-<p>So to get all of this working, you are going to need to have Node.JS and the Node Package Manager (NPM) installed.
-Again, since we are talking developers, you probably already have all of this. The next step then is to install
-Yeoman, using NPM. From your Bash shell we will install Yeoman first</p>
-<pre class="highlight"><code class="hljs bash">npm install –g yo
-</code></pre>
-<p>Next, we install the generator for ASP.Net</p>
-<pre class="highlight"><code class="hljs bash">npm install -g generator-aspnet
-</code></pre>
-<p>Next step, since we have all of the tools we need installed and downloaded, we can generate our application. This is done by running Yeoman from the bash shell type by typing</p>
-<pre class="highlight"><code class="hljs bash">yo aspnet
-</code></pre>
-<p><img src="http://www.jptacek.comosx1.png" alt="Running Yeoman, step1, choose MVC"></p>
-<p>We have the option of choosing a console application, a Web App, MVC app or Nancy ASP.NET app. We choose MVC
-application and provide a name</p>
-<p><img src="http://www.jptacek.comosx2.png" alt="Running Yeoman, step2, choose Project Name"></p>
-<p>And our application gets generated</p>
-<p><img src="http://www.jptacek.comosx3.png" alt="Running Yeoman, step3, application is generated"></p>
-<p>And we can take a look and see our directory structure, with many of the controllers and views most of us know from
-our MVC projects.</p>
-<p><img src="http://www.jptacek.comosx4.png" alt="After Running Yeoman, step last, tree view"></p>
-<p>For those of you well versed in ASP.NET, a couple of pretty interesting things to note. First, no solution file!
-Second, no Project file! Most of the Visual Studio generate file constructs are gone. Similar to a Node.JS
-application, there is a json file outlining the dependencies needed for an application, as opposed to the Solution
-and Project files of Visual Studio. Very cool.</p>
-<p>To build and run the application, we use the commands shown in the previous screen shot of the bash shell</p>
-<p><code>kpm restore</code>, which gets the packages for your application</p>
-<p><code>kpm build</code>, builds the application</p>
-<p><code>k kestrel</code>, fires up the web server to serve the pages</p>
-<p>By using the kestrel web server we are actually firing up Mono, the open source version of the .NET framework.
-We access the location locally on port 5004 (<a href="http://localhost:5004/">http://localhost:5004/</a>)</p>
-<p><img src="http://www.jptacek.comosx5.png" alt="MVC app on OS X"></p>
-<p>So that is all kind of Christmas goodies Santa has for us, what is the most impressive programming language
-for business development being able to run on non-Microsoft platforms. When you start thinking about integrating in
-with some popular Linux tools like Docker, it doesn’t take a lot to realize things will be a lot different on the .NET
-stack when Santa is coming back to town in 2015. Plus, new Star Wars!</p>
-<p>You can download this code from a GitHub repository I have setup at
-<a href="https://github.com/jptacek/ChristmasCountdown">https://github.com/jptacek/ChristmasCountdown</a></p>
-<p>Note: When running the web site, it will use the same port for the web server. I usually exit the process (k kestrel) by typing Ctrl-Z.
-However, I need to list the processes using PS and then kill, by typing kill -9 <pid>, the process that is mono.
-That way I can restart.</pid></p>
-<p><strong>UPDATE (December 17, 2014)</strong> - Links updated to include link to Microsoft <a href="http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx">post</a> on Yeoman</p>
-<p><strong>UPDATE 2 (December 18, 2014)</strong> - Thanks to <a href="https://twitter.com/sayedihashimi">Sayed Hashimi</a> for helping clean up some typos
-with case issues.
-<a href="https://twitter.com/sayedihashimi/status/545720905171603456">https://twitter.com/sayedihashimi/status/545720905171603456</a></p>
-<p>Links</p>
+<p>Similarly, with the ability to search LOB applications, advanced versions of SharePoint allow search sources to be external to the server. SharePoint calls these content sources, and they can be a variety of types of data. Examples include corporate Intranet sites that aren&#39;t hosted in SharePoint, external file systems, and Internet sites. This is the majority of the data that organizations are interested in, all at the tip of employees&#39; fingers.</p>
+<p>Some examples of what customers have done with SharePoint search:</p>
 <ul>
-<li>ASP.NET MVC Project Generator for Yeoman - <a href="http://hassakarn.com/2014/02/07/asp-net-mvc-project-generator-for-yeoman/">http://hassakarn.com/2014/02/07/asp-net-mvc-project-generator-for-yeoman/</a></li>
-<li>Yeoman - <a href="http://yeoman.io/">http://yeoman.io/</a></li>
-<li>ASP.NET GitHub repo - <a href="https://github.com/aspnet/home">https://github.com/aspnet/home</a></li>
-<li>OmniSharp.NET - <a href="http://www.omnisharp.net/">http://www.omnisharp.net/</a></li>
-<li>GitHub for this Code - <a href="https://github.com/jptacek/ChristmasCountdown">https://github.com/jptacek/ChristmasCountdown</a></li>
-<li>Microsoft on Yeoman for ASP.NET - <a href="http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx">http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx</a></li>
+<li>Make a file server drive that has 15 years of data quickly accessible via your SharePoint searches</li>
+<li>Use SharePoint search to bring in product information from an ERP system with accompanying price as well as links to the ERP system</li>
+<li>Use Google News and other external news sources to mine information about competitors
+As you can see, leveraging SharePoint search beyond its out-of-the-box functionality can quickly turn your corporate Intranet into the starting point for information for all your knowledge workers!</li>
 </ul>
-<p>This blog post originally appeared at <a href="http://www.skylinetechnologies.com/Blog/Article/2586/12-Days-of-Christmas-Mac.aspx">Skyline Technologies</a>
-as part of their <a href="http://www.skylinetechnologies.com/Blog/Article/2586/12-Days-of-Christmas-Mac.aspx">12 Blogs of Christmas series</a></p>
+<p>This blog post originally appeared at Skyline Technologies (<a href="http://www.skylinetechnologies.com/blog/Pages/sharepointsearch.aspx">http://www.skylinetechnologies.com/blog/Pages/sharepointsearch.aspx</a>)</p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/asp-net-vnext/'>ASP.NET vNext</a>, <a href='/tags/asp-net-core/'>ASP.NET Core</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>
+        Posted In: <a href='/tags/search/'>Search</a>, <a href='/tags/sharepoint/'>SharePoint</a>, <a href='/tags/sharepoint/'>SharePoint</a>
     </div>
     
     <br/>
@@ -216,43 +136,37 @@ as part of their <a href="http://www.skylinetechnologies.com/Blog/Article/2586/1
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Creating ASP.NET vNext application on OS X' class="twitter-share-button" data-url="http://jptacek.com/2014/12/12/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='SharePoint Search - Think Outside the (Search) Box!' class="twitter-share-button" data-url="http://jptacek.com/2011/04/13/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/12/12/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2011/04/13/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/12/12/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2011/04/13/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2014/12/23/index/'>MS Dev Podcast Show - December 19, 2014</a></h1>
+    <h1><a href='/2011/03/25/index/'>Developing with Microsoft's Azure Platform</a></h1>
     
-        <div class="post-date">Dec 22nd, 2014</div>
+        <div class="post-date">Mar 24th, 2011</div>
 
     <div class="post-content">
-        <p>I had the very cool experience of being invited to be part of the <a href="http://msdevshow.com/">MS Dev Show</a>, a Podcast focused on Microsoft Developer
-Technologies hosted by <a href="https://twitter.com/carlschweitzer">Carl Schweitzer</a> and
-<a href="https://twitter.com/ytechie">Jason Young</a>. I enjoy the show when I get to a chance listen and, truth be told, Jason
-was one of the inspirations for me switching my blogging engine to Docpad. That means I was pretty excited to be
-invited on!</p>
-<p>The Podcast mostly focused on AngularJS, but we talked a bit about some of the upcoming Visual Studio changes and
-ASP.NET vNext, which is going to be really cool for Microsoft Developers. You can get a hint of what is coming on one of my
-recent blog posts
-<a href="http://www.jptacek.com/2014/12/creating-ASP.NET-vNext-application-on-OSX/">Running ASP.NET vNext on OS X</a>.</p>
-<p>You can listen to the show at
-<a href="http://msdevshow.com/2014/12/angularjs-with-john-ptacek/">http://msdevshow.com/2014/12/angularjs-with-john-ptacek/</a>.
-Wished I would have sounded a bit more eloquent for everyone, but kind of sleep deprived.</p>
-<p>Thanks Carl and Jason!</p>
-<p> <img src="http://www.jptacek.commsDevShowlogo@2x.png" alt="MS Dev Show Log Logo"></p>
+        <p>For the past several months, Skyline has been working on an awesome charity project called the <a href="http://www.appletoncompassion.org/">Appleton Compassion Project</a>. This project will provide visitors to the <a href="http://www.troutmuseum.org/">Trout Museum of Art </a>a way to view the 10,500 pieces in the exhibit and their accompanying artist statements. It has also provided us with an excellent opportunity to develop in Azure and learn a thing or two which I&#39;m going to share with you.</p>
+<p>The Appleton Compassion Project is hosted on Microsoft Azure. Azure is Microsoft&#39;s platform for developing cloud applications based on its Microsoft .NET technology. The good news is that if you&#39;re a programmer doing .NET development you are already well positioned to do Azure programming!</p>
+<p>The cloud means a lot of different things to a lot of different people, but in discussing Azure, we can think of it as providing several features.</p>
+<p>First, it provides infrastructure. For the Appleton Compassion Project, this was important. The goals of the project were such that they were (and still are) hoping to have some big-name celebrities involved, which could result in a large number of visitors to the site. While we could plan for that kind of demand, the Appleton Area School District - who is sponsoring the project - could not afford the hardware to meet it. Since one of the features of Azure is the ease of scalability, it can quickly meet the demands by adding more compute instances (the virtual machines that Azure uses). This is an example of where we pay for what we use, and don&#39;t have to pay for demand that we plan for, that may or may not be used.</p>
+<p>Second, it provides scale. This is a necessity as the Virtual Exhibit on the site will contain over 10,000 individual images that need to be displayed. The process we have to create the Pivot collection for our current batch of 8,000 images creates over 750,000 Deep Zoom files, is computationally intense, and literally takes days to run. We can greatly reduce this time by paying more and using larger computer sizes and creating multiple tasks in parallel. Once the files are created, we can then reduce the computer size to serve up HTML pages until we need the increase in computing power. Doing this kind of implementation using computing hardware as needed on the school district&#39;s hardware would not be cost effective.</p>
+<p>Another variation of scale is disk space ... we only pay for what we use. We don&#39;t need to be concerned with checking for disk space before we run our collection creation process, estimating the amount of files we will create and ensuring we have enough. Azure will automatically grow and make redundant copies of our data, so that if the server goes down, the data is stored elsewhere.</p>
+<p>As I mentioned earlier, Azure is based on .NET technologies, making it relatively straightforward to move to cloud development. There are, of course, several differences. When you deploy an application to Azure, it starts a dedicated Virtual Machine to host your application in a Microsoft data center. The bigger the size of the machine you request, the more you pay. One result of the virtual machine being created for each deploy is that you don&#39;t want to persist data to these VMs. You will use blob storage for persisted data. This is one of the biggest differences between Azure and normal .NET development.</p>
+<p>This blog post originally appeared at Skyline Technologies (<a href="http://www.skylinetechnologies.com/blog/Pages/developingwithazure.aspx">http://www.skylinetechnologies.com/blog/Pages/developingwithazure.aspx</a>)</p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/microsoft-dev-show/'>Microsoft Dev Show</a>, <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/docpad/'>Docpad</a>
+        Posted In: <a href='/tags/appleton-compassion/'>Appleton Compassion</a>, <a href='/tags/azure/'>Azure</a>, <a href='/tags/giveology/'>Giveology</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
@@ -261,13 +175,13 @@ Wished I would have sounded a bit more eloquent for everyone, but kind of sleep 
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='MS Dev Podcast Show - December 19, 2014' class="twitter-share-button" data-url="http://jptacek.com/2014/12/23/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Developing with Microsoft's Azure Platform' class="twitter-share-button" data-url="http://jptacek.com/2011/03/25/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/12/23/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2011/03/25/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/12/23/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2011/03/25/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 

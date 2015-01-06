@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -102,23 +106,23 @@
 <p>Steps for getting this setup</p>
 <ol>
 <li>Go to <a href="http://Domains.live.com">http://Domains.live.com</a>. Note, you are going to want to use Chrome for this. The IE 10 browser looks awful
-<img src="http://www.jptacek.com021513_1309_Settingupem1.png" alt=""></li>
+<img src="/2013/02/15/index/021513_1309_Settingupem1.png" alt=""></li>
 </ol>
 <p>Versus Chrome</p>
-<p><img src="http://www.jptacek.com021513_1309_Settingupem2.png" alt=""></p>
+<p><img src="/2013/02/15/index/021513_1309_Settingupem2.png" alt=""></p>
 <ol>
 <li>Click the sign in button and use your Microsoft account and then click the Get Started link</li>
 <li><div>Type in the custom domain you will want email for, in our case, jptacek.com. Make sure Set up Outlook.com is selected for your domain mail service, and then hit the continue button</div>
-<img src="http://www.jptacek.com021513_1309_Settingupem3.png" alt=""></li>
+<img src="/2013/02/15/index/021513_1309_Settingupem3.png" alt=""></li>
 <li><div>You will then need to battle Microsoft&#39;s exceedingly unforgiving CAPTCHA system, after which you will be taken to the registration screen. The first step is to configure the MX record (MX is the DNS record used for mail)</div>
-<img src="http://www.jptacek.com021513_1309_Settingupem4.png" alt=""></li>
+<img src="/2013/02/15/index/021513_1309_Settingupem4.png" alt=""></li>
 <li>Log onto your DNS provider, in our case DNSImple.com, and add the record. This varies by DNS provider. IN the case on DNSimple, we go to the Advanced section, and choose Add a Record and select MX from the dropdown</li>
 <li><div>Our next step is to create a server trust record as recommended on the admin screen. This is a TXT DNS record that helps verify our email address and helps prevent the email from the site from being marked as junk</div>
-<img src="http://www.jptacek.com021513_1309_Settingupem5.png" alt=""></li>
+<img src="/2013/02/15/index/021513_1309_Settingupem5.png" alt=""></li>
 <li>Next, we want a URL we can use to access our email. To do this, we create a CNAME record that points back to the Hotmail/Outlook . We will use mail, so mail.jptacek.com will be the URL we use when accessing email. You could use <a href="http://www.youtube.com/watch?v=-VILl6FOm6s">kwyjibo</a> if you wanted to, just remember it <span style="font-family: Wingdings;">J</span> The CNAME record needs to point back to go.domains.live.com
 &nbsp;</li>
 </ol>
-<p><img src="http://www.jptacek.com021513_1309_Settingupem6.png" alt=""></p>
+<p><img src="/2013/02/15/index/021513_1309_Settingupem6.png" alt=""></p>
 <ol>
 <li><div>It can take up to 60 minutes for your domain to resolve, you can see if your domain records are updated by using your favorite command prompt and typing the commands</div>
 
@@ -131,15 +135,15 @@
 <p>These should display values you entered earlier</p>
 <ol>
 <li><div>Return to Domains.live.com and log in with your Microsoft account. It will show you the domains. In this step, the DNS configuration can take a while too</div>
-<img src="http://www.jptacek.com021513_1309_Settingupem7.png" alt=""></li>
+<img src="/2013/02/15/index/021513_1309_Settingupem7.png" alt=""></li>
 <li>When your domain is active, you can add accounts, up to 50 of them. To do this click the domain name, and click the Add button for member accounts
-<img src="http://www.jptacek.com021513_1309_Settingupem8.png" alt=""></li>
+<img src="/2013/02/15/index/021513_1309_Settingupem8.png" alt=""></li>
 </ol>
-<p><img src="http://www.jptacek.com021513_1309_Settingupem9.png" alt="">Enter the account you want to create a long with a password</p>
+<p><img src="/2013/02/15/index/021513_1309_Settingupem9.png" alt="">Enter the account you want to create a long with a password</p>
 <p>&nbsp;</p>
 <p>You are done! You can now go to newly created email site for your custom domain, and login with your user name.</p>
-<p><img src="http://www.jptacek.com021513_1309_Settingupem10.png" alt=""></p>
-<p><img src="http://www.jptacek.com021513_1309_Settingupem11.png" alt=""></p>
+<p><img src="/2013/02/15/index/021513_1309_Settingupem10.png" alt=""></p>
+<p><img src="/2013/02/15/index/021513_1309_Settingupem11.png" alt=""></p>
 <p>&nbsp;</p>
 <p>You can now email me at blog [@] jptacek.com</p>
 <p><strong>Update - May 27, 2014</strong> Microsoft has announced that it will no longer support custom domains using Outlook.Com. As a
@@ -187,7 +191,7 @@ are encouraging customers to use Office 365 moving forward. You can find out mor
 
             <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript></div>
 <script type="text/javascript">
-    var disqus_shortname = 'ewalnet';
+    var disqus_shortname = 'jptacek';
     var disqus_url = 'http://www.jptacek.com/2013/02/15/index/';
     var disqus_identifier = disqus_url;
     var disqus_title = 'Setting up email for a Custom Domain on a Windows Azure hosted website';

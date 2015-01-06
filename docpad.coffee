@@ -52,8 +52,10 @@ docpadConfig = {
     getOldUrl: (newUrl) ->
       newUrl.substr(0,newUrl.length-1) + '.html'
 
-    fixLinks: (content) ->
+    fixLinks: (content, baseUrlOverride) ->
       baseUrl = @site.url
+      if baseUrlOverride
+        baseUrl = baseUrlOverride
       regex = /^(http|https|ftp|mailto):/
 
       $ = cheerio.load(content)
@@ -67,6 +69,7 @@ docpadConfig = {
         $a.attr('href', baseUrl + href) unless regex.test(href)
       $.html()
 
+
     moment: require('moment')
 
 
@@ -74,18 +77,17 @@ docpadConfig = {
       title.replace("'", "\\'")
 
   # Discus.com settings
-    disqusShortName: 'ewalnet'
+    disqusShortName: 'jptacek'
 
   # Google+ settings
-    googlePlusId: '103974853049200513652'
+    googlePlusId: '+JohnPtacek'
 
-    getTagUrl: (tag) ->
-      slug = tag.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')
-      "/tags/#{slug}/"
 
   collections:
     posts: ->
-      @getCollection('documents').findAllLive({relativeDirPath: 'posts'}, [date: -1])
+      @getCollection('documents').findAllLive({layout: 'post'}, [date: -1])
+    menuPages: ->
+      @getCollection("html").findAllLive({menu: $exists: true},[{menuOrder:1}])
 
     cleanurls: ->
       @getCollection('html').findAllLive(skipCleanUrls: $ne: true)
@@ -97,7 +99,7 @@ docpadConfig = {
       outPath: '.out'
       collections:
         posts: ->
-          @getCollection('documents').findAllLive({layout: {'$in' : ['post', 'drafts']}}, [relativeDirPath: 1,  date: -1])
+          @getCollection('documents').findAllLive({layout: {'$in' : ['post', 'drafts']}}, [layout: 1,  date: -1])
 
   watchOptions:
     interval: 2007

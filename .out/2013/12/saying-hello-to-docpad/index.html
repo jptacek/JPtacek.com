@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -100,17 +104,17 @@
 I have been looking at several different options during this time and have finally picked one. There were three that really piqued my interest; <a href="http://www.tryghost.org">Ghost</a>, <a href="http://jekyllrb.com/">Jekyll</a> with hosting on Github, and <a href="http://docpad.org/">DocPad</a>.</p>
 <p>Each of the platforms had different things that made it interesting to me, and some things I did not like. Let&#39;s review each of them</p>
 <h2 id="ghost">Ghost</h2>
-<p><img src="http://www.jptacek.comGhostLogo.png" alt="Ghost Logo"></p>
+<p><img src="/2013/12/29/index/GhostLogo.png" alt="Ghost Logo"></p>
 <p>I think <a href="http://www.Ghost.org">Ghost</a> is pretty awesome. When I started thinking about redoing my blog, it had a lot of things I was interested in. The platform is elegant. It uses Markdown for creating content, and the online editor for it is VERY nice. The other thing that really interested me is that it is all built on Node.JS. This is a platform I am definitely interested in growing my skill base.</p>
 <p>However, despite all of these things, Ghost was not for me. In reality, is another blogging/CMS platform. The same limitations I was having with WordPress, in terms of page structure, adding JavaScript content, etc, would still be an impediment on Ghost. Essentially, Ghost is WordPress 2.0, a MUCH nice WordPress, hosted with Node.JS instead of PHP, but not for me and the things I would like to do.</p>
 <h2 id="jekyll">Jekyll</h2>
-<p><img src="http://www.jptacek.comJekyllLogo.png" alt="Jekyll Logo"></p>
+<p><img src="/2013/12/29/index/JekyllLogo.png" alt="Jekyll Logo"></p>
 <p><a href="http://jekyllrb.com/">Jekyll</a> was VERY close to being what I chose. The magic of Jekyll is that it creates static HTML from templates. Essentially, you create a page layout. You can then create posts and content using Markdown to be combined with your layout and it will create static HTML. By serving up static HTML, your hosting costs quickly become much less since you are serving up static pages, and millions of web servers over the world are VERY good at that.</p>
 <p>Jekyll also has the added benefit of being tied to <a href="http://www.GitHub.com">GitHub</a> and its <a href="http://pages.github.com/">GitHub Pages</a> platform. I can have the fine folks at GitHub and their operations folks be responsible for ensuring my site is up. It also has some slick features where you check in your Markdown file in GitHub and your site content is automatically deployed.</p>
 <p>However, like Goldilocks finding the porridge a bit too cool, there were some things that steered me away. First, while the automatic updating feature is slick, it is a limited subset of the Jekyll functionality. Further, Jekyll is based on the Ruby programming platform. While I find that more interesting than WordPresss’ PHP, it is definitely not as high up on my list as Node.JS.</p>
 <p>Which brings us too….</p>
 <h2 id="docpad">DocPad</h2>
-<p><img src="http://www.jptacek.comDocPadLogo.png" alt="DocPad Logo"></p>
+<p><img src="/2013/12/29/index/DocPadLogo.png" alt="DocPad Logo"></p>
 <p>Ultimately, I ended up picking <a href="http://docpad.org/">DocPad</a>. I REALLY liked the idea of static page generation. I have been around the web now that it is all back where it started, with developers putting static HTML files on a server. Who would have thunk? Of course, this is much nicer since you have templates to go and create the site. It is also a Node.JS application, which is of interest. You can also auto deploy your markdown files and have it create the static HTML in an Azure web instance after you commit and push your changes to GitHub. VERY SLICK. Of course, I pay for the CPU part of that, and only when I create content. The rest will all be static HTML files being sent by IIS.</p>
 <p>It is really very slick how easy the site setup was. I will detail my instructions down the road. I do LOVE the Node Package Manager and the magic of package.json which allows you to quickly get a site up and running on your machine.</p>
 <p>I give a lot of credit to the site redo to my old <a href="http://www.SkylineTechnologies">Skyline</a> colleague and now Microsoft guy, <a href="http://www.yTechie.com">Jason Young</a>. As I was investigating my next blog platform, he published a <a href="http://www.ytechie.com/2013/11/blogging-awesomeness-with-a-static-generator-and-markdown/">post</a> about migrating his site to DocPad. The gold star for Jason was taking the DocPad site and configuring Azure to compile the markdown to static HTML and then set for hosting. This is what moved me from going to Jekyll to Docpad. VERY COOL!</p>
@@ -171,7 +175,7 @@ I have been looking at several different options during this time and have final
 
             <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript></div>
 <script type="text/javascript">
-    var disqus_shortname = 'ewalnet';
+    var disqus_shortname = 'jptacek';
     var disqus_url = 'http://www.jptacek.com/2013/12/29/index/';
     var disqus_identifier = disqus_url;
     var disqus_title = 'Saying Hello to.... DocPad';

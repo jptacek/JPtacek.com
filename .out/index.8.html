@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -93,52 +97,50 @@
             
     <article class="post">
     
-    <h1><a href='/2013/02/27/index/'>Being John Ptacek – Configuring Wordpress for Authorship Markup</a></h1>
+    <h1><a href='/2013/12/29/index/'>Saying Hello to.... DocPad</a></h1>
     
-        <div class="post-date">Feb 26th, 2013</div>
+        <div class="post-date">Dec 28th, 2013</div>
 
     <div class="post-content">
-        <p>A while back, Scott Hanselman had a blog <a href="http://www.hanselman.com/blog/EmbraceAuthorshipTheImportanceOfRelmeAndRelauthorOnYourContentsSEOAndGoogle.aspx">post</a> about embracing authorship. Essentially, it was a discussion about using Google&#39;s authorship <a href="http://googlewebmastercentral.blogspot.com/2011/06/authorship-markup-and-web-search.html">markup</a> on your website to help identify content you wrote. Like a lot of my recent posts, I decided to give this a run on my blog, which is an Azure hosted site running Wordpress.</p>
-<p>At a high level, implementing this is a two-step process. First, Google needs to have a trusted &quot;identity card&quot;. A place where the author identity is managed. As you can imagine, for Google this is <a href="http://plus.google.com/">Google+.</a> You need to use your identity card (Google+) and say that you write content for a given site (in this example, <a href="http://www.jptacek.com/">jptacek.com</a>). The next step is when you write content, you need to link back to your Google+ profile.</p>
-<p>First why, would someone do this? There are quite a few reasons</p>
-<p>1 - Manage &quot;brand&quot;. Whether it is your personal brand or your corporate brand, it helps build online presence</p>
-<p>2 - Search Engine Optimization. Google keeps the magic sauce of its page ranking very close to the vest. However, former Google CEO Eric Schmidt has explicitly stated in the future, content linked to online profiles will be ranked higher. </p>
-<p>3 - Search Results will be more eye catching. Google will put your author photo into links for pages you have created.</p>
-<p>For more on this, Forbes recently published an <a href="http://www.forbes.com/sites/johnhall/2013/02/26/6-reasons-why-googles-author-tags-are-important-to-leaders/?ss=strategies-solutions">article</a> about why business should be using Google author tags.</p>
-<p>So what are the steps to do this for your site? There are several sites that explain this. Google has a nice <a href="http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=2539557">introduction</a> as well as the Scott Hanselman <a href="http://www.hanselman.com/blog/EmbraceAuthorshipTheImportanceOfRelmeAndRelauthorOnYourContentsSEOAndGoogle.aspx">post</a>. </p>
-<p>The first step is to identify to Google that you contribute to a site. This is done by going to your Google+ profile at <a href="http://profiles.google.com/me">http://profiles.google.com/me</a> and clicking Edit Profile.</p>
-<p><img src="http://www.jptacek.com022713_1235_BeingJohnPt1.png" alt=""></p>
-<p>Click Add a custom link and link to your blog. I blog a lot for at <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>, where I work, so I included a contributor link there. I also blog on my personal site. You will notice that each link has multiple links. This is a result of adding the link manually for each site as well as doing a corresponding email verification. So we have finished part one, letting Google know where we are creating content.</p>
-<p>The next step is to update Wordpress to have posts link back my author profile with the author tag. For my profile, the url is <a href="https://plus.google.com/117170075977212738060?rel=author">https://plus.google.com/117170075977212738060?rel=author</a>. You will want to change the really long number to be your profile ID. </p>
-<p></p><p>I did this in several ways. First, on the main site I have a list of links for things like Twitter and LinkedIn. I included a link to Google+ here also</p>
-<p><img src="http://www.jptacek.com022713_1235_BeingJohnPt2.png" alt=""></p>
-<p>Next, I update footer.php template for Wordpress to have a link back to the Google Profile. This will ensure each page on the site is identified. Last, the header.php section was updated with a Meta tag </p>
-<p><span style="font-family:Arial; font-size:10pt"><span style="color:#a31515"><link<></link<>
-            <span style="color:red">rel<span style="color:blue">=&quot;author&quot;</span> href<span style="color:blue">=&quot;<a href="https://plus.google.com/117170075977212738060?rel=me">https://plus.google.com/117170075977212738060?rel=me</a>&quot;</span>
-                <span style="color:blue">/&gt;</span>
-            </span></span></span></p>
-<p>Last, is to add a link to the content.php identifying the author of the article that links back to your Google Profile</p>
-<p>By <a href="https://plus.google.com/117170075977212738060?rel=author">John Ptacek</a></p>
-<p>Okay, we have setup a bunch of links. How do we know if it works? Google has a Structured Data Testing tool that will tell you. If you go to <a href="http://www.google.com/webmasters/tools/richsnippets">http://www.google.com/webmasters/tools/richsnippets</a> you can check your blog and see if Google recognizes the markup.</p>
-<p><img src="http://www.jptacek.com022713_1235_BeingJohnPt3.png" alt=""></p>
-<p>You also notice that there is an email verification. This is another way to ensure your links are set. This is the reason two links appear for each site I was a contributor to in my Google Plus profile. I added each URL manually, and then as another level of verification, I verified an email address for each site.</p>
-<p>What is the end result? When I search Google for content, my picture is now appearing in the search results</p>
-<p><img src="http://www.jptacek.com022713_1235_BeingJohnPt4.png" alt=""></p>
-<p>Posts I have a written now appear with a picture next to my name. You can also see that there are several hyperlinks in the search results. </p>
-<p>The first, the byline (by John Ptacek) links to my Google+ profile.</p>
-<p><img src="http://www.jptacek.com022713_1235_BeingJohnPt5.png" alt=""></p>
-<p>The second, More by John Ptacek, </p>
-<p><img src="http://www.jptacek.com022713_1235_BeingJohnPt6.png" alt=""></p>
-<p>displays articles I have written as well as author information as you can see <a href="http://www.google.com/#hl=en&amp;tbs=ppl_ids:--117170075977212738060-%2Cppl_nps%3AJohn+Ptacek%2Cppl_aut%3A1&amp;sclient=psy-ab&amp;dq=&amp;q=John+Ptacek&amp;oq=John+Ptacek&amp;gs_l=serp.3...31815.31815.0.32252.0.0.0.0.0.0.0.0..0.0.les%3B..0.0...1c.1.5.psy-ab.xk3_MinTqHs&amp;pbx=1&amp;bav=on.2,or.r_gc.r_pw.r_qf.&amp;fp=95c9c19312d4e19&amp;biw=1478&amp;bih=757">here</a></p>
-<p><img src="http://www.jptacek.com022713_1235_BeingJohnPt7.png" alt=""></p>
-<p>As you can see, it is relatively easy to start identifying content you have created and having increased visibility in page results.</p>
-<p>As organizations embrace thought leadership, this is a great tool to ensure your employees and their content continues to be discoverable!</p>
+        <p>I recently <a href="http://www.jptacek.com/2013/12/saying-goodbye-to-wordpress/">blogged</a> about moving off of WordPress to a new blogging platform.
+I have been looking at several different options during this time and have finally picked one. There were three that really piqued my interest; <a href="http://www.tryghost.org">Ghost</a>, <a href="http://jekyllrb.com/">Jekyll</a> with hosting on Github, and <a href="http://docpad.org/">DocPad</a>.</p>
+<p>Each of the platforms had different things that made it interesting to me, and some things I did not like. Let&#39;s review each of them</p>
+<h2 id="ghost">Ghost</h2>
+<p><img src="/2013/12/29/index/GhostLogo.png" alt="Ghost Logo"></p>
+<p>I think <a href="http://www.Ghost.org">Ghost</a> is pretty awesome. When I started thinking about redoing my blog, it had a lot of things I was interested in. The platform is elegant. It uses Markdown for creating content, and the online editor for it is VERY nice. The other thing that really interested me is that it is all built on Node.JS. This is a platform I am definitely interested in growing my skill base.</p>
+<p>However, despite all of these things, Ghost was not for me. In reality, is another blogging/CMS platform. The same limitations I was having with WordPress, in terms of page structure, adding JavaScript content, etc, would still be an impediment on Ghost. Essentially, Ghost is WordPress 2.0, a MUCH nice WordPress, hosted with Node.JS instead of PHP, but not for me and the things I would like to do.</p>
+<h2 id="jekyll">Jekyll</h2>
+<p><img src="/2013/12/29/index/JekyllLogo.png" alt="Jekyll Logo"></p>
+<p><a href="http://jekyllrb.com/">Jekyll</a> was VERY close to being what I chose. The magic of Jekyll is that it creates static HTML from templates. Essentially, you create a page layout. You can then create posts and content using Markdown to be combined with your layout and it will create static HTML. By serving up static HTML, your hosting costs quickly become much less since you are serving up static pages, and millions of web servers over the world are VERY good at that.</p>
+<p>Jekyll also has the added benefit of being tied to <a href="http://www.GitHub.com">GitHub</a> and its <a href="http://pages.github.com/">GitHub Pages</a> platform. I can have the fine folks at GitHub and their operations folks be responsible for ensuring my site is up. It also has some slick features where you check in your Markdown file in GitHub and your site content is automatically deployed.</p>
+<p>However, like Goldilocks finding the porridge a bit too cool, there were some things that steered me away. First, while the automatic updating feature is slick, it is a limited subset of the Jekyll functionality. Further, Jekyll is based on the Ruby programming platform. While I find that more interesting than WordPresss’ PHP, it is definitely not as high up on my list as Node.JS.</p>
+<p>Which brings us too….</p>
+<h2 id="docpad">DocPad</h2>
+<p><img src="/2013/12/29/index/DocPadLogo.png" alt="DocPad Logo"></p>
+<p>Ultimately, I ended up picking <a href="http://docpad.org/">DocPad</a>. I REALLY liked the idea of static page generation. I have been around the web now that it is all back where it started, with developers putting static HTML files on a server. Who would have thunk? Of course, this is much nicer since you have templates to go and create the site. It is also a Node.JS application, which is of interest. You can also auto deploy your markdown files and have it create the static HTML in an Azure web instance after you commit and push your changes to GitHub. VERY SLICK. Of course, I pay for the CPU part of that, and only when I create content. The rest will all be static HTML files being sent by IIS.</p>
+<p>It is really very slick how easy the site setup was. I will detail my instructions down the road. I do LOVE the Node Package Manager and the magic of package.json which allows you to quickly get a site up and running on your machine.</p>
+<p>I give a lot of credit to the site redo to my old <a href="http://www.SkylineTechnologies">Skyline</a> colleague and now Microsoft guy, <a href="http://www.yTechie.com">Jason Young</a>. As I was investigating my next blog platform, he published a <a href="http://www.ytechie.com/2013/11/blogging-awesomeness-with-a-static-generator-and-markdown/">post</a> about migrating his site to DocPad. The gold star for Jason was taking the DocPad site and configuring Azure to compile the markdown to static HTML and then set for hosting. This is what moved me from going to Jekyll to Docpad. VERY COOL!</p>
+<p>Also, hat tip to <a href="http://www.ewal.net/">Erv Walter</a> for great stuff he did in setting up the platform and UI that Jason and I have both, VERY liberally borrowed from.</p>
+<p>Obviously, my site has a lot of UI cleanup I would like to do, I also need to edit a lot of posts, but here it is, in all of it&#39;s static glory.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Why DocPad</p>
+<ul>
+<li>Node.JS platform</li>
+<li>Templating engine to allow creation of static HTML files</li>
+<li>Enable Javascript on pages</li>
+<li>Auto publish from a GitHub repository</li>
+<li>Markdown language for publishing</li>
+<li>Lots of extensibility via Plugins</li>
+</ul>
+<p><a href="https://github.com/ervwalter/ewalnet-docpad">Erv Walter GitHub repository for Ewal.net</a></p>
+<p><a href="https://github.com/ytechie/ytechie-docpad">Jason Young GitHub repository for Ytechie.com</a></p>
+<p><a href="https://github.com/jptacek/JPtacek.com">My GitHub repository for JPtacek.com</a></p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/azure/'>Azure</a>, <a href='/tags/business/'>Business</a>, <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/wordpress/'>WordPress</a>
+        Posted In: <a href='/tags/wordpress/'>WordPress</a>, <a href='/tags/blog/'>Blog</a>, <a href='/tags/docpad/'>DocPad</a>
     </div>
     
     <br/>
@@ -147,57 +149,48 @@
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Being John Ptacek – Configuring Wordpress for Authorship Markup' class="twitter-share-button" data-url="http://jptacek.com/2013/02/27/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Saying Hello to.... DocPad' class="twitter-share-button" data-url="http://jptacek.com/2013/12/29/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/02/27/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/12/29/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/02/27/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/12/29/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2013/02/11/index/'>Configuring DNSimple for Azure Hosted Domains</a></h1>
+    <h1><a href='/2013/12/28/index/'>Saying Goodbye to WordPress</a></h1>
     
-        <div class="post-date">Feb 10th, 2013</div>
+        <div class="post-date">Dec 27th, 2013</div>
 
     <div class="post-content">
-        <p><a href="https://dnsimple.com/">DNSimple</a> is a great service for hosting and configuring DNS for domains you control. It also benefits by not being Go Daddy. I hate Go Daddy. They supported both SOPA and PIPA, run sexist television commercials and I have no love for their elephant killing CEO. Then there is their utterly confusing website, upselling tricks and poor customer service. Don&#39;t use Go Daddy.</p>
-<p>DNSimple allows you to host up to 10 domains for $36 (USD) for the year. You can find pricing information at <a href="https://dnsimple.com/pricing">https://dnsimple.com/pricing</a>. For multiple domains, this is significantly cheaper than Go Daddy.</p>
-<p>Another nice feature of DNSimple is they have templates for many popular sites to configure all of the necessary DNS settings required for hosting. They have templates for Google App pages, Tumblr, Wordpress, etc. While I am a developer and tend to be technical, I get lost pretty quick in the world of DNS configuration. A records, CNAME, MX, etc, etc. The templates help users get up and moving quickly.</p>
-<p>However, they do not have support for Azure hosted websites. It took me a little messing around to get this to work, and finally I have it set correctly.</p>
-<p>First, for this to work. You need to be hosting your website in Shared or Reserved mode. Free mode will not allow for users to have a custom domain name. To do this, log onto the Azure management portal and go to Web sites and choose your domain. Click scale and configure either Shared or Reserved. Shared is going to be MUCH cheaper.</p>
-<p><img src="http://www.jptacek.com021113_1414_Configuring1.png" alt=""></p>
-<p>&nbsp;</p>
-<p>You will then want to configure your domain names. This is done by clicking Configure and Manage Domains</p>
-<p><img src="http://www.jptacek.com021113_1414_Configuring2.png" alt=""></p>
-<p>&nbsp;</p>
-<p>This will provide a screen for managing custom domains.</p>
-<p><img src="http://www.jptacek.com021113_1414_Configuring3.png" alt=""></p>
-<p>The instructions do a good job of telling you what do. You want to have any domain that you want DNS to resolve for added here. In IIS speak, these are the Host headers. You will want one for WWW and another for your TLD, jptacek.com in our case. The issues I ran into was jptacek.com not registering properly and did not redirect to the main site.</p>
-<p>Next, you will need to configure your DNS settings in DNSimple. Go to <a href="http://www.Dnsimple.com">www.Dnsimple.com</a> and login. To configure your DNS, go to Domains, and select the Domain you want to manage</p>
-<p><img src="http://www.jptacek.com021113_1414_Configuring4.png" alt=""></p>
-<p>Once in manage, you will want to go the Advanced Editor, which is what to use when a template is not present.</p>
-<p>In here you will add for records, three CNAME records and an A name record. First, add a wildcard CNAME and have it point to your azure hosted website.</p>
-<p><img src="http://www.jptacek.com021113_1414_Configuring5.png" alt=""></p>
-<p>Next, as mentioned on the Azure site, you will need a record that will verify you own the DNS. To do that, configure the AWVerify to point to Azure&#39;s service</p>
-<p><img src="http://www.jptacek.com021113_1414_Configuring6.png" alt=""></p>
-<p>Next, a third CNAME record for WWW that goes to the Azure site</p>
-<p><img src="http://www.jptacek.com021113_1414_Configuring7.png" alt=""></p>
-<p>Last, and this is the area I ran into issues, you need to create an A record for the domain that points to the IP Address provided by Azure. This can be found on the Manage Domain settings. This will ensure that a request to the top level site, jptacek.com, will redirect to your site. Be sure to leave your subdomain blank.</p>
-<p><img src="http://www.jptacek.com021113_1414_Configuring8.png" alt=""></p>
-<p>&nbsp;</p>
-<p>You may have to wait up to an hour for the changes to take effect. It is also good to flush your DNS to ensure no issues.</p>
-<p>If you are looking for a DNS provider or want to switch from Go Daddy (which is horrible, have we mentioned that), check out DNSimple.com If you want, you can even click on the referral link <a href="https://dnsimple.com/r/b8a105607bde67">https://dnsimple.com/r/b8a105607bde67</a>, and get one month of free hosted DNS. Even better, I would get a free month of free hosted DNS <span style="font-family: Wingdings;">J</span></p>
-<p>&nbsp;</p>
+        <p>I have been using WordPress for a while with my personal blog, <a href="http://www.jptacek.com">JPtacek.com</a>. I have been a big fan and have written up many posts about setting up <a href="http://www.jptacek.com/tag/wordpress/">WordPress</a> using the awesomeness of Azure websites. However, the time to move on has come upon to a new blogging platform.
+<img src="/2013/12/28/index/sylvester.jpg" alt="Sylvester ByeBye"> <img src="/2013/12/28/index/wordpressLogo.jpg" alt="WordPress logo">
+So the question is why... Well here is my reasoning</p>
+<ul>
+<li>A CMS does a great many things, but ultimately they are for people to be able to host websites and publish content. And most CMSes are for people who do not want to learn about things like HTML. However, with a developer background I kept running into things I could easily do in HTML, but were near impossible within WordPress</li>
+<li>Azure is great, however I still pay for Azure. I am responsible for CPU and bandwidth. Since WordPress is a platform, every page requests is essentially run through a CPU, where the WordPress blackbox does its magic, queries a database and spits out HTML. This is a cost. (To be honest, it is not a BIG cost)</li>
+<li>It always felt a bit goofy to have simple web pages hosted in a back end database. Everything starts as a document or HTML, then gets thrown into a database. I need to be responsible for backing up the database and being a good admin type person. I would rather just have my one true source be HTML that I can save in Dropbox or SkyDrive</li>
+<li>PHP is not my thing. I am always up for learning something new, but PHP is NOT something I that is on the learn something new list.</li>
+<li>Update, update, update. Since WordPress is a platform, hackers tend to get bored and are always looking to hack into it. You constantly need to be aware of keeping your software and plugins up to date if you are hosting your own WordPress environment. This is not an issue if you are hosting at <a href="http://www.WordPress.com">WordPress.com</a>, but I am not, on account of the awesomeness of Azure Websites</li>
+<li>Truthfully, probably the biggest reason is JavaScript. Doing web front end things with WordPress is really not a pleasant experience. I have found myself resorting to embedding <a href="http://www.jsfiddle.net">JSFiddles</a> into my pages to show functionality that is plain easy to do on other platforms.</li>
+</ul>
+<p>So what am I looking for?</p>
+<ul>
+<li>More web, please. I want to be able to have a blog engine that supports HTML and JavaScript, rather than make me miserable</li>
+<li>Speedy please</li>
+<li>Reduce hosting costs, please</li>
+<li>Help me learn something new, please</li>
+</ul>
+<p>I have been spending time thinking about this. I believe I have an answer. Any suggestions from you oh mighty Internet?</p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/azure/'>Azure</a>, <a href='/tags/dnsimple/'>DNSimple</a>, <a href='/tags/web/'>Web</a>
+        Posted In: <a href='/tags/wordpress/'>WordPress</a>, <a href='/tags/blog/'>Blog</a>
     </div>
     
     <br/>
@@ -206,75 +199,315 @@
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Configuring DNSimple for Azure Hosted Domains' class="twitter-share-button" data-url="http://jptacek.com/2013/02/11/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Saying Goodbye to WordPress' class="twitter-share-button" data-url="http://jptacek.com/2013/12/28/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/02/11/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/12/28/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/02/11/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/12/28/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2013/02/13/index/'>Creating Sitemaps.xml file for Wordpress blogs on Azure Websites</a></h1>
+    <h1><a href='/2013/12/12/index/'>Calculating the Cost of the 12 Days of Christmas</a></h1>
     
-        <div class="post-date">Feb 12th, 2013</div>
+        <div class="post-date">Dec 11th, 2013</div>
 
     <div class="post-content">
-        <p>When running Wordpress on Azure websites, you have the ability to create sitemaps. This enables search engines such as Google and Bing to make you content more discoverable. You can find out more about Sitemaps from <a href="http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=156184">Google</a>.</p>
-<p>The first step in the process is to upload placeholder files for the sitemap files. These are two files, Sitemap.xml and Sitemap.xml.gz (a compressed format). These files are both available on the Wordpress site, so download both <a href="http://www.wp-starter.com/wp-content/uploads/sitemap/sitemap.xml">Sitemap.xml</a> and <a href="http://www.wp-starter.com/wp-content/uploads/sitemap/sitemap.xml.gz">sitemap.xml.gz</a> locally to your computer. For this example, our local directory will be c:\scratch.</p>
-<p>Next, you are going to need to upload the files to your hosted Azure website. This requires using FTP. The Azure management site has the link to this.</p>
-<p><img src="http://www.jptacek.com021313_1142_CreatingSit1.png" alt=""></p>
-<p>&nbsp;</p>
-<p>Clicking the URL will pop up the FTP client in your favorite browser. I hate that FTP client (this hate is browser agnostic). Instead, I use the FTP client on the local OS, in this case Windows 8. Go to the command prompt and:</p>
-<ol>
-<li>Type ftp server.ftp.azurewebsites.windows.net</li>
-<li>Type in your FTP user name, being sure to include the domain name</li>
-<li><p>This will put you at the top level of your hosted Azure website. You can see the files there by typing <span style="font-family: Courier New;">LS </span>(the UNIX version of the Dir command)<span style="font-family: Courier New;">
-</span>
-<img src="http://www.jptacek.com021313_1142_CreatingSit2.png" alt=""></p>
-</li>
-<li><p>You will need to change directories to the location on your server that is the root for Wordpress site, in our case that is wwwroot; <span style="font-family: Courier New;">cd site\wwwroot</span></p>
-</li>
-<li>Now change your local directory to the location of the sitemap files you downloaded earlier using the FTP command LCD. This will change your local directory for you. In our example the location directory is c:\scratch, so <span style="font-family: Courier New;">LCD c:\scratch</span></li>
-<li>You can verify the files are present locally by typing <span style="font-family: Courier New;">!dir</span>, which shells out to the command prompt</li>
-<li><div>For each file, type PUT filename;</div>
+        <script src="/2013/12/calculating-the-cost-of-the-12-days-of-christmas/scripts/12DaysApp.js"></script>
+<script src="/2013/12/calculating-the-cost-of-the-12-days-of-christmas/scripts/christmasController.js"></script>
 
-<ol>
-<li><span style="font-family: Courier New;">PUT sitemap.xml</span></li>
-<li><span style="font-family: Courier New;">PUT sitemamp.xml.gz
-</span>
-It goes without saying you can use your favorite FTP client to upload the files, I just made sure to document at least one.</li>
-</ol>
-</li>
-</ol>
-<p>Now that the sitemap files are present, you need to create the content for them. This can be done by installing a Wordpress plugin. The one I use is the Google XML Sitemaps application that can be downloaded here.</p>
-<p>To install this on your Wordpress site hosted on Azure is easy enough. Log in as administrator to your account.</p>
-<ol>
-<li><div>Go to you Plugins and choose Add New and type Google XML Sitemaps and click search</div>
-<img src="http://www.jptacek.com021313_1142_CreatingSit3.png" alt=""></li>
-<li>Click Install Now and move onto setup
-You will want to verify the location of your Sitemaps file, which the plugin automatically detect</li>
-</ol>
-<p><img src="http://www.jptacek.com021313_1142_CreatingSit4.png" alt=""></p>
+<p>Every year in December, families gather around the table to celebrate Christmas. If your house is anything like my house, the good times, food and conversation can quickly escalate into a battle over what is the true cost of the classic Christmas Song, the 12 Days of Christmas! This year, I took matters into my own hand and wrote a calculator, that will calculate the cost of the 12 days of Christmas using Google&#39;s Javascript Framework, AngularJS. No more bickering at the family table over the holidays!</p>
+<p>AngularJS is a Javascript framework from Google that focuses on building complex data applications. It has a very strong data first philosophy, which is a little different than jQuery which focuses more on DOM manipulation. You can find out more about AngularJS at the <a href="http://angularjs.org/">official site</a>, or read some recent blog posts I have written up at <a href="http://www.jptacek.com/tags/angularjs/">http://www.jptacek.com/tags/angularjs/</a>.</p>
+<p>AngularJS is a Model View Controller (MVC) framework. The model represents our data, or an object. In our case, the model will be the cost of the items in the twelve days of Christmas; e.g., a partridge, a pear tree, a turtle dove, etc. The view is our HTML page which is responsible for displaying data. The controller is responsible for marshalling the data to the view, and helping control its state. To enable our 12 Days calculator, we will take advantage of these AngularJS features.</p>
+<p>First, we essentially wire up our page to indicate we are going to have an Angular app by putting a <span style="font-family:Courier New">ng-app</span> attribute in the HTML body tag. Next, we set an area of our HTML markup that our controller is responsible for with a <span style="font-family:Courier New">ng-controller</span> attribute in a DIV tag.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">ng-app</span>=<span class="hljs-value">"christmasApp"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>12 Days of Christmas Calculator<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"12Days"</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"christmasController"</span>&gt;</span>
+...
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>It is worth nothing that use of data-* attributes is more &quot;semantically&quot; correct. If you want to save yourself keystrokes, you can just use <span style="font-family:Courier New">ng-app</span> or <span style="font-family:Courier New">ng-controller</span>, but if you get bothered by having warnings in your code, like me, you will want to use <span style="font-family:Courier New">ng-app</span>, etc.</p>
+<p>Of course, this being Javascript and all, we need references to JavaScript files that contain this logic for implementation. Usually in structuring a project there will be an chemistryApp.js file that sets up your Angular application, controllers for interacting between your model and the view as well as services.</p>
+<p>Our chemistryApp.js file, which we call 12DaysApp.js, is just two lines and creates the scope we reference in our body markup, christmasApp.</p>
+<p><em>12DaysApp.js
+</em></p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">'use strict'</span>;
+<span class="hljs-keyword">var</span> christmasApp = angular.module(<span class="hljs-string">'christmasApp'</span>, []);
+</code></pre>
+<p>Our next Javascript file is the controller and this is where the interesting stuff is. Essentially, AngularJS has the concept of a <span style="font-family:Courier New">$scope</span>. This is essentially a glorified property bad or state manage for interacting with the page. Within our controller, we create variables on the scope for each of our items. We are grabbing costs from a USA Today story from last year (<a href="http://www.usatoday.com/story/money/business/2012/11/26/12-days-of-christmas-107k/1726807/">http://www.usatoday.com/story/money/business/2012/11/26/12-days-of-christmas-107k/1726807/</a>).</p>
+<p>To setup our controller, we create a controller with a callback such as</p>
+<p>_christmasController.js</p>
+<pre class="highlight"><code class="hljs javascript">christmasApp.controller(<span class="hljs-string">'christmasController'</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">christmasController</span><span class="hljs-params">($scope)</span> {</span>
+
+);
+</code></pre>
+<p>Notice passing in the $scope variable on the parameter list. AngularJS does a VERY nice job with Dependency Injection. By passing in the $scope variable we are enabling its use within our controller and the HTML view. As you explore Angular, you will come to appreciate how quickly you can add services or logging, etc. with their Dependency Injection framework.
+
+We can then create a variable on the scope to set the cost for items we are getting for the 12 days of Christmas. For example, to set the price of a pear tree to $189.99 and a partridge, we have the following lines in our controller
+
+<code>javascript
+$scope.pearTree = 189.99;
+$scope.partridge = 15.00;</code>
+
+We then create a JavaScript function to calculate the cost of the first day.
+
+<code>javascript
+  $scope.day1 =  function () {
+  return parseFloat($scope.pearTree) +  parseFloat($scope.partridge);
+ };</code>
+
+Now, the magic of two way data binding can start, by including the AngularJS library, our application JavaScript file and our Controller JavaScript file, get two way databinding. In our HTML markup, curly braces ( <span style="font-family:Courier New">{{ }}</span> ) indicate our AngularJS model.
+
+So for the following markup, the <span style="font-family:Courier New">ng-model=&quot;partridge&quot;</span> on our Input element says that we are two way binding the <span style="font-family:Courier New">$scope.partidge</span> value in our UI. And since this binding is part of a HTML Input box, whenever we make changes, it will update our UI. For example, we are displaying the Day 1 whatever value we initially set will be displayed. We then automatically update the value of function day1 via the function. This function is automatically updated and our UI as well whenever we type in a new value. This is pretty magical for developers who used to capture JavaScript key up and down events!
+
+</p><p>&nbsp;</p>
+
+<div id="appContainer" ng-app="christmasApp">
+<div id="12Days" ng-controller="christmasController">
+    <h3>12 Days of Christmas</h3>
+ <div class="row">
+        <div class="col-sm-6">Partridge: <input id="partridgeEle" ng-model="partridge" type="text">  </div>
+        <div class="col-sm-4">Day 1: {{day1()| currency:&quot;$&quot;}}</div>
+ </div>
+ <div class="row">
+        <div class="col-sm-6">Pear Tree: <input id="pearTreeEle" ng-model="pearTree" type="text"> </div>
+        <div class="col-sm-4">&nbsp;</div>
+ </div>
+     <div class="row">
+        <div class="col-sm-6">Two Turtle Doves: <input id="turtleEle" ng-model="turtleDove" type="text"> </div>
+        <div class="col-sm-4">Day 2: {{day2()| currency:&quot;$&quot;}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">Three French Hens: <input id="frenchHenEle" ng-model="frenchHen" type="text"> </div>
+        <div class="col-sm-4">Day 3: {{day3()| currency:&quot;$&quot;}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">Four Colly Birds: <input id="callingBirdElee" ng-model="callingBird" type="text"> </div>
+        <div class="col-sm-4">Day 4: {{day4()| currency:&quot;$&quot;}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">Five Gold Rings: <input id="goldRingEle" ng-model="goldRing" type="text"> </div>
+        <div class="col-sm-4">Day 5: {{day5()| currency:&quot;$&quot;}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">Six Geese a-laying: <input id="geeseEle" ng-model="geese" type="text"> </div>
+        <div class="col-sm-4">Day 6: {{day6()| currency:&quot;$&quot;}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">Seven Swans a swimming: <input id="swansEle" ng-model="swan" type="text"> </div>
+        <div class="col-sm-4">Day 7: {{day7()| currency:&quot;$&quot;}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">Eight Maids a Milking: <input id="milkingMaidElee" ng-model="milkingMaid" type="text"> </div>
+        <div class="col-sm-4">Day 8: {{day8()| currency:&quot;$&quot;}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">Nine Ladies Dancing: <input id="ladiesEle" ng-model="dancingLady" type="text"> </div>
+        <div class="col-sm-4">Day 9: {{day9()| currency:&quot;$&quot;}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">10 Lords-a-Leaping: <input id="lordsEle" ng-model="lord" type="text"> </div>
+        <div class="col-sm-4">Day 10: {{day10()| currency:&quot;$&quot;}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">Eleven Pipers piping: <input id="pipersEle" ng-model="piper" type="text"> </div>
+        <div class="col-sm-4">Day 11: {{day11()| currency:&quot;$&quot;}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">Twelve Drummers Drumming: <input id="drummersEle" ng-model="drummer" type="text"> </div>
+        <div class="col-sm-4">Day 12: {{day12()| currency:&quot;$&quot;}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6"><strong>Total Cost of the twelve days:</strong></div>
+        <div class="col-sm-4">{{totalCostChristmas()| currency:&quot;$&quot;}}</div>
+    </div>
+    </div>
+</div>
+
 <p>&nbsp;</p>
-<p>The basic options are fine for most implementations. The Plugin will automatically create zipped up files of your sitemap, rebuild on content change as well as notify Google and Bing of changes</p>
-<p><img src="http://www.jptacek.com021313_1142_CreatingSit5.png" alt=""></p>
-<p>&nbsp;</p>
-<p>The plugin allows you to build the sitemap for the first time. After it is done, you will see</p>
-<p><img src="http://www.jptacek.com021313_1142_CreatingSit6.png" alt=""></p>
-<p>You can verify the sitemap by looking at the xml for the file. In the case of this blog, <a href="http://www.jptacek.com/sitemap.xml">http://www.jptacek.com/sitemap.xml</a></p>
-<p><img src="http://www.jptacek.com021313_1142_CreatingSit7.png" alt=""></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+
+<p><strong>christmasController.js Code</strong></p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">'use strict'</span>;
+
+christmasApp.controller(<span class="hljs-string">'christmasController'</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">christmasController</span><span class="hljs-params">($scope)</span> {</span>
+        <span class="hljs-comment">// http://www.irishmirror.ie/female/family/how-much-would-cost-presents-2851366</span>
+        <span class="hljs-comment">// http://www.usatoday.com/story/money/business/2012/11/26/12-days-of-christmas-107k/1726807/</span>
+        <span class="hljs-comment">//one</span>
+        $scope.pearTree = <span class="hljs-number">189.99</span>;
+        $scope.partridge = <span class="hljs-number">15.00</span>;
+
+        <span class="hljs-comment">//two</span>
+        $scope.turtleDove = <span class="hljs-number">62.50</span>;
+
+        <span class="hljs-comment">// three</span>
+        $scope.frenchHen = <span class="hljs-number">55</span>;
+
+        <span class="hljs-comment">// four</span>
+        $scope.callingBird = <span class="hljs-number">129.24</span>;
+
+        <span class="hljs-comment">// five</span>
+        $scope.goldRing = <span class="hljs-number">150</span>;
+        <span class="hljs-comment">// six</span>
+        $scope.geese = <span class="hljs-number">35</span>;
+
+        <span class="hljs-comment">// seven swans</span>
+        $scope.swan = <span class="hljs-number">1000.0</span>;
+
+        <span class="hljs-comment">// eight</span>
+        $scope.milkingMaid = <span class="hljs-number">7.25</span>;
+
+        <span class="hljs-comment">// nine ladies dancing</span>
+        $scope.dancingLady = <span class="hljs-number">700.0</span>;
+
+        <span class="hljs-comment">// ten lords</span>
+        $scope.lord = <span class="hljs-number">476.7</span>;
+
+        <span class="hljs-comment">// eleven pipers at 232.91/hour</span>
+        $scope.piper = <span class="hljs-number">232.91</span>;
+
+        <span class="hljs-comment">// twelve drummers drumming</span>
+        $scope.drummer = <span class="hljs-number">231.33</span>;
+
+        $scope.day1 =  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.pearTree) +  <span class="hljs-built_in">parseFloat</span>($scope.partridge);
+
+        };
+
+        $scope.day2 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.turtleDove) * <span class="hljs-number">2</span>;
+        };
+
+        $scope.day3 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.frenchHen) * <span class="hljs-number">3</span>;
+        };
+
+        $scope.day4 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.callingBird) * <span class="hljs-number">4</span>;
+        };
+
+        $scope.day5 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.goldRing) * <span class="hljs-number">5</span>;
+        };
+
+        $scope.day6 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.geese) * <span class="hljs-number">6</span>;
+        };
+
+        $scope.day7 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.swan) * <span class="hljs-number">7</span>;
+        };
+
+        $scope.day8 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.milkingMaid) * <span class="hljs-number">8</span>;
+        };
+
+        $scope.day9 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.dancingLady) * <span class="hljs-number">9</span>;
+        };
+
+        $scope.day10 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.lord) * <span class="hljs-number">10</span>;
+        };
+
+        $scope.day11 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.piper) * <span class="hljs-number">11</span>;
+        };
+
+        $scope.day12 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.drummer) * <span class="hljs-number">12</span>;
+        };
+
+        $scope.totalCostChristmas = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            <span class="hljs-keyword">return</span>  <span class="hljs-number">12</span>* $scope.day1() + <span class="hljs-number">11</span>* $scope.day2() + <span class="hljs-number">10</span>*  $scope.day3() +  <span class="hljs-number">9</span> * $scope.day4()+ <span class="hljs-number">8</span> * $scope.day5()+ <span class="hljs-number">7</span>* $scope.day6() +
+                <span class="hljs-number">6</span> * $scope.day7() +  <span class="hljs-number">5</span>* $scope.day8() +  <span class="hljs-number">4</span>* $scope.day9() + <span class="hljs-number">3</span>* $scope.day10() +  <span class="hljs-number">2</span>* $scope.day11() +  $scope.day12();
+        };
+
+    }
+);
+</code></pre>
+<p><strong>HTML Code</strong></p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>12 Days of Christmas<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"css/bootstrap.min.css"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"angular.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"12DaysApp.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"christmasController.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">ng-app</span>=<span class="hljs-value">"christmasApp"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>12 Days of Christmas Calculator<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"12Days"</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"christmasController"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>12 Days of Christmas<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span6"</span>&gt;</span>Partridge: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"partridgeEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"partridge"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> Pear Tree: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"pearTreeEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"pearTree"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span2"</span>&gt;</span>Day 1: {{day1()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Two Turtle Doves: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"turtleEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"turtleDove"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 2: {{day2()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Three French Hens: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"frenchHenEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"frenchHen"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 3: {{day3()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Four Colly Birds: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"callingBirdElee"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"callingBird"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 4: {{day4()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Five Gold Rings: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"goldRingEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"goldRing"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 5: {{day5()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Six Geese a-laying: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"geeseEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"geese"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 6: {{day6()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Seven Swans a swimming: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"swansEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"swan"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 7: {{day7()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Eight Maids a Milking: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"milkingMaidElee"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"milkingMaid"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 8: {{day8()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Nine Ladies Dancing: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"ladiesEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"dancingLady"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 9: {{day9()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>10 Lords-a-Leaping: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"lordsEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"lord"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 10: {{day10()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Eleven Pipers piping: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"pipersEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"piper"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 11: {{day11()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Twelve Drummers Drumming: <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"drummersEle"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"drummer"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>Day 12: {{day12()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"row"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span8"</span>&gt;</span>Total Cost of the twelve days:<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"span4"</span>&gt;</span>{{totalCostChristmas()' currency:"$"}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<p>This blog post originally appeared at <a href="http://skylinetechnologies.com/Blog/Article/2403/Day-Two-How-Much-Do-The-Twelve-Days-of-Christmas-Cost.aspx">Skyline Technologies</a></p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/azure/'>Azure</a>, <a href='/tags/seo/'>SEO</a>, <a href='/tags/wordpress/'>WordPress</a>
+        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
@@ -283,13 +516,13 @@ You will want to verify the location of your Sitemaps file, which the plugin aut
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Creating Sitemaps.xml file for Wordpress blogs on Azure Websites' class="twitter-share-button" data-url="http://jptacek.com/2013/02/13/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Calculating the Cost of the 12 Days of Christmas' class="twitter-share-button" data-url="http://jptacek.com/2013/12/12/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/02/13/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/12/12/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/02/13/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/12/12/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 

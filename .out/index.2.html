@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -93,51 +97,207 @@
             
     <article class="post">
     
-    <h1><a href='/2011/06/10/index/'>Comparing ASP.NET MVC and Web Forms</a></h1>
+    <h1><a href='/2014/05/19/index/'>AngularJS - Introduction to Services</a></h1>
     
-        <div class="post-date">Jun 9th, 2011</div>
+        <div class="post-date">May 19th, 2014</div>
 
     <div class="post-content">
-        <p>Before we get into MVC proper, let&#39;s discuss why you should consider MVC at all. It&#39;s my personal feeling that MVC 3 is going to be a horrifically important technology for all of us. If you&#39;re moving into more mobile development, MVC is going to be a much better choice. Secondly, in a HTML 5 world, MVC is going to be a better choice due to its ability to control HTML markup and reference client IDs via JavaScript. It&#39;s not to say ASP.NET Web Forms will not allow for this kind of development, but as the current Web Forms platform exists, it will be more difficult. An example of this..., having the ViewState be part of HTML pages on mobile browsers can have significant impact on load times. Okay, time to jump off the soapbox.</p>
-<p>MVC stands for Model-View-Controller. In my mind, I think of it this way ... model is really our data or more correctly, business object. The model contains the data we want to render. The view is the page that we use to render the data. The controller is essentially the traffic cop that tells the data, what view it needs to go to. Most of this is handled automatically by MVC&#39;s concept of <a href="http://en.wikipedia.org/wiki/Convention_over_configuration">convention over configuration</a>.</p>
-<p>It all works something like this ... a user hits a URL and the controller gets called, based on routing rules it knows which controller to go to. The controller then loads the model from the database. Once the model is populated it then determines what view to load and passes the model to the view for rendering. One of the benefits of an approach like this is that the view is very lightweight with little code in the view proper. The code there is just for helping to render the data. This naturally leads to separation of concerns, which is always a good development practice that is hard to follow in Web Forms.</p>
-<p>One of the reasons for converting a site to MVC is to create both an HTML 5 version of the site and a mobile HTML version. In this scenario the controller would load one version of the data (aka the model), but based on the type of browser accessing the site, pass the model to a different view, for example the HTML 5 view. You can get a glimpse of the power. No matter the type of site we have, we are always accessing our data in the same way and passing the view.</p>
-<p>So, is ASP.NET Web Forms dead? Of course not! The real genesis of ASP.NET Web Forms was to provide an easier migration path for VB/Winform developers, who were familiar with event driven programming, into the stateless world of the web and web programming. Essentially, Web Forms abstract away the stateless nature of the web. As our paychecks prove, it&#39;s a great programming platform running millions of sites. Microsoft will continue to support Web Forms.</p>
-<p>There are times when Web Forms will make sense, and times where MVC will make sense. At a high level:</p>
-<p><strong>Advantages of Web Forms:</strong></p>
-<ul>
-<li>Developer Familiarity</li>
-<li>VERY rich eco system of server controls</li>
-<li>Provides a RAD development environment</li>
-<li>Event driven system</li>
-<li><p>Much easier development for data heavy LOB system
-<strong>Advantages of MVC:</strong></p>
-</li>
-<li><p>Full control over HTML</p>
-</li>
-<li>Easy integration with JavaScript frameworks</li>
-<li>Embraces the stateless nature of the web</li>
-<li>Easier Search Engine Optimization</li>
-<li>Allows for better testing
-At the end of the day, both MVC and Web forms are platforms built on ASP.NET and use the same runtime. HTML and HTML 5, while always an important part of what we do, are becoming more and more important. If you ever needed verification of this, Microsoft&#39;s <a href="http://www.microsoft.com/presspass/features/2011/jun11/06-01corporatenews.aspx">recent announcement</a>that Windows 8 would allow for the distribution of HTML 5 apps to Windows reinforces that. MVC and Web Forms are both platforms we need to make our customer successful in this kind of environment. While I feel MVC is going to be a preferred platform for HTML development, the truth is both platforms are suited for the creation of HTML sites.</li>
-</ul>
-<p><strong>Why Use it?
-</strong>ASP.NET MVC is a platform for developing HTML applications that provides the user much greater control over the HTML markup that is rendered. There are added benefits such as supporting testing and better code design too!</p>
-<p><strong>I Want To Learn More!</strong></p>
-<p><a href="http://www.amazon.com/Professional-ASP-NET-MVC-2-ebook/dp/B003RCJE9Q/ref=sr_1_2?ie=UTF8&amp;qid=1307102102&amp;sr=8-2">Professional ASP.NET MVC 2</a>(book)</p>
-<p><a href="http://www.amazon.com/ASP-NET-MVC-Action-Jeffrey-Palermo/dp/193518279X/ref=sr_1_2?ie=UTF8&amp;qid=1307102138&amp;sr=8-2">ASP.NET MVC 2 in Action </a>(book)</p>
-<p><a href="http://www.amazon.com/ASP-NET-Framework-Experts-Voice-NET/dp/1430228865">Pro ASP.NET MVC V2 Framework </a>(book)</p>
-<p><a href="http://www.asp.net/mvc">Microsoft ASP.NET MVC site</a>- Check out the pluralsight videos on the page!</p>
-<p><a href="http://stackoverflow.com/questions/102558/biggest-advantage-to-using-asp-net-mvc-vs-web-forms/3629415#3629415">StackOverflow question on Web Forms vs MVC</a></p>
-<p>Along this same line there is great NuGet package that you can use with MVC3 and EF 4.1 that will generate your views, controllers and Repositories. Yes, a code-gen tool that adheres to real world architecture practices, from your true POCO model classes. <a href="http://blog.stevensanderson.com/2011/01/13/scaffold-your-aspnet-mvc-3-project-with-the-mvcscaffolding-package/">Check it out</a>.</p>
-<p>&nbsp;</p>
-<p>This blog post orginally appeared at Skyline Technologies (<a href="http://www.skylinetechnologies.com/blog/Pages/mvcaspnet.aspx">http://www.skylinetechnologies.com/blog/Pages/mvcaspnet.aspx</a>)</p>
+        <p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
+<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
+ HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
+ Contrast this to a framework like JQuery where the DOM will update your data.</p>
+<p><img src="/2014/05/19/index/angularLogo.png" alt="AngularJS Logo"></p>
+<p>This is the eight in a series of posts on AngularJS where we are using Chemistry data from the periodic table
+to help us understand the framework. The others posts are</p>
+<ol>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
+<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
+<li>AngularJS - Introduction to Services</li>
+<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
+<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
+</ol>
+<blockquote>
+<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
+the home page of my blog, only one application will work. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
+</blockquote>
+<p>In AngularJS, when we want to create common code to be shared across our application, we create services. In the Angular world,
+the controller is the traffic cop, which directs data to your view for binding. Logic for retrieving that data falls to a
+service.</p>
+<p>Services are stateless object that have shared functions that can be used in multiple controllers or views. The functions on
+services are also available throughout; they can be accessed in directives, controllers, filters, etc.</p>
+<p>For an example of a real world service that I have used in the past…. When creating a select list in HTML for an AngularJS
+application, you usually have an ID associated with a selected element from the list. Often you will
+display all the properties of the JSON object. In JavaScript, to find this element, you need to loop through all
+the elements in an array until you get a match on the key.  Depending on the size of your application, you end up writing this
+logic many, many times. To minimize this, I have written a helper application that creates an array that allows for
+ an element to be accessed by a key value, thus reducing the need for repetitive array looping.</p>
+<p>Generally, there are two ways to create services within your application. The most common is to use <code>module.service</code> within
+ your application. The second is <code>module.factory</code>. There are a couple of other ways, but we will skip those. AngularJS
+ services are really singleton objects. The object from services are then available across your application via dependency
+ injection, which we will look at soon.</p>
+<p> The main difference between the two service creation methods is how they are used. The <code>module.service</code> approach creates an
+ instance of a function. A good use case for this approach is the generic array lookup function mentioned above. The
+ <code>module.factory</code> approach is that the returned value is returned by invoking a function reference. This essentially allows you
+ to treat the service like a class that you can new to make new instances.</p>
+<p>The syntax for <code>module.service</code> is</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
 
+<span class="hljs-comment">//</span>
+chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    <span class="hljs-keyword">this</span>.elementName= <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element)</span>{</span>
+        <span class="hljs-keyword">return</span> element.name;
+    };
+});
+
+<span class="hljs-comment">//</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span><span class="hljs-params">($scope, chemistryService)</span>
+{</span>
+    ...
+    $scope.nameFromService = chemistryService.elementName(elements[<span class="hljs-number">0</span>]);
+}
+</code></pre>
+<p>The syntax for <code>module.factory</code> is</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
+
+<span class="hljs-comment">//</span>
+chemistryApp.factory(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+      <span class="hljs-keyword">return</span> {
+            nameFromService: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element)</span>{</span>
+               <span class="hljs-keyword">return</span> element.name;
+            }
+        }
+    });
+
+<span class="hljs-comment">//</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span><span class="hljs-params">($scope, chemistryService)</span>
+{</span>
+    ...
+    $scope.nameFromFactory = chemistryService.elementName(elements[<span class="hljs-number">0</span>]);
+}
+</code></pre>
+<p>Once we create our service, we want to be able to use this within our application. This is done via the magical gremlins
+that drive the Dependency Injection model in AngularJS. We just pass the service name to our controller when we instantiate
+it. We showed this above, but just to be sure, by passing <code>chemistryService</code> to the controller, it is service is
+available within the
+controller scope</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span><span class="hljs-params">($scope, chemistryService)</span>
+{</span>
+    ...
+    $scope.nameFromFactory = chemistryService.elementName(elements[<span class="hljs-number">0</span>]);
+}
+</code></pre>
+<p>Let&#39;s look at a more advanced scenario. I am pretty much stealing this demo from my
+<a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>
+colleague <a href="https://twitter.com/bmahloch">Brian Mahloch</a>. Brian came up with a great demo for demonstrating services
+using the Periodic Data, which he kindly let me steal.</p>
+<p>What we are going to do is determine the type of bonds two elements would make, based on the differences in their
+electronegativity. We will create a service that does two things, calculate the differences in electronegativty and then
+based on the difference determine the type of bond.</p>
+<p>Our service then looks like</p>
+<pre class="highlight"><code class="hljs javascript">chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+
+    <span class="hljs-keyword">this</span>.calculateElectronegativityDifference = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(element1, element2)</span> {</span>
+
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.abs(element1.electronegativity - element2.electronegativity);
+
+    };
+
+    <span class="hljs-keyword">this</span>.convertElectronegativityDifferenceToName = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(difference)</span> {</span>
+
+        <span class="hljs-keyword">if</span> (difference &gt; <span class="hljs-number">2.0</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-string">'Ionic Bond'</span>;
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (difference &gt;= <span class="hljs-number">0.5</span> &lt; <span class="hljs-number">1.6</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-string">'Polar Covalent Bond'</span>;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-string">'NonPolar Covalent Bond'</span>;
+        }
+
+    };
+});
+</code></pre>
+<p>Our controller creation then gets updated so that we are injecting the service into the parameter list. Next,
+since $scope is our conduit for the view to talk to the service, we create a function on the controller that will
+consume the service when we have two elements selected.</p>
+<pre class="highlight"><code class="hljs javascript">chemistryApp.controller(<span class="hljs-string">'chemServiceCtrl'</span>, [<span class="hljs-string">'$scope'</span>, <span class="hljs-string">'chemistryService'</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemServiceCtrl</span><span class="hljs-params">($scope, $log, chemistryService)</span> {</span>
+
+        $scope.elements = periodicData.elements;
+
+        $scope.calculateBondPolarity = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+
+            <span class="hljs-keyword">if</span> ($scope.selectedElement1 &amp;&amp; $scope.selectedElement2) {
+
+                $scope.currentBondDifference = chemistryService.calculateElectronegativityDifference($scope.selectedElement1, $scope.selectedElement2);
+                $scope.currentBondType = chemistryService.convertElectronegativityDifferenceToName($scope.currentBondDifference);
+
+            }
+
+        };
+
+        <span class="hljs-comment">/* private methods */</span>
+
+    }]
+);
+</code></pre>
+<p>Tying it all together, we have something like this.</p>
+<div id="app" ng-app="chemistryApp">
+<form name="submitForm" class="form-horizontal" ng-controller="chemServiceCtrl">
+                <div class="form-group" style="margin-top:14px;">
+                    <div class="control-label col-md-2">
+                        Element 1:
+                    </div>
+                    <div class="col-md-4">
+                        <select class="form-control" ng-model="selectedElement1" ng-options="e.name for e in elements | orderBy:[&apos;name&apos;]" ng-change="calculateBondPolarity()"></select>
+                    </div>
+                    <div class="control-label col-md-2">
+                        Element 2:
+                    </div>
+                    <div class="col-md-4">
+                        <select class="form-control" ng-model="selectedElement2" ng-options="e.name for e in elements  | orderBy:[&apos;name&apos;]" ng-change="calculateBondPolarity()"></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6" style="text-align:center;" ng-show="selectedElement1">
+                        You have selected:<br>
+                        <strong>{{selectedElement1.name}}</strong><br>
+                        Electronegativity:<br>
+                        <strong>{{selectedElement1.electronegativity}}</strong>
+                    </div>
+                    <div class="col-md-6" style="text-align:center;" ng-show="selectedElement2">
+                        You have selected:<br>
+                        <strong>{{selectedElement2.name}}</strong><br>
+                        Electronegativity:<br>
+                        <strong>{{selectedElement2.electronegativity}}</strong>
+                    </div>
+                </div>
+                        <div class="row rounded-group-box" ng-show="selectedElement1 &amp;&amp; selectedElement2">
+                            <div class="col-md-12" style="text-align:center;">
+                                <strong>{{selectedElement1.name}}</strong> + <strong>{{selectedElement2.name}}</strong> = <strong>{{currentBondType}}</strong><br><br>
+                                <small>With a electronegativity difference of {{currentBondDifference | number:2}} {{selectedElement1.name}} and {{selectedElement2.name}} would form a {{currentBondType}}</small>
+                            </div>
+                        </div>
+
+<p></p></form>
+</div><p></p>
+<p>We can now start to see how AngularJS provides a platform for creating web applications. With services, we are able to
+encapsulate logic and use it within multiple controllers in our application.</p>
+<p>You can either visit <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a> to see the code in action and
+as always find the code out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a>.</p>
+<script type="text/javascript" src="/2014/05/angularJS-Intro-To-Services/js/chemistryApp.js"></script>
+<script type="text/javascript" src="/2014/05/angularJS-Intro-To-Services/js/chemistryController.js"></script>
+<script type="text/javascript" src="/2014/05/angularJS-Intro-To-Services/js/chemistryService.js"></script>
+<script type="text/javascript" src="/2014/05/angularJS-Intro-To-Services/js/chemistry.js"></script>
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/mvc/'>MVC</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/web-forms/'>Web Forms</a>
+        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
@@ -146,48 +306,57 @@ At the end of the day, both MVC and Web forms are platforms built on ASP.NET and
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Comparing ASP.NET MVC and Web Forms' class="twitter-share-button" data-url="http://jptacek.com/2011/06/10/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='AngularJS - Introduction to Services' class="twitter-share-button" data-url="http://jptacek.com/2014/05/19/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2011/06/10/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/05/19/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2011/06/10/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/05/19/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2011/06/28/index/'>HTML 5: A Little History</a></h1>
+    <h1><a href='/2014/05/18/index/'>That Conference - Ways To Hack Your Day to Better Health</a></h1>
     
-        <div class="post-date">Jun 27th, 2011</div>
+        <div class="post-date">May 18th, 2014</div>
 
     <div class="post-content">
-        <p>HTML 5 is being proposed as a magic potion for all that ails the world of developers. It slices, it dices, it chops and even calls your mom on her birthday when you forget. Let&#39;s jump on the bandwagon!</p>
-<p>To understand HTML 5, first you&#39;ll need a bit of history... HTML is a standard, standards are created by standards bodies, and they can take a while. The HTML standard is created by the World Wide Web Consortium (W3C), with the last HTML standard being <a href="http://www.w3.org/TR/REC-html40-971218/">HTML 4</a>, which was published in December of 1997. At that point, the W3C essentially said HTML is dead, long live HTML, but in the form of XHTML, a break from the previous version of HTML with HTML being recreated as strongly formed XML.</p>
-<p>The introduction of XHTML had one problem though; XHTML &quot;broke&quot; the internet. It didn&#39;t literally break it in the sense that you couldn&#39;t get your White Sox scores from ESPN, but without massive rewrites, it would have. HTML has always been a &quot;forgiving&quot; standard. If I develop an HTML page and have an opening </p><p> tag but not a corresponding closing </p> tag, my page will (most likely) work. XHTML would have resulted in a fatal error. People have estimated that fully implementing the XHMTL specification would have resulted in 99% of HTML pages at the time not rendering properly.<p></p>
-<p>So, our journey to the way back machine brings us to 2004, HTML 4 is the last W3C standard and their work has been focused on XHTML since 1997. During this time, XHTML has NOT taken off in the marketplace. People still want their White Sox scores from ESPN. As a result, browser developers, some web development companies, and some W3C members got together and proposed evolving HTML 4 with new features for modern browsers since a lot had changed in the years since the last standard (2004 -1997 = 73 Internet years). The W3C said they were not interested but the folks who proposed extending HTML WERE interested and went off and created the <a href="http://www.whatwg.org/news/start">Web Hypertext Application Technology (WHAT)</a>working group. So here is the state of the world: the people responsible for the HTML standard are not evolving the HTML standard any more, the folks who implement the HTML standard (the web browser creators, the app tool creators, etc.) want to evolve HTML.</p>
-<p>So the WHAT group went on doing its thing. Their main goal was backward compatibility. They wanted to be able to evolve HTML without breaking the 10 years of web development that came before. One of the more interesting things they did was explicitly identifying HOW to parse HTML so that it would be compatible across all browsers. In some ways, that became a new standard that indicated how all browsers should work.</p>
-<p>They also went on and introduced new features into HTML (without breaking HTML) including new form elements for things like dates. They thought, &quot;Wouldn&#39;t it be swell if browsers natively supported video and audio so we could get rid of things like Flash for streaming video?&quot;, so they added it. They also thought, &quot;Wouldn&#39;t it be awesome if you could animate things directly in the browser?&quot;, so they added a drawing canvas to HTML.</p>
-<p>The industry responded positively to these new ideas and the WHAT group started gaining momentum. During this time the W3C was working on XHTML 2, which none of the browser vendors implemented. I&#39;m not sure what you call a standard that nobody implements, but whatever you call it, it&#39;s pretty useless. It got to the point where in October of 2006, the W3C and the WHAT working group decided to join forces and evolve HTML and create HTML 5.</p>
-<p>Today we are at a point where these two groups are working together to create the HTML 5 standard. The next question is WHEN will there be an HTML 5 standard? It&#39;s going to be a while, maybe as far out as 2022 or later. So is that a problem? The answer is, hopefully not.</p>
-<p>Part of the reason for the long time is that the HTML 4 specification is very vague or even undefined on how things work. If you forget to include your closing paragraph tag, it was up to the browser vendor to figure it out. This leads to different implementations across vendors so things don&#39;t work as expected across all the browsers, something you are no doubt very familiar with. As a first step, sometime in 2012, a candidate recommendation for the HTML 5 standard will be released. At that point, the feature set, already very close to being final, will be official. A good part of the remaining 10 years will be spent on officially documenting how the standard should parse HTML.</p>
-<p>Another, even more important thing, is that the HTML 5 team is working on test suites. The idea is that browser vendors will have to run their browsers against the test suite and not until they hit 100% in a test suite will they be considered to have passed. In a lot of ways, the test suite becomes the standard. In fact, not until two major browser vendors pass the test suite with 100%, will the standard be considered completed. This is part of the reason for the very long elapsed time.</p>
-<p>The other player in this is how HTML 5 works other devices. HTML 5 is or will be supported by all major smart phone vendors as well as tablet vendors, e-readers and most likely a plethora of things not even imagined yet. In fact, some sites, such as the ubiquitous Facebook, are rumored to be developing HTML 5 applications rather than native applications for mobile or tablet vendors. Part of the reason for this is that some of the hardware vendors are requiring essentially a commission on any purchases within a native application. As a result, a lot of sites may be looking to bypass the App Store approach and create <a href="http://www.zdnet.com/blog/facebook/rumor-facebook-to-take-on-apple-with-html5-platform/1612">native HTML 5</a>so they don&#39;t need to worry about giving hardware vendors a percentage of their revenue.</p>
-<p>HTML 5 is a lot of hope and promise. In the past I have called it Java-esque, in the promise of the write once, run everywhere. What is different this time? A couple of things, one is the test suite that browser vendors will need to pass. The other is that there really seems to be a good cross section of the industry that REALLY wants this to work. It&#39;s not often that Apple, Google, Microsoft and other big companies are working towards the same thing. Do they always agree? Of course not! Will it cause problems? It already is. However, the industry is working hard to make this a reality.</p>
-<p>It will be interesting to see how it all plays out. Browsers like Google Chrome are working hard on supporting HTML 5 across many platforms. IE is working towards supporting HTML 5 on the Windows platform using hardware acceleration. You will see differences where HTML 5 rendered using IE which will run much faster and can do more, so that performance issues of other browsers may be a concern. Vice-versa you can have issues where IE is not rendering something the same way Chrome is.</p>
-<p>It&#39;s a long article just discussing the history of HTML 5 with none of the introduction of what HTML 5 is. However, it&#39;s important to understand the history of how we got here, and why the industry thinks this will be important. Next time I&#39;ll actually discuss some of what&#39;s new in HTML 5!</p>
-<p><strong>Why Use it?
-</strong>HTML 5 is going to (soon) be the industry standard for web applications</p>
-<p><strong>I want to learn more!
-</strong><a href="http://www.techrepublic.com/blog/programming-and-development/html-5-editor-ian-hickson-discusses-features-pain-points-adoption-rate-and-more/718">Interview with Ian Hickson discussing HTML 5 adoption rates</a></p>
-<p>This blog post originally appeared at Skyline Technologies (<a href="http://www.skylinetechnologies.com/blog/Pages/HTML_5_History.aspx">http://www.skylinetechnologies.com/blog/Pages/HTML_5_History.aspx</a>)</p>
+        <p>I am honored to be speaking this year at That Conference. That Conference is a conference with national speakers held every
+year in the Wisconsin Dells at the <a href="http://www.kalahariresorts.com/wisconsin">Kalahari Resort</a>. It is very high on the awesome scale,
+and I wrote many words about it <a href="http://www.jptacek.com/2013/05/that-conference-2013/">last year</a>.
+Tickets went on sale yesterday, and are $25 off for a week. Go forth, <a href="https://www.thatconference.com/Home/TicketRegistration">click</a>,
+<a href="https://www.eventbrite.com/e/that-conference-2014-tickets-7410869109">buy</a> and come back, I need your help!</p>
+<p><img src="/2014/05/18/index/thatConferenceLogo.png" alt="That Conference Logo"></p>
+<p>This is the third year in a row I have had the chance to speak. For
+the inaugural That Conference, I spoke on SharePoint claims based security, Windows Identity Foundation and Access Control
+Services. You can find the slides on my <a href="http://www.jptacek.com//2012/08/that-conference-slide-deck/">site</a>.</p>
+<p><img src="/2014/05/18/index/ThatConference-1024x681-300x199.jpg" alt="2012 That Conference"></p>
+<p>Last year, I put on a tin foil hat, so aliens couldn&#39;t read my brain waves, and talked about Being You and managing your
+digital identity on the web. I talked a lot about security, Azure Websites, WordPress and Two Factor authentication. You can also
+ view that slide deck <a href="http://www.jptacek.com/2013/08/2013-that-conference-presentation/">here</a>.</p>
+<p>This year, my presentation is entitled, You Can&#39;t Always Be Hiking - Ways to Hack Your Day to Better Health. You can read
+more about it at the <a href="https://www.thatconference.com/Sessions/Session/2271">That Conference site</a>. Here is a copy of the
+abstract</p>
+<blockquote>
+<p>Developers do awesome things by creating apps and web sites that make users go ooh and ahh (and possibly occasionally curse).
+Despite doing awesome things for those around you, you generally are not doing awesome things for yourself. Sitting all day is
+bad for you. Noshing pizza to rip through a late night code jam isn’t optimal eating. Missing sleep trying to ship code is
+not great. In this presentation, we will talk through some ways developers can hack their day to better health with some simple steps
+and ideas you can incorporate in your day to make sure you are still slinging code in the old folks home.</p>
+</blockquote>
+<p>I have several things I plan on talking about during presentation, but I would love to hear from other people. So in
+ embracing the awesomeness of community that <a href="http://www.csell.net/">Clark Sell</a> and rest of the wizards at That Conference
+ have created, give
+ me some of your tips! What do you
+do to keep healthy during the day? Feel free to sound off in the Disqus comments below with ideas and discussion!</p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/html-5/'>HTML 5</a>, <a href='/tags/web/'>Web</a>
+        Posted In: <a href='/tags/that-conference/'>That Conference</a>, <a href='/tags/speaking/'>Speaking</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
@@ -196,143 +365,40 @@ At the end of the day, both MVC and Web forms are platforms built on ASP.NET and
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='HTML 5: A Little History' class="twitter-share-button" data-url="http://jptacek.com/2011/06/28/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='That Conference - Ways To Hack Your Day to Better Health' class="twitter-share-button" data-url="http://jptacek.com/2014/05/18/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2011/06/28/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/05/18/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2011/06/28/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/05/18/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2011/06/06/index/'>WebMatrix Proves an Excellent Tool for Creating Small Sites Quickly</a></h1>
+    <h1><a href='/2014/05/08/index/'>Madison .NET User Group - May 2014</a></h1>
     
-        <div class="post-date">Jun 5th, 2011</div>
+        <div class="post-date">May 7th, 2014</div>
 
     <div class="post-content">
-        <p>As our work on the <a href="http://www.appletoncompassion.org/">Appleton Compassion Project</a> was wrapping up, Skyline took over ownership of the database that runs the site from the School District so we could easily make corrections and additions without having to download a new version of the database each night. Now that we &quot;owned&quot; the database, we realized we needed a way to maintain and manage it. For this we used Microsoft&#39;s new tool, <a href="http://www.asp.net/WebMatrix">WebMatrix</a>.</p>
-<p>Right about now you are asking yourself, really, another programming tool? An excellent question. WebMatrix is a response from Microsoft to Ruby on Rails and PHP. The benefit these development stacks is that they can generally be used to implement data driven sites relatively quickly and, until now, Microsoft didn&#39;t have a tool that allowed that.</p>
-<p>While the .NET stack is a great development platform, it doesn&#39;t always allow for quick website development. As developers we tend to over-engineer sites, especially the ones that only need to be a couple of pages. We create a data layer, we create a business layer, and then we create a UI layer. These are, of course, industry best practices, but they are industry best practices for sites that are going to scale. If you&#39;re building a site for a couple of users who just want to see a list of their child&#39;s soccer games, this is definitely over engineering. WebMatrix is Microsoft&#39;s answer to that.</p>
-<p>WebMatrix harkens back to the days of Classic ASP. It contains code logic in a single page, including the SQL statement. You can then render your page using Microsoft&#39;s new <a href="http://www.computerworld.com/s/article/9178910/Microsoft_sharpening_Razor_view_engine_for_ASP.Net?source=rss_news">Razor</a>engine.</p>
-<p><strong>Getting Started
-</strong>To get started, <a href="http://www.asp.net/webmatrix">download WebMatrix </a>using Microsoft&#39;s web platform installer. Upon starting up the application you&#39;ll see a nice, simple-to-use page that includes many templates you can use to get started with your development quickly and easily.</p>
-<p><img src="http://www.jptacek.comWebMatrixScreen.jpg" alt=""></p>
-<p>So, what does the code look like? Truthfully, it&#39;s really simple. Here is the basis of a page we used to create a list of all students participating in the Compassion Project.</p>
-<p>The first thing to realize is the @{ } syntax is part of the Razor view engine. It is the replacement for &lt;%= %&gt; that tells the runtime you are escaping out to do something code like. Essentially, to get our list of data we do three things ... open a database connection, tell it the SQL command, and execute the SQL statement, the same three things we always do. In this case however, those three things are three lines:</p>
-<p>
-@{
-var db=Database.Open(&quot;Dev&quot;);
-var sqlQuery = &quot;select * from ProjectData order by LastName, FirstName&quot;;
-var data = db.Query(sqlQuery);
-}
-
-Next we have to render the output to the page. Again, we rely on the Razor View engine (look for the @ symbol):</p>
-<p></p>
-<p><body></body></p>
-<p><ul>
-@foreach (var row in data) {</ul></p>
-<p><li><a href="http://www.jptacek.comEditArtist.cshtml?id=@row.PictureNumber">@row.PictureNumber</a> @row.LastName @row.FirstName</li>
-}
-
-
-
-We are essentially saying for each (@foreach is Razor syntax) row in our data set (data is a globally scoped variable on the page), create a link to a key (@ is again the Razor syntax, so @row.PictureNumber tells the page to use the picture number) and create hypertext for the person&#39;s name. That&#39;s it! As you can see from the code snippets above, it takes very few lines to get data from a database.</p>
-<p>The update part is also similar. It is, of course, longer since there is a bit more logic, but notice how all of the syntax is on a single page:</p>
-<p>
-@{
-var id = Request[&quot;ID&quot;];
-var sqlSelect = &quot;select Id, PictureNumber, LastName, FirstName, Grade, HomeSchool, TileLocation,IsNull(DisplayStudentOnline,1) as DisplayStudentOnline,IsNull(FeaturedImage,0) as FeaturedImage,IsNull(FeaturedStatement,0) as FeaturedStatement,Description from ProjectData where PictureNumber=@0&quot;;
-var db=Database.Open(&quot;Dev&quot;);
-var sqlQuery = db.QuerySingle(sqlSelect,id);
-var studentFirstName = sqlQuery.FirstName;
-var studentLastName = sqlQuery.LastName;
-var compassionStatement = sqlQuery.Description;
-var homeSchool = sqlQuery.HomeSchool;
-var tileLocation = sqlQuery.TileLocation;
-var displayOnline = sqlQuery.DisplayStudentOnline;
-var isFeaturedImage = sqlQuery.FeaturedImage;
-var isFeaturedStatement = sqlQuery.FeaturedStatement;
-var pictureID = sqlQuery.PictureNumber;
-var imageUrl = &quot;<a href="http://images.appletoncompassion.org/compassionimagesfull/thumb/">http://images.appletoncompassion.org/compassionimagesfull/thumb/</a>&quot; + @pictureID + &quot;.jpg&quot;;
-var isImageCheck = string.Empty;
-if (isFeaturedImage) {
-isImageCheck = &quot;checked&quot;;
-}
-var isStatementCheck = &quot;&quot;;
-if (isFeaturedStatement) {
-isStatementCheck = &quot;checked&quot;;
-}</p>
-<p>var displayOnlineCheck = &quot;&quot;;
-if (displayOnline) {
-displayOnlineCheck = &quot;checked&quot;;
-}</p>
-<p>var ischeckedonpost = string.Empty;
-if (IsPost) {
-compassionStatement = Request[&quot;statement&quot;];
-tileLocation = Request[&quot;tileLoc&quot;]
-displayOnline = ParseCheckBox(Request[&quot;displayOnline&quot;]);
-isFeaturedImage = ParseCheckBox(Request[&quot;chkFeaturedImage&quot;]);
-isFeaturedStatement = ParseCheckBox(Request[&quot;chkFeaturedStatement&quot;]);
-var sqlUpdate = &quot;Update ProjectData set description = @0, TileLocation=@1, DisplayStudentOnline=@2, FeaturedImage=@3,FeaturedStatement=@4 where pictureNumber=@5&quot;;
-db.Execute(sqlUpdate,compassionStatement,tileLocation,displayOnline,isFeaturedImage,isFeaturedStatement,pictureID);
-Response.Redirect(&quot;Page.cshtml&quot;);</p>
-<p>}
-}</p>
-<p>@functions {
-bool ParseCheckBox(string checkBoxValue) {
-Response.Write(&quot;Value in: &quot; + checkBoxValue +&quot;<br>&quot;);
-bool returnValue = false;
-if (checkBoxValue == &quot;on&quot;) {
-returnValue = true;
-}
-else {
-returnValue = false;
-}
-Response.Write(&quot;Value out: &quot; + returnValue +&quot;<br>&quot;);
-return returnValue;
-}
-}
-&lt;!DOCTYPE html&gt;</p>
-<p><html lang="en"></html></p>
-<p><head></head></p>
-<p><meta charset="utf-8"></p>
-<p><title>Edit Artist</title>
-</p>
-<p><body>
-<a href="http://www.jptacek.comPage.cshtml">Home Page</a></body></p>
-<p><form action="" method="post"></form></p>
-<p></p><p>Picture Number: @pictureID</p><p></p>
-<p></p><p>First Name: @studentFirstName</p><p></p>
-<p></p><p>Last Name: @studentLastName</p><p></p>
-<p></p><p>Home School: @homeSchool</p><p></p>
-<p></p><p>Tile Location: <input type="text" name="tileLoc" value="@tileLocation"></p><p></p>
-<p></p><p>Statement:</p><p> <textarea id="txtStatement" rows="10" columns="20" style="width:600px" name="statement">@compassionStatement</textarea></p><p></p>
-<p></p><p>Display Student Online <input type="checkbox" name="displayOnline" @displayonlinecheck=""></p><p></p>
-<p></p><p>Featured Art <input type="checkbox" name="chkFeaturedImage" @isimagecheck=""></p><p></p>
-<p></p><p>Featured Statement<input type="checkbox" name="chkFeaturedStatement" @isstatementcheck=""></p>
-<img src="http://www.jptacek.com@imageUrl"><p></p>
-<p></p><p><input type="submit" value="Save"></p>
-
-
-
-
-<strong>Why Use it?
-</strong>WebMatrix is Microsoft&#39;s response to tools such as Ruby and PHP that generally use inline SQL and allow developers to quickly get sites published. It includes many templates so you can get started quickly, and it will tie into Open Source projects such as Joomla.<p></p>
-<p><strong>I want to learn more!
-</strong><a href="http://www.asp.net/webmatrix">Official WebMatrix Site</a></p>
-<p>WebMatrix Development 101</p>
-<p>&nbsp;</p>
-<p><a href="http://www.amazon.com/Web-Development-using-WebMatrix-ebook/dp/B004I6D676/ref=sr_1_2?ie=UTF8&amp;qid=1305890052&amp;sr=8-2">Web Matrix 101 book</a> - This is a nice little introduction and is only $1 for the Kindle.</p>
-<p>This blog post orginally appeared at <a href="http://www.skylinetechnologies.com/Blog/Lists/Posts/Post.aspx?ID=43"> Skyline Technologies</a></p>
+        <p>Thanks to everyone who came out to my <a href="http://www.meetup.com/MADdotNET/">Madison .NET User Group</a> presentation on AngularJS on May 7th,
+2014.</p>
+<p>Had a really nice turnout and the group was great to give a talk to! Engaging, with lots of good questions. They even humored me when
+I went on a brief Lou Reed interlude!</p>
+<p>You can find a copy of my slides on my site <a href="/2014/05/08/index/AngularJS.pptx">here</a>.</p>
+<p>The code for my demo is available on <a href="http://www.github.com">GitHub</a> at <a href="https://github.com/jptacek/MadDotNet">https://github.com/jptacek/MadDotNet</a> along with
+the slides.</p>
+<p>There are also several blog posts I have written about Angular, <a href="http://www.jptacek.com/tags/angularjs/">http://www.jptacek.com/tags/angularjs/</a>. Also, for those
+interested in learning more about DocPad, here is a post where I talked about moving over, <a href="http://www.jptacek.com/2013/12/saying-hello-to-docpad/">http://www.jptacek.com/2013/12/saying-hello-to-docpad/</a></p>
+<p>As always, feel free to reach out to me via email (blog -@- jptacek.com) or on twitter, <a href="http://www.twitter.com/jptacek">@jptacek</a>.</p>
+<p>To those of you who attended, thanks much!</p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/appleton-compassion/'>Appleton Compassion</a>, <a href='/tags/giveology/'>Giveology</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/webmatrix/'>WebMatrix</a>
+        Posted In: <a href='/tags/speaking/'>Speaking</a>, <a href='/tags/angularjs/'>AngularJS</a>
     </div>
     
     <br/>
@@ -341,13 +407,13 @@ return returnValue;
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='WebMatrix Proves an Excellent Tool for Creating Small Sites Quickly' class="twitter-share-button" data-url="http://jptacek.com/2011/06/06/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Madison .NET User Group - May 2014' class="twitter-share-button" data-url="http://jptacek.com/2014/05/08/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2011/06/06/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/05/08/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2011/06/06/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/05/08/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 

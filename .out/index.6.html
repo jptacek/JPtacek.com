@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -93,24 +97,190 @@
             
     <article class="post">
     
-    <h1><a href='/2012/09/10/index/'>Windows Identity Foundation and Windows 8</a></h1>
+    <h1><a href='/2014/01/24/index/'>AngularJS - Image Binding in AngularJS with Lou Reed</a></h1>
     
-        <div class="post-date">Sep 9th, 2012</div>
+        <div class="post-date">Jan 23rd, 2014</div>
 
     <div class="post-content">
-        <p>In upgrading to Windows 8, I had issues with existing projects that were using Windows Identity Foundation 3.5 (WIF). Attempts to install the WIF SDK or the stand alone installer resulted in an error. With the installed the message was</p>
-<p>Installer encountered an error: 0x80096002. The certificate for the signer of the message is invalid or not found.</p>
-<p>&nbsp;</p>
-<p><a href="http://jptacek.azurewebsites.net/wp-content/uploads/2012/09/InstallError.png"><img src="http://www.jptacek.comInstallError-300x180.png" alt="WIF install error on Windows 8" title="WIFInstallError"></a></p>
-<p>It turns out WIF 3.5 ships with Windows 8. You need to enable this feature to work. To do that, go to Win 8 Search and the application settings area and search for Turn Windows features on or off and enable Windows Identity Foundation 3.5</p>
-<p><a href="http://jptacek.azurewebsites.net/wp-content/uploads/2012/09/WIF35Enable.png"><img src="http://www.jptacek.comWIF35Enable-300x269.png" alt="Eanble WIF 3.5 for Windows 8" title="WIF35Enable"></a></p>
-<p>&nbsp;</p>
+        <p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
+<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
+ HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
+ Contrast this to a framework like JQuery where the DOM will update your data.</p>
+<p><img src="/2014/01/24/index/angularLogo.png" alt="AngularJS Logo"></p>
+<p>This is the fifth in a series of posts on AngularJS where we are using Chemistry data from the periodic table
+to help us understand the framework. The others posts are</p>
+<ol>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
+<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
+<li>AngularJS - Image Binding</li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
+<li><a href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
+<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
+<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
+</ol>
+<blockquote>
+<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
+the home page of my blog, only one application will work. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
+</blockquote>
+<p>If you have spent any time with me in the real world, you quickly come to realize I am a music fan. If
+you have spent a little time with me, especially when I was a younger, you realize I am a huge
+<a href="http://en.wikipedia.org/wiki/Lou_Reed">Lou Reed</a> fan too.
+My boss, <a href="https://twitter.com/tvanhammond">Tim VanHammond</a> still holds it against me the one time
+I played Lou Reed&#39;s the Possum song without headphones when he was in the office we shared.
+The reality is, I probably spent WAY too
+much time listening to Lou Reed and Velvet Underground music when I was a teenager. So, having said all that, soon
+after Lou Reed died, I was doing a <a href="/2014/01/24/index//2013/11/fvnug-presentation-nov-2013/">presentation</a> at the
+<a href="http://newdug.org/">NorthEast Wisconsin Developer UserGroup</a> (aka, NEWDUG and
+yes it is a lot to type) and I thought it would be fun to have a little Lou Reed shout out. Since the talk
+was about AngularJS, it of course had an Angular flavor. So we did a little Lou Reed segue, and talked about
+binding images using AngularJS. Most important and of interest to you dear reader, is
+how I found out a way to deal with missing images!</p>
+<p><img src="/2014/01/24/index/Lou_Reed.jpg" alt="Lou Reed"></p>
+<p>Instead of using chemistry data, we used Lou data. This data was a JSON object of record releases. Lou put out
+a lot of albums, and we are loading images, so to keep things quick, we are just doing the first few releases.
+One of our Lou
+objects looks like</p>
+<pre class="highlight"><code class="hljs javascript"> {
+            <span class="hljs-string">"album"</span>: <span class="hljs-string">"Lou Reed"</span>,
+            <span class="hljs-string">"artist"</span>: <span class="hljs-string">"Lou Reed"</span>,
+            <span class="hljs-string">"releaseDate"</span>: <span class="hljs-number">6</span>/<span class="hljs-number">1</span>/<span class="hljs-number">1972</span>,
+            <span class="hljs-string">"image"</span>: <span class="hljs-string">"http://upload.wikimedia.org/wikipedia/en/8/88/Lour72.jpg"</span>,
+            <span class="hljs-string">"label"</span>: <span class="hljs-string">"RCA"</span>
+        }
+</code></pre>
+<p>Essentially what we are doing is the same stuff that came before, instantiating the app and referencing our
+controller and looping through the albums and making a little table. This is quickly becoming old hat
+for us!</p>
+<h3>Lou Reed pages</h3>
 
+<div id="appLouContainer" ng-app="louApp">
+ <div id="louTable0" ng-controller="louCtrl">
+    <table class="table table-striped table-bordered table-hover table-condensed">
+        <tr>
+            <th>Album</th><th>Release</th><th>Producer</th><th>Label</th><th></th>
+        </tr>
+        <tr ng-repeat="album in louDrops.releases">
+            <td>{{album.album}}</td>
+            <td>{{album.releaseDate|date}}</td>
+            <td>{{album.producer}}</td>
+            <td>{{album.label}}</td>
+            <td><img src="/2014/01/24/index/{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;"></td>
+        </tr>
+    </table>
+   </div>
+
+<p><b>Note:</b> There is an issue with the markup being generated by DocPad prepending the local URL. You can see the
+actual correct HTML at <a href="http://angularperiodic.azurewebsites.net/lou/lou.html">http://angularperiodic.azurewebsites.net/lou/lou.html</a> until the I fix this.</p>
+<p>Again, we have done this before. The interesting thing to note though is the album release date. JavaScript and
+dates are something that make me a little crazy, but having said that, AngularJS does a nice job. You can pass
+a JSON date object to a filter and have it format, <code>{{album.releaseDate|date}}</code> as above. More info on the <code>date</code>
+filter at the <a href="http://docs.angularjs.org/api/ng.filter:date#!">AngularJS</a> site.</p>
+<p>The second thing to notice is we are using a <code>src</code> attribute in our <code>img</code> tag. Things are loading fine, but if
+you look at the page load, you will actually see a 404 error that happens.</p>
+<p><img src="/2014/01/24/index/404Error.png" alt="404 Error on image Get"></p>
+<p>This is because the AngularJS functionality is executed AFTER the page loads. We are still making the get request
+that the <code>src</code> attribute had identified because we have yet to get into the javscript
+processing on the page. With <code>src</code> attributes and <code>href</code> tags you that reference
+AngularJS objects, this is something you need to be cognizant of. The fix is easy enough, we just prepend a <code>ng</code> tag on our
+attribute. This will then be part of the page processing that happens during the Angular load. Our image reference
+is now</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">ng-src</span>=<span class="hljs-value">"\{\{album.image\}\}"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"\{\{album.album\}\} Cover Image"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"300px;"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"300px;"</span>&gt;</span>
+</code></pre>
+<h3>Adding ng-src</h3>
+ <div id="louTable1" ng-controller="louCtrl">
+    <table class="table table-striped table-bordered table-hover table-condensed">
+        <tr>
+            <th>Album</th><th>Release</th><th>Producer</th><th>Label</th><th></th>
+        </tr>
+        <tr ng-repeat="album in louDrops.releases">
+            <td>{{album.album}}</td>
+            <td>{{album.releaseDate|date}}</td>
+            <td>{{album.producer}}</td>
+            <td>{{album.label}}</td>
+            <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" src="/2014/01/24/index/undefined"></td>
+        </tr>
+    </table>
+</div>
+
+The last thing to hit on is on the image loading, and a cool little trick I learned. One of the customer sites
+I work at it is using AngularJS and they are integrating with a third party data source. What they wanted to be
+able to do is not show a broken or missing image. I sat there and thought to myself that this is going to be
+pretty difficult. Our client side scripting language was going to have to not call the source directly, but go
+through some kind of nutty proxy we would develop that would check if the image existed and then send that
+image or else a proxy for the missing image, etc. It wasn&#39;t going to be fun. However, a little time
+on the <a href="http://www.google.com">Google</a> found a MUCH easier way to get by this.
+
+To expand on our discussion, our images are coming from Wikipedia and reference images they have for entries on Lou Reed albums. If
+one of these images changes, we would get an error and display a broken image marker on our page. To illustrate, I have created a
+second controller where we change the image for Metal Machine Music and Transformer so they would return 404s.
+
+We now are receiving missing image links in our page. This is NOT use friendly
+
+<img src="/2014/01/24/index/LouCover404.png" alt="404 Error on Album Cover">
+
+You can see the example below
+
+<h3>Missing Images in Javascript Object</h3>
+
+   <div id="louTable2" ng-controller="lou2Ctrl">
+        <table class="table table-striped table-bordered table-hover table-condensed">
+            <tr>
+                <th>Album</th><th>Release</th><th>Producer</th><th>Label</th><th></th>
+            </tr>
+            <tr ng-repeat="album in lou2Drops.releases">
+                <td>{{album.album}}</td>
+                <td>{{album.releaseDate| date:&#39;medium&#39;}}</td>
+                <td>{{album.producer}}</td>
+                <td>{{album.label}}</td>
+                <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" src="/2014/01/24/index/undefined"></td>
+            </tr>
+        </table>
+    </div>
+
+<p>The fix is easy enough though! We can add an on error function within our <code>img</code> tag. First, we want to add a
+default local image we can reference. So let us use the Wikipedia image that I have at the top of our page.</p>
+<p>Within our <code>img</code> tag we add an <code>onerrror</code> function like so</p>
+<pre class="highlight"><code class="hljs xml"> onerror="this.src='Lou_Reed.jpg'"
+</code></pre>
+<p>so that our entire <code>img</code> tag is now</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">ng-src</span>=<span class="hljs-value">"\{\{album.image}}"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"\{\{album.album\}\} Cover Image"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"300px;"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"300px;"</span>&gt;</span>
+</code></pre>
+<p>and we now handle missing images on page load (with ng-src) and missing images in our data source, with
+onerror by placing a default placeholder image for missing images.</p>
+<p> <h3>Resolve missing images</h3>
+    <div id="louTable3" ng-controller="lou2Ctrl">
+        <table class="table table-striped table-bordered table-hover table-condensed">
+            <tr>
+                <th>Album</th><th>Release</th><th>Producer</th><th>Label</th><th></th>
+            </tr>
+            <tr ng-repeat="album in lou2Drops.releases">
+                <td>{{album.album}}</td>
+                <td>{{album.releaseDate| date:&#39;medium&#39;}}</td>
+                <td>{{album.producer}}</td>
+                <td>{{album.label}}</td>
+                <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" onerror="this.src=&apos;/2014/01/angularjs-lou-reed/Lou_Reed.jpg&apos;" src="/2014/01/24/index/undefined"></td>
+            </tr>
+        </table>
+    </div>
+</p></div><p></p>
+<p>So the when I gave my presentation someone asked me favorite Lou Reed album... Hard one, I think at various times
+most of them have been a favorite, but I will go with New York. Favorite song, same as album, it changes, but let&#39;s
+call it Street Hassle.</p>
+<p>You can either visit <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a> to see the code in action and
+as always find the code out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a></p>
+<p>(I am working on some display issues with the post with the Markdown/DocPad combo, I should have updated soon)</p>
+<script type="text/javascript" src="/2014/01/angularjs-lou-reed/js/louApp.js"></script>
+<script type="text/javascript" src="/2014/01/angularjs-lou-reed/js/louController.js"></script>
+<script type="text/javascript" src="/2014/01/angularjs-lou-reed/js/louController2.js"></script>
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/windows-8/'>Windows 8</a>
+        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
@@ -119,36 +289,342 @@
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Windows Identity Foundation and Windows 8' class="twitter-share-button" data-url="http://jptacek.com/2012/09/10/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='AngularJS - Image Binding in AngularJS with Lou Reed' class="twitter-share-button" data-url="http://jptacek.com/2014/01/24/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2012/09/10/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/01/24/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2012/09/10/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/01/24/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2012/10/19/index/'>A Modest Proposal – Apple Should Buy the US Post Office</a></h1>
+    <h1><a href='/2014/01/23/index/'>AngularJS - More with ng-repeat</a></h1>
     
-        <div class="post-date">Oct 18th, 2012</div>
+        <div class="post-date">Jan 22nd, 2014</div>
 
     <div class="post-content">
-        <p>The recent iMaps fiasco has taught the world that Apple has some serious catch up to do in the world of maps. There is a bit of a chicken and the egg issue, the more people using the iMaps app, the more data Apple can collect and make iMaps a better app. Instead of waiting for this to happen, Apple should speed up the process and buy the US Post office.</p>
-<p>The USPS operates over 210,000 vehicles and is the largest vehicle fleet in the world. The vast majority of these vehicles are out driving the world every day. If Apple buys the US post office, they could transform these vehicles into data gathering machines. Throw in a GPS and bring the data to Apple and their mapping team to quickly scale and improve iMaps. Next step, throw a camera in the car, ala the Google Car, and get a constantly refreshing street view mode. Google&#39;s Street View cars have driven 5 million miles since hitting the road. The US Post office drives 1.25 BILLION miles a year. Apple for the win! Next up, throw some more sensors onto the cars. For example, weather sensors could capture very local and real time weather data and create the next great Apple app, iWeather.</p>
-<p>Putting sensors onto the USPS fleet is not a new idea, the USPS has <a href="http://www.nytimes.com/2010/12/18/opinion/18ravnitzky.html">even</a> proposed doing this. However, it is a slow moving process, with privacy concerns often being cited. Apple buying the USPS and transforming it to the iPost Office helps alleviate these concerns. By moving the USPS from an old stodgy business to a tech company, privacy concerns quickly disappear. As consumers, we are used to letting the Goggles, Facebooks and Apples of the world collect information about us to make their services more awesome for us.</p>
-<p>Next up, it becomes an advertising niche for Apple. The USPS handled over 170 billion items in 2010. Each one of these becomes an advertising opportunity! Just like Google can put a little advertising onto most of the web pages we visit, iPost Office can put a little ad onto each of the 170 billion mail deliveries they do a year and have a brand new revenue stream.</p>
-<p>Next along the road, Apple can start competing with Amazon. It quickly acquires 30,000 retail locations that it can use to distribute physical goods. Instead of consumers having to wait a few days for the delivery of something from Amazon, or even two days for those customers paying for an Amazon Prime Membership, the iPost Office could deliver things purchased that day! The iPost Office even delivers on Saturdays, putting Amazon at a competitive disadvantage for those customers whom always battle cheap price vs. instant gratification.</p>
-<p>The best part about iPost Office is that everything Apple does is cool. Hipsters would start flocking back to their mailboxes. Apple could create stamps of Apple luminaries like Steve Jobs, Steve Wozniak and Jonathan Ive (post <a href="http://gizmodo.com/5516976/apples-chief-designer-re+designed">redesign</a> of course!). You can quickly imagine people buying these stamps and sending physical letters in the mail again. This could lead to a renaissance of letter writing! Imagine a world where instead of <a href="http://www.amazon.com/The-Letters-John-Cheever/dp/1439164649">The Letters of John Cheever</a> we could have the Collected Letters of <a href="http://daringfireball.net/">John Grueber</a>.</p>
-<p>Okay, so the above is all a little bit <a href="http://en.wikipedia.org/wiki/A_Modest_Proposal">Jonathan Swiftian</a>, but a partnership between the US Post Office and Apple could go a long way to solving the financial issues at the US Post Offices and Apple&#39;s iMaps issue. Of course, in the US iMaps tends to be in much better shape, so throw in a similar partnership with DHL for good measure. Apple could quickly gather data and help resolve their mapping issues. Win-win.</p>
+        <style>
+        .tableOdd {
+            background-color: green;
+        }
+        .tableEven {
+            background-color: gold;
+        }
+    </style>
+
+<p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
+<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
+ HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
+ Contrast this to a framework like JQuery where the DOM will update your data.</p>
+<p><img src="/2014/01/23/index/angularLogo.png" alt="AngularJS Logo"></p>
+<p>This is the fourth in a series of posts on AngularJS where we are using Chemistry data from the periodic table
+to help us understand the framework. The others posts are</p>
+<ol>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
+<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
+<li>AngularJS - More with NG-Repeat</li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
+<li><a href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
+<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
+<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
+</ol>
+<blockquote>
+<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
+the home page of my blog, only one application will work. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
+</blockquote>
+<p>In this post, we are going to dig a bit deeper into ng-repeat and discover a few things.</p>
+<p>To level set, we have a controller called chemistryApp.js. This creates our AngularJS application</p>
+<p><em>chemistryApp.js</em></p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
+</code></pre>
+<p>and a controller that references are json file of chemistry data and sets it to a scope variable</p>
+<p><em>chemistryController.js</em></p>
+<pre class="highlight"><code class="hljs javascript">chemistryApp.controller(<span class="hljs-string">'chemCtrl'</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope)</span> {</span>
+        $scope.periodic = perioicData;
+    }
+);
+</code></pre>
+<p>First up, instead of creating an unordered list, we are going to create a table. This is done by putting the
+<code>ng-repeat</code> directive on a <code>&lt;tr&gt;</code> tag. For example</p>
+<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements "</span>&gt;</span>
+</code></pre>
+<p>Then we can add our data on a cell by cell basis. For this example, we are going to link to a Wikipedia article about
+each element, and then display things like the atomic number, atomic weight, etc. Tying this with our <code>ng-repeat</code>
+ directove and
+our table markup becomes</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table table-striped table-bordered table-hover table-condensed"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements "</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://en.wikipedia.org/wiki/{{element.name}}"</span> <span class="hljs-attribute">Title</span>=<span class="hljs-value">"Wikipedia article on {{element.name}}"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_top"</span>&gt;</span>{{element.name}}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.phase}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.ionization}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.melting}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.boiling}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+</code></pre>
+<p>We now have a list of the Chemical elements in a table.</p>
+<div id="appContainer" ng-app="chemistryApp">
+ <div id="periodicTable0" ng-controller="chemCtrl">
+        <table class="table table-striped table-bordered table-hover table-condensed">
+            <tr>
+                <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
+            </tr>
+            <tr ng-repeat="element in periodic.elements ">
+                <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
+                <td>{{element.atomicNumber}}</td>
+                <td>{{element.atomicWeight}}</td>
+                <td>{{element.phase}}</td>
+                <td>{{element.ionization}}</td>
+                <td>{{element.melting}}</td>
+                <td>{{element.boiling}}</td>
+            </tr>
+        </table>
+    </div>
+
+<p>We can also, just like in our previous example, bind a filter to an input box and search for a chemical element
+by name and have it filter the list automatically.</p>
+<pre class="highlight"><code class="hljs xml">   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"periodicTable"</span>  <span class="hljs-attribute">data-ng-controller</span>=<span class="hljs-value">"chemCtrl"</span> &gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementNameOnlyTable"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table table-striped table-bordered table-hover table-condensed"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements | filter:{name:elementNameOnlyTable}"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://en.wikipedia.org/wiki/{{element.name}}"</span> <span class="hljs-attribute">Title</span>=<span class="hljs-value">"Wikipedia article on {{element.name}}"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_top"</span>&gt;</span>{{element.name}}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.phase}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.ionization}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.melting}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.boiling}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+ <div id="periodicTable" ng-controller="chemCtrl">
+    <form id="frm1">
+    <input type="text" ng-model="elementNameOnlyTable">
+    <table class="table table-striped table-bordered table-hover table-condensed">
+        <tr>
+            <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
+        </tr>
+        <tr ng-repeat="element in periodic.elements | filter:{name:elementNameOnlyTable}">
+            <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
+            <td>{{element.atomicNumber}}</td>
+            <td>{{element.atomicWeight}}</td>
+            <td>{{element.phase}}</td>
+            <td>{{element.ionization}}</td>
+            <td>{{element.melting}}</td>
+            <td>{{element.boiling}}</td>
+        </tr>
+    </table>
+    </form>
+</div>
+
+
+<p>The ng-repeat also has some intrinsic variable definitions. One is <code>$index</code> which is the current key of the element
+of the loop you are on.</p>
+ <div id="periodicTable1" ng-controller="chemCtrl">
+        <input type="text" ng-model="elementNameOnlyTable2">
+        <table class="table table-striped table-bordered table-hover table-condensed">
+            <tr>
+                <th>Name</th><th>$Index</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
+            </tr>
+            <tr ng-repeat="element in periodic.elements | filter:{name:elementNameOnlyTable2}">
+                <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
+                <td>{{$index}}</td>
+                <td>{{element.atomicNumber}}</td>
+                <td>{{element.atomicWeight}}</td>
+                <td>{{element.phase}}</td>
+                <td>{{element.ionization}}</td>
+                <td>{{element.melting}}</td>
+                <td>{{element.boiling}}</td>
+            </tr>
+        </table>
+    </div>
+
+
+<p>It is interesting to note that the index is for the values you are filtering on too. So if you were to type Aluminum
+you will see it becomes the zero element, instead of Hydrogen.</p>
+<p>Angular also has  directives like <code>ng-hide</code>,
+<code>ng-show</code> and <code>ng-class</code> along with a <a href="http://docs.angularjs.org/guide/directive">plethora of other attributes</a>.</p>
+<p>We can use these in conjunctions with <code>$index</code>. This is really the key step along the journey in thinking the &quot;Angular way&quot;.
+You don&#39;t want to update the dom via javascript, but use Angular to control what is displayed
+on your page. As an example of this, let&#39;s say we want to hide
+every other element in the list. We could do something like</p>
+<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements"</span> <span class="hljs-attribute">data-ng-hide</span>=<span class="hljs-value">"$index%2"</span>&gt;</span>
+</code></pre>
+<div id="periodicTable2" ng-controller="chemCtrl">
+    <table class="table ">
+        <tr>
+            <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
+        </tr>
+        <tr ng-repeat="element in periodic.elements" ng-hide="$index%2">
+            <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
+            <td>{{element.atomicNumber}}</td>
+            <td>{{element.atomicWeight}}</td>
+            <td>{{element.phase}}</td>
+            <td>{{element.ionization}}</td>
+            <td>{{element.melting}}</td>
+            <td>{{element.boiling}}</td>
+         </tr>
+     </table>
+</div>
+
+<p>We can also perform some Crimes Against web design. For example, nothing is uglier than wrapping your table in
+Green Bay Packer colors of Green and Gold. So I can add CSS elements like</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+        <span class="hljs-class">.tableOdd</span> <span class="hljs-rules">{
+            <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> green</span></span>;
+        <span class="hljs-rule">}</span></span>
+        <span class="hljs-class">.tableEven</span> <span class="hljs-rules">{
+            <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> gold</span></span>;
+        <span class="hljs-rule">}</span></span>
+    </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+</code></pre>
+<p>Then we can use the <code>ng-class</code> on the <code>&lt;tr&gt;</code> we are binding to in order to make even/odd rows change colors.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements"</span> <span class="hljs-attribute">data-ng-class</span>=<span class="hljs-value">"{tableEven: !($index%2), tableOdd: ($index%2)}"</span>&gt;</span>
+</code></pre>
+<p>It doesn&#39;t look pretty, and there are MUCH better ways to do this, but it gives you an example of how to
+think the &quot;Angular way&quot;</p>
+ <div id="periodicTable3" ng-controller="chemCtrl">
+        <table class="table ">
+            <tr>
+                <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
+            </tr>
+            <tr ng-repeat="element in periodic.elements" ng-class="{tableEven: !($index%2), tableOdd: ($index%2)}">
+                <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
+                <td>{{element.atomicNumber}}</td>
+                <td>{{element.atomicWeight}}</td>
+                <td>{{element.phase}}</td>
+                <td>{{element.ionization}}</td>
+                <td>{{element.melting}}</td>
+                <td>{{element.boiling}}</td>
+            </tr>
+        </table>
+    </div>
+
+<p>Last, we can also do fun things like sort by using select lists to quickly filter data. For example, we create a
+dropdown list for both the element phase</p>
+<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementPhase"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Gas"</span>&gt;</span>Gas<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Solid"</span>&gt;</span>Solid<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Liquid"</span>&gt;</span>Liquid<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Synthetic"</span>&gt;</span>Synthetic<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+</code></pre>
+<p>and an ordering criteria</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementOrder"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"name"</span> <span class="hljs-attribute">selected</span>&gt;</span>Name (ascending)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"-name"</span>&gt;</span>Name (descending)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"melting"</span>&gt;</span>Melting Point (asc)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"-melting"</span>&gt;</span>Melting Point (desc)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+</code></pre>
+<p>We can then use the <code>ng-filter</code> and <code>ng-order</code> directives to filter and sort our table. Further, we can
+combine with our text box for searching by name and chain them together.</p>
+<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements | filter:{name:elementName} | filter:{phase:elementPhase} | orderBy:elementOrder"</span>&gt;</span>
+</code></pre>
+<p>Ultimately, our HTML looks like</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"periodicTable5"</span>  <span class="hljs-attribute">data-ng-controller</span>=<span class="hljs-value">"chemCtrl"</span> &gt;</span>
+        Element Name:<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementName"</span>/&gt;</span>
+        &amp;nbsp;State:
+        <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementPhase"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Gas"</span>&gt;</span>Gas<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Solid"</span>&gt;</span>Solid<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Liquid"</span>&gt;</span>Liquid<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Synthetic"</span>&gt;</span>Synthetic<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+        &amp;nbsp;Order:
+        <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementOrder"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"name"</span> <span class="hljs-attribute">selected</span>&gt;</span>Name (ascending)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"-name"</span>&gt;</span>Name (descending)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"melting"</span>&gt;</span>Melting Point (asc)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"-melting"</span>&gt;</span>Melting Point (desc)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table "</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements | filter:{name:elementName} | filter:{phase:elementPhase} | orderBy:elementOrder"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://en.wikipedia.org/wiki/{{element.name}}"</span> <span class="hljs-attribute">Title</span>=<span class="hljs-value">"Wikipedia article on {{element.name}}"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_top"</span>&gt;</span>{{element.name}}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span> &gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.phase}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.ionization}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.melting}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.boiling}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<div id="periodicTable5" ng-controller="chemCtrl">
+        Element Name:<input type="text" ng-model="elementName">
+        &nbsp;State:
+        <select ng-model="elementPhase">
+            <option value="">All</option>
+            <option value="Gas">Gas</option>
+            <option value="Solid">Solid</option>
+            <option value="Liquid">Liquid</option>
+            <option value="Synthetic">Synthetic</option>
+        </select>
+        &nbsp;Order:
+        <select ng-model="elementOrder">
+            <option value="name" selected>Name (ascending)</option>
+            <option value="-name">Name (descending)</option>
+            <option value="melting">Melting Point (asc)</option>
+            <option value="-melting">Melting Point (desc)</option>
+        </select>
+
+        <table class="table ">
+            <tr>
+                <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
+            </tr>
+            <tr ng-repeat="element in periodic.elements | filter:{name:elementName} | filter:{phase:elementPhase} | orderBy:elementOrder">
+            <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
+                <td>{{element.atomicNumber}}</td>
+                <td>{{element.atomicWeight}}</td>
+                <td>{{element.phase}}</td>
+                <td>{{element.ionization}}</td>
+                <td>{{element.melting}}</td>
+                <td>{{element.boiling}}</td>
+            </tr>
+        </table>
+    </div>
+
+<p>The interesting thing to note about this too is that this page is pretty heavy. It has many tables with the
+Periodic elements. However, by using client side code, we download all of the elements only once when we get
+our JavaScript file. The client side functionality does the page building, helping the page load quicker.</p>
+<p>For those of you who have been web coding for a while, these few number of lines to have all of this client side
+functionality is magic. Seriously, magic.</p>
+<p>You can either visit <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a> to see the code in action and
+as always find the code out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a>
+</p></div>
+ <script type="text/javascript" src="/2014/01/angularjs-further-with-ng-repeat/js/chemistryApp.js"></script>
+ <script type="text/javascript" src="/2014/01/angularjs-further-with-ng-repeat/js/chemistryController.js"></script>
+ <script type="text/javascript" src="/2014/01/angularjs-further-with-ng-repeat/js/chemistry.js"></script><p></p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/apple/'>Apple</a>, <a href='/tags/business/'>Business</a>, <a href='/tags/google/'>Google</a>
+        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
@@ -157,43 +633,63 @@
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='A Modest Proposal – Apple Should Buy the US Post Office' class="twitter-share-button" data-url="http://jptacek.com/2012/10/19/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='AngularJS - More with ng-repeat' class="twitter-share-button" data-url="http://jptacek.com/2014/01/23/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2012/10/19/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/01/23/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2012/10/19/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/01/23/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2012/10/08/index/'>Xbox Phone</a></h1>
+    <h1><a href='/2014/01/21/index/'>GitHub Repository Not Found - Case Issue?</a></h1>
     
-        <div class="post-date">Oct 7th, 2012</div>
+        <div class="post-date">Jan 20th, 2014</div>
 
     <div class="post-content">
-        <p>Last week saw a lot of rumors running around that Microsoft would be releasing their own Windows Phone next year. <a href="http://www.wpcentral.com/microsoft-does-indeed-have-their-own-windows-phone">WPCentral</a>, <a href="http://www.bgr.com/2012/10/02/microsoft-surface-phone-release-date-windows-phone-8/">BGR</a> and <a href="http://www.theverge.com/2012/10/3/3445860/microsoft-surface-phone-rumors-windows-phone">The Verge</a> had &quot;trusted&quot; sources confirm the release of a Windows Phone next year (2013). Even <a href="http://www.forbes.com/sites/ewanspence/2012/10/07/why-its-a-good-idea-for-microsoft-to-build-their-own-surface-smartphone-windows-phone-surface-smartphone/">Forbes</a> got into the mix saying it would be a good idea.</p>
-<p>There are a lot of ways this would be difficult for Microsoft. They do not have distribution with the carriers, and that takes work. They have also burnt some bridges along the way (&quot;Remember the Kin&quot; I think is a Verizon rallying cry). They have also invested a lot in their relationship with Nokia.</p>
-<p>If they are REALLY looking to get into the mobile phone business, they would just buy Nokia. Microsoft makes money from nearly every Android device sold and Nokia makes money on every iPhone sold. Having your competitors help pay for your developers as you try to take market share is fun. There is also a ton of Intellectual Property that Nokia brings to the mobile space that Microsoft can realize benefit from. Their mapping technology is one of the top two (if not top) in the industry. They also have excellent native apps that Microsoft could leverage natively for all of their phones. Moving away from a Nokia partnership could set Microsoft back, especially if the relationship changes in a way that they lose their mapping technology.</p>
-<p>Lots of the speculation is that Microsoft would be making an unlocked device that they could sell directly to consumers, ala the Google approach with Nexus. I don&#39;t think that is going to happen. What I think is going to happen is that Microsoft is going to make a portable Xbox based on Windows Phone. Let&#39;s call it the XBox Surface.</p>
-<p>What do we know.</p>
-<p><strong>New Xbox Next year</strong> - Microsoft is rumored to be releasing a new version of the XBox next year. There is also rumors/confirmation that the new Xbox will be based on the same core as Windows 8. You can be pretty sure that the new Xbox will be launching later next year, in time for the Holiday season. Both of the previous version of the XBoxes launched in November.</p>
-<p><strong>Windows Phone</strong> - The upcoming release of Windows Phone 8 is also reworked to be based on the Windows 8 OS. With all of the secrecy it is hard to say, but it SEEMS that Microsoft has not totally baked this through. Next year, you can expect it to be more fully integrated. Also, Microsoft traditionally updates their OS in October/November time frame.</p>
-<p><strong>Windows 8.Next</strong> - Microsoft has stated they would like to get into quicker rev cycles for both Office and Windows. The Windows RT side of the OS seems like this would be readily doable. We can assume that this would happen about a year after the release, which gets us into September/October</p>
-<p><strong>One OS To Rule Them All</strong> - A good deal of Microsoft&#39;s success comes from the ability to make developers productive and create apps. Recently, Microsoft has been promoting a &quot;Shared Windows Core&quot;. This makes it easier for developers to create applications once and deploy to Windows 8 or Windows Phone, and one assumes Xbox.Next. While this is coming along, it doesn&#39;t feel like it is totally completed. I think it will be MUCH closer to fully baked next year.</p>
-<p>So what do we have... Rumors that Microsoft is building a Windows Phone Surface type device, a new version of the XBox and the assumption of new Windows Phone and Windows releases next fall. I think you throw this all into a blender, and Microsoft will not be releasing a Surface Phone, but a handheld Xbox based phone.</p>
-<p>The Xbox Surface would be based on the next version of Windows Phone 8, which I believe will be tightly integrated with the next Xbox. It will allow developers to much more easily create applications for both the next Xbox as well as the phone. Obviously you will not play Halo 5 on the phone, but you could maybe have a lighter graphic version of the FPS as well as augmented second screen for play if you wanted. Think the next version of Microsoft&#39;s SmartGlass on steroids, which will be more close to what Nintendo is doing with the WII U.</p>
-<p>Microsoft has had tremendous success with the Xbox in the consumer space. It is a brand consumers trust. They do not have a competitor to Sony&#39;s PSP line. It is well past time they create one. With the upcoming release  of the new Xbox it is my guess you will see one and it will be based on Windows Phone. And hey, if your new Xbox portable gaming device makes phone calls, well that is just a bonus.</p>
-<p>And just like that, Microsoft has a path to gain traction in the phone space.</p>
-<p>&nbsp;</p>
+        <p>This morning, I was pushing a small update to my blog and I received an error that my GitHub repository was unable to
+sync. Usually my workflow goes something like this...</p>
+<ol>
+<li>Commit GitHub changes via <a href="http://www.jetbrains.com/webstorm/">WebStorm</a></li>
+<li>If that doesn&#39;t work, use the GitHub Windows/WPF client <a href="http://windows.github.com/">http://windows.github.com/</a></li>
+<li>Use command line Git</li>
+</ol>
+<p>While I want to get better at 3, 1 is much easier and when I do 2, I am in a hurry. :)</p>
+<p>Ultimately, I am not really sure what happened. My development environment worked fine yesterday when I committed
+changes, but today there were issues. I THINK it may have to do with case differences between when I setup
+the repository locally and how GitHub may be handling it on the backend today.</p>
+<p>When I pushed my commit to the repo with the command</p>
+<pre class="highlight"><code class="hljs bash">git push origin master
+</code></pre>
+<p>The following error was returned</p>
+<pre class="highlight"><code class="hljs bash">remote: Repository not found.
+fatal: repository <span class="hljs-string">'http://github.com/jptacek/JPTACEK.com.git/'</span> not found
+</code></pre>
+<p>You can see the message below</p>
+<p><img src="/2014/01/21/index/repoNotFound.png" alt="GitHub Error"></p>
+<p>Again, no changes have been made to the repo. Similar messages appeared in the GitHub client and WebStorm. Other
+repositories I had on GitHub I was able to commit and push changes to. The only thing I could think was that
+the case was different on my local origin in comparison to the backend GitHub repository.</p>
+<p>The fix was simple enough, reset the origin with and change the case of the URL so that it was exactly the
+same as my repository on GitHub.</p>
+<pre class="highlight"><code class="hljs bash"> git remote <span class="hljs-keyword">set</span>-url origin https://github.com/jptacek/JPtacek.com.git
+</code></pre>
+<p>After this, I was then able to commit changes without issue in all the different client apps as well as the command
+line.</p>
+<p>as shown in the following screen shot</p>
+<p> <img src="/2014/01/21/index/repoFound.png" alt="Repo found"></p>
+<p>It strikes me as pretty odd that GitHub would suddenly stop working because of a case issue between my local dev
+machine, which has been working fine for many months, and the GitHub server. However, that appears to be the case in this instance.</p>
+<p>Pretty much just documenting this for my future self :)</p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/business/'>Business</a>, <a href='/tags/windows-8/'>Windows 8</a>
+        Posted In: <a href='/tags/github/'>GitHub</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
@@ -202,13 +698,13 @@
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Xbox Phone' class="twitter-share-button" data-url="http://jptacek.com/2012/10/08/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='GitHub Repository Not Found - Case Issue?' class="twitter-share-button" data-url="http://jptacek.com/2014/01/21/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2012/10/08/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/01/21/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2012/10/08/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/01/21/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 

@@ -77,8 +77,8 @@
 <url> <loc>http://www.jptacek.com/archives/</loc> <changefreq>weekly</changefreq> <priority>0.3</priority> </url>
 <url> <loc>http://www.jptacek.com/about/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.jptacek.com/mobile-privacy-policy/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://www.jptacek.com/2014/02/angularJS-IntroToRouting/templates/chemList/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.jptacek.com/2014/02/angularJS-IntroToRouting/templates/chemItem/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://www.jptacek.com/2014/02/angularJS-IntroToRouting/templates/chemList/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.jptacek.com/2014/06/angularJS-intro-to-directives/template/periodic-template/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.jptacek.com/2014/12/angularJS-further-with-directives/template/periodic-template/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.jptacek.com/2014/02/angularJS-templates/js/templates/element1/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>

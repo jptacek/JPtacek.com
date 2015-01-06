@@ -1,39 +1,31 @@
 <!DOCTYPE html>
-<html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
+<!--<![endif]-->
 <head>
+    <!-- Meta -->
     <meta charset="utf-8"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
-    <script type="text/javascript">
-        // do not remove this hostname restriction unless you also change the API key below...
-        if (window.location.hostname == 'www.ewal.net') {
-            var analytics=analytics||[];(function(){var e=["identify","track","trackLink","trackForm","trackClick","trackSubmit","page","pageview","ab","alias","ready","group"],t=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var n=0;n<e.length;n++)analytics[e[n]]=t(e[n])})(),analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)};
+    <meta name="description" content="Working at getting better with Mobile, Web and JavaScript" />
 
-            // if you clone this app, please change the API key below to your own...
-            analytics.load("83mu6lzb7f");
-        }
-    </script>
-
-    <title>CSS - Ewal.net</title>
-    <meta name="author" content="Erv Walter">
+    <title>CSS - JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <meta name="author" content="John Ptacek">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/feed.xml" rel="alternate" title="Ewal.net" type="application/atom+xml">
-    <link rel="icon" sizes="300x300" href="/icon.png">
-    <link rel="icon" sizes="196x196" href="/icon-196.png">
-    <link rel="icon" sizes="128x128" href="/icon-128.png">
-    <link rel="apple-touch-icon" sizes="128x128" href="/icon-128.png">
-    <link rel="apple-touch-icon-precomposed" sizes="128x128" href="/icon-128.png">
-    <link href="/favicon.png" rel="shortcut icon">
-
-    <style>
-        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-            display: none !important;
-        }
-    </style>
+    <link href="/feed/" rel="alternate" title="Jptacek.com" type="application/atom+xml">
+    <link href="/favicon.ico?v=2" rel="shortcut icon">
 
     <!-- Bootstrap -->
-    <link href="/styles/site.css?1420499996844" rel="stylesheet" media="screen">
+    <link href="/styles/site.css" rel="stylesheet" media="screen">
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -47,6 +39,17 @@
 	opacity: 0;
 	transition: opacity 0.5s ease;
 }</style>
+<script src="/scripts/vendor/angular.min.js"></script>
+<script type="text/javascript" src="/scripts/vendor/angular-route.min.js"></script>
+
+    <!-- MS Live tile tag -->
+    <meta name="application-name" content="JPtacek.Com"/>
+     <meta name="msapplication-TileColor" content="#527578"/>
+     <meta name="msapplication-square70x70logo" content="tiny.png"/>
+     <meta name="msapplication-square150x150logo" content="square.png"/>
+     <meta name="msapplication-wide310x150logo" content="wide.png"/>
+     <meta name="msapplication-square310x310logo" content="large.png"/>
+
 </head>
 <body>
 
@@ -60,25 +63,30 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">// <span class="text-primary">Ewal.net</span></a>
+            <a class="navbar-brand" href="/">John Ptacek</a> <div class="navbar-brand"> - Musings on Code</div>
         </div>
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-                <li><a href="/archives/">Archives</a></li>
-                <li><a href="/projects/">Projects</a></li>
-                <li><a href="/games/"><span class="header-if-wide">Board </span>Games</a></li>
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
-                    <a href="/feed.xml" class="rss"><span class="icon icon-feed"></span></a>
-                    <a href="http://twitter.com/ervwalter" class="twitter"><span class="icon icon-twitter"></span></a>
-                    <a href="https://github.com/ervwalter" class="github"><span class="icon icon-github"></span></a>
+                    <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
+                    <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
+                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><span class="icon icon-google-plus"></span></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><span class="icon icon-linkedin"></span></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><span class="icon icon-stackoverflow"></span></a>
+                    <a href="https://github.com/jptacek" class="github"><span class="icon icon-github"></span></a>
                 </li>
             </ul>
             <form class="navbar-form navbar-right hidden-xs" role="search" action="http://google.com/search"
                   method="get">
                 <div class="form-group">
                     <input type="search" name="q" class="form-control" placeholder="Search">
-                    <input type="hidden" name="q" value="site:www.ewal.net">
+                    <input type="hidden" name="q" value="site:www.jptacek.com">
                 </div>
             </form>
         </div>
@@ -107,14 +115,11 @@
 
 
 </div>
-
-
 <div class="container">
     <div class="navbar navbar-footer">
-        <p class="navbar-center navbar-text">Copyright &copy; 2011-2015 Erv Walter</p>
+        <p class="navbar-center navbar-text">Content copyright &copy; 2015 John Ptacek</p>
     </div>
 </div>
-
 
 <script >(function(){
 	/* Did we just livereload? */
@@ -165,49 +170,44 @@ var inject = function(){
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
-<script src="/scripts/vendor/highlight.pack.js?1420499996844"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/coffee-script/1.6.3/coffee-script.min.js"></script>
-<script src="/scripts/site.js?1420499996844"></script>
+<script src="/scripts/vendor/highlight.pack.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/coffee-script/1.6.3/coffee-script.min.js"></script>-->
+<script src="/scripts/site.js"></script>
 
 
+<!-- social scripts-->
+<!-- G+ reference-->
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+<script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=142672925873397";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
 <script type="text/javascript">
-	var $buoop = {
-		url: 'http://whatbrowser.org/',
-        reminder: 0,
-		newwindow: false,
-		'text': 'You are using an outdated browser (%s). <a%s>More information &#187;</a>',
-		'text_af': 'Jy gebruik \'n verouderde webblaaier (%s). <a%s>Meer inligting &#187;</a>',
-		'text_cs': 'Používáte zastaralý prohlížeč (%s). <a%s>Více informací &#187;</a>',
-		'text_da': 'Du bruger en ældre browser (%s). <a%s>Mere information &#187;</a>',
-		'text_de': 'Sie benutzen einen veralteten Browser (%s). <a%s>Mehr Informationen &#187;</a>',
-		'text_el': 'Χρησιμοποιείτε ένα ξεπερασμένο πρόγραμμα περιήγησης. <a%s>Περισσότερες πληροφορίες &#187;</a>',
-		'text_es': 'Su navegador está obsoleto (%s). <a%s>M&aacute;s informaci&oacute;n &#187;</a>',
-		'text_fi': 'Käytät vanhentunutta selainta (%s). <a%s>Lisää tietoa &#187;</a>',
-		'text_fr': 'Votre navigateur n\'est pas à jour (%s). <a%s>Plus d\'information &#187;</a>',
-		'text_hu': 'A böngészője elavult (%s). <a%s>További információ &#187;</a>',
-		'text_id': 'Anda menggunakan web browser versi lama (%s). <a%s>Informasi selengkapnya &#187;</a>',
-		'text_is': 'Þú ert að nota úreltan vafra (%s). <a%s>Nánari upplýsingar &#187;</a>',
-		'text_it': 'Stai usando un browser datato (%s). <a%s>Ulteriori informazioni &#187;</a>',
-		'text_nl': 'U gebruikt op dit moment een verouderde webbrowser (%s). <a%s>Meer informatie &#187;</a>',
-		'text_pl': 'Używasz przestarzałej przeglądarki (%s). <a%s>Więcej informacji &#187;</a>',
-		'text_pt': 'Você está usando um navegador antigo (%s). <a%s>Mais informações &#187;</a>',
-		'text_ro': 'Browserul dumneavoastră este depăşit (%s). <a%s>Mai multe informații &#187;</a>',
-		'text_ru': 'Вы используете устаревший браузер (%s). <a%s>Подробнее &#187;</a>',
-		'text_sk': 'Používate zastaralý prehliadač (%s). <a%s>Viac informácií &#187;</a>',
-		'text_sr': 'Vi koristite zastarelu verziju browsera (%s). <a%s>Vi&#353;e informacija &#187;</a>',
-		'text_sv': 'Du använder en gammal webbläsare (%s). <a%s>Mer information &#187;</a>',
-		'text_tr': 'Çok eski bir tarayıcı kullanıyorsunuz (%s). <a%s>Daha fazla bilgi &#187;</a>',
-		'text_vi': 'Trình duyệt bạn dùng đã lỗi thời rồi (%s). <a%s>Thêm thông tin &#187;</a>'
-	};
-	$buoop.ol = window.onload;
-	window.onload=function(){
-		try {if ($buoop.ol) $buoop.ol();}catch (e) {}
-		var e = document.createElement("script");
-		e.setAttribute("type", "text/javascript");
-		e.setAttribute("src", "//browser-update.org/update.js");
-		document.body.appendChild(e);
-	}
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34910017-1']);
+    _gaq.push(['_setDomainName', 'jptacek.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
 </script>
 
 </body>

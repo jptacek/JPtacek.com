@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -93,150 +97,20 @@
             
     <article class="post">
     
-    <h1><a href='/2014/02/25/index/'>AngularJS - Introducing Routes</a></h1>
+    <h1><a href='/2012/08/20/index/'>2012 That Conference Slide Deck</a></h1>
     
-        <div class="post-date">Feb 24th, 2014</div>
+        <div class="post-date">Aug 19th, 2012</div>
 
     <div class="post-content">
-        <p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
-<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
- HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
- Contrast this to a framework like JQuery where the DOM will update your data.</p>
-<p><img src="http://www.jptacek.comangularLogo.png" alt="AngularJS Logo"></p>
-<p>This is the seventh in a series of posts on AngularJS where we are using Chemistry data from the periodic table
-to help us understand the framework. The others posts are</p>
-<ol>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
-<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
-<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
-<li>AngularJS - Introducing Routing</li>
-<li><a href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
-<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
-<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
-</ol>
-<blockquote>
-<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
-the home page of my blog, only one application will work. I need to refactor the entire site to account for
-this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
-</blockquote>
-<p>AngularJS is, at its heart, a Single Page Application (SPA) platform. While you can use it in
-many ways for client side development, it is great for SPA apps, and that means routing. In
-this post, we will introduce AnuglarJS routing. More information can be found at the
-<a href="http://docs.angularjs.org/api/ngRoute/service/$route">official site</a> on routing.</p>
-<p>Routes are a way for multiple views to be used within a single HTML page. This enables you
-page to look more &quot;app-like&quot; because users are not seeing page reloads happen within the
-browser. To setup a page for routing there are several steps, but nothing overly difficult.</p>
-<p>First, AngularJS requires a service, the <a href="http://docs.angularjs.org/api/ngRoute/service/$route">route service</a>,
-which is not part of the default Angular library. You will need to load a separate
-javascript file, <code>angular-route.js</code>, as part of your script loading. This file can be downloaded as part of minified
-file from the <a href="http://www.angularjs.org">AngularJS.Org</a> site or via CDN. After downloading, we update our
-scripts reference to include the routing file as so</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"../js/lib/angular-route.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-</code></pre>
-<p>Second, this is our first non-trivial look at the Dependency Injection model in Angular.
-Angular&#39;s Dependency Injection model is crazy slick. When the application starts up, an
-injector is created that is responsible for loading modules. The injector is unaware of
-any of our services until we inject them. To take advantage of this, we inject the route service
-when we create our app module via a parameter. Our chemistryApp.js now looks like</p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">'use strict'</span>;
+        <p>Several people have asked for copies of my presentation at <a href="http://www.thatconference.com/" title="That Conference">That Conference</a>. Here, in all it&#39;s glory, some slides on SharePoint Security, Windows Identity Foundation and Azure Access Control Services!
+<a href="http://jptacek.azurewebsites.net/wp-content/uploads/2012/08/ThatConference-1024x681.jpg"><img src="/2012/08/20/index/ThatConference-1024x681-300x199.jpg" alt="" title="That Conference Presentation"></a></p>
+<p><a href="/2012/08/20/index/That-Conf-2012.pptx">That Conference 2012</a></p>
 
-<span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, [<span class="hljs-string">'ngRoute'</span>]));
-</code></pre>
-<p>We will be digging deeper into Dependency Injection down the road, but for now it is enough
-to ensure we pass in our <code>ngroute</code> parameter, which ensures that AngularJS will load the
-route service.</p>
-<p>The next step is to create the routes for our application. For us, we are going to create
-two routes. The first shows our list of chemical elements, and the second is responsible
-for displaying details about a given chemical element. The way the routes work, we do a
-couple of things. First, identify the url that we will be routing. This the HTML # (hashtag) standard
-to allow us to navigate within the page. While not 100% required, it IS needed for old browsers that
-don&#39;t support the new HTML 5 standard. If you are so inclined, you can setup the
-route to bypass this with <code>$locationProvider.html5Mode(true)</code>. For our example, the URL for a list will be
-<code>http://site/#/chemlist</code>. Once we have the URL we are mapping to, we define two other
-items. The first is the controller that the route maps to, in our case <code>chemListCtrl</code> and
-then finally the templateURL for our HTML fragment that will be loaded\injected into a view container
-on our page.</p>
-<p>We also want to identify a route for a given chemical element, essentially a master-detail
-approach. This is done by creating a second route where we identify a parameter on the URL that can then
-be used to retrieve an array element. For our example, we will take the <code>atomicNumber</code> and pass it to
-a second controller that is responsible for loading a chemical element from our array and making it available
-to a detail view.</p>
-<p>Both of these routes are then chained to our creation of our app like so</p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">'use strict'</span>;
-
-<span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, [<span class="hljs-string">'ngRoute'</span>]).
-    config(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($routeProvider)</span> {</span>
-        $routeProvider
-            .when(<span class="hljs-string">'/'</span>, {
-                templateUrl:<span class="hljs-string">'templates/chemList.html'</span>,
-                controller: <span class="hljs-string">'chemListCtrl'</span>
-            }).when(<span class="hljs-string">'/chemList/:atomicNumber'</span>, {
-                templateUrl:<span class="hljs-string">'templates/chemItem.html'</span>,
-                controller: <span class="hljs-string">'chemItemCtrl'</span>
-            })
-            .otherwise({redirectTo: <span class="hljs-string">'/'</span>});
-    });
-</code></pre>
-<p>Notice, we define a default route for when we are unable to match on a URL.</p>
-<p>The next step, other than actually creating our controllers and HTML views is to add
-a view to our page markup for Angular to inject our template into. That is as simple as</p>
-<pre class="highlight"><code class="hljs xml">        <span class="hljs-tag">&lt;<span class="hljs-title">data-ng-view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">data-ng-view</span>&gt;</span>
-</code></pre>
-<p>Our controllers and templates are very similar to what we have done before. Our controller class is now</p>
-<pre class="highlight"><code class="hljs javascript">chemistryApp.controller(<span class="hljs-string">'chemListCtrl'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope)</span> {</span>
-        $scope.periodic = periodicData;
-    }
-).controller(<span class="hljs-string">'chemItemCtrl'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope, $log,$routeParams)</span> {</span>
-        <span class="hljs-keyword">var</span> elementNumber  = $routeParams.atomicNumber;
-        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;periodicData.elements.length;i++) {
-            <span class="hljs-keyword">if</span> (periodicData.elements[i].atomicNumber == elementNumber) {
-                $scope.element = periodicData.elements[i];
-                <span class="hljs-keyword">break</span>;
-            }
-        }
-
-    }
-);
-</code></pre>
-<p>The most interesting thing to note is that we are now injecting a <code>$routeparams</code> variable
-when creating our controller for the view we use for an individual item. This allows us to get the parameter for the ID
-from the route. For example, the url <code>http://site/#/chemList/:5</code> allows us to grab the
-parameter for the atomic number using a statement such as <code>var elementNumber  = $routeParams.atomicNumber;</code>.</p>
-<p>Just to give a quick look at the template and how we form our URL, the template that builds the list is</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"elements1"</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"chemListCtrl"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">ng-repeat</span>=<span class="hljs-value">"element in periodic.elements"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">ng-href</span>=<span class="hljs-value">"#/chemList/{{element.atomicNumber}}"</span>&gt;</span>{{element.name}}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-</code></pre>
-<p>Now, we are dynamically loading data and swapping views based on the route we select. Very
-nice!</p>
-<p>Watch it in action</p>
-<div id="app" ng-app="chemistryApp">
-<a href="http://www.jptacek.com./#/chemList">List</a>
-<br>
-        <ng-view></ng-view>
-</div>
-
-<p></p>
-
-<p>You can either visit <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a> to see the code in action and
-as always find the code out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a></p>
-<script type="text/javascript" src="/2014/02/angularJS-IntroToRouting/js/chemistryApp.js"></script>
-<script type="text/javascript" src="/2014/02/angularJS-IntroToRouting/js/chemistryController.js"></script>
-<script type="text/javascript" src="/2014/02/angularJS-IntroToRouting/js/chemistry.js"></script>
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
+        Posted In: <a href='/tags/that-conference/'>That Conference</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
@@ -245,251 +119,29 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='AngularJS - Introducing Routes' class="twitter-share-button" data-url="http://jptacek.com/2014/02/25/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='2012 That Conference Slide Deck' class="twitter-share-button" data-url="http://jptacek.com/2012/08/20/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/02/25/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2012/08/20/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/02/25/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2012/08/20/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2014/02/10/index/'>AngularJS - Introducing Templates</a></h1>
+    <h1><a href='/2012/08/20/index/'>That Conference 2012</a></h1>
     
-        <div class="post-date">Feb 9th, 2014</div>
+        <div class="post-date">Aug 19th, 2012</div>
 
     <div class="post-content">
-        <style>
-        .tableOdd {
-            background-color: green;
-        }
-        .tableEven {
-            background-color: gold;
-        }
-    </style>
-
-
-<p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
-<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
- HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
- Contrast this to a framework like JQuery where the DOM will update your data.</p>
-<p><img src="http://www.jptacek.comangularLogo.png" alt="AngularJS Logo"></p>
-<p>This is the sixth in a series of posts on AngularJS where we are using Chemistry data from the periodic table
-to help us understand the framework. The others posts are</p>
-<ol>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
-<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
-<li>AngularJS - Introducing Templates</li>
-<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
-<li><a href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
-<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
-<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
-</ol>
-<blockquote>
-<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
-the home page of my blog, only one application will work. I need to refactor the entire site to account for
-this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
-</blockquote>
-<p>AngularJS has a lot of great features for working with HTML that allows you to split up development when you are
-doing team projects. The binding approach and directives allows for a nice separation between developers and
-designers. Another great piece of the platform is the ability to separate out HTML that you are using over and
-over again into a template file that can then be called by multiple different pages.</p>
-<p>In our previous example, we were consistently displaying the same repeatable line in our <code>ng-repeat</code> directive.
-This is a great example of repeatable markup that we can extract from our page and consolidate into a single
-location using a template.</p>
-<p>To do this, we take our HTML line we were using for the data binding.</p>
-<pre class="highlight"><code class="hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://en.wikipedia.org/wiki/{{element.name}}"</span> <span class="hljs-attribute">Title</span>=<span class="hljs-value">"Wikipedia article on {{element.name}}"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_top"</span>&gt;</span>{{element.name}}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> &gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.phase}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.ionization}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.melting}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.boiling}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-</code></pre>
-<p>and we move it into a separate HTML file, in our case we will call it element1.html. Since we are only dealing with a
-fragment of HTML, we only want to include the markup we will use for binding, and no other semantically correct
-markup like the HTML header, etc.</p>
-<p>In our controller file, we setup an object that identifies the path to our template as in the following code snippet</p>
-<pre class="highlight"><code class="hljs javascript">$scope.template =  {name: <span class="hljs-string">'template1.html'</span>, url: <span class="hljs-string">'js/templates/element1.html'</span>};
-</code></pre>
-<p>Within the HTML page, we then reference the template file using the ng-include directive like so</p>
-<pre class="highlight"><code class="hljs xml">   <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements | filter:{name:elementNameOnlyTable} | limitTo:15"</span> <span class="hljs-attribute">data-ng-include</span>=<span class="hljs-value">"template.url"</span>&gt;</span>
-</code></pre>
-<p>Our page then renders the same as before, but we can now use the template in multiple places. For large teams, a most
-excellent added benefit is you have removed contention issues on the file. <em>Note:</em> We are only displaying 15 results
-to limit the page size.</p>
-<div id="app" ng-app="chemistryApp">
-<div id="periodicTable" ng-controller="chemTemplateCtrl1">
-    <form id="frmChem">
-    <input type="text" ng-model="elementNameOnlyTable">
-    <table class="table table-striped table-bordered table-hover table-condensed">
-        <tr>
-            <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
-        </tr>
-        <tr ng-repeat="element in periodic.elements | filter:{name:elementNameOnlyTable} | limitTo:15" ng-include="template.url">
-        {{$$index}}
-        </tr>
-    </table>
-    </form>
-</div>
-
-<p>Since we our look and feel is controlled by templates, we can also have programmatic control over the look and feel
-by dynamically setting the template. In our last post, we had committed crimes against web design by using Packer colors.</p>
-<p>We can do something similar here by having a second template get loaded by our page. To do this, we update our
-controller to have an array of templates, and choose which one we want, in this case, an ugly  Gold.</p>
-<pre class="highlight"><code class="hljs javascript">controller(<span class="hljs-string">'chemTemplateCtrl2'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope)</span> {</span>
-        $scope.periodic = perioicData;
-
-        $scope.templates =
-            [ { name: <span class="hljs-string">'template1.html'</span>, url: <span class="hljs-string">'js/templates/element1.html'</span>}
-                , { name: <span class="hljs-string">'template2.html'</span>, url: <span class="hljs-string">'js/templates/element2.html'</span>}];
-        $scope.template = $scope.templates[<span class="hljs-number">1</span>];
-
-    }
-</code></pre>
-<p>Our table now looks even more unattractive</p>
-<div id="periodicTable" ng-controller="chemTemplateCtrl2">
-    <form id="frmChem">
-    <input type="text" ng-model="elementNameOnlyTable">
-    <table class="table table-striped table-bordered table-hover table-condensed">
-        <tr>
-            <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
-        </tr>
-        <tr ng-repeat="element in periodic.elements | filter:{name:elementNameOnlyTable}| limitTo:15" ng-include="template.url">
-        {{$$index}}
-        </tr>
-    </table>
-    </form>
-</div>
-
-<p>Next, given that we have an array of template objects, we can dynamically change the look and feel on the fly using a
-drop down list to select the template for display. In
-the example below, we are taking our array of templates and binding to it in a select list. The value of the selected
-item is then used as the template for page display, dynamically changing the UI.</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"periodicTable3"</span>  <span class="hljs-attribute">data-ng-controller</span>=<span class="hljs-value">"chemTemplateCtrl2"</span> &gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"frmChem3"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"templateSelect"</span> <span class="hljs-attribute">ng-options</span>=<span class="hljs-value">"template.name for template in templates"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
-
-
-        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementNameOnlyTable"</span>/&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table table-striped table-bordered table-hover table-condensed"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements | filter:{name:elementNameOnlyTable} | limitTo:15"</span> <span class="hljs-attribute">data-ng-include</span>=<span class="hljs-value">"templateSelect.url"</span>&gt;</span>
-
-            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-</code></pre>
-<div id="periodicTable3" ng-controller="chemTemplateCtrl2">
-    <form id="frmChem3">
-        <select ng-model="templateSelect" ng-options="template.name for template in templates"></select>
-
-
-        <input type="text" ng-model="elementNameOnlyTable">
-        <table class="table table-striped table-bordered table-hover table-condensed">
-            <tr>
-                <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
-            </tr>
-            <tr ng-repeat="element in periodic.elements | filter:{name:elementNameOnlyTable} | limitTo:15" ng-include="templateSelect.url">
-
-            </tr>
-        </table>
-    </form>
-</div>
-
-<p>We can also hide and show various columns based on templates. We will add a third template to our list of elements,
-but this template will just show the element name, the atomic weight and the atomic number. Since our table header
-rows exist outside of our template, what we want to be able to do is dynamically hide table header rows when
-our subset template, element3.html, is selected. We can do this by
-using a <code>ng-show</code> attribute on the table header elements that binds to our template name like so</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-ng-show</span>=<span class="hljs-value">"templateSelect.name!='template3.html'"</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-ng-show</span>=<span class="hljs-value">"templateSelect.name!='template3.html'"</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-ng-show</span>=<span class="hljs-value">"templateSelect.name!='template3.html'"</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-ng-show</span>=<span class="hljs-value">"templateSelect.name!='template3.html'"</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
-</code></pre>
-<div id="periodicTable4" ng-controller="chemTemplateCtrl3">
-    <form id="frmChem4">
-        <select ng-model="templateSelect" ng-options="template.name for template in templates"></select>
-
-
-        <input type="text" ng-model="elementNameOnlyTable">
-        <table class="table table-striped table-bordered table-hover table-condensed">
-            <tr>
-                <th>Name</th><th>Atomic Number</th><th>Weight</th><th ng-show="templateSelect.name!=&apos;template3.html&apos;">Phase</th><th ng-show="templateSelect.name!=&apos;template3.html&apos;">Ionization Energy</th><th ng-show="templateSelect.name!=&apos;template3.html&apos;">Melting Point</th><th ng-show="templateSelect.name!=&apos;template3.html&apos;">Boiling</th>
-            </tr>
-            <tr ng-repeat="element in periodic.elements | filter:{name:elementNameOnlyTable} | limitTo:15" ng-include="templateSelect.url">
-
-            </tr>
-        </table>
-    </form>
-</div>
-
-<p>Having &quot;logic&quot; like this, where we are setting columns based on the selected template is not the most correct way
-to do this though. You rarely (and I mean rarely) want any of the logic that controls the display of the page
-in the page. We can easily create a function in our controller to set if we are displaying all of the data or just
-a subset based on the selected template. You can see this in the <code>displayAll</code> function in the final version
-of our controller</p>
-<pre class="highlight"><code class="hljs javascript">controller(<span class="hljs-string">'chemTemplateCtrl3'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope)</span> {</span>
-        $scope.periodic = perioicData;
-
-        $scope.templates =
-            [ { name: <span class="hljs-string">'template1.html'</span>, url: <span class="hljs-string">'js/templates/element1.html'</span>}
-                , { name: <span class="hljs-string">'template2.html'</span>, url: <span class="hljs-string">'js/templates/element2.html'</span>}
-                , { name: <span class="hljs-string">'template3.html'</span>, url: <span class="hljs-string">'js/templates/element3.html'</span>}];
-        $scope.templateSelect = $scope.templates[<span class="hljs-number">0</span>];
-
-        $scope.displayAll =  <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-            <span class="hljs-keyword">if</span> ($scope.templateSelect.name == $scope.templates[<span class="hljs-number">2</span>].name) {
-                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
-            }
-            <span class="hljs-keyword">else</span> {
-                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
-            }
-        }
-    }
-</code></pre>
-<p>and our HTML gets updated to</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-ng-show</span>=<span class="hljs-value">"displayAll()"</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-ng-show</span>=<span class="hljs-value">"displayAll()"</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-ng-show</span>=<span class="hljs-value">"displayAll()"</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-ng-show</span>=<span class="hljs-value">"displayAll()"</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
-</code></pre>
-<div id="periodicTable5" ng-controller="chemTemplateCtrl3">
-    <form id="frmChem5">
-        <select ng-model="templateSelect" ng-options="template.name for template in templates"></select>
-
-
-        <input type="text" ng-model="elementNameOnlyTable">
-        <table class="table table-striped table-bordered table-hover table-condensed">
-            <tr>
-                <th>Name</th><th>Atomic Number</th><th>Weight</th><th ng-show="displayAll()">Phase</th><th ng-show="displayAll()">Ionization Energy</th><th ng-show="displayAll()">Melting Point</th><th ng-show="displayAll()">Boiling</th>
-            </tr>
-            <tr ng-repeat="element in periodic.elements | filter:{name:elementNameOnlyTable} | limitTo:15" ng-include="templateSelect.url">
-            </tr>
-        </table>
-    </form>
-</div>
-
-<p></p></div><!-- ng-app --><p></p>
-<p>As you can see, templates in AngularJS offer a lot of functionality. They allow for splitting up of
-work across large development teams. You can also dynamically update the look and feel based on the
-template the user selects. This is all happening client side too, reducing round trips to the server. Good
-stuff!</p>
-<p>You can either visit <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a> to see the code in action and
-as always find the code out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a></p>
-<script type="text/javascript" src="/2014/02/angularJS-templates/js/chemistryApp.js"></script>
-<script type="text/javascript" src="/2014/02/angularJS-templates/js/chemistryController.js"></script>
-<script type="text/javascript" src="/2014/02/angularJS-templates/js/chemistry.js"></script>
+        
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
+        Posted In: <a href='/tags/that-conference/'>That Conference</a>
     </div>
     
     <br/>
@@ -498,88 +150,31 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='AngularJS - Introducing Templates' class="twitter-share-button" data-url="http://jptacek.com/2014/02/10/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='That Conference 2012' class="twitter-share-button" data-url="http://jptacek.com/2012/08/20/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/02/10/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2012/08/20/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/02/10/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2012/08/20/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2014/03/14/index/'>National Pi Day - Calculating PI With AngularJS and a Monte Carlo Simulation</a></h1>
+    <h1><a href='/2012/07/20/index/'>Blog Redo</a></h1>
     
-        <div class="post-date">Mar 13th, 2014</div>
+        <div class="post-date">Jul 19th, 2012</div>
 
     <div class="post-content">
-        <p>Every year on 3/14, Geeks everywhere can let their geek flag fly by
-celebrating <a href="http://en.wikipedia.org/wiki/Pi_Day">National Pi Day</a>. On this day, every year, the date equals the first three
-digits of π, 3.14. Last year we celebrated with a <a href="http://www.jptacek.com/2013/03/have_your_pi/">blog post</a>, so let’s do it again!</p>
-<p>In last year’s post, we calculated Pi using Leibiniz formula to determine π, which is a relatively slow algorithm.</p>
-<p>This year we are going to look at a totally different approach, a Monte Carlo simulation.
-A <a href="http://en.wikipedia.org/wiki/Monte_Carlo_method">Monte Carlo simulation</a> is a statistical approach where you use
-random numbers to run a simulation over and over and record those results. It is very popular in the fields of finance,
-fluid mechanics and the study of Brownian Motion. For our scenario today, you can also use a Monte Carlo method to calculate π!</p>
-<p>To do this, we are going to use two geometric formulas, one to calculate the area of a square and the second the area of a
-circle. If we put a circle of radius R in a square of length 2R, we have a scenario as shown in Figure 1.</p>
-<p><img src="http://www.jptacek.comPtacekPie_002.GIF" alt="Circle in Square"></p>
-<p>The area of the rectangle will then be 4R<sup>2&nbsp;</sup>  and the area of the circle will be πR<sup>2&nbsp;</sup>.
-Dividing the area of the circle by the area of the rectangle give us π /4. Stated another way, the ratio of area of the
-circle to that of the square is Pi/4.</p>
-<p>The Monte Carlo method comes into play because we will randomly put a point on the square. If the point falls within
-the circle, we record it. The total ratio of points in the circle (aka, the area of the circle) to total points
-(aka, the area of the square) will tell us π /4.</p>
-<p>So, we now know a way to calculate π, the next step is to actually write some code. There are, obviously, many
-ways we could go and do this, but lately I have been kicking the tires with AngularJS and thought this would work as
-well as anything.</p>
-<p>We won’t spend a lot of time jumping into AngularJS. You can check out some previous posts at
-<a href="http://www.jptacek.com/tags/angularjs/">http://www.jptacek.com/tags/angularjs/</a> for an introduction.</p>
-<p>We will have two things, our chemistryApp.js file to create our angular application, piApp, and our controller,
- where the interesting stuff will happen.</p>
-<p>Our HTML file is pretty basic,</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"piApp"</span> <span class="hljs-attribute">ng-app</span>=<span class="hljs-value">"piApp"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"piCtrl"</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"piAppController"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"iteration"</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"iterations"</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"piCalc"</span> &gt;</span>{{pi}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"piCalcDiff"</span> &gt;</span>{{delta}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">data-ng-click</span>=<span class="hljs-value">"calculatePi()"</span> &gt;</span>Update<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-</code></pre>
-<p>We will enter in the number of random dots (iterations) we want our simulation to run. The more dots, the closer we get.
-We will then display the calculated value of π and how close we are to π actual. Last, we have a button that we will click to
-execute our Monte Carlo simulation.</p>
-<p>Our AngularJS controller is where the interesting stuff is happening, and that is not even particularly interesting.</p>
-<p>We have created a function, determinePi, which will perform our calculation. We assume a circle with a radius of 1.
-We then generate two random numbers, one for the x position and one for the y position. We know that
-(x<sup>2&nbsp;</sup> + y<sup>2&nbsp;</sup>)=1 (the radius of our circle), so for any value that is less than this, we know we are
-inside the circle and increment a counter for hits inside. Once we are done with the iterations, we determine our
-calculated version of π and the difference from our known value of π for display on the page. In our calculation, we are only
-really doing a quadrant, just to make the code a bit easier to follow. It all works though since we are just talking about
-ratios.</p>
-<p>This is not a super accurate, or super-fast method of calculating π, but it was an interesting chance to take a quick look at
-Monte Carlo methods, which are common place with a subset of our clients.</p>
-<div id="piApp" ng-app="piApp">
-    <div id="piCtrl" ng-controller="piAppController">
-        <input id="iteration" -ng-model="iterations"><br>
-        <div id="piCalc">{{pi}}</div><br>
-        <div id="piCalcDiff">{{delta}}</div><br>
-        <button ng-click="calculatePi()">Update</button>
-    </div>
+        <p>My old blog hosting site was hacked a while back and I lost a lot of content I had out there, especially focused on PhoneGap, which is a bit of a bummer.</p>
+<p>I am slowly bringing it back to life......</p>
 
-<p></p></div><p></p>
-<p>Happy Pi day! Go have a nice piece of Apple Pie and enjoy the day!!</p>
-<p>This post originally appeared at <a href="http://skylinetechnologies.com/Blog/Article/2453/National-Pi-Day-Calculating-Pi-with-AngularJS-and-a-Monte-Carlo-simulation.aspx">Skyline Technologies</a></p>
-<script type="text/javascript" src="/2014/03/National-Pi-Day-2014/js/piApp.js"></script>
-<script type="text/javascript" src="/2014/03/National-Pi-Day-2014/js/piController.js"></script>
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/pi/'>Pi</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>
+        Posted In: <a href='/tags/ephemera/'>Ephemera</a>
     </div>
     
     <br/>
@@ -588,13 +183,13 @@ Monte Carlo methods, which are common place with a subset of our clients.</p>
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='National Pi Day - Calculating PI With AngularJS and a Monte Carlo Simulation' class="twitter-share-button" data-url="http://jptacek.com/2014/03/14/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Blog Redo' class="twitter-share-button" data-url="http://jptacek.com/2012/07/20/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/03/14/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2012/07/20/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/03/14/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2012/07/20/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 

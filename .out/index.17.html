@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -93,190 +97,166 @@
             
     <article class="post">
     
-    <h1><a href='/2014/01/24/index/'>AngularJS - Image Binding in AngularJS with Lou Reed</a></h1>
+    <h1><a href='/2013/01/17/index/'>The Pace of Innovation</a></h1>
     
-        <div class="post-date">Jan 23rd, 2014</div>
+        <div class="post-date">Jan 16th, 2013</div>
 
     <div class="post-content">
-        <p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
-<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
- HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
- Contrast this to a framework like JQuery where the DOM will update your data.</p>
-<p><img src="http://www.jptacek.comangularLogo.png" alt="AngularJS Logo"></p>
-<p>This is the fifth in a series of posts on AngularJS where we are using Chemistry data from the periodic table
-to help us understand the framework. The others posts are</p>
-<ol>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
-<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
-<li>AngularJS - Image Binding</li>
-<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
-<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
-<li><a href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
-<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
-<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
-</ol>
-<blockquote>
-<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
-the home page of my blog, only one application will work. I need to refactor the entire site to account for
-this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
-</blockquote>
-<p>If you have spent any time with me in the real world, you quickly come to realize I am a music fan. If
-you have spent a little time with me, especially when I was a younger, you realize I am a huge
-<a href="http://en.wikipedia.org/wiki/Lou_Reed">Lou Reed</a> fan too.
-My boss, <a href="https://twitter.com/tvanhammond">Tim VanHammond</a> still holds it against me the one time
-I played Lou Reed&#39;s the Possum song without headphones when he was in the office we shared.
-The reality is, I probably spent WAY too
-much time listening to Lou Reed and Velvet Underground music when I was a teenager. So, having said all that, soon
-after Lou Reed died, I was doing a <a href="http://www.jptacek.com/2013/11/fvnug-presentation-nov-2013/">presentation</a> at the
-<a href="http://newdug.org/">NorthEast Wisconsin Developer UserGroup</a> (aka, NEWDUG and
-yes it is a lot to type) and I thought it would be fun to have a little Lou Reed shout out. Since the talk
-was about AngularJS, it of course had an Angular flavor. So we did a little Lou Reed segue, and talked about
-binding images using AngularJS. Most important and of interest to you dear reader, is
-how I found out a way to deal with missing images!</p>
-<p><img src="http://www.jptacek.comLou_Reed.jpg" alt="Lou Reed"></p>
-<p>Instead of using chemistry data, we used Lou data. This data was a JSON object of record releases. Lou put out
-a lot of albums, and we are loading images, so to keep things quick, we are just doing the first few releases.
-One of our Lou
-objects looks like</p>
-<pre class="highlight"><code class="hljs javascript"> {
-            <span class="hljs-string">"album"</span>: <span class="hljs-string">"Lou Reed"</span>,
-            <span class="hljs-string">"artist"</span>: <span class="hljs-string">"Lou Reed"</span>,
-            <span class="hljs-string">"releaseDate"</span>: <span class="hljs-number">6</span>/<span class="hljs-number">1</span>/<span class="hljs-number">1972</span>,
-            <span class="hljs-string">"image"</span>: <span class="hljs-string">"http://upload.wikimedia.org/wikipedia/en/8/88/Lour72.jpg"</span>,
-            <span class="hljs-string">"label"</span>: <span class="hljs-string">"RCA"</span>
-        }
-</code></pre>
-<p>Essentially what we are doing is the same stuff that came before, instantiating the app and referencing our
-controller and looping through the albums and making a little table. This is quickly becoming old hat
-for us!</p>
-<h3>Lou Reed pages</h3>
+        <p>Recently, The Economist magazine had a
+<a href="http://www.economist.com/news/briefing/21569381-idea-innovation-and-new-technology-have-stopped-driving-growth-getting-increasing">cover story</a>
+on Innovation, with Rodin&#39;s The Thinker sitting on a toilet wondering &quot;Will we ever invent anything this useful again?&quot;</p>
+<p><img src="/2013/01/17/index/Economist-Innovation-Cover-228x300.png" alt="Economist-Innovation Cover"></p>
+<p>It is interesting to contemplate the pace of innovation and if we are slowing down.</p>
+<p>At first glance, it just FEELS like we are slowing down. There is a great quote from Peter Thiel,
+who runs the Founders Fund, a venture capital fund,
+&quot;We wanted flying cars, instead we got 140 characters.&quot;
+(<a href="http://www.newyorker.com/reporting/2011/11/28/111128fa_fact_packer?currentPage=all">New Yorker profile of Peter Thiel</a>).
+That succinctly sums up the disappointment people feel about the progress of innovation.</p>
+<p>You can also look back to our history to see this. In December of 1903 the Wright Brothers flew an airplane at Kitty Hawk.
+A (relatively) mere 66 years later, Neil Armstrong stepped onto the surface of the moon. Apollo 17 saw the last manned
+moon mission in 1972. In the ensuing 40 years, we haven&#39;t been back. I doubt we will be back in the next 24 either.</p>
+<p>In 1900, the average life expectancy in America was 49 years. By 1980 that had risen to 74 years. In the ensuing 30
+years, it has risen to 79 years. We can go on and find similar examples that provide the sense that we are slowing down.</p>
+<p>There are several reasons for this I believe. The turn of the century was really the time when the benefits of the
+Industrial Revolution were realized. The advances in Steam Power and mechanization during the early years of the
+Industrial Revolution gave way to the widespread access to electrical power and lighting in the early half of 1900s
+that significantly changed the pace of society and saw significant increases in GDP per person
+(one measure of Innovation) during this time. Economists generally believe similar increases occurred during the
+period of our history when we moved towards and Agrarian society (a time in which the world obviously did not have a
+concept of GDP).</p>
+<p>In a sense, the pace of Innovation was easier. At the beginning of the Industrial Revolution, the solutions were more
+readily discovered. However, as we acquire more knowledge and expertise, the barriers to entry become much more
+difficult. When I was in college, I flirted with idea of studying Astrophysics. Ultimately, I decided not to, and part
+of the reason was
+in talking to professors it became apparent that you really needed a PHD to find a job. In talking to the PHD students
+I realized I had years of to prepare myself for a PhD. A good part of this time involved acquiring the math background
+I would need several math courses to start the graduate classes, despite having an undergraduate degree in Applied
+Mathematics. I was unwilling to invest more years of mathematical study just to get into a graduate program.</p>
+<p>The Economist article refers to this as &quot;burden of knowledge&quot;. The more knowledge we have on a subject, the longer it
+takes to get proficient. The article states that the &quot;age at first innovation&quot;, when someone contributes something new,
+rose about one year between 1985 and 1997, a period of 12 years. And during the last 15 years, things haven&#39;t moved
+any slower.</p>
+<p>So is there no hope for the future? Of course not! Two things I think it is important to take into consideration.</p>
+<p>First, we are in the midst of moving from the Industrial Age to the Information Age, and we are at the beginning. As we
+move to fully realize the benefit of the Information Age, we will see significant gains, similar to the benefits
+realized as a result of being fully engaged in the Industrial Revolution in the early 1900s.</p>
+<p>&quot;Digital Natives&quot;, today&#39;s students, have grown up immersed in the technology and I believe it will change the way we
+work and learn. Take for example, my daughter, an 8<sup>th</sup> grade student. She recently had a homework assignment
+to solve America&#39;s Debt Crisis. As part of her work and research for her presentation, she reached out to economists at
+both Lawrence University (located in Appleton, WI) as well as Harvard University. She also reached out to our
+congressman, Reid Ribble. All of the people she contacted replied to her with valuable information used in her
+presentation. For many students, it is first nature to bypass the geographical or communication boundaries that many of
+us grew up with. They are also used to using distance learning and communicating via video with things like Skype or
+Google Chat. I believe, this is going to fundamentally change how we work. So much capital is spent on classrooms to
+learn in and offices for people to work in. As &quot;digital natives&quot; move into the workforce and bring a high level of
+comfort with distance working, and then become managers, organization will spend less on infrastructure for offices and
+ the like and be able to apply more resources to applied research in their environment. Second, these distance workers
+ also have a MUCH shorter commute. Many people will find extra hours in their day that will also have a positive
+ effect on per person GDP. We will never remove the need for face to face communication, but we can certainly realize
+ benefits of a global network and communicate more efficiently.</p>
+<p>Second, it is always darkest before the dawn. I say that half jokingly, but I am always reminded where we were with
+Physics study at the start of the 20<sup>th</sup> century. With the discovery of Maxwell&#39;s Equations,
+physicists believed they had essentially come to the end of the road. The basic forces of the universe,
+like electromagnetism and gravity were well understood and described the world with precision, precisely the goal of
+physics. The only thing remained was this pesky issue with the model for the atom. That issue though led to Einstein and
+his changing the world with the discovery of the <a href="https://en.wikipedia.org/wiki/Photoelectric_effect">photoelectric electric</a>
+that began Physics on the path to quantum mechanics. The discovery of quantum mechanics in turn lead to solid state
+physics and the chips that are driving today&#39;s information age, not to mention a whole host of other technologies that
+resulted in immense economic gains.</p>
+<p>The thing about innovation, true innovation, it always comes unexpectedly and in ways we can never anticipate. We can
+all pretend we have crystal balls and can see what the future will be. At best though, we can make educated guesses.
+Rest assured, there will be technologies that come in disrupt the world and will profoundly change the way we live.</p>
+<p>What are steps we can take to facilitate innovation? First off, education. I am not necessarily saying spend more on
+education, but challenge our students earlier with the topics they need to help them be prepared in science and math.
+Earlier introduction of these topics, especially classes such as Calculus, ensure our students are able to try and
+overcome the &quot;burden of knowledge&quot; by starting out with a stronger base at a younger age. Second, continued investment
+in basic science by governments. The space program was an economic engine for decades that drove innovation.
+The government&#39;s investment in a redundant data network resulted in the Internet which is driving today&#39;s information
+revolution. The ROI on basic science research can be too long for the marketplace to invest in, but when measured in
+years and decades, the impact to the economy can be massive.</p>
+<p>Is Innovation dead? No. Is it slowing down? It may be by some measure. However, I believe we are on the cusp of
+another great wave of GDP growth as the fruits of the Information Revolution emerge. I am excited to see what is
+coming next!</p>
+<p>This blog post originally appeared at <a href="http://www.skylinetechnologies.com/Blog/Lists/Posts/Post.aspx?ID=167">Skyline Technologies</a></p>
 
-<div id="appLouContainer" ng-app="louApp">
- <div id="louTable0" ng-controller="louCtrl">
-    <table class="table table-striped table-bordered table-hover table-condensed">
-        <tr>
-            <th>Album</th><th>Release</th><th>Producer</th><th>Label</th><th></th>
-        </tr>
-        <tr ng-repeat="album in louDrops.releases">
-            <td>{{album.album}}</td>
-            <td>{{album.releaseDate|date}}</td>
-            <td>{{album.producer}}</td>
-            <td>{{album.label}}</td>
-            <td><img src="http://www.jptacek.com{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;"></td>
-        </tr>
-    </table>
-   </div>
+    </div>
 
-<p><b>Note:</b> There is an issue with the markup being generated by DocPad prepending the local URL. You can see the
-actual correct HTML at <a href="http://angularperiodic.azurewebsites.net/lou/lou.html">http://angularperiodic.azurewebsites.net/lou/lou.html</a> until the I fix this.</p>
-<p>Again, we have done this before. The interesting thing to note though is the album release date. JavaScript and
-dates are something that make me a little crazy, but having said that, AngularJS does a nice job. You can pass
-a JSON date object to a filter and have it format, <code>{{album.releaseDate|date}}</code> as above. More info on the <code>date</code>
-filter at the <a href="http://docs.angularjs.org/api/ng.filter:date#!">AngularJS</a> site.</p>
-<p>The second thing to notice is we are using a <code>src</code> attribute in our <code>img</code> tag. Things are loading fine, but if
-you look at the page load, you will actually see a 404 error that happens.</p>
-<p><img src="http://www.jptacek.com404Error.png" alt="404 Error on image Get"></p>
-<p>This is because the AngularJS functionality is executed AFTER the page loads. We are still making the get request
-that the <code>src</code> attribute had identified because we have yet to get into the javscript
-processing on the page. With <code>src</code> attributes and <code>href</code> tags you that reference
-AngularJS objects, this is something you need to be cognizant of. The fix is easy enough, we just prepend a <code>ng</code> tag on our
-attribute. This will then be part of the page processing that happens during the Angular load. Our image reference
-is now</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">ng-src</span>=<span class="hljs-value">"\{\{album.image\}\}"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"\{\{album.album\}\} Cover Image"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"300px;"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"300px;"</span>&gt;</span>
-</code></pre>
-<h3>Adding ng-src</h3>
- <div id="louTable1" ng-controller="louCtrl">
-    <table class="table table-striped table-bordered table-hover table-condensed">
-        <tr>
-            <th>Album</th><th>Release</th><th>Producer</th><th>Label</th><th></th>
-        </tr>
-        <tr ng-repeat="album in louDrops.releases">
-            <td>{{album.album}}</td>
-            <td>{{album.releaseDate|date}}</td>
-            <td>{{album.producer}}</td>
-            <td>{{album.label}}</td>
-            <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" src="http://www.jptacek.comundefined"></td>
-        </tr>
-    </table>
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/business/'>Business</a>, <a href='/tags/innovation/'>Innovation</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+    <div id='socialTags'>
+    <!-- Twitter -->
+		<a href="https://twitter.com/share" data-text='The Pace of Innovation' class="twitter-share-button" data-url="http://jptacek.com/2013/01/17/index/">Tweet</a>
+    <!-- Google+. -->
+    <div class="g-plusone" data-size="medium"></div>
+    <!-- LinkedIn -->
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/01/17/index/" ></script>&nbsp;
+    <!-- Facebook -->
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/01/17/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    </div>
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2012/11/22/index/'>Enabling Customer Success with Visual Studio 2012</a></h1>
+    
+        <div class="post-date">Nov 21st, 2012</div>
+
+    <div class="post-content">
+        <div>
+
+​One of the enjoyable things about being a consultant with Skyline is partnering with our clients, especially those whom we have had long partnerships with, and helping them be successful with their customers over a time. It is both fascinating and rewarding to watch as they become both more successful, and see how they respond to the challenges of a changing application landscape for their customers.
+
+Skyline has partnered with <a href="http://www.softwareone.com/EN-US/Pages/Default.aspx">SoftwareONE,</a> one of the largest software license resellers in the world, for many years now. SoftwareONE is headquartered in Stans, Switzerland and has operations in nearly 60 countries around the world. Our partnership initially focused on enabling their customers to access their licensing information from their backend ERP system. A secondary goal was to facilitate collaboration between SoftwareONE, its global customer base, its software resellers and the software publishers whose products they sell.
+
+To enable this collaboration, the original portal was hosted on SharePoint 2007, with custom pages developed to access the back end ERP systems. The way the ERP system is designed, each individual country SoftwareONE does business in has a separate database. The implementation within SharePoint had each country create a separate web application, in order to identify the country, security constraints and other reasons. After several months of development and testing we had a solution that enabled access to customer licensing information as well as a collaboration platform. The solution was globally available across the six countries SoftwareONE was doing business in.
+
+However, in the five years since the Lifecycle Portal went live, the SoftwareONE business has dramatically grown. During that time those 6 countries grew to almost 60 different countries. With this increase in global scale, the complexity of managing separate web applications for each of these countries became increasingly difficult. Also, during that same time, there was a dramatic shift in the marketplace, as mobile websites and mobile applications became the new normal for many organizations, including SoftwareONE and its customers.
+
+It became apparent to SoftwareONE that it was time to upgrade their Lifecycle Portal. Looking at the options available, it was quickly decided that Microsoft Visual Studio 2012 and .NET Framework 4.0 were the answer to many problems the current system was encountering. The decision was made to rewrite the portal using Microsoft&#39;s MVC platform, with the new portal referred to as vNext. Here are some of the benefits our combined team realized from choosing Visual Studio 2012:
+
+<strong>Fully Mobile -</strong> The current version of the Lifecycle Portal was designed to be fully mobile. From the beginning, the goal of the application was to future proof the development by ensuring it could meet a variety of mobile endpoints. The mobile views introduced in MVC 4 enabled custom web pages that are viewable on the variety of mobile enabled browsers that SoftwareONE customers are using.
+
+<strong>Web Services - </strong>To meet the requirements of a dynamic, interactive web app, as well as enable native mobile applications such as iOS or Android, it was important for the application to provide data via web services. The controller based implementation within MVC made the ability to have consolidated logic that is used by the razor view engine to create HTML or JSON data used with mobile clients trivial.
+
+Consolidating logic for presentation within a single controller makes long term maintenance simpler. The controller model also enables us to use anonymous classes to &quot;shape&quot; (or limit) the data we are using for various mobile platforms. The ability to easily emit JSON results with the JSON keyword in the controller ensure that both Javascript-based web implementation as well as native mobile applications are all accessing data via the same application path. Contrast this with our previous web forms implementation where we needed to have a separate service implementation and the benefits of choosing MVC for a service based application is readily apparent.
+
+<strong>Entity Framework Code First -</strong> The previous version of the Lifecycle Application Portal relied on Linq To SQL. Due to several factors, including small differences between tables based on business rules in different countries, the Linq To SQL implementation relied on SQL views. This enabled us to abstract away differences in the table structures. However, as time went on, this approach became a hindrance to deploying new version of the portal. Upgrades would require SQL scripts to be deployed to each country. As the country count went from 6 to over 30, this became quite a time commitment during the deploy process. Second, because of changes to the underlying data structure, changes would have to happen off hours, but with the application running for customers across the globe, there were no off hours!
+
+Entity Framework Code First became a great solution to remedy the problem. With Code First, all of the differences between the databases could easily be handled by not including extra fields within our data model. The flexibility that the fluent API provides also enabled us to add a specific column to our model. Further, by adding a new field to two places within our application tiers, it was immediately available for our Razor views. These Code First features made the cumbersome process of running 30 SQL scripts a much welcomed thing of the past. We love the flexibility that Code First allows!
+
+<strong>Claims Authentication -</strong> Due to the growth of SoftwareONE&#39;s customer base as well as the need to be fully mobile, SharePoint 2010 was not the optimal solution for the vNext portal. However, SharePoint is still the premier collaboration platform for SoftwareONE and its customers. SoftwareONE is consistently focused on their customers and providing a top notch user experience. With Windows Identity Foundation (WIF) and the claims aware application stack in both MVC and SharePoint, users could log into one of the applications and have access to both of them with minimal friction. As SoftwareONE makes more tools and websites available to help their customers, the claims based authentication provided by WIF will enable a seamless logon experience.
+
+<strong>Multi Threading -</strong> Like SoftwareONE, its customers are doing operations in multiple countries around the globe. These customers have licensing needs that cross the globe too. In the previous version of the portal, accessing this information meant logging onto each country separately. With the introduction of new threading capabilities in the .NET framework, we were able to bring this data together. Within our application&#39;s service layer, each service call that retrieves data is using the new Task library to spin off a database request to each of the SoftwareONE country databases a user has access to. We are then able to combine these disparate data sources into a single result for display within the user interface. This provides SoftwareONE customers a holistic view to their data, no matter how many countries they have licensing concerns in or which database was the source for the data.
+
+<strong>JavaScript -</strong> Like most modern applications, the use of JavaScript and jQuery was used in vNext to create a responsive application. Once the page was loaded, asynchronous calls were made to web services to retrieve data and bind it to the page. With so much reliance on JavaScript and CSS, the new tooling support within Visual Studio 2012 for JavaScript as well as the page inspector tool, helped the developers realize a much more efficient development experience. Many hours were saved in the development phase by having access to these productivity tools.
+
+<strong>Team Foundation Server -</strong> With a development team featuring members in both Switzerland and the United States, code collaboration tools were imperative. Team Foundation Server (TFS) 2010 enabled developers to work on code as well as ensure that each developer&#39;s code compiled upon check in. With a large team and many check-ins, knowing as soon as possible that the code was not compiling was very valuable and saved time. Also, the enhanced merge capabilities in TFS allowed people who were working on disparate parts to each have the code checked out, and then merge back in the code of multiple developers without issue.
+
+TFS and visual studio have great testing tools. The development team used Unit Tests to ensure there were no unexpected logic issues introduced with code check-ins. Integrations tests were also run against the database each evening, to ensure code quality and expected results. This was an immense time saver in identifying issues early.
+
+With development teams in different parts of the globe as well as separated by 7 hours, tools provided by TFS ensured quality as well as enabled everyone to focus on doing their work.
+
+SoftwareONE&#39;s Lifecycle portal has been rewritten from a SharePoint 2007 application to the MVC based vNext portal and separate SharePoint 2010 collaboration platform. This rewrite takes advantage of many of the tools available in Visual Studio 2012 and the .NET Framework 4. Whereas the previous platform would have required spinning up a new web application, configuring it and running a 40,000 line SQL script to create specific views, we are now in a position to add a few lines to a config file and some SQL permissions and we are deployed to a new country instantly. Even more important, SoftwareONE is positioned for the next five years of growth in our rapidly changing industry, as they now have a dynamic platform that will enable their users across the globe to access their licensing information, whether it is at their desktop, on their mobile phone or using Windows 8.
+
+To see the SoftwareONE Lifecycle Portal in action, check out this <a href="http://www.youtube.com/watch?v=OoxJ1BA_GBk&amp;feature=plcp">video on You Tube</a>.
+
+It has been a great experience being a small part of SoftwareONE as they have become globally positioned as one of the top license resellers over the last five years. We are looking forward to another rewarding five years!
+
+This blog post originally appeared at <a href="http://www.skylinetechnologies.com/Blog/Lists/Posts/Post.aspx?ID=156">Skyline Technologies</a>
+
 </div>
-
-The last thing to hit on is on the image loading, and a cool little trick I learned. One of the customer sites
-I work at it is using AngularJS and they are integrating with a third party data source. What they wanted to be
-able to do is not show a broken or missing image. I sat there and thought to myself that this is going to be
-pretty difficult. Our client side scripting language was going to have to not call the source directly, but go
-through some kind of nutty proxy we would develop that would check if the image existed and then send that
-image or else a proxy for the missing image, etc. It wasn&#39;t going to be fun. However, a little time
-on the <a href="http://www.google.com">Google</a> found a MUCH easier way to get by this.
-
-To expand on our discussion, our images are coming from Wikipedia and reference images they have for entries on Lou Reed albums. If
-one of these images changes, we would get an error and display a broken image marker on our page. To illustrate, I have created a
-second controller where we change the image for Metal Machine Music and Transformer so they would return 404s.
-
-We now are receiving missing image links in our page. This is NOT use friendly
-
-<img src="http://www.jptacek.comLouCover404.png" alt="404 Error on Album Cover">
-
-You can see the example below
-
-<h3>Missing Images in Javascript Object</h3>
-
-   <div id="louTable2" ng-controller="lou2Ctrl">
-        <table class="table table-striped table-bordered table-hover table-condensed">
-            <tr>
-                <th>Album</th><th>Release</th><th>Producer</th><th>Label</th><th></th>
-            </tr>
-            <tr ng-repeat="album in lou2Drops.releases">
-                <td>{{album.album}}</td>
-                <td>{{album.releaseDate| date:&#39;medium&#39;}}</td>
-                <td>{{album.producer}}</td>
-                <td>{{album.label}}</td>
-                <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" src="http://www.jptacek.comundefined"></td>
-            </tr>
-        </table>
-    </div>
-
-<p>The fix is easy enough though! We can add an on error function within our <code>img</code> tag. First, we want to add a
-default local image we can reference. So let us use the Wikipedia image that I have at the top of our page.</p>
-<p>Within our <code>img</code> tag we add an <code>onerrror</code> function like so</p>
-<pre class="highlight"><code class="hljs xml"> onerror="this.src='Lou_Reed.jpg'"
-</code></pre>
-<p>so that our entire <code>img</code> tag is now</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">ng-src</span>=<span class="hljs-value">"\{\{album.image}}"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">"\{\{album.album\}\} Cover Image"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"300px;"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"300px;"</span>&gt;</span>
-</code></pre>
-<p>and we now handle missing images on page load (with ng-src) and missing images in our data source, with
-onerror by placing a default placeholder image for missing images.</p>
-<p> <h3>Resolve missing images</h3>
-    <div id="louTable3" ng-controller="lou2Ctrl">
-        <table class="table table-striped table-bordered table-hover table-condensed">
-            <tr>
-                <th>Album</th><th>Release</th><th>Producer</th><th>Label</th><th></th>
-            </tr>
-            <tr ng-repeat="album in lou2Drops.releases">
-                <td>{{album.album}}</td>
-                <td>{{album.releaseDate| date:&#39;medium&#39;}}</td>
-                <td>{{album.producer}}</td>
-                <td>{{album.label}}</td>
-                <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" onerror="this.src=&apos;/2014/01/angularjs-lou-reed/Lou_Reed.jpg&apos;" src="http://www.jptacek.comundefined"></td>
-            </tr>
-        </table>
-    </div>
-</p></div><p></p>
-<p>So the when I gave my presentation someone asked me favorite Lou Reed album... Hard one, I think at various times
-most of them have been a favorite, but I will go with New York. Favorite song, same as album, it changes, but let&#39;s
-call it Street Hassle.</p>
-<p>You can either visit <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a> to see the code in action and
-as always find the code out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a></p>
-<p>(I am working on some display issues with the post with the Markdown/DocPad combo, I should have updated soon)</p>
-<script type="text/javascript" src="/2014/01/angularjs-lou-reed/js/louApp.js"></script>
-<script type="text/javascript" src="/2014/01/angularjs-lou-reed/js/louController.js"></script>
-<script type="text/javascript" src="/2014/01/angularjs-lou-reed/js/louController2.js"></script>
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
+        Posted In: <a href='/tags/business/'>Business</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
@@ -285,76 +265,36 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='AngularJS - Image Binding in AngularJS with Lou Reed' class="twitter-share-button" data-url="http://jptacek.com/2014/01/24/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Enabling Customer Success with Visual Studio 2012' class="twitter-share-button" data-url="http://jptacek.com/2012/11/22/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/01/24/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2012/11/22/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/01/24/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2012/11/22/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2014/01/01/index/'>Chocolately and BoxStarter</a></h1>
+    <h1><a href='/2012/10/19/index/'>A Modest Proposal – Apple Should Buy the US Post Office</a></h1>
     
-        <div class="post-date">Dec 31st, 2013</div>
+        <div class="post-date">Oct 18th, 2012</div>
 
     <div class="post-content">
-        <p>I recently received a new work computer (an <a href="http://www.asus.com/Notebooks_Ultrabooks/ASUS_ZENBOOK_UX301LA/">Asus i7</a> that
-weighs 2.6 pounds, my old laptop, a Dell M6500 weighed over 8.5 lbs, it is like I am from the future now, but I digress).
-One of the things that I don&#39;t like about getting a new PC is setting up the computer. I am very good about making sure
-all of my files are stored in the cloud (via Skydrive and DropBox) and/or is under source control. I don&#39;t fear losing stuff, it
-is the loss time in restoring my applications and environments that makes me crazy. I always forget to install a utility
-I want. Or the exact moment I NEED to remote desktop is when I remember I forgot to ENABLE remote desktop.</p>
-<p>However, since my last PC install, the world of Windows has changed, and its name is <a href="http://chocolatey.org/">Chocolately</a>.
-Chocolatey is similar to apt-get on Linux, or the NPM package manager for <a href="http://www.nodejs.org">Node</a>. You can, via
-the command line, automatically install all kinds of applications that are available on <a href="http://www.nuget.org/">NuGet</a>.
-For example, to install ReSharprer, fire up a command prompt and type</p>
-<pre class="highlight"><code class="hljs bash">    cinst resharper
-</code></pre>
-<p>and away we go.</p>
-<p>You can find out more at the <a href="http://chocolatey.org/">Chocolately</a> site. Essentially though, you can achieve all of
-this goodness by staring a command prompt and pasting the following</p>
-<pre class="highlight"><code class="hljs bash">    @powershell -NoProfile -ExecutionPolicy unrestricted -Command <span class="hljs-string">"iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))"</span> &amp;&amp; SET PATH=%PATH%;%systemdrive%\chocolatey\bin
-</code></pre>
-<p>So, <a href="http://chocolatey.org/">Chocolately</a> solves problem the first, allowing for command line install of applications.
-When paired with <a href="http://boxstarter.org/">Boxstarter</a> however, it figures out problem the second of installing many different
-applications that require reboots, etc, when you are setting up a new PC. BoxStarter handles reboots and logins
-automatically for the user. You can type one command and be on your way!</p>
-<p><a href="http://boxstarter.org/">Boxstarter</a> also enables me to setup a URL that will have all of the applications that I want
-installed in a single location. For example, I created a Gist file on GitHub with all of the programs I want installed
-when I have a PC.</p>
-<pre class="highlight"><code class="hljs bash">    START http://boxstarter.org/package/nr/url?https://gist.github.com/jptacek/<span class="hljs-number">8099099</span>/raw/f691b3433c09dcd361fca8cc6cfe637ca7521771/boxstarter
-</code></pre>
-<p>You can take a look at the file, but it is pretty basic.</p>
-<p>I setup the Explorer options I want, for example, showing file extensions, and that provides me consistency across my
-installs.</p>
-<p>I then install the bevy of browsers that all web developers want at their disposal. This is followed by setups for Git,
-NodeJS, Text Editor, coding utilities, etc. I even have installation for applications I use specifically at home, for
-example, iTunes (I know, I vomit a little in my mouth each time I use it too).</p>
-<p>Not only can you setup explorer options, but you can also setup your Windows environment! For example, I automatically
-enable Remote Desktop, Setup HyperV and IIS on my development machines. I do this all from a single command and it
-is awesome!</p>
-<p><strong>Update</strong>
-A couple of people have run into issues if you are not using a default browser that does not support Click Once (for example
-Google Chrome). Matt Wrock identifies the workaround in the comments below.</p>
-<blockquote>
-<p>It sounds like your default browser is not click-once enabled. Using START from the command line will invoke the url in your default browser. If that browser is IE or another browser that has a click-once extension, Boxstarter should be invoked. If Firefox or Chrome (or Opera or safari or anything not IE) is your default browser and you had no extension that is &quot;click once&quot; app aware, the behavior you describe sounds normal. Chrome is my default browser but I installed an extension from
-<a href="https://code.google.com/p/clickonceforchrome/">https://code.google.com/p/clickonceforchrome/</a> that will allow it to work with click once apps like Boxstarter&#39;s web launcher.</p>
-</blockquote>
-<p>Just to reiterate... You need to update your default browser to support click once. Links for</p>
-<ul>
-<li>Google - <a href="https://code.google.com/p/clickonceforchrome/">https://code.google.com/p/clickonceforchrome/</a></li>
-<li>FireFox - <a href="https://addons.mozilla.org/en-us/firefox/addon/fxclickonce/">https://addons.mozilla.org/en-us/firefox/addon/fxclickonce/</a></li>
-</ul>
+        <p>The recent iMaps fiasco has taught the world that Apple has some serious catch up to do in the world of maps. There is a bit of a chicken and the egg issue, the more people using the iMaps app, the more data Apple can collect and make iMaps a better app. Instead of waiting for this to happen, Apple should speed up the process and buy the US Post office.</p>
+<p>The USPS operates over 210,000 vehicles and is the largest vehicle fleet in the world. The vast majority of these vehicles are out driving the world every day. If Apple buys the US post office, they could transform these vehicles into data gathering machines. Throw in a GPS and bring the data to Apple and their mapping team to quickly scale and improve iMaps. Next step, throw a camera in the car, ala the Google Car, and get a constantly refreshing street view mode. Google&#39;s Street View cars have driven 5 million miles since hitting the road. The US Post office drives 1.25 BILLION miles a year. Apple for the win! Next up, throw some more sensors onto the cars. For example, weather sensors could capture very local and real time weather data and create the next great Apple app, iWeather.</p>
+<p>Putting sensors onto the USPS fleet is not a new idea, the USPS has <a href="http://www.nytimes.com/2010/12/18/opinion/18ravnitzky.html">even</a> proposed doing this. However, it is a slow moving process, with privacy concerns often being cited. Apple buying the USPS and transforming it to the iPost Office helps alleviate these concerns. By moving the USPS from an old stodgy business to a tech company, privacy concerns quickly disappear. As consumers, we are used to letting the Goggles, Facebooks and Apples of the world collect information about us to make their services more awesome for us.</p>
+<p>Next up, it becomes an advertising niche for Apple. The USPS handled over 170 billion items in 2010. Each one of these becomes an advertising opportunity! Just like Google can put a little advertising onto most of the web pages we visit, iPost Office can put a little ad onto each of the 170 billion mail deliveries they do a year and have a brand new revenue stream.</p>
+<p>Next along the road, Apple can start competing with Amazon. It quickly acquires 30,000 retail locations that it can use to distribute physical goods. Instead of consumers having to wait a few days for the delivery of something from Amazon, or even two days for those customers paying for an Amazon Prime Membership, the iPost Office could deliver things purchased that day! The iPost Office even delivers on Saturdays, putting Amazon at a competitive disadvantage for those customers whom always battle cheap price vs. instant gratification.</p>
+<p>The best part about iPost Office is that everything Apple does is cool. Hipsters would start flocking back to their mailboxes. Apple could create stamps of Apple luminaries like Steve Jobs, Steve Wozniak and Jonathan Ive (post <a href="http://gizmodo.com/5516976/apples-chief-designer-re+designed">redesign</a> of course!). You can quickly imagine people buying these stamps and sending physical letters in the mail again. This could lead to a renaissance of letter writing! Imagine a world where instead of <a href="http://www.amazon.com/The-Letters-John-Cheever/dp/1439164649">The Letters of John Cheever</a> we could have the Collected Letters of <a href="http://daringfireball.net/">John Grueber</a>.</p>
+<p>Okay, so the above is all a little bit <a href="http://en.wikipedia.org/wiki/A_Modest_Proposal">Jonathan Swiftian</a>, but a partnership between the US Post Office and Apple could go a long way to solving the financial issues at the US Post Offices and Apple&#39;s iMaps issue. Of course, in the US iMaps tends to be in much better shape, so throw in a similar partnership with DHL for good measure. Apple could quickly gather data and help resolve their mapping issues. Win-win.</p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/web/'>Web</a>
+        Posted In: <a href='/tags/apple/'>Apple</a>, <a href='/tags/business/'>Business</a>, <a href='/tags/google/'>Google</a>
     </div>
     
     <br/>
@@ -363,83 +303,13 @@ Google Chrome). Matt Wrock identifies the workaround in the comments below.</p>
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Chocolately and BoxStarter' class="twitter-share-button" data-url="http://jptacek.com/2014/01/01/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='A Modest Proposal – Apple Should Buy the US Post Office' class="twitter-share-button" data-url="http://jptacek.com/2012/10/19/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/01/01/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2012/10/19/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/01/01/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
-    </div>
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2014/01/08/index/'>Deleting Windows 8.1 Wireless Profiles</a></h1>
-    
-        <div class="post-date">Jan 7th, 2014</div>
-
-    <div class="post-content">
-        <p>I have had some pretty strange behavior after upgrading to Windows 8.1. With Windows 8, Microsoft syncs up your wireless
-profiles to the cloud so when you have a new device, the wireless is already setup. So that is pretty cool. However, I
-have been having issues with it.</p>
-<p>For our home network, our SSID is not broadcast, like it should be on yours :). We manually add a hidden network and connect that way. With
-Windows 8.1, I would not be able to connect sometimes. I would then type in the name of our (hidden) SSID and the associated Password.
-It would then connect to the WiFi router, but the problem was it would create a new network profile each time. The way
-Windows 8 appears to build the name is by adding the number for the new wirless profile by checking the cloud or synched
-wireless profile that it could not connecting and adding one up to it. For example, if my wireless network is called
-Network Name, the second time I connected it would be, Network Name 2. The third time I connected it would be Network Name 2 3,
-and then Network Name 2 3 4, etc. . I ended up
-with VERY long strings for my network names. It also appears to add these to the cloud based profile no matter how often
-I clean up.</p>
-<p>Ultimately, I want to figure out how to clean up my wireless profiles that have been synched to the cloud. I don&#39;t really
-need or want the wireless profile for the restaraunt where I had a work meeting and accidently remembered the network. In the interim
-I have used PowerShell to enumerate all of the profiles and delete them, except the first one (aka Network Name).</p>
-<p>One of the things I want to do is spend more time in the command line this year. Mostly, I want to not have to lookup
-how to do things to interact with GitHub. So in that vain, I wrote a PowerShell script to delete all but the first
-wireless profile I created.</p>
-<p>So here is the PowerShell script</p>
-<pre class="highlight"><code class="hljs lasso"><span class="hljs-variable">$profile</span> <span class="hljs-subst">=</span> <span class="hljs-string">"Network Name"</span>
-<span class="hljs-variable">$total</span> <span class="hljs-subst">=</span> <span class="hljs-number">32</span>
-<span class="hljs-variable">$count</span> <span class="hljs-subst">=</span> <span class="hljs-number">2</span>
-Start<span class="hljs-attribute">-Transcript</span>
-netsh wlan show profiles
-<span class="hljs-keyword">do</span> {
- <span class="hljs-variable">$profile</span> <span class="hljs-subst">=</span> <span class="hljs-variable">$profile</span> <span class="hljs-subst">+</span> <span class="hljs-string">" "</span> <span class="hljs-subst">+</span><span class="hljs-variable">$count</span>
- <span class="hljs-variable">$execCommand</span> <span class="hljs-subst">=</span> <span class="hljs-string">"netsh wlan delete profile name="</span><span class="hljs-string">"$profile"</span><span class="hljs-string">""</span>
- Write<span class="hljs-attribute">-Host</span>(<span class="hljs-variable">$execCommand</span>)
- Invoke<span class="hljs-attribute">-Expression</span> <span class="hljs-variable">$execCommand</span>
- <span class="hljs-variable">$count</span><span class="hljs-subst">++</span>
-}
-<span class="hljs-keyword">while</span> (<span class="hljs-variable">$count</span> <span class="hljs-attribute">-le</span> <span class="hljs-variable">$total</span>)
-</code></pre>
-<p>Also, as part of more command line, I have created a small GitHub repository to save scripts I create. Mostly so
-I can grab them when I am other machines. Feel free to have at em</p>
-<ul>
-<li>GitHub PowerShell Repository - <a href="https://github.com/jptacek/PowerShell">https://github.com/jptacek/PowerShell</a></li>
-<li>RemoveWirelessProfile.ps1 script on Github - <a href="https://github.com/jptacek/PowerShell/tree/master/Network/Wireless">https://github.com/jptacek/PowerShell/tree/master/Network/Wireless</a></li>
-</ul>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/powershell/'>PowerShell</a>, <a href='/tags/windows8/'>Windows8</a>
-    </div>
-    
-    <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
-    <p>&nbsp;</p>
-
-    <div id='socialTags'>
-    <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Deleting Windows 8.1 Wireless Profiles' class="twitter-share-button" data-url="http://jptacek.com/2014/01/08/index/">Tweet</a>
-    <!-- Google+. -->
-    <div class="g-plusone" data-size="medium"></div>
-    <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/01/08/index/" ></script>&nbsp;
-    <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/01/08/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2012/10/19/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 

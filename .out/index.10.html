@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -93,43 +97,135 @@
             
     <article class="post">
     
-    <h1><a href='/2013/03/28/index/'>Setting up Google Two Factor authentication</a></h1>
+    <h1><a href='/2013/10/03/index/'>AngularJS - Introducing AngularJS Controllers</a></h1>
     
-        <div class="post-date">Mar 27th, 2013</div>
+        <div class="post-date">Oct 2nd, 2013</div>
 
     <div class="post-content">
-        <p>My daughter was recently asking me what classes she should take for next year, one of the options was Creative Writing. I told her the choice was easy, Creative Writing, &quot;You can never be too good of a writer&quot;. Similarly for the Internet, you can never be too secure.</p>
-<p>There are LOTS of horror stories out about people who have had their lives severely impacted by people getting access to their account information. Last year, Matt Honan <a href="http://www.wired.com/gadgetlab/2012/08/apple-amazon-mat-honan-hacking/all/">wrote</a> a cautionary tale about how easily someone was able to take over his digital life for Wired. It is well worth reading. If that one was not enough, then you can read another account from James Fallows <a href="http://www.theatlantic.com/magazine/archive/2011/11/hacked/308673/?single_page=true">wrote</a> for the Atlantic.</p>
-<p>First off, you should be doing basic things. Do NOT use the same password for all sites. DO NOT have passwords that exist in the dictionary. DO have special characters, numbers and mixed case in your passwords. That is just plain, Internet common sense though.</p>
-<p>The reality though is, your password is only so good. What everyone should do is setup two factor authentication. Two factor authentication is really &quot;something you know&quot; (your password) and &quot;something you have&quot;, an object like a phone. For enterprise users, this is old hat. The vast majority of large companies require users to have a SecurID card to get access to their network. The card generates a token that changes on a regular internal (60 seconds for example) that user needs to enter when logging in.</p>
-<p>However, in the consumer space, this has been much slower in coming. Several years ago Google introduced two factor authentication. Facebook also has the ability for you to enable a variation of two factor authentication. If the browser is not recognized as one you have used before, it will send a SMS to your phone. Twitter is in the process of enabling two factor authentication after 250,000 user accounts were compromised. Microsoft has SOME variation of it. It will occasionally prompt you with a verification code when making account changes or accessing the device from a non-trusted PC. It is however, not a default option for login, and I have never been able to figure out how it decides to send SMS messages. Microsoft really needs to have this option available for those who want it.</p>
-<p>We are going to step three enabling Google&#39;s two factor authentication, since so many folks have Google accounts.</p>
-<p>To enable Google&#39;s two factor authentication, first, go to your Google Account and click security and find 2-step verification.</p>
-<p><img src="http://www.jptacek.com032813_1351_SettingupGo1.png" alt=""></p>
-<p>For 2-step verification, change the settings form Off to On.</p>
-<p>You will then be prompted for a phone number to use for SMS messages. The phone, along with the accompanying verification code, is the second factor of authentication, it is the thing you have. Type in the mobile phone number</p>
-<p><img src="http://www.jptacek.com032813_1351_SettingupGo2.png" alt=""></p>
-<p>Enter in your phone number and a verification code will be sent to your mobile device. You will then be asked to verify the code</p>
-<p><img src="http://www.jptacek.com032813_1351_SettingupGo3.png" alt=""></p>
-<p>You will then be asked if you want to trust the computer you are on. This will allow you to log in without being prompted with a code very time. This trust usually lasts 30 days.</p>
-<p><img src="http://www.jptacek.com032813_1351_SettingupGo4.png" alt=""></p>
-<p>And then lastly, click confirm</p>
-<p><img src="http://www.jptacek.com032813_1351_SettingupGo5.png" alt=""></p>
-<p>Now, each time you log into your Google account from a non trusted computer, a SMS message will be sent to your phone that will need to enter.</p>
-<p><img src="http://www.jptacek.com032813_1351_SettingupGo6.png" alt=""></p>
-<p>Now, this is a bit cumbersome, I grant you. However, it is almost necessary if you are using Google services for anything remotely important to your non-digital world. Do you have bank account information in Gmail? Then turn on two factor authentication. Do you have send yourself passwords in Gmail? Then turn on two factor authentication. Do you have health information in Gmail? Then turn on two factor authentication. Do you use your Google account as your account name for anything important? Then turn on two factor authentication.</p>
-<p>There are a couple of things to realize. You NEED your cell phone to log into Google services now. If you do not have your cell phone with you, or you are travelling overseas without phone access, then you will not be able to log in to your account. However, Google has several options for you. First, for those on the Android platform they have an app called <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&amp;hl=en">Google Authenticator</a> that will generate the authentication codes for you. Option the second is you can print out a small piece of paper that has a one time, ten digit codes that you can use to get access.</p>
-<p>Second, applications that log into Google services to get access to your mail or contacts via POP or IMAP will no longer work. To work around this, Google allows you to create application specific passwords. These passwords are generated on the screen and then you never see them again. There are steps on how to do this at <a href="http://support.google.com/accounts/bin/answer.py?hl=en&amp;answer=185833">http://support.google.com/accounts/bin/answer.py?hl=en&amp;answer=185833</a>. For those using Outlook, Apple Mail, accessing email via phone, this will need to be done. Those of you paying attention at home will realize you are really back to a single password. While this is true, you cannot get access to your account via web browsers. Second, and more importantly, you cannot manage your account with it. You can also revoke access to anyone of these passwords at any time.</p>
-<p>Last, it is good measure to, in Google, Facebook, Twitter, your Microsoft account, anything account you allow to do authorization at other locations, to review what applications you have authorized. So while you are on your account page, review the Connected applications and sites to see who you have authorized to have access, and what level of access to your Google account data.</p>
-<p><img src="http://www.jptacek.com032813_1351_SettingupGo7.png" alt=""></p>
-<p>Personally, I have a Gmail account that I use for my &quot;public&quot; life. It is the address I sign up for things like Facebook with, the email address I use for accessing services I subscribe to, like Netflix, etc. For personal use, I also have a Google Apps domain that I use for personal email with family and friends. Google Apps also support two factor authentication.</p>
-<p>As digital identity becomes more and more integrated into daily lives, it is everyone&#39;s responsibility to ensure they can be secure as possible. Take the steps now where you can, because by the time you should have taken the steps, it will be too late.</p>
+        <p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
+<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
+ HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
+ Contrast this to a framework like JQuery where the DOM will update your data.</p>
+<p><img src="/2013/10/03/index/angularLogo.png" alt="AngularJS Logo"></p>
+<p>This is the second in a series of posts on AngularJS where we are using Chemistry data from the periodic table
+to help us understand the framework. The others posts are</p>
+<ol>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
+<li>AngularJS - Introducing AngularJS Controllers</li>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
+<li><a href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
+<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
+<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
+</ol>
+<blockquote>
+<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
+the home page of my blog, only one application will work. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
+</blockquote>
+<p>In general, just binding text boxes on a page may be able to create a simple calculator, but it is not what the web of 2013 and beyond is about. We want our pages to interact with backend data stores, we want to display this information on the page and send it back to the server so it is there the next time we view the page. </p>
+<p>Angular is really a Model View Controller (MVC) JavaScript library. The model is our data, the view is the presentation of this data and the controller is responsible for the marshalling between the two. In angular, this is done via the scope, which is a glorified object property bag available within your page. The first responsibility of the Controller is to create this scope object. The scope is then how you communicate with the view. The view is able to bind to properties and functions on the scope. It is also able to call functions on the scope. It is important to realize that the scope exposes the model to the view, however the scope is NOT the model. The model is updated, either via two way data binding on the scope, or functions on the scope that the view calls to update the data. So, if you are going to be doing a lot with Angular, say hello to your little friend, <span style="font-family:Courier New">$scope</span>.</p>
+<p>Let&#39;s take a look at the pieces needed to bring this together. First off, harking back to a time long, long ago, I am going to be working with information from the Periodic Table from Chemistry during these demos, so you will be seeing chemistry naming as we going along, so let us alleviate the confusion up front.</p>
+<p>First, we want to take a look at our HTML.</p>
+<p>We are going to use Twitter bootstrap for some down the road reasons so we are going to add that CSS reference.</p>
+<p>Second, we are adding a reference to <code>chemistryApp.js</code>. This is the starting script that identifies our Angular module. We are going to call our Application chemistryApp.</p>
+<p><strong>chemistryApp.js</strong></p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">'use strict'</span>;
 
+<span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
+</code></pre>
+<p>Now that our <code>chemistryApp.js</code> file is identified, we add a <code>ng-app</code> directive to our body tag. That tells Angular that 
+chemistryApp will be responsible for our page.</p>
+<p>Next, we want to create the controller. The controller will be responsible for managing data for the HTML view. 
+Usually, controllers are associated with DIVs. First, we will create our controller called 
+<code>chemistryController.js&lt;</code></p>
+<p>We reference our module, <code>chemistryApp</code>, from our<code>App.js</code> file. We then identify the name of the controller, 
+chemistryController and then have a second parameter, which is a function, that is our actual controller.
+We want to be sure to pass in any parameters our controller will need. Almost all controllers will require the 
+<code>$scope</code> variable, since the controller interacts with the view via this, so almost all of our controllers will at a 
+minimum have this.</p>
+<p>As of now, our controller skeleton is built and ready to go, it just not doing anything at the moment</p>
+<p><strong>chemistryController.js</strong></p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">'use strict'</span>;
+
+chemistryApp.controller(<span class="hljs-string">'chemistryController'</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemistryController</span><span class="hljs-params">($scope)</span> {</span>
+
+    }
+);
+</code></pre>
+<p>We go and add our controller JavaScript file to our HTML with a script tag, but we have to update our HTML to identify where the controller will function. This is done via the <span style="font-family:Courier New">ng-controller</span> directive. The syntax is as so</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"ngChem1"</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"chemistryController"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>And for now, our HTML looks like</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Controller Demo 1<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/css/bootstrap.min.css"</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">ng-app</span>=<span class="hljs-value">"chemistryApp"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Chemistry Controller<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"ngChem1"</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"chemistryController"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"angular.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"chemistryApp.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"chemistryController.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<p>This page renders, but does not do anything. Mostly as a result of us telling it to do nothing! In general though, 
+these three steps are the basis of an Angular application. </p>
+<ol>
+<li>We identify ng-app, via chemistryApp.js, that is responsible for the page.</li>
+<li>We create a controller, chemistryController.js, that takes the $scope variable from our page and then populates it with data and/or functions so our HTML can later render it. We have not seen this in action yet, but soon.</li>
+<li>The last part then is identifying, via the ng-controller directive, the area of responsibility for our controller.</li>
+</ol>
+<p>As previously mentioned, the <code>$scope</code> variable is the glorified property bag we use to populate data. So within our 
+controller, we can go and set some values for display in our view/web page. In our example, that will be the name of a 
+chemical element and it&#39;s atomic number, Hydgroen and 1. Our controller function now looks like</p>
+<p><strong>chemistryController.js</strong></p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">
+'use strict'</span>;
+
+chemistryApp.controller(<span class="hljs-string">'chemistryController'</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemistryController</span><span class="hljs-params">($scope)</span> {</span>
+        $scope.elementName = <span class="hljs-string">'Hydrogen'</span>;
+        $scope.atomicNumber = <span class="hljs-number">1</span>;
+
+    }
+);
+</code></pre>
+<p>Now, we can have the values from our scope value inject into our HTML markup. This is done via our friend, the magical 
+curly braces. It is as simple as</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Name:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> {{elementName}} <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Atomic Number:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> {{atomicNumber}}
+</code></pre>
+<p>The value we set in our controller are automatically displayed.</p>
+<p><img src="/2013/10/03/index/100313_2137_Introducing2.png" alt=""></p>
+<div ng-app="chemistryApp">
+<div class="container" id="ngChem1" ng-controller="chemistryController">
+    <h1>Chemistry Controller</h1>
+    <b>Name:</b> {{elementName}} <b>Atomic Number:</b> {{atomicNumber}}
+</div>
+</div>
+
+<p>You can see these code samples in action at the companion site for this blog series, <a href="http://angularPeriodic.azurewebsites.net">http://angularPeriodic.azurewebsites.net</a></p>
+<p><a href="http://angularperiodic.azurewebsites.net/Demo2-Controllers/controller1.html">Introducing AngularJS Controllers</a></p>
+<p>You can download or view the code on Github, <a href="https://github.com/jptacek/AngularPeriodic/">https://github.com/jptacek/AngularPeriodic/</a></p>
+<script type="text/javascript" src="/2013/10/introducing-angularjs-controllers/js/chemistryApp.js"></script>
+<script type="text/javascript" src="/2013/10/introducing-angularjs-controllers/js/chemistryController.js"></script>
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/google/'>Google</a>, <a href='/tags/security/'>Security</a>, <a href='/tags/two-factor-authentication/'>Two Factor Authentication</a>, <a href='/tags/web/'>Web</a>
+        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
@@ -138,92 +234,167 @@
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Setting up Google Two Factor authentication' class="twitter-share-button" data-url="http://jptacek.com/2013/03/28/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='AngularJS - Introducing AngularJS Controllers' class="twitter-share-button" data-url="http://jptacek.com/2013/10/03/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/03/28/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/10/03/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/03/28/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/10/03/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2013/04/30/index/'>Being You – Looking Around WordPress</a></h1>
+    <h1><a href='/2013/10/01/index/'>AngularJS - Introduction</a></h1>
     
-        <div class="post-date">Apr 29th, 2013</div>
+        <div class="post-date">Sep 30th, 2013</div>
 
     <div class="post-content">
-        <p>WordPress, is obviously, a VERY popular blogging platform. You are going to have a lot better luck finding information out on the Internets than you will here. So we will take a quick look around, and focus a bit on the differences on the Azure platform.</p>
-<p>First off, WordPress is developed on the PHP platform. The vast majority of the management functionality can be done right on the website. This is the dashboard and can be seen below</p>
-<p><img src="http://www.jptacek.com043013_1113_1.png" alt=""></p>
-<p>At a high level</p>
-<ul>
-<li><p>Home - This is the main Dashboard page</p>
-</li>
-<li><p>Posts - These are where you manage your blog posts</p>
-</li>
-<li><p>Media -This allows you to add and manage media to your site such as images, videos, etc.</p>
-</li>
-<li><p>Pages - These are web pages for your site. A good example would be an about me page</p>
-</li>
-<li><p>Comments - This is where you manage comments posted to your blog. Be ready for SPAM, lots and lots of SPAM</p>
-</li>
-<li><p>Appearance - This is where you control the look and feel of your site, add widgets, headers, backgrounds, etc.</p>
-</li>
-<li><p>Plugins - These are third party pieces of functionality you can add to your site. There is a very robust eco system of widgets surrounding WordPress</p>
-</li>
-<li><p>Users  - Allow you to add users to your site so that more than one person can blog, etc.</p>
-</li>
-<li><p>Tools - Similar to plugins, tools you can add to your site</p>
-</li>
-<li><p>Settings - These are the general settings of your WordPress blog. For example, the name of the site, time zone, formats, how links are displayed, etc</p>
-</li>
-</ul>
-<p>The first thing most users will want to do with their WordPress site is select a theme. Much like Plugins, there is a vast ecosystem around WordPress theme development. Users can get a default theme, or find a theme that suites there needs much more closely and pay money for it. </p>
-<p>To choose a theme, (get ready for it), go to Appearance and Themes. There is the default themes that ship with the version of WordPress you installed, as of the writing of this, Twenty Twelve and Twenty Eleven.</p>
-<p><img src="http://www.jptacek.com043013_1113_2.png" alt=""></p>
-<p>You can go to Install Themes, and look for themes you think are more representative of your site. To get an idea of the options, choose Newest and take a look at the latest site themes people have created.</p>
-<p><img src="http://www.jptacek.com043013_1113_3.png" alt=""></p>
-<p>Personally, and this is a shortcoming, I am really not that interested in aesthetics. So I choose the default Twenty Twelve theme and run with it. One of the things I DO like about this theme is that it utilizes responsive design, so it looks good on a number of form factors.</p>
-<p>In your theme, you can choose to customize the theme. This enables you to change site description, updated colors, choose background images, etc</p>
-<p><img src="http://www.jptacek.com043013_1113_4.png" alt=""></p>
-<p>We can choose Site Title and Tagline and change our Tagline to say something different; for example, A Dysfunctional Family, and click Save &amp; Publish</p>
-<p><img src="http://www.jptacek.com043013_1113_5.png" alt=""></p>
-<p>And the changes are immediately seen on our site.</p>
-<p><img src="http://www.jptacek.com043013_1113_6.png" alt=""></p>
-<p>Just to give an idea of how a theme would work. We can quickly change it and see the effect. Let&#39;s install the Lightweight Personal theme we saw previously. We click the Install now link and it downloads and install the theme locally. We can click the Activate link to have immediately take effect</p>
-<p><img src="http://www.jptacek.com043013_1113_7.png" alt=""></p>
-<p>And voila! A totally different user experience.</p>
-<pre class="highlight"><code class="hljs css">    !<span class="hljs-attr_selector">[]</span>(043013_1113_8<span class="hljs-class">.png</span>)
-</code></pre><p>Notice, of course, that our content stays the same, it is just the UI that changes.</p>
-<p>To get an idea of how plugins work, let&#39;s install a plugin and take a look. All the cool kids today are on twitter (actually, I am on Twitter, so the cool kids are probably somewhere else), so let us add twitter functionality to our site.</p>
-<p>Click plugins on the management dashboard and you will see the default plugins that are installed with WordPress</p>
-<p><img src="http://www.jptacek.com043013_1113_9.png" alt=""></p>
-<p>Hello Dolly features lyrics from Louis Armstrong&#39;s Hello, Dolly randomly on your site. While I love Louis Armstrong (his two albums, Ella and Louis with Ella Fitzgerald are required listening), the lyrics do not really fit in on our site.</p>
-<p>The Akismet plugin is much more useful. It helps you determine what comments are spam on your site, and you will be getting lots of spam. It is worthwhile activating it, though it requires registering for a WordPress account, and if you so desire, paying some money.</p>
-<p>For us though, we want to add Twitter to our site. So click the Add New link and search for Rotating Tweets</p>
-<p><img src="http://www.jptacek.com043013_1113_10.png" alt=""></p>
-<p>We click Install Now and verify we want to install. We are then taken to the post install screen, where we can either activate the plugin, or leave installed, but not activated. Let&#39;s activate by clicking the Activate Plugin link</p>
-<p>We now see this on our list of plugins</p>
-<p><img src="http://www.jptacek.com043013_1113_11.png" alt=""></p>
-<p>Plugins that are activated, then become Widgets. Similar to SharePoint web parts, widgets are items of functionality that can be added to a page. You can add widgets by modifying the appearance of your site. Click Appearance and then Widgets</p>
-<p><img src="http://www.jptacek.com043013_1113_12.png" alt=""></p>
-<p>The page shows the available widgets and then the side bar widget area. You can drag a Widget from the available section to the sidebar and put in the order you want. We will put our Rotating Tweets widget there by dragging it.</p>
-<p><img src="http://www.jptacek.com043013_1113_13.png" alt=""></p>
-<p>Nearly all plugins have sections for you to modify for your site. We are going to add a Title and a twitter username and click save</p>
-<p><img src="http://www.jptacek.com043013_1113_14.png" alt=""></p>
-<p>Our site is now updated</p>
-<p><img src="http://www.jptacek.com043013_1113_15.png" alt=""></p>
-<p>As you can see, the WordPress functionality provided by Plugins and Themes allows you to quickly customize your site&#39;s look and feel.</p>
-<p>Next time, we are going to dig a big deeper into modifying your site by adding socialization links using PHP and WebMatrix!</p>
+        <p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
+<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
+ HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
+ Contrast this to a framework like JQuery where the DOM will update your data.</p>
+<p><img src="/2013/10/01/index/angularLogo.png" alt="AngularJS Logo"></p>
+<p>This is the first in a series of posts on AngularJS where we are using Chemistry data from the periodic table
+to help us understand the framework. The others posts are</p>
+<ol>
+<li>AngularJS - Introduction</li>
+<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
+<li><a href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
+<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
+<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
+</ol>
+<blockquote>
+<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
+the home page of my blog, only one application will work. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
+</blockquote>
+<p>I am going to be dipping my fingers into Angular a bit over my next few blog posts, so I thought it would be worth
+starting with a very simple Hello World app, and then moving on to a temperature converter and finally a
+sphere calculator.</p>
+<p>First, like all good Javascript programs, you will need to download the Angular library or link to a CDN version.
+You can always download the latest version from the Angular site at <a href="http://angularjs.org/">http://angularjs.org/</a>.
+They will also show a link when you request a download of the latest Angular version via CDN, at the time of this
+writing the link is <a href="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js">angular.min.js</a>.</p>
+<p>Here is our HTML based page that uses Angular.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Hello World<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"angular.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">ng-app</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"displayText"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>{{displayText}}<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<p>You can seed there are really four things we have done here.</p>
+<ol>
+<li>Link out to the CDN version of the Angular library by putting a script tag in our HTML</li>
+<li>The second is the inclusion of ng-app in our markup for the body tag. All Angular applications need to be
+wrapped in this directive. It indicates that everything within the tab can be part of an Angular application.
+For example, if we put the ng-app directive within a DIV tag, only content within that DIV would be within scope.
+It is probably uber-best practice to prepend angular tags (which are always ng-something, with a data attribute to
+ensure maximum HTML compliance, obviously, I am not doing that :)</li>
+<li>The <code>ng-model=&quot;displayText&quot;</code> within the input type. This is the first part of our data-binding where we have
+angular setup the variables to the name of our control</li>
+<li>Last is the magical curly braces {{ }}. This is the Angular markup for databinding. It essentially says
+display our model variable displayText
+The cool thing is we are automatically displaying data from a HTML input control on our page and we have not
+written any Javascript. The framework is handling.</li>
+</ol>
+<div id="app" ng-app="">
+
+<div>
+    <input type="text" ng-model="displayText0" placeholder="type something">
+    <h3>{{displayText0}}</h3>
+</div>
+
+<p>The databinding in Angular goes a little deeper than just displaying text. We would update our binding syntax to
+tie into Javascript functions. For example, changing <code>displayText</code> to
+<code>displayText.toUpperCase()</code> and our
+input will then be uppercased.</p>
+<div>
+    <input type="text" ng-model="displayText2" placeholder="type something">
+    <h3>{{displayText2.toUpperCase()}}</h3>
+</div>
+
+<p>You can also have expressions, such as <code>&#39;You typed: &#39;+ displayText.toUpperCase()</code>.</p>
+<p>This will then prepend the string &#39;You typed: &#39; to what is displayed in our browser.</p>
+<p>&nbsp;</p>
+<div>
+    <input type="text" ng-model="displayText3" placeholder="type something">
+    <h3>{{&#39;You typed: &#39; + displayText3.toUpperCase()}}</h3>
+</div>
+
+<p>The magic of curly braces continues though. Angular also has the concept of filters for our binding element that we
+can then apply to the code. We can have Angular upper case our code instead of doing it ourselves by having our
+binding be {{displayText | uppercase}}. You can also filter to things such as numbers, limit the inputs being
+displayed etc.</p>
+<p>Next up, let&#39;s just combine a couple of things to make an HTML application to convert the temperature from Degrees
+Fahrenheit to degrees Celsius and Kelvin.</p>
+<p>Our HTML</p>
+<pre class="highlight"><code class="hljs handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Temperature <span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"number"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"tempF"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">0</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Celcius:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> </span><span class="hljs-expression">{{ ((5/9)*(<span class="hljs-variable">tempF-</span>32)) |<span class="hljs-variable">number</span>:2 }}</span><span class="xml"> &amp;degC<span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Kelvin:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> </span><span class="hljs-expression">{{ (((5/9)*(<span class="hljs-variable">tempF-</span>32))<span class="hljs-variable">-</span>273<span class="hljs-variable">.</span>0) |<span class="hljs-variable">number</span>:2 }}</span><span class="xml"> K
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</span></code></pre><p>&nbsp;</p>
+<div id="tempConversion">
+    <b>Temperature (&amp;degF)</b>
+    <input type="number" ng-model="tempF0" value="0">
+    <br>
+    <br>
+    <b>Celcius:</b> {{ (((5/9)<em>(tempF0-32))-0.0)|number:2 }}  &amp;degC<br>
+    <b>Kelvin:</b> {{ (((5/9)</em>(tempF0-32))-273.0) |number:2 }} K
+</div>
+
+<p>And just since we are having so much fun, we can use angular to calculate the volume and surface area of a cube</p>
+<p>&nbsp;</p>
+<pre class="highlight"><code class="hljs handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Radius of Sphere<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"number"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"radius"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">0</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Volume:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span></span><span class="hljs-expression">{{(4*3<span class="hljs-variable">.</span>141*<span class="hljs-variable">radius</span>*<span class="hljs-variable">radius</span>*<span class="hljs-variable">radius</span>)/3 | <span class="hljs-variable">number</span>:3}}</span><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Surface area:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span></span><span class="hljs-expression">{{(4*3<span class="hljs-variable">.</span>141*<span class="hljs-variable">radius</span>*<span class="hljs-variable">radius</span>) | <span class="hljs-variable">number</span>:3}}</span><span class="xml"> <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</span></code></pre><div id="sphereVol">
+    <b>Radius of Sphere</b>
+    <input type="number" ng-model="radiusZ" value="0">
+    <br>
+    <br>
+    <b>Volume:</b> {{ radiusZ<em>radiusZ | number:3}} <br>
+    <b>Surface area:</b> {{ (4</em>3.141<em>radius0</em>radius0) | number:3}} <br>
+</div>
+
+
+<p></p></div>
+It is pretty cool that we are able to write these quick little applications without any Javascript. Just by using Angular and it&#39;s built in databinding functionality!<p></p>
+<p>I am still working on a good way to get some Javascript demos into my Wordpress blog. In the interim, you can check them out at an Azure website I created to host these demos, <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a>. Specifically</p>
+<p><a href="http://angularperiodic.azurewebsites.net/Demo1/helloworld.html">Hello World</a></p>
+<p><a href="http://angularperiodic.azurewebsites.net/Demo1/tempConversion.html">Temperature Conversion</a></p>
+<p><a href="http://angularperiodic.azurewebsites.net/Demo1/spherecalculation.html">Sphere Calculation</a></p>
+<p>&nbsp;</p>
+<p><strong>Update:</strong> I have created JSFiddles to embed the code samples. You can either visit <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a> to see the code in action or view the JSFiddles embedded on the page. As always, the code is out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a></p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/azure-websites/'>Azure Websites</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/wordpress/'>WordPress"</a>
+        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
@@ -232,60 +403,49 @@
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Being You – Looking Around WordPress' class="twitter-share-button" data-url="http://jptacek.com/2013/04/30/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='AngularJS - Introduction' class="twitter-share-button" data-url="http://jptacek.com/2013/10/01/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/04/30/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/10/01/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/04/30/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/10/01/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2013/04/29/index/'>Being You – Setting Up WordPress on Azure Websites</a></h1>
+    <h1><a href='/2013/09/20/index/'>What Lyndon Johnson Taught Me About Programming</a></h1>
     
-        <div class="post-date">Apr 28th, 2013</div>
+        <div class="post-date">Sep 19th, 2013</div>
 
     <div class="post-content">
-        <p>Azure websites are a great way to get a blog up quick and easily, and for relatively low costs.</p>
-<p>In this blog post, we are going to setup a WordPress blog on an Azure websites. Azure Websites provide a great environment for quickly and easily setting up websites to explore different technologies. Are you looking for a place to explore Node.js, create an Azure Website. Want to develop DotNetNuke site and explore, whip up an Azure website and explore to your heart&#39;s content. Looking for a Linux box to do some development for? Create a Virtual Machine</p>
-<p>So, what do we need to do?</p>
-<p>First things first, you need to sign up for a windows azure account and a 90-day Free Trial. This will require you to provide a mobile phone, for verification purposes, and a credit card, which you only need if you exceed the limits for the free trial, which only happens if you remove the spending limit.</p>
-<p>Go to <a href="http://www.windowsazure.com">http://www.windowsazure.com</a> and click Free Trial. You </p>
-<p><img src="http://www.jptacek.com042913_1148_BeingYouSet1.png" alt=""></p>
-<p>You free trial contains up to 10 Web Sites and Mobile services, a SQL database, 35 GB of strogae and 750 hours of small compute hours. This will essentially allow you to create a blog a Azure shared instance for free. Click the next arrow (right by two).</p>
-<p>You will be asked to verify your account via a SMS message to your phone. Step three will ask you to setup a credit card information, after which, your Azure subscription is being setup</p>
-<p><img src="http://www.jptacek.com042913_1148_BeingYouSet2.png" alt=""></p>
-<p>Now that your Azure account is setup, you can start creating web sites, virtual machines, storage, etc. We are going to create a blog site, which is a web site. </p>
-<p>Jump to the Azure Management portal </p>
-<p><img src="http://www.jptacek.com042913_1148_BeingYouSet3.png" alt=""></p>
-<p>And click the new button in the bottom left. </p>
-<p><img src="http://www.jptacek.com042913_1148_BeingYouSet4.png" alt=""></p>
-<p>Click Web Site and chose From Gallery</p>
-<p>Azure provide a lot of &quot;starter&quot; sites in it&#39;s Gallery. It can range from DotNetNukeSites, Drupal sites, Wiki sites, eCommerce engines, etc. We are interested in creating blog. Select that and you can see there are a myriad of blog types to choose from</p>
-<p><img src="http://www.jptacek.com042913_1148_BeingYouSet5.png" alt=""></p>
-<p>We are going to use WordPress, a very popular blogging engine based on PHP. Once you find Wordpress, highlight it and click the next button.</p>
-<p><img src="http://www.jptacek.com042913_1148_BeingYouSet6.png" alt=""></p>
-<p>All Azure Websites are on the domain azurewebsites.net. You will need to select a unique name for your website. In this case, we will use TheEndless.azurewebsites.net for our URL. </p>
-<p>Next, WordPress relies on MySql for their back end database, so we will need to create one. The good news is, Azure takes care of all of that for you. Last, you will need to pick a geographic region for your site to be hosted. You want it to be close to where the majority of your users will be. The North Central US datacenter, which is located in Chicago, fits the bill for us.</p>
-<p><img src="http://www.jptacek.com042913_1148_BeingYouSet7.png" alt=""></p>
-<p>aWe provide a unique name to the databse and approve the ClearDb legal terms. ClearDb has partnered with Microsoft on their MySql implementation. Once you click the checkbox, it will provision up your Azure Website. This process will take a few minutes.</p>
-<p><img src="http://www.jptacek.com042913_1148_BeingYouSet8.png" alt=""></p>
-<p>Once the site is provisioned you can click on the link and you will be taken to the WordPress configuration site to finalize creation of your blog.</p>
-<p><img src="http://www.jptacek.com042913_1148_BeingYouSet9.png" alt=""></p>
-<p>Here, you will provide a site for your title, we are going to go with The Endless. Next, you will setup a username for your site. DO NOT use admin, change it to something different. In my case, I will use my name. You will provide an email address for the site and finally a privacy check box. You DO want to check this, as it will enable search engines to find your site. That is, after all, the whole purpose of being you <span style="font-family:Wingdings">J</span> After entering in this information, choose Install Wordpress. It will run for a second, and then you can login.</p>
-<p><img src="http://www.jptacek.com042913_1148_BeingYouSet10.png" alt=""></p>
-<p>You now have your blog up and running!</p>
-<p><img src="http://www.jptacek.com042913_1148_BeingYouSet11.png" alt=""></p>
-<p>In our next part, we will explore WordPress.</p>
+        <p>a<img src="/2013/09/20/index/092013_1052_WhatLyndonJ1.png" alt=""></p>
+<p>I can often be found reading a book and sometimes those books are history books. By far and away, the greatest biography I have run across is Robert Caro&#39;s multi-volume (and still ongoing) series on America&#39;s 36<sup>th</sup> President, <a href="http://en.wikipedia.org/wiki/Lyndon_B._Johnson">Lyndon Johnson</a>. Entitled &quot;The Years of Lyndon Johnson&quot;, the series is currently four books long, with a fifth coming on Johnson&#39;s Presidency, and currently is over 3000 pages. If that sounds like a big time investment, realize the author published his first book in the series in 1982. He has been writing the series longer than some of our Skyline associates have been alive! It is a truly impressive piece of work, winning numerous awards including Pulitzers, National Book awards, etc.</p>
+<p><img src="/2013/09/20/index/092013_1052_WhatLyndonJ2.png" alt=""></p>
+<p>So, what does a man who left the office of Presidency at the end of the 60s have to teach us about being programmers when we are all running around with mobile devices in our pockets that have more power than the U.S. Navy had when he retired? Obviously it is a bit of a stretch to say LBJ was teaching lessons to coders in 2013, but we can all learn from people who were the top of their field. And while you can make a case that LBJ was not a great President or Senator, he WAS one of the great politicians of the 20<sup>th</sup> century. Taking lessons from greatness in any field and applying them to your own field can be interesting, so let&#39;s learn what LBJ has to teach coders.</p>
+<p><strong>Have a Mentor</strong> - LBJ owes much of his political career to two men whom he adopted as mentors; <a href="http://en.wikipedia.org/wiki/Sam_Rayburn">Sam Rayburn</a> and <a href="http://en.wikipedia.org/wiki/Richard_Russell,_Jr.">Richard Russell</a>. Sam Rayburn, like LBJ, was from Texas and served with LBJ&#39;s father in the Texas House. Upon winning election to the U.S. House, LBJ developed a close relationship with Rayburn, who was in the U.S. House for almost 49 years. By the time LBJ arrived, Rayburn was one of the House leaders and would become the Speaker several years after his arrival. Rayburn provided not only advice to LBJ, but also assistance. He helped him get committee assignment he would not have been able to get otherwise.</p>
+<p>After his election to the U.S. Senate, which people are appointed to based on time in office, Johnson quickly became the Senate Whip and then the Minority leader after only 4 years. This is almost unheard of in the staid senate. This is a result of LBJ&#39;s promotion by Sam Rayburn, but also his courting of Richard Russell as soon as he was elected. Russell was a very well respected senator, especially among the southern voting block which was trying to stop civil rights legislation from being passed. Russell was often the mediator between these southern senators and the rest of the senate body that was focusing on civil rights change. His courtship of Russell was what enabled him to become Senate Minority leader after only a few years as a senator</p>
+<p>In my life, I have had several mentors that I could always turn to for advice and council on tricky programming things, which is great. However, and more importantly for me, they have provided me with great career advice and guidance. Now that I have been programming for a while, I am trying to repay the favor by always having an open door and talking with younger developers about their careers and ways that they can grow their career. </p>
+<p>Moral of the story, find a mentor, be a mentor!</p>
+<p><strong>Listen</strong> - LBJ was a great listener. He would intensely listen to what people were telling him. As a consultant, this is probably one of the most important things you can do. And it is not passively listening, but listening to what your clients are <span style="text-decoration:underline"><strong>not</strong></span> saying. The difference between how a coder listens and LBJ would, is that coders are listening to what their customers need. LBJ would be listening for weakness so he could end up getting his way, but I digress!</p>
+<p><strong>Be Pragmatic</strong> - LBJ could be pragmatic when needed. The inauguration of President Eisenhower in 1953 also saw LBJ elected by the Democratic Party as the minority leader in the Senate.</p>
+<p>Upon the election of President Eisenhower, Republican leaders in the Senate wanted to repeal the Yalta accords, the agreement between Great Britain, Russia and the United States that followed World War II. Eisenhower was not willing to repeal the accords, causing much friction with his Republican colleagues in the Senate. LBJ, who realized the large margin of victory Eisenhower had during the election made him very popular, crossed party lines and supported the Republican President by saying they would not allow Republicans to modify the accords. The rift between Eisenhower and the Republican Senate leaders put Johnson in the spotlight since he supported the President and allowed him and his Democratic colleagues to side with a popular President.</p>
+<p>The best developers are pragmatic. They look for and use the best tools to solve problems and jump at opportunities.</p>
+<p><strong>Follow the Leader </strong>- One of the differences between working at a consulting company, as opposed to a contracting company, is that you are consciously focusing on challenging the organization you are working with to be better. People hire consultants to help improve their business, they hire contractors to do what they are told. However, sometimes you need to speak your mind, advocate for what you believe in, but ultimately know when to say when and follow the leader. Early in his career, especially when working with Sam Rayburn, LBJ was always sure to follow the lead from his party leaders in Congress.<strong>
+        </strong></p>
+<p><strong>Count </strong>- As leader of the Senate, LBJ never let a bill go to vote unless he explicitly knew what the vote count was going to be. He was a master of scheduling bills for vote when he knew certain Senators would not be there ensuring the laws he wanted were passed.</p>
+<p>As developers, we should practice similar behaviors. Unit tests and testing in general should be used so we are sure code is not released to production before it is ready.</p>
+<p>So, while we started out this post about what LBJ taught me as a programmer, it is really programming agnostic. Great politicians bring people together, which is what leaders do. LBJ can teach us how to be better leaders, be they from teams you are on to being the CEO of a company. Find mentors, listen to those around you, be pragmatic, help the leader and don&#39;t rush things out until they are ready.</p>
+<p>This blog post originally appeared at Skyline Technologies <a href="http://www.skylinetechnologies.com/Blog/Article/2353/What-Lyndon-Johnson-Taught-Me-About-Programming.aspx">http://www.skylinetechnologies.com/Blog/Article/2353/What-Lyndon-Johnson-Taught-Me-About-Programming.aspx</a></p>
+<p><strong>
+        </strong></p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/azure/'>Azure</a>, <a href='/tags/azure-websites/'>Azure Websites</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/wordpress/'>WordPress</a>
+        Posted In: <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/programming/'>Programming</a>
     </div>
     
     <br/>
@@ -294,13 +454,13 @@
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Being You – Setting Up WordPress on Azure Websites' class="twitter-share-button" data-url="http://jptacek.com/2013/04/29/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='What Lyndon Johnson Taught Me About Programming' class="twitter-share-button" data-url="http://jptacek.com/2013/09/20/index/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/04/29/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/09/20/index/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/04/29/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/09/20/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 

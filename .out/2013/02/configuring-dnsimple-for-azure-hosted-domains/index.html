@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -101,25 +105,25 @@
 <p>Another nice feature of DNSimple is they have templates for many popular sites to configure all of the necessary DNS settings required for hosting. They have templates for Google App pages, Tumblr, Wordpress, etc. While I am a developer and tend to be technical, I get lost pretty quick in the world of DNS configuration. A records, CNAME, MX, etc, etc. The templates help users get up and moving quickly.</p>
 <p>However, they do not have support for Azure hosted websites. It took me a little messing around to get this to work, and finally I have it set correctly.</p>
 <p>First, for this to work. You need to be hosting your website in Shared or Reserved mode. Free mode will not allow for users to have a custom domain name. To do this, log onto the Azure management portal and go to Web sites and choose your domain. Click scale and configure either Shared or Reserved. Shared is going to be MUCH cheaper.</p>
-<p><img src="http://www.jptacek.com021113_1414_Configuring1.png" alt=""></p>
+<p><img src="/2013/02/11/index/021113_1414_Configuring1.png" alt=""></p>
 <p>&nbsp;</p>
 <p>You will then want to configure your domain names. This is done by clicking Configure and Manage Domains</p>
-<p><img src="http://www.jptacek.com021113_1414_Configuring2.png" alt=""></p>
+<p><img src="/2013/02/11/index/021113_1414_Configuring2.png" alt=""></p>
 <p>&nbsp;</p>
 <p>This will provide a screen for managing custom domains.</p>
-<p><img src="http://www.jptacek.com021113_1414_Configuring3.png" alt=""></p>
+<p><img src="/2013/02/11/index/021113_1414_Configuring3.png" alt=""></p>
 <p>The instructions do a good job of telling you what do. You want to have any domain that you want DNS to resolve for added here. In IIS speak, these are the Host headers. You will want one for WWW and another for your TLD, jptacek.com in our case. The issues I ran into was jptacek.com not registering properly and did not redirect to the main site.</p>
 <p>Next, you will need to configure your DNS settings in DNSimple. Go to <a href="http://www.Dnsimple.com">www.Dnsimple.com</a> and login. To configure your DNS, go to Domains, and select the Domain you want to manage</p>
-<p><img src="http://www.jptacek.com021113_1414_Configuring4.png" alt=""></p>
+<p><img src="/2013/02/11/index/021113_1414_Configuring4.png" alt=""></p>
 <p>Once in manage, you will want to go the Advanced Editor, which is what to use when a template is not present.</p>
 <p>In here you will add for records, three CNAME records and an A name record. First, add a wildcard CNAME and have it point to your azure hosted website.</p>
-<p><img src="http://www.jptacek.com021113_1414_Configuring5.png" alt=""></p>
+<p><img src="/2013/02/11/index/021113_1414_Configuring5.png" alt=""></p>
 <p>Next, as mentioned on the Azure site, you will need a record that will verify you own the DNS. To do that, configure the AWVerify to point to Azure&#39;s service</p>
-<p><img src="http://www.jptacek.com021113_1414_Configuring6.png" alt=""></p>
+<p><img src="/2013/02/11/index/021113_1414_Configuring6.png" alt=""></p>
 <p>Next, a third CNAME record for WWW that goes to the Azure site</p>
-<p><img src="http://www.jptacek.com021113_1414_Configuring7.png" alt=""></p>
+<p><img src="/2013/02/11/index/021113_1414_Configuring7.png" alt=""></p>
 <p>Last, and this is the area I ran into issues, you need to create an A record for the domain that points to the IP Address provided by Azure. This can be found on the Manage Domain settings. This will ensure that a request to the top level site, jptacek.com, will redirect to your site. Be sure to leave your subdomain blank.</p>
-<p><img src="http://www.jptacek.com021113_1414_Configuring8.png" alt=""></p>
+<p><img src="/2013/02/11/index/021113_1414_Configuring8.png" alt=""></p>
 <p>&nbsp;</p>
 <p>You may have to wait up to an hour for the changes to take effect. It is also good to flush your DNS to ensure no issues.</p>
 <p>If you are looking for a DNS provider or want to switch from Go Daddy (which is horrible, have we mentioned that), check out DNSimple.com If you want, you can even click on the referral link <a href="https://dnsimple.com/r/b8a105607bde67">https://dnsimple.com/r/b8a105607bde67</a>, and get one month of free hosted DNS. Even better, I would get a free month of free hosted DNS <span style="font-family: Wingdings;">J</span></p>
@@ -166,7 +170,7 @@
 
             <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript></div>
 <script type="text/javascript">
-    var disqus_shortname = 'ewalnet';
+    var disqus_shortname = 'jptacek';
     var disqus_url = 'http://www.jptacek.com/2013/02/11/index/';
     var disqus_identifier = disqus_url;
     var disqus_title = 'Configuring DNSimple for Azure Hosted Domains';

@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -100,11 +104,11 @@
 Build was a bit of a different conference.... Initially, when it was announced at MIX it was called PDC (Microsoft&#39;s Professional Developers Conference). PDC generally has topics that cover the breadth of the Microsoft eco system from a developer&#39;s perspective; creating ASP.NET applications, C# , VB.NET , Entity Framework this and Entity Framework that. Build was NOT that, it was specifically dedicated to Microsoft&#39;s upcoming Windows 8 operating system, and especially to the new Metro UI introduced as part of the OS.</p>
 <p>Windows 8 is, quite obviously, the next version of Microsoft&#39;s Windows platform. Microsoft is laser-focused on optimizing Windows for alternative form factors, especially the tablet. They have reduced the footprint of Windows by eliminating several core services that start up as part of the Operating system as well as the memory footprint. A demo played on an old netbook showed overall resource usage actually decreased when moving from Windows 7 to Windows 8, the first time that a new version of their operating system has had decreased baseline hardware requirements.</p>
 <p>The biggest change though is the introduction of the Metro UI for Windows, which can be thought of as the tablet interface for Windows. It is a &#39;fast and fluid&#39; touch-based interface, similar in some ways to Windows Phone 7, especially in the use of the Live Tiles, which are uber-icons that update with information. Take a look at the screen shot below to see what the new &#39;start screen&#39; looks like, gone is the iconic start menu introduced in Windows 95, replaced with a &#39;Windows Phone on steroids&#39; style home screen.</p>
-<p><a href="http://www.jptacek.com/wp-content/uploads/2012/10/Win8screen1.jpg"><img src="http://www.jptacek.comWin8screen1-300x169.jpg" alt="" title="Win8screen1"></a></p>
+<p><a href="http://www.jptacek.com/wp-content/uploads/2012/10/Win8screen1.jpg"><img src="/2011/09/29/index/Win8screen1-300x169.jpg" alt="" title="Win8screen1"></a></p>
 <p>The interface has been well received by folks at large. It&#39;s a pretty bold reworking of Windows, part of which involves the fact there are NO Windows, just one or two running applications on screen at a time. For developers, the good news with Windows 8 is that you can also get to the desktop and use all of the applications you already use on Windows 7.</p>
 <p>To make all of this fluid, swipey goodness, Microsoft has introduced a new programming API called WinRT, which stands for Windows Runtime. WinRT is to Win32 what Silverlight or Windows Phone 7 are to the full .NET Framework, a smaller API surface optimized for their respective platforms. However, it is different in a couple of ways. First, it introduces new areas to the core Windows API, most of which are focused on using Windows for things like storage and search. Second, Microsoft is providing [or projecting] the WinRT APIs for direct use by C#, C++, VB.NET and JavaScript (and possibly F#), so instead of calling .NET framework libraries that in turn call Win32 APIs, the .NET code directly executes WinRT calls, similar to existing COM interop and P/Invoke technologies. The difference is that the projections include rich metadata so that the libraries appear as &#39;native&#39; class libraries in each of their respective languages, avoiding a lot of the headaches of existing COM and P/Invoke interactions.</p>
 <p>The diagram below outlines the various options for creating applications on Windows 8.</p>
-<p><a href="http://www.jptacek.com/wp-content/uploads/2012/10/Win8screen2.jpg"><img src="http://www.jptacek.comWin8screen2-300x169.jpg" alt="" title="Win8screen2"></a></p>
+<p><a href="http://www.jptacek.com/wp-content/uploads/2012/10/Win8screen2.jpg"><img src="/2011/09/29/index/Win8screen2-300x169.jpg" alt="" title="Win8screen2"></a></p>
 <p>The &#39;Desktop Apps&#39; section of the diagram is the same types of applications that we currently know and love (or love to hate). These types of applications will continue to be supported and extended moving forward, but WILL NOT be able to interact directly with Metro apps, nor participate in the Windows 8 contracts that provide the rich &#39;web of applications&#39; that are one of Windows 8&#39;s signature features. These applications will also not be able to be installed through the new Windows Store (think the App Store, but for Windows). Desktop applications will be linked through the store, but are not subject to the same certification and safety guarantees as Metro apps.</p>
 <p>Similar to how C#, VB.NET, F#, and a host of other languages can create applications using the .NET Framework APIs, there are several options for creating WinRT applications. The options can be split into three different groups. The first group is C/C++ applications using either DirectX or XAML based UI technologies. DirectX is primarily used for game creation or complex imaging applications, and XAML based UIs are really Microsoft&#39;s replacement for their existing MFC framework. The second group is a Metro equivalent to WPF applications, written in either C# or VB.NET. The final group is the newly introduced/repurposed HTML/CSS/JavaScript stack, which allows the creation and packing of applications Windows 8 Metro applications using HTML/CSS as the UI layer, and JavaScript as the interface. An entire article could be written on what the HTML/JS layers represent and how they are different than &#39;web apps&#39;, but these types of applications are not executed &#39;in browser&#39;, they are fully fledged &#39;Metro&#39; apps, using IE&#39;s JavaScript engine (Chakra) as the runtime interpreter. To be clear, there is NO fundamental difference in the end result for &#39;Metro&#39; apps, regardless of what technology stack you choose to use, they really are just options that allow you to use your existing skillset to build Win8 Metro applications.</p>
 <p><strong>Quick Hits</strong>
@@ -162,7 +166,7 @@ So, what does it all mean? At the end of day, at least for now, not a whole lot!
 
             <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript></div>
 <script type="text/javascript">
-    var disqus_shortname = 'ewalnet';
+    var disqus_shortname = 'jptacek';
     var disqus_url = 'http://www.jptacek.com/2011/09/29/index/';
     var disqus_identifier = disqus_url;
     var disqus_title = 'Observations From Microsoft\'s Build Conference';

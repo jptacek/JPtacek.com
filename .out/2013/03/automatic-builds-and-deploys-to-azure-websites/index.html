@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<a href="https://plus.google.com/103974853049200513652?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -68,7 +68,11 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <!--<li><a href="/">Blog</a></li>-->
-
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
                 <li class="hidden-xs">
                     <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
@@ -101,37 +105,37 @@
 <p>The good news is setting this up with Azure websites is trivial. Let&#39;s walk through the process.</p>
 <p>For this post, we will automatically deploy a MVC project in Visual Studio hosted in the cloud version of TFS to an Azure website. The first step is to create a TFS account in the cloud if you have yet to do so. You can do this at <a href="https://tfs.visualstudio.com">https://tfs.visualstudio.com</a>. The good news is for individuals and small companies or development shops, this is free. Microsoft allows for up to five users for TFS cloud hosted project. Teams that are bigger than that can also use TFS, but will have to migrate to a paid version down the road. As of this time (March 2013) pricing has yet to be announced.</p>
 <p>Click the Sign up for free link after signing into TFS preview. You will then be asked to create a URL for your TFS project</p>
-<p><img src="http://www.jptacek.com030513_1127_AutomaticBu1.png" alt=""></p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu1.png" alt=""></p>
 <p>Click create account and you are then take to the Project screen. From here you can either create a Team Project or a Team Project with Git support.</p>
-<p><img src="http://www.jptacek.com030513_1127_AutomaticBu2.png" alt=""></p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu2.png" alt=""></p>
 <p>We will create a New Team Project</p>
-<p><img src="http://www.jptacek.com030513_1127_AutomaticBu3.png" alt=""></p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu3.png" alt=""></p>
 <p>A few seconds later, a Team Project is created. </p>
 <p>You can now connect to this TFS site from Visual Studio. To do that, go to the Team menu and select Connect to Team Foundation server</p>
-<p><img src="http://www.jptacek.com030513_1127_AutomaticBu4.png" alt=""></p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu4.png" alt=""></p>
 <p>Click the Add button and type in the URL that you just created, in our example, CodeMoneky.VisualStudio.com (I realize typo, the original URL was taken...)</p>
-<p><img src="http://www.jptacek.com030513_1127_AutomaticBu5.png" alt=""></p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu5.png" alt=""></p>
 <p>You will be prompted to sign in with your Microsoft account. You can then create your project and check it an as you as you normally would. Add the solution to source control</p>
-<p><img src="http://www.jptacek.com030513_1127_AutomaticBu6.png" alt=""></p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu6.png" alt=""></p>
 <p>And check in your code</p>
-<p><img src="http://www.jptacek.com030513_1127_AutomaticBu7.png" alt=""></p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu7.png" alt=""></p>
 <p>Now you have gone through the process of adding your code to TFS. The next step is to get the automatic build and deploy working. That is the easy part!</p>
 <p>Log into the Azure Management console and create a new Azure website by clicking the new button in the bottom right</p>
-<p><img src="http://www.jptacek.com030513_1127_AutomaticBu8.png" alt=""></p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu8.png" alt=""></p>
 <p>Choose custom create from the options</p>
-<p><img src="http://www.jptacek.com030513_1127_AutomaticBu9.png" alt=""></p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu9.png" alt=""></p>
 <p>Create a URL for your site and make sure Publish from source control is checked. By default it is not</p>
-<p><img src="http://www.jptacek.com030513_1127_AutomaticBu10.png" alt=""></p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu10.png" alt=""></p>
 <p>Click the source code repository of your choice, our example will be TFS. </p>
-<p><img src="http://www.jptacek.com030513_1127_AutomaticBu11.png" alt=""></p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu11.png" alt=""></p>
 <p>Independent of the back end (TFS, Git), we will authorize the account. For TFS, click the Authorize Now link</p>
-<p><img src="http://www.jptacek.com030513_1127_AutomaticBu12.png" alt=""></p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu12.png" alt=""></p>
 <p>It will then show a list of projects hosted in TFS, we just choose the project to deploy.</p>
-<p><img src="http://www.jptacek.com030513_1127_AutomaticBu13.png" alt=""></p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu13.png" alt=""></p>
 <p>It then creates the project. We wait a few minutes, if we have not waited long enough we see a screen like this</p>
-<p><img src="http://www.jptacek.com030513_1127_AutomaticBu14.png" alt=""></p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu14.png" alt=""></p>
 <p>And after we are done, the default MVC template project.</p>
-<p><img src="http://www.jptacek.com030513_1127_AutomaticBu15.png" alt=""></p>
+<p><img src="/2013/03/05/index/030513_1127_AutomaticBu15.png" alt=""></p>
 <p>The best part, now whenever solution changes are checked in by you, or project team members, they are automatically deployed from TFS to your Azure website. This functionality is the same for other source code repositories.</p>
 <p>As you can see, Azure websites integration with source control systems like Git and TFS make the automation of your build process sleek and simple. It is a great opportunities for small companies and startups to have best practices in place as well as the ability to quickly see code changes and updates. Check it out!</p>
 
@@ -176,7 +180,7 @@
 
             <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript></div>
 <script type="text/javascript">
-    var disqus_shortname = 'ewalnet';
+    var disqus_shortname = 'jptacek';
     var disqus_url = 'http://www.jptacek.com/2013/03/05/index/';
     var disqus_identifier = disqus_url;
     var disqus_title = 'Automatic Builds and Deploys to Azure Websites';
