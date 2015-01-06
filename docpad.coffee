@@ -19,7 +19,7 @@ docpadConfig = {
       author: "John Ptacek"
 
     # The website author's email
-      email: "john.ptacek@outlook.com"
+      email: "jptacek@gmail.com"
 
     # cache-busting timestamp
       timestamp: new Date().getTime()
@@ -82,15 +82,18 @@ docpadConfig = {
   # Google+ settings
     googlePlusId: '+JohnPtacek'
 
+    getTagUrl: (tag) ->
+      slug = tag.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')
+      "/tags/#{slug}/"
 
   collections:
     posts: ->
-      @getCollection('documents').findAllLive({layout: 'post'}, [date: -1])
+      @getCollection('documents').findAllLive({layout: 'post'},[{date:-1}])
     menuPages: ->
       @getCollection("html").findAllLive({menu: $exists: true},[{menuOrder:1}])
 
-    cleanurls: ->
-      @getCollection('html').findAllLive(skipCleanUrls: $ne: true)
+    #cleanurls: ->
+    #  @getCollection('html').findAllLive(skipCleanUrls: $ne: true)
 
   environments:
     static:
@@ -124,7 +127,7 @@ docpadConfig = {
       startingPageNumber: 2
     cleanurls:
       trailingSlashes: true
-      collectionName: 'cleanurls'
+     # collectionName: 'cleanurls'
 }
 
 # Export the DocPad Configuration

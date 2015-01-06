@@ -7,7 +7,7 @@ isPaged: true
 pagedCollection: posts
 pageSize: 3
 pagePathPrefix: page
-title: "JPtacek.com "
+title: "JPtacek.com"
 ---
 
 <% for document in @getCollection('posts').toJSON()[@document.page.startIdx...@document.page.endIdx]: %>
