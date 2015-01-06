@@ -1,6 +1,4 @@
 .idea
-.out
-.azure
 npm-debug.log
 node_modules
 out
