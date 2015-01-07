@@ -88,7 +88,7 @@ docpadConfig = {
 
   collections:
     posts: ->
-      @getCollection('documents').findAllLive({layout: 'post'},[{date:-1}])
+     @getCollection("html").findAllLive({layout: 'post', draft: $exists: false},[{date:-1}])
     menuPages: ->
       @getCollection("html").findAllLive({menu: $exists: true},[{menuOrder:1}])
 
@@ -100,9 +100,9 @@ docpadConfig = {
       outPath: '../ghpages'
     development:
       outPath: '.out'
-      collections:
-        posts: ->
-          @getCollection('documents').findAllLive({layout: {'$in' : ['post', 'drafts']}}, [layout: 1,  date: -1])
+#      collections:
+#        posts: ->
+#          @getCollection('documents').findAllLive({layout: {'$in' : ['post', 'drafts']}}, [layout: 1,  date: -1])
 
   watchOptions:
     interval: 2007

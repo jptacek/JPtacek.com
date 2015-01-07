@@ -19,7 +19,7 @@
     <title><%= @getPreparedTitle() %></title>
     <meta name="author" content="<%= @site.author %>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/feed/" rel="alternate" title="Jptacek.com" type="application/atom+xml">
+    <link href="/feed/index.xml" rel="alternate" title="Jptacek.com" type="application/atom+xml">
     <link href="/favicon.ico?v=2" rel="shortcut icon">
 
     <!-- Bootstrap -->
@@ -68,7 +68,7 @@
                     <li><a href="<%= document.url %>"><%= document.menu %></a></li>
                 <% end %>
                 <li class="hidden-xs">
-                    <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
+                    <a href="/feed/index.xml" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
                     <a href="https://plus.google.com/+johnptacek" class="googleplus"><span class="icon icon-google-plus"></span></a>
                     <a href="https://linkedin.com/in/johnptacek" class="linkedin"><span class="icon icon-linkedin"></span></a>
