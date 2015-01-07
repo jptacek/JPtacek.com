@@ -86,11 +86,6 @@
         </div>
     </div>
 </div>
-<%- @document.url %> <br/> Foo<br/>
-<%- @getPageUrlWithHostname %><br/>foo.5
-<%- @getIdForDocument %> <br/> Foo2<br/>
-<%- @date %> <br/> Foo3<br/>
-<%- @path %> <br/> Foo4<br/>
 
 <%- @content %>
 <div class="container">

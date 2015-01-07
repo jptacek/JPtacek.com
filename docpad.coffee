@@ -97,7 +97,7 @@ docpadConfig = {
 
   environments:
     static:
-      outPath: '.azure'
+      outPath: '../ghpages'
     development:
       outPath: '.out'
       collections:
@@ -116,12 +116,7 @@ docpadConfig = {
         document.setMeta(
           layout: 'tags'
         )
-    dateurls:
-      cleanurl: true
-      trailingSlashes: true
-      keepOriginalUrls: false
-      collectionName: 'posts'
-      dateIncludesTime: true
+
     paged:
       cleanurl: true
       startingPageNumber: 2
