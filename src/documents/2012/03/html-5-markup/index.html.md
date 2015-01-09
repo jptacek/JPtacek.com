@@ -1,7 +1,7 @@
 ---
 layout: post
 title: HTML 5 Markup
-date: 2012-03-22
+date: 2012/03/22
 tags: ["HTML 5","Skyline Technologies","Web"]
 ---
 

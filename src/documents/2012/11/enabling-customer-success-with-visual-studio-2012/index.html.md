@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Enabling Customer Success with Visual Studio 2012
-date: 2012-11-22
+date: 2012/11/22
 tags: ["Business","Skyline Technologies","Web"]
 ---
 

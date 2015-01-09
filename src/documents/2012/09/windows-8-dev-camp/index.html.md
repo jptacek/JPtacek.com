@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Windows 8 Dev Camp
-date: 2012-09-18
+date: 2012/09/18
 tags: ["Appleton Compassion","Giveology","HTML 5","Skyline Technologies","Windows 8"]
 ---
 

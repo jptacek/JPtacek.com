@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Going Green for Earth Day
-date: 2012-04-18
+date: 2012/04/18
 tags: ["Business","Earth Day"]
 ---
 

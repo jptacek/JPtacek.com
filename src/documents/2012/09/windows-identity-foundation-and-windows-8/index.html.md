@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Windows Identity Foundation and Windows 8
-date: 2012-09-10
+date: 2012/09/10
 tags: ["Windows 8"]
 ---
 

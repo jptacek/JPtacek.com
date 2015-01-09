@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Xbox Phone
-date: 2012-10-08
+date: 2012/10/08
 tags: ["Business","Windows 8"]
 ---
 

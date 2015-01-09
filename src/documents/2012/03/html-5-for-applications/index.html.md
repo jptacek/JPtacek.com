@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  HTML 5 for Applications
-date: 2012-03-21
+date: 2012/03/21
 tags: ["HTML 5","Web"]
 ---
 

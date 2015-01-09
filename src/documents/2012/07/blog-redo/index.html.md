@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Blog Redo
-date: 2012-07-20
+date: 2012/07/20
 tags: ["Ephemera"]
 ---
 

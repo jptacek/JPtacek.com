@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A Modest Proposal – Apple Should Buy the US Post Office
-date: 2012-10-19
+date: 2012/10/19
 tags: ["Apple","Business","Google"]
 ---
 
