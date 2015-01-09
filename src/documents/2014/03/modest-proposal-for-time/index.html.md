@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A Modest Proposal For Time
-date: 2014-03-18
+date: 2014/03/18
 tags: ["Ephemera","Time"]
 ---
 

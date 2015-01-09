@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Automatic Builds and Deploys to Azure Websites
-date: 2013-03-05
+date: 2013/03/05
 tags: ["Azure","Azure Websites","Git","TFS","Web"]
 ---
 

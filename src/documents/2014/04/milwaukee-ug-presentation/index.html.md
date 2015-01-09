@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Milwaukee .NET User Group Presentation - April 2014
-date: 2014-04-10
+date: 2014/04/10
 tags: ["Speaking","AngularJS"]
 ---
 

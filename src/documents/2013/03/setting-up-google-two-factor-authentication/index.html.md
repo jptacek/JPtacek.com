@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Setting up Google Two Factor authentication
-date: 2013-03-28
+date: 2013/03/28
 tags: ["Ephemera","Google","Security","Two Factor Authentication","Web"]
 ---
 

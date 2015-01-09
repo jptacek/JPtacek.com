@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Being You – Looking Around WordPress
-date: 2013-04-30
+date: 2013/04/30
 tags: ["Azure Websites","Web",WordPress"]
 ---
 

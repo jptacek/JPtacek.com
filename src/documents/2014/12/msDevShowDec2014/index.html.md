@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MS Dev Podcast Show - December 19, 2014
-date: 2014-12-23
+date: 2014/12/23
 tags: ["Microsoft Dev Show", "AngularJS", "Docpad"]
 ---
 

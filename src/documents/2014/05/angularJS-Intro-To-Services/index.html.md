@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AngularJS - Introduction to Services
-date: 2014-5-19
+date: 2014/5/19
 tags: ["AngularJS","JavaScript","Web"]
 ---
 

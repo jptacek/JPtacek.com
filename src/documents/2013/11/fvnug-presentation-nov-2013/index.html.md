@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Fox Valley .NET User Group Presentation – Nov 2013
-date: 2013-11-18
+date: 2013/11/18
 tags: ["AngularJS","FVNUG","Speaking","Web"]
 ---
 

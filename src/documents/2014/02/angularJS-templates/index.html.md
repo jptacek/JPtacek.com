@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AngularJS - Introducing Templates
-date: 2014-02-10
+date: 2014/02/10
 tags: ["AngularJS","JavaScript","Web"]
 ---
 <style>

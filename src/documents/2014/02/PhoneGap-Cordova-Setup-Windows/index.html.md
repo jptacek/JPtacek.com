@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Setting Up Cordova (PhoneGap) for Development on Windows Machines
-date: 2014-02-28
+date: 2014/02/28
 tags: ["PhoneGap","Cordova","JavaScript","Web"]
 ---
 

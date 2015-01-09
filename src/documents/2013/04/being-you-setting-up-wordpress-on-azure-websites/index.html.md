@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Being You – Setting Up WordPress on Azure Websites
-date: 2013-04-29
+date: 2013/04/29
 tags: ["Azure","Azure Websites","Web","WordPress"]
 ---
 

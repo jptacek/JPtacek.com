@@ -1,7 +1,7 @@
 ---
 layout: post
 title: That Conference 2013
-date: 2013-05-14
+date: 2013/05/14
 tags: ["Community","That Conference","Web"]
 ---
 

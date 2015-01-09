@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Upgrading to Windows 8.1 from the Windows 8.1 Preview
-date: 2013-10-21
+date: 2013/10/21
 tags: ["Windows 8"]
 ---
 

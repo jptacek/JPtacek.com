@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Saying Hello to.... DocPad
-date: 2013-12-29
+date: 2013/12/29
 tags: ["WordPress","Blog","DocPad"]
 
 ---

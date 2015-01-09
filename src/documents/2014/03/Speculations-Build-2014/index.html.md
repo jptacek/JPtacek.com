@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Speculations for Build 2014
-date: 2014-03-02
+date: 2014/03/02
 tags: ["Conferences","Build"]
 ---
 

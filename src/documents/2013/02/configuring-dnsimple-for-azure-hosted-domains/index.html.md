@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Configuring DNSimple for Azure Hosted Domains
-date: 2013-02-11
+date: 2013/02/11
 tags: ["Azure","DNSimple","Web"]
 ---
 

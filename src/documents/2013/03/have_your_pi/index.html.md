@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Have Your Pi and Eat it Too: A Comparison of C# and C++ Performance
-date: 2013-03-15
+date: 2013/03/14
 tags: ["Ephemera","Pi","Skyline Technologies"]
 ---
 
@@ -9,7 +9,7 @@ In honor of [National Pi Day](http://en.wikipedia.org/wiki/Pi_Day), we thought i
 
 So back in the day, when things where WAY different, Pi was calculated using a mathematical series. One of the more famous ones uses the arctan math function to calculate the value of π. This is called the Leibniz formula for π and is represented by
 
-	[![pi1](http://www.jptacek.com/wp-content/uploads/2013/03/pi1.jpg)](pi1.jpg)
+    ![p1](pi1.jpg)
 
 Now, this is one of the more inefficient ways to calculate π, it takes about 10 million terms to get an accuracy of 7 decimal places. For those of us asking performance differences between languages though, that is great! 
 

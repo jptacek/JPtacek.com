@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Chocolately and BoxStarter
-date: 2014-01-01
+date: 2014/01/01
 tags: ["Web"]
 
 ---

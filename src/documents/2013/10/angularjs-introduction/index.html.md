@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AngularJS - Introduction
-date: 2013-10-01
+date: 2013/10/01
 tags: ["AngularJS","JavaScript","Web"]
 ---
 

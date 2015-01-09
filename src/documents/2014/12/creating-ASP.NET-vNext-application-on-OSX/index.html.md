@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Creating ASP.NET vNext application on OS X
-date: 2014-12-12
+date: 2014/12/12
 tags: ["ASP.NET vNext", "ASP.NET Core", "Skyline Technologies", "Web"]
 ---
 Santa Claus is Coming to Town!! All the geeks get pretty excited for Santa’s arrival to see what will be awaiting us under the tree

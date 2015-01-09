@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What is Yammer... and why should your company use it?
-date: 2014-01-11
+date: 2014/01/11
 tags: ["Yammer","Web"]
 
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Long Good Bye to Windows Phone
-date: 2014-7-10
+date: 2014/7/10
 ignore: true
 tags: ["Mobile","Windows Phone","Ephemera"]
 ---

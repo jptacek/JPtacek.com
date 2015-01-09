@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Pace of Innovation
-date: 2013-01-17
+date: 2013/01/17
 tags: ["Business","Innovation","Skyline Technologies","Web"]
 ---
 

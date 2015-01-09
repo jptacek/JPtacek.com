@@ -1,7 +1,7 @@
 ---
 layout: post
 title: That Conference - Ways To Hack Your Day to Better Health
-date: 2014-5-18
+date: 2014/5/18
 tags: ["That Conference","Speaking","Web"]
 ---
 I am honored to be speaking this year at That Conference. That Conference is a conference with national speakers held every

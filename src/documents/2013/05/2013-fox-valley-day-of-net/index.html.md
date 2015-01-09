@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 2013 Fox Valley Day of .NET
-date: 2013-05-05
+date: 2013/05/05
 tags: ["Fox Valley Day of .NET","Speaking"]
 ---
 

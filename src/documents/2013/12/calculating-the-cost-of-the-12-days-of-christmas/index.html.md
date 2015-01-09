@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Calculating the Cost of the 12 Days of Christmas
-date: 2013-12-12
+date: 2013/12/12
 tags: ["AngularJS", "JavaScript", "Skyline Technologies", "Web"]
 ---
 <script src='/2013/12/calculating-the-cost-of-the-12-days-of-christmas/scripts/12DaysApp.js'></script>

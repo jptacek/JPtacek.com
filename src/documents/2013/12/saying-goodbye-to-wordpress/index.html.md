@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Saying Goodbye to WordPress
-date: 2013-12-28
+date: 2013/12/28
 tags: ["WordPress","Blog"]
 
 ---

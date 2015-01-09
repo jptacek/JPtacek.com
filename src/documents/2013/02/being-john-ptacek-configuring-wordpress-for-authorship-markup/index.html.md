@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Being John Ptacek – Configuring Wordpress for Authorship Markup
-date: 2013-02-27
+date: 2013/02/27
 tags: ["Azure","Business","Ephemera","Skyline Technologies","WordPress"]
 ---
 

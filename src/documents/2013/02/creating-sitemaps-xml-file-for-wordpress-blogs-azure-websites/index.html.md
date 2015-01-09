@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Creating Sitemaps.xml file for Wordpress blogs on Azure Websites
-date: 2013-02-13
+date: 2013/02/13
 tags: ["Azure","SEO","WordPress"]
 ---
 

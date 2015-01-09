@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GitHub Repository Not Found - Case Issue?
-date: 2014-01-21
+date: 2014/01/21
 tags: ["GitHub","Web"]
 
 ---

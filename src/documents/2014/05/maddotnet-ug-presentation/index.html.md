@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Madison .NET User Group - May 2014
-date: 2014-05-08
+date: 2014/05/08
 tags: ["Speaking","AngularJS"]
 ---
 

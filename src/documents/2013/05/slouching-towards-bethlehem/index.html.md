@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Slouching Towards Bethlehem: Jump Starting Microsoft’s Devices and Services Transition
-date: 2013-05-21
+date: 2013/05/21
 tags: ["Business","Microsoft","Nokia","Windows 8","Xbox"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Setting up email for a Custom Domain on a Windows Azure hosted website
-date: 2013-02-15
+date: 2013/02/15
 tags: ["Azure","DNS","DNSimple","email","Web"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 2013 That Conference Presentation
-date: 2013-08-12
+date: 2013/08/12
 tags: ["Speaking","That Conference","WordPress"]
 ---
 

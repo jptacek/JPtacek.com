@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Skyline Annual Retreat
-date: 2013-02-22
+date: 2013/02/22
 tags: ["Business","Ephemera","Skyline Technologies"]
 ---
 

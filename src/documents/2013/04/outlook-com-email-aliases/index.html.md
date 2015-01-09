@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Outlook.Com Email Aliases
-date: 2013-04-18
+date: 2013/04/18
 tags: ["Ephemera","Outlook.com","Web"]
 ---
 

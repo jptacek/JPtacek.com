@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Fox Valley Day of .NET 2013
-date: 2013-04-28
+date: 2013/04/28
 tags: ["Azure","Azure Websites","Fox Valley Day of .NET","Speaking","WordPress"]
 ---
 

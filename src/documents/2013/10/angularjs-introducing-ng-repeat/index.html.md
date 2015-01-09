@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AngularJS – Introducing ng-repeat
-date: 2013-10-31
+date: 2013/10/31
 tags: ["AngularJS","JavaScript","Web"]
 ---
 

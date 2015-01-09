@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 2014 That Conference
-date: 2014-8-12
+date: 2014/8/12
 tags: ["Speaking","That Conference","Health"]
 ---
 

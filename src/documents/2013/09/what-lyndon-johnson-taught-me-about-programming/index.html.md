@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What Lyndon Johnson Taught Me About Programming
-date: 2013-09-20
+date: 2013/09/20
 tags: ["Ephemera","Programming"]
 ---
 

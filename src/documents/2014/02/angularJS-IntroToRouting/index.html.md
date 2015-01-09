@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AngularJS - Introducing Routes
-date: 2014-02-25
+date: 2014/02/25
 tags: ["AngularJS","JavaScript","Web"]
 ---
 

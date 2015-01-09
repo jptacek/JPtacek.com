@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Build 2014 - Day One Highlights
-date: 2014-04-02
+date: 2014/04/02
 tags: ["Build","Conferences","Skyline Technologies"]
 ---
 

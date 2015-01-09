@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AngularJS - More with ng-repeat
-date: 2014-01-23
+date: 2014/01/23
 tags: ["AngularJS","JavaScript","Web"]
 ---
  <style>

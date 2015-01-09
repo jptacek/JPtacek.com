@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AngularJS - Image Binding in AngularJS with Lou Reed
-date: 2014-01-24
+date: 2014/01/24
 tags: ["AngularJS","JavaScript","Web"]
 ---
 
