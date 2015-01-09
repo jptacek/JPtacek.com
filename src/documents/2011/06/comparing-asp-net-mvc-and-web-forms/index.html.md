@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Comparing ASP.NET MVC and Web Forms
-date: 2011-06-10
+date: 2011/06/10
 tags: ["MVC","Web","Web Forms"]
 ---
 

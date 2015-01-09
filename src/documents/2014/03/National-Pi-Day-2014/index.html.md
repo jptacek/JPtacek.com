@@ -1,7 +1,7 @@
 ---
 layout: post
 title: National Pi Day - Calculating PI With AngularJS and a Monte Carlo Simulation
-date: 2014-03-14
+date: 2014/03/14
 tags: ["AngularJS","Pi","Web","Ephemera","Skyline Technologies"]
 ---
 

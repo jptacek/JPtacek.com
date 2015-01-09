@@ -1,7 +1,7 @@
 ---
 layout: post
 title: SharePoint Search - Think Outside the (Search) Box!
-date: 2011-04-13
+date: 2011/04/13
 tags: ["Search","SharePoint","SharePoint"]
 ---
 

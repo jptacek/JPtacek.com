@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Tips for Working With International Clients
-date: 2011-12-21
+date: 2011/12/21
 tags: ["Business"]
 ---
 

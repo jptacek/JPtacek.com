@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Create Interactive User Experiences Quickly and Easily with Silverlight Pivot Viewer
-date: 2011-04-25
+date: 2011/04-/25
 tags: ["Appleton Compassion","Giveology","Pivot Viewer","Silverlight","Skyline Technologies","Web"]
 ---
 

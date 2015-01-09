@@ -1,7 +1,7 @@
 ---
 layout: post
 title: HTML 5: A Little History
-date: 2011-06-28
+date: 2011/06/28
 tags: ["HTML 5","Web"]
 ---
 

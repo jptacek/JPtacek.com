@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Developing with Microsoft's Azure Platform
-date: 2011-03-25
+date: 2011/03/25
 tags: ["Appleton Compassion","Azure","Giveology","Web"]
 ---
 

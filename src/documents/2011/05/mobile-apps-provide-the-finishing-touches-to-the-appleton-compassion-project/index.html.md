@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Mobile Apps Provide the "Finishing Touches" to the Appleton Compassion Project
-date: 2011-05-11
+date: 2011/05/11
 tags: ["Appleton Compassion","Giveology","Mobile","Web"]
 ---
 

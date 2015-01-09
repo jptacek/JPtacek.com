@@ -1,7 +1,7 @@
 ---
 layout: post
 title: An Introduction to the Microsoft Razor View Engine
-date: 2011-06-24
+date: 2011/06-/24
 tags: ["Razor","Web","WebMatrix"]
 ---
 
