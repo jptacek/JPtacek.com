@@ -92,17 +92,19 @@ docpadConfig = {
     menuPages: ->
       @getCollection("html").findAllLive({menu: $exists: true},[{menuOrder:1}])
 
-    #cleanurls: ->
-    #  @getCollection('html').findAllLive(skipCleanUrls: $ne: true)
-
+    cleanurls: ->
+      @getCollection('html').findAllLive(skipCleanUrls: $ne: true)
+#docpad -e static generate
   environments:
     static:
       outPath: '../ghpages'
+      collections:   posts: ->
+        @getCollection("html").findAllLive({layout: 'post'},[{date:-1}])
     development:
       outPath: '.out'
-#      collections:
-#        posts: ->
-#          @getCollection('documents').findAllLive({layout: {'$in' : ['post', 'drafts']}}, [layout: 1,  date: -1])
+      collections:
+        posts: ->
+          @getCollection('documents').findAllLive({layout: {'$in' : ['post', 'drafts']}}, [layout: 1,  date: -1])
 
   watchOptions:
     interval: 2007
@@ -122,7 +124,7 @@ docpadConfig = {
       startingPageNumber: 2
     cleanurls:
       trailingSlashes: true
-     # collectionName: 'cleanurls'
+      collectionName: 'cleanurls'
 }
 
 # Export the DocPad Configuration
