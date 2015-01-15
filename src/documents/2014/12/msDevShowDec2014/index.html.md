@@ -2,7 +2,7 @@
 layout: post
 title: MS Dev Podcast Show - December 19, 2014
 date: 2014/12/23
-tags: ["Microsoft Dev Show", "AngularJS", "Docpad"]
+tags: ["Microsoft Dev Show", "AngularJS", "DocPad"]
 ---
 
 I had the very cool experience of being invited to be part of the [MS Dev Show](http://msdevshow.com/), a Podcast focused on Microsoft Developer
