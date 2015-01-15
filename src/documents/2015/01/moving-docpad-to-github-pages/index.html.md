@@ -2,7 +2,7 @@
 layout: post
 title: Hosting a DocPad Site on GitHub Pages
 date: 2015/1/16
-tags: ["Microsoft Dev Show", "AngularJS", "DocPad"]
+tags: ["DocPad", "DNSimple", "GitHub"]
 ---
 
 I am a fan, a HUGE fan, of Microsoft's [Azure](http://azure.microsoft.com/) platform, especially their Azure Websites.
