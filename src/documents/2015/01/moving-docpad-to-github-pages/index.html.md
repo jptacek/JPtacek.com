@@ -93,13 +93,13 @@ I cloned the [https://github.com/jptacek/jptacek.github.io](jptacek.github.io) r
 
 ![Direcotry](directory.png)
 
-The next step is to be able to generate the content locally so I can psu my static content from my local drvie
+The next step is to be able to generate the content locally so I can push my static content from my local drive
 to the [https://github.com/jptacek/jptacek.github.io](jptacek.github.io) repository. This was done by updating my
-DocPad environment a bit. In the DocPad configuration file, ``docpad.coffee``, I created two environment, one
+DocPad environment a bit. In the DocPad configuration file, ``docpad.coffee``, I created two environments, one
 for local development, the default way I had been using DocPad previously before, and a second for static. The
 static environment is what I use when I want to publish a new blog post. The main thing to note is the configuration setting for
 ``outPath``, which points up a directory level from where my DocPad environment is (the ``BlogSource``) directory and
-publishes files to the (``ghpages``) directory.
+publishes files to the github.io directory(``ghpages``).
 
 I can run this command by typing ``docpad -e static generate``. After running DocPad and generating the static
 content I am a commit and a push away from an updated website!
@@ -120,7 +120,9 @@ content I am a commit and a push away from an updated website!
 ```
 
 So in closing, my site is no longer hosted on Azure, but GitHub pages and it wasn't too painful. I am now saving $10-15
-a month. This will translate to more coffee. A high level overview about the pros and cons.
+a month. This will translate to more coffee.
+
+A high level overview about the pros and cons.
 
 Pros about GitHub Pages
 * Free! Azure was costing from $10-$15/month
