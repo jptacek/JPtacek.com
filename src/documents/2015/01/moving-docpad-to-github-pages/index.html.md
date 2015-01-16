@@ -78,7 +78,7 @@ So we have a site ready to go and it is live on the Internet, but we need conten
 Azure, I would check in my blog content as a markdown file, Azure would read the check ins from my GitHub repository,
 download appropriate NPM pacakges, compile my markdown to static HTML and publish a site. All pretty cool. That is gone
 now. So instead of having the cloud compile my markdown, I am now doing it all local. This is the main negative for me
-about moving to GitHub pages, but sometimes freedom has a cost :)
+about moving to GitHub pages, but sometimes freedom has a cost :).
 
 Since I will be dealing with two GitHub repositories, I reworked my workflow a bit. My site, and all of it's content
 and DocPad assets lives in GitHub at [https://github.com/jptacek/JPtacek.com](https://github.com/jptacek/JPtacek.com)
