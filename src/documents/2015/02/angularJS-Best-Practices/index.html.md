@@ -36,8 +36,8 @@ has changed and best practices have emerged. I thought it would be worth taking 
 practices and refactoring some of the code we have been working on to reflect that.
 
 To start off, there are people a lot smarter than me thinking about this stuff. Some of these folks work at Google and
-they have published a style guide you cna find at
-[http://google-styleguide.googlecode.com/svn/trunk/angularjs-google-style.html](http://google-styleguide.googlecode.com/svn/trunk/angularjs-google-style.html).
+they have published a style guide you can find at the
+[Google Code site](http://google-styleguide.googlecode.com/svn/trunk/angularjs-google-style.html).
 The Google Style Guide is a good start, but it it not as complete as some I have run across. It also is heavily focused
 on [Closure](https://developers.google.com/closure/), a Google toolset that not everybody is invested in.
 
@@ -47,17 +47,60 @@ of his choices. Cooler yet, he has a [GitHub repository](https://github.com/todd
  that he keeps up to date with the latest set of changes and reasoning.
 
 A third resource is from [John Papa](http://www.johnpapa.net/), one time Microsoft evangelist and Google Developer
-Expert. Like Todd, John has a GitHub repo with his Style Guides. It is
-available at [https://github.com/johnpapa/angularjs-styleguide](https://github.com/johnpapa/angularjs-styleguide).
+Expert. Like Todd, John has a GitHub repo with his [Style Guide](https://github.com/johnpapa/angularjs-styleguide).
 
 The great thing about what both Todd and John have done by putting their Style Guides on GitHub is that it makes it
 easy to make one of them YOUR Style Guide. Clone the repo and publish within your organization. It is a great way to get
 started to introduce consistency.
 
-I have decided to
+I have decided to follow the example setup by John Papa. I find his
+[Pluralsight courses](http://www.pluralsight.com/author/john-papa) to be
+great resources for developers and you have to start some place.
 
 
+###IIFE###
+The first thing we are going to do to our code is to rework our code to implement IIFEs. IIFEs stand for Immediately-Invoked
+Function Expressions, pronounced 'iify'. This is a standard JavaScript best practice to isolate scope of functions.
+JavaScript has a single execution scope, as you  load more and more libraries and variables, you run into the "opportunity"
+for name collisions. This makes for a very painful day of code debugging.
 
+IIFEs then are a common pattern to use to avoid polluting the namespace. It works to keep all of the variables
+localized to the scope of the function being executed. We also end up being able to optimize minification, since our
+variables are localized.
+
+The general syntax of an IIFE is
+
+```javascript
+(function() {
+   /* code */
+})();
+```
+
+The function executes immediately, thanks to the parens at the end of the function call.
+
+We have been bad programmers in this code examples, so we will clean this up and be better moving forward. This
+ends with us reworking our JavaScript code. Here is a before/after example for our app.js file.
+
+Before:
+```javascript
+'use strict';
+
+var chemistryApp = angular.module('chemistryApp', []);
+
+```
+
+After:
+
+```javascript
+(function() {
+    'use strict';
+
+ var chemistryApp = angular.module('chemistryApp', []);
+})();
+```
+
+Ben Alman is credited with nameing IIFEs in this [blog post](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
+if you want more information
 
 <div id="app" ng-app="chemistryApp">
     <div class="container" ng-controller="chemistryController">
