@@ -121,9 +121,210 @@ both IIFE and setter syntax to become
     'use strict';
 
     angular
-        .module('chemistryApp');
+    .module('chemistryApp');
 })();
 ```
+###Named Functions###
+Next, we are going to rework our code to utilize named functions, mostly for code readability as it reduces the amount
+of callback functions in our code.
+
+For our Controller definition we could define our function with a callback as
+
+```javascript
+(function() {
+    'use strict';
+
+    angular
+        .module('chemistryApp')
+        .controller('chemistryController', ['$scope', 'chemistryService', '$log',
+            function chemistryController($scope, chemistryService, $log) {
+
+
+        // some code
+      }]
+    )
+})();
+
+```
+
+However, the nesting can make long term code maintenance and readability more cumbersome. A better approach is
+
+```javascript
+(function() {
+    'use strict';
+
+    angular
+        .module('chemistryApp')
+        .controller('chemistryController',chemistryController);
+
+      function chemistryController($scope,  chemistryService,$log) {
+
+        // some code
+
+
+    }
+
+})();
+```
+
+###Dependency Injection###
+AngularJS has a great Dependency Injection (DI) framework. The way we have the code working above can cause some issues
+with things like bundling and minification. When minification tools rename our DI functions, they may not be found
+by Angular. As a result, you should explcitly identify DI functions to avoid this
+
+One way to do is to rework function calls such as
+
+```javascript
+function() {
+    'use strict';
+
+    angular
+        .module('chemistryApp')
+        .controller('chemistryController',chemistryController);
+
+      function chemistryController($scope,  chemistryService,$log) {
+
+        // some code
+
+
+    }
+
+})();
+```
+
+to identify what is being injected. You need to be sure to map up parameters properly, or all kinds of madness will
+ensue
+
+```javascript
+(function() {
+     'use strict';
+
+     angular
+         .module('chemistryApp')
+         .controller('chemistryController',
+         ['$scope', 'chemistryService','$log',chemistryController]);
+
+       function chemistryController($scope,  chemistryService,$log) {
+
+         // some code
+
+
+     }
+
+ })();
+```
+
+Another, better and recommended approach, is to use the ``$inject`` function to explicitly identify what is being
+injected.
+
+```javascript
+(function() {
+    'use strict';
+
+    angular
+        .module('chemistryApp')
+        .controller('chemistryController',chemistryController);
+
+    chemistryController.$inject =  ['$scope', 'chemistryService','$log'];
+
+    function chemistryController($scope,  chemistryService,$log) {
+
+         // some code
+
+
+    }
+
+})();
+```
+The reasons for this approach are the same as above, bypassing minfication issues. This approach though is more
+explicit and makes the code more readable.
+
+###Explicit function declarations###
+Another good practice is to explicitly identfiy function definitions. If we look at our original service function
+the structure was
+
+```javascript
+chemistryApp.service('chemistryService', function () {
+
+    var getCssClassElement = function ( elementType) {
+        // code
+    };
+
+    var getElements = function() {
+
+        // code
+
+        return periodicData.elements;
+
+
+    };
+
+    return {
+        getCssClassElement : getCssClassElement,
+        getElements: getElements
+    };
+});
+
+```
+
+which is kind of what we want. One of the places where Papa and Motto differ on their approaches though is WHERE
+the function declarations should happen. Papa prefers that start of the service and Motto towards the bottom. I lean
+towards the Papa approach because I can explicitly see my "public interfaces" for the function. This is ultimately
+what we want to be testable in our code. However, the downside is some scrolling to get to the implemenation details.
+Ultimately, make a choice and be consistent.
+
+```javascript
+(function() {
+    'use strict';
+
+    angular
+        .module('chemistryApp')
+        .service('chemistryService',chemistryService);
+
+    function  chemistryService() {
+        return {
+            getCssClassElement: getCssClassElement,
+            getElements: getElements
+        };
+
+        function getCssClassElement(elementType) {
+            // some code
+        };
+
+        function getElements() {
+
+            // some code
+
+        };
+    }
+})();
+
+```
+
+###Directory Structure###
+Next up is best practices for directory structure. Ultimately, not going to refactor this code to reflect this best
+practice, in the real world, where I do this for a living, I definitely follow the practice. What we have here is too
+small.
+
+Initially, when you start creating an Angular app, I start by organizing my folders by the type of code I am writing.
+This results in a folder for controllers, one for services, directives, etc. This can work at the beginning, but by the
+the time you are working on a large app, it becomes difficult. Having 15 controller functions in a directory, then
+searching for the corresponding service functions in another directory is NOT efficient.
+
+Instead, the recommendation is to organize folders by function. For example, if you have a sports application you
+would have a baseball folder with controller, service and directive files in that directory. All the functionality is
+concisely gathered in a single location.
+
+###Wrapping Up###
+I have reworked the code for the app we have been talking about to reflect the best practices outlined above. The
+functionality is the same as last time, but ultimately, a bit more maintainable long term and less likely to run
+into issues with minification and bundling. The app doesn't look a whole lot different though, which is a good thing.
+
+Ultimately, the goals of what we are doing is to make the code more explicit, more readable and ultimately more
+maintainable. Both Papa and Motto have great approaches and styles. Pick what works for you and be cosistent within
+your projects and teams.
+
+
 
 
 <div id="app" ng-app="chemistryApp">
