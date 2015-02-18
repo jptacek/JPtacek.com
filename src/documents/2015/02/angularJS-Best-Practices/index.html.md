@@ -121,7 +121,7 @@ both IIFE and setter syntax to become
     'use strict';
 
     angular
-    .module('chemistryApp');
+    .module('chemistryApp',[]);
 })();
 ```
 ###Named Functions###
