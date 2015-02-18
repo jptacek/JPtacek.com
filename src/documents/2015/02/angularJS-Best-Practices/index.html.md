@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AngularJS - Best Practices
-date: 2015/02/10
+date: 2015/02/18
 tags: ["AngularJS","JavaScript","Web"]
 ---
 
