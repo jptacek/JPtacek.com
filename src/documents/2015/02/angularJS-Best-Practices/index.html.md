@@ -44,22 +44,22 @@ on [Closure](https://developers.google.com/closure/), a Google toolset that not 
 A second great resource is [Todd Motto's](http://toddmotto.com/) AngularJS Style Guide. Todd has a
 [blog post](http://toddmotto.com/opinionated-angular-js-styleguide-for-teams/) where he introduces his reasoning for some
 of his choices. Cooler yet, he has a [GitHub repository](https://github.com/toddmotto/angularjs-styleguide)
- that he keeps up to date with the latest set of changes and reasoning.
+ that he keeps up to date with his latest set of changes and reasoning behind them.
 
 A third resource is from [John Papa](http://www.johnpapa.net/), one time Microsoft evangelist and Google Developer
 Expert. Like Todd, John has a GitHub repo with his [Style Guide](https://github.com/johnpapa/angularjs-styleguide).
 
 The great thing about what both Todd and John have done by putting their Style Guides on GitHub is that it makes it
 easy to make one of them YOUR Style Guide. Clone the repo and publish within your organization. It is a great way to get
-started to introduce consistency.
+started and introduce consistency within your organization.
 
-I have decided to follow the example setup by John Papa. I find his
+I have decided to gnerally follow the style guide setup by John Papa. I find his
 [Pluralsight courses](http://www.pluralsight.com/author/john-papa) to be
 great resources for developers and you have to start some place.
 
 
 ###IIFE###
-The first thing we are going to do to our code is to rework our code to implement IIFEs. IIFEs stand for Immediately-Invoked
+The first thing we are going to do to our code is to rework how our code to implement IIFEs. IIFEs stand for Immediately-Invoked
 Function Expressions, pronounced 'iify'. This is a standard JavaScript best practice to isolate scope of functions.
 JavaScript has a single execution scope, as you  load more and more libraries and variables, you run into the "opportunity"
 for name collisions. This makes for a very painful day of code debugging.
@@ -78,7 +78,7 @@ The general syntax of an IIFE is
 
 The function executes immediately, thanks to the parens at the end of the function call.
 
-We have been bad programmers in this code examples, so we will clean this up and be better moving forward. This
+We have been bad programmers in our code examples, so we will clean this up and be better moving forward. This
 ends with us reworking our JavaScript code. Here is a before/after example for our app.js file.
 
 Before:
@@ -170,7 +170,7 @@ However, the nesting can make long term code maintenance and readability more cu
 ###Dependency Injection###
 AngularJS has a great Dependency Injection (DI) framework. The way we have the code working above can cause some issues
 with things like bundling and minification. When minification tools rename our DI functions, they may not be found
-by Angular. As a result, you should explcitly identify DI functions to avoid this
+by Angular. As a result, you should explicitly identify DI functions to avoid this.
 
 One way to do is to rework function calls such as
 
@@ -240,7 +240,7 @@ The reasons for this approach are the same as above, bypassing minfication issue
 explicit and makes the code more readable.
 
 ###Explicit function declarations###
-Another good practice is to explicitly identfiy function definitions. If we look at our original service function
+Another good practice is to explicitly identify function definitions. If we look at our original service function
 the structure was
 
 ```javascript
@@ -270,7 +270,7 @@ chemistryApp.service('chemistryService', function () {
 which is kind of what we want. One of the places where Papa and Motto differ on their approaches though is WHERE
 the function declarations should happen. Papa prefers that start of the service and Motto towards the bottom. I lean
 towards the Papa approach because I can explicitly see my "public interfaces" for the function. This is ultimately
-what we want to be testable in our code. However, the downside is some scrolling to get to the implemenation details.
+what we want to be testable in our code. However, the downside is some scrolling to get to the implementation details.
 Ultimately, make a choice and be consistent.
 
 ```javascript
@@ -302,18 +302,19 @@ Ultimately, make a choice and be consistent.
 ```
 
 ###Directory Structure###
-Next up is best practices for directory structure. Ultimately, not going to refactor this code to reflect this best
-practice, in the real world, where I do this for a living, I definitely follow the practice. What we have here is too
-small.
+Next up is best practices for directory structure. Ultimately, we are not going to refactor this code to reflect this best
+practice. However, in the real world, where I do this for a living, I definitely follow the practice outlined below.
+What we have here is too small.
 
-Initially, when you start creating an Angular app, I start by organizing my folders by the type of code I am writing.
+Initially, when you start creating an Angular app, most people start by organizing my folders by the type of code they are writing.
 This results in a folder for controllers, one for services, directives, etc. This can work at the beginning, but by the
 the time you are working on a large app, it becomes difficult. Having 15 controller functions in a directory, then
 searching for the corresponding service functions in another directory is NOT efficient.
 
 Instead, the recommendation is to organize folders by function. For example, if you have a sports application you
-would have a baseball folder with controller, service and directive files in that directory. All the functionality is
-concisely gathered in a single location.
+would have a baseball folder with controller, service and directive files in that directory applicable to baseball.
+All the functionality is
+concisely gathered in a single folder location. Much easier.
 
 ###Wrapping Up###
 I have reworked the code for the app we have been talking about to reflect the best practices outlined above. The
@@ -355,11 +356,14 @@ your projects and teams.
           <div class="col-md-2">
               <periodic-chart-element element="elements[periodicElement.atomicNumber+1]"></periodic-chart-element>
           </div>
-
       </div>
-
     </div>
+</div>
 
+
+I have created an Azure Website to host all of this code at [http://angularperiodic.azurewebsites.net/](http://angularperiodic.azurewebsites.net/)
+
+The code is also available on [GitHub](https://github.com/jptacek/AngularPeriodic)
 </div>
 
 

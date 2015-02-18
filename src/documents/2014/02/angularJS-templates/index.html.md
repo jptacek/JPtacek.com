@@ -116,7 +116,7 @@ controller('chemTemplateCtrl2',
 
 Our table now looks even more unattractive
 
-<div id="periodicTable"  ng-controller="chemTemplateCtrl2" >
+<div id="periodicTable2"  ng-controller="chemTemplateCtrl2" >
     <form id="frmChem">
     <input type="text" ng-model="elementNameOnlyTable"/>
     <table class="table table-striped table-bordered table-hover table-condensed">
