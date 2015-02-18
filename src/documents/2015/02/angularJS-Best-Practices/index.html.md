@@ -102,6 +102,30 @@ After:
 Ben Alman is credited with nameing IIFEs in this [blog post](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
 if you want more information
 
+###Getter/Setter###
+The next step we want to take to improve our code is how we are creating and referencing our module. Initially we were
+using code based on AngularJS.com samples, where we declare a module as a variable, for example:
+
+```javascript
+ var chemistryApp = angular.module('chemistryApp', []);
+```
+
+The recommendation, straight from the [Angular site](https://docs.angularjs.org/guide/module) is to use the getter
+syntax at all times. The syntax above, will create the module each time, overwriting the existing one.
+
+Getter syntax for the module enables us to retrieve an existing module. We rework our ``app.js`` to now incorporate
+both IIFE and setter syntax to become
+
+```javascript
+(function() {
+    'use strict';
+
+    angular
+        .module('chemistryApp');
+})();
+```
+
+
 <div id="app" ng-app="chemistryApp">
     <div class="container" ng-controller="chemistryController">
 
