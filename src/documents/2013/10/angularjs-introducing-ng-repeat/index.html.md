@@ -103,9 +103,10 @@ We could also go an easily update our markup to display the atomic weight along 
  display to
 
 ```xml
- {{element.name}} - {{element.atomicWeight}}
+<ul>
+  <li data-ng-repeat="element in periodic.elements">{{element.name}} - {{element.atomicWeight}}</li>
+</ul>
 ```
-
 
 
 Resulting in a new look, where we are appending the atomic weight to the display of the element's name.

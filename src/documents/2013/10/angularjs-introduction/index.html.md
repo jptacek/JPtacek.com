@@ -101,7 +101,7 @@ This will then prepend the string 'You typed: ' to what is displayed in our brow
 
 <div>
     <input type="text" ng-model="displayText3" placeholder="type something"/>
-    <h3>{{'You typed: ' + displayText3.toUpperCase()}}</h3>
+    <h3>You typed: {{ displayText3.toUpperCase()}}</h3>
 </div>
 
 The magic of curly braces continues though. Angular also has the concept of filters for our binding element that we
@@ -132,7 +132,7 @@ Our HTML
     <input type="number" ng-model="tempF0" value=0>
     <br/>
     <br/>
-    <b>Celcius:</b> {{ (((5/9)*(tempF0-32))-0.0)|number:2 }}  &degC<br/>
+    <b>Celcius:</b> <div>{{ (((5/9)*(tempF0-32))-0.0)|number:2 }}</div>  &degC<br/>
     <b>Kelvin:</b> {{ (((5/9)*(tempF0-32))-273.0) |number:2 }} K
 </div>
 

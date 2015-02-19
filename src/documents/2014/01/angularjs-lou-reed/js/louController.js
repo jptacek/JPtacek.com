@@ -1,6 +1,17 @@
-function louCtrl($scope) {
-    $scope.louDrops = louAlbums;
+(function() {
+    'use strict';
+
+    angular
+        .module('louApp')
+        .controller('louCtrl', louCtrl)
+
+    louCtrl.$inject = ['$scope'];
+
+    function louCtrl($scope) {
+        $scope.louDrops = louAlbums;
+    }
 }
+)();
 
 var louAlbums = {
     releases: [

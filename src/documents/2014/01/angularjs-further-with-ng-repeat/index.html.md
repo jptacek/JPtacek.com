@@ -70,7 +70,7 @@ First up, instead of creating an unordered list, we are going to create a table.
 
 Then we can add our data on a cell by cell basis. For this example, we are going to link to a Wikipedia article about
 each element, and then display things like the atomic number, atomic weight, etc. Tying this with our ``ng-repeat``
- directove and
+ directive and
 our table markup becomes
 
 ```xml

@@ -151,9 +151,10 @@ The value we set in our controller are automatically displayed.
 </div>
 </div>
 
+<br/>
 You can see these code samples in action at the companion site for this blog series, [http://angularPeriodic.azurewebsites.net](http://angularPeriodic.azurewebsites.net)
 
-[Introducing AngularJS Controllers](http://angularperiodic.azurewebsites.net/Demo2-Controllers/controller1.html)
+[Introducing AngularJS Controllers](http://angularperiodic.azurewebsites.net/Demo02-Controllers/controller1.html)
 
 You can download or view the code on Github, [https://github.com/jptacek/AngularPeriodic/](https://github.com/jptacek/AngularPeriodic/)
 
