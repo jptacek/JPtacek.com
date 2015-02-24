@@ -132,7 +132,7 @@ Our HTML
     <input type="number" ng-model="tempF0" value=0>
     <br/>
     <br/>
-    <b>Celcius:</b> <div>{{ (((5/9)*(tempF0-32))-0.0)|number:2 }}</div>  &degC<br/>
+    <b>Celsius:</b> <div>{{ (((5/9)*(tempF0-32))-0.0)|number:2 }}</div>  &degC<br/>
     <b>Kelvin:</b> {{ (((5/9)*(tempF0-32))-273.0) |number:2 }} K
 </div>
 
@@ -157,7 +157,7 @@ And just since we are having so much fun, we can use angular to calculate the vo
     <br/>
     <br/>
     <b>Volume:</b> {{ radiusZ*radiusZ | number:3}} <br/>
-    <b>Surface area:</b> {{ (4*3.141*radius0*radius0) | number:3}} <br/>
+    <b>Surface area:</b> {{ (4*3.141*radiusZ*radiusZ) | number:3}} <br/>
 </div>
 
 
@@ -166,12 +166,10 @@ It is pretty cool that we are able to write these quick little applications with
 
 I am still working on a good way to get some Javascript demos into my Wordpress blog. In the interim, you can check them out at an Azure website I created to host these demos, [http://angularperiodic.azurewebsites.net/](http://angularperiodic.azurewebsites.net/). Specifically
 
-[Hello World](http://angularperiodic.azurewebsites.net/Demo1/helloworld.html)
+[Hello World](http://angularperiodic.azurewebsites.net/Demo01-Intro/HelloWorld.html)
 
-[Temperature Conversion](http://angularperiodic.azurewebsites.net/Demo1/tempConversion.html)
+[Temperature Conversion](http://angularperiodic.azurewebsites.net/Demo01-Intro/tempConversion.html)
 
-[Sphere Calculation](http://angularperiodic.azurewebsites.net/Demo1/spherecalculation.html)
+[Sphere Calculation](http://angularperiodic.azurewebsites.net/Demo01-Intro/sphereCalculation.html)
 
 &nbsp;
-
-**Update:** I have created JSFiddles to embed the code samples. You can either visit [http://angularperiodic.azurewebsites.net/](http://angularperiodic.azurewebsites.net/) to see the code in action or view the JSFiddles embedded on the page. As always, the code is out on [GitHub](https://github.com/jptacek/AngularPeriodic)

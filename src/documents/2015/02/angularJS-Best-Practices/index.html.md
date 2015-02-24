@@ -367,7 +367,7 @@ The code is also available on [GitHub](https://github.com/jptacek/AngularPeriodi
 </div>
 
 
-<link href="/2015/02//angularJS-Best-Practices/css/animate.css" rel="stylesheet" >
+<link href="/2015/02/angularJS-Best-Practices/css/animate.css" rel="stylesheet" >
 
 <script type="text/javascript" src="/2015/02/angularJS-Best-Practices/js/chemistryApp.js"></script>
 <script type="text/javascript" src="/2015/02/angularJS-Best-Practices/js/chemistryController.js"></script>
