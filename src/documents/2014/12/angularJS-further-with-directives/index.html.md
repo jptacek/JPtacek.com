@@ -154,8 +154,7 @@ is not very robust, so picking items at the end, aka Curium, will cause some iss
     <div id="controller" ng-controller="chemistryController">
 
         <div class="row">
-            <select ng-model="periodicElement" ng-options="e.name for e in elements"
-                    ng-click="updateController(periodicElement)"></select><br/>
+            <select ng-model="periodicElement" ng-options="e.name for e in elements"></select><br/>
         </div>
         <div class="row">
             &nbsp;

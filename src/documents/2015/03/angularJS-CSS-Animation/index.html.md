@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AngularJS - CSS Animations
-date: 2015/02/26
+date: 2015/03/04
 tags: ["AngularJS","JavaScript","Web"]
 ---
 
@@ -26,11 +26,23 @@ to help us understand the framework. The others posts are
 9. [AngularJS - Introduction to Directives](http://www.jptacek.com/2014/06/angularJS-intro-to-directives/)
 10. [AngularJS - Further with Directives](http://jptacek.com/2014/12/angularJS-further-with-directives/)
 11. [AngularJS - Best Practices](http://jptacek.com/2015/02/angularJS-Best-Practices/)
-12. AngularMS - CSS Animations
+12. AngularJS - CSS Animations
 
 >Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
 the home page of my blog, only one application will work. I need to refactor the entire site to account for
 this. All of that to say this, you are best clicking on a single article so you can see the pages in action.
+
+AngularJS enables animations via the NgAnimate directive. This is an external JavaScript file that you will need for
+your application, so you will need to obtain the JavaScript. This can be done via the usual suspects, CDN,
+[download](https://code.angularjs.org/) or Bower. The Bower install command is ``bower install angular-animate``
+
+There are three ways to do animations in AngularJS:
+* CSS Animations
+* CSS Transitions
+* Javascript
+
+We will look at each of these in separate posts, but will get started with CSS Animations.
+
 
 
 <div id="app" ng-app="chemistryApp">
@@ -64,16 +76,17 @@ this. All of that to say this, you are best clicking on a single article so you 
       </div>
     </div>
 </div>
+
 <br/>
 I have created an Azure Website to host all of this code at [http://angularperiodic.azurewebsites.net/](http://angularperiodic.azurewebsites.net/)
 
 The code is also available on [GitHub](https://github.com/jptacek/AngularPeriodic)
 
-<link href="/2015/02/angularJS-CSS-Animation/css/animate.css" rel="stylesheet" >
+<link href="/2015/03/angularJS-CSS-Animation/css/animate.css" rel="stylesheet" >
 
-<script type="text/javascript" src="/2015/02/angularJS-CSS-Animation/js/chemistryApp.js"></script>
-<script type="text/javascript" src="/2015/02/angularJS-CSS-Animation/js/chemistryController.js"></script>
-<script type="text/javascript" src="/2015/02/angularJS-CSS-Animation/js/chemistryService.js"></script>
-<script type="text/javascript" src="/2015/02/angularJS-CSS-Animation/js/chemistryDirective.js"></script>
+<script type="text/javascript" src="/2015/03/angularJS-CSS-Animation/js/chemistryApp.js"></script>
+<script type="text/javascript" src="/2015/03/angularJS-CSS-Animation/js/chemistryController.js"></script>
+<script type="text/javascript" src="/2015/03/angularJS-CSS-Animation/js/chemistryService.js"></script>
+<script type="text/javascript" src="/2015/03/angularJS-CSS-Animation/js/chemistryDirective.js"></script>
 
 
