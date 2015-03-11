@@ -1,9 +1,10 @@
 ---
 layout: post
-title:National Pi Day - 2015
-date: 2015/03/13
-tags: ["Pi","Ephemera","Web","Skyline Technologies"]
+title: National Pi Day 2015
+date: 2015/02/25
+tags: ["Skyline Technologies","Windows 10","Ephemera"]
 ---
+
 On March 14th, geeks across North America celebrate [Pi Day](http://en.wikipedia.org/wiki/Pi_Day).
 That is when the US version of the date (3/14) is the same
 as the world’s most famous number π (pi), 3.14. The last several years we celebrated by calculating π , once with [a

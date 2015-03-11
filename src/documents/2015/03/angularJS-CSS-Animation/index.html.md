@@ -38,10 +38,80 @@ your application, so you will need to obtain the JavaScript. This can be done vi
 
 There are three ways to do animations in AngularJS:
 * CSS Animations
-* CSS Transitions
+* CSS Transitions (or Keyframe Animations)
 * Javascript
 
 We will look at each of these in separate posts, but will get started with CSS Animations.
+
+It is important to realize that the animations we are talking about in AngularJS here are not going to allow you to
+create a Pixar movie. The animations are really, much more subtle, and provide a bit of visual flair to your application.
+
+In this post, we are going to focus on three AngularJS events that we can use with CSS animations. It is important to
+realize that Angular does not do any of the animations, but provides hooks for us to use our own animations, be they
+via CSS or JavaScript.
+
+There are five AngularJS events
+* enter - DOM element is add to the DOM tree
+* leave - DOM element is removed from the DOM tree
+* move - DOM element is moved within the DOM tree
+* addClass - A class is added to an element
+* removeClass - A class is removed from an element
+
+So we have events get fired, the next thing that happens is the naming conventions for our CSS classes start getting
+ applied. Angular usings the naming convention `[class]-[event]-[state]`. So, for the enter event, we have a `.ng-enter'
+ class and a `.ng-enter-active` class.
+
+The above is a little confusing, so let's try to state it another way. The AngularJS animate library supports animations
+for enter, leave and move. If we create a list in Angular and then have a filter applied, ngAnimate then toggles the
+CSS classes for us based on the state. Within these classes we then define our CSS for animation.
+
+What does this look like? Well first, we need to inject the animation framework into our application. You can get
+ngAnimate from the [code.angularjs.org](https://code.angularjs.org/) site or via bower
+```bower install angular-animate@X.Y.Z```.
+
+After installation and including the js library in your application
+(```<script type="text/javascript" src="angular-animate.min.js"></script>```) you need to inject into your app module.
+
+``javascript
+(function() {
+    'use strict';
+
+    angular
+        .module('chemistryApp', [
+            'ngAnimate'
+        ]);
+})();
+``
+
+also CSS
+
+``css
+.periodicCell-animation.ng-enter, .periodicCell-animation.ng-leave {
+    -webkit-transition: 0.5s linear all;
+    -moz-transition: 0.5s linear all;
+    -o-transition: 0.5s linear all;
+    transition: 0.5s linear all;
+}
+
+.periodicCell-animation.ng-enter {
+    opacity: 0;
+}
+
+
+.periodicCell-animation.ng-enter-active {
+    opacity: 0;
+}
+
+
+.periodicCell-animation.ng-leave {
+    opacity: 1;
+}
+
+
+.periodicCell-animation.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+``
 
 
 
