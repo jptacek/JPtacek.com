@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AngularJS - CSS Animations
-date: 2015/03/04
+date: 2015/03/12
 tags: ["AngularJS","JavaScript","Web"]
 ---
 
@@ -44,7 +44,8 @@ There are three ways to do animations in AngularJS:
 We will look at each of these in separate posts, but will get started with CSS Animations.
 
 It is important to realize that the animations we are talking about in AngularJS here are not going to allow you to
-create a Pixar movie. The animations are really, much more subtle, and provide a bit of visual flair to your application.
+create a Pixar movie. The animations can be thought of as a bit of visual flair to your application to let users know
+their input has been recognized.
 
 In this post, we are going to focus on three AngularJS events that we can use with CSS animations. It is important to
 realize that Angular does not do any of the animations, but provides hooks for us to use our own animations, be they
@@ -57,22 +58,21 @@ There are five AngularJS events
 * addClass - A class is added to an element
 * removeClass - A class is removed from an element
 
-So we have events get fired, the next thing that happens is the naming conventions for our CSS classes start getting
- applied. Angular usings the naming convention `[class]-[event]-[state]`. So, for the enter event, we have a `.ng-enter'
- class and a `.ng-enter-active` class.
+So we have events get fired, the next thing that happens is the the animate library will add and remove CSS classes
+  based on the fired events. This is based on conventions for the naming of our CSS classes, which are
+ ``[class]-[event]-[state]``. So, for the enter event, we have a ``.ng-enter``
+ class and a ``.ng-enter-active`` class.
 
 The above is a little confusing, so let's try to state it another way. The AngularJS animate library supports animations
 for enter, leave and move. If we create a list in Angular and then have a filter applied, ngAnimate then toggles the
-CSS classes for us based on the state. Within these classes we then define our CSS for animation.
+CSS classes for us based on the state. Within these classes we then define our CSS for animation. In this scenario,
+ngAnimate works on ngRepeat, ngInclude, ngIf, ngSwitch, ngShow, ngHide, ngView, and ngClass.
 
-What does this look like? Well first, we need to inject the animation framework into our application. You can get
-ngAnimate from the [code.angularjs.org](https://code.angularjs.org/) site or via bower
-```bower install angular-animate@X.Y.Z```.
-
-After installation and including the js library in your application
+What does this look like? Well first, we need to inject the animation framework into our application. After installation
+and including the js library in your application
 (```<script type="text/javascript" src="angular-animate.min.js"></script>```) you need to inject into your app module.
 
-``javascript
+```javascript
 (function() {
     'use strict';
 
@@ -81,11 +81,14 @@ After installation and including the js library in your application
             'ngAnimate'
         ]);
 })();
-``
+```
 
-also CSS
+What we will do for our example is apply some animations to a periodic element when the user clicks on it. We will do
+this by applying a transition between the two states by changing the opacity.
 
-``css
+Here is a quick look at the CSS.
+
+```css
 .periodicCell-animation.ng-enter, .periodicCell-animation.ng-leave {
     -webkit-transition: 0.5s linear all;
     -moz-transition: 0.5s linear all;
@@ -111,8 +114,22 @@ also CSS
 .periodicCell-animation.ng-leave.ng-leave-active {
     opacity: 0;
 }
-``
+```
 
+Next, we update our HTML template to include a new angular keyword, ``ng-if``, which, based on an expression will add
+or remove a DOM element. This then will trigger a ngAnimate events for enter and leave which will apply our CSS
+items we created earlier.
+
+```xml
+<div class='periodicCell {{element.cssForDisplay}} periodicCell-animation' data-ng-if="!fullElement">
+    <div class="atomicNumber">{{element.atomicNumber}}</div><div class="atomicWeight">{{element.atomicWeight}}</div>
+    <div class="atomicSymbol">{{element.symbol}}</div>
+    <div class="centerElementDisplay">{{element.name }}</div>
+</div>
+
+```
+
+Let's see it in action now.
 
 
 <div id="app" ng-app="chemistryApp">
@@ -148,6 +165,11 @@ also CSS
 </div>
 
 <br/>
+As you can see, the ngAnimate library can quickly be incorporated in your existing Angular application. It enables
+CSS items to be applied to changes in the DOM and apply CSS based on naming rules. In our next Angular blog post,
+we will
+look at CSS transitions.
+
 I have created an Azure Website to host all of this code at [http://angularperiodic.azurewebsites.net/](http://angularperiodic.azurewebsites.net/)
 
 The code is also available on [GitHub](https://github.com/jptacek/AngularPeriodic)

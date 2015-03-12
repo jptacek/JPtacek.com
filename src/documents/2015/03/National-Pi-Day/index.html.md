@@ -1,8 +1,8 @@
 ---
 layout: post
 title: National Pi Day 2015
-date: 2015/02/25
-tags: ["Skyline Technologies","Windows 10","Ephemera"]
+date: 2015/03/13
+tags: ["Pi","Ephemera","Web","Skyline Technologies"]
 ---
 
 On March 14th, geeks across North America celebrate [Pi Day](http://en.wikipedia.org/wiki/Pi_Day).

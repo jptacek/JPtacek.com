@@ -26,6 +26,8 @@ to help us understand the framework. The others posts are
 8. [AngularJS - Introduction to Services](http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/)
 9. [AngularJS - Introduction to Directives](http://www.jptacek.com/2014/06/angularJS-intro-to-directives/)
 10. [AngularJS - Further with Directives](http://www.jptacek.com/2014/12/angularJS-further-with-directives/)
+11. [AngularJS - Best Practices](http://jptacek.com/2015/02/angularJS-Best-Practices/)
+12. [AngularJS - CSS Animations](http://jptacek.com/2015/03/angularJS-CSS-Animation/)
 
 >Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
 the home page of my blog, only one application will work. I need to refactor the entire site to account for
