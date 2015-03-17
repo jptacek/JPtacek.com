@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NewDug 2015 CodeCamp - Getting Ready for VS 2015 By Loving the Command Prompt
+title: NEWDUG 2015 CodeCamp - Getting Ready for VS 2015 By Loving the Command Prompt
 date: 2015/03/17
 tags: ["ASP.NET vNext", "ASP.NET Core","NEWDUG","Speaking","Web"]
 ---
@@ -19,7 +19,7 @@ If you are in the area, come check out the talk and say hi!
 
 ![Bower logo](bower-logo.png)
 
-![Chocolately logo](Chocolately.jpg)
+![Chocolately logo](chocolately.jpg)
 
 ![npm logo](npm.png)
 
