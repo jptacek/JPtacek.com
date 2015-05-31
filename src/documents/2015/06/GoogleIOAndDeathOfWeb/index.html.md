@@ -2,7 +2,7 @@
 layout: post
 title: Google I/O and the Death of the Web
 date: 2015/06/01
-tags: ["Google I/O","Epherma","Web"]
+tags: ["Google I/O","Ephemera","Web"]
 ---
 
 Google recently wrapped up their annual developer conference, 
