@@ -19,8 +19,8 @@ To provide some background, Google I/O is a developer conference where Google re
 developers excited
 about their platform. Microsoft has their [Build](http://www.buildwindows.com/) 
 conference  and Apple has [WWDC](http://www.buildwindows.com/) and they all do the same
-thing; encourage developers to create great things on their platforms and show their vision of
-the future. 
+thing; encourage developers to create great things on their respective platforms and show their vision of
+the future and why developers should invest their time in adopting this vision. 
 
 The Google we know today, with its $350 Billion (USD) market capitalization and $48 
 billion (USD) in cash reserves, is a result of building great tools for the Web 
