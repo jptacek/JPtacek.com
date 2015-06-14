@@ -2,7 +2,7 @@
 layout: post
 title: Deleting Windows 8.1 Wireless Profiles
 date: 2014/01/08
-tags: ["PowerShell","Windows8"]
+tags: ["PowerShell","Windows 8"]
 
 ---
 
