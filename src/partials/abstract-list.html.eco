@@ -1,7 +1,8 @@
 <% currentYear = "" %>
 <% for document in @collection.toJSON(): %>
     <% date = @moment(document.date) %>
-    <% year = date.format("YYYY") %>
+        <% year = date.format("YYYY") %>
+
     <div class="abstract">
         <% if year isnt currentYear: %>
         <div class="abstract-year"><%= year %></div>

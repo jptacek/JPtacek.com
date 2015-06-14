@@ -1,0 +1,41 @@
+{
+  "name": "JPtacek.com",
+  "version": "0.0.0",
+  "authors": [
+    "John Ptacek <jptacek@live.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://www.jptacek.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-route": "~1.4.0",
+    "angular-animate": "~1.4.0"
+  },
+  "install": {
+    "path": "src/static/vendor",
+    "sources": {
+      "angular": [
+        "bower_components/angular/angular.js",
+        "bower_components/angular/angular.min.js",
+        "bower_components/angular/angular.min.js.map"
+      ],
+      "angular-animate": [
+        "bower_components/angular-animate/angular-animate.js",
+        "bower_components/angular-animate/angular-animate.min.js",
+        "bower_components/angular-animate/angular-animate.min.js.map"
+      ],
+      "angular-route": [
+        "bower_components/angular-route/angular-route.js",
+        "bower_components/angular-route/angular-route.min.js",
+        "bower_components/angular-route/angular-route.min.js.map"
+      ]
+    }
+  }
+}

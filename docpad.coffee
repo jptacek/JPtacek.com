@@ -10,7 +10,7 @@ docpadConfig = {
   # Specify some site properties
     site:
     # The production url of our website
-      url: "http://www.jptacek.com"
+      url: "https://www.jptacek.com"
 
     # The default title of our website
       title: "JPtacek.com | Musings on code and who knows what 3ls3"
