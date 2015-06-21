@@ -11,6 +11,9 @@ docpadConfig = {
     site:
     # The production url of our website
       url: "https://www.jptacek.com"
+    # The production url of our website
+
+      disqusUrl: "http://www.jptacek.com"
 
     # The default title of our website
       title: "JPtacek.com | Musings on code and who knows what 3ls3"
@@ -42,6 +45,9 @@ docpadConfig = {
 
     getPageUrlWithHostname: ->
       "#{@site.url}#{@document.url}"
+
+    getDisqusUrlWithHostname: ->
+      "#{@site.disqusUrl}#{@document.url}"
 
     getIdForDocument: (document) ->
       hostname = url.parse(@site.url).hostname
