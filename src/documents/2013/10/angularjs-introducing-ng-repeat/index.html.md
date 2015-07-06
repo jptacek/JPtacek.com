@@ -3,6 +3,7 @@ layout: post
 title: AngularJS – Introducing ng-repeat
 date: 2013/10/31
 tags: ["AngularJS","JavaScript","Web"]
+scripts: ['/2013/10/angularjs-introducing-ng-repeat/js/chemistryApp.js','/2013/10/angularjs-introducing-ng-repeat/js/chemistryController.js','/2014/02/angularJS-templates/js/chemistry.js']
 ---
 
 [AngularJS](http://www.angularjs.org) is a Javascript MVC framework from the fine folks over at
@@ -202,8 +203,3 @@ I have created an Azure Website to host all of this code at [http://angularperio
 
 The code is also available on [GitHub](https://github.com/jptacek/AngularPeriodic)
 </div>
-
-
-<script type="text/javascript" src="/2013/10/angularjs-introducing-ng-repeat/js/chemistryApp.js"></script>
-<script type="text/javascript" src="/2013/10/angularjs-introducing-ng-repeat/js/chemistryController.js"></script>
-<script type="text/javascript" src="/2014/02/angularJS-templates/js/chemistry.js"></script>

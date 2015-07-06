@@ -3,8 +3,8 @@ layout: post
 title: AngularJS - Introducing Routes
 date: 2014/02/25
 tags: ["AngularJS","JavaScript","Web"]
+scripts: ['/2014/02/angularJS-IntroToRouting/js/chemistryApp.js','/2014/02/angularJS-IntroToRouting/js/chemistryController.js','/2014/02/angularJS-IntroToRouting/js/chemistry.js']
 ---
-
 
 [AngularJS](http://www.angularjs.org) is a Javascript MVC framework from the fine folks over at
 [Google](http://www.google.com). The focus of Angular is building complex
@@ -172,8 +172,3 @@ Watch it in action
 
 You can either visit [http://angularperiodic.azurewebsites.net/](http://angularperiodic.azurewebsites.net/) to see the code in action and
 as always find the code out on [GitHub](https://github.com/jptacek/AngularPeriodic)
-
-
-<script type="text/javascript" src="/2014/02/angularJS-IntroToRouting/js/chemistryApp.js"></script>
-<script type="text/javascript" src="/2014/02/angularJS-IntroToRouting/js/chemistryController.js"></script>
-<script type="text/javascript" src="/2014/02/angularJS-IntroToRouting/js/chemistry.js"></script>

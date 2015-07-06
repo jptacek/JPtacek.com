@@ -3,6 +3,7 @@ layout: post
 title: AngularJS - Image Binding in AngularJS with Lou Reed
 date: 2014/01/24
 tags: ["AngularJS","JavaScript","Web"]
+['/2014/01/angularjs-lou-reed/js/louApp.js','/2014/01/angularjs-lou-reed/js/louController.js','/2014/01/angularjs-lou-reed/js/louController2.js']
 ---
 
 [AngularJS](http://www.angularjs.org) is a Javascript MVC framework from the fine folks over at
@@ -206,7 +207,3 @@ You can either visit [http://angularperiodic.azurewebsites.net/](http://angularp
 as always find the code out on [GitHub](https://github.com/jptacek/AngularPeriodic)
 
 (I am working on some display issues with the post with the Markdown/DocPad combo, I should have updated soon)
-
-<script type="text/javascript" src="/2014/01/angularjs-lou-reed/js/louApp.js"></script>
-<script type="text/javascript" src="/2014/01/angularjs-lou-reed/js/louController.js"></script>
-<script type="text/javascript" src="/2014/01/angularjs-lou-reed/js/louController2.js"></script>

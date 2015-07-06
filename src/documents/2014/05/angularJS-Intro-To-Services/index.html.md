@@ -3,6 +3,7 @@ layout: post
 title: AngularJS - Introduction to Services
 date: 2014/5/19
 tags: ["AngularJS","JavaScript","Web"]
+scripts: ['/2014/05/angularJS-Intro-To-Services/js/chemistryApp.js','/2014/05/angularJS-Intro-To-Services/js/chemistryController.js','/2014/05/angularJS-Intro-To-Services/js/chemistryService.js','/2014/05/angularJS-Intro-To-Services/js/chemistry.js']
 ---
 
 [AngularJS](http://www.angularjs.org) is a Javascript MVC framework from the fine folks over at
@@ -220,11 +221,3 @@ encapsulate logic and use it within multiple controllers in our application.
 
 You can either visit [http://angularperiodic.azurewebsites.net/](http://angularperiodic.azurewebsites.net/) to see the code in action and
 as always find the code out on [GitHub](https://github.com/jptacek/AngularPeriodic).
-
-
-<script type="text/javascript" src="/2014/05/angularJS-Intro-To-Services/js/chemistryApp.js"></script>
-<script type="text/javascript" src="/2014/05/angularJS-Intro-To-Services/js/chemistryController.js"></script>
-<script type="text/javascript" src="/2014/05/angularJS-Intro-To-Services/js/chemistryService.js"></script>
-<script type="text/javascript" src="/2014/05/angularJS-Intro-To-Services/js/chemistry.js"></script>
-
-

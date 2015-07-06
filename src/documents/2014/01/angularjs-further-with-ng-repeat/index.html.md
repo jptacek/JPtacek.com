@@ -3,6 +3,7 @@ layout: post
 title: AngularJS - More with ng-repeat
 date: 2014/01/23
 tags: ["AngularJS","JavaScript","Web"]
+scripts: ['/2014/01/angularjs-further-with-ng-repeat/js/chemistryApp.js','/2014/01/angularjs-further-with-ng-repeat/js/chemistryController.js','/2014/01/angularjs-further-with-ng-repeat/js/chemistry.js']
 ---
  <style>
         .tableOdd {
@@ -367,6 +368,3 @@ functionality is magic. Seriously, magic.
 You can either visit [http://angularperiodic.azurewebsites.net/](http://angularperiodic.azurewebsites.net/) to see the code in action and
 as always find the code out on [GitHub](https://github.com/jptacek/AngularPeriodic)
 </div>
- <script type="text/javascript" src="/2014/01/angularjs-further-with-ng-repeat/js/chemistryApp.js"></script>
- <script type="text/javascript" src="/2014/01/angularjs-further-with-ng-repeat/js/chemistryController.js"></script>
- <script type="text/javascript" src="/2014/01/angularjs-further-with-ng-repeat/js/chemistry.js"></script>

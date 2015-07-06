@@ -3,6 +3,7 @@ layout: post
 title: AngularJS - Introducing Templates
 date: 2014/02/10
 tags: ["AngularJS","JavaScript","Web"]
+scripts: ['/2014/02/angularJS-templates/js/chemistryApp.js','/2014/02/angularJS-templates/js/chemistryController.js','/2014/02/angularJS-templates/js/chemistry.js']
 ---
 <style>
         .tableOdd {
@@ -260,9 +261,3 @@ stuff!
 
 You can either visit [http://angularperiodic.azurewebsites.net/](http://angularperiodic.azurewebsites.net/) to see the code in action and
 as always find the code out on [GitHub](https://github.com/jptacek/AngularPeriodic)
-
-
-
-<script type="text/javascript" src="/2014/02/angularJS-templates/js/chemistryApp.js"></script>
-<script type="text/javascript" src="/2014/02/angularJS-templates/js/chemistryController.js"></script>
-<script type="text/javascript" src="/2014/02/angularJS-templates/js/chemistry.js"></script>

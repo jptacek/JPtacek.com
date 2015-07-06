@@ -3,6 +3,8 @@ layout: post
 title: AngularJS - CSS Animations
 date: 2015/03/12
 tags: ["AngularJS","JavaScript","Web"]
+scripts: ['/2015/03/angularJS-CSS-Animation/js/chemistryApp.js','/2015/03/angularJS-CSS-Animation/js/chemistryController.js','/2015/03/angularJS-CSS-Animation/js/chemistryService.js','/2015/03/angularJS-CSS-Animation/js/chemistryDirective.js']
+
 ---
 
 [AngularJS](http://www.angularjs.org) is a Javascript MVC framework from the fine folks over at
@@ -175,10 +177,3 @@ I have created an Azure Website to host all of this code at [http://angularperio
 The code is also available on [GitHub](https://github.com/jptacek/AngularPeriodic)
 
 <link href="/2015/03/angularJS-CSS-Animation/css/animate.css" rel="stylesheet" >
-
-<script type="text/javascript" src="/2015/03/angularJS-CSS-Animation/js/chemistryApp.js"></script>
-<script type="text/javascript" src="/2015/03/angularJS-CSS-Animation/js/chemistryController.js"></script>
-<script type="text/javascript" src="/2015/03/angularJS-CSS-Animation/js/chemistryService.js"></script>
-<script type="text/javascript" src="/2015/03/angularJS-CSS-Animation/js/chemistryDirective.js"></script>
-
-

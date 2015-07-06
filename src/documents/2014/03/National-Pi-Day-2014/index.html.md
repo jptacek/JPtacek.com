@@ -3,7 +3,10 @@ layout: post
 title: National Pi Day - Calculating PI With AngularJS and a Monte Carlo Simulation
 date: 2014/03/14
 tags: ["AngularJS","Pi","Web","Ephemera","Skyline Technologies"]
+scripts: ['/2014/03/National-Pi-Day-2014/js/piApp.js','/2014/03/National-Pi-Day-2014/js/piController.js']
 ---
+<script type="text/javascript" src="/2014/03/National-Pi-Day-2014/js/piApp.js"></script>
+<script type="text/javascript" src="/2014/03/National-Pi-Day-2014/js/piController.js"></script>
 
 Every year on 3/14, Geeks everywhere can let their geek flag fly by
 celebrating [National Pi Day](http://en.wikipedia.org/wiki/Pi_Day). On this day, every year, the date equals the first three
@@ -82,5 +85,3 @@ Monte Carlo methods, which are common place with a subset of our clients.
 Happy Pi day! Go have a nice piece of Apple Pie and enjoy the day!!
 
 This post originally appeared at [Skyline Technologies](http://skylinetechnologies.com/Blog/Article/2453/National-Pi-Day-Calculating-Pi-with-AngularJS-and-a-Monte-Carlo-simulation.aspx)
-<script type="text/javascript" src="/2014/03/National-Pi-Day-2014/js/piApp.js"></script>
-<script type="text/javascript" src="/2014/03/National-Pi-Day-2014/js/piController.js"></script>

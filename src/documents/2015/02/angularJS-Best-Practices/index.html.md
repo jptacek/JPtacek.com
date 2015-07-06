@@ -3,6 +3,10 @@ layout: post
 title: AngularJS - Best Practices
 date: 2015/02/18
 tags: ["AngularJS","JavaScript","Web"]
+scripts: ['/2015/02/angularJS-Best-Practices/js/chemistryApp.js','/2015/02/angularJS-Best-Practices/js/chemistryController.js','/2015/02/angularJS-Best-Practices/js/chemistryService.js','/2015/02/angularJS-Best-Practices/js/chemistryDirective.js']
+
+
+
 ---
 
 [AngularJS](http://www.angularjs.org) is a Javascript MVC framework from the fine folks over at
@@ -369,10 +373,3 @@ The code is also available on [GitHub](https://github.com/jptacek/AngularPeriodi
 
 
 <link href="/2015/02/angularJS-Best-Practices/css/animate.css" rel="stylesheet" >
-
-<script type="text/javascript" src="/2015/02/angularJS-Best-Practices/js/chemistryApp.js"></script>
-<script type="text/javascript" src="/2015/02/angularJS-Best-Practices/js/chemistryController.js"></script>
-<script type="text/javascript" src="/2015/02/angularJS-Best-Practices/js/chemistryService.js"></script>
-<script type="text/javascript" src="/2015/02/angularJS-Best-Practices/js/chemistryDirective.js"></script>
-
-

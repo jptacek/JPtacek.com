@@ -3,8 +3,8 @@ layout: post
 title: AngularJS - Introducing AngularJS Controllers
 date: 2013/10/03
 tags: ["AngularJS","JavaScript","Web"]
+scripts: ['/2013/10/introducing-angularjs-controllers/js/chemistryApp.js','/2013/10/introducing-angularjs-controllers/js/chemistryController.js']
 ---
-
 [AngularJS](http://www.angularjs.org) is a Javascript MVC framework from the fine folks over at
 [Google](http://www.google.com). The focus of Angular is building complex
  HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
@@ -32,7 +32,7 @@ to help us understand the framework. The others posts are
 the home page of my blog, only one application will work. I need to refactor the entire site to account for
 this. All of that to say this, you are best clicking on a single article so you can see the pages in action.
 
-In general, just binding text boxes on a page may be able to create a simple calculator, but it is not what the web of 2013 and beyond is about. We want our pages to interact with backend data stores, we want to display this information on the page and send it back to the server so it is there the next time we view the page. 
+In general, just binding text boxes on a page may be able to create a simple calculator, but it is not what the web of 2013 and beyond is about. We want our pages to interact with backend data stores, we want to display this information on the page and send it back to the server so it is there the next time we view the page.
 
 Angular is really a Model View Controller (MVC) JavaScript library. The model is our data, the view is the presentation of this data and the controller is responsible for the marshalling between the two. In angular, this is done via the scope, which is a glorified object property bag available within your page. The first responsibility of the Controller is to create this scope object. The scope is then how you communicate with the view. The view is able to bind to properties and functions on the scope. It is also able to call functions on the scope. It is important to realize that the scope exposes the model to the view, however the scope is NOT the model. The model is updated, either via two way data binding on the scope, or functions on the scope that the view calls to update the data. So, if you are going to be doing a lot with Angular, say hello to your little friend, <span style="font-family:Courier New">$scope</span>.
 
@@ -52,17 +52,17 @@ Second, we are adding a reference to ``chemistryApp.js``. This is the starting s
 var chemistryApp = angular.module('chemistryApp', []);
 ```
 
-Now that our ``chemistryApp.js`` file is identified, we add a ``ng-app`` directive to our body tag. That tells Angular that 
+Now that our ``chemistryApp.js`` file is identified, we add a ``ng-app`` directive to our body tag. That tells Angular that
 chemistryApp will be responsible for our page.
 
-Next, we want to create the controller. The controller will be responsible for managing data for the HTML view. 
-Usually, controllers are associated with DIVs. First, we will create our controller called 
+Next, we want to create the controller. The controller will be responsible for managing data for the HTML view.
+Usually, controllers are associated with DIVs. First, we will create our controller called
 ``chemistryController.js<``
 
-We reference our module, ``chemistryApp``, from our``App.js`` file. We then identify the name of the controller, 
+We reference our module, ``chemistryApp``, from our``App.js`` file. We then identify the name of the controller,
 chemistryController and then have a second parameter, which is a function, that is our actual controller.
-We want to be sure to pass in any parameters our controller will need. Almost all controllers will require the 
-``$scope`` variable, since the controller interacts with the view via this, so almost all of our controllers will at a 
+We want to be sure to pass in any parameters our controller will need. Almost all controllers will require the
+``$scope`` variable, since the controller interacts with the view via this, so almost all of our controllers will at a
 minimum have this.
 
 As of now, our controller skeleton is built and ready to go, it just not doing anything at the moment
@@ -109,15 +109,15 @@ And for now, our HTML looks like
 </html>
 ```
 
-This page renders, but does not do anything. Mostly as a result of us telling it to do nothing! In general though, 
-these three steps are the basis of an Angular application. 
+This page renders, but does not do anything. Mostly as a result of us telling it to do nothing! In general though,
+these three steps are the basis of an Angular application.
 
 1.  We identify ng-app, via chemistryApp.js, that is responsible for the page.
 2.  We create a controller, chemistryController.js, that takes the $scope variable from our page and then populates it with data and/or functions so our HTML can later render it. We have not seen this in action yet, but soon.
 3.  The last part then is identifying, via the ng-controller directive, the area of responsibility for our controller.
 
-As previously mentioned, the ``$scope`` variable is the glorified property bag we use to populate data. So within our 
-controller, we can go and set some values for display in our view/web page. In our example, that will be the name of a 
+As previously mentioned, the ``$scope`` variable is the glorified property bag we use to populate data. So within our
+controller, we can go and set some values for display in our view/web page. In our example, that will be the name of a
 chemical element and it's atomic number, Hydgroen and 1. Our controller function now looks like
 
 **chemistryController.js**
@@ -135,7 +135,7 @@ chemistryApp.controller('chemistryController',
 );
 ```
 
-Now, we can have the values from our scope value inject into our HTML markup. This is done via our friend, the magical 
+Now, we can have the values from our scope value inject into our HTML markup. This is done via our friend, the magical
 curly braces. It is as simple as
 
 ```xml
@@ -159,6 +159,3 @@ You can see these code samples in action at the companion site for this blog ser
 [Introducing AngularJS Controllers](http://angularperiodic.azurewebsites.net/Demo02-Controllers/controller1.html)
 
 You can download or view the code on Github, [https://github.com/jptacek/AngularPeriodic/](https://github.com/jptacek/AngularPeriodic/)
-
-<script type="text/javascript" src="/2013/10/introducing-angularjs-controllers/js/chemistryApp.js"></script>
-<script type="text/javascript" src="/2013/10/introducing-angularjs-controllers/js/chemistryController.js"></script>

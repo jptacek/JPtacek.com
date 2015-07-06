@@ -3,9 +3,8 @@ layout: post
 title: Calculating the Cost of the 12 Days of Christmas
 date: 2013/12/12
 tags: ["AngularJS", "JavaScript", "Skyline Technologies", "Web"]
+scripts: ['/2013/12/calculating-the-cost-of-the-12-days-of-christmas/scripts/12DaysApp.js','/2013/12/calculating-the-cost-of-the-12-days-of-christmas/scripts/christmasController.js']
 ---
-<script src='/2013/12/calculating-the-cost-of-the-12-days-of-christmas/scripts/12DaysApp.js'></script>
-<script src='/2013/12/calculating-the-cost-of-the-12-days-of-christmas/scripts/christmasController.js'></script>
 
 Every year in December, families gather around the table to celebrate Christmas. If your house is anything like my house, the good times, food and conversation can quickly escalate into a battle over what is the true cost of the classic Christmas Song, the 12 Days of Christmas! This year, I took matters into my own hand and wrote a calculator, that will calculate the cost of the 12 days of Christmas using Google's Javascript Framework, AngularJS. No more bickering at the family table over the holidays!
 

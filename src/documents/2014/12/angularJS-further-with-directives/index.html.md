@@ -3,8 +3,12 @@ layout: post
 title: AngularJS - Further with Directives
 date: 2014/12/10
 tags: ["AngularJS","JavaScript","Web"]
+scripts: ['/2014/12/angularJS-further-with-directives/js/chemistryApp.js','/2014/12/angularJS-further-with-directives/js/chemistryController.js','/2014/12/angularJS-further-with-directives/js/chemistryService.js','/2014/12/angularJS-further-with-directives/js/chemistryDirective.js']
+
+
+
 ---
- 
+
 [AngularJS](http://www.angularjs.org) is a Javascript MVC framework from the fine folks over at
 [Google](http://www.google.com). The focus of Angular is building complex
  HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
@@ -38,12 +42,12 @@ In our previous example, we displayed data from the periodic table, specifically
 and element name. Our data source, has a lot more information, such as boiling and melting points, density, etc. In
 this example, we will expand the directive by enabling a click event to display expanded data about the selected element.
 
-The first thing to mention is scope. Scope, as we have already seen, is the magical tool that Angular uses to 
+The first thing to mention is scope. Scope, as we have already seen, is the magical tool that Angular uses to
 communicate between your view and services, etc. By default, a directive does not get a new child scope, but
-uses the parent scope. So, in our case, when the directive is inside a controller, it will use the 
+uses the parent scope. So, in our case, when the directive is inside a controller, it will use the
 controller's scope.
 
-To get access to the scope, we can use the ``link`` function. The ``link`` function gets called every time the 
+To get access to the scope, we can use the ``link`` function. The ``link`` function gets called every time the
 element gets bound to the data in the ``$scope`` object. In general, ``link`` is used to manipulate the Document
 Object Model (DOM),
 either by adding event listeners or updating the DOM.
@@ -55,9 +59,9 @@ The link function takes three arguments:
 the chemical element
 * ``attrs`` - Attributes associated with our element
 
-It is worth noting that AngularJS ships with jQLite, which is a subset of the full 
+It is worth noting that AngularJS ships with jQLite, which is a subset of the full
 [jQuery](http://jquery.com/) library. If you are using full
-jQuery within your web app, then that will be used instead. All of that to say this, you access DOM elements 
+jQuery within your web app, then that will be used instead. All of that to say this, you access DOM elements
 similarly as you do in jQuery, and since jQuery is already wrapped, you don't need to use your old school
 ``$`` for access.
 
@@ -91,18 +95,18 @@ chemistryApp.directive('periodicChartElement', function (chemistryService) {;
 });
 ```
 
-With the exception of adding the link function, things are pretty similar to before. The link function does several 
+With the exception of adding the link function, things are pretty similar to before. The link function does several
 pieces of functionality that are worth nothing though.
 
 First, we bind a click event to our chemical element. When
-that click event is called, we update a boolean variable on our scope, which is our parent scope from the calling 
-controller and set it to the opposite. Second, we also bind a mouseover event to manipulate our CSS to change the 
+that click event is called, we update a boolean variable on our scope, which is our parent scope from the calling
+controller and set it to the opposite. Second, we also bind a mouseover event to manipulate our CSS to change the
  cursor to a pointer. As you can see, this is an elegant way to add event behavior to our directive.
- 
-Our template has now also been updated. The boolean scope variable that we update on the click event, 
+
+Our template has now also been updated. The boolean scope variable that we update on the click event,
 ``fullElement`` is used to show one of two different
-HTML "paths" in our template, one shows a small subset of data, the other a larger subset of data from the periodic 
-table. 
+HTML "paths" in our template, one shows a small subset of data, the other a larger subset of data from the periodic
+table.
 
 ```xml
 <div class='periodicCell {{element.cssForDisplay}}' data-ng-hide="fullElement">
@@ -125,8 +129,8 @@ table.
 ```
 
 It is also worth talking a bit about scope in directives. As we mentioned earlier, by default, you are binding to the parent scope of the controller.
-In many instances this will work well, but if you want to display your directive more than once on a page, you would need a 
-controller for each directive. That is no good. 
+In many instances this will work well, but if you want to display your directive more than once on a page, you would need a
+controller for each directive. That is no good.
 
 AngularJS introduces the ability to create an isolated scope, which is what we are doing in our example. This allows us
 to use our directive multiple times on the same page. There are binding options in setting up the directive variables that we should
@@ -196,12 +200,3 @@ You can either visit [http://angularperiodic.azurewebsites.net/](http://angularp
 as always find the code out on [GitHub](https://github.com/jptacek/AngularPeriodic).
 
 Thanks for reading!
-
-
-
-<script type="text/javascript" src="/2014/12/angularJS-further-with-directives/js/chemistryApp.js"></script>
-<script type="text/javascript" src="/2014/12/angularJS-further-with-directives/js/chemistryController.js"></script>
-<script type="text/javascript" src="/2014/12/angularJS-further-with-directives/js/chemistryService.js"></script>
-<script type="text/javascript" src="/2014/12/angularJS-further-with-directives/js/chemistryDirective.js"></script>
-
-

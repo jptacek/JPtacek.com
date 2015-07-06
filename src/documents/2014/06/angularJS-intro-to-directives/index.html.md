@@ -4,8 +4,10 @@ title: AngularJS - Introduction to Directives
 date: 2014/6/3
 ignore: false
 tags: ["AngularJS","JavaScript","Web"]
----
- 
+scripts: ['/2014/06/angularJS-intro-to-directives/js/chemistryApp.js','/2014/06/angularJS-intro-to-directives/js/chemistryController.js','/2014/06/angularJS-intro-to-directives/js/chemistryService.js','/2014/06/angularJS-intro-to-directives/js/chemistryDirective.js']
+
+
+
 [AngularJS](http://www.angularjs.org) is a Javascript MVC framework from the fine folks over at
 [Google](http://www.google.com). The focus of Angular is building complex
  HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
@@ -40,25 +42,25 @@ markup. Let us pretend and call it our own HTML 6.
 ![AngularJS HomePage](htmlEnhanced.png)
 
 HTML, when initially created, was a subset of SGML, which is popular in the print industry. HTML, especially in the early
-days, kept a lot of the print mentality. However, during the period when Web 2.0 applications emerged, it became 
+days, kept a lot of the print mentality. However, during the period when Web 2.0 applications emerged, it became
 obvious that HTML was moving way
-beyond it's print background and becoming an application platform itself. 
+beyond it's print background and becoming an application platform itself.
 
-Given it's print background and laborious standards process that defines the HTML specification, HTML is relatively fixed 
-platform. Your chances of getting a new tag into the standard for use in your application in the next ten years are 
-pretty close to zero. However, Google starts earning the superheroic name it gave AngularJS by solving this problem with 
+Given it's print background and laborious standards process that defines the HTML specification, HTML is relatively fixed
+platform. Your chances of getting a new tag into the standard for use in your application in the next ten years are
+pretty close to zero. However, Google starts earning the superheroic name it gave AngularJS by solving this problem with
 directives. To my knowledge, they are the only JavaScript framework that enables you to do this so far.
 
 While we have seen directives previously, they have been attributes that allow us to markup existing HTML elements with
 bits and pieces of Angular functionality. Examples of this have been ``ng-show`` or ``ng-repeat``. For this post, we are
-going to make a custom directive, which will allow us to create our own HTML tag. 
+going to make a custom directive, which will allow us to create our own HTML tag.
 
-The value of creating our own tags, is that it allows us to 
+The value of creating our own tags, is that it allows us to
 start thinking of our HTML markup as a domain specific language. Throughout this series, we have been using Chemistry data
-to explore Angular. In keeping with that theme, we are going to create a simple custom directive to display chemical 
+to explore Angular. In keeping with that theme, we are going to create a simple custom directive to display chemical
 data in its own "HTML" tag called ``periodicchartelement``. Cool things are starting to happen here people!
 
-So how do we do this? First, similar to controllers, directives are defined on the module for our application via the 
+So how do we do this? First, similar to controllers, directives are defined on the module for our application via the
 ``module.directive`` API. Within here, we can setup a small template. Our JavaScript would look something like
 
 ```javascript
@@ -69,36 +71,36 @@ So how do we do this? First, similar to controllers, directives are defined on t
   });
 ```
 
-Of course, we can break the template into its own file by using templateUrl as we have discussed 
+Of course, we can break the template into its own file by using templateUrl as we have discussed
 [earlier](http://www.jptacek.com/2014/02/angularJS-templates/), which is the preferred approach.
 
-We next define what part of our HTML our directive will be expanding. We do this by using ``restrict`` to 
+We next define what part of our HTML our directive will be expanding. We do this by using ``restrict`` to
 indicate the DOM element we are creating from the following options
 
 * ``'A'`` - The attribute of a DOM element. for example  ``<div periodicchartelement="element">``
-* ``'C'`` - class name 
+* ``'C'`` - class name
 * ``'E'`` - A new element name, for example  ``<periodicchartelement></periodicchartelement>``
 
 There is also the ability creative directives tied to HTML comments with ``restrict:M``. The restrict keyword
-can also be combined together to in a manner such as ``ACM``, indicating the directive applies to attributes, classes, 
+can also be combined together to in a manner such as ``ACM``, indicating the directive applies to attributes, classes,
 and comments.
 
 ```javascript
 .directive('periodicchartelement', function() {
-    return {        
+    return {
     restrict: 'E',
       template: 'Name: {{element.name}} Atomic Weight: {{element.weight}}'
     };
   });
 ```
 
-Our directive function now creates a new HTML element, ``periodicchartelement``. 
+Our directive function now creates a new HTML element, ``periodicchartelement``.
 
-For the example we are creating, we have changed a few things in comparison to previous posts. 
+For the example we are creating, we have changed a few things in comparison to previous posts.
 Based on our [introduction of services](http://www.jptacek.com/2014/05/angularJS-Intro-To-Services/)
- last time, we have wrapped our periodic data in a service with a function called ``getElements()``. Second, we have expanded the properties 
+ last time, we have wrapped our periodic data in a service with a function called ``getElements()``. Second, we have expanded the properties
  of our JSON object used in the application to include fields about the periodicity of chemical elements. Here is an example
- 
+
  ```javascript
   {"atomicNumber": 1,
   "name": "Hydrogen",
@@ -118,7 +120,7 @@ Based on our [introduction of services](http://www.jptacek.com/2014/05/angularJS
 
 With that in place, let's create a directive that will allow us to display an element from the periodic table.
 
-The first step is to create the directive function, we will create a new file, chemistryDirective.js and then hang 
+The first step is to create the directive function, we will create a new file, chemistryDirective.js and then hang
 the directive off of our module and call it ```periodicchartelement``
 
 ```javascript
@@ -137,10 +139,10 @@ chemistryApp.directive('periodicchartelement', function (chemistryService) {;
 ```
 
 You will notice several things. First, we are using the ``restrict`` keyword to explicitly identify this as a
-HTML element by using the value of ``E``. Second, we are loading a HTML template for display. Last, we are passing in two items, the element 
+HTML element by using the value of ``E``. Second, we are loading a HTML template for display. Last, we are passing in two items, the element
 from our JSON object and a cssType, which is a function from our scope to display our CSS class.
 
-Our HTML markup is pretty basic. Notice though where we are setting a CSS class using ``ng-class`` and binding to the value 
+Our HTML markup is pretty basic. Notice though where we are setting a CSS class using ``ng-class`` and binding to the value
 of cssType.
 
 ```xml
@@ -225,7 +227,7 @@ var getCssClassElement = function ( elementType) {
     </div>
 </div>
 <br/>
-We have now created a new HTML element! It displays the atomic number, the atomic weight, atomic symbol and the name from 
+We have now created a new HTML element! It displays the atomic number, the atomic weight, atomic symbol and the name from
 our JSON object of periodic data. Based on the element type, we then color code the element appropriately.
 
 This is the  most basic of introductions of creating [directives](https://docs.angularjs.org/guide/directive) with AngularJS,
@@ -233,11 +235,3 @@ This is the  most basic of introductions of creating [directives](https://docs.a
 
 You can either visit [http://angularperiodic.azurewebsites.net/](http://angularperiodic.azurewebsites.net/) to see the code in action and
 as always find the code out on [GitHub](https://github.com/jptacek/AngularPeriodic).
-
-
-<script type="text/javascript" src="/2014/06/angularJS-intro-to-directives/js/chemistryApp.js"></script>
-<script type="text/javascript" src="/2014/06/angularJS-intro-to-directives/js/chemistryController.js"></script>
-<script type="text/javascript" src="/2014/06/angularJS-intro-to-directives/js/chemistryService.js"></script>
-<script type="text/javascript" src="/2014/06/angularJS-intro-to-directives/js/chemistryDirective.js"></script>
-
-
