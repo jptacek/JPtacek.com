@@ -19,9 +19,6 @@
 <% if @googlePlusId: %>
 <a href="https://plus.google.com/<%= @googlePlusId %>?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 <% end %>
-    <link href="/styles/site.css" rel="stylesheet" media="screen">
-    <link href="/styles/chemistry.css" rel="stylesheet" />
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 
 <div class="navbar navbar-default navbar-static-top">
@@ -68,6 +65,9 @@
     </div>
 </div>
 
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
     <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
     <script type="text/javascript" src="/vendor/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="/vendor/angular-animate/angular-animate.min.js"></script>
@@ -77,6 +77,18 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="/scripts/site.js"></script>
+
+    <script>
+    var cb = function() {
+    var l = document.createElement('link'); l.rel = 'stylesheet';
+    l.href = '/styles/site.css';
+    var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+    };
+    var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+    webkitRequestAnimationFrame || msRequestAnimationFrame;
+    if (raf) raf(cb);
+    else window.addEventListener('load', cb);
+    </script>
 
     <script type="text/javascript">
     var _gaq = _gaq || [];
