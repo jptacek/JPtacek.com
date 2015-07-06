@@ -3,7 +3,7 @@ layout: post
 title: AngularJS - Image Binding in AngularJS with Lou Reed
 date: 2014/01/24
 tags: ["AngularJS","JavaScript","Web"]
-['/2014/01/angularjs-lou-reed/js/louApp.js','/2014/01/angularjs-lou-reed/js/louController.js','/2014/01/angularjs-lou-reed/js/louController2.js']
+scripts: ['/2014/01/angularjs-lou-reed/js/louApp.js','/2014/01/angularjs-lou-reed/js/louController.js','/2014/01/angularjs-lou-reed/js/louController2.js']
 ---
 
 [AngularJS](http://www.angularjs.org) is a Javascript MVC framework from the fine folks over at
