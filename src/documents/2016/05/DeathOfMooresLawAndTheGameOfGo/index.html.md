@@ -2,7 +2,7 @@
 layout: post
 title: The Death of Moore's Law and the Game of Go
 date: 2016/05/03
-tags: ["Business","Computing","SkylineTechnologies"]
+tags: ["Business","Computing","Skyline Technologies"]
 ---
 
 For the last 50 years or so, the land of computers has been ruled by Moore’s Law, but that time is coming to an end. 
@@ -32,3 +32,6 @@ The second thing we learn from Google’s DeepMind victory against a Go champion
 Last, another future path to computation growth is quantum computing. Quantum computing requires a bit of a deeper dive (future blog post!), but suffice to say, the world of qbits and supposition principle provides orders and orders of magnitude increases in speed for some computational cases.
 
 So…. Moore’s law is going away. We are reaching the literal physical limitations of how much closer we can put transistors on a chip. We are also moving to a world where lower power usage, which equates to less chip performance is much more preferred than previous decades. This all means different computing platforms will help a variations of Moore’s law continue, where computing power continues to increase, but it will be distributed into massive scale cloud infrastructure with novel approaches like neural networks and quantum computing coupled with speedy networks to make sure today’s super computers are in our pockets in 30 years.
+
+
+This blog post originally appeared at [Skyline Technologies](http://www.skylinetechnologies.com/Insights/Skyline-Blog/May_2016/Death_of_Moore_s_Law).
