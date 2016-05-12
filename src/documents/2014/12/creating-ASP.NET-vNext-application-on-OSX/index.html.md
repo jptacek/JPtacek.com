@@ -156,4 +156,4 @@ Links
 * Microsoft on Yeoman for ASP.NET - [http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx](http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx)
 
 This blog post originally appeared at [Skyline Technologies](http://www.skylinetechnologies.com/Blog/Article/2586/12-Days-of-Christmas-Mac.aspx)
-as part of their [12 Blogs of Christmas series](http://www.skylinetechnologies.com/Blog/Article/2586/12-Days-of-Christmas-Mac.aspx)
+as part of their [12 Blogs of Christmas series](http://www.skylinetechnologies.com/Insights/Skyline-Blog/December-2014/Dec-8th-Kicks-Off-the-12-Blogs-of-Christmas)

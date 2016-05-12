@@ -26,5 +26,3 @@ Blog post on programmatically creating Deep Zoom
 &nbsp;
 
 [Jaime Rodrigues goes deep on Deep Zoom](http://blogs.msdn.com/b/jaimer/archive/2008/03/31/a-deepzoom-primer-explained-and-coded.aspx)
-
-This post orgianlly appeared at Skyline Technologies ([http://www.skylinetechnologies.com/blog/Pages/deepzoom.aspx](http://www.skylinetechnologies.com/blog/Pages/deepzoom.aspx))

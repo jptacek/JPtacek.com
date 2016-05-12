@@ -30,5 +30,3 @@ The Xbox Surface would be based on the next version of Windows Phone 8, which I 
 Microsoft has had tremendous success with the Xbox in the consumer space. It is a brand consumers trust. They do not have a competitor to Sony's PSP line. It is well past time they create one. With the upcoming release  of the new Xbox it is my guess you will see one and it will be based on Windows Phone. And hey, if your new Xbox portable gaming device makes phone calls, well that is just a bonus.
 
 And just like that, Microsoft has a path to gain traction in the phone space.
-
-&nbsp;

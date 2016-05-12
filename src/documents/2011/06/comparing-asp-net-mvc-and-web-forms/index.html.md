@@ -19,22 +19,24 @@ There are times when Web Forms will make sense, and times where MVC will make se
 
 **Advantages of Web Forms:**
 
-*   Developer Familiarity
-*   VERY rich eco system of server controls
-*   Provides a RAD development environment
-*   Event driven system
-*   Much easier development for data heavy LOB system
+* Developer Familiarity
+* VERY rich eco system of server controls
+* Provides a RAD development environment
+* Event driven system
+* Much easier development for data heavy LOB system
+
+
 **Advantages of MVC:**
 
-*   Full control over HTML
-*   Easy integration with JavaScript frameworks
-*   Embraces the stateless nature of the web
-*   Easier Search Engine Optimization
-*   Allows for better testing
-At the end of the day, both MVC and Web forms are platforms built on ASP.NET and use the same runtime. HTML and HTML 5, while always an important part of what we do, are becoming more and more important. If you ever needed verification of this, Microsoft's [recent announcement](http://www.microsoft.com/presspass/features/2011/jun11/06-01corporatenews.aspx)that Windows 8 would allow for the distribution of HTML 5 apps to Windows reinforces that. MVC and Web Forms are both platforms we need to make our customer successful in this kind of environment. While I feel MVC is going to be a preferred platform for HTML development, the truth is both platforms are suited for the creation of HTML sites.
+* Full control over HTML
+* Easy integration with JavaScript frameworks
+* Embraces the stateless nature of the web
+* Easier Search Engine Optimization
+* Allows for better testing
 
-**Why Use it?
-**ASP.NET MVC is a platform for developing HTML applications that provides the user much greater control over the HTML markup that is rendered. There are added benefits such as supporting testing and better code design too!
+At the end of the day, both MVC and Web forms are platforms built on ASP.NET and use the same runtime. HTML and HTML 5, while always an important part of what we do, are becoming more and more important. If you ever needed verification of this, Microsoft's [recent announcement](http://www.microsoft.com/presspass/features/2011/jun11/06-01corporatenews.aspx) that Windows 8 would allow for the distribution of HTML 5 apps to Windows reinforces that. MVC and Web Forms are both platforms we need to make our customer successful in this kind of environment. While I feel MVC is going to be a preferred platform for HTML development, the truth is both platforms are suited for the creation of HTML sites.
+
+**Why Use it?** ASP.NET MVC is a platform for developing HTML applications that provides the user much greater control over the HTML markup that is rendered. There are added benefits such as supporting testing and better code design too!
 
 **I Want To Learn More!**
 
@@ -50,6 +52,3 @@ At the end of the day, both MVC and Web forms are platforms built on ASP.NET and
 
 Along this same line there is great NuGet package that you can use with MVC3 and EF 4.1 that will generate your views, controllers and Repositories. Yes, a code-gen tool that adheres to real world architecture practices, from your true POCO model classes. [Check it out](http://blog.stevensanderson.com/2011/01/13/scaffold-your-aspnet-mvc-3-project-with-the-mvcscaffolding-package/).
 
-&nbsp;
-
-This blog post orginally appeared at Skyline Technologies ([http://www.skylinetechnologies.com/blog/Pages/mvcaspnet.aspx](http://www.skylinetechnologies.com/blog/Pages/mvcaspnet.aspx))

@@ -32,5 +32,3 @@ The second service is responsible for searching. Within the application, there a
 It's a small example, but it illustrates the point of trying to encapsulate as much logic is possible in our service calls and not put the burden on the mobile phone. This way if there's a bug or change that needs to be made in the search functionality, we can update the service call, and not have to go through the lengthy process of updating three mobile applications in their respective mobile stores.
 
 Watch for future blog posts that discuss each individual platform in more detail.
-
-This blog post originally appeared at Skyline Technologies ([http://www.skylinetechnologies.com/blog/Pages/compassionmobileappdevelopment.aspx](http://www.skylinetechnologies.com/blog/Pages/compassionmobileappdevelopment.aspx))

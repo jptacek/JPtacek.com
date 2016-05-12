@@ -96,4 +96,4 @@ Is Innovation dead? No. Is it slowing down? It may be by some measure. However, 
 another great wave of GDP growth as the fruits of the Information Revolution emerge. I am excited to see what is
 coming next!
 
-This blog post originally appeared at [Skyline Technologies](http://www.skylinetechnologies.com/Blog/Lists/Posts/Post.aspx?ID=167)
+This blog post originally appeared at [Skyline Technologies](http://www.skylinetechnologies.com/Insights/Skyline-Blog/January-2013/Innovation)

@@ -37,4 +37,4 @@ Remember, you are building your business ties based on your relationship ties. I
 
 Working with clients overseas can be a very rewarding experience. Just be sure you are respectful of the customer and their culture and make sure you sit and listen before speaking. In today's global economy the world is your customer base!
 
-This blog post originally appeared at Skyline Technologies ([http://www.skylinetechnologies.com/blog/Pages/Working_With_International_Clients.aspx](http://www.skylinetechnologies.com/blog/Pages/Working_With_International_Clients.aspx))
+This blog post originally appeared at [Skyline Technologies] (http://www.skylinetechnologies.com/Insights/Skyline-Blog/December-2011/Tips-for-Working-With-International-Clients)

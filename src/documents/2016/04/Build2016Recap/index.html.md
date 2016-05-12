@@ -2,7 +2,7 @@
 layout: post
 title: Build 2016 Recap
 date: 2016/04/06
-tags: ["Microsoft","Build","Web"]
+tags: ["Microsoft","Build","Web","Skyline Technologies"]
 ---
 
 Microsoft’s recent developer conference, Build, finished up last week in San Francisco. Every year, Skyline sends a team of people to Build to understand Microsoft’s direction for our customers in the coming year  

@@ -9,7 +9,7 @@ In honor of [National Pi Day](http://en.wikipedia.org/wiki/Pi_Day), we thought i
 
 So back in the day, when things where WAY different, Pi was calculated using a mathematical series. One of the more famous ones uses the arctan math function to calculate the value of π. This is called the Leibniz formula for π and is represented by
 
-    ![p1](pi1.jpg)
+![Pictue 1](pi1.jpg)
 
 Now, this is one of the more inefficient ways to calculate π, it takes about 10 million terms to get an accuracy of 7 decimal places. For those of us asking performance differences between languages though, that is great! 
 
@@ -139,7 +139,7 @@ Both code examples are included, so for National Pi day, make a circle, calculat
 
 C++
 
-<pre class="brush: cpp">
+``` cpp
 // LifeOfPi.cpp : Defines the entry point for the console application.
 //
 
@@ -186,13 +186,11 @@ void pi( double *pi_value, int *iterations)
       return; // indicate program ended sucessfully 
 
 } // end fucntion main 
-</pre>
-
-</span>
+``` 
 
 C#
 
-<pre class="brush: csharp">
+``` csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -236,8 +234,8 @@ namespace LifeOfPiCSharp
         }
     }
 } 
-</pre>
+```
 
 &nbsp;
 
-This blog post originally appeared at [Skyline Technologies](http://www.skylinetechnologies.com/Blog/Lists/Posts/Post.aspx?ID=186)
+This blog post originally appeared at [Skyline Technologies](http://www.skylinetechnologies.com/Insights/Skyline-Blog/March-2013/Have-Your-Pi-and-Eat-it-Too-A-Comparison-of-C-an)

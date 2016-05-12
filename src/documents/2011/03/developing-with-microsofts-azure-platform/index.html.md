@@ -19,4 +19,3 @@ Another variation of scale is disk space ... we only pay for what we use. We don
 
 As I mentioned earlier, Azure is based on .NET technologies, making it relatively straightforward to move to cloud development. There are, of course, several differences. When you deploy an application to Azure, it starts a dedicated Virtual Machine to host your application in a Microsoft data center. The bigger the size of the machine you request, the more you pay. One result of the virtual machine being created for each deploy is that you don't want to persist data to these VMs. You will use blob storage for persisted data. This is one of the biggest differences between Azure and normal .NET development.
 
-This blog post originally appeared at Skyline Technologies ([http://www.skylinetechnologies.com/blog/Pages/developingwithazure.aspx](http://www.skylinetechnologies.com/blog/Pages/developingwithazure.aspx))
