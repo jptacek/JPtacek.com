@@ -2,7 +2,7 @@
 layout: post
 title: Google I/O 2016 Recap
 date: 2016/05/24
-tags:  ["Microsoft","Build","Web","Skyline Technologies"]
+tags:  ["Google","Web","Skyline Technologies"]
 ---
 
 In the Developer world, there are usually three big conferences each year; Microsoft’s Build, Google I/O and Apple’s World Wide Developer Conference (WWDC). Google’s [I/O](https://events.google.com/io2016/) conference, its 10th, just wrapped up last week. Let us take a spin around some of the more interesting announcements from the conference.
@@ -35,4 +35,4 @@ Google has made the I/O conference available for all to [watch](https://www.yout
 
 
 
-This blog post originally appeared at Skyline Technologies.
+This blog post originally appeared at [Skyline Technologies](https://www.skylinetechnologies.com/Insights/Skyline-Blog/May_2016/Google_I_O_2016_Recap).
