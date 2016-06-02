@@ -5,9 +5,7 @@ date: 2014/6/3
 ignore: false
 tags: ["AngularJS","JavaScript","Web"]
 scripts: ['/2014/06/angularJS-intro-to-directives/js/chemistryApp.js','/2014/06/angularJS-intro-to-directives/js/chemistryController.js','/2014/06/angularJS-intro-to-directives/js/chemistryService.js','/2014/06/angularJS-intro-to-directives/js/chemistryDirective.js']
-
-
-
+---
 [AngularJS](http://www.angularjs.org) is a Javascript MVC framework from the fine folks over at
 [Google](http://www.google.com). The focus of Angular is building complex
  HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
