@@ -4,6 +4,7 @@ title: Being John Ptacek – Configuring Wordpress for Authorship Markup
 date: 2013/02/27
 tags: ["Azure","Business","Ephemera","Skyline Technologies","WordPress"]
 ---
+**Update - June 2, 2014** Google has been [deprecating](http://searchengineland.com/goodbye-google-authorship-201975) a lot of the SEO benefits laid out in this post
 
 A while back, Scott Hanselman had a blog [post](http://www.hanselman.com/blog/EmbraceAuthorshipTheImportanceOfRelmeAndRelauthorOnYourContentsSEOAndGoogle.aspx) about embracing authorship. Essentially, it was a discussion about using Google's authorship [markup](http://googlewebmastercentral.blogspot.com/2011/06/authorship-markup-and-web-search.html) on your website to help identify content you wrote. Like a lot of my recent posts, I decided to give this a run on my blog, which is an Azure hosted site running Wordpress.
 

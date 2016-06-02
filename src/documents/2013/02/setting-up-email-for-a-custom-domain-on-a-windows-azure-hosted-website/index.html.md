@@ -4,6 +4,9 @@ title: Setting up email for a Custom Domain on a Windows Azure hosted website
 date: 2013/02/15
 tags: ["Azure","DNS","DNSimple","email","Web"]
 ---
+**Update - May 27, 2014** Microsoft has announced that it will no longer support custom domains using Outlook.Com. As a
+ result, this content of this post is no longer valid. They
+are encouraging customers to use Office 365 moving forward. You can find out more at [domains.live.com](http://domains.live.com/)
 
 The blog site you are currently on, jptacek.com, is using [Windows Azure websites](http://www.windowsazure.com/en-us/home/scenarios/web-sites/), which is a great way to quickly get a web presence up and running. The site also provides very low barrier to entry for setting up blogging engines or CMS applications. The one thing it does not do though is offer email services out of the box.
 
@@ -20,26 +23,26 @@ Versus Chrome
 
 ![](021513_1309_Settingupem2.png)
 
-1.  Click the sign in button and use your Microsoft account and then click the Get Started link
-2.  <div>Type in the custom domain you will want email for, in our case, jptacek.com. Make sure Set up Outlook.com is selected for your domain mail service, and then hit the continue button</div>
+2.  Click the sign in button and use your Microsoft account and then click the Get Started link
+3.  Type in the custom domain you will want email for, in our case, jptacek.com. Make sure Set up Outlook.com is selected for your domain mail service, and then hit the continue button
 ![](021513_1309_Settingupem3.png)
-3.  <div>You will then need to battle Microsoft's exceedingly unforgiving CAPTCHA system, after which you will be taken to the registration screen. The first step is to configure the MX record (MX is the DNS record used for mail)</div>
+4.  You will then need to battle Microsoft's exceedingly unforgiving CAPTCHA system, after which you will be taken to the registration screen. The first step is to configure the MX record (MX is the DNS record used for mail)
 ![](021513_1309_Settingupem4.png)
-4.  Log onto your DNS provider, in our case DNSImple.com, and add the record. This varies by DNS provider. IN the case on DNSimple, we go to the Advanced section, and choose Add a Record and select MX from the dropdown
-5.  <div>Our next step is to create a server trust record as recommended on the admin screen. This is a TXT DNS record that helps verify our email address and helps prevent the email from the site from being marked as junk</div>
+5.  Log onto your DNS provider, in our case DNSImple.com, and add the record. This varies by DNS provider. IN the case on DNSimple, we go to the Advanced section, and choose Add a Record and select MX from the dropdown
+6.  Our next step is to create a server trust record as recommended on the admin screen. This is a TXT DNS record that helps verify our email address and helps prevent the email from the site from being marked as junk
 ![](021513_1309_Settingupem5.png)
-6.  Next, we want a URL we can use to access our email. To do this, we create a CNAME record that points back to the Hotmail/Outlook . We will use mail, so mail.jptacek.com will be the URL we use when accessing email. You could use [kwyjibo](http://www.youtube.com/watch?v=-VILl6FOm6s) if you wanted to, just remember it <span style="font-family: Wingdings;">J</span> The CNAME record needs to point back to go.domains.live.com
+7.  Next, we want a URL we can use to access our email. To do this, we create a CNAME record that points back to the Hotmail/Outlook . We will use mail, so mail.jptacek.com will be the URL we use when accessing email. You could use [kwyjibo](http://www.youtube.com/watch?v=-VILl6FOm6s) if you wanted to, just remember it <span style="font-family: Wingdings;">J</span> The CNAME record needs to point back to go.domains.live.com
 &nbsp;
 
 ![](021513_1309_Settingupem6.png)
 
-1.  <div>It can take up to 60 minutes for your domain to resolve, you can see if your domain records are updated by using your favorite command prompt and typing the commands</div>
+1.  It can take up to 60 minutes for your domain to resolve, you can see if your domain records are updated by using your favorite command prompt and typing the commands
 
     1.  nslookup -type=mx jptacek.com
     2.  nslookup -type=txt jptacek.com
 
 These should display values you entered earlier
-2.  <div>Return to Domains.live.com and log in with your Microsoft account. It will show you the domains. In this step, the DNS configuration can take a while too</div>
+2.  Return to Domains.live.com and log in with your Microsoft account. It will show you the domains. In this step, the DNS configuration can take a while too
 ![](021513_1309_Settingupem7.png)
 3.  When your domain is active, you can add accounts, up to 50 of them. To do this click the domain name, and click the Add button for member accounts
 ![](021513_1309_Settingupem8.png)

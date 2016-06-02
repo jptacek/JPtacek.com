@@ -5,9 +5,11 @@ date: 2013/04/18
 tags: ["Ephemera","Outlook.com","Web"]
 ---
 
+**Update:** That did not last long... Apparently Microsoft will soon enable the ability to log in via aliases (from [Outlook.com](http://blogs.office.com/b/microsoft-outlook/archive/2013/04/17/outlook-com-gets-two-step-verification-sign-in-by-alias-and-new-international-domains.aspx) blog). Hopefully this will be an optional feature.
+
 I have had my Microsoft account migrated from the old Hotmail to the new Outlook.com look for a while now. In general, the new Outlook.com has a MUCH better user interface than the old Hotmail.
 
-I have also been migrating away from my Gmail account to a different email provider. I have been using Gmail for a LONG time, since 2004\. However, some recent privacy snafus on Google's part and the abandonment of Google Reader inspired me to migrate over. So I have decided to give Outlook.com a try (and don't worry, I have no illusions about Microsoft and my privacy either<span style="font-family:Wingdings">J</span>)
+I have also been migrating away from my Gmail account to a different email provider. I have been using Gmail for a LONG time, since 2004. However, some recent privacy snafus on Google's part and the abandonment of Google Reader inspired me to migrate over. So I have decided to give Outlook.com a try (and don't worry, I have no illusions about Microsoft and my privacy either<span style="font-family:Wingdings">J</span>)
 
 Now that I am paying more attention to Outlook I have run across a feature I wasn't previously aware of, and it is awesome. What feature is that? Outlook.com email aliases.
 
