@@ -18,6 +18,9 @@ To illustrate the madness of what we are talking about, consider the famous exam
 So if we think of our current computers and transistors, they are based on the idea of a bit; either on or off or 0 and 1. In quantum computing, bits are replaced by quantum bits, or qubits. A qubit can be a 0 or a 1, it can be both a 0 and 1, or any value in between. 
 In the current world with bits, only two options exist at any single time, and steps are performed linearly, in the quantum world, with the concept of qubits you can store multiple values at all at once and all the solutions are processes in parallel. Once you determine the state by measuring or observing, you get a single answer.
 
+![Qubit](Quantum_computer.svg?raw=true) source: [Wikipedia](https://en.wikipedia.org/wiki/Quantum_computing#/media/File:Quantum_computer.svg)
+
+
 In the real world, what does this mean. So far, not a whole lot. You aren’t going to get a tremendous increase in performance playing Minecraft. Quantum Computing has so far been proven to be much faster than traditional computing for a small subset of problems. One of these is Shor’s Algorithm, which is very helpful in figuring out prime numbers, which has very important implications for cryptography. 
 
 As more and more research happens, more types of problems are discovered that can be solved with quantum computing. This should continue to grow over time.
