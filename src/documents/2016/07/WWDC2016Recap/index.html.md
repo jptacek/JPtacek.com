@@ -2,7 +2,7 @@
 layout: post
 title: Apple WWDC 2016 Recap
 date: 2016/07/05
-tags:  ["Google","Web","Skyline Technologies"]
+tags:  ["Apple","Mobile","Skyline Technologies","Conference"]
 ---
 
 In the Developer world, there are usually three big conferences each year; Microsoft’s Build, Google I/O and Apple’s World Wide Developer Conference (WWDC). Google’s [I/O](https://events.google.com/io2016/) conference, its 10th, just wrapped up last week. Let us take a spin around some of the more interesting announcements from the conference. We have previously looked at 

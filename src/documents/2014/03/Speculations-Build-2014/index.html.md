@@ -2,7 +2,7 @@
 layout: post
 title: Speculations for Build 2014
 date: 2014/03/02
-tags: ["Conferences","Build"]
+tags: ["Conferences","Build","Conference"]
 ---
 
 Build is a Microsoft developer conference that has taken the place of their Professional Developer Conference (PDC). The first

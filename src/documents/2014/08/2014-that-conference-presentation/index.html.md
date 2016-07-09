@@ -2,7 +2,7 @@
 layout: post
 title: 2014 That Conference
 date: 2014/8/12
-tags: ["Speaking","That Conference","Health"]
+tags: ["Speaking","That Conference","Health","Conference"]
 ---
 
 Thanks to everyone wbo attended my That Conference talk this year. I enjoyed the conversations about the talk during and
