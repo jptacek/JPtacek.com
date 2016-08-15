@@ -21,16 +21,16 @@ verison of Anuglar. The older versions will be called AngularJS or Angular 1.x.
 
 First though, why even upgrade at all, since the upgrade path from Angular 1.x to Angular 2? Lets highlight some reasons.
 
-###Component Based### - Web development is moving towards component based development, especially with some of the emerging
+### Component Based ### - Web development is moving towards component based development, especially with some of the emerging
 [web standards](https://www.w3.org/TR/NOTE-HTMLComponents). While those standards are not fully completed yet, Google is definitley
 preparing for that world. If you need further proof, checkout Google's [Polymer](https://www.polymer-project.org/1.0/) project.
 
-###TypeScript### - TypeScript is an extension of JavaScript created by Microsoft, open sourced and adopted by Google (I know!! Right?!?!)
+### TypeScript ### - TypeScript is an extension of JavaScript created by Microsoft, open sourced and adopted by Google (I know!! Right?!?!)
 TypeScript essentially is ECMAScript 6, combined with the ability to create type and annotations. It is used to create 
 Angular. The code samples developed by Google are all in TypeScript, with JavaScipt following later. You don't HAVE to use 
 TypeScript, but it will make life easier.
 
-###Virtual DOM### - One of the things [ReactJS](https://facebook.github.io/react/) taught the world, is the value of a Virtual DOM. This is a virtual representation
+### Virtual DOM ### - One of the things [ReactJS](https://facebook.github.io/react/) taught the world, is the value of a Virtual DOM. This is a virtual representation
 of the Document Object Model (DOM) for a HTML page. You can then work on this in memory which offers GREAT performance improvements. 
 Google has adopted a Virtual DOM and has realized the expected performance boosts.
 
