@@ -2,7 +2,7 @@
 layout: post
 title: Developing with Microsoft's Azure Platform
 date: 2011/03/25
-tags: ["Appleton Compassion","Azure","Giveology","Web"]
+tags: ["Appleton Compassion","Azure","Web"]
 ---
 
 For the past several months, Skyline has been working on an awesome charity project called the [Appleton Compassion Project](http://www.appletoncompassion.org/). This project will provide visitors to the [Trout Museum of Art ](http://www.troutmuseum.org/)a way to view the 10,500 pieces in the exhibit and their accompanying artist statements. It has also provided us with an excellent opportunity to develop in Azure and learn a thing or two which I'm going to share with you.

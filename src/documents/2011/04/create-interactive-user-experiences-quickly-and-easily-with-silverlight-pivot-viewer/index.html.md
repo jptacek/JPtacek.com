@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Create Interactive User Experiences Quickly and Easily with Silverlight Pivot Viewer
-date: 2011/04-/25
-tags: ["Appleton Compassion","Giveology","Pivot Viewer","Silverlight","Skyline Technologies","Web"]
+date: 2011/04/25
+tags: ["Appleton Compassion","Silverlight","Skyline Technologies","Web"]
 ---
 
 The Appleton Compassion Project, a recent charity project Skyline has completed, takes advantage of a great tool in the Microsoft toolset that few people know is out there, the Silverlight Pivot Viewer. Unfortunately, Microsoft has quite a few things named Pivot so you may find this confusing. Pivot Viewer is NOT:

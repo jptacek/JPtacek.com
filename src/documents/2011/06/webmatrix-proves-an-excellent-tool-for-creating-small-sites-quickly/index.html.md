@@ -2,7 +2,7 @@
 layout: post
 title: WebMatrix Proves an Excellent Tool for Creating Small Sites Quickly
 date: 2011/06/06
-tags: ["Appleton Compassion","Giveology","Skyline Technologies","Web","WebMatrix"]
+tags: ["Appleton Compassion","Skyline Technologies","Web","WebMatrix"]
 ---
 
 As our work on the [Appleton Compassion Project](http://www.appletoncompassion.org/) was wrapping up, 

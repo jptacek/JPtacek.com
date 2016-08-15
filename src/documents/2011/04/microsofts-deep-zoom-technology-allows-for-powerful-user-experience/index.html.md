@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Microsoft's Deep Zoom Technology Allows for Powerful User Experience
-date: 2011/04/25
-tags: ["Appleton Compassion","Deep Zoom","Giveology","Silverlight","Web"]
+date: 2011/04/26
+tags: ["Appleton Compassion","Silverlight","Web"]
 ---
 
 Closely tied to the Silverlight Pivot Viewer I discussed in my [previous blog post](http://www.skylinetechnologies.com/blog/Pages/silverlightpivotviewer.aspx), is Microsoft's Deep Zoom technology. Deep Zoom enables users to pan and zoom around a high resolution image, or in the case of how we use it for the [Appleton Compassion Project Virtual Exhibit](http://www.appletoncompassion.org/VirtualExhibitViewer), navigate a large collection of images.

@@ -2,7 +2,7 @@
 layout: post
 title: SharePoint Search - Think Outside the (Search) Box!
 date: 2011/04/13
-tags: ["Search","SharePoint","SharePoint"]
+tags: ["SharePoint"]
 ---
 
 Search is ubiquitous in the world of the Internet. Everyone starts their questions by going to Google (or for a small minority Bing) and typing in their query as the entry to the Internet. The expectation is that the results are going to be exactly what you are looking for, and if that doesn't work out, adding a second term will get you there.

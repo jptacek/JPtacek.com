@@ -2,7 +2,7 @@
 layout: post
 title: That Conference 2016 - Angular vs React
 date: 2016/08/11
-tags:  ["ThatConference","Web","Angular","React"]
+tags:  ["That Conference","Web","Angular","React"]
 ---
 
 One of my favorite things each year is [That Conference](https://www.thatconference.com). I have been lucky enough to 
