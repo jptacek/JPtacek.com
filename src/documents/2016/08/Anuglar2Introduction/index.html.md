@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Angular/Angular2 Introduction
-date: 2016/08/11
+date: 2016/08/12
 tags:  ["Angular","Web","Angular2","JavaScript"]
 ---
 
@@ -9,7 +9,7 @@ I spent a lot of time blogging about [AngularJS](https://jptacek.com/tags/angula
 [Google](https://www.google.com) is feverishly working on finishing up [Angular2](https://angular.io), which is currently in release candidate as of 
 this writing (August of 2016).
 
-![Angular logo](angularLogo.svg?raw=true) 
+<img src="angularLogo.svg?raw=true" width="20%" alt="Angular Logo"></img>
 
 We will take a similar approach to last time, where we developed a periodic table application that investigates different features about 
 Angular.

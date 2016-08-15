@@ -2,7 +2,7 @@
 layout: post
 title: Windows 8 Dev Camp
 date: 2012/09/18
-tags: ["Appleton Compassion","Giveology","HTML 5","Skyline Technologies","Windows 8"]
+tags: ["Appleton Compassion","HTML 5","Skyline Technologies","Windows 8"]
 ---
 
 I work at [Skyline Technologies](http://www.skylinetechnologies.com), which is a Wisconsin based consulting company. One way that we really differentiate ourselves in the consulting space is our associate focus. We are always looking for interesting ways to get our teams together, engage with one another and learn from the smart people we have in our organization.

@@ -2,7 +2,7 @@
 layout: post
 title: An Introduction to the Microsoft Razor View Engine
 date: 2011/06/24
-tags: ["Razor","Web","WebMatrix"]
+tags: ["Web","WebMatrix"]
 ---
 
 In past blog posts on [MVC](http://www.jptacek.com/2011/06/comparing-asp-net-mvc-and-web-forms/) 
