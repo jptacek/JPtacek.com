@@ -19,7 +19,6 @@ cacheable: false
     </div>
     <% end %>
     <br/>
-    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents<%= @document.url %>index.html.md">pull request.</a><br />
 
     <p>&nbsp;</p>
 

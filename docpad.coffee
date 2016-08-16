@@ -103,7 +103,7 @@ docpadConfig = {
 #docpad -e static generate
   environments:
     static:
-      outPath: '..\jptacek.github.io'
+      outPath: '../jptacek.github.io'
       collections:   posts: ->
         @getCollection("html").findAllLive({layout: 'post'},[{date:-1}])
     development:
