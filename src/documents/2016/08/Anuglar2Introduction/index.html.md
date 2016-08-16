@@ -2,7 +2,7 @@
 layout: post
 title: Angular/Angular2 Introduction
 date: 2016/08/12
-tags:  ["Angular","Web","Angular2","JavaScript"]
+tags:  ["Angular","Web","Angular 2","JavaScript"]
 ---
 
 I spent a lot of time blogging about [AngularJS](https://jptacek.com/tags/angularjs/) in the past. Time moves on, especially on the Internet and 
