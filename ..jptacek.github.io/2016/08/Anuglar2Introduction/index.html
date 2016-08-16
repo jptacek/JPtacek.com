@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="Mobile, Web and JavaScript" />
+
+<title>Angular/Angular2 Introduction - JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <meta name="generator" content="DocPad v6.78.4" />
+    
+
+    <meta name="author" content="John Ptacek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+    <link href="/styles/site.css" rel="stylesheet" />
+    <link href="/css/highlight.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+
+
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">John Ptacek</a> <div class="navbar-brand"> - Musings on Code</div>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="/">Blog</a></li>-->
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                <li class="hidden-xs">
+                    <a href="/feed/index.xml" class="rss"><i class="fa fa-rss fa-lg"></i></a>
+                    <a href="https://twitter.com/jptacek" class="twitter"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><i class="fa fa-google-plus fa-lg"></i></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><i class="fa fa-linkedin fa-lg"></i></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><i class="fa fa-stack-overflow fa-lg"></i></a>
+                    <a href="https://github.com/jptacek" class="github"><i class="fa fa-github fa-lg"></i></a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right hidden-xs" role="search" action="https://google.com/search"
+                  method="get">
+                <div class="form-group">
+                    <input type="search" name="q" class="form-control" placeholder="Search">
+                    <input type="hidden" name="q" value="site:jptacek.com">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+            <article class="post">
+    
+    <h1>Angular/Angular2 Introduction</h1>
+    
+        <div class="post-date">Aug 12th, 2016</div>
+
+    <div class="post-content">
+        <p>I spent a lot of time blogging about <a href="https://jptacek.com/tags/angularjs/">AngularJS</a> in the past. Time moves on, especially on the Internet and 
+<a href="https://www.google.com">Google</a> is feverishly working on finishing up <a href="https://angular.io">Angular2</a>, which is currently in release candidate as of 
+this writing (August of 2016).
+<img src="/2016/08/Anuglar2Introduction/angularLogo.svg?raw=true" width="25%"></p>
+<p>We will take a similar approach to last time, where we developed a periodic table application that investigates different features about 
+Angular.</p>
+<p>One thing to note, Google has renamed Angular 2. The previous version of AngularJS, the 1.x stack was called AngularJS. The new
+version is now called just Angular. Part of the reason for this is to show its ability to create native mobile applications, so 
+the JavaScript name can be a bit limiting. We will, in general, keep the same names. Angular and/or Angular 2 will refere to the current 
+verison of Anuglar. The older versions will be called AngularJS or Angular 1.x.</p>
+<p>First though, why even upgrade at all, since the upgrade path from Angular 1.x to Angular 2? Lets highlight some reasons.</p>
+<h3 id="component-based">Component Based</h3>
+<p>Web development is moving towards component based development, especially with some of the emerging
+<a href="https://www.w3.org/TR/NOTE-HTMLComponents">web standards</a>. While those standards are not fully completed yet, Google is definitley
+preparing for that world. If you need further proof, checkout Google&#39;s <a href="https://www.polymer-project.org/1.0/">Polymer</a> project.</p>
+<h3 id="typescript">TypeScript</h3>
+<p>TypeScript is an extension of JavaScript created by Microsoft, open sourced and adopted by Google (I know!! Right?!?!)
+TypeScript essentially is ECMAScript 6, combined with the ability to create type and annotations. It is used to create 
+Angular. The code samples developed by Google are all in TypeScript, with JavaScipt following later. You don&#39;t HAVE to use 
+TypeScript, but it will make life easier.</p>
+<h3 id="virtual-dom">Virtual DOM</h3>
+<p>One of the things <a href="https://facebook.github.io/react/">ReactJS</a> taught the world, is the value of a Virtual DOM. This is a virtual representation
+of the Document Object Model (DOM) for a HTML page. You can then work on this in memory which offers GREAT performance improvements. 
+Google has adopted a Virtual DOM and has realized the expected performance boosts.</p>
+<p>Those are a few of the highlights of why Angular2 over AngularJS 1.x. We will hit more as we contineu our series.</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/angular/'>Angular</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/angular2/'>Angular2</a>, <a href='/tags/javascript/'>JavaScript</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/2016/08/Anuglar2Introduction/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+            <div id="me">
+    <p>
+        <img src="/images/Headshot-Square.png" alt="John Ptacek" />
+        I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
+        This blog is my contains my content and opinions, which are not those of my employer.
+    </p>
+    <p>Currently, I am reading 
+        <a href="https://www.goodreads.com/book/show/567704.Imajica">Imajica</a>
+        by <a href="http://www.clivebarker.info">Clive Barker</a></p>
+    <p>
+        <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="https://github.com/jptacek">GitHub</a> &#8226;
+        <a href="https://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
+        <a href="https://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
+        <a href="https://plus.google.com/+JohnPtacek">Google+</a>
+    </p>
+</div>
+
+            <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript></div>
+<script type="text/javascript">
+    var disqus_shortname = 'jptacek';
+    var disqus_url = 'http://www.jptacek.com/2016/08/Anuglar2Introduction/';
+    var disqus_identifier = disqus_url;
+    var disqus_title = 'Angular/Angular2 Introduction';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+</div>
+
+<div class="container">
+    <div class="navbar navbar-footer">
+        <p class="navbar-center navbar-text">Content copyright &copy; 2016 John Ptacek</p>
+    </div>
+</div>
+
+
+
+    <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-animate/angular-animate.min.js"></script>
+
+ 
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="/scripts/site.js"></script>
+
+
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34910017-1']);
+    _gaq.push(['_setDomainName', 'jptacek.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>

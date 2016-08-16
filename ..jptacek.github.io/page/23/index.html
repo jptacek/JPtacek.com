@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="Mobile, Web and JavaScript" />
+
+<title>JPtacek.com - JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <meta name="generator" content="DocPad v6.78.4" />
+    
+
+    <meta name="author" content="John Ptacek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+    <link href="/styles/site.css" rel="stylesheet" />
+    <link href="/css/highlight.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+
+
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">John Ptacek</a> <div class="navbar-brand"> - Musings on Code</div>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="/">Blog</a></li>-->
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                <li class="hidden-xs">
+                    <a href="/feed/index.xml" class="rss"><i class="fa fa-rss fa-lg"></i></a>
+                    <a href="https://twitter.com/jptacek" class="twitter"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><i class="fa fa-google-plus fa-lg"></i></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><i class="fa fa-linkedin fa-lg"></i></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><i class="fa fa-stack-overflow fa-lg"></i></a>
+                    <a href="https://github.com/jptacek" class="github"><i class="fa fa-github fa-lg"></i></a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right hidden-xs" role="search" action="https://google.com/search"
+                  method="get">
+                <div class="form-group">
+                    <input type="search" name="q" class="form-control" placeholder="Search">
+                    <input type="hidden" name="q" value="site:jptacek.com">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+        <div class="col-sm-12 col-md-10">
+            
+    <article class="post">
+    
+    <h1><a href='/2012/11/enabling-customer-success-with-visual-studio-2012/'>Enabling Customer Success with Visual Studio 2012</a></h1>
+    
+        <div class="post-date">Nov 22nd, 2012</div>
+
+    <div class="post-content">
+        <p>​One of the enjoyable things about being a consultant with Skyline is partnering with our clients, especially those whom we have had long partnerships with, and helping them be successful with their customers over a time. It is both fascinating and rewarding to watch as they become both more successful, and see how they respond to the challenges of a changing application landscape for their customers.</p>
+<p>Skyline has partnered with <a href="http://www.softwareone.com/EN-US/Pages/Default.aspx">SoftwareONE,</a> one of the largest software license resellers in the world, for many years now. SoftwareONE is headquartered in Stans, Switzerland and has operations in nearly 60 countries around the world. Our partnership initially focused on enabling their customers to access their licensing information from their backend ERP system. A secondary goal was to facilitate collaboration between SoftwareONE, its global customer base, its software resellers and the software publishers whose products they sell.</p>
+<p>To enable this collaboration, the original portal was hosted on SharePoint 2007, with custom pages developed to access the back end ERP systems. The way the ERP system is designed, each individual country SoftwareONE does business in has a separate database. The implementation within SharePoint had each country create a separate web application, in order to identify the country, security constraints and other reasons. After several months of development and testing we had a solution that enabled access to customer licensing information as well as a collaboration platform. The solution was globally available across the six countries SoftwareONE was doing business in.</p>
+<p>However, in the five years since the Lifecycle Portal went live, the SoftwareONE business has dramatically grown. During that time those 6 countries grew to almost 60 different countries. With this increase in global scale, the complexity of managing separate web applications for each of these countries became increasingly difficult. Also, during that same time, there was a dramatic shift in the marketplace, as mobile websites and mobile applications became the new normal for many organizations, including SoftwareONE and its customers.</p>
+<p>It became apparent to SoftwareONE that it was time to upgrade their Lifecycle Portal. Looking at the options available, it was quickly decided that Microsoft Visual Studio 2012 and .NET Framework 4.0 were the answer to many problems the current system was encountering. The decision was made to rewrite the portal using Microsoft&#39;s MVC platform, with the new portal referred to as vNext. Here are some of the benefits our combined team realized from choosing Visual Studio 2012:</p>
+<p><strong> Fully Mobile </strong> The current version of the Lifecycle Portal was designed to be fully mobile. From the beginning, the goal of the application was to future proof the development by ensuring it could meet a variety of mobile endpoints. The mobile views introduced in MVC 4 enabled custom web pages that are viewable on the variety of mobile enabled browsers that SoftwareONE customers are using.</p>
+<p><strong> Web Services </strong> To meet the requirements of a dynamic, interactive web app, as well as enable native mobile applications such as iOS or Android, it was important for the application to provide data via web services. The controller based implementation within MVC made the ability to have consolidated logic that is used by the razor view engine to create HTML or JSON data used with mobile clients trivial.</p>
+<p>Consolidating logic for presentation within a single controller makes long term maintenance simpler. The controller model also enables us to use anonymous classes to &quot;shape&quot; (or limit) the data we are using for various mobile platforms. The ability to easily emit JSON results with the JSON keyword in the controller ensure that both Javascript-based web implementation as well as native mobile applications are all accessing data via the same application path. Contrast this with our previous web forms implementation where we needed to have a separate service implementation and the benefits of choosing MVC for a service based application is readily apparent.</p>
+<p><strong> Entity Framework Code First </strong> The previous version of the Lifecycle Application Portal relied on Linq To SQL. Due to several factors, including small differences between tables based on business rules in different countries, the Linq To SQL implementation relied on SQL views. This enabled us to abstract away differences in the table structures. However, as time went on, this approach became a hindrance to deploying new version of the portal. Upgrades would require SQL scripts to be deployed to each country. As the country count went from 6 to over 30, this became quite a time commitment during the deploy process. Second, because of changes to the underlying data structure, changes would have to happen off hours, but with the application running for customers across the globe, there were no off hours!</p>
+<p>Entity Framework Code First became a great solution to remedy the problem. With Code First, all of the differences between the databases could easily be handled by not including extra fields within our data model. The flexibility that the fluent API provides also enabled us to add a specific column to our model. Further, by adding a new field to two places within our application tiers, it was immediately available for our Razor views. These Code First features made the cumbersome process of running 30 SQL scripts a much welcomed thing of the past. We love the flexibility that Code First allows!</p>
+<p><strong> Claims Authentication </strong> Due to the growth of SoftwareONE&#39;s customer base as well as the need to be fully mobile, SharePoint 2010 was not the optimal solution for the vNext portal. However, SharePoint is still the premier collaboration platform for SoftwareONE and its customers. SoftwareONE is consistently focused on their customers and providing a top notch user experience. With Windows Identity Foundation (WIF) and the claims aware application stack in both MVC and SharePoint, users could log into one of the applications and have access to both of them with minimal friction. As SoftwareONE makes more tools and websites available to help their customers, the claims based authentication provided by WIF will enable a seamless logon experience.</p>
+<p><strong> Multi Threading </strong> Like SoftwareONE, its customers are doing operations in multiple countries around the globe. These customers have licensing needs that cross the globe too. In the previous version of the portal, accessing this information meant logging onto each country separately. With the introduction of new threading capabilities in the .NET framework, we were able to bring this data together. Within our application&#39;s service layer, each service call that retrieves data is using the new Task library to spin off a database request to each of the SoftwareONE country databases a user has access to. We are then able to combine these disparate data sources into a single result for display within the user interface. This provides SoftwareONE customers a holistic view to their data, no matter how many countries they have licensing concerns in or which database was the source for the data.</p>
+<p><strong> JavaScript </strong> Like most modern applications, the use of JavaScript and jQuery was used in vNext to create a responsive application. Once the page was loaded, asynchronous calls were made to web services to retrieve data and bind it to the page. With so much reliance on JavaScript and CSS, the new tooling support within Visual Studio 2012 for JavaScript as well as the page inspector tool, helped the developers realize a much more efficient development experience. Many hours were saved in the development phase by having access to these productivity tools.</p>
+<p><strong> Team Foundation Server </strong> With a development team featuring members in both Switzerland and the United States, code collaboration tools were imperative. Team Foundation Server (TFS) 2010 enabled developers to work on code as well as ensure that each developer&#39;s code compiled upon check in. With a large team and many check-ins, knowing as soon as possible that the code was not compiling was very valuable and saved time. Also, the enhanced merge capabilities in TFS allowed people who were working on disparate parts to each have the code checked out, and then merge back in the code of multiple developers without issue.</p>
+<p>TFS and visual studio have great testing tools. The development team used Unit Tests to ensure there were no unexpected logic issues introduced with code check-ins. Integrations tests were also run against the database each evening, to ensure code quality and expected results. This was an immense time saver in identifying issues early.</p>
+<p>With development teams in different parts of the globe as well as separated by 7 hours, tools provided by TFS ensured quality as well as enabled everyone to focus on doing their work.</p>
+<p>SoftwareONE&#39;s Lifecycle portal has been rewritten from a SharePoint 2007 application to the MVC based vNext portal and separate SharePoint 2010 collaboration platform. This rewrite takes advantage of many of the tools available in Visual Studio 2012 and the .NET Framework 4. Whereas the previous platform would have required spinning up a new web application, configuring it and running a 40,000 line SQL script to create specific views, we are now in a position to add a few lines to a config file and some SQL permissions and we are deployed to a new country instantly. Even more important, SoftwareONE is positioned for the next five years of growth in our rapidly changing industry, as they now have a dynamic platform that will enable their users across the globe to access their licensing information, whether it is at their desktop, on their mobile phone or using Windows 8.</p>
+<p>To see the SoftwareONE Lifecycle Portal in action, check out this <a href="http://www.youtube.com/watch?v=OoxJ1BA_GBk&amp;feature=plcp">video on You Tube</a>.</p>
+<p>It has been a great experience being a small part of SoftwareONE as they have become globally positioned as one of the top license resellers over the last five years. We are looking forward to another rewarding five years!</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/business/'>Business</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/page/23/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2012/10/apple_should_buy_usps/'>A Modest Proposal – Apple Should Buy the US Post Office</a></h1>
+    
+        <div class="post-date">Oct 19th, 2012</div>
+
+    <div class="post-content">
+        <p>The recent iMaps fiasco has taught the world that Apple has some serious catch up to do in the world of maps. There is a bit of a chicken and the egg issue, the more people using the iMaps app, the more data Apple can collect and make iMaps a better app. Instead of waiting for this to happen, Apple should speed up the process and buy the US Post office.</p>
+<p>The USPS operates over 210,000 vehicles and is the largest vehicle fleet in the world. The vast majority of these vehicles are out driving the world every day. If Apple buys the US post office, they could transform these vehicles into data gathering machines. Throw in a GPS and bring the data to Apple and their mapping team to quickly scale and improve iMaps. Next step, throw a camera in the car, ala the Google Car, and get a constantly refreshing street view mode. Google&#39;s Street View cars have driven 5 million miles since hitting the road. The US Post office drives 1.25 BILLION miles a year. Apple for the win! Next up, throw some more sensors onto the cars. For example, weather sensors could capture very local and real time weather data and create the next great Apple app, iWeather.</p>
+<p>Putting sensors onto the USPS fleet is not a new idea, the USPS has <a href="http://www.nytimes.com/2010/12/18/opinion/18ravnitzky.html">even</a> proposed doing this. However, it is a slow moving process, with privacy concerns often being cited. Apple buying the USPS and transforming it to the iPost Office helps alleviate these concerns. By moving the USPS from an old stodgy business to a tech company, privacy concerns quickly disappear. As consumers, we are used to letting the Goggles, Facebooks and Apples of the world collect information about us to make their services more awesome for us.</p>
+<p>Next up, it becomes an advertising niche for Apple. The USPS handled over 170 billion items in 2010. Each one of these becomes an advertising opportunity! Just like Google can put a little advertising onto most of the web pages we visit, iPost Office can put a little ad onto each of the 170 billion mail deliveries they do a year and have a brand new revenue stream.</p>
+<p>Next along the road, Apple can start competing with Amazon. It quickly acquires 30,000 retail locations that it can use to distribute physical goods. Instead of consumers having to wait a few days for the delivery of something from Amazon, or even two days for those customers paying for an Amazon Prime Membership, the iPost Office could deliver things purchased that day! The iPost Office even delivers on Saturdays, putting Amazon at a competitive disadvantage for those customers whom always battle cheap price vs. instant gratification.</p>
+<p>The best part about iPost Office is that everything Apple does is cool. Hipsters would start flocking back to their mailboxes. Apple could create stamps of Apple luminaries like Steve Jobs, Steve Wozniak and Jonathan Ive (post <a href="http://gizmodo.com/5516976/apples-chief-designer-re+designed">redesign</a> of course!). You can quickly imagine people buying these stamps and sending physical letters in the mail again. This could lead to a renaissance of letter writing! Imagine a world where instead of <a href="http://www.amazon.com/The-Letters-John-Cheever/dp/1439164649">The Letters of John Cheever</a> we could have the Collected Letters of <a href="http://daringfireball.net/">John Grueber</a>.</p>
+<p>Okay, so the above is all a little bit <a href="http://en.wikipedia.org/wiki/A_Modest_Proposal">Jonathan Swiftian</a>, but a partnership between the US Post Office and Apple could go a long way to solving the financial issues at the US Post Offices and Apple&#39;s iMaps issue. Of course, in the US iMaps tends to be in much better shape, so throw in a similar partnership with DHL for good measure. Apple could quickly gather data and help resolve their mapping issues. Win-win.</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/apple/'>Apple</a>, <a href='/tags/business/'>Business</a>, <a href='/tags/google/'>Google</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/page/23/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2012/10/xbox-phone/'>Xbox Phone</a></h1>
+    
+        <div class="post-date">Oct 8th, 2012</div>
+
+    <div class="post-content">
+        <p>Last week saw a lot of rumors running around that Microsoft would be releasing their own Windows Phone next year. <a href="http://www.wpcentral.com/microsoft-does-indeed-have-their-own-windows-phone">WPCentral</a>, <a href="http://www.bgr.com/2012/10/02/microsoft-surface-phone-release-date-windows-phone-8/">BGR</a> and <a href="http://www.theverge.com/2012/10/3/3445860/microsoft-surface-phone-rumors-windows-phone">The Verge</a> had &quot;trusted&quot; sources confirm the release of a Windows Phone next year (2013). Even <a href="http://www.forbes.com/sites/ewanspence/2012/10/07/why-its-a-good-idea-for-microsoft-to-build-their-own-surface-smartphone-windows-phone-surface-smartphone/">Forbes</a> got into the mix saying it would be a good idea.</p>
+<p>There are a lot of ways this would be difficult for Microsoft. They do not have distribution with the carriers, and that takes work. They have also burnt some bridges along the way (&quot;Remember the Kin&quot; I think is a Verizon rallying cry). They have also invested a lot in their relationship with Nokia.</p>
+<p>If they are REALLY looking to get into the mobile phone business, they would just buy Nokia. Microsoft makes money from nearly every Android device sold and Nokia makes money on every iPhone sold. Having your competitors help pay for your developers as you try to take market share is fun. There is also a ton of Intellectual Property that Nokia brings to the mobile space that Microsoft can realize benefit from. Their mapping technology is one of the top two (if not top) in the industry. They also have excellent native apps that Microsoft could leverage natively for all of their phones. Moving away from a Nokia partnership could set Microsoft back, especially if the relationship changes in a way that they lose their mapping technology.</p>
+<p>Lots of the speculation is that Microsoft would be making an unlocked device that they could sell directly to consumers, ala the Google approach with Nexus. I don&#39;t think that is going to happen. What I think is going to happen is that Microsoft is going to make a portable Xbox based on Windows Phone. Let&#39;s call it the XBox Surface.</p>
+<p>What do we know.</p>
+<p><strong>New Xbox Next year</strong> - Microsoft is rumored to be releasing a new version of the XBox next year. There is also rumors/confirmation that the new Xbox will be based on the same core as Windows 8. You can be pretty sure that the new Xbox will be launching later next year, in time for the Holiday season. Both of the previous version of the XBoxes launched in November.</p>
+<p><strong>Windows Phone</strong> - The upcoming release of Windows Phone 8 is also reworked to be based on the Windows 8 OS. With all of the secrecy it is hard to say, but it SEEMS that Microsoft has not totally baked this through. Next year, you can expect it to be more fully integrated. Also, Microsoft traditionally updates their OS in October/November time frame.</p>
+<p><strong>Windows 8.Next</strong> - Microsoft has stated they would like to get into quicker rev cycles for both Office and Windows. The Windows RT side of the OS seems like this would be readily doable. We can assume that this would happen about a year after the release, which gets us into September/October</p>
+<p><strong>One OS To Rule Them All</strong> - A good deal of Microsoft&#39;s success comes from the ability to make developers productive and create apps. Recently, Microsoft has been promoting a &quot;Shared Windows Core&quot;. This makes it easier for developers to create applications once and deploy to Windows 8 or Windows Phone, and one assumes Xbox.Next. While this is coming along, it doesn&#39;t feel like it is totally completed. I think it will be MUCH closer to fully baked next year.</p>
+<p>So what do we have... Rumors that Microsoft is building a Windows Phone Surface type device, a new version of the XBox and the assumption of new Windows Phone and Windows releases next fall. I think you throw this all into a blender, and Microsoft will not be releasing a Surface Phone, but a handheld Xbox based phone.</p>
+<p>The Xbox Surface would be based on the next version of Windows Phone 8, which I believe will be tightly integrated with the next Xbox. It will allow developers to much more easily create applications for both the next Xbox as well as the phone. Obviously you will not play Halo 5 on the phone, but you could maybe have a lighter graphic version of the FPS as well as augmented second screen for play if you wanted. Think the next version of Microsoft&#39;s SmartGlass on steroids, which will be more close to what Nintendo is doing with the WII U.</p>
+<p>Microsoft has had tremendous success with the Xbox in the consumer space. It is a brand consumers trust. They do not have a competitor to Sony&#39;s PSP line. It is well past time they create one. With the upcoming release  of the new Xbox it is my guess you will see one and it will be based on Windows Phone. And hey, if your new Xbox portable gaming device makes phone calls, well that is just a bonus.</p>
+<p>And just like that, Microsoft has a path to gain traction in the phone space.</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/business/'>Business</a>, <a href='/tags/windows-8/'>Windows 8</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/page/23/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+
+
+<div class="page-nav">
+    
+    <a class="page-nav-older" href="/page/24/"><span class="icon icon-arrow-left-2"></span> Older</a>
+    
+    
+    <a class="page-nav-newer" href="/page/22/">Newer <span class="icon icon-arrow-right-2"></span></a>
+    
+    <div class="page-nav-archives"><a href="/archives/">- Blog Archives -</a></div>
+</div>
+
+<div id="me">
+    <p>
+        <img src="/images/Headshot-Square.png" alt="John Ptacek" />
+        I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
+        This blog is my contains my content and opinions, which are not those of my employer.
+    </p>
+    <p>Currently, I am reading 
+        <a href="https://www.goodreads.com/book/show/567704.Imajica">Imajica</a>
+        by <a href="http://www.clivebarker.info">Clive Barker</a></p>
+    <p>
+        <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="https://github.com/jptacek">GitHub</a> &#8226;
+        <a href="https://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
+        <a href="https://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
+        <a href="https://plus.google.com/+JohnPtacek">Google+</a>
+    </p>
+</div>
+
+        </div>
+</div>
+
+<div class="container">
+    <div class="navbar navbar-footer">
+        <p class="navbar-center navbar-text">Content copyright &copy; 2016 John Ptacek</p>
+    </div>
+</div>
+
+
+
+    <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-animate/angular-animate.min.js"></script>
+
+ 
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="/scripts/site.js"></script>
+
+
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34910017-1']);
+    _gaq.push(['_setDomainName', 'jptacek.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="Mobile, Web and JavaScript" />
+
+<title>JPtacek.com - JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <meta name="generator" content="DocPad v6.78.4" />
+    
+
+    <meta name="author" content="John Ptacek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+    <link href="/styles/site.css" rel="stylesheet" />
+    <link href="/css/highlight.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+
+
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">John Ptacek</a> <div class="navbar-brand"> - Musings on Code</div>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="/">Blog</a></li>-->
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                <li class="hidden-xs">
+                    <a href="/feed/index.xml" class="rss"><i class="fa fa-rss fa-lg"></i></a>
+                    <a href="https://twitter.com/jptacek" class="twitter"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><i class="fa fa-google-plus fa-lg"></i></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><i class="fa fa-linkedin fa-lg"></i></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><i class="fa fa-stack-overflow fa-lg"></i></a>
+                    <a href="https://github.com/jptacek" class="github"><i class="fa fa-github fa-lg"></i></a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right hidden-xs" role="search" action="https://google.com/search"
+                  method="get">
+                <div class="form-group">
+                    <input type="search" name="q" class="form-control" placeholder="Search">
+                    <input type="hidden" name="q" value="site:jptacek.com">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+        <div class="col-sm-12 col-md-10">
+            
+    <article class="post">
+    
+    <h1><a href='/2014/01/deleting-win81-wireless-profiles/'>Deleting Windows 8.1 Wireless Profiles</a></h1>
+    
+        <div class="post-date">Jan 8th, 2014</div>
+
+    <div class="post-content">
+        <p>I have had some pretty strange behavior after upgrading to Windows 8.1. With Windows 8, Microsoft syncs up your wireless
+profiles to the cloud so when you have a new device, the wireless is already setup. So that is pretty cool. However, I
+have been having issues with it.</p>
+<p>For our home network, our SSID is not broadcast, like it should be on yours :). We manually add a hidden network and connect that way. With
+Windows 8.1, I would not be able to connect sometimes. I would then type in the name of our (hidden) SSID and the associated Password.
+It would then connect to the WiFi router, but the problem was it would create a new network profile each time. The way
+Windows 8 appears to build the name is by adding the number for the new wirless profile by checking the cloud or synched
+wireless profile that it could not connecting and adding one up to it. For example, if my wireless network is called
+Network Name, the second time I connected it would be, Network Name 2. The third time I connected it would be Network Name 2 3,
+and then Network Name 2 3 4, etc. . I ended up
+with VERY long strings for my network names. It also appears to add these to the cloud based profile no matter how often
+I clean up.</p>
+<p>Ultimately, I want to figure out how to clean up my wireless profiles that have been synched to the cloud. I don&#39;t really
+need or want the wireless profile for the restaraunt where I had a work meeting and accidently remembered the network. In the interim
+I have used PowerShell to enumerate all of the profiles and delete them, except the first one (aka Network Name).</p>
+<p>One of the things I want to do is spend more time in the command line this year. Mostly, I want to not have to lookup
+how to do things to interact with GitHub. So in that vain, I wrote a PowerShell script to delete all but the first
+wireless profile I created.</p>
+<p>So here is the PowerShell script</p>
+<pre class="highlight"><code class="hljs powershell"><span class="hljs-variable">$profile</span> = <span class="hljs-string">"Network Name"</span>
+<span class="hljs-variable">$total</span> = <span class="hljs-number">32</span>
+<span class="hljs-variable">$count</span> = <span class="hljs-number">2</span>
+<span class="hljs-built_in">Start-Transcript</span>
+netsh wlan show profiles
+<span class="hljs-keyword">do</span> {
+ <span class="hljs-variable">$profile</span> = <span class="hljs-variable">$profile</span> + <span class="hljs-string">" "</span> +<span class="hljs-variable">$count</span>
+ <span class="hljs-variable">$execCommand</span> = <span class="hljs-string">"netsh wlan delete profile name="</span><span class="hljs-string">"<span class="hljs-variable">$profile</span>"</span><span class="hljs-string">""</span>
+ <span class="hljs-built_in">Write-Host</span>(<span class="hljs-variable">$execCommand</span>)
+ <span class="hljs-built_in">Invoke-Expression</span> <span class="hljs-variable">$execCommand</span>
+ <span class="hljs-variable">$count</span>++
+}
+<span class="hljs-keyword">while</span> (<span class="hljs-variable">$count</span> <span class="hljs-operator">-le</span> <span class="hljs-variable">$total</span>)
+</code></pre>
+<p>Also, as part of more command line, I have created a small GitHub repository to save scripts I create. Mostly so
+I can grab them when I am other machines. Feel free to have at em</p>
+<ul>
+<li>GitHub PowerShell Repository - <a href="https://github.com/jptacek/PowerShell">https://github.com/jptacek/PowerShell</a></li>
+<li>RemoveWirelessProfile.ps1 script on Github - <a href="https://github.com/jptacek/PowerShell/tree/master/Network/Wireless">https://github.com/jptacek/PowerShell/tree/master/Network/Wireless</a></li>
+</ul>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/powershell/'>PowerShell</a>, <a href='/tags/windows-8/'>Windows 8</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/page/13/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2014/01/chocolately-and-boxstarter/'>Chocolately and BoxStarter</a></h1>
+    
+        <div class="post-date">Jan 1st, 2014</div>
+
+    <div class="post-content">
+        <p>I recently received a new work computer (an <a href="http://www.asus.com/Notebooks_Ultrabooks/ASUS_ZENBOOK_UX301LA/">Asus i7</a> that
+weighs 2.6 pounds, my old laptop, a Dell M6500 weighed over 8.5 lbs, it is like I am from the future now, but I digress).
+One of the things that I don&#39;t like about getting a new PC is setting up the computer. I am very good about making sure
+all of my files are stored in the cloud (via Skydrive and DropBox) and/or is under source control. I don&#39;t fear losing stuff, it
+is the loss time in restoring my applications and environments that makes me crazy. I always forget to install a utility
+I want. Or the exact moment I NEED to remote desktop is when I remember I forgot to ENABLE remote desktop.</p>
+<p>However, since my last PC install, the world of Windows has changed, and its name is <a href="http://chocolatey.org/">Chocolately</a>.
+Chocolatey is similar to apt-get on Linux, or the NPM package manager for <a href="http://www.nodejs.org">Node</a>. You can, via
+the command line, automatically install all kinds of applications that are available on <a href="http://www.nuget.org/">NuGet</a>.
+For example, to install ReSharprer, fire up a command prompt and type</p>
+<pre class="highlight"><code class="hljs bash">    cinst resharper
+</code></pre>
+<p>and away we go.</p>
+<p>You can find out more at the <a href="http://chocolatey.org/">Chocolately</a> site. Essentially though, you can achieve all of
+this goodness by staring a command prompt and pasting the following</p>
+<pre class="highlight"><code class="hljs bash">    @powershell -NoProfile -ExecutionPolicy unrestricted -Command <span class="hljs-string">"iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))"</span> &amp;&amp; SET PATH=%PATH%;%systemdrive%\chocolatey\bin
+</code></pre>
+<p>So, <a href="http://chocolatey.org/">Chocolately</a> solves problem the first, allowing for command line install of applications.
+When paired with <a href="http://boxstarter.org/">Boxstarter</a> however, it figures out problem the second of installing many different
+applications that require reboots, etc, when you are setting up a new PC. BoxStarter handles reboots and logins
+automatically for the user. You can type one command and be on your way!</p>
+<p><a href="http://boxstarter.org/">Boxstarter</a> also enables me to setup a URL that will have all of the applications that I want
+installed in a single location. For example, I created a Gist file on GitHub with all of the programs I want installed
+when I have a PC.</p>
+<pre class="highlight"><code class="hljs bash">    START http://boxstarter.org/package/nr/url?https://gist.github.com/jptacek/<span class="hljs-number">8099099</span>/raw/f691b3433c09dcd361fca8cc6cfe637ca7521771/boxstarter
+</code></pre>
+<p>You can take a look at the file, but it is pretty basic.</p>
+<p>I setup the Explorer options I want, for example, showing file extensions, and that provides me consistency across my
+installs.</p>
+<p>I then install the bevy of browsers that all web developers want at their disposal. This is followed by setups for Git,
+NodeJS, Text Editor, coding utilities, etc. I even have installation for applications I use specifically at home, for
+example, iTunes (I know, I vomit a little in my mouth each time I use it too).</p>
+<p>Not only can you setup explorer options, but you can also setup your Windows environment! For example, I automatically
+enable Remote Desktop, Setup HyperV and IIS on my development machines. I do this all from a single command and it
+is awesome!</p>
+<p><strong>Update</strong>
+A couple of people have run into issues if you are not using a default browser that does not support Click Once (for example
+Google Chrome). Matt Wrock identifies the workaround in the comments below.</p>
+<blockquote>
+<p>It sounds like your default browser is not click-once enabled. Using START from the command line will invoke the url in your default browser. If that browser is IE or another browser that has a click-once extension, Boxstarter should be invoked. If Firefox or Chrome (or Opera or safari or anything not IE) is your default browser and you had no extension that is &quot;click once&quot; app aware, the behavior you describe sounds normal. Chrome is my default browser but I installed an extension from
+<a href="https://code.google.com/p/clickonceforchrome/">https://code.google.com/p/clickonceforchrome/</a> that will allow it to work with click once apps like Boxstarter&#39;s web launcher.</p>
+</blockquote>
+<p>Just to reiterate... You need to update your default browser to support click once. Links for</p>
+<ul>
+<li>Google - <a href="https://code.google.com/p/clickonceforchrome/">https://code.google.com/p/clickonceforchrome/</a></li>
+<li>FireFox - <a href="https://addons.mozilla.org/en-us/firefox/addon/fxclickonce/">https://addons.mozilla.org/en-us/firefox/addon/fxclickonce/</a></li>
+</ul>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/page/13/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2013/12/saying-hello-to-docpad/'>Saying Hello to.... DocPad</a></h1>
+    
+        <div class="post-date">Dec 29th, 2013</div>
+
+    <div class="post-content">
+        <p>I recently <a href="http://www.jptacek.com/2013/12/saying-goodbye-to-wordpress/">blogged</a> about moving off of WordPress to a new blogging platform.
+I have been looking at several different options during this time and have finally picked one. There were three that really piqued my interest; <a href="http://www.tryghost.org">Ghost</a>, <a href="http://jekyllrb.com/">Jekyll</a> with hosting on Github, and <a href="http://docpad.org/">DocPad</a>.</p>
+<p>Each of the platforms had different things that made it interesting to me, and some things I did not like. Let&#39;s review each of them</p>
+<p>##Ghost##
+<img src="/2013/12/saying-hello-to-docpad/GhostLogo.png" alt="Ghost Logo"></p>
+<p>I think <a href="http://www.Ghost.org">Ghost</a> is pretty awesome. When I started thinking about redoing my blog, it had a lot of things I was interested in. The platform is elegant. It uses Markdown for creating content, and the online editor for it is VERY nice. The other thing that really interested me is that it is all built on Node.JS. This is a platform I am definitely interested in growing my skill base.</p>
+<p>However, despite all of these things, Ghost was not for me. In reality, is another blogging/CMS platform. The same limitations I was having with WordPress, in terms of page structure, adding JavaScript content, etc, would still be an impediment on Ghost. Essentially, Ghost is WordPress 2.0, a MUCH nice WordPress, hosted with Node.JS instead of PHP, but not for me and the things I would like to do.</p>
+<p>##Jekyll##
+<img src="/2013/12/saying-hello-to-docpad/JekyllLogo.png" alt="Jekyll Logo"></p>
+<p><a href="http://jekyllrb.com/">Jekyll</a> was VERY close to being what I chose. The magic of Jekyll is that it creates static HTML from templates. Essentially, you create a page layout. You can then create posts and content using Markdown to be combined with your layout and it will create static HTML. By serving up static HTML, your hosting costs quickly become much less since you are serving up static pages, and millions of web servers over the world are VERY good at that.</p>
+<p>Jekyll also has the added benefit of being tied to <a href="http://www.GitHub.com">GitHub</a> and its <a href="http://pages.github.com/">GitHub Pages</a> platform. I can have the fine folks at GitHub and their operations folks be responsible for ensuring my site is up. It also has some slick features where you check in your Markdown file in GitHub and your site content is automatically deployed.</p>
+<p>However, like Goldilocks finding the porridge a bit too cool, there were some things that steered me away. First, while the automatic updating feature is slick, it is a limited subset of the Jekyll functionality. Further, Jekyll is based on the Ruby programming platform. While I find that more interesting than WordPresss’ PHP, it is definitely not as high up on my list as Node.JS.</p>
+<p>Which brings us too….</p>
+<p>##DocPad##
+<img src="/2013/12/saying-hello-to-docpad/DocPadLogo.png" alt="DocPad Logo"></p>
+<p>Ultimately, I ended up picking <a href="http://docpad.org/">DocPad</a>. I REALLY liked the idea of static page generation. I have been around the web now that it is all back where it started, with developers putting static HTML files on a server. Who would have thunk? Of course, this is much nicer since you have templates to go and create the site. It is also a Node.JS application, which is of interest. You can also auto deploy your markdown files and have it create the static HTML in an Azure web instance after you commit and push your changes to GitHub. VERY SLICK. Of course, I pay for the CPU part of that, and only when I create content. The rest will all be static HTML files being sent by IIS.</p>
+<p>It is really very slick how easy the site setup was. I will detail my instructions down the road. I do LOVE the Node Package Manager and the magic of package.json which allows you to quickly get a site up and running on your machine.</p>
+<p>I give a lot of credit to the site redo to my old <a href="http://www.SkylineTechnologies">Skyline</a> colleague and now Microsoft guy, <a href="http://www.yTechie.com">Jason Young</a>. As I was investigating my next blog platform, he published a <a href="http://www.ytechie.com/2013/11/blogging-awesomeness-with-a-static-generator-and-markdown/">post</a> about migrating his site to DocPad. The gold star for Jason was taking the DocPad site and configuring Azure to compile the markdown to static HTML and then set for hosting. This is what moved me from going to Jekyll to Docpad. VERY COOL!</p>
+<p>Also, hat tip to <a href="http://www.ewal.net/">Erv Walter</a> for great stuff he did in setting up the platform and UI that Jason and I have both, VERY liberally borrowed from.</p>
+<p>Obviously, my site has a lot of UI cleanup I would like to do, I also need to edit a lot of posts, but here it is, in all of it&#39;s static glory.</p>
+<p>##Conclusion##</p>
+<p>Why DocPad</p>
+<ul>
+<li>Node.JS platform</li>
+<li>Templating engine to allow creation of static HTML files</li>
+<li>Enable Javascript on pages</li>
+<li>Auto publish from a GitHub repository</li>
+<li>Markdown language for publishing</li>
+<li>Lots of extensibility via Plugins</li>
+</ul>
+<p><a href="https://github.com/ervwalter/ewalnet-docpad">Erv Walter GitHub repository for Ewal.net</a></p>
+<p><a href="https://github.com/ytechie/ytechie-docpad">Jason Young GitHub repository for Ytechie.com</a></p>
+<p><a href="https://github.com/jptacek/JPtacek.com">My GitHub repository for JPtacek.com</a></p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/wordpress/'>WordPress</a>, <a href='/tags/blog/'>Blog</a>, <a href='/tags/docpad/'>DocPad</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/page/13/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+
+
+<div class="page-nav">
+    
+    <a class="page-nav-older" href="/page/14/"><span class="icon icon-arrow-left-2"></span> Older</a>
+    
+    
+    <a class="page-nav-newer" href="/page/12/">Newer <span class="icon icon-arrow-right-2"></span></a>
+    
+    <div class="page-nav-archives"><a href="/archives/">- Blog Archives -</a></div>
+</div>
+
+<div id="me">
+    <p>
+        <img src="/images/Headshot-Square.png" alt="John Ptacek" />
+        I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
+        This blog is my contains my content and opinions, which are not those of my employer.
+    </p>
+    <p>Currently, I am reading 
+        <a href="https://www.goodreads.com/book/show/567704.Imajica">Imajica</a>
+        by <a href="http://www.clivebarker.info">Clive Barker</a></p>
+    <p>
+        <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="https://github.com/jptacek">GitHub</a> &#8226;
+        <a href="https://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
+        <a href="https://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
+        <a href="https://plus.google.com/+JohnPtacek">Google+</a>
+    </p>
+</div>
+
+        </div>
+</div>
+
+<div class="container">
+    <div class="navbar navbar-footer">
+        <p class="navbar-center navbar-text">Content copyright &copy; 2016 John Ptacek</p>
+    </div>
+</div>
+
+
+
+    <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-animate/angular-animate.min.js"></script>
+
+ 
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="/scripts/site.js"></script>
+
+
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34910017-1']);
+    _gaq.push(['_setDomainName', 'jptacek.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>

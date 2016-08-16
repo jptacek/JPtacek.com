@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="Mobile, Web and JavaScript" />
+
+<title>JPtacek.com - JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <meta name="generator" content="DocPad v6.78.4" />
+    
+
+    <meta name="author" content="John Ptacek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+    <link href="/styles/site.css" rel="stylesheet" />
+    <link href="/css/highlight.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+
+
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">John Ptacek</a> <div class="navbar-brand"> - Musings on Code</div>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="/">Blog</a></li>-->
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                <li class="hidden-xs">
+                    <a href="/feed/index.xml" class="rss"><i class="fa fa-rss fa-lg"></i></a>
+                    <a href="https://twitter.com/jptacek" class="twitter"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><i class="fa fa-google-plus fa-lg"></i></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><i class="fa fa-linkedin fa-lg"></i></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><i class="fa fa-stack-overflow fa-lg"></i></a>
+                    <a href="https://github.com/jptacek" class="github"><i class="fa fa-github fa-lg"></i></a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right hidden-xs" role="search" action="https://google.com/search"
+                  method="get">
+                <div class="form-group">
+                    <input type="search" name="q" class="form-control" placeholder="Search">
+                    <input type="hidden" name="q" value="site:jptacek.com">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+        <div class="col-sm-12 col-md-10">
+            
+    <article class="post">
+    
+    <h1><a href='/2016/08/Anuglar2Introduction/'>Angular/Angular2 Introduction</a></h1>
+    
+        <div class="post-date">Aug 12th, 2016</div>
+
+    <div class="post-content">
+        <p>I spent a lot of time blogging about <a href="https://jptacek.com/tags/angularjs/">AngularJS</a> in the past. Time moves on, especially on the Internet and 
+<a href="https://www.google.com">Google</a> is feverishly working on finishing up <a href="https://angular.io">Angular2</a>, which is currently in release candidate as of 
+this writing (August of 2016).
+<img src="/2016/08/Anuglar2Introduction/angularLogo.svg?raw=true" width="25%"></p>
+<p>We will take a similar approach to last time, where we developed a periodic table application that investigates different features about 
+Angular.</p>
+<p>One thing to note, Google has renamed Angular 2. The previous version of AngularJS, the 1.x stack was called AngularJS. The new
+version is now called just Angular. Part of the reason for this is to show its ability to create native mobile applications, so 
+the JavaScript name can be a bit limiting. We will, in general, keep the same names. Angular and/or Angular 2 will refere to the current 
+verison of Anuglar. The older versions will be called AngularJS or Angular 1.x.</p>
+<p>First though, why even upgrade at all, since the upgrade path from Angular 1.x to Angular 2? Lets highlight some reasons.</p>
+<h3 id="component-based">Component Based</h3>
+<p>Web development is moving towards component based development, especially with some of the emerging
+<a href="https://www.w3.org/TR/NOTE-HTMLComponents">web standards</a>. While those standards are not fully completed yet, Google is definitley
+preparing for that world. If you need further proof, checkout Google&#39;s <a href="https://www.polymer-project.org/1.0/">Polymer</a> project.</p>
+<h3 id="typescript">TypeScript</h3>
+<p>TypeScript is an extension of JavaScript created by Microsoft, open sourced and adopted by Google (I know!! Right?!?!)
+TypeScript essentially is ECMAScript 6, combined with the ability to create type and annotations. It is used to create 
+Angular. The code samples developed by Google are all in TypeScript, with JavaScipt following later. You don&#39;t HAVE to use 
+TypeScript, but it will make life easier.</p>
+<h3 id="virtual-dom">Virtual DOM</h3>
+<p>One of the things <a href="https://facebook.github.io/react/">ReactJS</a> taught the world, is the value of a Virtual DOM. This is a virtual representation
+of the Document Object Model (DOM) for a HTML page. You can then work on this in memory which offers GREAT performance improvements. 
+Google has adopted a Virtual DOM and has realized the expected performance boosts.</p>
+<p>Those are a few of the highlights of why Angular2 over AngularJS 1.x. We will hit more as we contineu our series.</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/angular/'>Angular</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/angular2/'>Angular2</a>, <a href='/tags/javascript/'>JavaScript</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2016/08/ThatConference2016/'>That Conference 2016 - Angular vs React</a></h1>
+    
+        <div class="post-date">Aug 11th, 2016</div>
+
+    <div class="post-content">
+        <p>One of my favorite things each year is <a href="https://www.thatconference.com">That Conference</a>. I have been lucky enough to 
+be chosen as a speaker each year (though I missed last year due to work commitments).</p>
+<p>This year I talked on Angular vs React, and compared two of the most popular things going on in the world of 
+JavaScript these days. Thanks to all of those who attended and provided engaging converstation.</p>
+<p>For those interested, here is the <a href="/2016/08/ThatConference2016/./Angular vs React-Talk.pptx">presentation</a>. I will also be uploading the code to my 
+<a href="https://wwww.github.com/jptacek">GitHub</a> in a while after I button it up some more.</p>
+<p>Thanks to all the organizer, sponsors and speakers for a great community event! I highly encourage folks to go 
+next year, Aug 7-9.</p>
+<p><img src="/2016/08/ThatConference2016/ThatConference2016.jpg" alt="ThatConference 2016"></p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/that-conference/'>That Conference</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/angular/'>Angular</a>, <a href='/tags/react/'>React</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2016/07/WWDC2016Recap/'>Apple WWDC 2016 Recap</a></h1>
+    
+        <div class="post-date">Jul 5th, 2016</div>
+
+    <div class="post-content">
+        <p>In the Developer world, there are usually three big conferences each year; Microsoft’s Build, Google I/O and Apple’s World Wide Developer Conference (WWDC). Google’s <a href="https://events.google.com/io2016/">I/O</a> conference, its 10th, just wrapped up last week. Let us take a spin around some of the more interesting announcements from the conference. We have previously looked at 
+<a href="https://jptacek.com/2016/04/Build2016Recap/">Build</a> and <a href="https://jptacek.com/2016/05/GoogleIO2016Recap/">Google I/O</a>, lets
+dive into <a href="https://developer.apple.com/wwdc/">WWDC</a> which was held in June in San Francisco.</p>
+<p><img src="/2016/07/WWDC2016Recap/wwdc2016.jpg" alt="Apple WWDC 2016"> </p>
+<p>Apple’s WWDC keynote this year, tended to be the more consumer facing, rather than developer facing of the other keynotes from 2016. A majority of the time was spent on items such as iOS 10 features, Apple music redesign, Apple photos, etc. </p>
+<p><strong>Siri</strong> – One of the big rumors heading into WWDC was that iMessage, Apple’s very popular messaging platform would be being made available to Android devices. That wasn’t announced. However, a slew of changes are coming to iMessage. The changes mostly are “fun”; items such as stickers, new emojis, videos, bubble effects etc. Given the popularity of iMessage though, we know these features will be popular. Unlike other messaging application, for example Facebook messenger, WhatsApp, etc, the usage may be limited, since as of now, you cannot take advantage of these new features for users on other platforms like Android. Given that for most iOS users iMessage means SMS, it could lead to frustration.</p>
+<p><strong>iMessage</strong> – here have been two OS releases of Apple Watch in its first year. However, it can still be frustratingly slow to use in day to day activities. Apple announced watchOS 3 which seems to greatly alleviate some of the performance issues. Applications were shown on the current version and the new version and were markedly faster. Apple Watch users will be excited for the new upgrade if those performance gains are realized as promised.</p>
+<p><strong>Apple Watch</strong> – Google announced their me too competitor to Amazon’s Alexa, a voice activated search appliance for the home. You will be able to ask Google Home things like what is the weather for the day, did the Chicago Fire win last night, etc. Pricing and availability dates were not announced. Google’s introduction video.</p>
+<p><strong>iOS</strong> – iOS has a new round of updates as it hits version 10. The notification screen has been greatly redesigned. Apple music has been streamlined and the maps application has been improved. 3D touch, which was introduced with last year’s new iPhones (6s, 6s Plus) is also more fully integrated into the system, especially on the notification screen.</p>
+<p><strong>Contextual Awareness</strong> – The interesting thing that is permeating a lot of the developer conversations as of late is contextual awareness. A platform, like Google Now, can read email, look at your calendar and contacts as well as location to provide a wealth of information. This can provide very useful and pertinent information to a user. However, the downside to this is you are giving up a some of your privacy, as the service collects your information and mines it. This has definitely been Google’s approach. Apple has a stated focus on privacy, so it is exceedingly more difficult for them to provide these kind of services, which often rely on cloud computing because the information would need to leave the phone. So contextual awareness happens within an application, like Siri, where it will be much more limited.</p>
+<p>At WWDC, to make iOS more successful at providing contextual awareness, Apple introduced differential privacy. It is all a bit murky, and involves some crazy abstract mathematics, but it essentially takes information from your phone, randomizes it a bit to mask individual information, stores it and then can aggregate the information together. </p>
+<p>How this actually works in the real world, remains to be seen. However, at first glance, I cannot imagine it being very successful, because the data that would be helpful to you, for example, discerning information about an upcoming flight, wouldn’t have enough other randomized data elements in the cloud for iOS to be able to find information about the flight. </p>
+<p>Resultantly, Apple is using this new feature in four areas for iOS; emoji replacement in iMessage, predictive text in iMessage, search in Notes and search in Spotlight.</p>
+<p>It is an interesting take at trying to be contextual and protect user privacy, I am just not sure how successful Apple will be trying to provide contextual awareness with it in their platform as they compete against happily data mining competitors such as Facebook and Google.</p>
+<p>So that is a quick tour of 2016 WWDC. Not a lot of big announcements, but more of a refining. As phone platforms reach platform maturity, there will be less and less groundbreaking enhancements on the phone. A lot of the interesting things will be happening in the cloud services that drive these devices. Apple has a lot of catching up to do here.</p>
+<p>This blog post originally appeared at <a href="https://www.skylinetechnologies.com/Insights/Skyline-Blog/July_2016/Apple_WWDC_2016_Recap">Skyline Technologies</a>.</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/apple/'>Apple</a>, <a href='/tags/mobile/'>Mobile</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/conference/'>Conference</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+
+
+<div class="page-nav">
+    
+    <a class="page-nav-older" href="/page/2/"><span class="icon icon-arrow-left-2"></span> Older</a>
+    
+    
+    <div class="page-nav-archives"><a href="/archives/">- Blog Archives -</a></div>
+</div>
+
+<div id="me">
+    <p>
+        <img src="/images/Headshot-Square.png" alt="John Ptacek" />
+        I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
+        This blog is my contains my content and opinions, which are not those of my employer.
+    </p>
+    <p>Currently, I am reading 
+        <a href="https://www.goodreads.com/book/show/567704.Imajica">Imajica</a>
+        by <a href="http://www.clivebarker.info">Clive Barker</a></p>
+    <p>
+        <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="https://github.com/jptacek">GitHub</a> &#8226;
+        <a href="https://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
+        <a href="https://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
+        <a href="https://plus.google.com/+JohnPtacek">Google+</a>
+    </p>
+</div>
+
+        </div>
+</div>
+
+<div class="container">
+    <div class="navbar navbar-footer">
+        <p class="navbar-center navbar-text">Content copyright &copy; 2016 John Ptacek</p>
+    </div>
+</div>
+
+
+
+    <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-animate/angular-animate.min.js"></script>
+
+ 
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="/scripts/site.js"></script>
+
+
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34910017-1']);
+    _gaq.push(['_setDomainName', 'jptacek.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>

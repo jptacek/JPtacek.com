@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="Mobile, Web and JavaScript" />
+
+<title>JPtacek.com - JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <meta name="generator" content="DocPad v6.78.4" />
+    
+
+    <meta name="author" content="John Ptacek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+    <link href="/styles/site.css" rel="stylesheet" />
+    <link href="/css/highlight.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+
+
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">John Ptacek</a> <div class="navbar-brand"> - Musings on Code</div>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="/">Blog</a></li>-->
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                <li class="hidden-xs">
+                    <a href="/feed/index.xml" class="rss"><i class="fa fa-rss fa-lg"></i></a>
+                    <a href="https://twitter.com/jptacek" class="twitter"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><i class="fa fa-google-plus fa-lg"></i></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><i class="fa fa-linkedin fa-lg"></i></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><i class="fa fa-stack-overflow fa-lg"></i></a>
+                    <a href="https://github.com/jptacek" class="github"><i class="fa fa-github fa-lg"></i></a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right hidden-xs" role="search" action="https://google.com/search"
+                  method="get">
+                <div class="form-group">
+                    <input type="search" name="q" class="form-control" placeholder="Search">
+                    <input type="hidden" name="q" value="site:jptacek.com">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+        <div class="col-sm-12 col-md-10">
+            
+    <article class="post">
+    
+    <h1><a href='/2011/09/observations-from-microsofts-build-conference/'>Observations From Microsoft's Build Conference</a></h1>
+    
+        <div class="post-date">Sep 29th, 2011</div>
+
+    <div class="post-content">
+        <h2 id="overview">Overview</h2>
+<p>Build was a bit of a different conference.... Initially, when it was announced at MIX it was called PDC (Microsoft&#39;s Professional Developers Conference). PDC generally has topics that cover the breadth of the Microsoft eco system from a developer&#39;s perspective; creating ASP.NET applications, C# , VB.NET , Entity Framework this and Entity Framework that. Build was NOT that, it was specifically dedicated to Microsoft&#39;s upcoming Windows 8 operating system, and especially to the new Metro UI introduced as part of the OS.</p>
+<p>Windows 8 is, quite obviously, the next version of Microsoft&#39;s Windows platform. Microsoft is laser-focused on optimizing Windows for alternative form factors, especially the tablet. They have reduced the footprint of Windows by eliminating several core services that start up as part of the Operating system as well as the memory footprint. A demo played on an old netbook showed overall resource usage actually decreased when moving from Windows 7 to Windows 8, the first time that a new version of their operating system has had decreased baseline hardware requirements.</p>
+<p>The biggest change though is the introduction of the Metro UI for Windows, which can be thought of as the tablet interface for Windows. It is a &#39;fast and fluid&#39; touch-based interface, similar in some ways to Windows Phone 7, especially in the use of the Live Tiles, which are uber-icons that update with information. Take a look at the screen shot below to see what the new &#39;start screen&#39; looks like, gone is the iconic start menu introduced in Windows 95, replaced with a &#39;Windows Phone on steroids&#39; style home screen.</p>
+<p><img src="/2011/09/observations-from-microsofts-build-conference/Win8screen1-300x169.jpg" alt="Win8screen1"></p>
+<p>The interface has been well received by folks at large. It&#39;s a pretty bold reworking of Windows, part of which involves the fact there are NO Windows, just one or two running applications on screen at a time. For developers, the good news with Windows 8 is that you can also get to the desktop and use all of the applications you already use on Windows 7.</p>
+<p>To make all of this fluid, swipey goodness, Microsoft has introduced a new programming API called WinRT, which stands for Windows Runtime. WinRT is to Win32 what Silverlight or Windows Phone 7 are to the full .NET Framework, a smaller API surface optimized for their respective platforms. However, it is different in a couple of ways. First, it introduces new areas to the core Windows API, most of which are focused on using Windows for things like storage and search. Second, Microsoft is providing [or projecting] the WinRT APIs for direct use by C#, C++, VB.NET and JavaScript (and possibly F#), so instead of calling .NET framework libraries that in turn call Win32 APIs, the .NET code directly executes WinRT calls, similar to existing COM interop and P/Invoke technologies. The difference is that the projections include rich metadata so that the libraries appear as &#39;native&#39; class libraries in each of their respective languages, avoiding a lot of the headaches of existing COM and P/Invoke interactions.</p>
+<p>The diagram below outlines the various options for creating applications on Windows 8.</p>
+<p><img src="/2011/09/observations-from-microsofts-build-conference/Win8screen2-300x169.jpg" alt="Win8screen2"></p>
+<p>The &#39;Desktop Apps&#39; section of the diagram is the same types of applications that we currently know and love (or love to hate). These types of applications will continue to be supported and extended moving forward, but WILL NOT be able to interact directly with Metro apps, nor participate in the Windows 8 contracts that provide the rich &#39;web of applications&#39; that are one of Windows 8&#39;s signature features. These applications will also not be able to be installed through the new Windows Store (think the App Store, but for Windows). Desktop applications will be linked through the store, but are not subject to the same certification and safety guarantees as Metro apps.</p>
+<p>Similar to how C#, VB.NET, F#, and a host of other languages can create applications using the .NET Framework APIs, there are several options for creating WinRT applications. The options can be split into three different groups. The first group is C/C++ applications using either DirectX or XAML based UI technologies. DirectX is primarily used for game creation or complex imaging applications, and XAML based UIs are really Microsoft&#39;s replacement for their existing MFC framework. The second group is a Metro equivalent to WPF applications, written in either C# or VB.NET. The final group is the newly introduced/repurposed HTML/CSS/JavaScript stack, which allows the creation and packing of applications Windows 8 Metro applications using HTML/CSS as the UI layer, and JavaScript as the interface. An entire article could be written on what the HTML/JS layers represent and how they are different than &#39;web apps&#39;, but these types of applications are not executed &#39;in browser&#39;, they are fully fledged &#39;Metro&#39; apps, using IE&#39;s JavaScript engine (Chakra) as the runtime interpreter. To be clear, there is NO fundamental difference in the end result for &#39;Metro&#39; apps, regardless of what technology stack you choose to use, they really are just options that allow you to use your existing skillset to build Win8 Metro applications.</p>
+<h2 id="quick-hits">Quick Hits</h2>
+<p>Here are some quick bullet points for takeaway...</p>
+<p><strong>Microsoft got its C++ love back -</strong>There was quite a lot of time and energy from Microsoft put into the development tools for C++. One of the sessions even stated &quot;C++ is back because performance matters&quot;. If you are looking to create uber-optimized WinRT apps on Windows 8, C++ may be the best option. If you are looking to get a date or see your family grow up, the .NET stack is still going to be the best way to create Line of Business applications (LOB). Also, WinRT applications run great with C#/VB/JS languages!</p>
+<p><strong>All Services All the Time -</strong>The data story for WinRT is going to be REST/JSON services. As of now, there is no way to run something like an Entity Framework model on the Metro UI. There are some rumors of SQL Lite support, but the hard push is for connected apps that require backend data sources that are NOT LOCAL to the machine (or even network) in question.</p>
+<p><strong>Metro UI on other processors -</strong>Microsoft is looking to have folks create many different devices and form factors using Windows 8. A lot of these will run on ARM processors, which are the low energy, middling performance chips that power things like iPads and mobile phones. For classic non-.NET desktop applications to run on these processors they will need to be recompiled. It is worth noting that there are LOTS of confusing statements about this, but as of now, that is the current understanding. Currently there is, at least, a subset of the .NET framework (the Windows Phone runtime) that runs on ARM, so it seems like good .NET framework support should be possible, even on ARM.</p>
+<p><strong>Visual Studio 2011 -</strong>Microsoft has a new version of Visual Studio 2011 that supports templates for many of the WinRT application types</p>
+<p><strong>Asynchronous data access -</strong>Microsoft has a new async/await keywords that are being introduced with the .NET Framework 4.5. These keywords allow a call to be made on a different thread. This becomes VITALLY important for performant applications because the thread that runs the UI has to wait for data to come back. Microsoft states that any call that takes longer than 50 (or 15, both have been mentioned) milliseconds should be asynchronous. Get used to coding a lot of async calls in the future! The good news is that the new keywords and compiler support mean that writing Metro (and .NET 4.5) applications will look a lot like standard synchronous code that &#39;just works&#39;.</p>
+<p><strong>Promises -</strong>JavaScript programming on the WinRT stack is going to be implementing the idea of promises. This is the JavaScript version of async/await. Essentially, have JavaScript go get some data, promise data comes back and there is a then() function (or continuation) which will run after your data returns.</p>
+<p><strong>Windows Store -</strong>Microsoft is introducing a Windows Store for users to go and download applications and easily install them on their computer. This will be for WinRT applications only! Other .NET/Win32 applications may exist in the store, but they will link to external sites for purchase and install.</p>
+<p><strong>Conclusion</strong>
+So, what does it all mean? At the end of day, at least for now, not a whole lot! In all seriousness, Microsoft is probably a year away from releasing Windows 8 and clients will be at least 6 months to a year out from installing and asking for it. But, be sure to be ready when they start asking!</p>
+<p>Having said that, Windows 8 represents a HUGE opportunity! According to Microsoft there are soon to be over 500 million copies of Windows in use. That is more than all the other mobile platforms combined. If there is one thing you want to do today to get ready for Windows 8, I would recommend this... Get your HTML 5/XAML skills up to speed and learn to love creating data services that can be consumed on mobile platforms.</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/html-5/'>HTML 5</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/windows-8/'>Windows 8</a>, <a href='/tags/build/'>Build</a>, <a href='/tags/conferences/'>Conferences</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/page/27/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2011/06/html-5-a-little-history/'>HTML 5: A Little History</a></h1>
+    
+        <div class="post-date">Jun 28th, 2011</div>
+
+    <div class="post-content">
+        <p>HTML 5 is being proposed as a magic potion for all that ails the world of developers. It slices, it dices, it chops and even calls your mom on her birthday when you forget. Let&#39;s jump on the bandwagon!</p>
+<p>To understand HTML 5, first you&#39;ll need a bit of history... HTML is a standard, standards are created by standards bodies, and they can take a while. The HTML standard is created by the World Wide Web Consortium (W3C), with the last HTML standard being <a href="http://www.w3.org/TR/REC-html40-971218/">HTML 4</a>, which was published in December of 1997. At that point, the W3C essentially said HTML is dead, long live HTML, but in the form of XHTML, a break from the previous version of HTML with HTML being recreated as strongly formed XML.</p>
+<p>The introduction of XHTML had one problem though; XHTML &quot;broke&quot; the internet. It didn&#39;t literally break it in the sense that you couldn&#39;t get your White Sox scores from ESPN, but without massive rewrites, it would have. HTML has always been a &quot;forgiving&quot; standard. If I develop an HTML page and have an opening <code>xml &lt;P&gt;</code> tag but not a corresponding closing <code>xml &lt;/P&gt;</code> tag, my page will (most likely) work. XHTML would have resulted in a fatal error. People have estimated that fully implementing the XHMTL specification would have resulted in 99% of HTML pages at the time not rendering properly.</p>
+<p>So, our journey to the way back machine brings us to 2004, HTML 4 is the last W3C standard and their work has been focused on XHTML since 1997. During this time, XHTML has NOT taken off in the marketplace. People still want their White Sox scores from ESPN. As a result, browser developers, some web development companies, and some W3C members got together and proposed evolving HTML 4 with new features for modern browsers since a lot had changed in the years since the last standard (2004 -1997 = 73 Internet years). The W3C said they were not interested but the folks who proposed extending HTML WERE interested and went off and created the <a href="http://www.whatwg.org/news/start">Web Hypertext Application Technology (WHAT)</a> working group. So here is the state of the world: the people responsible for the HTML standard are not evolving the HTML standard any more, the folks who implement the HTML standard (the web browser creators, the app tool creators, etc.) want to evolve HTML.</p>
+<p>So the WHAT group went on doing its thing. Their main goal was backward compatibility. They wanted to be able to evolve HTML without breaking the 10 years of web development that came before. One of the more interesting things they did was explicitly identifying HOW to parse HTML so that it would be compatible across all browsers. In some ways, that became a new standard that indicated how all browsers should work.</p>
+<p>They also went on and introduced new features into HTML (without breaking HTML) including new form elements for things like dates. They thought, &quot;Wouldn&#39;t it be swell if browsers natively supported video and audio so we could get rid of things like Flash for streaming video?&quot;, so they added it. They also thought, &quot;Wouldn&#39;t it be awesome if you could animate things directly in the browser?&quot;, so they added a drawing canvas to HTML.</p>
+<p>The industry responded positively to these new ideas and the WHAT group started gaining momentum. During this time the W3C was working on XHTML 2, which none of the browser vendors implemented. I&#39;m not sure what you call a standard that nobody implements, but whatever you call it, it&#39;s pretty useless. It got to the point where in October of 2006, the W3C and the WHAT working group decided to join forces and evolve HTML and create HTML 5.</p>
+<p>Today we are at a point where these two groups are working together to create the HTML 5 standard. The next question is WHEN will there be an HTML 5 standard? It&#39;s going to be a while, maybe as far out as 2022 or later. So is that a problem? The answer is, hopefully not.</p>
+<p>Part of the reason for the long time is that the HTML 4 specification is very vague or even undefined on how things work. If you forget to include your closing paragraph tag, it was up to the browser vendor to figure it out. This leads to different implementations across vendors so things don&#39;t work as expected across all the browsers, something you are no doubt very familiar with. As a first step, sometime in 2012, a candidate recommendation for the HTML 5 standard will be released. At that point, the feature set, already very close to being final, will be official. A good part of the remaining 10 years will be spent on officially documenting how the standard should parse HTML.</p>
+<p>Another, even more important thing, is that the HTML 5 team is working on test suites. The idea is that browser vendors will have to run their browsers against the test suite and not until they hit 100% in a test suite will they be considered to have passed. In a lot of ways, the test suite becomes the standard. In fact, not until two major browser vendors pass the test suite with 100%, will the standard be considered completed. This is part of the reason for the very long elapsed time.</p>
+<p>The other player in this is how HTML 5 works other devices. HTML 5 is or will be supported by all major smart phone vendors as well as tablet vendors, e-readers and most likely a plethora of things not even imagined yet. In fact, some sites, such as the ubiquitous Facebook, are rumored to be developing HTML 5 applications rather than native applications for mobile or tablet vendors. Part of the reason for this is that some of the hardware vendors are requiring essentially a commission on any purchases within a native application. As a result, a lot of sites may be looking to bypass the App Store approach and create <a href="http://www.zdnet.com/blog/facebook/rumor-facebook-to-take-on-apple-with-html5-platform/1612">native HTML 5</a> so they don&#39;t need to worry about giving hardware vendors a percentage of their revenue.</p>
+<p>HTML 5 is a lot of hope and promise. In the past I have called it Java-esque, in the promise of the write once, run everywhere. What is different this time? A couple of things, one is the test suite that browser vendors will need to pass. The other is that there really seems to be a good cross section of the industry that REALLY wants this to work. It&#39;s not often that Apple, Google, Microsoft and other big companies are working towards the same thing. Do they always agree? Of course not! Will it cause problems? It already is. However, the industry is working hard to make this a reality.</p>
+<p>It will be interesting to see how it all plays out. Browsers like Google Chrome are working hard on supporting HTML 5 across many platforms. IE is working towards supporting HTML 5 on the Windows platform using hardware acceleration. You will see differences where HTML 5 rendered using IE which will run much faster and can do more, so that performance issues of other browsers may be a concern. Vice-versa you can have issues where IE is not rendering something the same way Chrome is.</p>
+<p>It&#39;s a long article just discussing the history of HTML 5 with none of the introduction of what HTML 5 is. However, it&#39;s important to understand the history of how we got here, and why the industry thinks this will be important. Next time I&#39;ll actually discuss some of what&#39;s new in HTML 5!</p>
+<p><strong>Why Use it?
+</strong>HTML 5 is going to (soon) be the industry standard for web applications</p>
+<p><strong>I want to learn more!
+</strong><a href="http://www.techrepublic.com/blog/programming-and-development/html-5-editor-ian-hickson-discusses-features-pain-points-adoption-rate-and-more/718">Interview with Ian Hickson discussing HTML 5 adoption rates</a></p>
+<p>This blog post originally appeared at [Skyline Technologies] (<a href="http://www.skylinetechnologies.com/Insights/Skyline-Blog/June-2011/HTML-5-A-Little-History">http://www.skylinetechnologies.com/Insights/Skyline-Blog/June-2011/HTML-5-A-Little-History</a>)</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/html-5/'>HTML 5</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/page/27/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2011/06/an-introduction-to-the-microsoft-razor-view-engine/'>An Introduction to the Microsoft Razor View Engine</a></h1>
+    
+        <div class="post-date">Jun 24th, 2011</div>
+
+    <div class="post-content">
+        <p>In past blog posts on <a href="http://www.jptacek.com/2011/06/comparing-asp-net-mvc-and-web-forms/">MVC</a> 
+and <a href="http://www.jptacek.com/2011/06/webmatrix-proves-an-excellent-tool-for-creating-small-sites-quickly/">WebMatrix</a>. 
+I&#39;ve mentioned Razor. Today, I&#39;m going to get a bit more in depth on Razor and what it can do.</p>
+<p>ASP.NET MVC supports view engines. All web programming consists of providing developers a way to insert 
+data dynamically into their HTML output. In ASP.NET Web forms, this was done using &lt;%= =%&gt; syntax to let 
+the runtime know that code was coming. In previous versions of ASP.NET MVC, this same approach was 
+used and was called the Web Forms view engine.</p>
+<p>ASP.NET MVC, however, had the ability to use other view engines. Ever since the introduction of MVC, 
+people have not liked using the Web Forms View engine. During that time, several other view engines 
+became popular for MVC development including <a href="http://sparkviewengine.com/">Spark</a>, 
+<a href="http://code.google.com/p/string-template-view-engine-mvc/">StringTemplate</a> and 
+<a href="http://code.google.com/p/nhaml/">NHAML</a>.</p>
+<p>With the release of ASP.NET MVC 3, Microsoft is now using the Razor view engine. You can still use the 
+previous Web Forms view engine if you would like. The team at Microsoft outlined several design goals for 
+Razor when they introduced it. The most important ones are that Razor be compact, expressive and 
+fluid as well as easy to learn.</p>
+<p>One of the main complaints with the Web Forms View engine is how verbose the syntax was. 
+Razor explicitly address this by using the @ keyword to enable script escaping.</p>
+<p>So what does this code look like? First, Razor files have the extension csHtml (C# Syntax) or 
+vbHtml (VB syntax). Razor files then get processed by the runtime. If we have a variable defined 
+message and have an HTML stream going, you can see the razor terseness in the following syntax:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Message for the user @message<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+</code></pre>
+<p>In ASP.NET Web Forms, this same line would have been</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span> Message for the user <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">message</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;
+</span></code></pre>
+<p>Similarly, for example, if we have a list of sports teams showing their name and what place they are in and we want to iterate through to display the standings the syntax is:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Teams<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+@foreach (var t in teams) {
+<span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>@t.Place - @t.Name <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+}
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre>
+<p>On the screen this would print as follows:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Teams<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>1 - Green Bay Packers<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>2 - Chicago Bears<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>3 - Detroit Lions<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>4 - Minnesota Vikings<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre>
+<p>Similar syntax with Web Forms:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Teams<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">%</span> <span class="hljs-attribute">foreach</span> (<span class="hljs-attribute">var</span> <span class="hljs-attribute">t</span> <span class="hljs-attribute">in</span> <span class="hljs-attribute">teams</span>) { %&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">t.Place</span>%&gt;</span> - <span class="hljs-tag">&lt;<span class="hljs-title">%=t.Name%</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">%}%</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre>
+<p>Razor also supports HTML Helpers, which are a way for users to create HTML snippets across their code. So in the example above, we could create an HTML Helper to create the football standings and use it multiple times in our view or across multiple views. The syntax is as such:</p>
+<pre class="highlight"><code class="hljs xml">@helper TeamStandings(FootballTeam team) {
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>@team.Place - @team.Name <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+}
+</code></pre>
+<p>We could then update the page to call the helper:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Teams<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+    @foreach (var t in teams) {
+        @TeamStandings(t)
+    }
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre>
+<p>You can see how less verbose the syntax is to use. It is also, in a lot of ways easier to use. You never need to remember if you should escape out using &lt;% or &lt;%= either. The Razor syntax also introduces new syntax for laying out pages, superseding the ASP.NET concept of master pages. In truth, the ideas are both the same, but the concept is now called LayoutPages. Instead of having ContentPlaceholder sprinkled throughout a master page, helper methods in the template are used to fill in specific content. For example, let&#39;s call this page _groovySiteLayout.cshtml:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Groovy Page<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"groovyMenu"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"groovyPageBody"</span>&gt;</span>
+        @RenderBody()
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<p>Then, within the view, we create our site content which includes a setting for the layout page. When the layout page hits the @RenderBoy helper method it injects the view content into the layout page and sends back to the browser.
+So for a simple view:</p>
+<pre class="highlight"><code class="hljs xml">{
+    @LayoutPage = "_groovySiteLayout.cshtml";
+}
+<span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Welcome to Groovy<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Hello world<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+</code></pre>
+<p>Would render the following HTML:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Groovy Page<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"groovyMenu"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"groovyPageBody"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Welcome to Groovy<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Hello world<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<p>There is a lot more to the Razor view engine, this is just a quick introduction, 
+I will be talking about it a lot more in the future.</p>
+<p><strong>Why Use it?
+</strong>Razor is a new Microsoft view engine that is lightweight and easy to use. 
+It is currently part of WebMatrix and ASP.NET MVC. There are even indications it will be an integral part of a future version of ASP.NET WebForms.</p>
+<p><strong>I want to learn more!
+</strong>• <a href="http://weblogs.asp.net/scottgu/archive/2010/07/02/introducing-razor.aspx">Microsoft Introduction</a> - This post on Scott Guthrie&#39;s blog is an excellent introduction!
+• <a href="http://www.asp.net/mvc">Microsoft ASP.NET MVC site</a> - Check out the pluralsight videos on the page</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/web/'>Web</a>, <a href='/tags/webmatrix/'>WebMatrix</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/page/27/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+
+
+<div class="page-nav">
+    
+    <a class="page-nav-older" href="/page/28/"><span class="icon icon-arrow-left-2"></span> Older</a>
+    
+    
+    <a class="page-nav-newer" href="/page/26/">Newer <span class="icon icon-arrow-right-2"></span></a>
+    
+    <div class="page-nav-archives"><a href="/archives/">- Blog Archives -</a></div>
+</div>
+
+<div id="me">
+    <p>
+        <img src="/images/Headshot-Square.png" alt="John Ptacek" />
+        I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
+        This blog is my contains my content and opinions, which are not those of my employer.
+    </p>
+    <p>Currently, I am reading 
+        <a href="https://www.goodreads.com/book/show/567704.Imajica">Imajica</a>
+        by <a href="http://www.clivebarker.info">Clive Barker</a></p>
+    <p>
+        <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="https://github.com/jptacek">GitHub</a> &#8226;
+        <a href="https://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
+        <a href="https://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
+        <a href="https://plus.google.com/+JohnPtacek">Google+</a>
+    </p>
+</div>
+
+        </div>
+</div>
+
+<div class="container">
+    <div class="navbar navbar-footer">
+        <p class="navbar-center navbar-text">Content copyright &copy; 2016 John Ptacek</p>
+    </div>
+</div>
+
+
+
+    <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-animate/angular-animate.min.js"></script>
+
+ 
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="/scripts/site.js"></script>
+
+
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34910017-1']);
+    _gaq.push(['_setDomainName', 'jptacek.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>

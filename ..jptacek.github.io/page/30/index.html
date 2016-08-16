@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="Mobile, Web and JavaScript" />
+
+<title>JPtacek.com - JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <meta name="generator" content="DocPad v6.78.4" />
+    
+
+    <meta name="author" content="John Ptacek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+    <link href="/styles/site.css" rel="stylesheet" />
+    <link href="/css/highlight.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+
+
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">John Ptacek</a> <div class="navbar-brand"> - Musings on Code</div>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="/">Blog</a></li>-->
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                <li class="hidden-xs">
+                    <a href="/feed/index.xml" class="rss"><i class="fa fa-rss fa-lg"></i></a>
+                    <a href="https://twitter.com/jptacek" class="twitter"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><i class="fa fa-google-plus fa-lg"></i></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><i class="fa fa-linkedin fa-lg"></i></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><i class="fa fa-stack-overflow fa-lg"></i></a>
+                    <a href="https://github.com/jptacek" class="github"><i class="fa fa-github fa-lg"></i></a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right hidden-xs" role="search" action="https://google.com/search"
+                  method="get">
+                <div class="form-group">
+                    <input type="search" name="q" class="form-control" placeholder="Search">
+                    <input type="hidden" name="q" value="site:jptacek.com">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+        <div class="col-sm-12 col-md-10">
+            
+    <article class="post">
+    
+    <h1><a href='/2011/03/developing-with-microsofts-azure-platform/'>Developing with Microsoft's Azure Platform</a></h1>
+    
+        <div class="post-date">Mar 25th, 2011</div>
+
+    <div class="post-content">
+        <p>For the past several months, Skyline has been working on an awesome charity project called the <a href="http://www.appletoncompassion.org/">Appleton Compassion Project</a>. This project will provide visitors to the <a href="http://www.troutmuseum.org/">Trout Museum of Art </a>a way to view the 10,500 pieces in the exhibit and their accompanying artist statements. It has also provided us with an excellent opportunity to develop in Azure and learn a thing or two which I&#39;m going to share with you.</p>
+<p>The Appleton Compassion Project is hosted on Microsoft Azure. Azure is Microsoft&#39;s platform for developing cloud applications based on its Microsoft .NET technology. The good news is that if you&#39;re a programmer doing .NET development you are already well positioned to do Azure programming!</p>
+<p>The cloud means a lot of different things to a lot of different people, but in discussing Azure, we can think of it as providing several features.</p>
+<p>First, it provides infrastructure. For the Appleton Compassion Project, this was important. The goals of the project were such that they were (and still are) hoping to have some big-name celebrities involved, which could result in a large number of visitors to the site. While we could plan for that kind of demand, the Appleton Area School District - who is sponsoring the project - could not afford the hardware to meet it. Since one of the features of Azure is the ease of scalability, it can quickly meet the demands by adding more compute instances (the virtual machines that Azure uses). This is an example of where we pay for what we use, and don&#39;t have to pay for demand that we plan for, that may or may not be used.</p>
+<p>Second, it provides scale. This is a necessity as the Virtual Exhibit on the site will contain over 10,000 individual images that need to be displayed. The process we have to create the Pivot collection for our current batch of 8,000 images creates over 750,000 Deep Zoom files, is computationally intense, and literally takes days to run. We can greatly reduce this time by paying more and using larger computer sizes and creating multiple tasks in parallel. Once the files are created, we can then reduce the computer size to serve up HTML pages until we need the increase in computing power. Doing this kind of implementation using computing hardware as needed on the school district&#39;s hardware would not be cost effective.</p>
+<p>Another variation of scale is disk space ... we only pay for what we use. We don&#39;t need to be concerned with checking for disk space before we run our collection creation process, estimating the amount of files we will create and ensuring we have enough. Azure will automatically grow and make redundant copies of our data, so that if the server goes down, the data is stored elsewhere.</p>
+<p>As I mentioned earlier, Azure is based on .NET technologies, making it relatively straightforward to move to cloud development. There are, of course, several differences. When you deploy an application to Azure, it starts a dedicated Virtual Machine to host your application in a Microsoft data center. The bigger the size of the machine you request, the more you pay. One result of the virtual machine being created for each deploy is that you don&#39;t want to persist data to these VMs. You will use blob storage for persisted data. This is one of the biggest differences between Azure and normal .NET development.</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/appleton-compassion/'>Appleton Compassion</a>, <a href='/tags/azure/'>Azure</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/page/30/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+
+
+<div class="page-nav">
+    
+    
+    <a class="page-nav-newer" href="/page/29/">Newer <span class="icon icon-arrow-right-2"></span></a>
+    
+    <div class="page-nav-archives"><a href="/archives/">- Blog Archives -</a></div>
+</div>
+
+<div id="me">
+    <p>
+        <img src="/images/Headshot-Square.png" alt="John Ptacek" />
+        I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
+        This blog is my contains my content and opinions, which are not those of my employer.
+    </p>
+    <p>Currently, I am reading 
+        <a href="https://www.goodreads.com/book/show/567704.Imajica">Imajica</a>
+        by <a href="http://www.clivebarker.info">Clive Barker</a></p>
+    <p>
+        <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="https://github.com/jptacek">GitHub</a> &#8226;
+        <a href="https://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
+        <a href="https://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
+        <a href="https://plus.google.com/+JohnPtacek">Google+</a>
+    </p>
+</div>
+
+        </div>
+</div>
+
+<div class="container">
+    <div class="navbar navbar-footer">
+        <p class="navbar-center navbar-text">Content copyright &copy; 2016 John Ptacek</p>
+    </div>
+</div>
+
+
+
+    <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-animate/angular-animate.min.js"></script>
+
+ 
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="/scripts/site.js"></script>
+
+
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34910017-1']);
+    _gaq.push(['_setDomainName', 'jptacek.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>

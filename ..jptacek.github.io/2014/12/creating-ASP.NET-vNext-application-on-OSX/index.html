@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="Mobile, Web and JavaScript" />
+
+<title>Creating ASP.NET vNext application on OS X - JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <meta name="generator" content="DocPad v6.78.4" />
+    
+
+    <meta name="author" content="John Ptacek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+    <link href="/styles/site.css" rel="stylesheet" />
+    <link href="/css/highlight.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+
+
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">John Ptacek</a> <div class="navbar-brand"> - Musings on Code</div>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="/">Blog</a></li>-->
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                <li class="hidden-xs">
+                    <a href="/feed/index.xml" class="rss"><i class="fa fa-rss fa-lg"></i></a>
+                    <a href="https://twitter.com/jptacek" class="twitter"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><i class="fa fa-google-plus fa-lg"></i></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><i class="fa fa-linkedin fa-lg"></i></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><i class="fa fa-stack-overflow fa-lg"></i></a>
+                    <a href="https://github.com/jptacek" class="github"><i class="fa fa-github fa-lg"></i></a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right hidden-xs" role="search" action="https://google.com/search"
+                  method="get">
+                <div class="form-group">
+                    <input type="search" name="q" class="form-control" placeholder="Search">
+                    <input type="hidden" name="q" value="site:jptacek.com">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+            <article class="post">
+    
+    <h1>Creating ASP.NET vNext application on OS X</h1>
+    
+        <div class="post-date">Dec 12th, 2014</div>
+
+    <div class="post-content">
+        <p>Santa Claus is Coming to Town!! All the geeks get pretty excited for Santa’s arrival to see what will be awaiting us under the tree
+each year. However, sometimes the things geeks are most excited about aren’t ready for Christmas. We can read about them, maybe see
+some snippets or even get a preview.</p>
+<p>For example, there is a new Star Wars movie coming, but that will not be out until December of 2015, right before Santa’s
+next visit. There are also a good percentage of geeks getting excited for the release of Apple Watch, which will be out
+sometime in early 2015, so it won’t be waiting under the Christmas tree this year either.</p>
+<p>However, one of the things I am most interested in, workwise, while it is arriving in 2015, is available
+to kick the tires on now. The early preview present under the tree is running .NET on non-Microsoft platforms like
+the OS X or Linux. So while Santa will not be putting the final version under my tree this year, we can at least start
+getting ready.</p>
+<p>November and December are always exceedingly busy times, but it is worth taking a moment to realize that something huge
+happened. Microsoft has opened sourced their .NET framework. I am a big fan of Microsoft’s C# language. I think, for
+most developers, it is a great and productive way to get work done. Having this option available on Linux and Mac
+machines is going to be great. Throw in ASP.NET MVC and Web API coming along too, and 2015 will be awesome one for
+developers.</p>
+<p>Scott Hanselman has a <a href="http://www.hanselman.com/blog/AnnouncingNET2015NETAsOpenSourceNETOnMacAndLinuxAndVisualStudioCommunity.aspx">blog post</a>
+ where he gets into the details about the open sourcing of .NET and there is a lot to
+get into. However, but for now, let us just build an ASP.Net vNext app and jump into it like a kid opening presents on
+Christmas morning!</p>
+<p>We are going to create an ASP.NET vNext app to countdown several things… the days until Christmas, the days
+until the release of the next ASP (assuming Build 2015) and finally, the days until new Star Wars movie.</p>
+<p>How do we jump in? These steps are mostly identified on the ASP.NET GitHub page (I know, crazy, right. Microsoft
+documenting stuff on GitHub!?!?) at <a href="https://github.com/aspnet/home">https://github.com/aspnet/home</a>. We can still step through.</p>
+<p>First, because vocabulary is important…. Since the codename for the next version of ASP.NET vNext is Katana,
+Microsoft is going all in with the letter K. So many of the tools utilize the letter K. A quick run through of the
+most important.</p>
+<ul>
+<li><p>KRE is the K Runtime Environment. This is the code that bootstraps your ASP.NET vNext application; compilers,
+Common Language Runtime (CLR), etc.</p>
+</li>
+<li><p>KVM is the K Version Manager. It will install appropriate version of the KRE. You will be able to have multiple ASP.NET vNext runtimes and applications running on your machine.</p>
+</li>
+<li><p>KPM is the K Package Manager. This will download packages needed for your application to run.</p>
+</li>
+</ul>
+<p>First thing to do is ensure you have Homebrew setup on your OS X machine. If you are doing development work, you most likely have this already, so we will assume you are ready to go.</p>
+<p>Next, we need to install the ASP.NET vNext runtime environment (KRE). This is done by downloading appropriate git repositories via a bash script.</p>
+<pre class="highlight"><code class="hljs bash">brew tap aspnet/k
+</code></pre>
+<p>Similar commands are used for other platforms such as Linux and Windows, which uses PowerShell.</p>
+<p>The next step is to install KVM (The K Version Manager), which is the runtime manager. It is responsible for getting the runtime and enables multiple different runtimes on the same machine. I have seen some mention of issues using KVM on OS X with different shells, like zsh. I use the Bash shell and have not run into issues. To install KVM type</p>
+<pre class="highlight"><code class="hljs bash">brew install kvm
+</code></pre>
+<p>Next we run a script to setup our environment variables, etc</p>
+<pre class="highlight"><code class="hljs bash"><span class="hljs-built_in">source</span> kvm.sh
+</code></pre>
+<p>We have pretty quickly setup and downloaded the environment to run ASP.NET vNext apps on an OS X machine, but, we have
+no code! Thankfully, someone wrote an ASP.NET MVC Project Generator for Yeoman. Yeoman, for those of you not familiar,
+is a tool to generate scaffolding for your projects. It utilizes Node.js.</p>
+<p>So to get all of this working, you are going to need to have Node.JS and the Node Package Manager (NPM) installed.
+Again, since we are talking developers, you probably already have all of this. The next step then is to install
+Yeoman, using NPM. From your Bash shell we will install Yeoman first</p>
+<pre class="highlight"><code class="hljs bash">npm install –g yo
+</code></pre>
+<p>Next, we install the generator for ASP.Net</p>
+<pre class="highlight"><code class="hljs bash">npm install -g generator-aspnet
+</code></pre>
+<p>Next step, since we have all of the tools we need installed and downloaded, we can generate our application. This is done by running Yeoman from the bash shell type by typing</p>
+<pre class="highlight"><code class="hljs bash">yo aspnet
+</code></pre>
+<p><img src="/2014/12/creating-ASP.NET-vNext-application-on-OSX/osx1.png" alt="Running Yeoman, step1, choose MVC"></p>
+<p>We have the option of choosing a console application, a Web App, MVC app or Nancy ASP.NET app. We choose MVC
+application and provide a name</p>
+<p><img src="/2014/12/creating-ASP.NET-vNext-application-on-OSX/osx2.png" alt="Running Yeoman, step2, choose Project Name"></p>
+<p>And our application gets generated</p>
+<p><img src="/2014/12/creating-ASP.NET-vNext-application-on-OSX/osx3.png" alt="Running Yeoman, step3, application is generated"></p>
+<p>And we can take a look and see our directory structure, with many of the controllers and views most of us know from
+our MVC projects.</p>
+<p><img src="/2014/12/creating-ASP.NET-vNext-application-on-OSX/osx4.png" alt="After Running Yeoman, step last, tree view"></p>
+<p>For those of you well versed in ASP.NET, a couple of pretty interesting things to note. First, no solution file!
+Second, no Project file! Most of the Visual Studio generate file constructs are gone. Similar to a Node.JS
+application, there is a json file outlining the dependencies needed for an application, as opposed to the Solution
+and Project files of Visual Studio. Very cool.</p>
+<p>To build and run the application, we use the commands shown in the previous screen shot of the bash shell</p>
+<p><code>kpm restore</code>, which gets the packages for your application</p>
+<p><code>kpm build</code>, builds the application</p>
+<p><code>k kestrel</code>, fires up the web server to serve the pages</p>
+<p>By using the kestrel web server we are actually firing up Mono, the open source version of the .NET framework.
+We access the location locally on port 5004 (<a href="http://localhost:5004/">http://localhost:5004/</a>)</p>
+<p><img src="/2014/12/creating-ASP.NET-vNext-application-on-OSX/osx5.png" alt="MVC app on OS X"></p>
+<p>So that is all kind of Christmas goodies Santa has for us, what is the most impressive programming language
+for business development being able to run on non-Microsoft platforms. When you start thinking about integrating in
+with some popular Linux tools like Docker, it doesn’t take a lot to realize things will be a lot different on the .NET
+stack when Santa is coming back to town in 2015. Plus, new Star Wars!</p>
+<p>You can download this code from a GitHub repository I have setup at
+<a href="https://github.com/jptacek/ChristmasCountdown">https://github.com/jptacek/ChristmasCountdown</a></p>
+<p>Note: When running the web site, it will use the same port for the web server. I usually exit the process (k kestrel) by typing Ctrl-Z.
+However, I need to list the processes using PS and then kill, by typing kill -9 <pid>, the process that is mono.
+That way I can restart.</pid></p>
+<p><strong>UPDATE (December 17, 2014)</strong> - Links updated to include link to Microsoft <a href="http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx">post</a> on Yeoman</p>
+<p><strong>UPDATE 2 (December 18, 2014)</strong> - Thanks to <a href="https://twitter.com/sayedihashimi">Sayed Hashimi</a> for helping clean up some typos
+with case issues.
+<a href="https://twitter.com/sayedihashimi/status/545720905171603456">https://twitter.com/sayedihashimi/status/545720905171603456</a></p>
+<p>Links</p>
+<ul>
+<li>ASP.NET MVC Project Generator for Yeoman - <a href="http://hassakarn.com/2014/02/07/asp-net-mvc-project-generator-for-yeoman/">http://hassakarn.com/2014/02/07/asp-net-mvc-project-generator-for-yeoman/</a></li>
+<li>Yeoman - <a href="http://yeoman.io/">http://yeoman.io/</a></li>
+<li>ASP.NET GitHub repo - <a href="https://github.com/aspnet/home">https://github.com/aspnet/home</a></li>
+<li>OmniSharp.NET - <a href="http://www.omnisharp.net/">http://www.omnisharp.net/</a></li>
+<li>GitHub for this Code - <a href="https://github.com/jptacek/ChristmasCountdown">https://github.com/jptacek/ChristmasCountdown</a></li>
+<li>Microsoft on Yeoman for ASP.NET - <a href="http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx">http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx</a></li>
+</ul>
+<p>This blog post originally appeared at <a href="http://www.skylinetechnologies.com/Blog/Article/2586/12-Days-of-Christmas-Mac.aspx">Skyline Technologies</a>
+as part of their <a href="http://www.skylinetechnologies.com/Insights/Skyline-Blog/December-2014/Dec-8th-Kicks-Off-the-12-Blogs-of-Christmas">12 Blogs of Christmas series</a></p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/asp-net-vnext/'>ASP.NET vNext</a>, <a href='/tags/asp-net-core/'>ASP.NET Core</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/2014/12/creating-ASP.NET-vNext-application-on-OSX/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+            <div id="me">
+    <p>
+        <img src="/images/Headshot-Square.png" alt="John Ptacek" />
+        I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
+        This blog is my contains my content and opinions, which are not those of my employer.
+    </p>
+    <p>Currently, I am reading 
+        <a href="https://www.goodreads.com/book/show/567704.Imajica">Imajica</a>
+        by <a href="http://www.clivebarker.info">Clive Barker</a></p>
+    <p>
+        <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="https://github.com/jptacek">GitHub</a> &#8226;
+        <a href="https://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
+        <a href="https://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
+        <a href="https://plus.google.com/+JohnPtacek">Google+</a>
+    </p>
+</div>
+
+            <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript></div>
+<script type="text/javascript">
+    var disqus_shortname = 'jptacek';
+    var disqus_url = 'http://www.jptacek.com/2014/12/creating-ASP.NET-vNext-application-on-OSX/';
+    var disqus_identifier = disqus_url;
+    var disqus_title = 'Creating ASP.NET vNext application on OS X';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+</div>
+
+<div class="container">
+    <div class="navbar navbar-footer">
+        <p class="navbar-center navbar-text">Content copyright &copy; 2016 John Ptacek</p>
+    </div>
+</div>
+
+
+
+    <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-animate/angular-animate.min.js"></script>
+
+ 
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="/scripts/site.js"></script>
+
+
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34910017-1']);
+    _gaq.push(['_setDomainName', 'jptacek.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>

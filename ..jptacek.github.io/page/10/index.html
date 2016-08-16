@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="Mobile, Web and JavaScript" />
+
+<title>JPtacek.com - JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <meta name="generator" content="DocPad v6.78.4" />
+    
+
+    <meta name="author" content="John Ptacek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+    <link href="/styles/site.css" rel="stylesheet" />
+    <link href="/css/highlight.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+
+
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">John Ptacek</a> <div class="navbar-brand"> - Musings on Code</div>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="/">Blog</a></li>-->
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                <li class="hidden-xs">
+                    <a href="/feed/index.xml" class="rss"><i class="fa fa-rss fa-lg"></i></a>
+                    <a href="https://twitter.com/jptacek" class="twitter"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><i class="fa fa-google-plus fa-lg"></i></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><i class="fa fa-linkedin fa-lg"></i></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><i class="fa fa-stack-overflow fa-lg"></i></a>
+                    <a href="https://github.com/jptacek" class="github"><i class="fa fa-github fa-lg"></i></a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right hidden-xs" role="search" action="https://google.com/search"
+                  method="get">
+                <div class="form-group">
+                    <input type="search" name="q" class="form-control" placeholder="Search">
+                    <input type="hidden" name="q" value="site:jptacek.com">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+        <div class="col-sm-12 col-md-10">
+            
+    <article class="post">
+    
+    <h1><a href='/2014/03/National-Pi-Day-2014/'>National Pi Day - Calculating PI With AngularJS and a Monte Carlo Simulation</a></h1>
+    
+        <div class="post-date">Mar 14th, 2014</div>
+
+    <div class="post-content">
+        <script type="text/javascript" src="/2014/03/National-Pi-Day-2014/js/piApp.js"></script>
+<script type="text/javascript" src="/2014/03/National-Pi-Day-2014/js/piController.js"></script>
+
+<p>Every year on 3/14, Geeks everywhere can let their geek flag fly by
+celebrating <a href="http://en.wikipedia.org/wiki/Pi_Day">National Pi Day</a>. On this day, every year, the date equals the first three
+digits of π, 3.14. Last year we celebrated with a <a href="http://www.jptacek.com/2013/03/have_your_pi/">blog post</a>, so let’s do it again!</p>
+<p>In last year’s post, we calculated Pi using Leibiniz formula to determine π, which is a relatively slow algorithm.</p>
+<p>This year we are going to look at a totally different approach, a Monte Carlo simulation.
+A <a href="http://en.wikipedia.org/wiki/Monte_Carlo_method">Monte Carlo simulation</a> is a statistical approach where you use
+random numbers to run a simulation over and over and record those results. It is very popular in the fields of finance,
+fluid mechanics and the study of Brownian Motion. For our scenario today, you can also use a Monte Carlo method to calculate π!</p>
+<p>To do this, we are going to use two geometric formulas, one to calculate the area of a square and the second the area of a
+circle. If we put a circle of radius R in a square of length 2R, we have a scenario as shown in Figure 1.</p>
+<p><img src="/2014/03/National-Pi-Day-2014/PtacekPie_002.GIF" alt="Circle in Square"></p>
+<p>The area of the rectangle will then be 4R<sup>2&nbsp;</sup>  and the area of the circle will be πR<sup>2&nbsp;</sup>.
+Dividing the area of the circle by the area of the rectangle give us π /4. Stated another way, the ratio of area of the
+circle to that of the square is Pi/4.</p>
+<p>The Monte Carlo method comes into play because we will randomly put a point on the square. If the point falls within
+the circle, we record it. The total ratio of points in the circle (aka, the area of the circle) to total points
+(aka, the area of the square) will tell us π /4.</p>
+<p>So, we now know a way to calculate π, the next step is to actually write some code. There are, obviously, many
+ways we could go and do this, but lately I have been kicking the tires with AngularJS and thought this would work as
+well as anything.</p>
+<p>We won’t spend a lot of time jumping into AngularJS. You can check out some previous posts at
+<a href="http://www.jptacek.com/tags/angularjs/">http://www.jptacek.com/tags/angularjs/</a> for an introduction.</p>
+<p>We will have two things, our chemistryApp.js file to create our angular application, piApp, and our controller,
+ where the interesting stuff will happen.</p>
+<p>Our HTML file is pretty basic,</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"piApp"</span> <span class="hljs-attribute">ng-app</span>=<span class="hljs-value">"piApp"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"piCtrl"</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"piAppController"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"iteration"</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"iterations"</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"piCalc"</span> &gt;</span>{{pi}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"piCalcDiff"</span> &gt;</span>{{delta}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">data-ng-click</span>=<span class="hljs-value">"calculatePi()"</span> &gt;</span>Update<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>We will enter in the number of random dots (iterations) we want our simulation to run. The more dots, the closer we get.
+We will then display the calculated value of π and how close we are to π actual. Last, we have a button that we will click to
+execute our Monte Carlo simulation.</p>
+<p>Our AngularJS controller is where the interesting stuff is happening, and that is not even particularly interesting.</p>
+<p>We have created a function, determinePi, which will perform our calculation. We assume a circle with a radius of 1.
+We then generate two random numbers, one for the x position and one for the y position. We know that
+(x<sup>2&nbsp;</sup> + y<sup>2&nbsp;</sup>)=1 (the radius of our circle), so for any value that is less than this, we know we are
+inside the circle and increment a counter for hits inside. Once we are done with the iterations, we determine our
+calculated version of π and the difference from our known value of π for display on the page. In our calculation, we are only
+really doing a quadrant, just to make the code a bit easier to follow. It all works though since we are just talking about
+ratios.</p>
+<p>This is not a super accurate, or super-fast method of calculating π, but it was an interesting chance to take a quick look at
+Monte Carlo methods, which are common place with a subset of our clients.</p>
+<div id="piApp" ng-app="piApp">
+    <div id="piCtrl" ng-controller="piAppController">
+        <input id="iteration" -ng-model="iterations"><br>
+        <div id="piCalc">{{pi}}</div><br>
+        <div id="piCalcDiff">{{delta}}</div><br>
+        <button ng-click="calculatePi()">Update</button>
+    </div>
+
+<p></p></div><p></p>
+<p>Happy Pi day! Go have a nice piece of Apple Pie and enjoy the day!!</p>
+<p>This post originally appeared at <a href="http://skylinetechnologies.com/Blog/Article/2453/National-Pi-Day-Calculating-Pi-with-AngularJS-and-a-Monte-Carlo-simulation.aspx">Skyline Technologies</a></p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/pi/'>Pi</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/page/10/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2014/03/Speculations-Build-2014/'>Speculations for Build 2014</a></h1>
+    
+        <div class="post-date">Mar 2nd, 2014</div>
+
+    <div class="post-content">
+        <p>Build is a Microsoft developer conference that has taken the place of their Professional Developer Conference (PDC). The first
+Build was held in 2011 and introduced the world to Windows 8, along with an early preview of Windows 8 and a Samsung tablet.
+You can read my thoughts on Build 2011 <a href="http://www.jptacek.com/2011/09/observations-from-microsofts-build-conference/">here</a>.
+In 2012, Build was held in Seattle and saw the release of Windows 8 and
+Microsoft’s Surface RT tablet.  In 2013, Build was held in San Francisco and Microsoft announced Windows 8.1 as well as
+made available a preview
+release for developers. Before Build 2013 last year, I took a <a href="http://www.jptacek.com/2013/06/Speculation-Microsoft-Build/">stab</a> at
+ speculating about what would be coming and did pretty spectacularly bad. With Build 2014 a
+month away, I thought it would be fun to try again!</p>
+<p><img src="/2014/03/Speculations-Build-2014/build2013.png" alt="Build 2013"></p>
+<p>First, it is interesting to look at how short the time is becoming between Microsoft Build conferences</p>
+<ul>
+<li>Build 2011, Anaheim, CA September 13 - 16, 2011</li>
+<li>Build 2012, Seattle, WA October 30 - November 2, 2012 (~13 months later)</li>
+<li>Build 2013, San Francisco, CA June 26-28, 2013 (~8 months later)</li>
+<li>Build 2014, San Francisco, CA April 2-4, 2014 (~9 months later)</li>
+</ul>
+<p>You can see that Microsoft is quickly iterating and getting information out to developers. However, having said that, certain parts
+of Microsoft are executing VERY fast (I am looking at you Azure) and other parts are executing VERY slow (I am looking at you Windows
+Phone). With the breadth of developer platforms Microsoft has, they have many opportunities to get in front of developers, but it
+not always what the developers are expecting. So all of that to say this.... A lot of my speculation for Build this year looks a lot like last year! There are still some
+important pieces for the Microsoft developer story that I believe have yet to be communicated.</p>
+<p><img src="/2014/03/Speculations-Build-2014/guitar.jpg" alt="3D Printer Guitar"></p>
+<p>###One API To Rule Them All###
+The reality is, developing on the Microsoft stack
+today can be downright confusing. You have options between....</p>
+<ul>
+<li>Web using MVC with HTML/JS/CSS</li>
+<li>Web using Silverlight (version of XAML), though this is deprecated</li>
+<li>Desktop using WPF (version of XAML)</li>
+<li>Windows Modern/Metro/Store Apps using WinJS with HTML/JS/CSS</li>
+<li>Windows Modern/Metro/Store Apps using XAML</li>
+<li>Windows Phone (version of XAML)</li>
+</ul>
+<p>For shops that are all in on the Microsoft stack, it can be confusing to determine what to go all in on. If you are a web developer
+and love HTML and JavaScript, your options are limited for Windows Phone. If you love all things XAML, you have to choose amongst
+WPF, Windows Phone or Windows 8 flavor of XAML. And while the XAML platforms are similar, they are not similar enough to not
+have a lot of rework. Things have gotten better though over the years with the introduction of the <a href="http://www.hanselman.com/blog/CrossPlatformPortableClassLibrariesWithNETAreHappening.aspx">Cross-Platform portable class
+library</a>, though it is still cumbersome hitting
+multiple endpoints.</p>
+<p>Last summer I wrote</p>
+<div class="well">
+<p><strong>One API To Rule Them All</strong> – With the core of Windows driving Xbox One, Windows Phone and Windows 8, will Microsoft release a single API that enables development across all of their platform? That would be great to see and could drive a lot of great applications across Windows, Windows Phone and Xbox!</p>
+</div>
+
+<p>This year, I can write the same thing. There have been <a href="http://www.wpcentral.com/rumor-windows-phone-81-ditch-back-button">rumors</a>
+ coming from a leaked release of the Windows Phone 8.1 SDK of Universal Binaries that will allow Windows Phone 8.1 and Windows
+ RT/Metro/Modern/Store Apps have a common base. According to the earlier link, over 75% of Windows Phone and Windows RT have
+ the same shared API. That would be a great starting point for Windows 8 developers, especially if WinJS development is now an option
+ for Windows Phone 8.1. Giving developers the opportunity to have one platform they can choose to develop on and hit multiple devices
+ in the Microsoft devices strategy would be a great leap forward.</p>
+<p>###Windows RT###</p>
+<p>Last summer I wrote</p>
+<div class="well">
+<p><strong>Windows RT</strong> – Microsoft Windows RT, the ARM based version of their Operating System, is in a weird place. It runs Metro/Modern Design apps in a full touch mode. It also ships with a subset of Microsoft Office such as Word and Excel. However it does not run other Windows applications. What it does do is run all day on a single charge. It is a great productivity tool for knowledge workers. However, with the release of Intel’s Haswell chipset it seems that all-day battery life will be available on much more powerful chipsets. What, then, becomes the future of Windows RT? Will it move to being Microsoft Windows Phone OS? Will Microsoft reduce the cost of Windows RT to get more hardware vendors building machines? Maybe we will find out more at Build!</p>
+</div>
+
+<p>Again, same thing this Build. Windows RT has not had a lot of explanation about its continued existence in the Windows ecosystem.
+I am not 100% sure, but I believe the only devices released for WinRT in 2013 were from Lumia (<a href="http://www.nokia.com/global/products/tablet/lumia2520/">Lumia 2520</a>) and Microsoft
+(<a href="http://www.microsoft.com/surface/en-us/products/surface-2">Surface2</a>). The good news is, both of these devices were well received.
+The battery life and productivity for ARM based tablets running RT make for great use cases. However, as Intel releases improved Haswell and Atom chips with great battery
+life and the ability to run desktop applications, it doesn&#39;t make long term sense for Microsoft to support both platforms the way they are now.
+Unless, Microsoft is focused on making Win RT the phone platform
+as well as a tablet only platform, without the legacy desktop. I am pretty sure this is the case, but we haven&#39;t heard it from
+Microsoft yet. Maybe this Build we will?!?!</p>
+<p>###Devices and Services Company###
+Microsoft has repeatedly said they are now a devices and services company. Since this announcement in 2012, they have released both Windows
+Surface Pro and Windows Surface RT, along with follow up versions in 2013. The Pro update was minimal in terms of hardware (adding the Haswell chip),
+but the Surface RT 2,
+now called Surface 2, saw a pretty significant upgrade in performance and hardware. In 2013, the release of Xbox One happened. Other
+than that, not a whole lot in terms of devices.</p>
+<p>Obviously, the purchase of Nokia&#39;s Lumia line will see a lot more Microsoft devices being released in 2014.
+However these will be phone devices, there
+has not been a 7-8 inch Surface release to compete with the iPad Mini or Kindle fire, the fastest growing tablet market. There also has not been a
+Microsoft Laptop/Ultrabooks released. Further, we still are not sure what happens
+to the Lumia Brand and the Surface Brand. Will they merge? Will one replace the other? Will one be the Tablet platform and the other the
+Phone platform? Will one be for consumers and the other for enterprises? An explanation of these brands moving forward would be great!</p>
+<p>I expect that Build 2014 will shed a lot more light on this, especially the company&#39;s strategy for integrating Nokia and the possible
+announcement of a Surface Mini. In general, except for the first Build, it is not a place where Microsoft announces hardware though.</p>
+<p>###Xbox One###
+With the news that Xbox One is built on Windows 8, and a tease at Build 2013 about a JavaScript based API for Xbox One, everyone
+I talk with thinks Xbox One will be part of Build 2014. Bring it on! This will be exciting for indie developers.</p>
+<p>###Windows Phone###
+My guess, and that of many others, is above all things, Build 2014 will be about Windows Phone 8.1. I, and most of the world, expect them to show Windows Phone
+8.1 while hitting on the developer story. It may be even that some new Lumia devices are announced to drive developer enthusiasm.</p>
+<p>###Kinect for Windows RT###</p>
+<p>Last year I wrote</p>
+<div class="well">
+<p>Microsoft’s Kinect is impressive technology. Microsoft released a Kinect for Windows last year, but the hardware did not work on the RT side of the house. Will there be APIs in Windows RT for Kinect? Will there be new Kinect hardware?</p>
+</div>
+
+<p>This year, I again hope that the Kinect API will be part of the Win Metro API so developers can take advantage of the Kinect in
+Windows 8.1 apps. The technology is too impressive for Microsoft to just let it be used on the Xbox platform!</p>
+<p>###Azure###
+Microsoft&#39;s Azure platform is amazing. The degree to which the Azure team can execute and release new features is dizzying. As someone
+who is a big proponent of the cloud for organizations to embrace, I spend time following the various platforms. It is hard to keep up
+with all the great things the Azure team is doing.</p>
+<p>The one
+thing that I am most interested in seeing from Microsoft over the next year, is if the speed of execution that Satya Nadella bought to the Azure team
+when he led the group, can be bought to the whole Microsoft organization. If there is one person from within Microsoft that can
+execute on the Microsoft One strategy, it is Satya. It will be something to watch in 2014.</p>
+<p>###Pick a Name###
+I am still very confused by what Microsoft calls its non-desktop platform, aka the Windows formerly called Metro. Is it Windows Store apps?
+Is it Modern apps? Is it Win RT? What is the Microsoft design language formerly known as Metro called? It would be nice to clearly and
+concisely pick the terms and have everyone use the same vocabulary. Even the Microsoft developers presenting at previous Builds still call
+everything Metro!</p>
+<p>###Conclusion###
+I have the sense that Build 2014 is really Build 2013, part 2. A lot of the pieces that weren&#39;t fully basked for Build last June, like Xbox One and Windows Phone 8.1,
+ should
+be announced this April. I am quite hopeful that the Microsoft One vision will be introduced for developers at Build 2014.
+ I believe this will really help Microsoft accelerate application across multiple platforms and give developers a sense
+ of ease about a single execution strategy. More to come!</p>
+<p> I will be out at Build 2014. Feel free to hit me up on twitter, <a href="http://twitter.com/jptacek">@jptacek</a> if you are out there in
+ April.</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/conferences/'>Conferences</a>, <a href='/tags/build/'>Build</a>, <a href='/tags/conference/'>Conference</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/page/10/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2014/02/PhoneGap-Cordova-Setup-Windows/'>Setting Up Cordova (PhoneGap) for Development on Windows Machines</a></h1>
+    
+        <div class="post-date">Feb 28th, 2014</div>
+
+    <div class="post-content">
+        <p>Cordova, also known as PhoneGap, is an interesting technology to bundle up mobile web apps created with HTML, CSS and JavaScript for deployment across multiple phone platforms, such as iOS and Android. Cordova also has a JavaScript library that provides access to phone features such as the camera, accelerometer, compass, etc. For organizations that don’t want to invest in coding up an application for multiple platforms, it can be a quick option.
+Recent versions of Cordova have utilized a Command Line Interface (CLI) for installation and configuration leveraging Node.JS for their implementation.</p>
+<p>The terms PhoneGap and Cordova can be a bit confusing for folks, especially for those just getting started. PhoneGap was a
+platform for creating mobile applications using native web technologies produced by Nitobi. Adobe then purchased PhoneGap. Around
+version 1.9 of the product, they Open Sourced PhoneGap and called it <a href="http://cordova.apache.org/">Cordova</a>. They kept the PhoneGap
+ name and have extended things a bit by creating an great back end system to build for multiple platforms as well as starter solution
+ for different platforms. More information about PhoneGap can be found at <a href="http://phonegap.com/">phonegap.com</a>. The reality is I,
+ and most people, refer to the names interchangeably, but there are differences.</p>
+<p>So with that out of the way, let&#39;s look at how wo install Cordova on Windows 8.</p>
+<p>First, you will need to download and install Node.js from <a href="http://nodejs.org/download">http://nodejs.org/download</a>. After this, you should be able to start up PowerShell and run Node from the command line. You can ensure you have node setup by running node –version within a PowerShell prompt</p>
+<p><img src="/2014/02/PhoneGap-Cordova-Setup-Windows/nodeCheck.png" alt="Cordova Version check"></p>
+<p>We will be installing global packages via the Node Package Manager (NPM). If you have never used or installed Node previously, you will need to update your path variables to the global packages location is in your path.</p>
+<p>This is done by going to the computer properties and selecting Advanced System Settings</p>
+<p><img src="/2014/02/PhoneGap-Cordova-Setup-Windows/systemSettings.png" alt="System Settings"></p>
+<p>Since we need to update the path, we choose Environment Variables</p>
+<p><img src="/2014/02/PhoneGap-Cordova-Setup-Windows/envVariables.png" alt="Environment Variables"></p>
+<p>Within the Environment Variables, there are two paths you can choose between, the path for the logged in use and the path for all users. I usually update the current logged in user (the first Path listed under user variables for jptacek)</p>
+<p><img src="/2014/02/PhoneGap-Cordova-Setup-Windows/pathVariables.png" alt="Path variables"></p>
+<p>You then just update the Path by clicking edit and adding the location of the NPM packages by appending the following</p>
+<pre class="highlight"><code class="hljs bash">%userprofile%\AppData\Roaming\npm
+</code></pre>
+<p>Note, if you did not have the NPM packages in your path and have taken these steps, you will need to restart PowerShell for your environment variables to be set.
+At this point, we have Node setup and are set to install Cordova. This is accomplished via the Node Package Manager (NPM), which downloads and sets up Node applications.</p>
+<pre class="highlight"><code class="hljs bash">Npm install –g cordova
+</code></pre>
+<p><img src="/2014/02/PhoneGap-Cordova-Setup-Windows/cordovaInstall.png" alt="Cordova Install"></p>
+<p>The <code>–g</code> flag indicates to the NPM package manager that that package should be installed globally. On Windows, this directory
+is often your user directory, <code>AppData\Roaming\NPM</code>, which we talked about setting up above.</p>
+<p>Now that we have Node and Cordova setup and configured on our machine, we are moving on to the fun stuff, app development!</p>
+<p>The way Cordova applications work is by having a base web application with our HTML, JavaScript, CSS and other assets. For each platform we want to deploy and build locally, we have to add the platform. This will also enable us to use emulators for devices on our development machine. We will then invoke the build process, which takes assets from our main WWW application and packages and deploys them to the various platforms we have on our machine. So if, as we are about to do, have platforms for Windows Phone 8 and Windows 8, the build process takes our web assets from our base WWW app, copies them to those specific platform installs.</p>
+<p>Let us take a look at this…</p>
+<p>To create an application in Cordova, we use the CLI to have it generate the shell of our application by running the Cordova create command</p>
+<pre class="highlight"><code class="hljs bash">cordova create MyApp com.jptacek.MyApp MyApplication
+</code></pre>
+<p>The <code>MyApp</code> parameter identifies the directory for the application, which will be created. The second argument,
+is the identifier, which you want to be unique. Most people use the reverse domain style identifier.
+The last parameter is optional, but is the title of the application for display.</p>
+<p>This process will actually go and download the latest template and create the project structure</p>
+<p><img src="/2014/02/PhoneGap-Cordova-Setup-Windows/appCreation.png" alt="Cordova App Creation"></p>
+<p>If we take a look in our directory, you will see it created the default structure for the application with the creation of a www directory with a shell application, a plugins directory, etc.</p>
+<p><img src="/2014/02/PhoneGap-Cordova-Setup-Windows/directoryStructure.png" alt="Cordova App Creation"></p>
+<p>So far, so good, but we cannot actually BUILD anything yet because we haven’t created any platforms on the development machine. The WWW directory shown above has our HTML, JavaScript, CSS and other assets. The platforms are the various devices we want to be able to build locally on our machine. The implication here is that you need to setup the local machine for those platforms. This is done by adding the platforms via the CLI.</p>
+<p>Since we are doing this on a Windows machine, we will add two platforms, one for Windows Phone 8 and one for Windows “Metro” 8</p>
+<p><img src="/2014/02/PhoneGap-Cordova-Setup-Windows/addPlatform.png" alt="Add application platform"></p>
+<p>Note, if you try and add platforms that are not available for development, Cordova will not allow this. For example, you cannot do iOS development on a Windows 8 machine, so Cordova will not be able to find the XCode libraries and will raise an error trying to setup. If you want to be able to build locally for an Android device, you will need eclipse and the Android SDK, etc.</p>
+<p>By adding the platform, you are actually creating Visual Studio solution files for creating both a native Windows Phone 8 and</p>
+<p>Windows 8 application that can be loaded in Visual Studio and run with the appropriate emulator.</p>
+<p><img src="/2014/02/PhoneGap-Cordova-Setup-Windows/slnDirectory.png" alt="Solution Directory"></p>
+<p>You can load up these solutions and run them natively. However, you first need to build the solution. At this point, you just have a skeleton setup for the project, no assets have been deployed to the skeleton of the project. To do this, you will run the build command in Cordova.</p>
+<pre class="highlight"><code class="hljs bash">Cordova build
+</code></pre>
+<p>This then enables you to run either Windows 8 or Windows Phone 8 to see your solution. Two things… Since each build recreates your solution files from the default WWW directory, your changes will be overwritten. As a result, I usually don’t like doing my code editing with the WP8 and Windows 8 emulator.</p>
+<p>Second, since you essentially have a web application, you like having access to tools you have come to know and love like Chrome Developer tools or FireFox as you develop your code. For this reason, I usually will create a Virtual Directory to server up the WWW assets from a platform, for example, Windows8, that are deployed during a build. This allows for me to use my tools of choice for web development.</p>
+<p>The reality is, I am most likely to use <a href="/2014/02/PhoneGap-Cordova-Setup-Windows/build.phonegap.com">build.phonegap.com</a> for testing by using the
+actual native deivces. Build.PhoneGap.com will actually take your source, and build your application for the multiple platforms
+supported by PhoneGap. Its hydrate function automatically check for new versions and downloads when you launch on a mobile device like Android or Windows Phone.</p>
+<p>I have not found a great way to do development with PhoneGap. I am VERY interested in the workflow other people use for
+their Cordova/PhoneGap development, please share!</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/phonegap/'>PhoneGap</a>, <a href='/tags/cordova/'>Cordova</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/page/10/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+
+
+<div class="page-nav">
+    
+    <a class="page-nav-older" href="/page/11/"><span class="icon icon-arrow-left-2"></span> Older</a>
+    
+    
+    <a class="page-nav-newer" href="/page/9/">Newer <span class="icon icon-arrow-right-2"></span></a>
+    
+    <div class="page-nav-archives"><a href="/archives/">- Blog Archives -</a></div>
+</div>
+
+<div id="me">
+    <p>
+        <img src="/images/Headshot-Square.png" alt="John Ptacek" />
+        I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
+        This blog is my contains my content and opinions, which are not those of my employer.
+    </p>
+    <p>Currently, I am reading 
+        <a href="https://www.goodreads.com/book/show/567704.Imajica">Imajica</a>
+        by <a href="http://www.clivebarker.info">Clive Barker</a></p>
+    <p>
+        <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="https://github.com/jptacek">GitHub</a> &#8226;
+        <a href="https://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
+        <a href="https://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
+        <a href="https://plus.google.com/+JohnPtacek">Google+</a>
+    </p>
+</div>
+
+        </div>
+</div>
+
+<div class="container">
+    <div class="navbar navbar-footer">
+        <p class="navbar-center navbar-text">Content copyright &copy; 2016 John Ptacek</p>
+    </div>
+</div>
+
+
+
+    <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-animate/angular-animate.min.js"></script>
+
+ 
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="/scripts/site.js"></script>
+
+
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34910017-1']);
+    _gaq.push(['_setDomainName', 'jptacek.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>

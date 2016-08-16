@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="Mobile, Web and JavaScript" />
+
+<title>Observations From Microsoft's Build Conference - JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <meta name="generator" content="DocPad v6.78.4" />
+    
+
+    <meta name="author" content="John Ptacek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+    <link href="/styles/site.css" rel="stylesheet" />
+    <link href="/css/highlight.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+
+
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">John Ptacek</a> <div class="navbar-brand"> - Musings on Code</div>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="/">Blog</a></li>-->
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                <li class="hidden-xs">
+                    <a href="/feed/index.xml" class="rss"><i class="fa fa-rss fa-lg"></i></a>
+                    <a href="https://twitter.com/jptacek" class="twitter"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><i class="fa fa-google-plus fa-lg"></i></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><i class="fa fa-linkedin fa-lg"></i></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><i class="fa fa-stack-overflow fa-lg"></i></a>
+                    <a href="https://github.com/jptacek" class="github"><i class="fa fa-github fa-lg"></i></a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right hidden-xs" role="search" action="https://google.com/search"
+                  method="get">
+                <div class="form-group">
+                    <input type="search" name="q" class="form-control" placeholder="Search">
+                    <input type="hidden" name="q" value="site:jptacek.com">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+            <article class="post">
+    
+    <h1>Observations From Microsoft's Build Conference</h1>
+    
+        <div class="post-date">Sep 29th, 2011</div>
+
+    <div class="post-content">
+        <h2 id="overview">Overview</h2>
+<p>Build was a bit of a different conference.... Initially, when it was announced at MIX it was called PDC (Microsoft&#39;s Professional Developers Conference). PDC generally has topics that cover the breadth of the Microsoft eco system from a developer&#39;s perspective; creating ASP.NET applications, C# , VB.NET , Entity Framework this and Entity Framework that. Build was NOT that, it was specifically dedicated to Microsoft&#39;s upcoming Windows 8 operating system, and especially to the new Metro UI introduced as part of the OS.</p>
+<p>Windows 8 is, quite obviously, the next version of Microsoft&#39;s Windows platform. Microsoft is laser-focused on optimizing Windows for alternative form factors, especially the tablet. They have reduced the footprint of Windows by eliminating several core services that start up as part of the Operating system as well as the memory footprint. A demo played on an old netbook showed overall resource usage actually decreased when moving from Windows 7 to Windows 8, the first time that a new version of their operating system has had decreased baseline hardware requirements.</p>
+<p>The biggest change though is the introduction of the Metro UI for Windows, which can be thought of as the tablet interface for Windows. It is a &#39;fast and fluid&#39; touch-based interface, similar in some ways to Windows Phone 7, especially in the use of the Live Tiles, which are uber-icons that update with information. Take a look at the screen shot below to see what the new &#39;start screen&#39; looks like, gone is the iconic start menu introduced in Windows 95, replaced with a &#39;Windows Phone on steroids&#39; style home screen.</p>
+<p><img src="/2011/09/observations-from-microsofts-build-conference/Win8screen1-300x169.jpg" alt="Win8screen1"></p>
+<p>The interface has been well received by folks at large. It&#39;s a pretty bold reworking of Windows, part of which involves the fact there are NO Windows, just one or two running applications on screen at a time. For developers, the good news with Windows 8 is that you can also get to the desktop and use all of the applications you already use on Windows 7.</p>
+<p>To make all of this fluid, swipey goodness, Microsoft has introduced a new programming API called WinRT, which stands for Windows Runtime. WinRT is to Win32 what Silverlight or Windows Phone 7 are to the full .NET Framework, a smaller API surface optimized for their respective platforms. However, it is different in a couple of ways. First, it introduces new areas to the core Windows API, most of which are focused on using Windows for things like storage and search. Second, Microsoft is providing [or projecting] the WinRT APIs for direct use by C#, C++, VB.NET and JavaScript (and possibly F#), so instead of calling .NET framework libraries that in turn call Win32 APIs, the .NET code directly executes WinRT calls, similar to existing COM interop and P/Invoke technologies. The difference is that the projections include rich metadata so that the libraries appear as &#39;native&#39; class libraries in each of their respective languages, avoiding a lot of the headaches of existing COM and P/Invoke interactions.</p>
+<p>The diagram below outlines the various options for creating applications on Windows 8.</p>
+<p><img src="/2011/09/observations-from-microsofts-build-conference/Win8screen2-300x169.jpg" alt="Win8screen2"></p>
+<p>The &#39;Desktop Apps&#39; section of the diagram is the same types of applications that we currently know and love (or love to hate). These types of applications will continue to be supported and extended moving forward, but WILL NOT be able to interact directly with Metro apps, nor participate in the Windows 8 contracts that provide the rich &#39;web of applications&#39; that are one of Windows 8&#39;s signature features. These applications will also not be able to be installed through the new Windows Store (think the App Store, but for Windows). Desktop applications will be linked through the store, but are not subject to the same certification and safety guarantees as Metro apps.</p>
+<p>Similar to how C#, VB.NET, F#, and a host of other languages can create applications using the .NET Framework APIs, there are several options for creating WinRT applications. The options can be split into three different groups. The first group is C/C++ applications using either DirectX or XAML based UI technologies. DirectX is primarily used for game creation or complex imaging applications, and XAML based UIs are really Microsoft&#39;s replacement for their existing MFC framework. The second group is a Metro equivalent to WPF applications, written in either C# or VB.NET. The final group is the newly introduced/repurposed HTML/CSS/JavaScript stack, which allows the creation and packing of applications Windows 8 Metro applications using HTML/CSS as the UI layer, and JavaScript as the interface. An entire article could be written on what the HTML/JS layers represent and how they are different than &#39;web apps&#39;, but these types of applications are not executed &#39;in browser&#39;, they are fully fledged &#39;Metro&#39; apps, using IE&#39;s JavaScript engine (Chakra) as the runtime interpreter. To be clear, there is NO fundamental difference in the end result for &#39;Metro&#39; apps, regardless of what technology stack you choose to use, they really are just options that allow you to use your existing skillset to build Win8 Metro applications.</p>
+<h2 id="quick-hits">Quick Hits</h2>
+<p>Here are some quick bullet points for takeaway...</p>
+<p><strong>Microsoft got its C++ love back -</strong>There was quite a lot of time and energy from Microsoft put into the development tools for C++. One of the sessions even stated &quot;C++ is back because performance matters&quot;. If you are looking to create uber-optimized WinRT apps on Windows 8, C++ may be the best option. If you are looking to get a date or see your family grow up, the .NET stack is still going to be the best way to create Line of Business applications (LOB). Also, WinRT applications run great with C#/VB/JS languages!</p>
+<p><strong>All Services All the Time -</strong>The data story for WinRT is going to be REST/JSON services. As of now, there is no way to run something like an Entity Framework model on the Metro UI. There are some rumors of SQL Lite support, but the hard push is for connected apps that require backend data sources that are NOT LOCAL to the machine (or even network) in question.</p>
+<p><strong>Metro UI on other processors -</strong>Microsoft is looking to have folks create many different devices and form factors using Windows 8. A lot of these will run on ARM processors, which are the low energy, middling performance chips that power things like iPads and mobile phones. For classic non-.NET desktop applications to run on these processors they will need to be recompiled. It is worth noting that there are LOTS of confusing statements about this, but as of now, that is the current understanding. Currently there is, at least, a subset of the .NET framework (the Windows Phone runtime) that runs on ARM, so it seems like good .NET framework support should be possible, even on ARM.</p>
+<p><strong>Visual Studio 2011 -</strong>Microsoft has a new version of Visual Studio 2011 that supports templates for many of the WinRT application types</p>
+<p><strong>Asynchronous data access -</strong>Microsoft has a new async/await keywords that are being introduced with the .NET Framework 4.5. These keywords allow a call to be made on a different thread. This becomes VITALLY important for performant applications because the thread that runs the UI has to wait for data to come back. Microsoft states that any call that takes longer than 50 (or 15, both have been mentioned) milliseconds should be asynchronous. Get used to coding a lot of async calls in the future! The good news is that the new keywords and compiler support mean that writing Metro (and .NET 4.5) applications will look a lot like standard synchronous code that &#39;just works&#39;.</p>
+<p><strong>Promises -</strong>JavaScript programming on the WinRT stack is going to be implementing the idea of promises. This is the JavaScript version of async/await. Essentially, have JavaScript go get some data, promise data comes back and there is a then() function (or continuation) which will run after your data returns.</p>
+<p><strong>Windows Store -</strong>Microsoft is introducing a Windows Store for users to go and download applications and easily install them on their computer. This will be for WinRT applications only! Other .NET/Win32 applications may exist in the store, but they will link to external sites for purchase and install.</p>
+<p><strong>Conclusion</strong>
+So, what does it all mean? At the end of day, at least for now, not a whole lot! In all seriousness, Microsoft is probably a year away from releasing Windows 8 and clients will be at least 6 months to a year out from installing and asking for it. But, be sure to be ready when they start asking!</p>
+<p>Having said that, Windows 8 represents a HUGE opportunity! According to Microsoft there are soon to be over 500 million copies of Windows in use. That is more than all the other mobile platforms combined. If there is one thing you want to do today to get ready for Windows 8, I would recommend this... Get your HTML 5/XAML skills up to speed and learn to love creating data services that can be consumed on mobile platforms.</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/html-5/'>HTML 5</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/windows-8/'>Windows 8</a>, <a href='/tags/build/'>Build</a>, <a href='/tags/conferences/'>Conferences</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/2011/09/observations-from-microsofts-build-conference/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+            <div id="me">
+    <p>
+        <img src="/images/Headshot-Square.png" alt="John Ptacek" />
+        I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
+        This blog is my contains my content and opinions, which are not those of my employer.
+    </p>
+    <p>Currently, I am reading 
+        <a href="https://www.goodreads.com/book/show/567704.Imajica">Imajica</a>
+        by <a href="http://www.clivebarker.info">Clive Barker</a></p>
+    <p>
+        <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="https://github.com/jptacek">GitHub</a> &#8226;
+        <a href="https://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
+        <a href="https://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
+        <a href="https://plus.google.com/+JohnPtacek">Google+</a>
+    </p>
+</div>
+
+            <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript></div>
+<script type="text/javascript">
+    var disqus_shortname = 'jptacek';
+    var disqus_url = 'http://www.jptacek.com/2011/09/observations-from-microsofts-build-conference/';
+    var disqus_identifier = disqus_url;
+    var disqus_title = 'Observations From Microsoft\'s Build Conference';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+</div>
+
+<div class="container">
+    <div class="navbar navbar-footer">
+        <p class="navbar-center navbar-text">Content copyright &copy; 2016 John Ptacek</p>
+    </div>
+</div>
+
+
+
+    <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-animate/angular-animate.min.js"></script>
+
+ 
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="/scripts/site.js"></script>
+
+
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34910017-1']);
+    _gaq.push(['_setDomainName', 'jptacek.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="Mobile, Web and JavaScript" />
+
+<title>AngularJS - More with ng-repeat - JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <meta name="generator" content="DocPad v6.78.4" />
+    
+
+    <meta name="author" content="John Ptacek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+    <link href="/styles/site.css" rel="stylesheet" />
+    <link href="/css/highlight.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+
+
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">John Ptacek</a> <div class="navbar-brand"> - Musings on Code</div>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="/">Blog</a></li>-->
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                <li class="hidden-xs">
+                    <a href="/feed/index.xml" class="rss"><i class="fa fa-rss fa-lg"></i></a>
+                    <a href="https://twitter.com/jptacek" class="twitter"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><i class="fa fa-google-plus fa-lg"></i></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><i class="fa fa-linkedin fa-lg"></i></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><i class="fa fa-stack-overflow fa-lg"></i></a>
+                    <a href="https://github.com/jptacek" class="github"><i class="fa fa-github fa-lg"></i></a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right hidden-xs" role="search" action="https://google.com/search"
+                  method="get">
+                <div class="form-group">
+                    <input type="search" name="q" class="form-control" placeholder="Search">
+                    <input type="hidden" name="q" value="site:jptacek.com">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+            <article class="post">
+    
+    <h1>AngularJS - More with ng-repeat</h1>
+    
+        <div class="post-date">Jan 23rd, 2014</div>
+
+    <div class="post-content">
+        <style>
+        .tableOdd {
+            background-color: green;
+        }
+        .tableEven {
+            background-color: gold;
+        }
+    </style>
+
+<p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
+<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
+ HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
+ Contrast this to a framework like JQuery where the DOM will update your data.</p>
+<p><img src="/2014/01/angularjs-further-with-ng-repeat/angularLogo.png" alt="AngularJS Logo"></p>
+<p>This is the fourth in a series of posts on AngularJS where we are using Chemistry data from the periodic table
+to help us understand the framework. The others posts are</p>
+<ol>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
+<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
+<li>AngularJS - More with NG-Repeat</li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
+<li><a href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
+<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
+<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
+<li><a href="http://jptacek.com/2015/02/angularJS-Best-Practices/">AngularJS - Best Practices</a></li>
+<li><a href="http://jptacek.com/2015/03/angularJS-CSS-Animation/">AngularJS - CSS Animations</a></li>
+</ol>
+<blockquote>
+<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
+the home page of my blog, only one application will work. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
+</blockquote>
+<p>In this post, we are going to dig a bit deeper into ng-repeat and discover a few things.</p>
+<p>To level set, we have a controller called chemistryApp.js. This creates our AngularJS application</p>
+<p><em>chemistryApp.js</em></p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
+</code></pre>
+<p>and a controller that references are json file of chemistry data and sets it to a scope variable</p>
+<p><em>chemistryController.js</em></p>
+<pre class="highlight"><code class="hljs javascript">chemistryApp.controller(<span class="hljs-string">'chemCtrl'</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope)</span> </span>{
+        $scope.periodic = perioicData;
+    }
+);
+</code></pre>
+<p>First up, instead of creating an unordered list, we are going to create a table. This is done by putting the
+<code>ng-repeat</code> directive on a <code>&lt;tr&gt;</code> tag. For example</p>
+<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements "</span>&gt;</span>
+</code></pre>
+<p>Then we can add our data on a cell by cell basis. For this example, we are going to link to a Wikipedia article about
+each element, and then display things like the atomic number, atomic weight, etc. Tying this with our <code>ng-repeat</code>
+ directive and
+our table markup becomes</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table table-striped table-bordered table-hover table-condensed"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements "</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://en.wikipedia.org/wiki/{{element.name}}"</span> <span class="hljs-attribute">Title</span>=<span class="hljs-value">"Wikipedia article on {{element.name}}"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_top"</span>&gt;</span>{{element.name}}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.phase}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.ionization}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.melting}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.boiling}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+</code></pre>
+<p>We now have a list of the Chemical elements in a table.</p>
+<div id="appContainer" ng-app="chemistryApp">
+ <div id="periodicTable0" ng-controller="chemCtrl">
+        <table class="table table-striped table-bordered table-hover table-condensed">
+            <tr>
+                <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
+            </tr>
+            <tr ng-repeat="element in periodic.elements ">
+                <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
+                <td>{{element.atomicNumber}}</td>
+                <td>{{element.atomicWeight}}</td>
+                <td>{{element.phase}}</td>
+                <td>{{element.ionization}}</td>
+                <td>{{element.melting}}</td>
+                <td>{{element.boiling}}</td>
+            </tr>
+        </table>
+    </div>
+
+<p>We can also, just like in our previous example, bind a filter to an input box and search for a chemical element
+by name and have it filter the list automatically.</p>
+<pre class="highlight"><code class="hljs xml">   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"periodicTable"</span>  <span class="hljs-attribute">data-ng-controller</span>=<span class="hljs-value">"chemCtrl"</span> &gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementNameOnlyTable"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table table-striped table-bordered table-hover table-condensed"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements | filter:{name:elementNameOnlyTable}"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://en.wikipedia.org/wiki/{{element.name}}"</span> <span class="hljs-attribute">Title</span>=<span class="hljs-value">"Wikipedia article on {{element.name}}"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_top"</span>&gt;</span>{{element.name}}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.phase}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.ionization}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.melting}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.boiling}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+ <div id="periodicTable" ng-controller="chemCtrl">
+    <form id="frm1">
+    <input type="text" ng-model="elementNameOnlyTable">
+    <table class="table table-striped table-bordered table-hover table-condensed">
+        <tr>
+            <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
+        </tr>
+        <tr ng-repeat="element in periodic.elements | filter:{name:elementNameOnlyTable}">
+            <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
+            <td>{{element.atomicNumber}}</td>
+            <td>{{element.atomicWeight}}</td>
+            <td>{{element.phase}}</td>
+            <td>{{element.ionization}}</td>
+            <td>{{element.melting}}</td>
+            <td>{{element.boiling}}</td>
+        </tr>
+    </table>
+    </form>
+</div>
+
+
+<p>The ng-repeat also has some intrinsic variable definitions. One is <code>$index</code> which is the current key of the element
+of the loop you are on.</p>
+ <div id="periodicTable1" ng-controller="chemCtrl">
+        <input type="text" ng-model="elementNameOnlyTable2">
+        <table class="table table-striped table-bordered table-hover table-condensed">
+            <tr>
+                <th>Name</th><th>$Index</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
+            </tr>
+            <tr ng-repeat="element in periodic.elements | filter:{name:elementNameOnlyTable2}">
+                <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
+                <td>{{$index}}</td>
+                <td>{{element.atomicNumber}}</td>
+                <td>{{element.atomicWeight}}</td>
+                <td>{{element.phase}}</td>
+                <td>{{element.ionization}}</td>
+                <td>{{element.melting}}</td>
+                <td>{{element.boiling}}</td>
+            </tr>
+        </table>
+    </div>
+
+
+<p>It is interesting to note that the index is for the values you are filtering on too. So if you were to type Aluminum
+you will see it becomes the zero element, instead of Hydrogen.</p>
+<p>Angular also has  directives like <code>ng-hide</code>,
+<code>ng-show</code> and <code>ng-class</code> along with a <a href="http://docs.angularjs.org/guide/directive">plethora of other attributes</a>.</p>
+<p>We can use these in conjunctions with <code>$index</code>. This is really the key step along the journey in thinking the &quot;Angular way&quot;.
+You don&#39;t want to update the dom via javascript, but use Angular to control what is displayed
+on your page. As an example of this, let&#39;s say we want to hide
+every other element in the list. We could do something like</p>
+<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements"</span> <span class="hljs-attribute">data-ng-hide</span>=<span class="hljs-value">"$index%2"</span>&gt;</span>
+</code></pre>
+<div id="periodicTable2" ng-controller="chemCtrl">
+    <table class="table ">
+        <tr>
+            <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
+        </tr>
+        <tr ng-repeat="element in periodic.elements" ng-hide="$index%2">
+            <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
+            <td>{{element.atomicNumber}}</td>
+            <td>{{element.atomicWeight}}</td>
+            <td>{{element.phase}}</td>
+            <td>{{element.ionization}}</td>
+            <td>{{element.melting}}</td>
+            <td>{{element.boiling}}</td>
+         </tr>
+     </table>
+</div>
+
+<p>We can also perform some Crimes Against web design. For example, nothing is uglier than wrapping your table in
+Green Bay Packer colors of Green and Gold. So I can add CSS elements like</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+        <span class="hljs-class">.tableOdd</span> <span class="hljs-rules">{
+            <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> green</span></span>;
+        <span class="hljs-rule">}</span></span>
+        <span class="hljs-class">.tableEven</span> <span class="hljs-rules">{
+            <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> gold</span></span>;
+        <span class="hljs-rule">}</span></span>
+    </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+</code></pre>
+<p>Then we can use the <code>ng-class</code> on the <code>&lt;tr&gt;</code> we are binding to in order to make even/odd rows change colors.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements"</span> <span class="hljs-attribute">data-ng-class</span>=<span class="hljs-value">"{tableEven: !($index%2), tableOdd: ($index%2)}"</span>&gt;</span>
+</code></pre>
+<p>It doesn&#39;t look pretty, and there are MUCH better ways to do this, but it gives you an example of how to
+think the &quot;Angular way&quot;</p>
+ <div id="periodicTable3" ng-controller="chemCtrl">
+        <table class="table ">
+            <tr>
+                <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
+            </tr>
+            <tr ng-repeat="element in periodic.elements" ng-class="{tableEven: !($index%2), tableOdd: ($index%2)}">
+                <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
+                <td>{{element.atomicNumber}}</td>
+                <td>{{element.atomicWeight}}</td>
+                <td>{{element.phase}}</td>
+                <td>{{element.ionization}}</td>
+                <td>{{element.melting}}</td>
+                <td>{{element.boiling}}</td>
+            </tr>
+        </table>
+    </div>
+
+<p>Last, we can also do fun things like sort by using select lists to quickly filter data. For example, we create a
+dropdown list for both the element phase</p>
+<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementPhase"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Gas"</span>&gt;</span>Gas<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Solid"</span>&gt;</span>Solid<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Liquid"</span>&gt;</span>Liquid<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Synthetic"</span>&gt;</span>Synthetic<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+</code></pre>
+<p>and an ordering criteria</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementOrder"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"name"</span> <span class="hljs-attribute">selected</span>&gt;</span>Name (ascending)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"-name"</span>&gt;</span>Name (descending)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"melting"</span>&gt;</span>Melting Point (asc)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"-melting"</span>&gt;</span>Melting Point (desc)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+</code></pre>
+<p>We can then use the <code>ng-filter</code> and <code>ng-order</code> directives to filter and sort our table. Further, we can
+combine with our text box for searching by name and chain them together.</p>
+<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements | filter:{name:elementName} | filter:{phase:elementPhase} | orderBy:elementOrder"</span>&gt;</span>
+</code></pre>
+<p>Ultimately, our HTML looks like</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"periodicTable5"</span>  <span class="hljs-attribute">data-ng-controller</span>=<span class="hljs-value">"chemCtrl"</span> &gt;</span>
+        Element Name:<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementName"</span>/&gt;</span>
+        &amp;nbsp;State:
+        <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementPhase"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Gas"</span>&gt;</span>Gas<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Solid"</span>&gt;</span>Solid<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Liquid"</span>&gt;</span>Liquid<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Synthetic"</span>&gt;</span>Synthetic<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+        &amp;nbsp;Order:
+        <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementOrder"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"name"</span> <span class="hljs-attribute">selected</span>&gt;</span>Name (ascending)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"-name"</span>&gt;</span>Name (descending)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"melting"</span>&gt;</span>Melting Point (asc)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"-melting"</span>&gt;</span>Melting Point (desc)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table "</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements | filter:{name:elementName} | filter:{phase:elementPhase} | orderBy:elementOrder"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://en.wikipedia.org/wiki/{{element.name}}"</span> <span class="hljs-attribute">Title</span>=<span class="hljs-value">"Wikipedia article on {{element.name}}"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_top"</span>&gt;</span>{{element.name}}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span> &gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.phase}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.ionization}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.melting}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.boiling}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<div id="periodicTable5" ng-controller="chemCtrl">
+        Element Name:<input type="text" ng-model="elementName">
+        &nbsp;State:
+        <select ng-model="elementPhase">
+            <option value="">All</option>
+            <option value="Gas">Gas</option>
+            <option value="Solid">Solid</option>
+            <option value="Liquid">Liquid</option>
+            <option value="Synthetic">Synthetic</option>
+        </select>
+        &nbsp;Order:
+        <select ng-model="elementOrder">
+            <option value="name" selected>Name (ascending)</option>
+            <option value="-name">Name (descending)</option>
+            <option value="melting">Melting Point (asc)</option>
+            <option value="-melting">Melting Point (desc)</option>
+        </select>
+
+        <table class="table ">
+            <tr>
+                <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
+            </tr>
+            <tr ng-repeat="element in periodic.elements | filter:{name:elementName} | filter:{phase:elementPhase} | orderBy:elementOrder">
+            <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
+                <td>{{element.atomicNumber}}</td>
+                <td>{{element.atomicWeight}}</td>
+                <td>{{element.phase}}</td>
+                <td>{{element.ionization}}</td>
+                <td>{{element.melting}}</td>
+                <td>{{element.boiling}}</td>
+            </tr>
+        </table>
+    </div>
+
+<p>The interesting thing to note about this too is that this page is pretty heavy. It has many tables with the
+Periodic elements. However, by using client side code, we download all of the elements only once when we get
+our JavaScript file. The client side functionality does the page building, helping the page load quicker.</p>
+<p>For those of you who have been web coding for a while, these few number of lines to have all of this client side
+functionality is magic. Seriously, magic.</p>
+<p>You can either visit <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a> to see the code in action and
+as always find the code out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a>
+</p></div><p></p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/2014/01/angularjs-further-with-ng-repeat/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+            <div id="me">
+    <p>
+        <img src="/images/Headshot-Square.png" alt="John Ptacek" />
+        I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
+        This blog is my contains my content and opinions, which are not those of my employer.
+    </p>
+    <p>Currently, I am reading 
+        <a href="https://www.goodreads.com/book/show/567704.Imajica">Imajica</a>
+        by <a href="http://www.clivebarker.info">Clive Barker</a></p>
+    <p>
+        <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="https://github.com/jptacek">GitHub</a> &#8226;
+        <a href="https://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
+        <a href="https://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
+        <a href="https://plus.google.com/+JohnPtacek">Google+</a>
+    </p>
+</div>
+
+            <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments.</a></noscript></div>
+<script type="text/javascript">
+    var disqus_shortname = 'jptacek';
+    var disqus_url = 'http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/';
+    var disqus_identifier = disqus_url;
+    var disqus_title = 'AngularJS - More with ng-repeat';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+</div>
+
+<div class="container">
+    <div class="navbar navbar-footer">
+        <p class="navbar-center navbar-text">Content copyright &copy; 2016 John Ptacek</p>
+    </div>
+</div>
+
+
+
+    <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-animate/angular-animate.min.js"></script>
+
+ <script defer="defer"  src="/2014/01/angularjs-further-with-ng-repeat/js/chemistryApp.js"></script><script defer="defer"  src="/2014/01/angularjs-further-with-ng-repeat/js/chemistryController.js"></script><script defer="defer"  src="/2014/01/angularjs-further-with-ng-repeat/js/chemistry.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="/scripts/site.js"></script>
+
+
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34910017-1']);
+    _gaq.push(['_setDomainName', 'jptacek.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>
