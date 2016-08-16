@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Angular/Angular2 Introduction
-date: 2016/08/11
+date: 2016/08/12
 tags:  ["Angular","Web","Angular2","JavaScript"]
 ---
 
