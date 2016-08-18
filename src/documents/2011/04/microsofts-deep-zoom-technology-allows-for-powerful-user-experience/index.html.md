@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Microsoft's Deep Zoom Technology Allows for Powerful User Experience
-date: 2011/04/25
+date: 2011/04/26
 tags: ["Appleton Compassion","Silverlight","Web"]
 ---
 

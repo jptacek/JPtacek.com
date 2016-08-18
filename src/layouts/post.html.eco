@@ -3,6 +3,7 @@ layout: default
 ---
 <div class="container">
             <%- @partial('postLayout', {title: @document.title, url: @document.url, tags: @document.tags, date: @document.date, content: @content, individualPost: true }) %>
+            Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents<%= @document.url %>index.html.md">pull request.</a><br />
             <%- @partial('me', false) %>
             <%- @partial('disqus') if @disqusShortName %>
 </div>

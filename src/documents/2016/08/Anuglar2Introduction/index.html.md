@@ -8,8 +8,7 @@ tags:  ["Angular","Web","Angular 2","JavaScript"]
 I spent a lot of time blogging about [AngularJS](https://jptacek.com/tags/angularjs/) in the past. Time moves on, especially on the Internet and 
 [Google](https://www.google.com) is feverishly working on finishing up [Angular2](https://angular.io), which is currently in release candidate as of 
 this writing (August of 2016).
-
-<img src="angularLogo.svg?raw=true" width="20%" alt="Angular Logo"></img>
+<img src="angularLogo.svg?raw=true" width="25%"></img>
 
 We will take a similar approach to last time, where we developed a periodic table application that investigates different features about 
 Angular.
