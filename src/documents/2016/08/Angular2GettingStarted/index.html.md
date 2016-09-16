@@ -16,28 +16,28 @@ to help us understand the framework. The others posts are
 0. [Angular - Introduction](http://www.jptacek.com/2013/10/angularjs-introduction/)
 1. Angular - Getting Started
 
-Getting started in the world of Web Development/JavaScript has become a lot more work over the last several years. We are pretty far 
+Getting started in the world of Web Development/JavaScript has become a lot more work over the last several years. We are pretty far
 removed where someone could create a web page and a JavaScript application with notepad. Libraries and frameworks such as [React](https://facebook.github.io/react/),  
-[Angular](https://angular.io) and [Aurelia](https://aurelia.io) all require things like JavaScript task managers such as [Gulp](http://gulpjs.com) or 
-[Grunt](http://gruntjs.com) to transpile code, bundle files, minify them, etc. 
-If that doesn't work, you can consider [Babel](https://babeljs.io) and/or [WebPack](https://webpack.github.io) to get you moving. 
+[Angular](https://angular.io) and [Aurelia](https://aurelia.io) all require things like JavaScript task managers such as [Gulp](http://gulpjs.com) or
+[Grunt](http://gruntjs.com) to transpile code, bundle files, minify them, etc.
+If that doesn't work, you can consider [Babel](https://babeljs.io) and/or [WebPack](https://webpack.github.io) to get you moving.
 
-The decisions for getting started have become so overwhelming, people have created a term, called [JavaScript fatigue](https://webpack.github.io) 
+The decisions for getting started have become so overwhelming, people have created a term, called [JavaScript fatigue](https://webpack.github.io)
 that sums up frustration from a subset of developers. The reality is, especially for a library like React, there are just too many tools
 for people. Initial project setup, whether React or Angular takes time.
 
-For example, the Angular five minute quickstart [guide](https://angular.io/docs/ts/latest/quickstart.html) was not very quick for me. 
-There are over 20 NPM packages to install and users mostly just copy and paste an existing `package.json` file. The good news is that 
-Angular, as well as React, both recently came out with command line tools to get developers up and running quick. That is 
+For example, the Angular five minute quickstart [guide](https://angular.io/docs/ts/latest/quickstart.html) was not very quick for me.
+There are over 20 NPM packages to install and users mostly just copy and paste an existing `package.json` file. The good news is that
+Angular, as well as React, both recently came out with command line tools to get developers up and running quick. That is
 what we will explore in this blog post.
 
-In May of this year at [NG-Conf](https://www.ng-conf.org/) the Angular team introduced the 
-[Angular Command Line Interfact (CLI)](https://cli.angular.io) that helped really quickstart Angular application development and 
+In May of this year at [NG-Conf](https://www.ng-conf.org/) the Angular team introduced the
+[Angular Command Line Interfact (CLI)](https://cli.angular.io) that helped really quickstart Angular application development and
 follows best practices.
 
-To install the Angular CLI, type 
+To install the Angular CLI, type
 `npm install -g angular-cli`
-and wait a few minutes. Angular CLI as of this writing (August of 2016) is currently in beta under active development. One of the 
+and wait a few minutes. Angular CLI as of this writing (August of 2016) is currently in beta under active development. One of the
 current focuses is moving from Brocolli to WebPack.
 
 ![Install Angular](angularCli1.png)
@@ -60,8 +60,8 @@ A quick look at our directory structure sees that we hae a lot there..
 
 ![Atom view of application](angularCli3.png)
 
-A quick look at our `package.json` file indicates the NPM packages that Google prefers out of the box, along with a testing 
-framework based on 
+A quick look at our `package.json` file indicates the NPM packages that Google prefers out of the box, along with a testing
+framework based on
 
 ```xml
 {
@@ -112,35 +112,35 @@ framework based on
 
 ```
 
-Not only are we able to get our structure created, we can actually run our application. This is done via the 
+Not only are we able to get our structure created, we can actually run our application. This is done via the
 `ng serve`
 command. This takes our files, such as typescript and compiles them as well as bundling via Broccoli. Our initial application start displays
 a screen that lets us, literally, know that our application is working.
 
 ![Initial Web Page](angularCli4.png)
 
-Our next step, and something the Angular CLI can handle for us, is to create a component. We will dig into this more in future posts, 
-but one of the big benefits of Angular 2 is more modular approach for application development. We are going to create a Periodic 
-Table application, so it makes sense to create a Periodic Table component. This is done by using the `generate` command for 
+Our next step, and something the Angular CLI can handle for us, is to create a component. We will dig into this more in future posts,
+but one of the big benefits of Angular 2 is more modular approach for application development. We are going to create a Periodic
+Table application, so it makes sense to create a Periodic Table component. This is done by using the `generate` command for
 the Angular CLI command. We type
 
 `ng generate component periodicTable`
 
-and the files and structure for our component our created. This includes a TypeScript file for our component, a specification, 
+and the files and structure for our component our created. This includes a TypeScript file for our component, a specification,
 HTML placeholder and CSS markup.
 
 ![Component Generate](angularCli5.png)
 
 A quick change to our initial app structure to wire up the component (again, more on this later) and we can see our component get rendered.
 
-In general, the structure of our application follows current Angular best practices. All the JavaScript files are placed in 
-an app directory. 
+In general, the structure of our application follows current Angular best practices. All the JavaScript files are placed in
+an app directory.
 
 ![Directory Structure](angularCli6.png)
 
 
-The component TypeScript gets generated and creates our selector, reference our HTML template as well as our 
-CSS file for styling. 
+The component TypeScript gets generated and creates our selector, reference our HTML template as well as our
+CSS file for styling.
 
 ```JavaScript
 import { Component, OnInit } from '@angular/core';
@@ -163,6 +163,3 @@ export class PeriodicTableComponent implements OnInit {
 
 So, this is a quick look at the Angular CLI process for Angular 2. It is a great improvement over the previous setup process and helps
 development teams get up and moving quicker.
-
-
-
