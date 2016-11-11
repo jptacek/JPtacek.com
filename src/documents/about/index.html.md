@@ -4,23 +4,20 @@ menu: About
 menuOrder: 2
 ---
 
-John Ptacek is a Skyline Technologies Senior Engineer where his primary focus is the design, development and solutions for clients using web and
-mobile technologies. A lot of this includes solutions for clients using Azure, MVC, JavaScript and AngularJS.
+John Ptacek is a [Skyline Technologies](https://www.skylinetechnologies.com)
+Principal Consultant where his primary focus is the design, development and envisioning of solutions for customers.
 
-He has also been part of the Skyline team to create Azure and MVC solutions for charities
-in the Fox Cities including the Appleton Compassion Project,
-[Riverview Gardens](http://www.RiverviewGardens.org) and [Mile of Music](http://mileofmusic.com/). He has been doing web development for 
-Fortune 50 clients across the world over
-the last 15 years, focused mainly on the Microsoft technology stack.
+During his career he has developed solutions to solve problems for a wide variety of industries. Examples include virtually melting down nuclear reactors, developing a system for pricing over 10 billion dollars in consumer goods orders, corporate extranets for professional sport teams as well as mobile applications for music festivals.  
 
-As much as John loves doing tech weenie stuff, even more than that,
-he enjoys hanging out with his awesome wife and collection of awesome kids.
+His current focus is on solving problems using cloud technologies to reach users on their phone, their PC or while they are talking in their living room.  
+
+He live in Appleton, WI with his wife and a gaggle of children who are usually playing music, running or shining shoes.
 
 Find him on twitter [@jptacek](https://www.twitter.com/jptacek)
 
 **This blog is my own, and represents my opinions, and not those of my employer.**
 
-You can subscribe to this blog via [RSS](https://www.jptacek.com/rss), and you can also find me on:
+You can subscribe to this blog via [RSS](/feed/index.xml), and you can also find me on:
 
 * [Twitter](https://www.twitter.com/jptacek)
 * [LinkedIn](https://www.linkedin.com/in/johnptacek/)
