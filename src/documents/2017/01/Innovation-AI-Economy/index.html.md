@@ -6,7 +6,7 @@ tags:  ["Business","AI","Skyline Technologies","Innovation","Computing"]
 ---
 May you live in interesting times is an old curse. Well, we certainly are living in interesting times! Over the last 5-10 years, we have seen enormous growth in computing power driven by cloud infrastructure and mobile phones. This has resulted in tremendous economies of scale; driving down the cost of consuming and utilizing computational resources. As a result, the goals of Artificial Intelligence become realized at a much greater pace than the vast majority of people have anticipated, and it will bring changes.
 
-I have [written](https://www.skylinetechnologies.com/Blog/Skyline-Blog/May_2016/Death_of_Moore_s_Law) in the past about Google’s DeepMind and the Game of Go. It was long thought that a computer being able to beat a champion Go players was at most a decade or two away. However, this happened [last summer](http://www.theverge.com/2016/3/15/11213518/alphago-deepmind-go-match-5-result) with Google’s DeepMind platform.
+I have [written](https://jptacek.com/2016/05/DeathOfMooresLawAndTheGameOfGo/) in the past about Google’s DeepMind and the Game of Go. It was long thought that a computer being able to beat a champion Go players was at most a decade or two away. However, this happened [last summer](http://www.theverge.com/2016/3/15/11213518/alphago-deepmind-go-match-5-result) with Google’s DeepMind platform.
 
 Google built on the success of DeepMind and utilized it with their language translation service, [Google Translate](https://translate.google.com). This has resulted in order of magnitude increases in the ability to translate between languages. Google [stated](http://www.nytimes.com/2016/12/14/magazine/the-great-ai-awakening.html?_r=0) that the night they turned on Deep Mind for their translation platform, they saw a greater increase in fluency than they had in the previous 10 years of improving the platform. In fact, Google now [believes](https://www.newscientist.com/article/2114748-google-translate-ai-invents-its-own-language-to-translate-with/) their DeepMind platform has created its own, intermediary language that it uses to translate between different languages, independent of programmers telling it to. It did it on its own. This is crazy Sci-Fi stuff!
 
@@ -34,7 +34,7 @@ Would love to hear your thoughts or ideas to address this changing world. Hop on
 
 Links
 
-1. The Death of Moore’s Law - [https://www.skylinetechnologies.com/Blog/Skyline-Blog/May_2016/Death_of_Moore_s_Law](https://www.skylinetechnologies.com/Blog/Skyline-Blog/May_2016/Death_of_Moore_s_Law)
+1. The Death of Moore’s Law - [https://jptacek.com/2016/05/DeathOfMooresLawAndTheGameOfGo/](https://jptacek.com/2016/05/DeathOfMooresLawAndTheGameOfGo/)
 
 2. Google's AlphaGo AI beats Lee Se-dol again to win Go series 4-1 - [http://www.theverge.com/2016/3/15/11213518/alphago-deepmind-go-match-5-result](http://www.theverge.com/2016/3/15/11213518/alphago-deepmind-go-match-5-result)
 

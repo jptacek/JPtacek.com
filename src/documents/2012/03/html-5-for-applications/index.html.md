@@ -5,7 +5,7 @@ date: 2012/03/21
 tags: ["HTML 5","Web"]
 ---
 
-Long ago, in a land far, far, away, I started an [introduction to HTML 5](http://www.skylinetechnologies.com/Insights/Skyline-Blog/June-2011/HTML-5-A-Little-History) by giving a short history of HTML and the standards process. It was to quickly be followed up with an overview of what is meant by HTML 5 applications. Months later, here we are....
+Long ago, in a land far, far, away, I started an [introduction to HTML 5](https://jptacek.com/2011/06/html-5-a-little-history/) by giving a short history of HTML and the standards process. It was to quickly be followed up with an overview of what is meant by HTML 5 applications. Months later, here we are....
 
 With the [Skyline Give Camp](http://www.skylinetechnologies.com/news/Pages/RiverviewGardensGiveCamp.aspx) just behind us, I thought I would kick off a wave of blog posts about some of the technology we will be used during the Give Camp. First up, let's discuss HTML.
 
@@ -43,7 +43,7 @@ A Javascript or jQuery function could then be sent to "inject" markup into the H
             html = '<a class="avatar" href="#"><img src="' + json_results.results[key].profile_image_url + '" alt="' + json_results.results[key].from_user + '"/></a>';
 
             html += '<a href="http://twitter.com/' + json_results.results[key].from_user + '"><h3>' + json_results.results[key].from_user + '</h3></a>';
-            
+
             html += '<span class="details">' + json_results.results[key].text + ' </span>';
             listItems.append('<li>' + html + '</li>');
             console.log(html);
