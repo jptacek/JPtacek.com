@@ -38,7 +38,7 @@ How serious is this? During the 2016 US Thanksgiving weekend, Google was [warnin
 
 **HTTPS Everywhere** - In examples where you are concenred about Public WiFi, or even your work or home network, you can do your best to ensure you are running HTTPS, which is the encrypted version of web page traffic. If you click on an article at [http://www.nytimes.com](http://www.nytimes.com), people can read the content of the page. If you read an article at [https://www.nytimes.com](https://www.nytimes.com), it becomes much more difficult for people to read the content of the page.
 
-Why is this important, especially for public pages that everyone can read? Two reasons, first, if you are reading information at sites that can provide information about your, for example, [WebMd ](http://www.webmd.com)articles, you may not want that available (obviously, in most cases, the not encrypted URL will provide an idea of the content).
+Why is this important, especially for public pages that everyone can read? Two reasons, first, if you are reading information at sites that can provide information about you, for example, [WebMd](http://www.webmd.com) articles, you may not want people to know the contents of what you are reading (obviously, in most cases, the not encrypted URL will provide an idea of the content).
 
 Second, for public pages that are not encrypted, the pages can be changed and updated to try and get information about you. For example, if someone intercepts an HTML page from google.com, they could inject a snippet of HTML that asks you to enter your email address and password to google. At that point, game over.
 
