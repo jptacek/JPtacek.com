@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Innovation, Artificial Intelligence and the Economy
+title: Online Security Best Practices
 date: 2017/01/5
 tags:  ["Business","AI","Skyline Technologies","Innovation","Computing"]
 ---
