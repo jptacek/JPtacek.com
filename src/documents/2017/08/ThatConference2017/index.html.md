@@ -12,7 +12,7 @@ picture should!
 ![ThatConference 2017](thatConf.png)
 
 
-This year I presented an introduction to [Docker](https://www.docker.com), a
+This year, my [session](https://www.thatconference.com/Sessions/Session/11585) was An introduction to [Docker](https://www.docker.com), a
 very popular virtualization technology that I find .NET developers are
 somewhat unaware of.
 
