@@ -11,7 +11,7 @@ Appleton, Wi.
 My [session](https://www.technologyhubconference.com/timetable/event/innovation-ai-economy/) was on Innovation, Artificial Intelligence, and the Economy. It was a pretty
 different talk for a tech conference, which led to great discussion.
 
-![John Jen AI conf](johnJenTechHub.jpg)
+![Jen and John AI conf](JenJohnTechHub.jpg)
 
 Thanks to all of those who attended.
 
