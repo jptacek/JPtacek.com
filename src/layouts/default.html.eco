@@ -22,9 +22,6 @@
 
 </head>
 <body>
-<% if @googlePlusId: %>
-<a href="https://plus.google.com/<%= @googlePlusId %>?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
-<% end %>
 
 
 <div class="navbar navbar-default navbar-static-top">
@@ -46,7 +43,6 @@
                 <li class="hidden-xs">
                     <a href="/feed/index.xml" class="rss"><i class="fa fa-rss fa-lg"></i></a>
                     <a href="https://twitter.com/jptacek" class="twitter"><i class="fa fa-twitter fa-lg"></i></a>
-                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><i class="fa fa-google-plus fa-lg"></i></a>
                     <a href="https://linkedin.com/in/johnptacek" class="linkedin"><i class="fa fa-linkedin fa-lg"></i></a>
                     <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><i class="fa fa-stack-overflow fa-lg"></i></a>
                     <a href="https://github.com/jptacek" class="github"><i class="fa fa-github fa-lg"></i></a>
@@ -67,7 +63,7 @@
 
 <div class="container">
     <div class="navbar navbar-footer">
-        <p class="navbar-center navbar-text">Content copyright &copy; 2017 John Ptacek</p>
+        <p class="navbar-center navbar-text">Content copyright &copy; 2019 John Ptacek</p>
     </div>
 </div>
 
