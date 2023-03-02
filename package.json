@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "cheerio": "~0.12.3",
-    "docpad": "~6.78.1",
+    "docpad": "~6.83.2",
     "docpad-plugin-cleanurls": "~2.7.0",
     "docpad-plugin-coffeescript": "~2.5.0",
     "docpad-plugin-eco": "~2.1.0",
